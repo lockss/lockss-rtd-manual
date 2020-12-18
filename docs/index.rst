@@ -1,17 +1,29 @@
-.. comment
-   LOCKSS System Manual documentation master file, created by
-   sphinx-quickstart on Thu Dec 17 13:38:43 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 ====================
 LOCKSS System Manual
 ====================
 
+.. note::
+
+   This page is under construction.
+
+Use the table of contents on the left to browse the LOCKSS System Manual.
+
 .. toctree::
-   :maxdepth: 2
-   :caption: Manuals
+   :caption: Table of Contents
+   :numbered:
    :hidden:
-   
-   LOCKSS Documentation Portal <https://lockss.readthedocs.io/en/latest/>
+
+   introduction/index
+   installing/index
+   configuring
+   running
+   using/index
+   appendix/index
+
+.. toctree::
+   :maxdepth: 1
+   :caption: LOCKSS Documentation Portal
+   :hidden:
+
+   Home <https://lockss.readthedocs.io/en/latest/>
    LOCKSS System Manual <https://lockss.readthedocs.io/projects/lockss-manual/en/latest/>

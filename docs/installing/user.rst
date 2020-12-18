@@ -1,0 +1,47 @@
+============================
+Creating the ``lockss`` User
+============================
+
+The LOCKSS system runs under a system user named ``lockss``, which is in a group named ``lockss``, and which is capable of using ``sudo``. The ``lockss`` user's password will be needed at various points during installation, both by explicit invocations of ``sudo``, and in some cases by ``microk8s`` commands.
+
+.. important::
+
+   See the :doc:`../introduction/security` section for more about this short-term requirement.
+
+----------------------------------------------
+Creating the User on CentOS, OpenSUSE and RHEL
+----------------------------------------------
+
+Type these commands:
+
+.. code-block::
+
+   sudo useradd --system --user-group --groups=wheel --create-home --shell=/bin/bash lockss
+
+   sudo passwd lockss
+
+By default on **CentOS**, **OpenSUSE** and **RHEL**, ``sudo`` privileges and membership in the ``wheel`` group are equated. Adjust the above commands accordingly if your system has ``sudo`` configured differently.
+
+--------------------------------------------------
+Creating the User on Debian, Linux Mint and Ubuntu
+--------------------------------------------------
+
+Type these commands:
+
+.. code-block::
+
+   sudo useradd --system --user-group --groups=sudo --create-home --shell=/bin/bash lockss
+
+   sudo passwd lockss
+
+By default on **Debian**, **Linux Mint** and **Ubuntu**, ``sudo`` privileges and membership in the ``sudo`` group are equated. Adjust the above commands accordingly if your system has ``sudo`` configured differently.
+
+---------------------------------------
+Obtaining a shell running as ``lockss``
+---------------------------------------
+
+All commands shown in this document except those that explicitly invoke ``sudo`` should be issued from a shell running as the ``lockss`` user. Depending on your preference, you may login as ``lockss``, or switch to the ``lockss`` user with this command:
+
+.. code-block::
+
+   sudo -i -u lockss
