@@ -26,4 +26,4 @@ Use the table of contents on the left to browse the LOCKSS System Manual.
    :hidden:
 
    Home <https://lockss.readthedocs.io/en/latest/>
-   LOCKSS System Manual <https://lockss.readthedocs.io/projects/lockss-manual/en/latest/>
+   LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/en/latest/>
