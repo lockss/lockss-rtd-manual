@@ -8,6 +8,7 @@ Use the popup at the bottom of the menu to navigate to other versions and downlo
 
 .. toctree::
    :caption: LOCKSS System Manual
+   :maxdepth: 1
    :numbered:
 
    introduction/index
