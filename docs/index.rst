@@ -2,16 +2,13 @@
 LOCKSS System Manual
 ====================
 
-.. note::
+**Welcome to the LOCKSS System Manual.**
 
-   This page is under construction.
-
-Use the table of contents on the left to browse the LOCKSS System Manual.
+Use the popup at the bottom of the menu to navigate to other versions and download offline copies of the manual.
 
 .. toctree::
-   :caption: Table of Contents
+   :caption: LOCKSS System Manual
    :numbered:
-   :hidden:
 
    introduction/index
    installing/index
@@ -21,9 +18,9 @@ Use the table of contents on the left to browse the LOCKSS System Manual.
    appendix/index
 
 .. toctree::
-   :maxdepth: 1
    :caption: LOCKSS Documentation Portal
+   :maxdepth: 1
    :hidden:
 
-   Home <https://lockss.readthedocs.io/en/latest/>
-   LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/en/latest/>
+   Home <https://lockss.readthedocs.io/>
+   LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/>
