@@ -8,9 +8,9 @@ This section describes how to use the LOCKSS system.
    :hidden:
 
    configuration
-   crawler
-   poller
    metadata-extraction
    metadata
+   poller
+   crawler
    pywb
    openwayback

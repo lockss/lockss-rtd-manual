@@ -2,17 +2,17 @@
 Checking the System
 ===================
 
-After `installing the LOCKSS system <index>`_, you can confirm the status of installed components by running:
+After :doc:`installing the LOCKSS system <index>` and :doc:`downloading the LOCKSS Installer <lockss-installer>`, prepare the system for running by typing:
 
 .. code-block:: shell
 
-   sudo scripts/check-sys
+   scripts/check_sys
 
 in the :file:`lockss-installer` directory.
 
-The script will do its best to check for any missing elements and permissions needed to run the LOCKSS cluster on the host machine:
+The script will do its best to install any missing elements needed to run the LOCKSS cluster on the host machine. See the :doc:`prerequisites` document for required system elements.
 
-*  Check for Snap
-*  Check for MicroK8s
-*  Check for a user ``lockss``.
-*  Check user ``lockss`` has appropriate group memberships and permissions.
+1. Check for Docker and install if missing.
+2. Check for the Local-Persist Docker volume plugin and install if missing.
+3. Ensure Docker Swarm is initialized and running.
+4. Check for a user ``lockss`` and create the ``lockss`` user and group if missing.

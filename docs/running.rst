@@ -2,32 +2,26 @@
 Running the LOCKSS System
 =========================
 
---------------------------
-Starting the LOCKSS System
---------------------------
+After :doc:`configuring` and anytime after updating the LOCKSS Installer to a new version and stopping your LOCKSS stack:
 
-Run ``scripts/start-lockss``. This script will call in turn:
+*  Starting the LOCKSS system
 
-   *  ``scripts/generate-lockss``: This script takes your configuration data and turns it into a set of configuration files containing the right values.
+   Run :file:`scripts/start-lockss`: This script will calls in turn:
 
-   *  ``scripts/assemble-lockss``: This script puts the configuration files and puts them in the right places, and ensures that all storage volumes are ready for use (creating them if necessary).
+   *  :file:`scripts/generate-lockss`. This script takes your configuration data and turns into into a set of configuration files containing the right values.
 
-   *  ``scripts/deploy-lockss``: This script deploys your LOCKSS stack by invoking Kubernetes.
+   *  :file:`scripts/assemble-lockss`. This script puts the configuration files and puts them in the right places, and ensures that all storage volumes are ready for use (creating them if necessary).
 
--------------------------------
-Shutting down the LOCKSS System
--------------------------------
+   * :file:`scripts/deploy-lockss`. This script deploys your LOCKSS stack by invoking Docker.
 
-Run ``scripts/shutdown-lockss``.
+*  Shutting down the LOCKSS system
 
-----------------------------------
-Restarting a Running LOCKSS System
-----------------------------------
+   ``scripts/shutdown-lockss``
 
-Run ``scripts/restart-lockss``.
+*  To restart a running or shut down LOCKSS 2.0-alpha2 cluster:
 
------------------------------------
-Removing a Configured LOCKSS System
------------------------------------
+   ``scripts/restart-lockss``
 
-To remove all configurations, volumes and networks installed by the LOCKSS system, run ``scripts/uninstall-lockss``. This will **not** remove files from the persistent store.
+*  To remove all configurations, volumes and networks installed by LOCKSS from Docker.
+
+   Run :file:`scripts/uninstall-lockss`: Remove all lockss elements from docker. This will not remove files from the persistent store.

@@ -2,13 +2,13 @@
 Downloading the LOCKSS Installer
 ================================
 
-You can download the LOCKSS Installer from GitHub using a `Git <git>`_ command, as the ``lockss`` user:
+You can download the LOCKSS Installer from GitHub using a :doc:`Git <git>` command as the ``lockss`` user created in :doc:`prerequisites`:
 
 .. code-block:: shell
 
    git clone https://github.com/lockss/lockss-installer
 
-All the remaining instructions assume that the current working directory is ``lockss-installer``; ``cd`` to it now:
+You can then enter the :file:`lockss-installer` directory:
 
 .. code-block:: shell
 

@@ -2,7 +2,7 @@
 Configuring the LOCKSS System
 =============================
 
-After `installing the LOCKSS system <installing>`_, configure the system with the configure script:
+After :doc:`installing/index` and :doc:`installing/lockss-installer`, configure the system with the configure script:
 
 .. code-block:: shell
 
@@ -10,9 +10,9 @@ After `installing the LOCKSS system <installing>`_, configure the system with th
 
 (If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of ``hostconfig``.)
 
-When run the first time, some of the questions asked by the script will have a suggested or default value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`. Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged. Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
+When run the first time the questions asked by the script often come with a suggested value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`. Any subsequent runs will use the previous values ad the suggested value, review and hit :kbd:`Enter` to leave unchanged.
 
-The questions are:
+Questions include:
 
 1. ``Fully qualified hostname (FQDN) of this machine:`` Enter the machine's hostname (e.g. ``locksstest.myuniversity.edu``).
 
@@ -20,17 +20,15 @@ The questions are:
 
 3. ``Is this machine behind NAT?:`` Enter :kbd:`Y` if the machine is not publicly routable but will be accessible via network address translation (NAT), or :kbd:`N` otherwise.
 
-   1. ``External IP address for NAT:`` If you answered :kbd:`Y` to the previous question, enter the publicly routable IP address of the NAT router.
+   1. ``External IP address for NAT:`` If you answered :kbd:`Y` to the previous question, enter the publicly routable IP address of the machine.
 
-4. ``Initial subnet for admin UI access:`` Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces of the system. The access list can be modified later via the UI.
+4. ``Initial subnet for admin UI access:`` Enter a semicolon-separated list of subnets in CIDR notation that should have access to the Web user interfaces of the system.
 
-5.  ``LOCKSS subnet for container access:`` This is calculated from the MicroK8s node and should not need to be modified in a standard installation.
+5. ``LCAP V3 protocol port:`` Enter the port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use 9729.
 
-6. ``LCAP V3 protocol port:`` Enter the port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use ``9729``.
+6. ``PROXY port:`` Not yet re-enabled in 2.0-alpha; ignore.
 
-7. ``PROXY port:`` Port for the LOCKSS content proxy. Accept the default -- it can be changed later if necessary.
-
-8. ``Mail relay for this machine:`` Hostname of this machine's outgoing mail server.
+7. ``Mail relay for this machine:`` Hostname for this machine’s outgoing mail server.
 
 9. ``Does mail relay <mailhost> need user & password``: Enter :kbd:`Y` if the outgoing mail server requires password authentication, :kbd:`N` otherwise.
 
@@ -38,43 +36,41 @@ The questions are:
 
    2. ``Password for <mailuser>@<mailhost>:`` Enter the password for the given username.
 
-   3. ``Password for <mailuser>@<mailhost> (again):`` Re-enter the mail server password (if the two passwords do not match, the password will be asked again).
+   3. ``Again:`` Re-enter the mail server password (if the two passwords do not match, the password will be asked again).
 
-10. ``E-mail address for administrator:`` Enter the e-mail address of the person or team who will administer the LOCKSS system on this machine.
+9. ``E-mail address for administrator:`` Enter the e-mail address of the person or team who will administer the LOCKSS system on this machine.
 
-11. ``Configuration URL:`` Enter the URL of the LOCKSS network configuration file. If you are not running your own LOCKSS network, use ``http://props.lockss.org:8001/demo/lockss.xml``, the configuration file for a demo network set up for LOCKSS 2.0 pre-release testing.
+10. ``Configuration URL:`` Enter the URL of the LOCKSS network configuration file. If you are not running your own LOCKSS network, use ``http://props.lockss.org:8001/demo/lockss.xml``, the configuration file for a demo network set up for LOCKSS 2.0 pre-release testing.
 
-12. ``Configuration proxy (host:port):`` If a proxy server is required to reach the configuration server, enter its host:port here, otherwise leave this blank.
+11. ``Configuration proxy (host:port):`` enter a host:port combination for the proxy server needed to reach the network configuration file (or simply hit Enter if none is needed).
 
-13. ``Preservation group(s):`` Enter a semicolon-separated list of preservation network identifiers. If you are not joining an existing network or running your own, enter ``demo``, the network identifier for the demo network set up for LOCKSS 2.0 pre-release testing.
+12. ``Preservation group(s):`` Enter a semicolon-separated list of preservation network identifiers. If you are not joining an existing network or running your own, enter demo, the network identifier for the demo network set up for LOCKSS 2.0 pre-release testing.
 
-14. ``Content data storage directory:`` Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system. This is where preserved content will be stored, along with several databases; it is the analog of ``/cache0`` in the classic LOCKSS system.
+13. ``Content data storage directory:`` Enter the path of a directory that is the root of the main storage area of the LOCKSS system. If you are used to the classic LOCKSS daemon (1.x), this would be the equivalent of :file:`/cache0`.
 
-15. ``Use additional directories for content storage?:`` If you want to use more than one filesystem to store preserved content answer :kbd:`Y`.
+14. ``Service logs directory:`` Enter the path of a directory that is the root of the storage area for LOCKSS-related log files (historically :file:`/var/log/lockss`).
 
-   1. ``Enter path to additional content storage directory <n> (q to quit):`` If you entered :kbd:`Y` to ``Use additional directories`` you will be prompted repeatedly for those paths; enter them one at a time, then enter :kbd:`q` when done.
+15. ``Temporary storage directory:`` not actively used in LOCKSS 2.0-alpha2; ignore.
 
-16. ``Service logs directory:`` Defaults to the content data storage directory; enter a different path if you want to put the logs elsewhere. In the classic LOCKSS system this was :file:`/var/log/lockss`, but now there will be a set of subdirectories, one for each component service.
+16. ``User name for web UI administration:`` Enter the username for an administrative user in the LOCKSS system’s Web user interfaces.
 
-17. ``Temporary storage directory:`` Defaults to the content data storage directory. If that directory is remote (e.g. NFS), performance can be improved by supplying a local disk directory here. Do not use a RAM-based ``tmpfs``; in some circumstances a substantial amount of temporary space (tens of GB) may be needed.
+17. ``Password for web UI administration user <uiuser>:`` Enter the password for the given administrative user in the LOCKSS system’s Web user interfaces [#footnote1]_.
 
-18. ``User name for web UI administration:`` Enter a username for the primary administrative user in the LOCKSS system's Web user interfaces.
+18. ``Password for web UI administration user <uiuser> (again):`` Re-enter the password for the given administrative user in the LOCKSS system’s Web user interfaces (if the two passwords do not match, the password will be asked again).
 
-19. ``Password for web UI administration user <uiuser>:`` Enter a password for the primary administrative user.
+The next set of questions will gather information about which of the LOCKSS services you will be using and how to access any service you have already configured for use:
 
-20. ``Password for web UI administration user <uiuser> (again):`` Re-enter the password for the primary administrative user (if the two passwords do not match, the password will be asked again).
+19. ``Use LOCKSS Metadata Query Service?:`` Enter :kbd:`Y` to use the included metadata service or :kbd:`N` and no metadata service will be run.
 
-21. ``Use LOCKSS Metadata Query Service?:`` Enter :kbd:`Y` if you want the metadata query service to be run, otherwise :kbd:`N`.
+20. ``Use LOCKSS Metadata Extractor Service?:`` Enter :kbd:`Y` to use the included metadata extraction service or :kbd:`N` and no metadata service will be run.
 
-22. ``Use LOCKSS Metadata Extractor Service?:`` Enter :kbd:`Y` if you want the metadata extraction service to be run, otherwise :kbd:`N`.
+21. ``Use LOCKSS PostgreSQL DB Service?``:
 
-23. ``Use LOCKSS PostgreSQL DB Service?``:
+   *  Enter :kbd:`Y` to use the embedded PostgreSQL database.
 
-   *  Enter :kbd:`Y` to use the embedded PostgreSQL database. This is recommended in most cases.
+      1. ``Password for database:`` Enter the password for the PostgreSQL database included in LOCKSS 2.0-alpha2 [#footnote1]_.
 
-      1. ``Password for PostgreSQL database:`` Enter a password for the embedded PostgreSQL database.
-
-      2. ``Password for PostgreSQL database (again):`` Re-enter the password for the PostgreSQL database (if the two passwords do not match, the password will be asked again).
+      2. ``Password for database (again):`` Re-enter the password for the PostgreSQL database (if the two passwords do not match, the password will be asked again).
 
    *  Enter :kbd:`N` if you wish to use your own PostgreSQL database. You will be queried for the details of your PostgreSQL service.
 
@@ -88,15 +84,15 @@ The questions are:
 
       5. ``Database name prefix for PostgreSQL service:`` Prefix to use for any LOCKSS databases. The default is ``Lockss`` (note the uppercase/lowercase).
 
-      6. ``Password for PostgreSQL database:`` Enter the password for your PostgreSQL database.
+      6. ``Password for PostgreSQL database:`` Enter the password for your PostgreSQL database [#footnote1]_.
 
       7. ``Password for PostgreSQL database (again):`` Re-enter the password for your PostgreSQL database (if the two passwords do not match, the password will be asked again).
 
-24. ``Use LOCKSS Solr Service?:``
+22. ``Use LOCKSS Solr Service?:``
 
-   *  Enter :kbd:`Y` to use the embedded Solr server. This is recommended in most cases.
+   *  Enter :kbd:`Y` if you wish to use the included Solr install.
 
-   *  Enter :kbd:`N` to use your own Solr server.
+   *  Enter :kbd:`N` if you wish to use your own Solr database.
 
       1. ``Fully qualified hostname (FQDN) of Solr host:`` Enter the hostname of your Solr database server (e.g. ``mysolr.myuniversity.edu``).
 
@@ -104,12 +100,14 @@ The questions are:
 
       3. ``Solr core repo name:`` Enter name of the Solr core for the LOCKSS repository. The default is ``lockss-repo``.
 
-25. ``Use LOCKSS PyWb Service?:`` Enter :kbd:`Y` to use PyWb for content replay; enter :kbd:`N` and you will be offered the option to use OpenWayback instead.
+23. ``Use LOCKSS PyWb Service?:`` Answer :kbd:`Y` to use PyWb, answer :kbd:`N` and you will be offered the option to use OpenWayback.
 
-26. ``Use LOCKSS OpenWayback Service?:`` Enter :kbd:`Y` to use OpenWayback for content replay (only if you did not opt for PyWb).
+24. ``OK to store this configuration:`` Confirm with :kbd:`Y` that the summarized configuration data is correct and that you are ready to write it to a file.
 
-   1. ``Okay to turn off authentication for read-only requests for LOCKSS Repository Service?:`` OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` to accept this, otherwise OpenWayback will not be enabled.
+You will prompted to run :file:`scripts/start-lockss` to start the configured system.
 
-27. ``OK to store this configuration:`` Enter :kbd:`Y` if the configuration values are to your liking, otherwise :kbd:`N` to make edits.
+.. rubric:: Footnotes
 
-If you enter :kbd:`Y`, some checks will be run, necessary directories will be created, and you will be prompted to run ``scripts/start-lockss`` to start the configured system.
+.. [#footnote1]
+
+   Passwords are encrypted in the Docker Secret vault. You should also keep your passwords in a safe place for yourself, as you will need them each time you run :file:`scripts/configure-lockss`. If you change your password in PostgreSQL, you will need to re-run :file:`scripts/configure-lockss` to give the new password to the system.
