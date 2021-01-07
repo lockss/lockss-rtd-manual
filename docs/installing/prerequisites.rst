@@ -27,6 +27,4 @@ Many Linux distributions have systemd and can run Docker 18.09 or better. To nam
 User
 ----
 
-The LOCKSS system runs under a system user named ``lockss`` under a group named ``lockss``, which you will need to create. **For alpha2 only, the lockss user must have sudo privileges.**
-
-To check installed prerequisites, use the script :doc:`check-sys <check-sys>`, which will attempt to find and install missing elements.
+The LOCKSS system runs under a system user named ``lockss`` under a group named ``lockss``, which you will need to create.

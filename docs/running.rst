@@ -4,24 +4,8 @@ Running the LOCKSS System
 
 After :doc:`configuring` and anytime after updating the LOCKSS Installer to a new version and stopping your LOCKSS stack:
 
-*  Starting the LOCKSS system
+*  Run :file:`scripts/generate-lockss`. This script takes your configuration data and turns into into a set of configuration files containing the right values.
 
-   Run :file:`scripts/start-lockss`: This script will calls in turn:
+*  Run :file:`scripts/assemble-lockss`. This script puts the configuration files and puts them in the right places, and ensures that all storage volumes are ready for use (creating them if necessary).
 
-   *  :file:`scripts/generate-lockss`. This script takes your configuration data and turns into into a set of configuration files containing the right values.
-
-   *  :file:`scripts/assemble-lockss`. This script puts the configuration files and puts them in the right places, and ensures that all storage volumes are ready for use (creating them if necessary).
-
-   * :file:`scripts/deploy-lockss`. This script deploys your LOCKSS stack by invoking Docker.
-
-*  Shutting down the LOCKSS system
-
-   ``scripts/shutdown-lockss``
-
-*  To restart a running or shut down LOCKSS 2.0-alpha2 cluster:
-
-   ``scripts/restart-lockss``
-
-*  To remove all configurations, volumes and networks installed by LOCKSS from Docker.
-
-   Run :file:`scripts/uninstall-lockss`: Remove all lockss elements from docker. This will not remove files from the persistent store.
+*  Run :file:`scripts/deploy-lockss`. This script deploys your LOCKSS stack by invoking Docker.

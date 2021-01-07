@@ -220,59 +220,23 @@ Run the `Local-Persist installation script <https://github.com/MatchbookLab/loca
 
    curl -fsSL https://raw.githubusercontent.com/MatchbookLab/local-persist/master/scripts/install.sh | sudo bash
 
-If you need to use Upstart instead of Systemd:
-
-.. code-block:: shell
-
-   curl -fsSL https://raw.githubusercontent.com/MatchbookLab/local-persist/master/scripts/install.sh | sudo bash -s -- --upstart
+If you prefer, you can follow the `Local-Persist manual installation instructions <https://github.com/MatchbookLab/local-persist#manual-way>`_.
 
 Verify that Local-Persist is running and enabled at startup:
 
-.. code-block:: shell
+*  ``sudo systemctl is-active docker-volume-local-persist`` should say ``active``
+*  ``sudo systemctl is-enabled docker-volume-local-persist`` should say ``enabled``
 
-   sudo systemctl is-active docker-volume-local-persist
+Also verify that Local-Persist is registered with Docker:
 
-should say ``active``; and
-
-.. code-block:: shell
-
-   sudo systemctl is-enabled docker-volume-local-persist
-
-should say ``enabled``.
-
-Finally verify that Local-Persist is ready for use by creating a temporary volume. To create a volume named ``foo`` which stores files in the directory :file:`/tmp/foo`:
-
-.. code-block:: shell
-
-   docker volume create --name=foo -d local-persist -o mountpoint=/tmp/foo
-
-   docker volume inspect foo
-
-The output should look something like this:
+*  ``sudo -u lockss docker info`` should have a ``Plugins`` section with lists of volume, network and log plugins. The ``Volume`` list under the ``Plugins`` section should contain ``local-persist``. Here is an excerpt of ``docker info`` output showing that Local-Persist is correctly registered as a Docker volume plugin:
 
 .. code-block:: text
 
-   [
-       {
-           "CreatedAt": "0001-01-01T00:00:00Z",
-           "Driver": "local-persist",
-           "Labels": {},
-           "Mountpoint": "/tmp/foo",
-           "Name": "foo",
-           "Options": {
-               "mountpoint": "/tmp/foo"
-           },
-           "Scope": "local"
-       }
-   ]
-
-Once you verify the mountpoint, you can delete it:
-
-.. code-block:: shell
-
-   docker volume rm foo
-
-   rm -rf /tmp/foo
+   Plugins:
+    Volume: local local-persist
+    Network: bridge host macvlan null overlay
+    Log: awslogs fluentd gcplogs gelf journald json-file local logentries splunk syslog
 
 --------------------
 Reconfiguring Docker

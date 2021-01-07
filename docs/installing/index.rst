@@ -9,6 +9,6 @@ This section describes how to install the LOCKSS system.
 
    prerequisites
    docker
+   pystache
    git
    lockss-installer
-   check-sys

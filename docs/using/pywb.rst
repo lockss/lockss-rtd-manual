@@ -6,7 +6,7 @@ Replaying Web Content with Pywb
 Accessing the Pywb User Interface
 ---------------------------------
 
-Given that your primary hostname is samp:`{<HOST>}`, you can use your browser to connect to the Pywb user interface (UI) at :samp:`http://{<HOST>}:8080`.
+Given that your primary hostname is samp:`{<HOST>}`, you can use your browser to connect to the Pywb user interface (UI) at :samp:`http://{<HOST>}:24681`.
 
 ---------------
 Replaying a URL

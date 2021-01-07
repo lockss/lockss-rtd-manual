@@ -13,4 +13,3 @@ This section describes how to use the LOCKSS system.
    poller
    crawler
    pywb
-   openwayback

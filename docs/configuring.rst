@@ -10,9 +10,7 @@ After :doc:`installing/index` and :doc:`installing/lockss-installer`, configure 
 
 (If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of ``hostconfig``.)
 
-When run the first time the questions asked by the script often come with a suggested value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`. Any subsequent runs will use the previous values ad the suggested value, review and hit :kbd:`Enter` to leave unchanged.
-
-Questions include:
+The questions asked by the script often come with a suggested value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit Enter. Questions include:
 
 1. ``Fully qualified hostname (FQDN) of this machine:`` Enter the machine's hostname (e.g. ``locksstest.myuniversity.edu``).
 
@@ -54,60 +52,14 @@ Questions include:
 
 16. ``User name for web UI administration:`` Enter the username for an administrative user in the LOCKSS system’s Web user interfaces.
 
-17. ``Password for web UI administration user <uiuser>:`` Enter the password for the given administrative user in the LOCKSS system’s Web user interfaces [#footnote1]_.
+17. ``Password for web UI administration user <uiuser>:`` Enter the password for the given administrative user in the LOCKSS system’s Web user interfaces.
 
 18. ``Password for web UI administration user <uiuser> (again):`` Re-enter the password for the given administrative user in the LOCKSS system’s Web user interfaces (if the two passwords do not match, the password will be asked again).
 
-The next set of questions will gather information about which of the LOCKSS services you will be using and how to access any service you have already configured for use:
+19. ``Password for database:`` Enter the password for the embedded Postgres database included in LOCKSS 2.0-alpha. *Future versions will allow you to use an existing Postgres database and enter credentials accordingly.*
 
-19. ``Use LOCKSS Metadata Query Service?:`` Enter :kbd:`Y` to use the included metadata service or :kbd:`N` and no metadata service will be run.
+20. ``Password for database (again):`` Re-enter the password for the embedded Postgres database (if the two passwords do not match, the password will be asked again).
 
-20. ``Use LOCKSS Metadata Extractor Service?:`` Enter :kbd:`Y` to use the included metadata extraction service or :kbd:`N` and no metadata service will be run.
+21. ``OK to store this configuration:`` confirm with :kbd:`Y` that the summarized configuration data is correct and that you are ready to write it to a file.
 
-21. ``Use LOCKSS PostgreSQL DB Service?``:
-
-   *  Enter :kbd:`Y` to use the embedded PostgreSQL database.
-
-      1. ``Password for database:`` Enter the password for the PostgreSQL database included in LOCKSS 2.0-alpha2 [#footnote1]_.
-
-      2. ``Password for database (again):`` Re-enter the password for the PostgreSQL database (if the two passwords do not match, the password will be asked again).
-
-   *  Enter :kbd:`N` if you wish to use your own PostgreSQL database. You will be queried for the details of your PostgreSQL service.
-
-      1. ``Fully qualified hostname (FQDN) of PostgreSQL host:`` Enter the hostname of your PostgreSQL database (e.g. ``mypgsql.myuniversity.edu``).
-
-      2. ``Port used by PostgreSQL host:`` Enter the port where your running PostgreSQL database can be reached.
-
-      3. ``Login name for PostgreSQL service:`` Enter the user name for your PostgreSQL database. The default is ``LOCKSS``.
-
-      4. ``Schema for PostgreSQL service:`` Enter the schema name to be used by the LOCKSS system. The default is ``LOCKSS``.
-
-      5. ``Database name prefix for PostgreSQL service:`` Prefix to use for any LOCKSS databases. The default is ``Lockss`` (note the uppercase/lowercase).
-
-      6. ``Password for PostgreSQL database:`` Enter the password for your PostgreSQL database [#footnote1]_.
-
-      7. ``Password for PostgreSQL database (again):`` Re-enter the password for your PostgreSQL database (if the two passwords do not match, the password will be asked again).
-
-22. ``Use LOCKSS Solr Service?:``
-
-   *  Enter :kbd:`Y` if you wish to use the included Solr install.
-
-   *  Enter :kbd:`N` if you wish to use your own Solr database.
-
-      1. ``Fully qualified hostname (FQDN) of Solr host:`` Enter the hostname of your Solr database server (e.g. ``mysolr.myuniversity.edu``).
-
-      2. ``Port used by Solr host:`` Enter the port where your running Solr database server can be reached.
-
-      3. ``Solr core repo name:`` Enter name of the Solr core for the LOCKSS repository. The default is ``lockss-repo``.
-
-23. ``Use LOCKSS PyWb Service?:`` Answer :kbd:`Y` to use PyWb, answer :kbd:`N` and you will be offered the option to use OpenWayback.
-
-24. ``OK to store this configuration:`` Confirm with :kbd:`Y` that the summarized configuration data is correct and that you are ready to write it to a file.
-
-You will prompted to run :file:`scripts/start-lockss` to start the configured system.
-
-.. rubric:: Footnotes
-
-.. [#footnote1]
-
-   Passwords are encrypted in the Docker Secret vault. You should also keep your passwords in a safe place for yourself, as you will need them each time you run :file:`scripts/configure-lockss`. If you change your password in PostgreSQL, you will need to re-run :file:`scripts/configure-lockss` to give the new password to the system.
+If prompted to generate files, accept (or run :file:`scripts/generate-lockss` immediately after).

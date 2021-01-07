@@ -6,7 +6,7 @@ LOCKSS System Manual
 
    This older version of the LOCKSS System Manual is kept for information purposes. See the `current version of the LOCKSS System Manual </projects/manual/>`_.
 
-**Welcome to the LOCKSS 2.0-alpha2 System Manual.**
+**Welcome to the LOCKSS 2.0-alpha1 System Manual.**
 
 Use the popup at the bottom of the menu to navigate to other versions and download offline copies of the manual.
 
@@ -16,7 +16,6 @@ Use the popup at the bottom of the menu to navigate to other versions and downlo
    :numbered:
 
    installing/index
-   upgrading
    configuring
    running
    using/index
