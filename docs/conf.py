@@ -21,7 +21,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'LOCKSS System Manual'
-copyright = '2000-2021, LOCKSS Program'
+copyright = '2000-2020, LOCKSS Program'
 author = 'LOCKSS Program'
 
 
