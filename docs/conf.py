@@ -33,7 +33,8 @@ author = 'LOCKSS Program'
 extensions = [
     # See https://github.com/readthedocs/sphinx_rtd_theme
     'sphinx_rtd_theme',
-    'sphinx.ext.intersphinx'
+    'sphinx.ext.intersphinx',
+    'sphinx_tabs.tabs',
 ]
 
 intersphinx_mapping = {
@@ -79,4 +80,7 @@ html_theme_options = {
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-collapse_navigation
     'collapse_navigation': False,
 }
+
+# See https://sphinx-tabs.readthedocs.io/
+sphinx_tabs_disable_tab_closing = True
 
