@@ -2,6 +2,10 @@
 LOCKSS System Manual
 ====================
 
+.. warning::
+
+   This version of the documentation is a work in progress, for a future stable release. See the `latest stable version </projects/manual/>`_.
+
 **Welcome to the LOCKSS System Manual.**
 
 Use the popup at the bottom of the menu to navigate to other versions and download offline copies of the manual.
