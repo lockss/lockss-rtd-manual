@@ -79,10 +79,10 @@ Frequently Asked Questions
 --------------------------
 
 I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha2?
-   The LOCKSS 2.0-alpha2 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (version 1.74.7) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha2 release on a test machine and `providing us with your feedback <Contact Us>`_.
+   The LOCKSS 2.0-alpha2 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (version 1.74.7) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha2 release on a test machine and :ref:`providing us with your feedback <Contact Us>`_.
 
 I have a LOCKSS system running 2.0-alpha1. Can I upgrade to LOCKSS 2.0-alpha2?
-   Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha1 and start from scratch, but there is an `upgrade path <Upgrade>`_ from LOCKSS 2.0-alpha1.
+   Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha1 and start from scratch, but there is an :ref:`upgrade path <Upgrade>`_ from LOCKSS 2.0-alpha1.
 
 Can I use my own PostgreSQL database?
    Yes, in the LOCKSS 2.0-alpha2 system you can run the included PostgreSQL database, or configure it to use your local or institutional PostgreSQL database.
@@ -94,7 +94,7 @@ Can I replay Web content with my own Pywb instance?
    Yes, you can configure your own Pywb instance to connect directly to the LOCKSS Repository Service, or you can use the included Pywb instance, or you might choose not to run Pywb at all.
 
 Can I replay Web content with my own OpenWayback instance?
-   The LOCKSS 2.0-alpha2 system does not run an embedded OpenWayback instance yet, but it is possible to configure your own OpenWayback instance to connect directly to the LOCKSS Repository Service. `Contact us <Contact Us>`_ for instructions.
+   The LOCKSS 2.0-alpha2 system does not run an embedded OpenWayback instance yet, but it is possible to configure your own OpenWayback instance to connect directly to the LOCKSS Repository Service. :ref:`Contact us <Contact Us>`_ for instructions.
 
 ----
 
