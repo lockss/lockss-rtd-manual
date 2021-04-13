@@ -2,9 +2,9 @@
    :alt: LOCKSS 2.0-alpha2 logo
    :align: right
 
-====================
-LOCKSS System Manual
-====================
+===============================
+LOCKSS 2.0-alpha2 System Manual
+===============================
 
 *Released: 2020-02-06. Last modified: 2021-04-12.*
 
@@ -103,7 +103,7 @@ Can I replay Web content with my own OpenWayback instance?
 .. [#fn1] This dependency on Java is temporary for 2.0-alpha2. It is necessary to run the Solr upgrader tool. In 2.0-alpha3, the process will be packaged in such a way that it does not depend on Java on the host machine.
 
 .. toctree::
-   :caption: LOCKSS System Manual
+   :caption: LOCKSS 2.0-alpha2 System Manual
    :maxdepth: 1
    :hidden:
    :numbered:
