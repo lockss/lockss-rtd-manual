@@ -4,7 +4,7 @@ Installing Git
 
 `Git <https://git-scm.com/>`_ is a version control system, used to interact with code repositories.
 
-The LOCKSS Installer is available from `GitHub <https://github.com>`_, and you will need a Git client to download it.
+The `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ is available from `GitHub <https://github.com>`_, and you will need a Git client to download it.
 
 ----------------
 Checking for Git
@@ -20,9 +20,9 @@ If the output is a version number, for example:
 
 .. code-block:: text
 
-   git version 2.28.0
+   git version 2.31.1
 
-then Git is already installed and you do not need to take further action.
+then Git is installed correctly and you do not need to take further action.
 
 If you see an error message similar to the following:
 
@@ -36,69 +36,46 @@ then you need to install Git.
 Installing Git
 --------------
 
-On many flavors of Linux, you can install Git with the built-in package manager:
+On many flavors of Linux, you can install Git with a built-in package manager (Apt, Dnf, Yum, Zypper, etc.).
 
-*  CentOS 7: see :ref:`git-yum`
-*  CentOS 8: see :ref:`git-dnf`
-*  Debian: see :ref:`git-apt`
-*  Linux Mint: see :ref:`git-apt`
-*  OpenSUSE: see :ref:`git-zypper`
-*  RHEL 7: see :ref:`git-yum`
-*  RHEL 8: see :ref:`git-dnf`
-*  Ubuntu: see :ref:`git-apt`
+.. tabs::
 
-.. _git-apt:
+   .. group-tab:: CentOS
 
-Installing Git with Apt
-=======================
+      .. tabs::
 
-Apt is the package manager on **Debian**, **Linux Mint** and **Ubuntu**.
+         .. group-tab:: CentOS 7
 
-Use these Apt commands to install Git:
+            .. include:: git-yum.rst
 
-.. code-block:: shell
+         .. group-tab:: CentOS 8
 
-   sudo apt update
+            .. include:: git-dnf.rst
 
-   sudo apt install git
+   .. group-tab:: Debian
 
-.. _git-dnf:
+      .. include:: git-apt.rst
 
-Installing Git with Dnf
-=======================
+   .. group-tab:: Linux Mint
 
-Dnf is the package manager on **CentOS 8** and **RHEL 8**.
+      .. include:: git-apt.rst
 
-Use this Dnf command to install Git:
+   .. group-tab:: OpenSUSE
 
-.. code-block:: shell
+      .. include:: git-zypper.rst
 
-   sudo dnf install git
+   .. group-tab:: RHEL
 
-.. _git-yum:
+      .. tabs::
 
-Installing Git with Yum
-=======================
+         .. group-tab:: RHEL 7
 
-Yum is the package manager on **CentOS 7** and **RHEL 7**.
+            .. include:: git-yum.rst
 
-Use this Yum commands to install Git:
+         .. group-tab:: RHEL 8
 
-.. code-block:: shell
+            .. include:: git-dnf.rst
 
-   sudo yum install git
+   .. group-tab:: Ubuntu
 
-.. _git-zypper:
-
-Installing Git with Zypper
-==========================
-
-Zypper is the package manager on **OpenSUSE**.
-
-Use these Zypper commands to install Git:
-
-.. code-block:: shell
-
-   sudo zypper refresh
-
-   sudo zypper install git
+      .. include:: git-apt.rst
