@@ -2,9 +2,9 @@
    :alt: LOCKSS 2.0-alpha1 logo
    :align: right
 
-====================
-LOCKSS System Manual
-====================
+===============================
+LOCKSS 2.0-alpha1 System Manual
+===============================
 
 *Released: 2019-05-13. Last modified: 2021-04-12.*
 
@@ -71,7 +71,7 @@ Can I replay Web content with my own OpenWayback instance?
    The LOCKSS 2.0-alpha1 system does not run an embedded OpenWayback instance, but it is possible to configure your own OpenWayback instance to connect directly to the LOCKSS Repository Service. :ref:`Contact us <Contact Us>` for instructions. (A future release will enable you to run an embedded OpenWayback instance if you choose.)
 
 .. toctree::
-   :caption: LOCKSS System Manual
+   :caption: LOCKSS 2.0-alpha1 System Manual
    :maxdepth: 1
    :hidden:
    :numbered:
