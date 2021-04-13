@@ -18,19 +18,7 @@ LOCKSS 2.0-alpha4 (not released) System Manual
 What's New?
 -----------
 
-*  The system's `Docker <https://www.docker.com/>`_ containers are now managed by `MicroK8s <https://microk8s.io/>`_, a lightweight `Kubernetes <https://kubernetes.io/>`_ environment by Ubuntu makers Canonical, rather than Docker Swarm.
-
-*  Design and performance improvements to the repository layer, including support for multiple disk storage volumes (in preparation for migrating existing LOCKSS boxes, many of which have multiple disk storage volumes).
-
-*  The `runcluster <https://github.com/lockss/laaws-dev-scripts/tree/master/runcluster>`_ development environment can be used to run a lightweight LOCKSS system from JAR artifacts built locally from the Git codebase or retrieved from Maven Central or Sonatype OSSRH.
-
-*  Infrastructure for building LOCKSS plugins in the LAAWS environment.
-
-*  IP filtering for REST endpoints (similar to IP filtering for the LOCKSS Web user interface).
-
-*  Pywb 2.4.2.
-
-*  Bugfixes and performance improvements throughout the system.
+*  ...
 
 -------------
 Prerequisites
@@ -40,7 +28,7 @@ In order to install and test the LOCKSS 2.0-alpha3 system, you will need:
 
 *  64-bit **Linux** host (physical or virtual) with 4 cores and 8 GB of memory.
 
-*  **MicroK8s** (a lightweight Kubernetes environment), which requires **Snap** (an application package manager).
+*  FIXME **MicroK8s** (a lightweight Kubernetes environment), which requires **Snap** (an application package manager).
 
 *  **Git** to download the `lockss-installer` project from GitHub.
 
@@ -50,7 +38,7 @@ See :doc:`introduction/prerequisites` for more details.
 Upgrade
 -------
 
-If you were running LOCKSS 2.0-alpha2, you no longer need Docker [#fn1]_ nor Java 8 installed on the host machine.
+FIXME If you were running LOCKSS 2.0-alpha2, you no longer need Docker [#fn1]_ nor Java 8 installed on the host machine.
 
 See :doc:`introduction/upgrading` for more details.
 
@@ -66,15 +54,15 @@ Versions
 
 The LOCKSS 2.0-alpha3 system consists of a configurable set of the following components:
 
-*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.0.4.0
+*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.5.0
 
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.0.10.0
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
 
-*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.0.3.0
+*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.4.0
 
-*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.0.2.0
+*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.3.0
 
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.0.2.0
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
@@ -87,6 +75,8 @@ The LOCKSS 2.0-alpha3 system consists of a configurable set of the following com
 --------------------------
 Frequently Asked Questions
 --------------------------
+
+FIXME
 
 I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha3?
    The LOCKSS 2.0-alpha3 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.74.10) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha3 release on a test machine and :ref:`providing us with your feedback <Contact Us>`_.
