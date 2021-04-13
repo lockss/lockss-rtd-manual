@@ -24,11 +24,11 @@ The questions asked by the script often come with a suggested value, displayed i
 
 5. ``LCAP V3 protocol port:`` Enter the port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use 9729.
 
-6. ``PROXY port:`` Not yet re-enabled in 2.0-alpha; ignore.
+6. ``PROXY port:`` Not yet re-enabled in 2.0-alpha1; ignore.
 
 7. ``Mail relay for this machine:`` Hostname for this machine’s outgoing mail server.
 
-9. ``Does mail relay <mailhost> need user & password``: Enter :kbd:`Y` if the outgoing mail server requires password authentication, :kbd:`N` otherwise.
+8. ``Does mail relay <mailhost> need user & password``: Enter :kbd:`Y` if the outgoing mail server requires password authentication, :kbd:`N` otherwise.
 
    1. ``User for <mailhost>:`` If you answered :kbd:`Y` to the outgoing mail server password authentication question, enter the username for the mail server.
 
