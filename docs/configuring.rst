@@ -30,7 +30,7 @@ Questions include:
 
 7. ``Mail relay for this machine:`` Hostname for this machine’s outgoing mail server.
 
-9. ``Does mail relay <mailhost> need user & password``: Enter :kbd:`Y` if the outgoing mail server requires password authentication, :kbd:`N` otherwise.
+8. ``Does mail relay <mailhost> need user & password``: Enter :kbd:`Y` if the outgoing mail server requires password authentication, :kbd:`N` otherwise.
 
    1. ``User for <mailhost>:`` If you answered :kbd:`Y` to the outgoing mail server password authentication question, enter the username for the mail server.
 
