@@ -60,7 +60,7 @@ Please contact us for questions, feedback and bug reports. Open a ticket by send
 Versions
 --------
 
-The LOCKSS 2.0-alpha2 system consists of a configurable set of the following components:
+The LOCKSS 2.0-alpha3 system consists of a configurable set of the following components:
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.0.4.0
 
@@ -88,7 +88,7 @@ I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 
    The LOCKSS 2.0-alpha3 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.74.10) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha3 release on a test machine and `providing us with your feedback <Contact Us>`_.
 
 I have a LOCKSS system running 2.0-alpha2. Can I upgrade to LOCKSS 2.0-alpha3?
-   Yes. You are welcome to wipe your testing data from LOCKSO 2.0-alpha2 and start from scratch, but there is an `upgrade path <Upgrade>`_ from LOCKSS 2.0-alpha2.
+   Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha2 and start from scratch, but there is an `upgrade path <Upgrade>`_ from LOCKSS 2.0-alpha2.
 
 Can I use my own PostgreSQL database?
    Yes, you can run the included PostgreSQL database, or configure it to use your local or institutional PostgreSQL database.
