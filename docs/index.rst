@@ -6,6 +6,8 @@
 LOCKSS System Manual
 ====================
 
+*Released: 2020-02-06. Last modified: 2021-04-12.*
+
 **Welcome to the LOCKSS 2.0-alpha2 System Manual.**
 
 Use the popup at the bottom of the menu to navigate to other versions and download offline copies of the manual.
