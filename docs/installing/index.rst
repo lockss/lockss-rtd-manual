@@ -11,7 +11,6 @@ This section describes how to install the LOCKSS system.
    firewall
    git
    lockss-installer
-   snap
-   microk8s
+   k3s
    dns
    check-sys
