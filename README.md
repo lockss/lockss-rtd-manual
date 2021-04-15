@@ -10,4 +10,4 @@ This repository contains the source for the LOCKSS System Manual project on Read
 
 *   Read The Docs is configured so that by default, the version is `latest`.
 
-*   Additionally, there is a branch called `unstable` that is meant to contain the currently unreleased version.
+*   Additionally, there is a branch called `unstable` that is meant to contain the currently unreleased version (equivalent of `develop` branch).
