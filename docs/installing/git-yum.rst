@@ -1,4 +1,4 @@
-Use this Yum command to install Git:
+To install Git, use this Yum command:
 
 .. code-block:: shell
 

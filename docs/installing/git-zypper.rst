@@ -1,4 +1,4 @@
-Use these Zypper commands to install Git:
+To install Git, use these Zypper commands:
 
 .. code-block:: shell
 

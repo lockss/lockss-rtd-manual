@@ -1,4 +1,4 @@
-Use these Apt commands to install Git:
+To install Git, use these Apt commands:
 
 .. code-block:: shell
 

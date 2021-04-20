@@ -28,7 +28,7 @@ Installing K3s
 
 .. code-block:: shell
 
-   curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable traefik --with-node-id
+   curl -sfL https://get.k3s.io | sh -s - --write-kubeconfig-mode 644 --disable traefik
 
 ----
 
