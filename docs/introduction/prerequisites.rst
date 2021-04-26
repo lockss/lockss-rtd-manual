@@ -28,6 +28,6 @@ The LOCKSS system requires a **64-bit Linux** host compatible with `K3s <https:/
 
 *  FIXME `RHEL <https://www.redhat.com/>`_
 
-*  `Ubuntu <https://ubuntu.com/>`_ 20.10.
+*  `Ubuntu <https://ubuntu.com/>`_ 21.04, 20.10.
 
 LOCKSS 2.0-alpha4 can probably be installed successfully on slightly different versions of the Linux flavors above, as well as other Linux flavors.

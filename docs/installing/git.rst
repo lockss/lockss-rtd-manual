@@ -40,6 +40,10 @@ On many flavors of Linux, you can install Git with a built-in package manager (A
 
 .. tabs::
 
+   .. group-tab:: Arch Linux
+
+      .. include:: git-pacman.rst
+
    .. group-tab:: CentOS
 
       .. tabs::
@@ -55,6 +59,10 @@ On many flavors of Linux, you can install Git with a built-in package manager (A
    .. group-tab:: Debian
 
       .. include:: git-apt.rst
+
+   .. group-tab:: Fedora
+
+      .. include:: git-dnf.rst
 
    .. group-tab:: Linux Mint
 

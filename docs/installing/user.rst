@@ -2,43 +2,67 @@
 Creating the ``lockss`` User
 ============================
 
-The LOCKSS system runs under a system user named ``lockss``, which is in a group named ``lockss``, and which is capable of using ``sudo``. The ``lockss`` user's password will be needed at various points during installation, both by explicit invocations of ``sudo``, and in some cases by ``microk8s`` commands.
+The LOCKSS system runs under a system user named ``lockss``, which is in a group named ``lockss``, and which is capable of using :program:`sudo`. *FIXME: how narrowly/broadly needed is sudo?*
 
 .. important::
 
-   See the :doc:`../introduction/security` section for more about this short-term requirement.
+   See the :doc:`../introduction/security` section for more about this short-term requirement. *FIXME: is the warning still needed?*
 
-----------------------------------------------
-Creating the User on CentOS, OpenSUSE and RHEL
-----------------------------------------------
+----------------------------
+Creating the ``lockss`` User
+----------------------------
 
-Type these commands:
+Follow the instructions for your Linux flavor:
 
-.. code-block::
+.. tabs::
 
-   sudo useradd --system --user-group --groups=wheel --create-home --shell=/bin/bash lockss
+   .. group-tab:: Arch Linux
 
-   sudo passwd lockss
+      .. include:: user-wheel.rst
 
-By default on **CentOS**, **OpenSUSE** and **RHEL**, ``sudo`` privileges and membership in the ``wheel`` group are equated. Adjust the above commands accordingly if your system has ``sudo`` configured differently.
+   .. group-tab:: CentOS
 
---------------------------------------------------
-Creating the User on Debian, Linux Mint and Ubuntu
---------------------------------------------------
+      .. include:: user-wheel.rst
 
-Type these commands:
+   .. group-tab:: Debian
 
-.. code-block::
+      .. include:: user-sudo.rst
 
-   sudo useradd --system --user-group --groups=sudo --create-home --shell=/bin/bash lockss
+   .. group-tab:: Fedora
 
-   sudo passwd lockss
+      .. include:: user-wheel.rst
 
-By default on **Debian**, **Linux Mint** and **Ubuntu**, ``sudo`` privileges and membership in the ``sudo`` group are equated. Adjust the above commands accordingly if your system has ``sudo`` configured differently.
+   .. group-tab:: Linux Mint
 
----------------------------------------
-Obtaining a shell running as ``lockss``
----------------------------------------
+      .. include:: user-sudo.rst
+
+   .. group-tab:: OpenSUSE
+
+      .. include:: user-wheel.rst
+
+   .. group-tab:: RHEL
+
+      .. include:: user-wheel.rst
+
+   .. group-tab:: Ubuntu
+
+      .. include:: user-sudo.rst
+
+-------------------------------
+Setting the ``lockss`` Password
+-------------------------------
+
+Run the following command (as ``root`` or with :program:`sudo`):
+
+.. code-block:: shell
+
+   passwd lockss
+
+You will be prompted for a password for the ``lockss`` user (twice). On some systems, :program:`passwd` displays warnings or fails if the supplied password does not meet certain complexity criteria.
+
+--------------------------------
+Switching to the ``lockss`` User
+--------------------------------
 
 All commands shown in this document except those that explicitly invoke ``sudo`` should be issued from a shell running as the ``lockss`` user. Depending on your preference, you may login as ``lockss``, or switch to the ``lockss`` user with this command:
 
