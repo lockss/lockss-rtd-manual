@@ -1,7 +1,3 @@
-.. warning::
-
-   This version of the documentation is a work in progress, for a future stable release. See the `latest stable version </projects/manual/>`_.
-
 .. image:: /images/lockss-2.0-alpha4_200.png
    :alt: LOCKSS 2.0-alpha4 logo
    :align: right
@@ -10,85 +6,95 @@
 LOCKSS 2.0-alpha4 (not released) System Manual 
 ==============================================
 
-*Released: 2021-XX-XX. Last modified: 2021-04-12.*
+.. warning::
+
+   This version of the documentation is a work in progress, for a future stable release.
+
+   .. only:: html
+
+      See the `latest stable version </projects/manual/>`_.
+
+*Released: 2021-XX-XX. Last modified: 2021-04-26.*
 
 **Welcome to the LOCKSS 2.0-alpha4 (not released) System Manual.**
 
------------
-What's New?
------------
+.. only:: html
 
-*  Containers are now orchestrated by **K3s**, a Kubernetes distribution by `Rancher <https://rancher.com/>`_, which is compatible with a variety of Linux flavors.
+   -----------
+   What's New?
+   -----------
 
-*  FIXME
+   *  Containers are now orchestrated by **K3s**, a Kubernetes distribution by `Rancher <https://rancher.com/>`_, which is compatible with a variety of Linux flavors.
 
--------------
-Prerequisites
--------------
+   *  FIXME
 
-In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
+   -------------
+   Prerequisites
+   -------------
 
-*  64-bit **Linux** host (physical or virtual) with 4 cores and 8 GB of memory.
+   In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
 
-*  **K3s** (a lightweight Kubernetes environment).
+   *  64-bit **Linux** host (physical or virtual) with 4 cores and 8 GB of memory.
 
-*  **Git** to download the `lockss-installer` project from GitHub.
+   *  **K3s** (a lightweight Kubernetes environment).
 
-See :doc:`introduction/prerequisites` for more details.
+   *  **Git** to download the `lockss-installer` project from GitHub.
 
--------
-Upgrade
--------
+   See :doc:`introduction/prerequisites` for more details.
 
-If you were running LOCKSS 2.0-alpha3, you no longer need MicroK8s or Snap. See :doc:`introduction/upgrading` for more details.
+   -------
+   Upgrade
+   -------
 
-----------
-Contact Us
-----------
+   If you were running LOCKSS 2.0-alpha3, you no longer need MicroK8s or Snap. See :doc:`introduction/upgrading` for more details.
 
-Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to ``lockss-support (at) lockss (dot) org``. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
+   ----------
+   Contact Us
+   ----------
 
---------
-Versions
---------
+   Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to ``lockss-support (at) lockss (dot) org``. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
 
-The LOCKSS 2.0-alpha4 system consists of a configurable set of the following components:
+   --------
+   Versions
+   --------
 
-*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.5.0
+   The LOCKSS 2.0-alpha4 system consists of a configurable set of the following components:
 
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
+   *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.5.0
 
-*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.4.0
+   *  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
 
-*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.3.0
+   *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.4.0
 
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
+   *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.3.0
 
-*  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
+   *  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
-*  `Apache Solr <https://lucene.apache.org/solr/>`_ version 7.2.1
+   *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
-*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2
+   *  `Apache Solr <https://lucene.apache.org/solr/>`_ version 7.2.1
 
-*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0
+   *  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2
 
---------------------------
-Frequently Asked Questions
---------------------------
+   *  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0
 
-FIXME
+   --------------------------
+   Frequently Asked Questions
+   --------------------------
 
-I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha4?
-   The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`_.
+   FIXME
 
-I have a LOCKSS system running 2.0-alpha3. Can I upgrade to LOCKSS 2.0-alpha4?
-   Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha3 and start from scratch, but there is an :ref:`upgrade path <Upgrade>`_ from LOCKSS 2.0-alpha3.
+   I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha4?
+      The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`_.
 
-Can I use my own PostgreSQL database? Can I use my own Solr database?
-   Yes, you can configure the system to use your institution's Postgres database and/or Solr database -- or you can simply let system run included ones locally.
+   I have a LOCKSS system running 2.0-alpha3. Can I upgrade to LOCKSS 2.0-alpha4?
+      Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha3 and start from scratch, but there is an :ref:`upgrade path <Upgrade>`_ from LOCKSS 2.0-alpha3.
 
-Can I replay Web content with my own Pywb instance? Can I replay Web content with my own OpenWayback instance?
-   Yes, you can configure your own Pywb instance and/or OpenWayback instance to connect directly to the LOCKSS Repository Service -- or you can let the system run included ones locally, or you can choose not to run any Web replay engine at all.
+   Can I use my own PostgreSQL database? Can I use my own Solr database?
+      Yes, you can configure the system to use your institution's Postgres database and/or Solr database -- or you can simply let system run included ones locally.
+
+   Can I replay Web content with my own Pywb instance? Can I replay Web content with my own OpenWayback instance?
+      Yes, you can configure your own Pywb instance and/or OpenWayback instance to connect directly to the LOCKSS Repository Service -- or you can let the system run included ones locally, or you can choose not to run any Web replay engine at all.
 
 .. toctree::
    :caption: LOCKSS 2.0-alpha4 System Manual
@@ -103,10 +109,12 @@ Can I replay Web content with my own Pywb instance? Can I replay Web content wit
    using/index
    appendix/index
 
-.. toctree::
-   :caption: LOCKSS Documentation Portal
-   :maxdepth: 1
-   :hidden:
+.. only:: html
 
-   Home <https://lockss.readthedocs.io/>
-   LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/>
+   .. toctree::
+      :caption: LOCKSS Documentation Portal
+      :maxdepth: 1
+      :hidden:
+
+      Home <https://lockss.readthedocs.io/>
+      LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/>
