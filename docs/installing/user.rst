@@ -2,70 +2,36 @@
 Creating the ``lockss`` User
 ============================
 
-The LOCKSS system runs under a system user named ``lockss``, which is in a group named ``lockss``, and which is capable of using :program:`sudo`. *FIXME: how narrowly/broadly needed is sudo?*
+The LOCKSS system runs under a system user named ``lockss``, which is in a system group named ``lockss``.
 
-.. important::
+-----------------------------------------------------------------
+Creating the ``lockss`` User With :program:`useradd`
+-----------------------------------------------------------------
 
-   See the :doc:`../introduction/security` section for more about this short-term requirement. *FIXME: is the warning still needed?*
-
-----------------------------
-Creating the ``lockss`` User
-----------------------------
-
-Follow the instructions for your Linux flavor:
-
-.. tabs::
-
-   .. group-tab:: Arch Linux
-
-      .. include:: user-wheel.rst
-
-   .. group-tab:: CentOS
-
-      .. include:: user-wheel.rst
-
-   .. group-tab:: Debian
-
-      .. include:: user-sudo.rst
-
-   .. group-tab:: Fedora
-
-      .. include:: user-wheel.rst
-
-   .. group-tab:: Linux Mint
-
-      .. include:: user-sudo.rst
-
-   .. group-tab:: OpenSUSE
-
-      .. include:: user-wheel.rst
-
-   .. group-tab:: RHEL
-
-      .. include:: user-wheel.rst
-
-   .. group-tab:: Ubuntu
-
-      .. include:: user-sudo.rst
-
--------------------------------
-Setting the ``lockss`` Password
--------------------------------
-
-Run the following command (as ``root`` or with :program:`sudo`):
+To create the ``lockss`` user and group, run this :program:`useradd` command (as ``root`` or with :program:`sudo`):
 
 .. code-block:: shell
 
-   passwd lockss
+   useradd --system --user-group --create-home --shell=/bin/false lockss
 
-You will be prompted for a password for the ``lockss`` user (twice). On some systems, :program:`passwd` displays warnings or fails if the supplied password does not meet certain complexity criteria.
+---------------------------------------
+Running Commands as the ``lockss`` User
+---------------------------------------
 
---------------------------------
-Switching to the ``lockss`` User
---------------------------------
+.. important::
 
-All commands shown in this document except those that explicitly invoke ``sudo`` should be issued from a shell running as the ``lockss`` user. Depending on your preference, you may login as ``lockss``, or switch to the ``lockss`` user with this command:
+   Unless otherwise noted, commands shown in this manual should be issued as the ``lockss`` user.
 
-.. code-block::
+If are are a user with :program:`sudo` privileges:
 
-   sudo -i -u lockss
+*  Start a Bash shell session as the ``lockss`` user by typing :samp:`sudo -u lockss /bin/bash`. Use the shell session as long as needed, then exit by typing :samp:`exit`.
+
+*  Run a single command as the ``lockss`` user by typing :samp:`sudo -u lockss {/path/to/somecommand --with arguments}`.
+
+If you are the ``root`` user:
+
+*  Some systems with :program:`sudo` installed are configured so that ``root`` can use :program:`sudo` without a password, in which case you can use the options above.
+
+*  Start a Bash shell session as the ``lockss`` user by typing :samp:`su -s /bin/bash lockss`. Use the shell session as long as needed, then exit by typing :samp:`exit`.
+
+*  Run a single command as the ``lockss`` user by typing :samp:`sudo -s /bin/bash -c '{/path/to/somecommand --with arguments}' lockss`. Note the quotation marks for the :samp:`-c` argument.

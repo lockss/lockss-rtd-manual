@@ -3,7 +3,7 @@
    :align: right
 
 ==============================================
-LOCKSS 2.0-alpha4 (not released) System Manual 
+LOCKSS 2.0-alpha4 (not released) System Manual
 ==============================================
 
 .. warning::
@@ -24,7 +24,7 @@ LOCKSS 2.0-alpha4 (not released) System Manual
    What's New?
    -----------
 
-   *  Containers are now orchestrated by **K3s**, a Kubernetes distribution by `Rancher <https://rancher.com/>`_, which is compatible with a variety of Linux flavors.
+   *  Containers are now orchestrated by **K3s**, a lightweight Kubernetes distribution by `Rancher <https://rancher.com/>`_, which is compatible with most Linux flavors.
 
    *  FIXME
 
@@ -78,17 +78,17 @@ LOCKSS 2.0-alpha4 (not released) System Manual
 
    *  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0
 
-   --------------------------
-   Frequently Asked Questions
-   --------------------------
+   ---------------------
+   Questions and Answers
+   ---------------------
 
    FIXME
 
    I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha4?
-      The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`_.
+      The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
 
    I have a LOCKSS system running 2.0-alpha3. Can I upgrade to LOCKSS 2.0-alpha4?
-      Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha3 and start from scratch, but there is an :ref:`upgrade path <Upgrade>`_ from LOCKSS 2.0-alpha3.
+      Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha3 and start from scratch, but there is an :ref:`upgrade path <Upgrade>` from LOCKSS 2.0-alpha3.
 
    Can I use my own PostgreSQL database? Can I use my own Solr database?
       Yes, you can configure the system to use your institution's Postgres database and/or Solr database -- or you can simply let system run included ones locally.
@@ -98,7 +98,7 @@ LOCKSS 2.0-alpha4 (not released) System Manual
 
 .. toctree::
    :caption: LOCKSS 2.0-alpha4 System Manual
-   :maxdepth: 1
+   :maxdepth: 4
    :hidden:
    :numbered:
 

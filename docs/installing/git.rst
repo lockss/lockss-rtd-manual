@@ -32,11 +32,11 @@ If you see an error message similar to the following:
 
 then you need to install Git.
 
---------------
-Installing Git
---------------
+-------------------------------------
+Installing Git With a Package Manager
+-------------------------------------
 
-On many flavors of Linux, you can install Git with a built-in package manager (Apt, Dnf, Yum, Zypper, etc.).
+On many flavors of Linux, you can install Git with a built-in package manager (Apt, Dnf, Pacman, Yum, Zypper, etc.).
 
 .. tabs::
 

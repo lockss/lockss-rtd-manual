@@ -4,4 +4,4 @@ To install Git, use these Zypper commands:
 
    sudo zypper refresh
 
-   sudo zypper install git
+   sudo zypper --non-interactive install git

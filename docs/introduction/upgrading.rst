@@ -2,7 +2,9 @@
 Upgrading From LOCKSS 2.0-alpha3
 ================================
 
-If you have been using LOCKSS 2.0-alpha3 (or an earlier version), we thank you for helping us bring LOCKSS 2.0 closer to fruition through your testing and feedback.
+If you are installing LOCKSS 2.x for the first time, proceed to :doc:`/installing/index`.
+
+If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank you for helping us bring LOCKSS 2.0 closer to fruition through your testing and feedback.
 
 Although there is an upgrade path from LOCKSS 2.0-alpha3, LOCKSS 2.0-alpha4 is organized differently than prior alpha releases, and we recommend installing LOCKSS 2.0-alpha4 from scratch when possible.
 
