@@ -6,104 +6,116 @@ If you are installing LOCKSS 2.x for the first time, proceed to :doc:`/installin
 
 If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank you for helping us bring LOCKSS 2.0 closer to fruition through your testing and feedback.
 
-Although there is an upgrade path from LOCKSS 2.0-alpha3, LOCKSS 2.0-alpha4 is organized differently than prior alpha releases, and we recommend installing LOCKSS 2.0-alpha4 from scratch when possible.
-
-------------------------------
-Stopping the 2.0-alpha3 System
-------------------------------
-
-If your LOCKSS 2.0-alpha3 system is currently running, first shut it down with this command:
-
-.. code-block:: shell
-
-   scripts/shutdown-lockss
-
-*FIXME scripts/uninstall-lockss*
-
 -----------------------------
 Updating the LOCKSS Installer
 -----------------------------
 
-On the command line, in the ``lockss-installer`` directory, type:
+In the ``lockss`` user's ``lockss-installer`` directory, run these commands:
 
 .. code-block::
 
-   git checkout master
+   git switch master
 
    git pull
 
 to update to the latest version of ``lockss-installer`` from GitHub.
 
----------------------
-Uninstalling MicroK8s
----------------------
+.. admonition:: Troubleshooting
 
-To uninstall MicroK8s, use this Snap command:
+   If ``git switch master`` fails with the error message ``git: 'switch' is not a git command. See 'git --help'.`` try ``git checkout master`` instead.
+
+------------------------------
+Uninstalling MicroK8s and Snap
+------------------------------
+
+After 2.0-alpha3, Microk8s, and therefore Snap (except on Ubuntu), are no longer needed. Run the following command:
 
 .. code-block:: shell
 
-   sudo snap remove microk8s
+   scripts/upgrades/uninstall-microk8s
 
------------------
-Uninstalling Snap
------------------
+Portions of this script require the ``lockss`` user's :program:`sudo` password. The :program:`uninstall-microk8s` script will ask you to confirm before uninstalling Snap (:program:`snapd`).
 
-To uninstall Snap, follow the suggested procedure for your operating system:
+.. caution::
+
+   **On Ubuntu, Snap is used natively by the operating system and should not be uninstalled.**
+
+------------------------
+Restoring Packet Filters
+------------------------
+
+One of the short-term requirement of 2.0-alpha3 was that frontends to :program:`iptables` like :program:`firewalld` or :program:`ufw` be disabled, to work more smoothly with MicroK8s. This is no longer necessary in most cases.
+
+Select your operating system below to see information about re-enabling packet filters:
 
 .. tabs::
 
    .. group-tab:: CentOS
 
-      .. tabs::
-
-         .. group-tab:: CentOS 7
-
-            .. include:: upgrading-yum.rst
-
-         .. group-tab:: CentOS 8
-
-            .. include:: upgrading-dnf.rst
+      .. include:: upgrading-firewalld.rst
 
    .. group-tab:: Debian
 
-      .. include:: upgrading-apt.rst
+      .. include:: upgrading-none.rst
 
    .. group-tab:: Linux Mint
 
-      .. include:: upgrading-apt.rst
+      .. include:: upgrading-none.rst
 
    .. group-tab:: OpenSUSE
 
-      .. include:: upgrading-zypper.rst
+      .. include:: upgrading-firewalld.rst
 
    .. group-tab:: RHEL
 
-      .. tabs::
-
-         .. group-tab:: RHEL 7
-
-            .. include:: upgrading-yum.rst
-
-         .. group-tab:: RHEL 8
-
-            .. include:: upgrading-dnf.rst
+      .. include:: upgrading-firewalld.rst
 
    .. group-tab:: Ubuntu
 
-      In recent versions of Ubuntu, Snap is the native way many applications are installed and run, so **uninstalling Snap is not advised**.
+      .. include:: upgrading-ufw.rst
 
--------------------------
-Modifying the Environment
--------------------------
+----------------------------------------------------
+Revoking the Extra Privileges of the ``lockss`` User
+----------------------------------------------------
 
-FIXME
+Another short-term requirement of 2.0-alpha3 was that the ``lockss`` user have a login password set and be allowed access to :program:`sudo`. This is also no longer needed. It is recommended you revoke these extra privileges for better security.
 
-In order for LOCKSS 2.0-alpha3 to work properly, you will need to disable frontends to ``iptables`` like ``firewalld`` or ``ufw``, and configure MicroK8s to use DNS in a way that avoids loopback addresses. See :doc:`../installing/firewall` and :doc:`../installing/dns` for details.
+To invalidate the login password of the ``lockss`` user, run this command as ``root`` or with :program:`sudo`:
+
+.. code-block:: shell
+
+   usermod --lock lockss
+
+Select your operating system below to see information about revoking the ``lockss`` user's access to :program:`sudo`:
+
+.. tabs::
+
+   .. group-tab:: CentOS
+
+      .. include:: upgrading-wheel.rst
+
+   .. group-tab:: Debian
+
+      .. include:: upgrading-sudo.rst
+
+   .. group-tab:: Linux Mint
+
+      .. include:: upgrading-sudo.rst
+
+   .. group-tab:: OpenSUSE
+
+      .. include:: upgrading-wheel.rst
+
+   .. group-tab:: RHEL
+
+      .. include:: upgrading-wheel.rst
+
+   .. group-tab:: Ubuntu
+
+      .. include:: upgrading-sudo.rst
 
 ------------------------
 Reconfiguring the System
 ------------------------
 
-FIXME
-
-Upon successful completion, you will prompted to run :doc:`scripts/configure-lockss <../configuring>`. **Be advised that the configuration process will prompt you for the PostgreSQL database password.**
+Finally, you need to reconfigure your LOCKSS system by running the :program:`configure-lockss` script again. Proceed to :doc:`/configuring` for details.
