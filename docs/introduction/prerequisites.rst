@@ -28,7 +28,9 @@ Flavors of Linux we have successfully tested include:
 
 *  `OpenSUSE <https://www.opensuse.org/>`_ Leap 15.2.
 
-*  FIXME `RHEL <https://www.redhat.com/>`_
+*  `Oracle Linux <https://www.oracle.com/linux/>`_ 8.3.
+
+*  `RHEL <https://www.redhat.com/>`_ 8.3.
 
 *  `Ubuntu <https://ubuntu.com/>`_ 21.04, 20.10.
 

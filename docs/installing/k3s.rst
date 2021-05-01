@@ -22,6 +22,10 @@ Some operating systems require preliminary steps [#fn1]_ . If your operating sys
 
       .. include:: k3s-rhel.rst
 
+   .. group-tab:: Oracle Linux
+
+      .. include:: k3s-rhel.rst
+
    .. group-tab:: RHEL
 
       .. include:: k3s-rhel.rst
