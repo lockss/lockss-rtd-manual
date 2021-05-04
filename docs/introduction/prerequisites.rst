@@ -16,6 +16,8 @@ The LOCKSS system requires a **64-bit Linux** host compatible with `K3s <https:/
 
 Flavors of Linux we have successfully tested include:
 
+*  `AlmaLinux <https://almalinux.org/>`_ 8.3.
+
 *  `Arch Linux <https://archlinux.org/>`_ (rolling release).
 
 *  `CentOS <https://www.centos.org/>`_ 7.9.
@@ -31,6 +33,8 @@ Flavors of Linux we have successfully tested include:
 *  `Oracle Linux <https://www.oracle.com/linux/>`_ 8.3.
 
 *  `RHEL <https://www.redhat.com/>`_ 8.3.
+
+*  `Rocky Linux <https://rockylinux.org/>`_ 8.3 RC1.
 
 *  `Ubuntu <https://ubuntu.com/>`_ 21.04, 20.10.
 
