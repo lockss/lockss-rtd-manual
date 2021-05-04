@@ -40,6 +40,10 @@ On many flavors of Linux, you can install Git with a built-in package manager (A
 
 .. tabs::
 
+   .. group-tab:: AlmaLinux
+
+      .. include:: git-dnf.rst
+
    .. group-tab:: Arch Linux
 
       .. include:: git-pacman.rst
@@ -83,6 +87,10 @@ On many flavors of Linux, you can install Git with a built-in package manager (A
          .. group-tab:: RHEL 8
 
             .. include:: git-dnf.rst
+
+   .. group-tab:: Rocky Linux
+
+      .. include:: git-dnf.rst
 
    .. group-tab:: Ubuntu
 
