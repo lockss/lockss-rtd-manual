@@ -8,4 +8,3 @@ This appendix contains additional pages of information about the LOCKSS system.
    :hidden:
 
    ports
-   microk8s
