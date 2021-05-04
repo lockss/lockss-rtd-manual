@@ -2,9 +2,16 @@
 Upgrading From LOCKSS 2.0-alpha3
 ================================
 
-If you are installing LOCKSS 2.x for the first time, proceed to :doc:`/installing/index`.
+.. tip::
+
+   If you are installing LOCKSS 2.x for the first time, skip this chapter and proceed to :doc:`/installing/index`.
 
 If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank you for helping us bring LOCKSS 2.0 closer to fruition through your testing and feedback.
+
+Please follow the following instructions to upgrade your system from 2.0-alpha3 to 2.0-alpha4.
+
+.. contents:: Upgrade Overview
+   :local:
 
 -------------------------
 Purging LOCKSS 2.0-alpha3
@@ -60,13 +67,13 @@ Follow the following steps:
 
 1. Log out of the ``lockss`` user account. You can do this by typing ``exit`` or ``logout``, or hitting :kbd:`Ctrl + D` on the keyboard.
 
-2. Log in as a user other than ``lockss`` with :program:`sudo` privileges [#fn1]_ .
+2. Log in as a user other than ``lockss``, with the ability to use :program:`sudo` to run commands as ``root`` [#fn1]_ .
 
 3. To invalidate the login password of the ``lockss`` user, run this command:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-   sudo usermod --lock lockss
+      sudo usermod --lock lockss
 
 4. To revoke the ``lockss`` user's access to :program:`sudo`, select your operating system below and follow the corresponding instructions.
 
@@ -102,7 +109,7 @@ Restoring Packet Filters
 
 Another short-term requirement of 2.0-alpha3 was that frontends to :program:`iptables` like :program:`firewalld` or :program:`ufw` be disabled, to work more smoothly with MicroK8s. This is also no longer necessary in most cases.
 
-To re-enable packet filters, select your operating system below and follow the corresponding instructions while still logged in as a user other than ``lockss`` with :program:`sudo` privileges [#fn1]_ :
+To re-enable packet filters, select your operating system below and follow the corresponding instructions while still logged in as a user other than ``lockss``, with the ability to use :program:`sudo` to run commands as ``root`` [#fn1]_ :
 
 .. tabs::
 
@@ -130,9 +137,9 @@ To re-enable packet filters, select your operating system below and follow the c
 
       .. include:: upgrading-ufw.rst
 
---------------
-Installing K3s
---------------
+----------
+Next Steps
+----------
 
 Next, you will need to install K3s, a lightweight Kubernetes environment to replace MicroK8s.
 
@@ -144,4 +151,4 @@ Then simply continue following the manual from the :doc:`/installing/k3s` sectio
 
 .. rubric:: Footnotes
 
-.. [#fn1] Alternatively, you can log in as ``root``, in which case issue all commands without the leading :program:`sudo`.
+.. [#fn1] Alternatively, you can log in as ``root``, in which case you can issue all commands without the leading :program:`sudo`.

@@ -103,6 +103,7 @@ LOCKSS 2.0-alpha4 (not released) System Manual
    :numbered:
 
    introduction/index
+   upgrading/index
    installing/index
    configuring
    running
