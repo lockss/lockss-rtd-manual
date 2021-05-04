@@ -14,7 +14,7 @@ LOCKSS 2.0-alpha4 (not released) System Manual
 
       See the `latest stable version </projects/manual/>`_.
 
-*Released: 2021-XX-XX. Last modified: 2021-04-26.*
+*Released: 2021-XX-XX. Last modified: 2021-05-03.*
 
 **Welcome to the LOCKSS 2.0-alpha4 (not released) System Manual.**
 
