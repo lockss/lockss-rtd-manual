@@ -13,3 +13,4 @@ This version, LOCKSS 2.0-alpha4, is the fourth preview release on the road to LO
    :maxdepth: 1
 
    prerequisites
+   os

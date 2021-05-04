@@ -2,48 +2,34 @@
 System Prerequisites
 ====================
 
--------
-Machine
--------
-
-The LOCKSS system runs on a **64-bit Linux host** (physical or virtual), with at least **4 cores** (8 or more preferable), at least **8 GB of memory** (16 GB or more preferable), and at least **50 GB of disk space** (100 GB or more preferable; considerably more depending on the amount of content to be preserved).
-
-----------------
-Operating System
-----------------
-
-The LOCKSS system requires a **64-bit Linux** host compatible with `K3s <https://k3s.io/>`_, a lightweight Kubernetes distribution by `Rancher <https://rancher.com/>`_. Rancher states [#f1]_ that "K3s is expected to work on most modern Linux systems", and that "Some OSs have specific requirements" (which are documented here and integrated into the :program:`lockss-installer` scripts).
-
-Flavors of Linux we have successfully tested include:
-
-*  `AlmaLinux <https://almalinux.org/>`_ 8.3.
-
-*  `Arch Linux <https://archlinux.org/>`_ (rolling release).
-
-*  `CentOS <https://www.centos.org/>`_ 7.9.
-
-*  `Debian <https://www.debian.org/>`_ 10.8.
-
-*  `Fedora <https://getfedora.org/>`_ 33.
-
-*  `Linux Mint <https://linuxmint.com/>`_ 20.0.
-
-*  `OpenSUSE <https://www.opensuse.org/>`_ Leap 15.2.
-
-*  `Oracle Linux <https://www.oracle.com/linux/>`_ 8.3.
-
-*  `RHEL <https://www.redhat.com/>`_ 8.3.
-
-*  `Rocky Linux <https://rockylinux.org/>`_ 8.3 RC1.
-
-*  `Ubuntu <https://ubuntu.com/>`_ 21.04, 20.10.
-
-LOCKSS 2.0-alpha4 can probably be installed successfully on slightly different versions of the Linux flavors above, as well as other Linux flavors.
-
+----
+Host
 ----
 
-.. rubric:: Footnotes
+The LOCKSS system runs in a **64-bit Linux** host (physical or virtual).
 
-.. [#f1]
+See the next section (:doc:`os`) for operating system choices.
 
-   Reference: https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/#operating-systems
+---
+CPU
+---
+
+The CPU requirements depend on which components of the LOCKSS system you choose to run. We recommend at least **4 CPU cores**, preferably 8.
+
+------
+Memory
+------
+
+Likewise, the memory requirements also depend on which components of the LOCKSS system you choose to run. We recommend at least **8 GB** of memory, preferably 16 GB.
+
+-------
+Storage
+-------
+
+To bring the system up, we recommend at least **50 GB** of disk space. In production, the storage requirements will vary greatly depending on the scope of the preservation project, from tens of gigabytes to hundreds of terabytes of preserved content.
+
+*FIXME talk about local/network storage*
+
+.. admonition:: What's the Minimum for Experimentation?
+
+   We have been able to install and bring up minimal LOCKSS 2.0-alpha4 systems (with no metadata services or Web replay engines, and with empty embedded Postgres and Solr databases) in Vagrant virtual machines (with Virtualbox), with 2 CPU cores and 2 GB of memory allocated. But the VMs are swapping heavily and would not support much computational load. Still, it can be a useful tool to try out the installation instructions or evaluate the system.
