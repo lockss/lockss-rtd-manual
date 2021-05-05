@@ -2,15 +2,21 @@
 Configuring the LOCKSS System
 =============================
 
-After `installing the LOCKSS system <installing>`_, configure the system with the :program:`scripts/configure-lockss` script:
+After `installing the LOCKSS system <installing>`_, configure the system with the :program:`configure-lockss` script:
 
 .. code-block:: shell
 
    scripts/configure-lockss
 
-(If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.)
+If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.
 
-When run the first time, some of the questions asked by the script will have a suggested or default value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`. Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged. Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
+Some notes about using :program:`configure-lockss`:
+
+*  When run the first time, some of the questions asked by the script will have a suggested or default value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`.
+
+*  Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged.
+
+*  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
 
 --------
 Hostname
@@ -18,7 +24,7 @@ Hostname
 
 :guilabel:`Fully qualified hostname (FQDN) of this machine`
 
-Enter the machine's hostname, for example :samp:`locksstest.myuniversity.edu`.
+Enter the machine's fully-qualified hostname (meaning with its domain name), for example :samp:`locksstest.myuniversity.edu`.
 
 ----------
 IP Address
@@ -26,7 +32,7 @@ IP Address
 
 :guilabel:`IP address of this machine`
 
-Enter the publicly routable IP address of the machine, or if it is not publicly routable but will be accessible via network address translation (NAT), its IP address on the internal network.
+If the machine is publicly routable, meaning it has an IP address that can be used to identify it over the Internet, enter the publicly routable IP address. Otherwise, if the machine is accessible via network address translation (NAT), meaning it has an IP address that is valid only on your local network but it can be reached from the Internet via a NAT router, enter the internal IP address.
 
 ---------------------------
 Network Address Translation
@@ -34,23 +40,41 @@ Network Address Translation
 
 :guilabel:`Is this machine behind NAT?`
 
-Enter :kbd:`Y` if the machine is not publicly routable but will be accessible via network address translation (NAT), or :kbd:`N` otherwise.
+Select option A **or** option B:
 
-*  :guilabel:`External IP address for NAT`
+A. If the machine is publicly routable, enter :kbd:`N`.
 
-   If you answer :kbd:`Y` to the previous question, enter the publicly routable IP address of the NAT router.
+B. If the machine is not publicly routable but will be accessible via network address translation (NAT), enter :kbd:`Y`. You will then be asked an additional configuration question:
 
---------------
-Initial Subnet
---------------
+   1. :guilabel:`External IP address for NAT`
 
-:guilabel:`Initial subnet for admin UI access`
+      Enter the publicly routable IP address of the NAT router.
 
-Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces of the system. The access list can be modified later via the UI.
+-----------------
+Initial UI Subnet
+-----------------
 
-*FIXME*
+:guilabel:`Initial subnet(s) for admin UI access`
 
-5.  ``LOCKSS subnet for container access:`` This is calculated from the MicroK8s node and should not need to be modified in a standard installation.
+Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces (UI) of the system. The access list can be modified later via the UI.
+
+----------------
+Container Subnet
+----------------
+
+1. *(Optional.)* If :program:`configure-lockss` detects a discrepancy between a previously used subnet for inter-container communication in the system and the subnet it would choose now, you may either see the warning:
+
+   :guilabel:`Container subnet has changed from <former_subnet> to <new_subnet>`
+
+   or be asked the question:
+
+   :guilabel:`Container subnet was <former_subnet>, we think it should now be <new_subnet>. Do you want to change it?`
+
+   in which case you should enter :kbd:`Y` (recommended) or :kbd:`N`.
+
+2. :guilabel:`LOCKSS subnet for inter-service access control`
+
+   Enter the subnet used for inter-container communication. We recommend accepting the proposed value by hitting :kbd:`Enter`.
 
 ---------
 LCAP Port
@@ -66,7 +90,7 @@ Proxy Port
 
 :guilabel:`Proxy port`
 
-Port for the LOCKSS content proxy. Accept the default -- it can be changed later if necessary.
+Enter the port for the LOCKSS content proxy. We recommend accepting the default :samp:`24670`; the value can be changed later if necessary.
 
 ----------
 Mail Relay
@@ -74,7 +98,7 @@ Mail Relay
 
 :guilabel:`Mail relay for this machine`
 
-Hostname of this machine's outgoing mail server.
+Hostname of this machine's outgoing mail server, for example :samp:`smtp.myuniversity.edu`.
 
 ----------------------
 Mail Relay Credentials
@@ -82,21 +106,23 @@ Mail Relay Credentials
 
 :guilabel:`Does the mail relay <mailhost> need a username and password?`
 
-Enter :kbd:`Y` if the outgoing mail server requires password authentication, :kbd:`N` otherwise.
+Select option A **or** option B:
 
-If you answer :kbd:`Y` to this question, you will be prompted for the following information:
+A. If the outgoing mail server does not require password authentication, enter :kbd:`N`.
+
+B. If the outgoing mail server requires password authentication, enter :kbd:`Y`. You will then be asked additional configuration questions:
 
    1. :guilabel:`User for <mailhost>`
 
-      Enter the username for the mail server.
+      Enter a username for the mail server.
 
    2. :guilabel:`Password for <mailuser>@<mailhost>`
 
-      Enter the password for the given username.
+      Enter the password for the username on the mail server.
 
    3. :guilabel:`Password for <mailuser>@<mailhost> (again)`
 
-   Re-enter the mail server password (if the two passwords do not match, the password will be asked again).
+      Re-enter the password for the username on the mail server. If the two passwords do not match, the password will be asked again.
 
 -------------------
 Administrator Email
@@ -112,7 +138,7 @@ Configuration URL
 
 :guilabel:`Configuration URL`
 
-Enter the URL of the LOCKSS network configuration file. If you are not running your own LOCKSS network, use :samp:`http://props.lockss.org:8001/demo/lockss.xml`, the configuration file for a demo network set up for LOCKSS 2.0 pre-release testing.
+Accept the default (:samp:`http://props.lockss.org:8001/demo/lockss.xml`) if you are not running your own LOCKSS network; otherwise, enter the URL of the LOCKSS network configuration file provided by your LOCKSS network administrator.
 
 -------------------
 Configuration Proxy
@@ -120,7 +146,7 @@ Configuration Proxy
 
 :guilabel:`Configuration proxy (host:port)`
 
-If a proxy server is required to reach the configuration server, enter its :samp:`{host}:{port}` here, otherwise leave this blank.
+If the configuration URL can be reached directly, leave this blank; otherwise, if a proxy server is required to reach the configuration URL, enter its :samp:`{host}:{port}` (for example :samp:`proxy.myuniversity.edu:8080`).
 
 ------------------
 Preservation Group
@@ -128,7 +154,7 @@ Preservation Group
 
 :guilabel:`Preservation group(s)`
 
-Enter a semicolon-separated list of preservation network identifiers. If you are not joining an existing network or running your own, enter :samp:`demo`, the network identifier for the demo network set up for LOCKSS 2.0 pre-release testing.
+Accept the default (:samp:`demo`) if you are not running your own LOCKSS network; otherwise, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator.
 
 --------------------------------
 Content Data Storage Directories
