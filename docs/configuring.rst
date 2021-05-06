@@ -273,17 +273,17 @@ If you select this option, you will be asked additional configuration questions:
 
    Enter the port where the external PostgreSQL database can be reached, for example :samp:`5432`.
 
-3. :guilabel:`Login name for PostgreSQL service`
-
-   Enter the username for the external PostgreSQL database. The username in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different username to you.
-
-4. :guilabel:`Schema for PostgreSQL service`
+3. :guilabel:`Schema for PostgreSQL service`
 
    Enter the schema name to be used by the LOCKSS system. The schema name used in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different schema name to you.
 
-5. :guilabel:`Database name prefix for PostgreSQL service`
+4. :guilabel:`Database name prefix for PostgreSQL service`
 
    Enter the prefix to use for any LOCKSS-related database names in the schema. The database name prefix in the embedded PostgreSQL databse is :samp:`Lockss` (note the uppercase/lowercase), but your database administrator may assign a different database name prefix.
+
+5. :guilabel:`Login name for PostgreSQL service`
+
+   Enter the username for the external PostgreSQL database. The username in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different username to you.
 
 6. :guilabel:`Password for PostgreSQL database`
 
