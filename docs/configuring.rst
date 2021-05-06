@@ -239,7 +239,7 @@ PostgreSQL
 | :guilabel:`its hostname and other pertinent information.`
 | :guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
 
-Select option A **or** option B:
+Select **either** option A **or** option B:
 
 A. Enter :kbd:`Y` to use the embedded PostgreSQL database (recommended in most cases). See :ref:`Embedded PostgreSQL Database`.
 
@@ -304,7 +304,7 @@ Solr
 | :guilabel:`its hostname and other pertinent information.`
 | :guilabel:`Use embedded LOCKSS Solr Service?`
 
-Select option A **or** option B:
+Select **either** option A **or** option B:
 
 A. Enter :kbd:`Y` to use the embedded Solr database (recommended in most cases). See :ref:`Embedded Solr Database`.
 
