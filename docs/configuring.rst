@@ -38,9 +38,9 @@ If the machine is publicly routable, meaning it has an IP address that can be us
 Network Address Translation
 ---------------------------
 
-:guilabel:`Is this machine behind NAT?`
+1. :guilabel:`Is this machine behind NAT?`
 
-1. If the machine is publicly routable, enter :kbd:`N`; otherwise, if the machine is not publicly routable but will be accessible via network address translation (NAT), enter :kbd:`Y`.
+   If the machine is publicly routable, enter :kbd:`N`; otherwise, if the machine is not publicly routable but will be accessible via network address translation (NAT), enter :kbd:`Y`.
 
 2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
@@ -102,9 +102,9 @@ Hostname of this machine's outgoing mail server, for example :samp:`smtp.myunive
 Mail Relay Credentials
 ----------------------
 
-:guilabel:`Does the mail relay <mailhost> need a username and password?`
+1. :guilabel:`Does the mail relay <mailhost> need a username and password?`
 
-1. If the outgoing mail server does not require password authentication, enter :kbd:`N`; otherwise, enter :kbd:`Y`.
+   If the outgoing mail server does not require password authentication, enter :kbd:`N`; otherwise, enter :kbd:`Y`.
 
 2. If you answered :kbd:`Y`, you will be asked additional configuration questions:
 
@@ -132,9 +132,9 @@ Enter the e-mail address of the person or team who will administer the LOCKSS sy
 Configuration URL
 -----------------
 
-:guilabel:`Configuration URL`
+1. :guilabel:`Configuration URL`
 
-1. Accept the default (:samp:`http://props.lockss.org:8001/demo/lockss.xml`) if you are not running your own LOCKSS network; otherwise, enter the URL of the LOCKSS network configuration file provided by your LOCKSS network administrator.
+   Accept the default (:samp:`http://props.lockss.org:8001/demo/lockss.xml`) if you are not running your own LOCKSS network; otherwise, enter the URL of the LOCKSS network configuration file provided by your LOCKSS network administrator.
 
 2. If the configuration URL begins with ``https:``, you will be asked additional configuration questions:
 
