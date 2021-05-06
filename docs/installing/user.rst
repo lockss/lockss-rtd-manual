@@ -22,7 +22,7 @@ Running Commands as the ``lockss`` User
 
    Unless otherwise noted, commands shown in this manual should be issued as the ``lockss`` user.
 
-If are are a user with :program:`sudo` privileges:
+If you are a user with :program:`sudo` privileges:
 
 *  Start a Bash shell session as the ``lockss`` user by typing :samp:`sudo -u lockss /bin/bash`. Use the shell session as long as needed, then exit by typing :samp:`exit`.
 
