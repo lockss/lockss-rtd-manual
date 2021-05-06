@@ -397,7 +397,11 @@ OpenWayback
    | :guilabel:`Using LOCKSS OpenWayback Service requires the LOCKSS Repository Service to permit insecure read request.`
    | :guilabel:`Okay to turn off authentication for read-only requests for LOCKSS Repository Service?`
 
-   OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` to accept this, otherwise you will see the warning :guilabel:`Not enabling OpenWayback Service` and OpenWayback will not be run.
+   OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` to accept this, otherwise you will see the warning:
+
+   :guilabel:`Not enabling OpenWayback Service`
+
+   and OpenWayback will not be run.
 
 ----------
 Conclusion
