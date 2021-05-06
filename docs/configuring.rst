@@ -40,15 +40,13 @@ Network Address Translation
 
 :guilabel:`Is this machine behind NAT?`
 
-Select option A **or** option B:
+1. If the machine is publicly routable, enter :kbd:`N`; otherwise, if the machine is not publicly routable but will be accessible via network address translation (NAT), enter :kbd:`Y`.
 
-A. If the machine is publicly routable, enter :kbd:`N`.
+2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
-B. If the machine is not publicly routable but will be accessible via network address translation (NAT), enter :kbd:`Y`. You will then be asked an additional configuration question:
+   :guilabel:`External IP address for NAT`
 
-   1. :guilabel:`External IP address for NAT`
-
-      Enter the publicly routable IP address of the NAT router.
+   Enter the publicly routable IP address of the NAT router.
 
 -----------------
 Initial UI Subnet
@@ -62,7 +60,7 @@ Enter a semicolon-separated list of subnets in CIDR or mask notation that should
 Container Subnet
 ----------------
 
-1. *(Optional.)* If :program:`configure-lockss` detects a discrepancy between a previously used subnet for inter-container communication in the system and the subnet it would choose now, you may either see the warning:
+1. If :program:`configure-lockss` detects a discrepancy between a previously used subnet for inter-container communication in the system and the subnet it would choose now, you may either see the warning:
 
    :guilabel:`Container subnet has changed from <former_subnet> to <new_subnet>`
 
@@ -106,11 +104,9 @@ Mail Relay Credentials
 
 :guilabel:`Does the mail relay <mailhost> need a username and password?`
 
-Select option A **or** option B:
+1. If the outgoing mail server does not require password authentication, enter :kbd:`N`; otherwise, enter :kbd:`Y`.
 
-A. If the outgoing mail server does not require password authentication, enter :kbd:`N`.
-
-B. If the outgoing mail server requires password authentication, enter :kbd:`Y`. You will then be asked additional configuration questions:
+2. If you answered :kbd:`Y`, you will be asked additional configuration questions:
 
    1. :guilabel:`User for <mailhost>`
 
@@ -138,7 +134,19 @@ Configuration URL
 
 :guilabel:`Configuration URL`
 
-Accept the default (:samp:`http://props.lockss.org:8001/demo/lockss.xml`) if you are not running your own LOCKSS network; otherwise, enter the URL of the LOCKSS network configuration file provided by your LOCKSS network administrator.
+1. Accept the default (:samp:`http://props.lockss.org:8001/demo/lockss.xml`) if you are not running your own LOCKSS network; otherwise, enter the URL of the LOCKSS network configuration file provided by your LOCKSS network administrator.
+
+2. If the configuration URL begins with ``https:``, you will be asked additional configuration questions:
+
+   1. :guilabel:`Verify configuration server authenticity?`
+
+      Enter :kbd:`Y` if FIXME; otherwise enter :kbd:`N`.
+
+   2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
+
+      :guilabel:`Server certificate keystore`
+
+      Enter FIXME
 
 -------------------
 Configuration Proxy
@@ -146,7 +154,7 @@ Configuration Proxy
 
 :guilabel:`Configuration proxy (host:port)`
 
-If the configuration URL can be reached directly, leave this blank; otherwise, if a proxy server is required to reach the configuration URL, enter its :samp:`{host}:{port}` (for example :samp:`proxy.myuniversity.edu:8080`).
+If the configuration URL can be reached directly, leave this blank; otherwise, if a proxy server is required to reach the configuration URL, enter its host and port in :samp:`{host}:{port}` format (for example :samp:`proxy.myuniversity.edu:8080`).
 
 ------------------
 Preservation Group
@@ -154,7 +162,7 @@ Preservation Group
 
 :guilabel:`Preservation group(s)`
 
-Accept the default (:samp:`demo`) if you are not running your own LOCKSS network; otherwise, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator.
+Accept the default (:samp:`demo`) if you are not running your own LOCKSS network; otherwise, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator, for example :samp:`ournetwork` or :samp:`prod;usdocspln`.
 
 --------------------------------
 Content Data Storage Directories
@@ -162,17 +170,17 @@ Content Data Storage Directories
 
 1. :guilabel:`Root path for primary content data storage directories`
 
-   Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system. This is where preserved content will be stored, along with several databases; it is the analog of :file:`/cache0` in the classic LOCKSS system.
+   Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system, where preserved content will be stored along with several databases. It is the analog of :file:`/cache0` in the classic LOCKSS system.
 
 2. :guilabel:`Use additional directories for content data storage?`
 
-   If you want to use more than one filesystem to store preserved content answer :kbd:`Y`.
+   If you want to use more than one filesystem to store preserved content, enter :kbd:`Y`; otherwise, enter :kbd:`N`.
 
-   If you answer :kbd:`Y` to this question:
+3. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
-   *  :guilabel:`Enter root path $count to additional content storage directories (q to quit)`
+   :guilabel:`Enter root path $count to additional content storage directories (q to quit)`
 
-      You will be prompted repeatedly for extra paths; enter one per line, then enter :kbd:`q` when done.
+   Enter one additional directory per line, then enter :kbd:`q` when done.
 
 -----------------------
 Service Log Directories
@@ -180,7 +188,7 @@ Service Log Directories
 
 :guilabel:`Root path for service logs directories`
 
-Defaults to the content data storage directory root. Enter a different path if you want to put the logs elsewhere. In the classic LOCKSS system this was :file:`/var/log/lockss`, but now there will be a set of subdirectories, one for each component service.
+This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
 -----------------------------
 Temporary Storage Directories
@@ -188,7 +196,15 @@ Temporary Storage Directories
 
 :guilabel:`Root path for temporary storage directories (local storage preferred)`
 
-Defaults to the content data storage directory root. If that directory is remote (e.g. NFS), performance can be improved by supplying a local disk directory here. Do not use a RAM-based ``tmpfs``; in some circumstances a substantial amount of temporary space (tens of GB) may be needed.
+This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
+
+.. tip::
+
+   If this directory is remote (e.g. NFS), performance can be improved by supplying a local directory here.
+
+.. caution::
+
+   Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. Do not use a RAM-based ``tmpfs`` volume, or a directory in a space-constrained partition.
 
 ----------------------------
 Install Script Log Directory
@@ -196,10 +212,10 @@ Install Script Log Directory
 
 :guilabel:`Directory for storing install script logs`
 
-Defaults to a directory under the content data storage directory root. Enter a directory where logging for ``lockss-installer``-related logging will be appended.
+This directory is used to store log files produced by :program:`lockss-installer` scripts. Accept the default (a directory under the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
 ------------------
-Web user interface
+Web User Interface
 ------------------
 
 1. :guilabel:`User name for web UI administration`
@@ -212,7 +228,137 @@ Web user interface
 
 3. :guilabel:`Password for web UI administration user <uiuser> (again)`
 
-   Re-enter the password for the primary administrative user (if the two passwords do not match, the password will be asked again).
+   Re-enter the password for the primary administrative user. If the two passwords do not match, the password will be asked again.
+
+----------
+PostgreSQL
+----------
+
+| :guilabel:`You may use either the embedded PostgreSQL service or an external one`
+| :guilabel:`provided by you or your institution, in which case you will be asked for`
+| :guilabel:`its hostname and other pertinent information.`
+| :guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
+
+Select option A **or** option B:
+
+A. Enter :kbd:`Y` to use the embedded PostgreSQL database (recommended in most cases). See :ref:`Embedded PostgreSQL Database`.
+
+B. Enter :kbd:`N` to use an external PostgreSQL database. See :ref:`External PostgreSQL Database`.
+
+Embedded PostgreSQL Database
+============================
+
+If you select this option, you will be asked additional configuration questions:
+
+1. :guilabel:`Password for PostgreSQL database`
+
+   Enter the password for the embedded PostgreSQL database.
+
+2. :guilabel:`Password for PostgreSQL database (again)`
+
+   Re-enter the password for the embedded PostgreSQL database. If the two passwords do not match, the password will be asked again.
+
+3. Complete the :ref:`Solr` section next.
+
+External PostgreSQL Database
+============================
+
+If you select this option, you will be asked additional configuration questions:
+
+1. :guilabel:`Fully qualified hostname (FQDN) of PostgreSQL host`
+
+   Enter the hostname of the external PostgreSQL database, for example :samp:`postgres.myuniversity.edu`.
+
+2. :guilabel:`Port used by PostgreSQL host`
+
+   Enter the port where the external PostgreSQL database can be reached, for example :samp:`5432`.
+
+3. :guilabel:`Login name for PostgreSQL service`
+
+   Enter the username for the external PostgreSQL database. The username in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different username to you.
+
+4. :guilabel:`Schema for PostgreSQL service`
+
+   Enter the schema name to be used by the LOCKSS system. The schema name used in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different schema name to you.
+
+5. :guilabel:`Database name prefix for PostgreSQL service`
+
+   Enter the prefix to use for any LOCKSS-related database names in the schema. The database name prefix in the embedded PostgreSQL databse is :samp:`Lockss` (note the uppercase/lowercase), but your database administrator may assign a different database name prefix.
+
+6. :guilabel:`Password for PostgreSQL database`
+
+   Enter the password for the username in the external PostgreSQL database.
+
+7. :guilabel:`Password for PostgreSQL database (again)`
+
+   Re-enter the password for the username in the external PostgreSQL database. If the two passwords do not match, the password will be asked again.
+
+8. Complete the :ref:`Solr` section next.
+
+----
+Solr
+----
+
+| :guilabel:`You may use either the embedded Solr service or an external one`
+| :guilabel:`provided by you or your institution, in which case you will be asked for a`
+| :guilabel:`its hostname and other pertinent information.`
+| :guilabel:`Use embedded LOCKSS Solr Service?`
+
+Select option A **or** option B:
+
+A. Enter :kbd:`Y` to use the embedded Solr database (recommended in most cases). See :ref:`Embedded Solr Database`.
+
+B. Enter :kbd:`N` to use an external Solr database. See :ref:`External Solr Database`.
+
+Embedded Solr Database
+======================
+
+If you select this option, you will be asked additional configuration questions:
+
+1. :guilabel:`User name for LOCKSS Solr access`
+
+   Enter the username for the embedded Solr database.
+
+2. :guilabel:`Password for LOCKSS Solr access`
+
+   Enter the password for the username in the embedded Solr database.
+
+3. :guilabel:`Password for LOCKSS Solr access (again)`
+
+   Re-enter the password for the username in the embedded Solr database. If the two passwords do not match, the password will be asked again.
+
+4. Complete the :ref:`Metadata Query Service` section next.
+
+External Solr Database
+======================
+
+If you select this option, you will be asked additional configuration questions:
+
+1. :guilabel:`Fully qualified hostname (FQDN) of Solr host`
+
+   Enter the hostname of the external Solr database server, for example :samp:`solr.myuniversity.edu`.
+
+2. :guilabel:`Port used by Solr host:`
+
+   Enter the port used by the database server on the Solr host, for example :samp:`8983`.
+
+3. :guilabel:`Solr core repo name:`
+
+   Enter name of the Solr core for the LOCKSS repository. The Solr core name used in the embedded Solr database is :samp:`lockss-repo`, but your database administrator may assign a different Solr core name.
+
+4. :guilabel:`User name for LOCKSS Solr access`
+
+   Enter the username for the external Solr database.
+
+5. :guilabel:`Password for LOCKSS Solr access`
+
+   Enter the password for the username in the external Solr database.
+
+6. :guilabel:`Password for LOCKSS Solr access (again)`
+
+   Re-enter the password for the username in the external Solr database. If the two passwords do not match, the password will be asked again.
+
+7. Complete the :ref:`Metadata Query Service` section next.
 
 ----------------------
 Metadata Query Service
@@ -226,126 +372,39 @@ Enter :kbd:`Y` if you want the metadata query service to be run, otherwise :kbd:
 Metadata Extraction Service
 ---------------------------
 
-:guilabel:`Use LOCKSS Metadata Extractor Service?`
+:guilabel:`Use LOCKSS Metadata Extraction Service?`
 
 Enter :kbd:`Y` if you want the metadata extraction service to be run, otherwise :kbd:`N`.
-
-----------
-PostgreSQL
-----------
-
-.. |postgres-guilabel| replace:: :guilabel:`Use LOCKSS PostgreSQL DB Service?`
-
-|postgres-guilabel|
-
-Enter :kbd:`Y` to use the embedded PostgreSQL database (recommended in most cases), or :kbd:`N` if you wish to use an external PostgreSQL database.
-
-*  Enter :kbd:`Y` to use the embedded PostgreSQL database (recommended in most cases). Complete the :ref:`Using the Embedded PostgreSQL Database` section next.
-
-*  Enter :kbd:`N` if you wish to use your own external PostgreSQL database. Complete the :ref:`Using an External PostgreSQL Database` section next.
-
-Using the Embedded PostgreSQL Database
-======================================
-
-.. note::
-
-   Complete this section only if you answer :kbd:`Y` to |postgres-guilabel|.
-
-1. :guilabel:`Password for PostgreSQL database`
-
-   Enter a password for the embedded PostgreSQL database.
-
-2. :guilabel:`Password for PostgreSQL database (again)`
-
-   Re-enter the password for the PostgreSQL database (if the two passwords do not match, the password will be asked again).
-
-3. Complete the :ref:`Solr` section next.
-
-Using an External PostgreSQL Database
-=====================================
-
-.. note::
-
-   Complete this section only if you answer :kbd:`N` to |postgres-guilabel|.
-
-1. :guilabel:`Fully qualified hostname (FQDN) of PostgreSQL host`
-
-   Enter the hostname of your PostgreSQL database, for example :samp:`mypgsql.myuniversity.edu`.
-
-2. :guilabel:`Port used by PostgreSQL host`
-
-   Enter the port where your running PostgreSQL database can be reached, for example :samp:`5432`.
-
-3. :guilabel:`Login name for PostgreSQL service`
-
-   Enter the user name for your PostgreSQL database. The default is :samp:`LOCKSS`.
-
-4. :guilabel:`Schema for PostgreSQL service`
-
-   Enter the schema name to be used by the LOCKSS system. The default is :samp:`LOCKSS`.
-
-5. :guilabel:`Database name prefix for PostgreSQL service`
-
-   Prefix to use for any LOCKSS databases. The default is :samp:`Lockss` (note the uppercase/lowercase).
-
-6. :guilabel:`Password for PostgreSQL database`
-
-   Enter the password for your PostgreSQL database.
-
-7. :guilabel:`Password for PostgreSQL database (again)`
-
-   Re-enter the password for your PostgreSQL database (if the two passwords do not match, the password will be asked again).
-
-8. Complete the :ref:`Solr` section next.
-
-----
-Solr
-----
-
-:guilabel:`Use LOCKSS Solr Service?`
-
-*  Enter :kbd:`Y` to use the embedded Solr server. This is recommended in most cases.
-
-*  Enter :kbd:`N` to use your own external Solr database. If you answer :kbd:`N`, you will be prompted for the following information:
-
-   1. :guilabel:`Fully qualified hostname (FQDN) of Solr host:`
-
-   Enter the hostname of your Solr database server, for example :samp:`mysolr.myuniversity.edu`.
-
-   2. :guilabel:`Port used by Solr host:`
-
-   Enter the port where your running Solr database can be reached, for example :samp:`8983`.
-
-   3. :guilabel:`Solr core repo name:`
-
-   Enter name of the Solr core for the LOCKSS repository. The default is :samp:`lockss-repo`.
 
 ----
 Pywb
 ----
 
-:guilabel:`Use LOCKSS Pywb Service?:`
+:guilabel:`Use LOCKSS Pywb Service?`
 
-Enter :kbd:`Y` to run an embedded Pywb engine for Web replay, :kbd:`N` otherwise.
+Enter :kbd:`Y` to run an embedded Pywb engine for Web replay; otherwise, enter :kbd:`N`.
 
 -----------
 OpenWayback
 -----------
 
-1. :guilabel:`Use LOCKSS OpenWayback Service?:`
+1. :guilabel:`Use LOCKSS OpenWayback Service?`
 
-   Enter :kbd:`Y` to use an embedded OpenWayback engine for Web replay, :kbd:`N` otherwise.
+   Enter :kbd:`Y` to use an embedded OpenWayback engine for Web replay; otherwise, enter :kbd:`N`.
 
-2. :guilabel:`Okay to turn off authentication for read-only requests for LOCKSS Repository Service?:`
+2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
-   OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` to accept this, otherwise OpenWayback will not be enabled.
+   | :guilabel:`Using LOCKSS OpenWayback Service requires the LOCKSS Repository Service to permit insecure read request.`
+   | :guilabel:`Okay to turn off authentication for read-only requests for LOCKSS Repository Service?`
+
+   OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` to accept this, otherwise you will see the warning :guilabel:`Not enabling OpenWayback Service` and OpenWayback will not be run.
 
 ----------
 Conclusion
 ----------
 
-:guilabel:`OK to store this configuration:`
+:guilabel:`OK to store this configuration?`
 
-Enter :kbd:`Y` if the configuration values are to your liking, otherwise :kbd:`N` to make edits.
+Enter :kbd:`Y` if the configuration values are to your liking; otherwise, enter :kbd:`N` to make edits.
 
-If you enter :kbd:`Y`, some checks will be run, you may be prompted before the creation of necessary directories, and you will be prompted to run :program:`scripts/start-lockss` to start the configured system.
+If you answer :kbd:`Y`, some checks will be run, you may be prompted before the creation of necessary directories, and you will be prompted to run :program:`scripts/start-lockss` to start the configured system. *FIXME this paragraph needs expanding*
