@@ -412,4 +412,4 @@ Final Steps
 
    :guilabel:`<directory> is not writable; shall I chown it?`
 
-   In each case, enter :kbd:`Y` for "yes" and :kb:`N` for "no".
+   In each case, enter :kbd:`Y` for "yes" and :kbd:`N` for "no".
