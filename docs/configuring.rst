@@ -140,13 +140,13 @@ Configuration URL
 
    1. :guilabel:`Verify configuration server authenticity?`
 
-      Enter :kbd:`Y` if FIXME; otherwise enter :kbd:`N`.
+      Enter :kbd:`Y` if you would like to check the authenticity of the configuration server using a custom keystore; otherwise enter :kbd:`N`.
 
    2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
       :guilabel:`Server certificate keystore`
 
-      Enter FIXME
+      Enter the path of a Java keystore used to vverify the authenticity of the configuration server.
 
 -------------------
 Configuration Proxy
