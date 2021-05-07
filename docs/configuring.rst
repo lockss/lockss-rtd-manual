@@ -400,8 +400,16 @@ OpenWayback
 Final Steps
 -----------
 
-:guilabel:`OK to store this configuration?`
+1. :guilabel:`OK to store this configuration?`
 
-Enter :kbd:`Y` if the configuration values are to your liking; otherwise, enter :kbd:`N` to make edits.
+  Enter :kbd:`Y` if the configuration values are to your liking; otherwise, enter :kbd:`N` to make edits.
 
-If you answer :kbd:`Y`, some checks will be run, you may be prompted before the creation of necessary directories, and you will be prompted to run :program:`scripts/start-lockss` to start the configured system. *FIXME this paragraph needs expanding*
+2. If you answer :kbd:`Y`, :program:`configure-lockss` will perform the final configuration steps. You may be asked to confirm before directories are created for the first time:
+
+   :guilabel:`<directory> does not exist; shall I create it?`
+
+   or before directory permissions are changed:
+
+   :guilabel:`<directory> is not writable; shall I chown it?`
+
+   In each case, enter :kbd:`Y` for "yes" and :kb:`N` for "no".
