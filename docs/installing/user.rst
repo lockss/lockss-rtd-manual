@@ -14,21 +14,45 @@ To create the ``lockss`` user and group, run this :program:`useradd` command (as
 
    useradd --system --user-group --create-home --shell=/bin/false lockss
 
+.. _run-as-lockss:
+
 ---------------------------------------
 Running Commands as the ``lockss`` User
 ---------------------------------------
 
-.. important::
+Unless otherwise noted, most commands in this manual are intended to be run as the ``lockss`` user.
 
-   Unless otherwise noted, commands shown in this manual should be issued as the ``lockss`` user.
+*  If you are logged in as a non-``root`` user with access to :program:`sudo`:
 
-If you are a user with :program:`sudo` privileges:
+   *  You can use :program:`sudo` to start a Bash shell session as the ``lockss`` user.
 
-*  Start a Bash shell session as the ``lockss`` user by typing :samp:`sudo -u lockss /bin/bash`. Use the shell session as long as needed, then exit by typing :samp:`exit`.
+      1. Run this command:
 
-*  Run a single command as the ``lockss`` user by typing :samp:`sudo -u lockss {/path/to/somecommand --with arguments}`.
+         .. code-block:: shell
 
-If you are the ``root`` user:
+            sudo -u lockss /bin/bash
+
+         Depending on your system's :program:`sudo` configuration, you may be prompted for your :program:`sudo` password.
+
+      2. Run commands as they are listed in the manual, for example:
+
+         .. code-block:: shell
+
+            scripts/start-lockss
+
+      3. When you are done, exit the ``lockss`` shell session by typing ``exit`` or ``logout`` or hitting :kbd:`Ctrl + D`.
+
+   *  Alternatively, you can use :program:`sudo` to run a single command as the ``lockss`` user. Add ``sudo -u lockss`` in front of the command listed in the manual. For example, if the command to be run as the ``lockss`` user is ``scripts/start-lockss``, you would type:
+
+      .. code-block:: shell
+
+         sudo -u lockss scripts/start-lockss
+
+         Depending on your system's :program:`sudo` configuration, you may be prompted for your :program:`sudo` password.
+
+*  If you are logged in as ``root``:
+
+*FIXME later*
 
 *  Some systems with :program:`sudo` installed are configured so that ``root`` can use :program:`sudo` without a password, in which case you can use the options above.
 
