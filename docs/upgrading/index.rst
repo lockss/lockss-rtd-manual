@@ -10,7 +10,7 @@ If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank
 
 Please follow the following instructions to upgrade your system from 2.0-alpha3 to 2.0-alpha4.
 
-.. contents:: Upgrade Overview
+.. contents:: Section Overview
    :local:
 
 -------------------------

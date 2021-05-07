@@ -2,10 +2,10 @@
 Using the LOCKSS System
 =======================
 
-This section describes how to use the LOCKSS system.
+This chapter describes how to use the LOCKSS system.
 
 .. toctree::
-   :caption: Contents
+   :caption: Chapter Overview
    :maxdepth: 1
 
    configuration

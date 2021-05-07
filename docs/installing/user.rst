@@ -48,7 +48,7 @@ Unless otherwise noted, most commands in this manual are intended to be run as t
 
          sudo -u lockss scripts/start-lockss
 
-         Depending on your system's :program:`sudo` configuration, you may be prompted for your :program:`sudo` password.
+      Depending on your system's :program:`sudo` configuration, you may be prompted for your :program:`sudo` password.
 
 *  If you are logged in as ``root``:
 

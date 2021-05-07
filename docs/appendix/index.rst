@@ -5,6 +5,7 @@ Appendix
 This appendix contains additional pages of information about the LOCKSS system.
 
 .. toctree::
-   :hidden:
+   :caption: Chapter Overview
+   :maxdepth: 1
 
    ports

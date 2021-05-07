@@ -9,7 +9,7 @@ The 2.x series of the LOCKSS system stems from the LAAWS (LOCKSS Architected As 
 This version, LOCKSS 2.0-alpha4, is the fourth preview release on the road to LOCKSS 2.0.
 
 .. toctree::
-   :caption: Contents
+   :caption: Chapter Overview
    :maxdepth: 1
 
    prerequisites
