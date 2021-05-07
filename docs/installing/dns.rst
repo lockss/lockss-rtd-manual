@@ -2,6 +2,8 @@
 Configuring DNS
 ===============
 
+**FIXME this is either going to go away completely or be replaced/conflated with a firewall-related page**
+
 After MicroK8s is up and running, adjustments need to be made to DNS processing in MicroK8s, which is handled by a MicroK8s component named **CoreDNS**. By default, CoreDNS is configured to use Google's nameservers; this is often undesirable in an institutional network, and unworkable for LOCKSS hosts with no public DNS records.
 
 This section will reconfigure CoreDNS to use the same name servers configured for normal use on the host, i.e. those specified in :file:`/etc/resolv.conf`. This can be done automatically as long as :file:`/etc/resolv.conf` does not contain any loopback adresses; if it does, you will need to enter IP addresses of upstream name servers.
