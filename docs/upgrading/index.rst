@@ -33,11 +33,25 @@ The next step is to update the LOCKSS installer to its latest version from GitHu
 
 While still logged in as ``lockss`` and in the :file:`lockss-installer` directory, run these commands:
 
-.. code-block::
+.. code-block:: shell
 
    git checkout master
 
    git pull
+
+--------------------------
+Adjusting File Permissions
+--------------------------
+
+Some files stored on disk in 2.0-alpha3 and prior are owned by ``root``.
+
+While still logged in as ``lockss`` and in the :file:`lockss-installer` directory, run this command:
+
+.. code-block:: shell
+
+   scripts/upgrades/fix-permissions
+
+You may be prompted for the ``lockss`` user's :program:`sudo` password.
 
 ------------------------------
 Uninstalling MicroK8s and Snap
@@ -51,7 +65,9 @@ While still logged in as ``lockss`` and in the :file:`lockss-installer` director
 
    scripts/upgrades/uninstall-microk8s
 
-Portions of this script require the ``lockss`` user's :program:`sudo` password. The :program:`uninstall-microk8s` script will ask you to confirm before uninstalling Snap (:program:`snapd`).
+Portions of this script require the ``lockss`` user's :program:`sudo` password.
+
+The :program:`uninstall-microk8s` script will ask you to confirm before uninstalling Snap (:program:`snapd`).
 
 .. caution::
 
