@@ -234,16 +234,13 @@ Web User Interface
 PostgreSQL
 ----------
 
-| :guilabel:`You may use either the embedded PostgreSQL service or an external one`
-| :guilabel:`provided by you or your institution, in which case you will be asked for`
-| :guilabel:`its hostname and other pertinent information.`
-| :guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
+:guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
 
 Select **either** option A **or** option B:
 
-A. Enter :kbd:`Y` to use the embedded PostgreSQL database (recommended in most cases). See :ref:`Embedded PostgreSQL Database`.
+A. Enter :kbd:`Y` to use the **embedded PostgreSQL database**. This is recommended in most cases; a PostgreSQL database will be run and managed by the LOCKSS system internally. If you choose this option, see :ref:`Embedded PostgreSQL Database`.
 
-B. Enter :kbd:`N` to use an external PostgreSQL database. See :ref:`External PostgreSQL Database`.
+B. Enter :kbd:`N` to use an **external PostgreSQL database**. Select this option if you wish to use an existing PostgreSQL database at your institution or one that you run and manage yourself. If you choose this option, see :ref:`External PostgreSQL Database`.
 
 Embedded PostgreSQL Database
 ============================
@@ -299,16 +296,13 @@ If you select this option, you will be asked additional configuration questions:
 Solr
 ----
 
-| :guilabel:`You may use either the embedded Solr service or an external one`
-| :guilabel:`provided by you or your institution, in which case you will be asked for a`
-| :guilabel:`its hostname and other pertinent information.`
-| :guilabel:`Use embedded LOCKSS Solr Service?`
+:guilabel:`Use embedded LOCKSS Solr Service?`
 
 Select **either** option A **or** option B:
 
-A. Enter :kbd:`Y` to use the embedded Solr database (recommended in most cases). See :ref:`Embedded Solr Database`.
+A. Enter :kbd:`Y` to use the **embedded Solr database**. This is recommended in most cases; a Solr database will be run and managed by the LOCKSS system internally. If you choose this option, see :ref:`Embedded Solr Database`.
 
-B. Enter :kbd:`N` to use an external Solr database. See :ref:`External Solr Database`.
+B. Enter :kbd:`N` to use an **external Solr database**. Select this option if you wish to use an existing Solr database at your institution or one that you run and manage yourself. If you choose this option, see :ref:`External Solr Database`.
 
 Embedded Solr Database
 ======================
@@ -394,8 +388,7 @@ OpenWayback
 
 2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
-   | :guilabel:`Using LOCKSS OpenWayback Service requires the LOCKSS Repository Service to permit insecure read request.`
-   | :guilabel:`Okay to turn off authentication for read-only requests for LOCKSS Repository Service?`
+   :guilabel:`Okay to turn off authentication for read-only requests for LOCKSS Repository Service?`
 
    OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` to accept this, otherwise you will see the warning:
 
@@ -403,9 +396,9 @@ OpenWayback
 
    and OpenWayback will not be run.
 
-----------
-Conclusion
-----------
+-----------
+Final Steps
+-----------
 
 :guilabel:`OK to store this configuration?`
 
