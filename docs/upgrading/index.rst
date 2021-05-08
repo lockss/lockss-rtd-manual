@@ -12,6 +12,7 @@ Please follow the following instructions to upgrade your system from 2.0-alpha3 
 
 .. contents:: Section Overview
    :local:
+   :depth: 1
 
 -------------------------
 Purging LOCKSS 2.0-alpha3
