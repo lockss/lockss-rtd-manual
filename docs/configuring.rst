@@ -18,25 +18,30 @@ Some notes about using :program:`configure-lockss`:
 
 *  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
 
---------
+.. contents:: Section Overview
+   :local:
+   :depth: 1
+
+----------------
+Network Settings
+----------------
+
 Hostname
---------
+========
 
 :guilabel:`Fully qualified hostname (FQDN) of this machine`
 
 Enter the machine's fully-qualified hostname (meaning with its domain name), for example :samp:`locksstest.myuniversity.edu`.
 
-----------
 IP Address
-----------
+==========
 
 :guilabel:`IP address of this machine`
 
 If the machine is publicly routable, meaning it has an IP address that can be used to identify it over the Internet, enter the publicly routable IP address. Otherwise, if the machine is accessible via network address translation (NAT), meaning it has an IP address that is valid only on your local network but it can be reached from the Internet via a NAT router, enter the internal IP address.
 
----------------------------
 Network Address Translation
----------------------------
+===========================
 
 1. :guilabel:`Is this machine behind NAT?`
 
@@ -48,17 +53,15 @@ Network Address Translation
 
    Enter the publicly routable IP address of the NAT router.
 
------------------
 Initial UI Subnet
------------------
+=================
 
 :guilabel:`Initial subnet(s) for admin UI access`
 
 Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces (UI) of the system. The access list can be modified later via the UI.
 
-----------------
 Container Subnet
-----------------
+================
 
 1. If :program:`configure-lockss` detects a discrepancy between a previously used subnet for inter-container communication in the system and the subnet it would choose now, you may either see the warning:
 
@@ -74,33 +77,26 @@ Container Subnet
 
    Enter the subnet used for inter-container communication. We recommend accepting the proposed value by hitting :kbd:`Enter`.
 
----------
 LCAP Port
----------
+=========
 
 :guilabel:`LCAP V3 protocol port`
 
 Enter the port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
-----------
-Proxy Port
-----------
+-------------
+Mail Settings
+-------------
 
-:guilabel:`Proxy port`
-
-Enter the port for the LOCKSS content proxy. We recommend accepting the default :samp:`24670`; the value can be changed later if necessary.
-
-----------
 Mail Relay
-----------
+==========
 
 :guilabel:`Mail relay for this machine`
 
 Hostname of this machine's outgoing mail server, for example :samp:`smtp.myuniversity.edu`.
 
-----------------------
 Mail Relay Credentials
-----------------------
+======================
 
 1. :guilabel:`Does the mail relay <mailhost> need a username and password?`
 
@@ -120,17 +116,19 @@ Mail Relay Credentials
 
       Re-enter the password for the username on the mail server. If the two passwords do not match, the password will be asked again.
 
--------------------
 Administrator Email
--------------------
+===================
 
 :guilabel:`E-mail address for administrator`
 
 Enter the e-mail address of the person or team who will administer the LOCKSS system on this machine.
 
------------------
+-----------------------------
+Preservation Network Settings
+-----------------------------
+
 Configuration URL
------------------
+=================
 
 1. :guilabel:`Configuration URL`
 
@@ -148,25 +146,26 @@ Configuration URL
 
       Enter the path of a Java keystore used to vverify the authenticity of the configuration server.
 
--------------------
 Configuration Proxy
--------------------
+===================
 
 :guilabel:`Configuration proxy (host:port)`
 
 If the configuration URL can be reached directly, leave this blank; otherwise, if a proxy server is required to reach the configuration URL, enter its host and port in :samp:`{host}:{port}` format (for example :samp:`proxy.myuniversity.edu:8080`).
 
-------------------
-Preservation Group
-------------------
+Preservation Groups
+===================
 
 :guilabel:`Preservation group(s)`
 
 Accept the default (:samp:`demo`) if you are not running your own LOCKSS network; otherwise, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator, for example :samp:`ournetwork` or :samp:`prod;usdocspln`.
 
---------------------------------
+----------------
+Storage Settings
+----------------
+
 Content Data Storage Directories
---------------------------------
+================================
 
 1. :guilabel:`Root path for primary content data storage directories`
 
@@ -182,17 +181,15 @@ Content Data Storage Directories
 
    Enter one additional directory per line, then enter :kbd:`q` when done.
 
------------------------
 Service Log Directories
------------------------
+=======================
 
 :guilabel:`Root path for service logs directories`
 
 This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
------------------------------
 Temporary Storage Directories
------------------------------
+=============================
 
 :guilabel:`Root path for temporary storage directories (local storage preferred)`
 
@@ -206,17 +203,16 @@ This directory is used as the root of the storage area for temporary files in th
 
    Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. Do not use a RAM-based ``tmpfs`` volume, or a directory in a space-constrained partition.
 
-----------------------------
-Install Script Log Directory
-----------------------------
+Script Log Directory
+====================
 
 :guilabel:`Directory for storing install script logs`
 
 This directory is used to store log files produced by :program:`lockss-installer` scripts. Accept the default (a directory under the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
-------------------
-Web User Interface
-------------------
+---------------------------
+Web User Interface Settings
+---------------------------
 
 1. :guilabel:`User name for web UI administration`
 
@@ -230,9 +226,12 @@ Web User Interface
 
    Re-enter the password for the primary administrative user. If the two passwords do not match, the password will be asked again.
 
-----------
+-----------------
+Database Settings
+-----------------
+
 PostgreSQL
-----------
+==========
 
 :guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
 
@@ -243,7 +242,7 @@ A. Enter :kbd:`Y` to use the **embedded PostgreSQL database**. This is recommend
 B. Enter :kbd:`N` to use an **external PostgreSQL database**. Select this option if you wish to use an existing PostgreSQL database at your institution or one that you run and manage yourself. If you choose this option, see :ref:`External PostgreSQL Database`.
 
 Embedded PostgreSQL Database
-============================
+----------------------------
 
 If you select this option, you will be asked additional configuration questions:
 
@@ -258,7 +257,7 @@ If you select this option, you will be asked additional configuration questions:
 3. Complete the :ref:`Solr` section next.
 
 External PostgreSQL Database
-============================
+----------------------------
 
 If you select this option, you will be asked additional configuration questions:
 
@@ -292,9 +291,8 @@ If you select this option, you will be asked additional configuration questions:
 
 8. Complete the :ref:`Solr` section next.
 
-----
 Solr
-----
+====
 
 :guilabel:`Use embedded LOCKSS Solr Service?`
 
@@ -305,7 +303,7 @@ A. Enter :kbd:`Y` to use the **embedded Solr database**. This is recommended in 
 B. Enter :kbd:`N` to use an **external Solr database**. Select this option if you wish to use an existing Solr database at your institution or one that you run and manage yourself. If you choose this option, see :ref:`External Solr Database`.
 
 Embedded Solr Database
-======================
+----------------------
 
 If you select this option, you will be asked additional configuration questions:
 
@@ -324,7 +322,7 @@ If you select this option, you will be asked additional configuration questions:
 4. Complete the :ref:`Metadata Query Service` section next.
 
 External Solr Database
-======================
+----------------------
 
 If you select this option, you will be asked additional configuration questions:
 
@@ -354,33 +352,37 @@ If you select this option, you will be asked additional configuration questions:
 
 7. Complete the :ref:`Metadata Query Service` section next.
 
-----------------------
+---------------
+LOCKSS Services
+---------------
+
 Metadata Query Service
-----------------------
+======================
 
 :guilabel:`Use LOCKSS Metadata Query Service?`
 
 Enter :kbd:`Y` if you want the metadata query service to be run, otherwise :kbd:`N`.
 
----------------------------
 Metadata Extraction Service
----------------------------
+===========================
 
 :guilabel:`Use LOCKSS Metadata Extraction Service?`
 
 Enter :kbd:`Y` if you want the metadata extraction service to be run, otherwise :kbd:`N`.
 
-----
+-------------------
+Web Replay Settings
+-------------------
+
 Pywb
-----
+====
 
 :guilabel:`Use LOCKSS Pywb Service?`
 
 Enter :kbd:`Y` to run an embedded Pywb engine for Web replay; otherwise, enter :kbd:`N`.
 
------------
 OpenWayback
------------
+===========
 
 1. :guilabel:`Use LOCKSS OpenWayback Service?`
 
