@@ -54,8 +54,14 @@ Assuming you are in the :file:`lockss-installer` directory, run the following co
 
 .. rubric:: Footnotes
 
-.. [#fn1] Reference: https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/#operating-systems
+.. [#fn1]
 
-.. [#fn2] Reference: https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux
+   Reference: https://rancher.com/docs/k3s/latest/en/installation/installation-requirements/#operating-systems
 
-.. [#fn3] Alternatively, you can log in as ``root``, in which case you can issue all commands without the leading :program:`sudo`.
+.. [#fn2]
+
+   Reference: https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux
+
+.. [#fn3]
+
+   Alternatively, you can log in as ``root``, in which case you can issue all commands without the leading :program:`sudo`.
