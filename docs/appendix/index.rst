@@ -8,4 +8,6 @@ This appendix contains additional pages of information about the LOCKSS system.
    :caption: Chapter Overview
    :maxdepth: 1
 
+   run-as-lockss
+   run-as-root
    ports
