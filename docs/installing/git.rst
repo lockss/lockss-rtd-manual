@@ -78,6 +78,8 @@ On many flavors of Linux, you can install Git with a built-in package manager (A
 
    .. group-tab:: Oracle Linux
 
+      .. tabs::
+
          .. group-tab:: Oracle Linux 7
 
             .. include:: git-yum.rst
