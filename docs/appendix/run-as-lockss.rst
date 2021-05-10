@@ -50,8 +50,6 @@ This section describes how to run commands as the ``lockss`` user if you are log
 
 This section describes how to run commands as the ``lockss`` user if you are logged in as ``root`` but your system does not have :program:`sudo` or does not let ``root`` access :program:`sudo`.
 
-is not set up to let ``root`` access :program:`sudo`
-
 *  You can use :program:`su` to start a Bash shell session as the ``lockss`` user and run any number of commands:
 
    1. Type this command:
