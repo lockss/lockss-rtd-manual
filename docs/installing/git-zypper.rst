@@ -1,7 +1,7 @@
-To install Git, use these Zypper commands:
+To install Git, run these Zypper commands as ``root`` [#fnroot]_ :
 
 .. code-block:: shell
 
-   sudo zypper refresh
+   zypper refresh
 
-   sudo zypper --non-interactive install git
+   zypper --non-interactive install git

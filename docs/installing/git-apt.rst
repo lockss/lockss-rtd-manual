@@ -1,7 +1,7 @@
-To install Git, use these Apt commands:
+To install Git, run these Apt commands as ``root`` [#fnroot]_ :
 
 .. code-block:: shell
 
-   sudo apt update
+   apt update
 
-   sudo apt --assume-yes install git
+   apt --assume-yes install git

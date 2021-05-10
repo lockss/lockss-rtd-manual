@@ -1,6 +1,6 @@
-=================
-Operating Systems
-=================
+================
+Operating System
+================
 
 The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compatible with `K3s <https://k3s.io/>`_, a lightweight Kubernetes distribution by `Rancher <https://rancher.com/>`_.
 

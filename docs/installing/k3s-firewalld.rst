@@ -1,13 +1,21 @@
-For this family of operating systems, Rancher recommends [#fn2]_ disabling :program:`firewalld`.
+This operating system uses :program:`firewalld` for firewalling.
 
-Issue the following command as a user with the ability to use :program:`sudo` to run commands as ``root`` [#fn3]_ :
+Rancher's K3s documentation (as of this writing) recommends disabling :program:`firewalld` altogether. However, it is relatively easy to add firewall rules to run K3s without disabling :program:`firewalld`, and we recommend this approach.
 
-.. code-block:: shell
+1. Check if :program:`firewalld` is installed and running, by running this command as ``root`` [#fnroot]_ :
 
-   sudo firewall-cmd --state
+   .. code-block:: shell
 
-If :program:`firewalld` is running, stop and disable it with this second command:
+      firewall-cmd --state
 
-.. code-block:: shell
+2. If :program:`firewall-cmd` exists and reports :program:`firewalld` is running, run these commands as ``root`` [#fnroot]_ :
 
-   sudo systemctl disable --now firewalld
+   .. code-block:: shell
+
+      firewall-cmd --permanent --add-port=6443/tcp *FIXME*
+
+      firewall-cmd --permanent --zone=trusted --add-source=10.42.0.0/16
+
+      firewall-cmd --permanent --zone=trusted --add-source=10.43.0.0/16
+
+      firewall-cmd --reload

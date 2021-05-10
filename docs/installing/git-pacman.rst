@@ -1,5 +1,5 @@
-To install Git, use this Pacman command:
+To install Git, run this Pacman command as ``root`` [#fnroot]_ :
 
 .. code-block:: shell
 
-   sudo pacman -Sy --noconfirm git
+   pacman -Sy --noconfirm git

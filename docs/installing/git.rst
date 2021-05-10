@@ -36,7 +36,7 @@ then you need to install Git.
 Installing Git With a Package Manager
 -------------------------------------
 
-On many flavors of Linux, you can install Git with a built-in package manager (Apt, Dnf, Pacman, Yum, Zypper, etc.).
+On many flavors of Linux, you can install Git with a built-in package manager (Apt, Dnf, Pacman, Yum, Zypper, etc.). Select your operating system below for instructions on how to install Git:
 
 .. tabs::
 
@@ -76,6 +76,16 @@ On many flavors of Linux, you can install Git with a built-in package manager (A
 
       .. include:: git-zypper.rst
 
+   .. group-tab:: Oracle Linux
+
+         .. group-tab:: Oracle Linux 7
+
+            .. include:: git-yum.rst
+
+         .. group-tab:: Oracle Linux 8
+
+            .. include:: git-dnf.rst
+
    .. group-tab:: RHEL
 
       .. tabs::
@@ -95,3 +105,11 @@ On many flavors of Linux, you can install Git with a built-in package manager (A
    .. group-tab:: Ubuntu
 
       .. include:: git-apt.rst
+
+----
+
+.. rubric:: Footnotes
+
+.. [#fnroot]
+
+   See :doc:`/appendix/root`.

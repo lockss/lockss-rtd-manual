@@ -1,5 +1,5 @@
-To install Git, use this Dnf command:
+To install Git, run this Dnf command as ``root`` [#fnroot]_ :
 
 .. code-block:: shell
 
-   sudo dnf --assumeyes install git
+   dnf --assumeyes install git

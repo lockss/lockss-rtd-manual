@@ -1,5 +1,5 @@
-To install Git, use this Yum command:
+To install Git, run this Yum command as ``root`` [#fnroot]_ :
 
 .. code-block:: shell
 
-   sudo yum --assumeyes install git
+   yum --assumeyes install git
