@@ -22,7 +22,7 @@ If :program:`iptables` (a network packet filter) is present in this operating sy
 
    .. code-block:: shell
 
-      readlink /etc/alternatives/iptables*
+      readlink /etc/alternatives/ip*tables*
 
 4. If the :program:`readlink` command returns file paths as output, and the files have ``nft`` in the name, for instance:
 
@@ -31,6 +31,9 @@ If :program:`iptables` (a network packet filter) is present in this operating sy
       /usr/sbin/ip6tables-nft
       /usr/sbin/ip6tables-nft-restore
       /usr/sbin/ip6tables-nft-save
+      /usr/sbin/iptables-nft
+      /usr/sbin/iptables-nft-restore
+      /usr/sbin/iptables-nft-save
 
    then switch :program:`iptables` from ``nf_tables`` to ``legacy`` mode via the :program:`alternatives` mechanism, by running these commands as ``root`` [#fnroot]_ :
 
