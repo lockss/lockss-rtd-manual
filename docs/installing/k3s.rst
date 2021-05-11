@@ -18,7 +18,7 @@ Select your operating system below to see instructions on how to prepare for the
 
    .. group-tab:: Arch Linux
 
-      (n/a)
+      .. include:: k3s-iptables.rst
 
    .. group-tab:: CentOS
 
@@ -26,7 +26,7 @@ Select your operating system below to see instructions on how to prepare for the
 
    .. group-tab:: Debian
 
-      (n/a)
+      .. include:: k3s-iptables.rst
 
    .. group-tab:: Fedora
 
@@ -34,6 +34,7 @@ Select your operating system below to see instructions on how to prepare for the
 
    .. group-tab:: Linux Mint
 
+      .. include:: k3s-iptables.rst
       .. include:: k3s-ufw.rst
 
    .. group-tab:: OpenSUSE
@@ -54,14 +55,14 @@ Select your operating system below to see instructions on how to prepare for the
 
    .. group-tab:: Ubuntu
 
+      .. include:: k3s-iptables.rst
       .. include:: k3s-ufw.rst
 
 ------------------------------------------
 Installing K3s With :program:`install-k3s`
 ------------------------------------------
 
-1. Assuming you are in the :file:`lockss-installer` directory, run the following command  as a privileged user who can execute commands as ``root``
-via :program:`sudo` [#fnprivileged]_ :
+1. Assuming you are in the :file:`lockss-installer` directory, run the following command  as ``root`` [#fnroot]_ :
 
    .. code-block:: shell
 
@@ -69,9 +70,9 @@ via :program:`sudo` [#fnprivileged]_ :
 
 2. CoreDNS, a component of a K3s-based Kubernetes cluster that deals with DNS resolution, does not work with DNS servers that run on a machine's loopback address. If both :file:`/etc/resolv.conf` and :file:`/run/systemd/resolve/resolv.conf` contain loopback addresses, you will see the following prompt:
 
-   :guilabel:`IP address(es) for DNS lookup, separated by ';'`
+   :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
-   Enter a semicolon-separated list of IP addresses of non-loopback DNS servers to use for DNS resolution. *FIXME the default list isn't currently printed*
+   Enter a semicolon-separated list of IP addresses of non-loopback DNS servers to use for DNS resolution. A suggested default will be offered to you in square brackets, consisting of all non-loopback addresses collected from your :file:`resolv.conf` file; you can simply hit :kbd:`Enter` to accept it.
 
 ----
 
@@ -84,7 +85,3 @@ via :program:`sudo` [#fnprivileged]_ :
 .. [#fnroot]
 
    See :doc:`/appendix/root`.
-
-.. [#fnprivileged]
-
-   See :doc:`/appendix/privileged`.

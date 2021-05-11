@@ -1,18 +1,18 @@
-This operating system uses :program:`ufw` for firewalling.
+.. rubric:: Adjusting :program:`ufw`
+
+If :program:`iptables` is present on your system, it may be used by :program:`ufw`, a firewall that will need an adjustment for K3s to run properly.
 
 It is relatively easy to add firewall rules to run K3s with :program:`ufw`.
 
-1. Check if :program:`ufw` is installed and running, by running this command as ``root`` [#fnroot]_ :
+1. Check if :program:`ufw` is installed and active, by running this command as ``root`` [#fnroot]_ :
 
    .. code-block:: shell
 
       ufw status
 
-2. If :program:`ufw` exists and reports it is running, run these commands as ``root`` [#fnroot]_ :
+2. If :program:`ufw` exists and reports it is active, run these commands as ``root`` [#fnroot]_ :
 
    .. code-block:: shell
-
-      ufw allow from <node_ip> to any port 6443 *FIXME*
 
       ufw allow from 10.42.0.0/16 to any
 
