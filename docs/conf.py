@@ -85,3 +85,6 @@ html_theme_options = {
 # See https://sphinx-tabs.readthedocs.io/
 sphinx_tabs_disable_tab_closing = True
 
+# See https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#default-substitutions
+# and https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-today_fmt
+today_fmt = '%Y-%m-%d'
