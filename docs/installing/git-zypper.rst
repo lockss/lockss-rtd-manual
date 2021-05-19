@@ -1,4 +1,4 @@
-To install Git, run these Zypper commands as ``root`` [#fnroot]_ :
+To install Git, run these Zypper:
 
 .. code-block:: shell
 

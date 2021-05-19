@@ -1,4 +1,4 @@
-To install Git, run these Apt commands as ``root`` [#fnroot]_ :
+To install Git, run these Apt commands:
 
 .. code-block:: shell
 

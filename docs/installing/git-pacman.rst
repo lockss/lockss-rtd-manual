@@ -1,4 +1,4 @@
-To install Git, run this Pacman command as ``root`` [#fnroot]_ :
+To install Git, run this Pacman command:
 
 .. code-block:: shell
 

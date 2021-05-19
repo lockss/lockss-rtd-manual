@@ -2,111 +2,87 @@
 Installing Git
 ==============
 
-`Git <https://git-scm.com/>`_ is a version control system, used to interact with code repositories.
+`Git <https://git-scm.com/>`_ is a version control system, used to interact with code repositories. The `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ is available from `GitHub <https://github.com>`_, and you will need a Git client to download it.
 
-The `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ is available from `GitHub <https://github.com>`_, and you will need a Git client to download it.
+Follow these instructions as ``root`` [#fnroot]_:
 
-----------------
-Checking for Git
-----------------
+1. Run this command (as any user):
 
-Your operating system may already be equipped with a Git client. Type:
+   .. code-block:: shell
 
-.. code-block:: shell
+      git --version
 
-   git --version
+2. If the output is a version number (for example ``git version 2.31.1``), Git is already installed; however if you see an error message (for example ``bash: git: command not found``), select your operating system below and follow the corresponding instructions to install Git with a built-in package manager (Apt, Dnf, Pacman, Yum, Zypper, etc.):
 
-If the output is a version number, for example:
+   .. tabs::
 
-.. code-block:: text
+      .. group-tab:: AlmaLinux
 
-   git version 2.31.1
+         .. include:: git-dnf.rst
 
-then Git is installed correctly and you do not need to take further action.
+      .. group-tab:: Arch Linux
 
-If you see an error message similar to the following:
+         .. include:: git-pacman.rst
 
-.. code-block:: text
+      .. group-tab:: CentOS
 
-   bash: git: command not found
+         .. tabs::
 
-then you need to install Git.
+            .. group-tab:: CentOS 7
 
--------------------------------------
-Installing Git With a Package Manager
--------------------------------------
+               .. include:: git-yum.rst
 
-On many flavors of Linux, you can install Git with a built-in package manager (Apt, Dnf, Pacman, Yum, Zypper, etc.). Select your operating system below for instructions on how to install Git:
+            .. group-tab:: CentOS 8
 
-.. tabs::
+               .. include:: git-dnf.rst
 
-   .. group-tab:: AlmaLinux
+      .. group-tab:: Debian
 
-      .. include:: git-dnf.rst
+         .. include:: git-apt.rst
 
-   .. group-tab:: Arch Linux
+      .. group-tab:: Fedora
 
-      .. include:: git-pacman.rst
+         .. include:: git-dnf.rst
 
-   .. group-tab:: CentOS
+      .. group-tab:: Linux Mint
 
-      .. tabs::
+         .. include:: git-apt.rst
 
-         .. group-tab:: CentOS 7
+      .. group-tab:: OpenSUSE
 
-            .. include:: git-yum.rst
+         .. include:: git-zypper.rst
 
-         .. group-tab:: CentOS 8
+      .. group-tab:: Oracle Linux
 
-            .. include:: git-dnf.rst
+         .. tabs::
 
-   .. group-tab:: Debian
+            .. group-tab:: Oracle Linux 7
 
-      .. include:: git-apt.rst
+               .. include:: git-yum.rst
 
-   .. group-tab:: Fedora
+            .. group-tab:: Oracle Linux 8
 
-      .. include:: git-dnf.rst
+               .. include:: git-dnf.rst
 
-   .. group-tab:: Linux Mint
+      .. group-tab:: RHEL
 
-      .. include:: git-apt.rst
+         .. tabs::
 
-   .. group-tab:: OpenSUSE
+            .. group-tab:: RHEL 7
 
-      .. include:: git-zypper.rst
+               .. include:: git-yum.rst
 
-   .. group-tab:: Oracle Linux
+            .. group-tab:: RHEL 8
 
-      .. tabs::
+               .. include:: git-dnf.rst
 
-         .. group-tab:: Oracle Linux 7
+      .. group-tab:: Rocky Linux
 
-            .. include:: git-yum.rst
+         .. include:: git-dnf.rst
 
-         .. group-tab:: Oracle Linux 8
+      .. group-tab:: Ubuntu
 
-            .. include:: git-dnf.rst
-
-   .. group-tab:: RHEL
-
-      .. tabs::
-
-         .. group-tab:: RHEL 7
-
-            .. include:: git-yum.rst
-
-         .. group-tab:: RHEL 8
-
-            .. include:: git-dnf.rst
-
-   .. group-tab:: Rocky Linux
-
-      .. include:: git-dnf.rst
-
-   .. group-tab:: Ubuntu
-
-      .. include:: git-apt.rst
+         .. include:: git-apt.rst
 
 ----
 
