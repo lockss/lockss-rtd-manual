@@ -109,6 +109,7 @@ LOCKSS 2.0-alpha4 (not released) System Manual
    configuring
    running
    using/index
+   troubleshooting/index
    appendix/index
 
 .. only:: html
