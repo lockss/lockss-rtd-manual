@@ -54,6 +54,8 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
    Enter a semicolon-separated list of IP addresses of non-loopback DNS servers to use for DNS resolution. A suggested default will be offered to you in square brackets, consisting of all non-loopback addresses collected from your :file:`resolv.conf` file; you can simply hit :kbd:`Enter` to accept the suggested default.
 
+6. If the K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s`.
+
 -----------
 Testing K3s
 -----------
