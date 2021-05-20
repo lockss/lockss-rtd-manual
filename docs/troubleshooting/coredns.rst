@@ -2,6 +2,10 @@
 Troubleshooting CoreDNS
 =======================
 
+-----------------
+DNS Configuration
+-----------------
+
 If both :file:`/etc/resolv.conf` and :file:`/run/systemd/resolve/resolv.conf` (files used to list the IP address of DNS servers) contain loopback addresses, CoreDNS (a component of the K3s Kubernetes cluster that handles DNS resolution) will not work properly [#fn1]_.
 
 The LOCKSS Installer's :program:`install-k3s` script calls another script, :program:`configure-dns`, which detects this situation at the time K3s is being installed, and offers to make this change with the following prompt [#fn2]_:
