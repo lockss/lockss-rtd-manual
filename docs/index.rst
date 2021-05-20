@@ -39,21 +39,15 @@ LOCKSS 2.0-alpha4 (not released) System Manual
 
    *  **K3s** (a lightweight Kubernetes environment).
 
-   *  **Git** to download the `lockss-installer` project from GitHub.
+   *  **Git** to download the LOCKSS Installer from GitHub.
 
-   See :doc:`introduction/prerequisites` for more details.
+   See the :doc:`/introduction/index` for more details.
 
    -------
    Upgrade
    -------
 
-   If you were running LOCKSS 2.0-alpha3, you no longer need MicroK8s or Snap. See :doc:`introduction/upgrading` for more details.
-
-   ----------
-   Contact Us
-   ----------
-
-   Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to ``lockss-support (at) lockss (dot) org``. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
+   If you were running LOCKSS 2.0-alpha3, you no longer need MicroK8s or Snap. See :doc:`upgrading/index` for more details.
 
    --------
    Versions
@@ -83,8 +77,6 @@ LOCKSS 2.0-alpha4 (not released) System Manual
    Questions and Answers
    ---------------------
 
-   FIXME
-
    I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha4?
       The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
 
@@ -96,6 +88,12 @@ LOCKSS 2.0-alpha4 (not released) System Manual
 
    Can I replay Web content with my own Pywb instance? Can I replay Web content with my own OpenWayback instance?
       Yes, you can configure your own Pywb instance and/or OpenWayback instance to connect directly to the LOCKSS Repository Service -- or you can let the system run included ones locally, or you can choose not to run any Web replay engine at all.
+
+   ----------
+   Contact Us
+   ----------
+
+   Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to ``lockss-support (at) lockss (dot) org``. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
 
 .. toctree::
    :caption: LOCKSS 2.0-alpha4 System Manual
