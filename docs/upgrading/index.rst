@@ -10,7 +10,7 @@ If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank
 
 Please follow the following instructions to upgrade your system from 2.0-alpha3 to 2.0-alpha4.
 
-.. contents:: Section Overview
+.. contents:: Chapter Overview
    :local:
    :depth: 1
 
@@ -66,7 +66,7 @@ While still logged in as ``lockss`` and in the :file:`lockss-installer` director
 
    scripts/upgrades/uninstall-microk8s
 
-Portions of this script require the ``lockss`` user's :program:`sudo` password.
+You may be prompted for the ``lockss`` user's :program:`sudo` password.
 
 The :program:`uninstall-microk8s` script will ask you to confirm before uninstalling Snap (:program:`snapd`).
 
@@ -78,13 +78,13 @@ The :program:`uninstall-microk8s` script will ask you to confirm before uninstal
 Revoking the Extra Privileges of the ``lockss`` User
 ----------------------------------------------------
 
-A short-term requirement of 2.0-alpha3 was that the ``lockss`` user have a login password set and be allowed access to :program:`sudo`. This is no longer needed. We strongly recommend you revoke these extra privileges for better security.
+A short-term requirement of 2.0-alpha3 was that the ``lockss`` user have a login password set and be allowed access to :program:`sudo`. This is no longer needed and we strongly recommend you revoke these extra privileges for better security.
 
 Follow the following steps:
 
 1. Log out of the ``lockss`` user account. You can do this by typing ``exit`` or ``logout``, or hitting :kbd:`Ctrl + D` on the keyboard.
 
-2. Log in as a user other than ``lockss``, with the ability to use :program:`sudo` to run commands as ``root`` [#fn1]_ .
+2. Log in as a privileged user other than ``lockss`` privileged user who can become root via :program:`sudo` [#fnprivileged]_.
 
 3. To invalidate the login password of the ``lockss`` user, run this command:
 
@@ -126,7 +126,7 @@ Restoring Packet Filters
 
 Another short-term requirement of 2.0-alpha3 was that frontends to :program:`iptables` like :program:`firewalld` or :program:`ufw` be disabled, to work more smoothly with MicroK8s. This is also no longer necessary in most cases.
 
-To re-enable packet filters, select your operating system below and follow the corresponding instructions while still logged in as a user other than ``lockss``, with the ability to use :program:`sudo` to run commands as ``root`` [#fn1]_ :
+To re-enable packet filters, select your operating system below and follow the corresponding instructions while still logged in as a privileged user other than ``lockss`` privileged user who can become root via :program:`sudo` [#fnprivileged]_:
 
 .. tabs::
 
@@ -168,4 +168,6 @@ Then simply continue following the manual from the :doc:`/installing/k3s` sectio
 
 .. rubric:: Footnotes
 
-.. [#fn1] Alternatively, you can log in as ``root``, in which case you can issue all commands without the leading :program:`sudo`.
+.. [#fnprivileged]
+
+   See :doc:`/appendix/privileged`.

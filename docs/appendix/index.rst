@@ -2,7 +2,7 @@
 Appendix
 ========
 
-This appendix contains additional pages of information about the LOCKSS system.
+This appendix contains pages of additional information about the LOCKSS system.
 
 .. toctree::
    :caption: Chapter Overview
