@@ -11,3 +11,4 @@ This chapter contains pages of additional information about troubleshooting the 
    iptables
    firewalld
    ufw
+   coredns
