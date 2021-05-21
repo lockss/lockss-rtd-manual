@@ -60,11 +60,23 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
 6. If the K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s`.
 
------------
-Testing K3s
------------
+------------
+Checking K3s
+------------
 
-*FIXME future scripts/test-dns or whatever*
+If you know your way around a Kubernetes cluster, you can use :program:`k3s kubectl` (the recommended way to invoke :program:`kubectl` in K3s) to inspect the cluster and run tests.
+
+The LOCKSS Installer provides a basic tool to help you check that K3s is working properly. In the ``lockss`` user's :file:`lockss-installer` directory, run this command as the ``lockss`` user [#fnlockss]_:
+
+.. code-block:: shell
+
+   scripts/check-k3s
+
+This script makes sure the K3s cluster is running and able to resolve names with DNS. This is generally enough to uncover firewall- and DNS-related configuration problems.
+
+.. tip::
+
+   If :program:`check-k3s` fails or keeps retrying the same step many times without succeeding, see :doc:`/troubleshooting/k3s`.
 
 ----
 
@@ -73,3 +85,7 @@ Testing K3s
 .. [#fnroot]
 
    See :doc:`/appendix/root`.
+
+.. [#fnlockss]
+
+   See :doc:`/appendix/lockss`.

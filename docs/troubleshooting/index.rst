@@ -12,3 +12,4 @@ This chapter contains pages of additional information about troubleshooting the 
    firewalld
    ufw
    coredns
+   k3s
