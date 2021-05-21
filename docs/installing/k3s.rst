@@ -54,7 +54,7 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
    Enter a semicolon-separated list of IP addresses of non-loopback DNS servers to use for DNS resolution. A suggested default will be offered to you in square brackets, consisting of all non-loopback addresses collected from your :file:`resolv.conf` file; you can simply hit :kbd:`Enter` to accept the suggested default.
 
-   .. tip::
+   .. important::
 
       If the DNS settings of your system change after K3s is initially installed (for example if DNS servers are added or removed), you will need to run :program:`configure-dns`, a script called by :program:`install-k3s`. See :doc:`/troubleshooting/coredns`.
 
@@ -64,19 +64,31 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 Checking K3s
 ------------
 
-If you know your way around a Kubernetes cluster, you can use :program:`k3s kubectl` (the recommended way to invoke :program:`kubectl` in K3s) to inspect the cluster and run tests.
+After :program:`install-k3s` runs successfully, two tools are at your disposal to ensure K3s is configured correctly and operating properly:
 
-The LOCKSS Installer provides a basic tool to help you check that K3s is working properly. In the ``lockss`` user's :file:`lockss-installer` directory, run this command as the ``lockss`` user [#fnlockss]_:
+1. K3s comes with a configuration and system checker, :program:`k3s check-config`. Run the following command as the ``lockss`` user [#fnlockss]_:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-   scripts/check-k3s
+      k3s check-config
 
-This script makes sure the K3s cluster is running and able to resolve names with DNS. This is generally enough to uncover firewall- and DNS-related configuration problems.
+   If all tests succeed, the last line of output will be ``STATUS: pass``.
 
-.. tip::
+   .. important::
 
-   If :program:`check-k3s` fails or keeps retrying the same step many times without succeeding, see :doc:`/troubleshooting/k3s`.
+      If some tests fail (for example ``STATUS: 1 (fail)``); see :doc:`/troubleshooting/k3s`.
+
+2. The LOCKSS Installer provides a tool to help you check that K3s is running and resolving DNS names properly. In the ``lockss`` user's :file:`lockss-installer` directory, run this command as the ``lockss`` user [#fnlockss]_:
+
+   .. code-block:: shell
+
+      scripts/check-k3s
+
+   If all tests succeed, the last line of output will be ``STATUS: pass``.
+
+   .. important::
+
+      If :program:`check-k3s` fails (``STATUS: fail``) or keeps retrying the same step many times without succeeding, see :doc:`/troubleshooting/k3s`.
 
 ----
 
