@@ -76,7 +76,7 @@ After :program:`install-k3s` runs successfully, two tools are at your disposal t
 
    .. important::
 
-      If some tests fail (for example ``STATUS: 1 (fail)``); see :doc:`/troubleshooting/k3s`.
+      If some tests fail (for example ``STATUS: 1 (fail)``), see :doc:`/troubleshooting/k3s`.
 
 2. The LOCKSS Installer provides a tool to help you check that K3s is running and resolving DNS names properly. In the ``lockss`` user's :file:`lockss-installer` directory, run this command as the ``lockss`` user [#fnlockss]_:
 
@@ -88,7 +88,7 @@ After :program:`install-k3s` runs successfully, two tools are at your disposal t
 
    .. important::
 
-      If :program:`check-k3s` fails (``STATUS: fail``) or keeps retrying the same step many times without succeeding, see :doc:`/troubleshooting/k3s`.
+      If :program:`check-k3s` fails (for example ``STATUS: fail`` or ``STATUS: fail (3 errors)``) or keeps retrying the same step many times without succeeding, see :doc:`/troubleshooting/k3s`.
 
 ----
 
