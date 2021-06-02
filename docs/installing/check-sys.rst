@@ -2,6 +2,8 @@
 Checking the System
 ===================
 
+**FIXME this needs to be updated for alpha4**
+
 After `installing the LOCKSS system <index>`_, you can confirm the status of installed components by running:
 
 .. code-block:: shell
