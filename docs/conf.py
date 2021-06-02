@@ -88,3 +88,6 @@ sphinx_tabs_disable_tab_closing = True
 # See https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#default-substitutions
 # and https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-today_fmt
 today_fmt = '%Y-%m-%d'
+
+# See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-smartquotes
+smartquotes = False
