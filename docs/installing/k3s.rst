@@ -4,9 +4,9 @@ Installing K3s
 
 `K3s <https://k3s.io/>`_ is a certified `Kubernetes <https://kubernetes.io/>`_ distribution by `Rancher <https://rancher.com/>`_.
 
-------------------------------
-Running :program:`install-k3s`
-------------------------------
+------------------------------------------
+Installing K3s With :program:`install-k3s`
+------------------------------------------
 
 The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines the installation and configuration of K3s for the purposes of running the LOCKSS system. To install and configure K3s with :program:`install-k3s`:
 
@@ -58,7 +58,13 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
       If the DNS settings of your system change after K3s is initially installed (for example if DNS servers are added or removed), you will need to run :program:`configure-dns`, a script called by :program:`install-k3s`. See :doc:`/troubleshooting/coredns`.
 
-6. If the K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s`.
+6. In most cases [#fn6a]_, you will be prompted for a K3s state data directory:
+
+   :guilabel:`K3s state data directory: [/var/lib/rancher/k3s]`
+
+   K3s stores state data in :file:`/var/lib/rancher/k3s` by default, but if :file:`/var` is space-limited, you should specify a different directory. Enter a directory path of your choice followed by :kbd:`Enter`, or simply hit :kbd:`Enter` to accept the default.
+
+7. If Rancher's K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s`.
 
 ------------
 Checking K3s
@@ -66,7 +72,7 @@ Checking K3s
 
 After :program:`install-k3s` runs successfully, two tools are at your disposal to ensure K3s is configured correctly and operating properly:
 
-1. K3s comes with a configuration and system checker, :program:`k3s check-config`. Run the following command as the ``lockss`` user [#fnlockss]_:
+1. K3s comes with a configuration and system checker, :program:`k3s check-config`. Run the following command as ``root`` [#fnroot]_:
 
    .. code-block:: shell
 
@@ -101,3 +107,9 @@ After :program:`install-k3s` runs successfully, two tools are at your disposal t
 .. [#fnlockss]
 
    See :doc:`/appendix/lockss`.
+
+.. [#fn6a]
+
+   If you invoke :program:`install-k3s` with the option :samp:`--k3s-data-dir={DATADIRPATH}`, the directory path :samp:`{DATADIRPATH}` will be used as your answer with an interactive prompt.
+
+   Otherwise, if you invoke :program:`install-k3s` with the option :samp:`--assume-yes`, the default directory path :file:`/var/lib/rancher/k3s` will be used as your answer without an interactive prompt.
