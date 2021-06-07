@@ -4,7 +4,7 @@ Installing Git
 
 `Git <https://git-scm.com/>`_ is a version control system, used to interact with code repositories. The `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ is available from `GitHub <https://github.com>`_, and you will need a Git client to download it.
 
-Follow these instructions as ``root`` [#fnroot]_:
+Follow these instructions 
 
 1. Run this command (as any user):
 
@@ -12,7 +12,7 @@ Follow these instructions as ``root`` [#fnroot]_:
 
       git --version
 
-2. If the output is a version number (for example ``git version 2.31.1``), Git is already installed; however if you see an error message (for example ``bash: git: command not found``), select your operating system below and follow the corresponding instructions to install Git with a built-in package manager (Apt, Dnf, Pacman, Yum, Zypper, etc.):
+2. If the output is a version number (for example ``git version 2.31.1``), Git is already installed; however if you see an error message (for example ``bash: git: command not found``), follow the instructions corresponding to your operating system below to install Git as ``root`` [#fnroot]_:
 
    .. tabs::
 

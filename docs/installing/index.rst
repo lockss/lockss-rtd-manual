@@ -8,7 +8,7 @@ Installing the LOCKSS System
 
 .. note::
 
-  If you are currently running the LOCKSS 1.x system, for example version 1.75.5 of the `LOCKSS daemon <https://github.com/lockss/lockss-daemon>`_, you can use the instructions in this section to test the LOCKSS 2.0-alpha4 system on another machine, but it is not yet possible to migrate your classic system.
+  If you are currently running the LOCKSS 1.x system, for example version 1.75.7 of the `LOCKSS daemon <https://github.com/lockss/lockss-daemon>`_, you can use the instructions in this section to test the LOCKSS 2.0-alpha4 system on another machine, but it is not yet possible to migrate your classic system.
 
 This chapter describes how to install the LOCKSS 2.x system for the first time.
 
@@ -20,5 +20,4 @@ This chapter describes how to install the LOCKSS 2.x system for the first time.
    git
    lockss-installer
    k3s
-   dns
    check-sys

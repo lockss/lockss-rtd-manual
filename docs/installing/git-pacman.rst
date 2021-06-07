@@ -1,4 +1,4 @@
-To install Git, run this Pacman command:
+To install Git, run this Pacman command (as ``root``):
 
 .. code-block:: shell
 

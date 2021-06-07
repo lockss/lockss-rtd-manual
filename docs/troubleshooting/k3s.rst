@@ -6,7 +6,7 @@ Troubleshooting K3s
 Running :program:`k3s check-config`
 -----------------------------------
 
-If :program:`check-k3s` fails after installing K3s with :program:`install-k3s` [#fn1]_, run the following command as the ``lockss`` user [#fnlockss]_:
+After installing K3s with :program:`install-k3s` [#fn1]_, run the following command as ``root`` [#fnroot]_:
 
 .. code-block:: shell
 
@@ -18,8 +18,15 @@ As a rule of thumb, if :program:`k3s check-config` ends successfully with ``STAT
 
 Some failures, especially in "optional" aspects, may not prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes, but if possible they should be addressed. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message:
 
+iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail):
+   This error message may or may not reflect a problem.
+
+   If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you do not need to take any action, even if you receive this error message [#fn3]_.
+
+   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_.
+
 RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line
-   To resolve this issue sometimes ecountered in the RHEL/CentOS family of operating systems [#fn2]_:
+   To resolve this issue sometimes ecountered in the RHEL/CentOS family of operating systems [#fn4]_:
 
    1. Edit the file :file:`/etc/default/grub` as ``root`` [#fnroot]_.
 
@@ -43,17 +50,23 @@ RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot c
 
 .. [#fn1]
 
-   See :ref:`Checking K3s` in :doc:`/installing/k3s`.
+   See "Installing K3s With :program:`install-k3s`" in :doc:`/installing/k3s`.
 
 .. [#fn2]
+
+   See "Checking K3s" in :doc:`/installing/k3s`.
+
+.. [#fn3]
+
+   References:
+
+   * https://github.com/k3s-io/k3s/issues/2946
+
+.. [#fn4]
 
    References:
 
    * https://fortuitousengineer.com/installing-kubernetes-k3s-on-centos-rhel-hosts/
-
-.. [#fnlockss]
-
-   See :doc:`/appendix/lockss`.
 
 .. [#fnroot]
 

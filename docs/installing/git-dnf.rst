@@ -1,4 +1,4 @@
-To install Git, run this Dnf command:
+To install Git, run this Dnf command (as ``root``):
 
 .. code-block:: shell
 

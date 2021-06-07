@@ -22,7 +22,7 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
 
       Many commands in this manual are run from this :file:`lockss-installer` directory. Run the command ``pwd`` to display its full path (typically :file:`/home/lockss/lockss-installer`).
 
-3. To avoid a harmless Git warning in the future when updating the LOCKSS Installer from GitHub, run this command:
+3. To avoid a harmless Git warning when updating the LOCKSS Installer from GitHub in the future, run this command:
 
    .. code-block:: shell
 

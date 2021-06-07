@@ -52,7 +52,7 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
    :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
-   Enter a semicolon-separated list of IP addresses of non-loopback DNS servers to use for DNS resolution. A suggested default will be offered to you in square brackets, consisting of all non-loopback addresses collected from your :file:`resolv.conf` file; you can simply hit :kbd:`Enter` to accept the suggested default.
+   Enter a semicolon-separated list of IP addresses of non-loopback DNS servers to use for DNS resolution. A suggested default will be offered to you in square brackets, consisting of non-loopback addresses collected from your :file:`resolv.conf` files; you can simply hit :kbd:`Enter` to accept the suggested default.
 
    .. important::
 
@@ -62,7 +62,7 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
    :guilabel:`K3s state data directory: [/var/lib/rancher/k3s]`
 
-   K3s stores state data in :file:`/var/lib/rancher/k3s` by default, but if :file:`/var` is space-limited, you should specify a different directory. Enter a directory path of your choice followed by :kbd:`Enter`, or simply hit :kbd:`Enter` to accept the default.
+   K3s stores state data in :file:`/var/lib/rancher/k3s` by default, but if :file:`/var` is space-limited, you should specify a different directory as the K3s state data directory grows large. Enter a directory path of your choice followed by :kbd:`Enter`, or simply hit :kbd:`Enter` to accept the default.
 
 7. If Rancher's K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s`.
 
@@ -72,19 +72,7 @@ Checking K3s
 
 After :program:`install-k3s` runs successfully, two tools are at your disposal to ensure K3s is configured correctly and operating properly:
 
-1. K3s comes with a configuration and system checker, :program:`k3s check-config`. Run the following command as ``root`` [#fnroot]_:
-
-   .. code-block:: shell
-
-      k3s check-config
-
-   If all tests succeed, the last line of output will be ``STATUS: pass``.
-
-   .. important::
-
-      If some tests fail (for example ``STATUS: 1 (fail)``), see :doc:`/troubleshooting/k3s`.
-
-2. The LOCKSS Installer provides a tool to help you check that K3s is running and resolving DNS names properly. In the ``lockss`` user's :file:`lockss-installer` directory, run this command as the ``lockss`` user [#fnlockss]_:
+1. The LOCKSS Installer provides a tool to help you check that K3s is running and resolving DNS names properly. In the ``lockss`` user's :file:`lockss-installer` directory, run this command as the ``lockss`` user [#fnlockss]_:
 
    .. code-block:: shell
 
@@ -95,6 +83,18 @@ After :program:`install-k3s` runs successfully, two tools are at your disposal t
    .. important::
 
       If :program:`check-k3s` fails (for example ``STATUS: fail`` or ``STATUS: fail (3 errors)``) or keeps retrying the same step many times without succeeding, see :doc:`/troubleshooting/k3s`.
+
+2. K3s comes with a configuration and system checker, :program:`k3s check-config`. Run the following command as ``root`` [#fnroot]_:
+
+   .. code-block:: shell
+
+      k3s check-config
+
+   If all tests succeed, the last line of output will be ``STATUS: pass``. If some tests fail, the output will be (for example) ``STATUS: 1 (fail)``).
+
+   .. important::
+
+      Generally, when this checker fails, there is something worth investigating and fixing. However in some cases, the checker complains about a problem that has since been resolved in K3s, or that does not actually prevent K3s from working. If this checker fails, see :doc:`/troubleshooting/k3s` for guidance.
 
 ----
 

@@ -1,4 +1,4 @@
-To install Git, run these Zypper:
+To install Git, run these Zypper (as ``root``):
 
 .. code-block:: shell
 
