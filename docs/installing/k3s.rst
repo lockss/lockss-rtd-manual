@@ -62,7 +62,7 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
    :guilabel:`K3s state data directory: [/var/lib/rancher/k3s]`
 
-   K3s stores state data in :file:`/var/lib/rancher/k3s` by default, but if :file:`/var` is space-limited, you should specify a different directory as the K3s state data directory grows large. Enter a directory path of your choice followed by :kbd:`Enter`, or simply hit :kbd:`Enter` to accept the default.
+   K3s stores state data in :file:`/var/lib/rancher/k3s` by default, but if :file:`/var` is space-limited, you should specify a different directory as the K3s state data directory will grow to at least 5-10GB. Enter a directory path of your choice followed by :kbd:`Enter`, or simply hit :kbd:`Enter` to accept the default.
 
 7. If Rancher's K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s`.
 
