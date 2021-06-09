@@ -4,4 +4,4 @@ To install Git, run these Apt commands (as ``root``):
 
    apt update
 
-   apt --assume-yes install git
+   apt install --assume-yes git
