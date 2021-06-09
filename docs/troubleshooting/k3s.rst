@@ -2,17 +2,34 @@
 Troubleshooting K3s
 ===================
 
------------------------------------
-Running :program:`k3s check-config`
------------------------------------
+----------------------------
+When the K3s Installer Fails
+----------------------------
 
-After installing K3s with :program:`install-k3s` [#fn1]_, run the following command as ``root`` [#fnroot]_:
+The LOCKSS Installer's :program:`install-k3s` script installs K3s by executing `Rancher's official K3s installer <https://get.k3s.io/>`_ after making sure many firewall and DNS issues are resolved [#fn1]_. However, the installer can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message:
+
+Failed to apply container_runtime_exec_t to /usr/local/bin/k3s
+   In some Fedora systems, you may see an error message similar to the following:
+
+   .. code-block:: text
+
+      [ERROR]  Failed to apply container_runtime_exec_t to /usr/local/bin/k3s, please install:
+          yum install -y container-selinux selinux-policy-base
+          yum install -y https://rpm.rancher.io/k3s/stable/common/centos/7/noarch/k3s-selinux-0.2-1.el7_8.noarch.rpm
+
+   To resolve this problem, run the recommended commands as ``root`` [#fnroot]_, then re-run :program:`install-k3s`. (The specific commands and version numbers may vary from the example above.)
+
+----------------------------------------
+When the K3s Configuration Checker Fails
+----------------------------------------
+
+After installing K3s with :program:`install-k3s` [#fn1]_ and successfully running :program:`check-k3s` [#fn2]_, you can run the following command as ``root`` [#fnroot]_:
 
 .. code-block:: shell
 
    k3s check-config
 
-This tool runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" aspects for K3s to operate.
+This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" aspects for K3s to operate.
 
 As a rule of thumb, if :program:`k3s check-config` ends successfully with ``STATUS: pass``, there is a good chance the K3s cluster is configured correctly.
 
@@ -40,9 +57,15 @@ RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot c
 
          .. code-block:: text
 
-            GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto user_namespace.enable=1"
+            GRUB_CMDLINE_LINUX="user_namespace.enable=1 no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto"
 
-   2. Reboot the system.
+   2. Run the following command as ``root``:
+
+      .. code-block:: shell
+
+         grub2-mkconfig -o /boot/grub2/grub.cfg
+
+   3. Reboot the system.
 
 ----
 
