@@ -12,6 +12,10 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
 
       git clone https://github.com/lockss/lockss-installer
 
+   .. admonition:: Troubleshooting
+
+      On early CentOS 7 systems (for example CentOS 7.1), you may receive the error message ``fatal: unable to access 'https://github.com/lockss/lockss-installer/': Peer reports incompatible or unsupported protocol version``. This is due to outdated network security libraries. Run the command ``yum update -y curl nss nss-util nspr`` as ``root`` to update tem, and retry the :program:`git clone` command.
+
 2. Go into the :file:`lockss-installer` directory created by the :program:`git clone` command:
 
    .. code-block:: shell
@@ -20,7 +24,7 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
 
    .. important::
 
-      Many commands in this manual are run from this :file:`lockss-installer` directory. Run the command ``pwd`` to display its full path (typically :file:`/home/lockss/lockss-installer`).
+      Many commands in this manual are run from this :file:`lockss-installer` directory. Run the command ``pwd`` to display its full path (typically :file:`/home/lockss/lockss-installer`) and make a note of it.
 
 3. To avoid a harmless Git warning when updating the LOCKSS Installer from GitHub in the future, run this command:
 
