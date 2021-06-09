@@ -4,7 +4,7 @@ Installing Git
 
 `Git <https://git-scm.com/>`_ is a version control system, used to interact with code repositories. The `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ is available from `GitHub <https://github.com>`_, and you will need a Git client to download it.
 
-Follow these instructions 
+Follow these instructions to install Git:
 
 1. Run this command (as any user):
 
