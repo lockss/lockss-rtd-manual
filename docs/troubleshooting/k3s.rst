@@ -17,7 +17,35 @@ Failed to apply container_runtime_exec_t to /usr/local/bin/k3s
           yum install -y container-selinux selinux-policy-base
           yum install -y https://rpm.rancher.io/k3s/stable/common/centos/7/noarch/k3s-selinux-0.2-1.el7_8.noarch.rpm
 
-   To resolve this problem, run the recommended commands as ``root`` [#fnroot]_, then re-run :program:`install-k3s`. (The specific commands and version numbers may vary from the example above.)
+   The specific commands and version numbers may vary from the example above.
+
+   To resolve this problem:
+
+   1. Run the recommended commands as ``root`` [#fnroot]_.
+
+   2. Re-run :program:`install-k3s`.
+
+Package k3s-selinux (rancher-k3s-common-stable) requires container-selinux
+   In some Oracle Linux 7 systems, you may see an error message similar to the following:
+
+   .. code-block:: text
+
+      Error: Package: k3s-selinux-0.3-0.el7.noarch (rancher-k3s-common-stable)
+                 Requires: container-selinux >= 2.107-3
+       You could try using --skip-broken to work around the problem
+       You could try running: rpm -Va --nofiles --nodigest
+
+   The specific commands and version numbers may vary from the example above. This can occur in environments where the Oracle Linux 7 Addons Yum repository is not enabled by default, so Rancher's official K3s installer is unable to install the package ``container-selinux`` automatically.
+
+   To resolve this problem:
+
+   1. Run the following command as ``root`` [#fnroot]_:
+
+      .. code-block:: shell
+
+         yum-config-manager --enable ol7_addons
+
+   2. Re-run :program:`install-k3s`.
 
 ----------------------------------------
 When the K3s Configuration Checker Fails
@@ -35,7 +63,7 @@ As a rule of thumb, if :program:`k3s check-config` ends successfully with ``STAT
 
 Some failures, especially in "optional" aspects, may not prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes, but if possible they should be addressed. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message:
 
-iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail):
+iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail)
    This error message may or may not reflect a problem.
 
    If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you do not need to take any action, even if you receive this error message [#fn3]_.
