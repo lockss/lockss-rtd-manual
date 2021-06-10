@@ -167,7 +167,7 @@ Storage Settings
 Content Data Storage Directories
 ================================
 
-1. Prompt: :guilabel:`Root path for primary content data storage directories`
+1. Prompt: :guilabel:`Root path for primary content data storage`
 
    Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system, where preserved content will be stored along with several databases. It is the analog of :file:`/cache0` in the classic LOCKSS system.
 
@@ -177,27 +177,27 @@ Content Data Storage Directories
 
 3. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
-   :guilabel:`Enter root path $count to additional content storage directories (q to quit)`
+   :guilabel:`Root path for additional content data storage <count> (q to quit)`
 
-   Enter one additional directory per line, then enter :kbd:`q` when done.
+   On each line, enter the full path of a directory to use as the root of an additional storage area, enter :kbd:`q` when done.
 
-Service Log Directories
-=======================
+Log Data Storage Directory
+==========================
 
-Prompt: :guilabel:`Root path for service logs directories`
+Prompt: :guilabel:`Root path for log data storage`
 
 This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
-Temporary Storage Directories
-=============================
+Temporary Data Storage Directory
+================================
 
-Prompt: :guilabel:`Root path for temporary storage directories (local storage preferred)`
+Prompt: :guilabel:`Root path for temporary data storage (local storage preferred)`
 
 This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
 .. tip::
 
-   The LOCKSS software makes heavy use of temporary storage, and we recommend that temporary directories be placed on a filesystem with rerlatively low laltency. If the content storage directories are on network storage (e.g. NFS), system performance may be improved by supplying a local directory here.
+   The LOCKSS software makes heavy use of temporary storage, and we recommend that temporary directories be placed on a filesystem with relatively low latency. If the content storage directories are on network storage (for example NFS), system performance may be improved by supplying a local directory here.
 
 .. caution::
 
