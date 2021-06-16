@@ -2,13 +2,11 @@
 Upgrading From LOCKSS 2.0-alpha3
 ================================
 
-.. tip::
+This chapter describes how to upgrade the LOCKSS system from 2.0-alpha3 to 2.0-alpha4. If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank you for helping us bring LOCKSS 2.0 closer to fruition through your testing and feedback.
 
-   If you are installing LOCKSS 2.x for the first time, skip this chapter and proceed to :doc:`/installing/index`.
+*  **If you are installing LOCKSS 2.x system for the first time**, skip this chapter and proceed to :doc:`/installing/index`.
 
-If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank you for helping us bring LOCKSS 2.0 closer to fruition through your testing and feedback.
-
-Please follow the following instructions to upgrade your system from 2.0-alpha3 to 2.0-alpha4.
+*  **Before you begin upgrading from 2.0-alpha3**, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages.
 
 .. contents:: Chapter Overview
    :local:
