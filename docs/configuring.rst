@@ -179,7 +179,7 @@ Content Data Storage Directories
 
    :guilabel:`Root path for additional content data storage <count> (q to quit)`
 
-   On each line, enter the full path of a directory to use as the root of an additional storage area, enter :kbd:`q` when done.
+   On each line, enter the full path of a directory to use as the root of an additional storage area, and enter :kbd:`q` when done.
 
 Log Data Storage Directory
 ==========================
