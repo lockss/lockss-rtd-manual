@@ -2,7 +2,7 @@
 Checking the System
 ===================
 
-After `installing the LOCKSS system <index>`_, you can confirm the status of installed components by running this command as the ``lockss`` user [#fnlockss]_ in the ``lockss`` user's :file:`lockss-installer` directory:
+After :doc:`installing the LOCKSS system <index>`, you can confirm the status of installed components by running this command as the ``lockss`` user [#fnlockss]_ in the ``lockss`` user's :file:`lockss-installer` directory:
 
 .. code-block:: shell
 
