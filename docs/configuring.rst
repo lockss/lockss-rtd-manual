@@ -203,13 +203,6 @@ This directory is used as the root of the storage area for temporary files in th
 
    Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. Do not use a RAM-based ``tmpfs`` volume, or a directory in a space-constrained partition.
 
-Script Log Directory
-====================
-
-Prompt: :guilabel:`Directory for storing install script logs`
-
-This directory is used to store log files produced by :program:`lockss-installer` scripts. Accept the default (a directory under the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
-
 ---------------------------
 Web User Interface Settings
 ---------------------------
