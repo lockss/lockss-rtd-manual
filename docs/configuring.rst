@@ -2,7 +2,7 @@
 Configuring the LOCKSS System
 =============================
 
-After `installing the LOCKSS system <installing>`_, configure the system with the :program:`configure-lockss` script:
+After `installing the LOCKSS system <installing>`_, configure the system with the :program:`configure-lockss` script by running this command in the ``lockss`` user's :file:`lockss-installer` directory as ``lockss`` [#fnlockss]_:
 
 .. code-block:: shell
 
@@ -169,7 +169,7 @@ Content Data Storage Directories
 
 1. Prompt: :guilabel:`Root path for primary content data storage`
 
-   Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system, where preserved content will be stored along with several databases. It is the analog of :file:`/cache0` in the classic LOCKSS system.
+   Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system, where preserved content will be stored along with several databases. It is the analog of :file:`/cache0` in the classic LOCKSS system. Data will be stored in subdirectories of the directory entered, one for each component of the LOCKSS system.
 
 2. Prompt: :guilabel:`Use additional directories for content data storage?`
 
@@ -179,21 +179,21 @@ Content Data Storage Directories
 
    :guilabel:`Root path for additional content data storage <count> (q to quit)`
 
-   On each line, enter the full path of a directory to use as the root of an additional storage area, and enter :kbd:`q` when done.
+   On each line, enter the full path of a directory to use as the root of an additional storage area, and enter :kbd:`q` when done. Data will be stored in subdirectories of each additional directory entered.
 
 Log Data Storage Directory
 ==========================
 
 Prompt: :guilabel:`Root path for log data storage`
 
-This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
+This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path. Logs will be stored in subdirectories of the directory entered, one for each component of the LOCKSS system.
 
 Temporary Data Storage Directory
 ================================
 
 Prompt: :guilabel:`Root path for temporary data storage (local storage preferred)`
 
-This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
+This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path. Temporary data will be stored in subdirectories of the directory entered, one for each component of the LOCKSS system.
 
 .. tip::
 
@@ -408,3 +408,11 @@ Final Steps
    :guilabel:`<directory> is not writable; shall I chown it?`
 
    In each case, enter :kbd:`Y` for "yes" and :kbd:`N` for "no".
+
+----
+
+.. rubric:: Footnotes
+
+.. [#fnlockss]
+
+   See :doc:`/appendix/lockss`.
