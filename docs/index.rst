@@ -27,7 +27,15 @@ LOCKSS 2.0-alpha4 (not released) System Manual
 
    *  Containers are now orchestrated by **K3s**, a lightweight Kubernetes distribution by `Rancher <https://rancher.com/>`_, which is compatible with most Linux flavors.
 
-   *  FIXME
+   *  Content is now stored in compressed WARC files by default.
+
+   *  Numerous bug fixes and enhancements in the repository service and underlying componentry, delivering more reliability and performance in error handling, scalability, and content replay.
+
+   *  Many security enhancements, including support for `firewalld` and `ufw`, containers not running as `root` internally, the `lockss` user no longer needing `sudo` privileges, Solr authentication, and LCAP SSL support with TLSv1.2 by default.
+
+   *  Web user interface enhancements, including LCAP SSL key generation and support for the Kubernetes dashboard.
+
+   *  Plugin packager and Maven archetype for the LAAWS system.
 
    -------------
    Prerequisites
