@@ -197,7 +197,7 @@ This directory is used as the root of the storage area for temporary files in th
 
 .. tip::
 
-   The LOCKSS software makes heavy use of temporary storage, and we recommend that temporary directories be placed on a filesystem with relatively low latency. If the content storage directories are on network storage (for example NFS), system performance may be improved by supplying a local directory here.
+   The LOCKSS software makes heavy use of temporary storage, and we recommend that temporary directories be placed on a filesystem with relatively low latency. If the content data storage directories are on network storage (for example NFS), system performance may be improved by supplying a local directory for temporary data storage.
 
 .. caution::
 

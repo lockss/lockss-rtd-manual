@@ -2,7 +2,7 @@
 Installing the LOCKSS System
 ============================
 
-This chapter describes how to install the LOCKSS 2.x system for the first time.
+This chapter describes how to install LOCKSS 2.0-alpha4 for the first time.
 
 *  **If you are upgrading from LOCKSS 2.0-alpha3**, see :doc:`/upgrading/index`.
 
