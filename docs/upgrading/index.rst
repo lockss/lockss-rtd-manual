@@ -12,17 +12,17 @@ This chapter describes how to upgrade the LOCKSS system from 2.0-alpha3 to 2.0-a
    :local:
    :depth: 1
 
--------------------------
-Purging LOCKSS 2.0-alpha3
--------------------------
+--------------------------
+Stopping LOCKSS 2.0-alpha3
+--------------------------
 
-The first step is to stop the LOCKSS 2.0-alpha3 system and purge it from the current Kubernetes environment (run by MicroK8s).
+The first step is to stop the LOCKSS 2.0-alpha3 system.
 
 Log in as the ``lockss`` user and run this command in the :file:`lockss-installer` directory:
 
 .. code-block:: shell
 
-   scripts/uninstall-lockss
+   scripts/stop-lockss
 
 -----------------------------
 Updating the LOCKSS Installer
@@ -66,17 +66,51 @@ While still logged in as ``lockss`` and in the :file:`lockss-installer` director
 
 You may be prompted for the ``lockss`` user's :program:`sudo` password.
 
-The :program:`uninstall-microk8s` script will ask you to confirm before uninstalling Snap (:program:`snapd`).
+The :program:`uninstall-microk8s` script will ask you to confirm before uninstalling Snap (:program:`snapd`). Enter :kbd:`Y` for "yes" and :kbd:`N` for "no", or simply hit :kbd:`Enter` to accept the suggested answer in square brackets.
 
 .. caution::
 
    **On Ubuntu, Snap is used natively by the operating system and should not be uninstalled.**
 
+------------------------
+Restoring Packet Filters
+------------------------
+
+A short-term requirement of 2.0-alpha3 was that frontends to :program:`iptables` like :program:`firewalld` or :program:`ufw` be disabled, to work more smoothly with MicroK8s. This is no longer necessary in most cases, and you should return your system's :program:`firewalld` or :program:`ufw` to its original state.
+
+If you had disabled :program:`firewalld` or :program:`ufw` to run 2.0-alpha3, select your operating system below and follow the corresponding instructions while still logged in as ``lockss``:
+
+.. tabs::
+
+   .. group-tab:: CentOS
+
+      .. include:: upgrading-firewalld.rst
+
+   .. group-tab:: Debian
+
+      .. include:: upgrading-none.rst
+
+   .. group-tab:: Linux Mint
+
+      .. include:: upgrading-none.rst
+
+   .. group-tab:: OpenSUSE
+
+      .. include:: upgrading-firewalld.rst
+
+   .. group-tab:: RHEL
+
+      .. include:: upgrading-firewalld.rst
+
+   .. group-tab:: Ubuntu
+
+      .. include:: upgrading-ufw.rst
+
 ----------------------------------------------------
 Revoking the Extra Privileges of the ``lockss`` User
 ----------------------------------------------------
 
-A short-term requirement of 2.0-alpha3 was that the ``lockss`` user have a login password set and be allowed access to :program:`sudo`. This is no longer needed and we strongly recommend you revoke these extra privileges for better security.
+Another short-term requirement of 2.0-alpha3 was that the ``lockss`` user have a login password set and be allowed access to :program:`sudo`. This is no longer needed and we strongly recommend you revoke these extra privileges for better security.
 
 Follow the following steps:
 
@@ -117,40 +151,6 @@ Follow the following steps:
       .. group-tab:: Ubuntu
 
          .. include:: upgrading-sudo.rst
-
-------------------------
-Restoring Packet Filters
-------------------------
-
-Another short-term requirement of 2.0-alpha3 was that frontends to :program:`iptables` like :program:`firewalld` or :program:`ufw` be disabled, to work more smoothly with MicroK8s. This is also no longer necessary in most cases.
-
-To re-enable packet filters, select your operating system below and follow the corresponding instructions while still logged in as a privileged user other than ``lockss`` privileged user who can become root via :program:`sudo` [#fnprivileged]_:
-
-.. tabs::
-
-   .. group-tab:: CentOS
-
-      .. include:: upgrading-firewalld.rst
-
-   .. group-tab:: Debian
-
-      .. include:: upgrading-none.rst
-
-   .. group-tab:: Linux Mint
-
-      .. include:: upgrading-none.rst
-
-   .. group-tab:: OpenSUSE
-
-      .. include:: upgrading-firewalld.rst
-
-   .. group-tab:: RHEL
-
-      .. include:: upgrading-firewalld.rst
-
-   .. group-tab:: Ubuntu
-
-      .. include:: upgrading-ufw.rst
 
 ----------
 Next Steps
