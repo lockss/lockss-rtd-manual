@@ -2,19 +2,23 @@
    :alt: LOCKSS 2.0-alpha4 logo
    :align: right
 
-==============================================
-LOCKSS 2.0-alpha4 (not released) System Manual
-==============================================
+===============================
+LOCKSS 2.0-alpha4 System Manual
+===============================
+
+.. FIXME RELEASETIME
 
 .. warning::
 
-   This version of the documentation is a work in progress, for a future stable release.
+   The LOCKSS 2.0-alpha4 release is imminent, but not 100% complete.
 
    .. only:: html
 
-      See the `latest stable version </projects/manual/>`_.
+      See the `latest stable version </projects/manual/>`_ (2.0-alpha3).
 
-**Welcome to the LOCKSS 2.0-alpha4 (not released) System Manual.**
+**Welcome to the LOCKSS 2.0-alpha4 System Manual.**
+
+.. FIXME RELEASETIME
 
 | Released: 2021-XX-XX.
 | Last modified: |today|.
@@ -34,8 +38,6 @@ LOCKSS 2.0-alpha4 (not released) System Manual
    *  Many security enhancements, including support for `firewalld` and `ufw`, containers not running as `root` internally, the `lockss` user no longer needing `sudo` privileges, Solr authentication, and LCAP SSL support with TLSv1.2 by default.
 
    *  Web user interface enhancements, including LCAP SSL key generation and support for the Kubernetes dashboard.
-
-   *  Plugin packager and Maven archetype for the LAAWS system.
 
    -------------
    Prerequisites
