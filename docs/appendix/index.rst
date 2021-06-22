@@ -12,3 +12,4 @@ This appendix contains pages of additional information about the LOCKSS system.
    privileged
    lockss
    ports
+   past
