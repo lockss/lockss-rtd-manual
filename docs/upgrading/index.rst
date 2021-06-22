@@ -8,6 +8,8 @@ This chapter describes how to upgrade the LOCKSS system from 2.0-alpha3 to 2.0-a
 
 *  **Before you begin upgrading from 2.0-alpha3**, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages.
 
+*  Please note that the upgrade process includes re-running the LOCKSS configuration tool, which **will require you to re-enter the PostgreSQL database password**.
+
 .. contents:: Chapter Overview
    :local:
    :depth: 1

@@ -11,6 +11,7 @@ This appendix contains pages of additional information about the LOCKSS system.
    root
    privileged
    lockss
+   postgresql
    lcap-ssl
    ports
    past

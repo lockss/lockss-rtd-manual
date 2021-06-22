@@ -255,6 +255,10 @@ If you select this option, you will be asked additional configuration questions:
 
    Enter the password for the embedded PostgreSQL database.
 
+   .. warning::
+
+      This prompt is used to record the PostgreSQL database password in the LOCKSS system's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. See :doc:`/appendix/postgresql` for details.
+
 2. Prompt: :guilabel:`Password for PostgreSQL database (again)`
 
    Re-enter the password for the embedded PostgreSQL database. If the two passwords do not match, the password will be asked again.
@@ -289,6 +293,10 @@ If you select this option, you will be asked additional configuration questions:
 6. Prompt: :guilabel:`Password for PostgreSQL database`
 
    Enter the password for the username in the external PostgreSQL database.
+
+   .. warning::
+
+      This prompt is used to record the PostgreSQL database password in the LOCKSS system's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. Contact your PostgreSQL database administrator for details.
 
 7. Prompt: :guilabel:`Password for PostgreSQL database (again)`
 
