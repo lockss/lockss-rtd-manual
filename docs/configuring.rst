@@ -160,16 +160,28 @@ Prompt: :guilabel:`Preservation group(s)`
 
 Accept the default (:samp:`demo`) if you are not running your own LOCKSS network; otherwise, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator, for example :samp:`ournetwork` or :samp:`prod;usdocspln`.
 
-----------------
-Storage Settings
-----------------
+-------------
+Storage Areas
+-------------
 
-Content Data Storage Directories
-================================
+The LOCKSS system needs storage areas to store data:
+
+*  One or more **content data storage areas** to store preserved content, as well as several databases.
+
+*  A **log data storage area** to store log files.
+
+*  A **temporary data storage area** to store temporary files.
+
+Depending on your host system's layout, these storage areas may all be the same, or all be different mount points or paths.
+
+Subdirectories will be created in each storage area to fit the needs of a system component; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's content data directory in the content data storage areas, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log data directory in the log data storage area.
+
+Content Data Storage Areas
+==========================
 
 1. Prompt: :guilabel:`Root path for primary content data storage`
 
-   Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system, where preserved content will be stored along with several databases. It is the analog of :file:`/cache0` in the classic LOCKSS system. Data will be stored in subdirectories of the directory entered, one for each component of the LOCKSS system.
+   Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system, where preserved content will be stored along with several databases. It is the analog of :file:`/cache0` in the classic LOCKSS system.
 
 2. Prompt: :guilabel:`Use additional directories for content data storage?`
 
@@ -179,21 +191,21 @@ Content Data Storage Directories
 
    :guilabel:`Root path for additional content data storage <count> (q to quit)`
 
-   On each line, enter the full path of a directory to use as the root of an additional storage area, and enter :kbd:`q` when done. Data will be stored in subdirectories of each additional directory entered.
+   On each line, enter the full path of a directory to use as the root of an additional storage area, and enter :kbd:`q` when done.
 
-Log Data Storage Directory
-==========================
+Log Data Storage Area
+=====================
 
 Prompt: :guilabel:`Root path for log data storage`
 
-This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path. Logs will be stored in subdirectories of the directory entered, one for each component of the LOCKSS system.
+This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
-Temporary Data Storage Directory
-================================
+Temporary Data Storage Area
+===========================
 
 Prompt: :guilabel:`Root path for temporary data storage (local storage preferred)`
 
-This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path. Temporary data will be stored in subdirectories of the directory entered, one for each component of the LOCKSS system.
+This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
 .. tip::
 
