@@ -29,13 +29,13 @@ LOCKSS 2.0-alpha4 System Manual
    What's New?
    -----------
 
-   *  Containers are now orchestrated by **K3s**, a lightweight Kubernetes distribution by `Rancher <https://rancher.com/>`_, which is compatible with most Linux flavors.
+   *  Containers are now orchestrated by **K3s**, a lightweight Kubernetes distribution by major Kubernetes vendor `Rancher <https://rancher.com/>`_. K3s is compatible with most Linux flavors and comes with a convenient multi-OS installer.
 
    *  Content is now stored in compressed WARC files by default.
 
    *  Numerous bug fixes and enhancements in the repository service and underlying componentry, delivering more reliability and performance in error handling, scalability, and content replay.
 
-   *  Many security enhancements, including support for `firewalld` and `ufw`, containers not running as `root` internally, the `lockss` user no longer needing `sudo` privileges, Solr authentication, and LCAP SSL support with TLSv1.2 by default.
+   *  Many security enhancements, including support for :program:`firewalld` and :program:`ufw`, containers not running as ``root`` internally, the ``lockss`` user no longer needing :program:`sudo` privileges, Solr authentication, and LCAP SSL support with TLSv1.2 by default.
 
    *  Web user interface enhancements, including LCAP SSL key generation and support for the Kubernetes dashboard.
 
@@ -45,7 +45,7 @@ LOCKSS 2.0-alpha4 System Manual
 
    In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
 
-   *  64-bit **Linux** host (physical or virtual) with 4 cores and 8 GB of memory.
+   *  64-bit **Linux** host (physical or virtual) with at least 4 cores and 8 GB of memory.
 
    *  **K3s** (a lightweight Kubernetes environment).
 
