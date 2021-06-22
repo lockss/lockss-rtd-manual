@@ -1,6 +1,6 @@
-===========================
-Past Versions of the Manual
-===========================
+=============
+Past Versions
+=============
 
 *  `2.0-alpha3 </projects/manual/en/2.0-alpha3>`_ (2020-10-29)
 *  `2.0-alpha2 </projects/manual/en/2.0-alpha2>`_ (2020-02-06)

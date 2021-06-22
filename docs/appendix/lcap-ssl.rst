@@ -39,10 +39,9 @@ To use the command line tool:
 
       ../laaws-dev-scripts/bin/runclass org.lockss.keystore.EditKeyStores
           -s pubkeystore.pkcs12 -o keydir
-          box1.pln.org ... boxN.pln.org"
+          box1.pln.org ... boxN.pln.org
 
-   This will create, in the directory :file: :samp:`{keydir}`, a public keystore named :file:`pubkeystore.pkcs12`, and a pair of files for each box: :samp:`box{K}.pln.org.pkcs12` and
-:samp:`box{K}.pln.org.pass`.
+   This will create, in the directory :samp:`{keydir}`, a public keystore named :file:`pubkeystore.pkcs12`, and a pair of files for each box: :samp:`box{K}.pln.org.pkcs12` and :samp:`box{K}.pln.org.pass`.
 
 4. To add additional hosts, provide the existing public keystore as the value of the ``-s`` argument, and list the new hosts. The new public keys will be added to the existing public keystore.
 
