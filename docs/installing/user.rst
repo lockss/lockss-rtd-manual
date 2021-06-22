@@ -8,7 +8,7 @@ To create the ``lockss`` user and group, run this :program:`useradd` command as 
 
 .. code-block:: shell
 
-   useradd --system --user-group --create-home --shell=/bin/false lockss
+   useradd --system --user-group --create-home --shell=/bin/bash lockss
 
 ----
 
