@@ -33,15 +33,13 @@ To use the command line tool:
 
 2. Build ``lockss-core``.
 
-3. In the root directory of ``lockss-core``, run this command (on a single line):
+3. In the root directory of ``lockss-core``, run this command:
 
    .. code-block:: shell
 
-      ../laaws-dev-scripts/bin/runclass org.lockss.keystore.EditKeyStores
-          -s pubkeystore.pkcs12 -o keydir
-          box1.pln.org ... boxN.pln.org
+      ../laaws-dev-scripts/bin/runclass org.lockss.keystore.EditKeyStores -s pubkeystore.pkcs12 -o keydir box1.pln.org ... boxN.pln.org
 
-   This will create, in the directory :samp:`{keydir}`, a public keystore named :file:`pubkeystore.pkcs12`, and a pair of files for each box: :samp:`box{K}.pln.org.pkcs12` and :samp:`box{K}.pln.org.pass`.
+   This will create, in the directory :samp:`{keydir}`, a public keystore named :file:`pubkeystore.pkcs12`, and a pair of files :samp:`box{K}.pln.org.pkcs12` and :samp:`box{K}.pln.org.pass` for each one of the :samp:`{N}` host names :samp:`box1.pln.org` through :samp:`box{N}.pln.org`.
 
 4. To add additional hosts, provide the existing public keystore as the value of the ``-s`` argument, and list the new hosts. The new public keys will be added to the existing public keystore.
 
