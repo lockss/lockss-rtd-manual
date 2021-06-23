@@ -2,33 +2,36 @@
 Running Commands as ``root``
 ============================
 
-Some commands or scripts in this manual are intended to be run as ``root``.
+Some commands or scripts in this manual are intended to be run as ``root``. This section describes two methods for doing so.
 
 .. contents:: Topic Overview
    :local:
    :depth: 1
 
---------------------------------
-User With :program:`sudo` Access
---------------------------------
+-------------------------------------------------
+Running Commands as ``root`` With :program:`sudo`
+-------------------------------------------------
 
-If you are logged in as a user who can run commands as ``root`` via :program:`sudo`, simply add the following in front of the command listed in the manual [#fn1]_ :
+If you are logged in as a user who can run commands as ``root`` via :program:`sudo`, simply add the following in front of the command listed in the manual [#fn1]_:
 
 .. code-block:: shell
 
    sudo ...
 
-For example, if the command to be run as ``root`` is ``iptables -F``, you would type:
+For example, if the command listed in the manual is ``iptables -F``, you would type ``sudo iptables -F``.
 
-.. code-block:: shell
+-------------------------------------
+Running Commands Directly as ``root``
+-------------------------------------
 
-   sudo iptables -F
+If you are logged in as ``root`` directly, you can simply run the command as listed in the manual, for example ``iptables -F``.
 
--------------
-``root`` User
--------------
+----
 
-If you are logged in as ``root`` directly, you can simply run the command listed in the manual.
+.. rubric:: See Also
+
+*  :doc:`privileged`
+*  :doc:`lockss`
 
 ----
 

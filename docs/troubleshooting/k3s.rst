@@ -68,7 +68,7 @@ iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail
 
    If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you do not need to take any action, even if you receive this error message [#fn3]_.
 
-   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_.
+   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_. See also :doc:`/troubleshooting/iptables`.
 
 RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line
    To resolve this issue sometimes ecountered in the RHEL/CentOS family of operating systems [#fn4]_:
@@ -94,6 +94,12 @@ RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot c
          grub2-mkconfig -o /boot/grub2/grub.cfg
 
    3. Reboot the system.
+
+swap: should be disabled
+   This warning can be ignored.
+
+CONFIG_INET_XFRM_MODE_TRANSPORT: missing
+   This warning can be ignored.
 
 ----
 

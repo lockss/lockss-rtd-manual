@@ -15,3 +15,4 @@ This chapter describes how to use the LOCKSS system.
    metadata
    pywb
    openwayback
+   dashboard

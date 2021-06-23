@@ -8,6 +8,7 @@ This chapter contains pages of additional information about troubleshooting the 
    :caption: Chapter Overview
    :maxdepth: 1
 
+   known-issues
    iptables
    firewalld
    ufw

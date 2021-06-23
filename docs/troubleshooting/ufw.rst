@@ -2,15 +2,17 @@
 Troubleshooting :program:`ufw`
 ==============================
 
-If your system is running the :program:`ufw` firewall, it is necessary to allow traffic from K3s' pod subnet (by default 10.42.0.0/16) and service subnet (by default 10.43.0.0/16) via :program:`ufw` for K3s to work properly [#fn1]_.
-
-The LOCKSS Installer's :program:`install-k3s` script calls another script, :program:`configure-firewall`, which detects this situation at the time K3s is being installed, and offers to make this change with the following prompt [#fn2]_:
+If your system is running the :program:`ufw` firewall, it is necessary to allow traffic from K3s' pod subnet (by default 10.42.0.0/16) and service subnet (by default 10.43.0.0/16) via :program:`ufw` for K3s to work properly [#fn1]_. If :program:`configure-firewall` (a script called by :program:`install-k3s`) detects this situation, you will see a warning message and the following prompt [#fn2]_:
 
 :guilabel:`Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw?`
 
-If you opt out of this change, K3s may not function properly and you may have to resolve the situation with :program:`ufw` manually.
+Enter :kbd:`Y` for "yes" and :kbd:`N` for "no", or simply hit :kbd:`Enter` to accept the proposed answer (displayed in square brackets).
 
-The remediation attempted by :program:`configure-firewall` is equivalent to:
+.. caution::
+
+   If you opt out of the proposed remediation, K3s may malfunction.
+
+The remediation attempted by :program:`configure-firewall` is equivalent to [#fn3]_:
 
 .. code-block:: shell
 
@@ -38,13 +40,17 @@ By default, K3s' pod subnet is 10.42.0.0/16 and service subnet is 10.43.0.0/16, 
 
    References:
 
-   * https://github.com/k3s-io/k3s/issues/1280
+   *  https://github.com/k3s-io/k3s/issues/1280
 
-      * https://github.com/k3s-io/k3s/issues/1280#issuecomment-663269728
+      *  https://github.com/k3s-io/k3s/issues/1280#issuecomment-663269728
 
 .. [#fn2]
 
    See :doc:`/installing/k3s`.
+
+.. [#fn3]
+
+   By default, K3s' pod subnet is 10.42.0.0/16 and service subnet is 10.43.0.0/16.
 
 .. [#fnprivileged]
 
