@@ -16,6 +16,8 @@ To install the Kubernetes Dashboard, run this command [#fn1]_:
 
    scripts/dashboard-util --install
 
+If the installation succeeds, the program will also display the login URL and the bearer token.
+
 ----------------------------------
 Accessing the Kubernetes Dashboard
 ----------------------------------
