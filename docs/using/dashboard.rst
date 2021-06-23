@@ -54,7 +54,7 @@ To access the Kubernetes Dashboard:
 Using the Kubernetes Dashboard UI
 ---------------------------------
 
-When the dashboard comes up, it will be in the default namespace. Click on the pull-down menu and select the ``lockss`` namespace to see the LOCKSS components. If all of your deployments are running and ready, the three circles at the top should be green. In the left hand panel you can select the components you are interested in:
+When the dashboard comes up, it will be in the default namespace. Click on the namespace pull-down menu near the top and select the ``lockss`` namespace to see the LOCKSS components. If all of your deployments are running and ready, the three circles at the top should be green. In the left hand panel you can select the components you are interested in:
 
 *  Click on :guilabel:`Services` to see the cluster IP for each of the running services. You can click on a specific service to see more detailed information.
 
