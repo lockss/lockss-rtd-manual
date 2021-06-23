@@ -26,7 +26,7 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
       If you opt out of the proposed remediations, :program:`install-k3s` will proceed, but K3s is likely to malfunction without external intervention. See :doc:`/troubleshooting/iptables`, :doc:`/troubleshooting/firewalld` and :doc:`/troubleshooting/ufw` for details.
 
-3. The :program:`install-k3s` script is also capable of detecting a problematic situation with DNS resolution. If applicable, :program:`install-k3s` will display a warning messages and the following prompt:
+3. The :program:`install-k3s` script is also capable of detecting a problematic situation with DNS resolution. If applicable, :program:`install-k3s` will display a warning message and the following prompt:
 
    :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
