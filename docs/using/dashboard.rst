@@ -96,6 +96,12 @@ To remove the Kubernetes Dashboard from the ``kubernetes-dashboard`` namespace, 
 
 ----
 
+.. rubric:: See Also
+
+*  `Web UI (Dashboard) <https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/>`_ on the Kubernetes website.
+
+----
+
 .. rubric:: Footnotes
 
 .. [#fn1]
