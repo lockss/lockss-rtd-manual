@@ -40,7 +40,7 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
 
       .. code-block:: shell
 
-         git checkout develop
+         git checkout release-2.0-alpha4
 
       When the 2.0-alpha4 release is 100% complete, this additional command will no longer be necessary and will be removed from this page.
 
