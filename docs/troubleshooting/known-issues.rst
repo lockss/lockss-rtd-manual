@@ -2,16 +2,20 @@
 Known Issues
 ============
 
-*This page was last updated: 2021-06-22.*
+*This page was last updated: 2021-06-25.*
+
+.. _known-issue-security:
 
 *  Security
 
    *This section is under construction.*
 
-*  DNS Resolution
+.. _known-issue-dns:
 
-   *This section is under construction.*
+*  **DNS Resolution**
 
-*  Image transfers
+   K3s' default DNS cache timeout is 30 seconds, which results in enough repetitive upstream queries to trigger alarms at some institutions. One remediation is to change the CoreDNS configuration by editing its configmap.
 
-   *This section is under construction.*
+   With K3s, changes made to CoreDNS's configmap with :program:`kubectl apply` do not persist, because the configmap is constantly reloaded from :file:`/var/lib/rancher/k3s/server/manifests/coredns.yaml`.  Additionally, K3s overwrites the file with the defaults at startup, so changes there are not really persistent either.
+
+   The LOCKSS Installer offers the script :file:`scripts/coredns-cron-hack`, which sets the CoreDNS cache timeout to 30 minutes. It should be run once, as ``root``, after each time K3s starts. Absent a good way to do that, it is harmless to run it periodically from ``root``'s crontab. The recommended use is to copy it to a ``root``-owned file in :file:`/etc/cron.hourly`.
