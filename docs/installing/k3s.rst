@@ -72,9 +72,9 @@ After :program:`install-k3s` runs successfully, two tools are at your disposal t
 
    If all tests succeed, the last line of output will be ``STATUS: pass``. If some tests fail, the output will be (for example) ``STATUS: 1 (fail)``).
 
-   .. admonition:: Troubleshooting
+   .. caution::
 
-      This checker yields mixed results; it is capable of detecting hard-to-document situations that need remediation that definitely prevent K3s from running correctly, but it also yields false positives that would not prevent K3s from running correctly. If this checker fails, see the :ref:`When the K3s Configuration Checker Fails` section of :doc:`/troubleshooting/k3s` for guidance.
+      On some operating systems, this checker may report errors and fail, even though there is nothing wrong. If this checker fails, see the :ref:`When the K3s Configuration Checker Fails` section of :doc:`/troubleshooting/k3s` for guidance.
 
 ----
 
