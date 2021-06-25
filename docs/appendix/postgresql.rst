@@ -32,7 +32,7 @@ To change the password of the embedded PostgreSQL database, perform the followin
 
    .. code-block:: shell
 
-      postgres_pod=$(k3s kubectl get pod -n lockss --selector=io.kompose.service=lockss-postgres-service --output=jsonpath="{.items[0].status.podIP}")
+      postgres_ip=$(k3s kubectl get pod -n lockss --selector=io.kompose.service=lockss-postgres-service --output=jsonpath="{.items[0].status.podIP}")
 
 5. Execute the following command to alter the ``LOCKSS`` database user's password, taking care to replace :samp:`{newpassword}` with your new embedded PostgreSQL database password:
 
