@@ -22,13 +22,19 @@ To change the password of the embedded PostgreSQL database, perform the followin
 
       k3s kubectl apply -n lockss --filename=config/configs/lockss-stack/svcs/lockss-postgres-service.yaml
 
-3. Run the following command to store the name of the PostgreSQL database container into the variable ``postgres_pod`` (to be reused later):
+3. Run the following command to store the name of the PostgreSQL database container into the variable ``postgres_pod``:
 
    .. code-block:: shell
 
       postgres_pod=$(k3s kubectl get pod -n lockss --selector=io.kompose.service=lockss-postgres-service --output=jsonpath="{.items[0].metadata.name}")
 
-4. Execute the following command to alter the ``LOCKSS`` database user's password, taking care to replace :samp:`{newpassword}` with your new embedded PostgreSQL database password:
+4. Run the following command to store the IP of the PostgreSQL database container into the variable ``postgres_ip``:
+
+   .. code-block:: shell
+
+      postgres_pod=$(k3s kubectl get pod -n lockss --selector=io.kompose.service=lockss-postgres-service --output=jsonpath="{.items[0].status.podIP}")
+
+5. Execute the following command to alter the ``LOCKSS`` database user's password, taking care to replace :samp:`{newpassword}` with your new embedded PostgreSQL database password:
 
    .. code-block:: shell
 
@@ -36,16 +42,36 @@ To change the password of the embedded PostgreSQL database, perform the followin
 
    Successful execution of the command results in the output ``ALTER ROLE``.
 
-5. *FIXME: insert verification step here*
+6. To verify that the password change worked, run the following command:
 
-6. Stop the PostgreSQL database container by running this command:
+   .. code-block:: shell
+
+      k3s kubectl exec $postgres_pod -n lockss -it -- psql --username=LOCKSS --dbname=postgres --host=$postgres_ip
+
+   and enter :samp:`{newpassword}` at the :guilabel:`Password for user LOCKSS` prompt. If the password change was successful and you enter :samp:`{newpassword}` correctly, you will see a PostgreSQL prompt similar to:
+
+   .. code-block:: text
+
+      psql (9.6.12)
+      Type "help" for help.
+
+      postgres=#
+
+   which you can exit by entering :kbd:`\q` or hitting :kbd:`Ctrl + D`. If the password change was unsuccessful or you do not enter :samp:`{newpassword}` correctly, you will see output similar to:
+
+   .. code-block:: text
+
+      psql: FATAL:  password authentication failed for user "LOCKSS"
+      command terminated with exit code 2
+
+7. Stop the PostgreSQL database container by running this command:
 
    .. code-block:: shell
 
       k3s kubectl -n lockss delete service,deployment lockss-postgres-service &&
           k3s kubectl -n lockss wait --for=delete pod $postgres_pod --timeout=60s
 
-7. Re-run :program:`configure-lockss` so that you can record the new embedded PostgreSQL database password into the configuration of the LOCKSS stack:
+8. Re-run :program:`configure-lockss` so that you can record the new embedded PostgreSQL database password into the configuration of the LOCKSS stack:
 
    .. code-block:: shell
 
