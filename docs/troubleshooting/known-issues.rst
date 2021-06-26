@@ -6,9 +6,11 @@ Known Issues
 
 .. _known-issue-security:
 
-*  Security
+*  **Security**
 
-   *This section is under construction.*
+.. _known-issue-k8s-access:
+
+   *  In the "alpha" phase of development of LOCKSS 2.0, there are no access controls on Kubernetes' API. It is not accessible from outside the machine, but any local user can access the API, so they can stop the LOCKSS containers, change their contents, read secrets, etc. We plan to enable access controls in the "beta" phase.
 
 .. _known-issue-dns:
 
