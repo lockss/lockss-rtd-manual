@@ -47,11 +47,11 @@ LOCKSS 2.0-alpha4 System Manual
 
    In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
 
-   *  64-bit **Linux** host (physical or virtual) with at least 4 cores and 8 GB of memory.
+   *  64-bit **Linux** host (physical or virtual) with at least 4 CPU cores and 8 GB of memory, and adequate storage.
 
-   *  **K3s** (a lightweight Kubernetes environment).
+   *  **Git**, to download the LOCKSS Installer from GitHub.
 
-   *  **Git** to download the LOCKSS Installer from GitHub.
+   *  **K3s**, a lightweight Kubernetes environment installed via the LOCKSS Installer.
 
    See :doc:`/introduction/prerequisites` and :doc:`/installing/index` for more details.
 
