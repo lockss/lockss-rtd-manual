@@ -6,21 +6,9 @@
 LOCKSS 2.0-alpha4 System Manual
 ===============================
 
-.. FIXME RELEASETIME
-
-.. warning::
-
-   The LOCKSS 2.0-alpha4 release is imminent, but not 100% complete.
-
-   .. only:: html
-
-      See the `latest stable version </projects/manual/>`_ (2.0-alpha3).
-
 **Welcome to the LOCKSS 2.0-alpha4 System Manual.**
 
-.. FIXME RELEASETIME
-
-| Released: 2021-XX-XX.
+| Released: 2021-06-28.
 | Last modified: |today|.
 
 .. only:: html

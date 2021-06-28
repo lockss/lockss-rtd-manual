@@ -32,18 +32,6 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
 
       git config --local pull.rebase true
 
-.. FIXME RELEASETIME
-
-4. .. caution::
-
-      As mentioned on the front page, the 2.0-alpha4 release is imminent but not 100% complete. With just the instructions above, you will have the 2.0-alpha3 version of the LOCKSS Installer. Until the 2.0-alpha4 is 100% complete, you will have to add the following command to get the 2.0-alpha4 version of the LOCKSS Installer:
-
-      .. code-block:: shell
-
-         git checkout release-2.0-alpha4
-
-      When the 2.0-alpha4 release is 100% complete, this additional command will no longer be necessary and will be removed from this page.
-
 ----
 
 .. rubric:: Footnotes
