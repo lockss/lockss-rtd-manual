@@ -2,6 +2,8 @@
 Troubleshooting K3s
 ===================
 
+This section offers troubleshooting information when the K3s installer or the K3s ocnfiguration checker fail.
+
 ----------------------------
 When the K3s Installer Fails
 ----------------------------
@@ -66,11 +68,11 @@ Some failures, especially in "optional" aspects, may not prevent the cluster fro
 .. _k3s-iptables180:
 
 iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail)
-   This error message may or may not reflect a problem.
+   This error message is generally spurious, because the LOCKSS Installer should have previously detected and offered to correct this issue in the circumstances where it applies, and Rancher has a documented bug report that the K3s configuration checker keeps reporting this issue even in circumstances where it does not apply [#fn3]_.
 
-   If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you do not need to take any action, even if you receive this error message [#fn3]_.
+   If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you can ignore this error message even if you receive it.
 
-   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_. See also :doc:`/troubleshooting/iptables`.
+   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_. See :doc:`/troubleshooting/iptables`.
 
 .. _k3s-usernamespace:
 
