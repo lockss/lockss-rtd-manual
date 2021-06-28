@@ -41,9 +41,9 @@ LOCKSS 2.0-alpha4 System Manual
 
    *  Web user interface enhancements, including LCAP SSL key generation and support for the Kubernetes dashboard.
 
-   -------------
-   Prerequisites
-   -------------
+   ------------
+   Installation
+   ------------
 
    In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
 
@@ -53,7 +53,7 @@ LOCKSS 2.0-alpha4 System Manual
 
    *  **Git** to download the LOCKSS Installer from GitHub.
 
-   See the :doc:`/introduction/index` for more details.
+   See :doc:`/introduction/prerequisites` and :doc:`/installing/index` for more details.
 
    -------
    Upgrade
