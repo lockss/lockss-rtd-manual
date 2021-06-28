@@ -14,4 +14,5 @@ This appendix contains pages of additional information about the LOCKSS system.
    postgresql
    lcap-ssl
    ports
-   past
+   versions
+   past-versions
