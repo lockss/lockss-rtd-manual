@@ -1,14 +1,18 @@
-.. image:: /images/lockss-2.0-alpha4_200.png
-   :alt: LOCKSS 2.0-alpha4 logo
-   :align: right
+=============================================
+LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
+=============================================
 
-===============================
-LOCKSS 2.0-alpha4 System Manual
-===============================
+.. warning::
 
-**Welcome to the LOCKSS 2.0-alpha4 System Manual.**
+   **You are viewing a work in progress for a future version of the LOCKSS System.**
 
-| Released: 2021-06-28.
+   .. only:: html
+
+      `Click here to go to the latest released version </projects/manual/en/latest>`_.
+
+**Welcome to the LOCKSS 2.0-beta1 (NOT RELEASED) System Manual.**
+
+| Released: 2021-XX-XX.
 | Last modified: |today|.
 
 .. only:: html
@@ -19,19 +23,13 @@ LOCKSS 2.0-alpha4 System Manual
    What's New?
    -----------
 
-   *  Containers are now orchestrated by **K3s**, a lightweight Kubernetes distribution by Kubernetes vendor `Rancher <https://rancher.com/>`_. K3s is compatible with most Linux flavors and comes with a convenient multi-OS installer.
-
-   *  Content is now stored in compressed WARC files by default.
-
-   *  Numerous bug fixes and enhancements in the repository service and underlying componentry, delivering more reliability and performance in error handling, scalability, and content replay.
-
-   *  Many security enhancements, including support for :program:`firewalld` and :program:`ufw`, containers not running as ``root`` internally, the ``lockss`` user no longer needing :program:`sudo` privileges, Solr authentication, and LCAP SSL support with TLSv1.2 by default.
-
-   *  Web user interface enhancements, including LCAP SSL key generation and support for the Kubernetes dashboard.
+   *  **FIXME**
 
    ------------
    Installation
    ------------
+
+   **FIXME**
 
    In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
 
@@ -47,11 +45,15 @@ LOCKSS 2.0-alpha4 System Manual
    Upgrade
    -------
 
+   **FIXME**
+
    If you were running LOCKSS 2.0-alpha3, you no longer need MicroK8s or Snap. See :doc:`upgrading/index` for more details.
 
    ---------------------
    Questions and Answers
    ---------------------
+
+   **FIXME**
 
    I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha4?
       The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
