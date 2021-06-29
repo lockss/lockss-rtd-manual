@@ -16,6 +16,8 @@ To install the Kubernetes Dashboard, run this command [#fn1]_:
 
    scripts/dashboard-util --install
 
+If the installation succeeds, the program will also display the login URL and the bearer token.
+
 ----------------------------------
 Accessing the Kubernetes Dashboard
 ----------------------------------
@@ -93,6 +95,12 @@ To remove the Kubernetes Dashboard from the ``kubernetes-dashboard`` namespace, 
 .. code-block:: shell
 
    scripts/dashboard-util --remove
+
+----
+
+.. rubric:: See Also
+
+*  `Web UI (Dashboard) <https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/>`_ on the Kubernetes website.
 
 ----
 

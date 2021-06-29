@@ -2,6 +2,8 @@
 Troubleshooting CoreDNS
 =======================
 
+This section offers troubleshooting information related to DNS resolution in the K3s cluster.
+
 If both :file:`/etc/resolv.conf` and :file:`/run/systemd/resolve/resolv.conf` (files used to list the IP address of DNS servers) contain loopback addresses, CoreDNS (a component of the K3s Kubernetes cluster that handles DNS resolution) will not work properly [#fn1]_. If :program:`configure-dns` (a script called by :program:`install-k3s`) detects this situation, you will see a warning message and the following prompt [#fn2]_:
 
 :guilabel:`IP address(es) of DNS resolvers, separated by ';'`

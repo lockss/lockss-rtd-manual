@@ -6,30 +6,20 @@
 LOCKSS 2.0-alpha4 System Manual
 ===============================
 
-.. FIXME RELEASETIME
-
-.. warning::
-
-   The LOCKSS 2.0-alpha4 release is imminent, but not 100% complete.
-
-   .. only:: html
-
-      See the `latest stable version </projects/manual/>`_ (2.0-alpha3).
-
 **Welcome to the LOCKSS 2.0-alpha4 System Manual.**
 
-.. FIXME RELEASETIME
-
-| Released: 2021-XX-XX.
+| Released: 2021-06-28.
 | Last modified: |today|.
 
 .. only:: html
+
+   .. _release-notes:
 
    -----------
    What's New?
    -----------
 
-   *  Containers are now orchestrated by **K3s**, a lightweight Kubernetes distribution by major Kubernetes vendor `Rancher <https://rancher.com/>`_. K3s is compatible with most Linux flavors and comes with a convenient multi-OS installer.
+   *  Containers are now orchestrated by **K3s**, a lightweight Kubernetes distribution by Kubernetes vendor `Rancher <https://rancher.com/>`_. K3s is compatible with most Linux flavors and comes with a convenient multi-OS installer.
 
    *  Content is now stored in compressed WARC files by default.
 
@@ -39,49 +29,25 @@ LOCKSS 2.0-alpha4 System Manual
 
    *  Web user interface enhancements, including LCAP SSL key generation and support for the Kubernetes dashboard.
 
-   -------------
-   Prerequisites
-   -------------
+   ------------
+   Installation
+   ------------
 
    In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
 
-   *  64-bit **Linux** host (physical or virtual) with at least 4 cores and 8 GB of memory.
+   *  64-bit **Linux** host (physical or virtual) with at least 4 CPU cores and 8 GB of memory, and adequate storage.
 
-   *  **K3s** (a lightweight Kubernetes environment).
+   *  **Git**, to download the LOCKSS Installer from GitHub.
 
-   *  **Git** to download the LOCKSS Installer from GitHub.
+   *  **K3s**, a lightweight Kubernetes environment installed via the LOCKSS Installer.
 
-   See the :doc:`/introduction/index` for more details.
+   See :doc:`/introduction/prerequisites` and :doc:`/installing/index` for more details.
 
    -------
    Upgrade
    -------
 
    If you were running LOCKSS 2.0-alpha3, you no longer need MicroK8s or Snap. See :doc:`upgrading/index` for more details.
-
-   --------
-   Versions
-   --------
-
-   The LOCKSS 2.0-alpha4 system consists of a configurable set of the following components:
-
-   *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.5.0
-
-   *  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
-
-   *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.4.0
-
-   *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.3.0
-
-   *  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
-
-   *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
-
-   *  `Apache Solr <https://lucene.apache.org/solr/>`_ version 7.2.1
-
-   *  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2
-
-   *  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0
 
    ---------------------
    Questions and Answers

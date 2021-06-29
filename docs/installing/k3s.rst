@@ -30,7 +30,7 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
    :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
-   Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested default will be offered to you in square brackets, consisting of non-loopback addresses collected from your machine's :file:`resolv.conf` files; you can simply hit :kbd:`Enter` to accept the suggested default.
+   Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested default will be offered to you in square brackets, consisting of non-loopback addresses collected from your machine's :file:`resolv.conf` files; you can simply hit :kbd:`Enter` to accept the suggested default. (See :doc:`/troubleshooting/coredns` for guidance.)
 
 4. You will be prompted for a K3s state data directory:
 
@@ -38,7 +38,7 @@ The LOCKSS Installer provides :program:`install-k3s`, a script that streamlines 
 
    K3s stores state data in :file:`/var/lib/rancher/k3s` by default, but if :file:`/var` is space-limited, you should specify a different directory as the K3s state data directory will grow to at least 5-10GB. Enter a directory path of your choice followed by :kbd:`Enter`, or simply hit :kbd:`Enter` to accept the default.
 
-5. If Rancher's K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s`. See the :ref:`When the K3s Installer Fails` section of :doc:`/troubleshooting/k3s`.
+5. If Rancher's K3s install script (https://get.k3s.io) cannot recover from an error condition, it may display an error message with a suggested remediation before exiting. If applicable, perform the recommended action and re-run :program:`install-k3s` (see :ref:`When the K3s Installer Fails` for guidance).
 
 .. tip::
 
@@ -70,11 +70,11 @@ After :program:`install-k3s` runs successfully, two tools are at your disposal t
 
       k3s check-config
 
-   If all tests succeed, the last line of output will be ``STATUS: pass``. If some tests fail, the output will be (for example) ``STATUS: 1 (fail)``).
+   If all tests succeed, the last line of output will be ``STATUS: pass``. If some tests fail, the output will be (for example) ``STATUS: 1 (fail)``.
 
-   .. admonition:: Troubleshooting
+   .. caution::
 
-      This checker yields mixed results; it is capable of detecting hard-to-document situations that need remediation that definitely prevent K3s from running correctly, but it also yields false positives that would not prevent K3s from running correctly. If this checker fails, see the :ref:`When the K3s Configuration Checker Fails` section of :doc:`/troubleshooting/k3s` for guidance.
+      On some operating systems, this checker may report errors and fail, even though there is nothing wrong, especially the :program:`iptables` warning similar to ``iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail)``. If this checker fails, see :ref:`When the K3s Configuration Checker Fails` for guidance.
 
 ----
 

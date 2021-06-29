@@ -26,7 +26,7 @@ Flavors of Linux we have successfully tested include:
 
 *  `RHEL <https://www.redhat.com/>`_ 8.3.
 
-*  `Rocky Linux <https://rockylinux.org/>`_ 8.3 RC1.
+*  `Rocky Linux <https://rockylinux.org/>`_ 8.4.
 
 *  `Ubuntu <https://ubuntu.com/>`_ 21.04, 20.10, 20.04 LTS, 19.10, 19.04, 18.10, 18.04 LTS.
 

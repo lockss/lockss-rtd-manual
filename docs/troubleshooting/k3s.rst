@@ -2,6 +2,8 @@
 Troubleshooting K3s
 ===================
 
+This section offers troubleshooting information when the K3s installer or the K3s ocnfiguration checker fail.
+
 ----------------------------
 When the K3s Installer Fails
 ----------------------------
@@ -63,12 +65,16 @@ As a rule of thumb, if :program:`k3s check-config` ends successfully with ``STAT
 
 Some failures, especially in "optional" aspects, may not prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes, but if possible they should be addressed. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message:
 
+.. _k3s-iptables180:
+
 iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail)
-   This error message may or may not reflect a problem.
+   This error message is generally spurious, because the LOCKSS Installer should have previously detected and offered to correct this issue in the circumstances where it applies, and Rancher has a documented bug report that the K3s configuration checker keeps reporting this issue even in circumstances where it does not apply [#fn3]_.
 
-   If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you do not need to take any action, even if you receive this error message [#fn3]_.
+   If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you can ignore this error message even if you receive it.
 
-   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_. See also :doc:`/troubleshooting/iptables`.
+   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_. See :doc:`/troubleshooting/iptables`.
+
+.. _k3s-usernamespace:
 
 RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line
    To resolve this issue sometimes ecountered in the RHEL/CentOS family of operating systems [#fn4]_:
@@ -95,8 +101,12 @@ RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot c
 
    3. Reboot the system.
 
+.. _k3s-swap:
+
 swap: should be disabled
    This warning can be ignored.
+
+.. _k3s-configinetxfrmmodetransport:
 
 CONFIG_INET_XFRM_MODE_TRANSPORT: missing
    This warning can be ignored.
