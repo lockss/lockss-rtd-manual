@@ -2,58 +2,64 @@
 Troubleshooting K3s
 ===================
 
-This section offers troubleshooting information when the K3s installer or the K3s ocnfiguration checker fail.
+This section offers troubleshooting information when the K3s installer or the K3s configuration checker fail.
 
-----------------------------
-When the K3s Installer Fails
-----------------------------
+---------------------------------
+Troubleshooting the K3s Installer
+---------------------------------
 
-The LOCKSS Installer's :program:`install-k3s` script installs K3s by executing `Rancher's official K3s installer <https://get.k3s.io/>`_ after making sure many firewall and DNS issues are resolved [#fn1]_. However, the installer can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message:
+The LOCKSS Installer's :program:`install-k3s` script installs K3s by executing `Rancher's official K3s installer <https://get.k3s.io/>`_ after making sure many firewall and DNS issues are resolved [#fninstallk3s]_. However, the installer can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
 
-Failed to apply container_runtime_exec_t to /usr/local/bin/k3s
-   In some Fedora systems, you may see an error message similar to the following:
+Failed to apply container_runtime_exec_t
+========================================
 
-   .. code-block:: text
+In some Fedora systems, you may see an error message similar to the following:
 
-      [ERROR]  Failed to apply container_runtime_exec_t to /usr/local/bin/k3s, please install:
-          yum install -y container-selinux selinux-policy-base
-          yum install -y https://rpm.rancher.io/k3s/stable/common/centos/7/noarch/k3s-selinux-0.2-1.el7_8.noarch.rpm
+.. code-block:: text
 
-   The specific commands and version numbers may vary from the example above.
+   [ERROR]  Failed to apply container_runtime_exec_t to /usr/local/bin/k3s, please install:
+       yum install -y container-selinux selinux-policy-base
+       yum install -y https://rpm.rancher.io/k3s/stable/common/centos/7/noarch/k3s-selinux-0.2-1.el7_8.noarch.rpm
 
-   To resolve this problem:
+The specific commands and version numbers may vary from the example above.
 
-   1. Run the recommended commands as ``root`` [#fnroot]_.
+To resolve this problem:
 
-   2. Re-run :program:`install-k3s`.
+1. Run the recommended commands as ``root`` [#fnroot]_.
 
-Package k3s-selinux (rancher-k3s-common-stable) requires container-selinux
-   In some Oracle Linux 7 systems, you may see an error message similar to the following:
+2. Re-run :program:`install-k3s` [#fninstallk3s]_.
 
-   .. code-block:: text
+k3s-selinux requires container-selinux
+======================================
 
-      Error: Package: k3s-selinux-0.3-0.el7.noarch (rancher-k3s-common-stable)
-                 Requires: container-selinux >= 2.107-3
-       You could try using --skip-broken to work around the problem
-       You could try running: rpm -Va --nofiles --nodigest
+In some Oracle Linux 7 systems, you may see an error message similar to the following:
 
-   The specific commands and version numbers may vary from the example above. This can occur in environments where the Oracle Linux 7 Addons Yum repository is not enabled by default, so Rancher's official K3s installer is unable to install the package ``container-selinux`` automatically.
+.. code-block:: text
 
-   To resolve this problem:
+   Error: Package: k3s-selinux-0.3-0.el7.noarch (rancher-k3s-common-stable)
+              Requires: container-selinux >= 2.107-3
+    You could try using --skip-broken to work around the problem
+    You could try running: rpm -Va --nofiles --nodigest
 
-   1. Run the following command as ``root`` [#fnroot]_:
+The specific commands and version numbers may vary from the example above.
 
-      .. code-block:: shell
+This can occur in environments where the Oracle Linux 7 Addons Yum repository is not enabled by default, so Rancher's official K3s installer is unable to install the package ``container-selinux`` automatically.
 
-         yum-config-manager --enable ol7_addons
+To resolve this problem:
 
-   2. Re-run :program:`install-k3s`.
+1. Run the following command as ``root`` [#fnroot]_:
 
-----------------------------------------
-When the K3s Configuration Checker Fails
-----------------------------------------
+   .. code-block:: shell
 
-After installing K3s with :program:`install-k3s` [#fn1]_ and successfully running :program:`check-k3s` [#fn2]_, you can run the following command as ``root`` [#fnroot]_:
+      yum-config-manager --enable ol7_addons
+
+2. Re-run :program:`install-k3s` [#fninstallk3s]_.
+
+---------------------------------------------
+Troubleshooting the K3s Configuration Checker
+---------------------------------------------
+
+After installing K3s with :program:`install-k3s` [#fninstallk3s]_ and successfully running :program:`check-k3s` [#fncheckk3s]_, you can run the following command as ``root`` [#fnroot]_:
 
 .. code-block:: shell
 
@@ -63,77 +69,103 @@ This configuration checker runs through a more extensive series of tests, coveri
 
 As a rule of thumb, if :program:`k3s check-config` ends successfully with ``STATUS: pass``, there is a good chance the K3s cluster is configured correctly.
 
-Some failures, especially in "optional" aspects, may not prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes, but if possible they should be addressed. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message:
+Some failures, especially in "optional" aspects, may not actually prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes, but if possible they should be addressed. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
 
-.. _k3s-iptables180:
+iptables should be older than v1.8.0 or in legacy mode
+======================================================
 
-iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail)
-   This error message is generally spurious, because the LOCKSS Installer should have previously detected and offered to correct this issue in the circumstances where it applies, and Rancher has a documented bug report that the K3s configuration checker keeps reporting this issue even in circumstances where it does not apply [#fn3]_.
+In some instances, you may encounter an error message similar to the following:
 
-   If :program:`check-k3s` ran successfully [#fn2]_, your K3s cluster is probably running normally and you can ignore this error message even if you receive it.
+.. code-block:: text
 
-   If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fn1]_. See :doc:`/troubleshooting/iptables`.
+   iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail)
 
-.. _k3s-usernamespace:
+This error message is generally spurious, because the LOCKSS Installer should have previously detected and offered to correct this issue in the circumstances where it applies, and Rancher has a documented bug report that the K3s configuration checker keeps reporting this issue even in circumstances where it does not apply [#fnk3sbug]_.
 
-RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line
-   To resolve this issue sometimes ecountered in the RHEL/CentOS family of operating systems [#fn4]_:
+*  If :program:`check-k3s` ran successfully [#fncheckk3s]_, your K3s cluster is probably running normally and you can ignore this error message even if you receive it.
 
-   1. Edit the file :file:`/etc/default/grub` as ``root`` [#fnroot]_.
+*  If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fninstallk3s]_. See :doc:`/troubleshooting/iptables`.
 
-      1. Look for the line beginning with ``GRUB_CMDLINE_LINUX=``, for example:
+User namespaces disabled
+========================
 
-         .. code-block:: text
+In the RHEL/CentOS family of operating systems, you may receive the following error message:
 
-            GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto"
+.. code-block:: text
 
-      2. Add ``user_namespace.enable=1`` to the space-separated list of boot arguments, for instance:
+   RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line
 
-         .. code-block:: text
+To resolve this issue [#fnusernamespaces]_:
 
-            GRUB_CMDLINE_LINUX="user_namespace.enable=1 no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto"
+1. Edit the file :file:`/etc/default/grub` as ``root`` [#fnroot]_.
 
-   2. Run the following command as ``root``:
+   1. Look for the line beginning with ``GRUB_CMDLINE_LINUX=``, for example:
 
-      .. code-block:: shell
+      .. code-block:: text
 
-         grub2-mkconfig -o /boot/grub2/grub.cfg
+         GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto"
 
-   3. Reboot the system.
+   2. Add ``user_namespace.enable=1`` to the space-separated list of boot arguments, for instance:
 
-.. _k3s-swap:
+      .. code-block:: text
 
-swap: should be disabled
-   This warning can be ignored.
+         GRUB_CMDLINE_LINUX="user_namespace.enable=1 no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto"
 
-.. _k3s-configinetxfrmmodetransport:
+2. Run the following command as ``root``:
 
-CONFIG_INET_XFRM_MODE_TRANSPORT: missing
-   This warning can be ignored.
+   .. code-block:: shell
+
+      grub2-mkconfig -o /boot/grub2/grub.cfg
+
+3. Reboot the system.
+
+4. Re-run :program:`k3s check-config` [#fnk3scheckconfig]_.
+
+swap should be disabled
+=======================
+
+This warning can be ignored:
+
+.. code-block:: text
+
+   swap: should be disabled
+
+CONFIG_INET_XFRM_MODE_TRANSPORT missing
+=======================================
+
+This warning can be ignored:
+
+.. code-block:: text
+
+   CONFIG_INET_XFRM_MODE_TRANSPORT: missing
 
 ----
 
 .. rubric:: Footnotes
 
-.. [#fn1]
+.. [#fninstallk3s]
 
-   See "Installing K3s With :program:`install-k3s`" in :doc:`/installing/k3s`.
+   See :ref:`install-k3s <install-k3s>`.
 
-.. [#fn2]
+.. [#fncheckk3s]
 
-   See "Checking K3s" in :doc:`/installing/k3s`.
+   See :ref:`check-k3s <check-k3s>`.
 
-.. [#fn3]
+.. [#fnk3scheckconfig]
 
-   References:
+   See :ref:`k3s-check-config <k3s-check-config>`.
 
-   * https://github.com/k3s-io/k3s/issues/2946
-
-.. [#fn4]
+.. [#fnk3sbug]
 
    References:
 
-   * https://fortuitousengineer.com/installing-kubernetes-k3s-on-centos-rhel-hosts/
+   *  https://github.com/k3s-io/k3s/issues/2946
+
+.. [#fnusernamespaces]
+
+   References:
+
+   *  https://fortuitousengineer.com/installing-kubernetes-k3s-on-centos-rhel-hosts/
 
 .. [#fnroot]
 

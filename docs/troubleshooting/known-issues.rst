@@ -2,7 +2,7 @@
 Known Issues
 ============
 
-*This page was last updated: 2021-06-28.*
+*This page was last updated: 2021-07-07.*
 
 .. _known-issue-security:
 
@@ -25,3 +25,15 @@ Known Issues
    With K3s, changes made to CoreDNS's configmap with :program:`kubectl apply` do not persist, because the configmap is constantly reloaded from :file:`/var/lib/rancher/k3s/server/manifests/coredns.yaml`.  Additionally, K3s overwrites the file with the defaults at startup, so changes there are not really persistent either.
 
    The LOCKSS Installer offers the script :file:`scripts/coredns-cron-hack`, which sets the CoreDNS cache timeout to 30 minutes. It should be run once, as ``root``, after each time K3s starts. Absent a good way to do that, it is harmless to run it periodically from ``root``'s crontab. The recommended use is to copy it to a ``root``-owned file in :file:`/etc/cron.hourly`.
+
+.. _known-issue-pid-files:
+
+*  **Harmless PID File Errors**
+
+   The ``stdout`` log files of the various LOCKSS service containers contain the following error messages at startup:
+
+   .. code-block:: text
+
+      /usr/local/bin/docker-entrypoint: line 374: can't create /var/run/docker-entrypoint.pid: Permission denied
+
+   This is harmless and will be addressed in the next release of the system.
