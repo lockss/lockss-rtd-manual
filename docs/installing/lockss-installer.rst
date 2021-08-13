@@ -2,35 +2,35 @@
 Downloading the LOCKSS Installer
 ================================
 
-You will need to download the `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ from `GitHub <https://github.com/>`_ using `Git <git>`_.
+The next step is to download the LOCKSS Installer [#fninstaller]_. To do this, you will use :program:`curl` or :program:`wget` [#fncurl]_ to auto-execute the :program:`lockss-github-download` script [#fndownload]_. (Alternatively, for security purposes, you can inspect the :program:`lockss-github-download` script before executing it [#fnsecurity]_.)
 
-Follow these instructions as the ``lockss`` user [#fnlockss]_:
+As the ``lockss`` user [#fnlockss]_, run either this :program:`curl` command:
 
-1. Run this command:
+.. code-block:: shell
 
-   .. code-block:: shell
+   curl -sSfL https://github.com/lockss/lockss-github-download/raw/main/lockss-github-download | sh -s -
 
-      git clone https://github.com/lockss/lockss-installer
+or this :program:`wget` command:
 
-   .. admonition:: Troubleshooting
+.. code-block:: shell
 
-      On early CentOS 7 systems (for example CentOS 7.1), you may receive the error message ``fatal: unable to access 'https://github.com/lockss/lockss-installer/': Peer reports incompatible or unsupported protocol version``. This is due to outdated network security libraries. Run the command ``yum update -y curl nss nss-util nspr`` as ``root`` to update them, and retry the :program:`git clone` command.
+   wget -qO- https://github.com/lockss/lockss-github-download/raw/main/lockss-github-download | sh -s -
 
-2. Go into the :file:`lockss-installer` directory created by the :program:`git clone` command:
+This will download the latest version of the LOCKSS Installer into :file:`{$HOME}/lockss-installer-download`, here :file:`/home/lockss/lockss-installer-download`. To install it into another directory :samp:`{DIR}`, add :samp:`--download-dir={DIR}` after ``sh -s -``, like so:
 
-   .. code-block:: shell
+.. code-block:: shell
 
-      cd lockss-installer
+   ... | sh -s - --download-dir=DIR
 
-   .. important::
+(The :program:`lockss-github-download` script accepts other options after ``sh -s -``. You can list them by invoking it with the ``--help`` option.)
 
-      Many commands in this manual are run from this :file:`lockss-installer` directory. Run the command ``pwd`` to display its full path (typically :file:`/home/lockss/lockss-installer`) and make a note of it.
+.. important::
 
-3. To avoid a harmless Git warning when updating the LOCKSS Installer from GitHub in the future, run this command:
+   .. _lockss-installer_directory:
 
-   .. code-block:: shell
+   .. rubric:: LOCKSS Installer Directory
 
-      git config --local pull.rebase true
+   Whether it is the default directory :file:`{$HOME}/lockss-installer-download` or a custom directory passed to :program:`lockss-github-download` via the ``--download-dir`` option, make a note of the LOCKSS Installer directory, as many commands in this manual are documented relative to this directory.
 
 ----
 
@@ -39,3 +39,57 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
 .. [#fnlockss]
 
    See :doc:`/appendix/lockss`
+
+.. [#fninstaller]
+
+   See https://github.com/lockss/lockss-installer.
+
+.. [#fncurl]
+
+   Most typical Linux systems have at least one of :program:`curl` or :program:`wget` installed by default. You can check by typing ``curl --version`` or ``wget --version`` and verifying that the output is not an error message. If you need to install :program:`curl`, see :doc:`/appendix/curl`. If you prefer to install :program:`wget`, see :doc:`/appendix/wget`.
+
+.. [#fndownload]
+
+   See https://github.com/lockss/lockss-github-download.
+
+.. [#fnsecurity]
+
+   For security purposes, you may wish to inspect the :program:`lockss-github-download` script before executing it.
+
+   One option is to review the contents of the script directly on GitHub to your satisfaction, then execute it as described above. You can find it here: https://github.com/lockss/lockss-github-download/raw/main/lockss-github-download.
+
+   Another option is to download a copy of the :program:`lockss-github-download` script, review it, then execute it, all locally. To do so, follow this procedure:
+
+   1. Run either:
+
+      .. code-block:: shell
+
+         curl -Lo /tmp/lockss-github-download \
+             https://github.com/lockss/lockss-github-download/raw/main/lockss-github-download
+
+      or:
+
+      .. code-block:: shell
+
+         wget -O /tmp/lockss-github-download \
+             https://github.com/lockss/lockss-github-download/raw/main/lockss-github-download
+
+      to download the :program:`lockss-github-download` script to :file:`/tmp/lockss-github-download`.
+
+   2. Inspect :file:`/tmp/lockss-github-download` to your satisfaction.
+
+   3. Run this command:
+
+      .. code-block:: shell
+
+         chmod +x /tmp/lockss-github-download
+
+      to make :file:`/tmp/lockss-github-download` executable.
+
+   4. Type:
+
+      .. code-block:: shell
+
+         /tmp/lockss-github-download
+
+      to run the :program:`lockss-github-download` script, appending options like :samp:`--download-dir={DIR}` to the end as desired.

@@ -1,24 +1,34 @@
 ================================
-Upgrading From LOCKSS 2.0-alpha3
+Upgrading From LOCKSS 2.0-alpha4
 ================================
 
-This chapter describes how to upgrade the LOCKSS system from 2.0-alpha3 to 2.0-alpha4. If you have been running LOCKSS 2.0-alpha3 (or an earlier 2.x version), we thank you for helping us bring LOCKSS 2.0 closer to fruition through your testing and feedback.
+.. note::
 
-*  **If you are installing the LOCKSS 2.0 system for the first time**, skip this chapter and proceed to :doc:`/installing/index`.
+   **This chapter describes how to upgrade an existing LOCKSS 2.0-alpha4 system to 2.0-beta1.**
 
-*  **Before you begin upgrading from 2.0-alpha3**, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages.
+   *  **If you are migrating an existing LOCKSS 1.x system to LOCKSS 2.0-beta1**, go to :doc:`/appendix/migrating` instead.
 
-*  Please note that the upgrade process includes re-running the LOCKSS configuration tool, which **will require you to re-enter the PostgreSQL database password**.
+   *  **If you are installing the LOCKSS system for the first time**, go to :doc:`/installing/index` instead.
+
+.. tip::
+
+   Before you begin upgrading from 2.0-alpha4, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/appendix/os-updates` in the appendix.
+
+*  **FIXME** Please note that the upgrade process includes re-running the LOCKSS configuration tool, which **will require you to re-enter the PostgreSQL database password**.
 
 .. contents:: Chapter Overview
    :local:
    :depth: 1
 
+| **FIXME**
+| **FIXME**
+| **FIXME**
+
 --------------------------
-Stopping LOCKSS 2.0-alpha3
+Stopping LOCKSS 2.0-alpha4
 --------------------------
 
-The first step is to stop the LOCKSS 2.0-alpha3 system.
+The first step is to stop the LOCKSS 2.0-alpha4 system.
 
 Log in as the ``lockss`` user and run this command in the :file:`lockss-installer` directory:
 

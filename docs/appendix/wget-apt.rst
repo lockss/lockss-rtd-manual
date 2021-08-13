@@ -1,4 +1,4 @@
-To install :program:`git`, follow these instructions (as ``root``):
+To install :program:`wget`, follow these instructions (as ``root``):
 
 1. Run this :program:`apt` command:
 
@@ -10,10 +10,10 @@ To install :program:`git`, follow these instructions (as ``root``):
 
    .. code-block:: shell
 
-      apt install --assume-yes git
+      apt install --assume-yes wget
 
    or equivalently:
 
    .. code-block:: shell
 
-      apt -y install git
+      apt -y install wget

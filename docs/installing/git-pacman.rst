@@ -1,5 +1,11 @@
-To install Git, run this Pacman command (as ``root``):
+To install :program:`git`, run this :program:`pacman` command (as ``root``):
 
 .. code-block:: shell
 
-   pacman -Sy --noconfirm git
+   pacman --sync --noconfirm git
+
+or equivalently:
+
+.. code-block:: shell
+
+   pacman -S --noconfirm git

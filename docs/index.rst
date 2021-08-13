@@ -23,6 +23,8 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
    What's New?
    -----------
 
+   *  The LOCKSS Installer is now distributed from GitHub but without requiring :program:`git` and rolls up most individual installation steps into a single script.
+
    *  **FIXME**
 
    ------------
@@ -35,7 +37,7 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
 
    *  64-bit **Linux** host (physical or virtual) with at least 4 CPU cores and 8 GB of memory, and adequate storage.
 
-   *  **Git**, to download the LOCKSS Installer from GitHub.
+   *  Commonplace Linux system utilities like :program:`curl`/:program:`wget` and :program:`tar` to download and run the LOCKSS Installer.
 
    *  **K3s**, a lightweight Kubernetes environment installed via the LOCKSS Installer.
 
@@ -47,7 +49,7 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
 
    **FIXME**
 
-   If you were running LOCKSS 2.0-alpha3, you no longer need MicroK8s or Snap. See :doc:`upgrading/index` for more details.
+   If you were running LOCKSS 2.0-alpha4, you no longer need Git. See :doc:`upgrading/index` for more details.
 
    ---------------------
    Questions and Answers
@@ -55,11 +57,13 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
 
    **FIXME**
 
-   I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha4?
+   I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-beta1?
+      **FIXME**
+
       The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
 
-   I have a LOCKSS system running 2.0-alpha3. Can I upgrade to LOCKSS 2.0-alpha4?
-      Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha3 and start from scratch, but there is an :ref:`upgrade path <Upgrade>` from LOCKSS 2.0-alpha3.
+   I have a LOCKSS system running 2.0-alpha4. Can I upgrade to LOCKSS 2.0-beta1?
+      Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha4 and start from scratch, but there is an :ref:`upgrade path <Upgrade>` from LOCKSS 2.0-alpha4.
 
    Can I use my own PostgreSQL database? Can I use my own Solr database?
       Yes, you can configure the system to use your institution's Postgres database and/or Solr database -- or you can simply let system run included ones locally.
@@ -74,7 +78,7 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
    Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to ``lockss-support (at) lockss (dot) org``. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
 
 .. toctree::
-   :caption: LOCKSS 2.0-alpha4 System Manual
+   :caption: LOCKSS 2.0-beta1 System Manual
    :maxdepth: 4
    :hidden:
    :numbered:

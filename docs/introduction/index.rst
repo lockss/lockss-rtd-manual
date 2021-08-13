@@ -6,7 +6,7 @@ The LOCKSS system is a distributed digital preservation software system develope
 
 The 2.x series of the LOCKSS system stems from the LAAWS (LOCKSS Architected As Web Services) initiative, an ambitious modernization project that includes rewriting the classic LOCKSS daemon as a suite of containerized components, funded in part by a grant from the `Andrew W. Mellon Foundation <https://mellon.org/>`_.
 
-This version, LOCKSS 2.0-alpha4, is the fourth preview release on the road to LOCKSS 2.0.
+This version, LOCKSS 2.0-beta1, is the first beta-level release on the road to LOCKSS 2.0.
 
 .. toctree::
    :caption: Chapter Overview
@@ -14,3 +14,4 @@ This version, LOCKSS 2.0-alpha4, is the fourth preview release on the road to LO
 
    prerequisites
    os
+   next-steps

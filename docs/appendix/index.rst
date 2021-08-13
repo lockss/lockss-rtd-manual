@@ -11,6 +11,10 @@ This appendix contains pages of additional information about the LOCKSS system.
    root
    privileged
    lockss
+   os-updates
+   curl
+   wget
+   migrating
    postgresql
    lcap-ssl
    ports

@@ -26,8 +26,6 @@ Likewise, the memory requirements also depend on which components of the LOCKSS 
 Storage
 -------
 
-.. COMMENTED OUT FIXME: To bring the system up, we recommend at least **50 GB** of total disk space. In production, the storage requirements will vary greatly depending on the scope of the preservation project, from tens of gigabytes to hundreds of terabytes of preserved content.
-
 LOCKSS makes use of several storage areas.  During configuration, the administrator must specify the location of these storage areas by supplying one or more directory paths. The default is to put all storage under a single directory, but different types of storage have different size and performance requirements and on a large system, if different types of storage are available it may be advantageous to place the storage areas on different devices:
 
 *  **Content data storage:** This is where all the preserved content is stored, along with an index and several databases [#fn1]_. Many LOCKSS systems preserve a large amount of content and it has become common to use network-attached storage for this. LOCKSS' audit activities result in nearly continuous reading of content from storage; this may impact the storage server's performance, and a busy or non-performant storage server may impact LOCKSS' performance. For the repository service, multiple storage areas may be specified, and more can be added later.
@@ -46,7 +44,7 @@ LOCKSS makes use of several storage areas.  During configuration, the administra
 
 .. admonition:: What's the Minimum for Experimentation?
 
-   To review the installation instructions and test the installation of K3s in various operating systems, we routinely install and bring up minimal LOCKSS 2.0-alpha4 systems, with no metadata services or Web replay engines, and with empty embedded Postgres and Solr databases, in Vagrant virtual machines with Virtualbox using 2 CPU cores and 3 GB of memory. These minimal VMs would not support a production load, but it can be a useful tool to try out the installation instructions or evaluate the system.
+   To review the installation instructions and test the installation of K3s in various operating systems, we routinely install and bring up minimal LOCKSS 2.0-beta1 systems, with no metadata services or Web replay engines, and with empty embedded Postgres and Solr databases, in Vagrant virtual machines with Virtualbox using 2 CPU cores and 3 GB of memory. These minimal VMs would not support a production load, but it can be a useful tool to try out the installation instructions or evaluate the system.
 
 ----
 
