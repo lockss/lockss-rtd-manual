@@ -2,17 +2,17 @@
 Troubleshooting :program:`firewalld`
 ====================================
 
-If your system is running the :program:`firewalld` firewall, it is necessary to add K3s' pod subnet (by default 10.42.0.0/16) and service subnet (by default 10.43.0.0/16) to :program:`firewalld`'s ``trusted`` zone for K3s to work properly [#fn1]_. If :program:`configure-firewall` (a script called by :program:`install-k3s`) detects this situation, you will see a warning message and the following prompt [#fn2]_:
+If your system is running the :program:`firewalld` firewall, it is necessary to add K3s' pod subnet (by default 10.42.0.0/16) and service subnet (by default 10.43.0.0/16) to :program:`firewalld`'s ``trusted`` zone for K3s to work properly [#fnrhel]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fnrunning]_:
 
 :guilabel:`Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone?`
 
-Enter :kbd:`Y` for "yes" and :kbd:`N` for "no", or simply hit :kbd:`Enter` to accept the proposed answer (displayed in square brackets).
+Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration.
 
 .. caution::
 
-   If you opt out of the proposed remediation, K3s may malfunction.
+   If you bypass the proposed configuration, K3s may malfunction without further intervention.
 
-The remediation attempted by :program:`configure-firewall` is equivalent to [#fn3]_:
+The :program:`firewalld` configuration attempted by :program:`install-lockss` is equivalent to [#fnfirewalld]_:
 
 .. code-block:: shell
 
@@ -28,15 +28,17 @@ The remediation attempted by :program:`configure-firewall` is equivalent to [#fn
 
    .. code-block:: shell
 
-      scripts/configure-firewall
+      scripts/install-lockss --configure-firewalld
+
+   This will run only the :ref:`configuring-firewalld` portion of the :doc:`/installing/running` section.
 
 ----
 
 .. rubric:: Footnotes
 
-.. [#fn1]
+.. [#fnrhel]
 
-   For operating systems in the RHEL family (CentOS, Rocky Linux, AlmaLinux...), the action recommended by the K3s manual is to disable :program:`firewalld` entirely (see https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux), but :program:`install-k3s` takes a lighter approach commonly used in the K3s community.
+   For operating systems in the RHEL family (CentOS, Rocky Linux, AlmaLinux...), the action recommended by the K3s manual is to disable :program:`firewalld` entirely (see https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux), but :program:`install-lockss` takes a lighter approach commonly used in the K3s community.
 
    References:
 
@@ -44,11 +46,11 @@ The remediation attempted by :program:`configure-firewall` is equivalent to [#fn
 
       *  https://github.com/k3s-io/k3s/issues/1556#issuecomment-604112415
 
-.. [#fn2]
+.. [#fnrunning]
 
-   See :doc:`/installing/k3s`.
+   See :doc:`/installing/running`.
 
-.. [#fn3]
+.. [#fnfirewalld]
 
    By default, K3s' pod subnet is 10.42.0.0/16 and service subnet is 10.43.0.0/16.
 

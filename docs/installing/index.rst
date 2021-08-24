@@ -19,6 +19,6 @@ Installing the LOCKSS System
    :maxdepth: 1
 
    user
-   lockss-installer
-   k3s
+   downloading
+   running
    check-sys

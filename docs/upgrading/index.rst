@@ -170,7 +170,7 @@ Next Steps
 
 Next, you will need to install K3s, a lightweight Kubernetes environment to replace MicroK8s.
 
-Proceed to the :doc:`/installing/k3s` section of the :doc:`/installing/index` chapter, skipping over the earlier sections of the chapter that are not required in an upgrade situation (:doc:`/installing/user`, :doc:`/installing/git`, :doc:`/installing/lockss-installer`).
+Proceed to the :doc:`/installing/k3s` section of the :doc:`/installing/index` chapter, skipping over the earlier sections of the chapter that are not required in an upgrade situation (:doc:`/installing/user`, :doc:`/installing/downloading`).
 
 Then simply continue following the manual from the :doc:`/installing/k3s` section forward. In particular, you will need to re-run the configuration script (see :doc:`/configuring`).
 
