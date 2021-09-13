@@ -8,7 +8,7 @@ This section offers troubleshooting information when the K3s installer or the K3
 Troubleshooting the K3s Installer
 ---------------------------------
 
-The LOCKSS Installer's :program:`install-k3s` script installs K3s by executing `Rancher's official K3s installer <https://get.k3s.io/>`_ after making sure many firewall and DNS issues are resolved [#fninstallk3s]_. However, the installer can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
+The LOCKSS Installer's :program:`install-lockss` script installs K3s by executing Rancher's official K3s Installer from https://get.k3s.io/, after making sure many firewall and DNS issues are resolved [#fninstallk3s]_. However, the installer can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
 
 Failed to apply container_runtime_exec_t
 ========================================
@@ -27,7 +27,7 @@ To resolve this problem:
 
 1. Run the recommended commands as ``root`` [#fnroot]_.
 
-2. Re-run :program:`install-k3s` [#fninstallk3s]_.
+2. Re-run :program:`install-k3s` [#fninstallk3s]_. FIXME
 
 k3s-selinux requires container-selinux
 ======================================
@@ -53,7 +53,7 @@ To resolve this problem:
 
       yum-config-manager --enable ol7_addons
 
-2. Re-run :program:`install-k3s` [#fninstallk3s]_.
+2. Re-run :program:`install-k3s` [#fninstallk3s]_. FIXME
 
 ---------------------------------------------
 Troubleshooting the K3s Configuration Checker
@@ -145,15 +145,15 @@ This warning can be ignored:
 
 .. [#fninstallk3s]
 
-   See :ref:`install-k3s <install-k3s>`.
+   See :ref:`install-k3s`.
 
 .. [#fncheckk3s]
 
-   See :ref:`check-k3s <check-k3s>`.
+   See :ref:`check-k3s <check-k3s>`. FIXME
 
 .. [#fnk3scheckconfig]
 
-   See :ref:`k3s-check-config <k3s-check-config>`.
+   See :ref:`k3s-check-config <k3s-check-config>`. FIXME
 
 .. [#fnk3sbug]
 

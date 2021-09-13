@@ -12,7 +12,7 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration.
 
    If you bypass the proposed configuration, K3s may malfunction without further intervention.
 
-The :program:`firewalld` configuration attempted by :program:`install-lockss` is equivalent to [#fnufw]_:
+The :program:`firewalld` configuration attempted by :program:`install-lockss` is equivalent to [#fnk3ssubnets]_:
 
 .. code-block:: shell
 
@@ -48,7 +48,7 @@ The :program:`firewalld` configuration attempted by :program:`install-lockss` is
 
    See :doc:`/installing/running`.
 
-.. [#fnufw]
+.. [#fnk3ssubnets]
 
    By default, K3s' pod subnet is 10.42.0.0/16 and service subnet is 10.43.0.0/16.
 
