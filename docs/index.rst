@@ -1,5 +1,5 @@
 =============================================
-LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
+LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
 =============================================
 
 .. warning::
@@ -10,7 +10,7 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
 
       `Click here to go to the latest released version </projects/manual/en/latest>`_.
 
-**Welcome to the LOCKSS 2.0-beta1 (NOT RELEASED) System Manual.**
+**Welcome to the LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual.**
 
 | Released: 2021-XX-XX.
 | Last modified: |today|.
@@ -57,12 +57,12 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
 
    **FIXME**
 
-   I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-beta1?
+   I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha5?
       **FIXME**
 
       The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
 
-   I have a LOCKSS system running 2.0-alpha4. Can I upgrade to LOCKSS 2.0-beta1?
+   I have a LOCKSS system running 2.0-alpha4. Can I upgrade to LOCKSS 2.0-alpha5?
       Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha4 and start from scratch, but there is an :ref:`upgrade path <Upgrade>` from LOCKSS 2.0-alpha4.
 
    Can I use my own PostgreSQL database? Can I use my own Solr database?
@@ -78,7 +78,7 @@ LOCKSS 2.0-beta1 (NOT RELEASED) System Manual
    Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to ``lockss-support (at) lockss (dot) org``. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
 
 .. toctree::
-   :caption: LOCKSS 2.0-beta1 System Manual
+   :caption: LOCKSS 2.0-alpha5 System Manual
    :maxdepth: 4
    :hidden:
    :numbered:

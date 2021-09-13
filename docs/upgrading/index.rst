@@ -4,9 +4,9 @@ Upgrading From LOCKSS 2.0-alpha4
 
 .. note::
 
-   **This chapter describes how to upgrade an existing LOCKSS 2.0-alpha4 system to 2.0-beta1.**
+   **This chapter describes how to upgrade an existing LOCKSS 2.0-alpha4 system to 2.0-alpha5.**
 
-   *  **If you are migrating an existing LOCKSS 1.x system to LOCKSS 2.0-beta1**, go to :doc:`/appendix/migrating` instead.
+   *  **If you are migrating an existing LOCKSS 1.x system to LOCKSS 2.0-alpha5**, go to :doc:`/appendix/migrating` instead.
 
    *  **If you are installing the LOCKSS system for the first time**, go to :doc:`/installing/index` instead.
 
