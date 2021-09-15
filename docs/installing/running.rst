@@ -264,33 +264,33 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
 .. rubric:: Steps
 
-1. If :program:`install-lockss` was invoked with the ``--skip-install-k3s`` option, or if K3s is already installed, you will see one of these messages:
+1. If :program:`install-lockss` was invoked with the ``--skip-install-k3s`` option, you will see the message:
 
    .. code-block:: text
 
       [success] Skipping (--skip-install-k3s)
 
-      [success] Skipping (K3s is already present)
-
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`k3s-check-config`).
 
-2. Next, :program:`install-lockss` will warn you that the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) should not be attached to a space-limited volume. You will see the following prompt:
+2. If K3s is already present, :program:`install-lockss` will display the warning ``[Warning] K3s is already installed; skipping the K3s Installer`` and continue on to the next step. Otherwise:
 
-   :guilabel:`K3s state data directory`
+   1. Next, :program:`install-lockss` will warn you that the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) should not be attached to a space-limited volume. You will see the following prompt:
 
-   Enter a directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets. (If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt. If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.)
+      :guilabel:`K3s state data directory`
 
-3. The K3s Installer will then be downloaded from https://get.k3s.io/ and invoked with suitable options. Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
+      Enter a directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets. (If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt. If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.)
 
-   If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail.
+   2. The K3s Installer will then be downloaded from https://get.k3s.io/ and invoked with suitable options. Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
 
-   .. admonition:: Troubleshooting
+      If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail.
 
-      See :ref:`Troubleshooting the K3s Installer` for remediation details. Error messages that the K3s Installer may display include:
+      .. admonition:: Troubleshooting
 
-      *  FIXME
+         See :ref:`Troubleshooting the K3s Installer` for remediation details. Error messages that the K3s Installer may display include:
 
-4. Then :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`configs/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
+         *  FIXME
+
+3. Whether or not the K3s Installer was invoked, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`configs/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
 
    .. code-block:: text
 
@@ -306,7 +306,7 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
       FIXME
 
-5. Finally, you will see the message:
+4. Finally, you will see the message:
 
    .. code-block:: text
 
