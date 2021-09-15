@@ -65,7 +65,7 @@ The remediation attempted by :program:`configure-firewall` is equivalent to:
 
 .. [#fn2]
 
-   See :doc:`/installing/k3s`.
+   See :doc:`/installing/running`.
 
 .. [#fnprivileged]
 

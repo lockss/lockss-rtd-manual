@@ -300,7 +300,7 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
       [ERROR] configs/k8s.cfg is not owned by lockss:lockss
 
-   and :program:`lockss-installer` will fail.
+   and :program:`install-lockss` will fail.
 
    .. admonition:: Troubleshooting
 
@@ -370,8 +370,74 @@ During this phase, :program:`install-lockss` runs a series of tests to verify th
 
 .. rubric:: Label
 
-This phase begins with the label :guilabel:`Testing the K3s node...`
+This phase begins with the label :guilabel:`Testing the K3s node...`.
 
 .. rubric:: Steps
 
+1. If :program:`install-lockss` was invoked with the ``--skip-test-k3s`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
 
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-test-k3s)
+
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`FIXME`).
+
+2. Next, :program:`install-lockss` will run a series of tests. If a test fails, you will see one of these error messages:
+
+   .. code-block:: text
+
+      [ERROR] k8s.cfg not found
+
+      [ERROR] Error reading K8S_FLAVOR
+
+      [ERROR] K8S_FLAVOR is not set
+
+      [ERROR] K8S_FLAVOR is not k3s
+
+      [ERROR] Error reading KUBECTL_CMD
+
+      [ERROR] KUBECTL_CMD is not set
+
+      [ERROR] k3s command of KUBECTL_CMD is not on the PATH
+
+      [ERROR] Command failed (kubectl version)
+
+      [ERROR] Timeout waiting for the K3s node to be ready
+
+      [ERROR] Command failed (kubectl get node)
+
+      [ERROR] Unexpected number of K3s nodes
+
+      [ERROR] Timeout waiting for the CoreDNS pod to be running and ready
+
+      [ERROR] Command failed (kubectl get pod)
+
+      [ERROR] Unexpected number of CoreDNS pods
+
+      [ERROR] Timeout waiting for the DNS service to be present
+
+      [ERROR] Command failed (kubectl get service)
+
+      [ERROR] Unexpected number of kube-dns services
+
+      [ERROR] Unexpected kube-dns service type
+
+      [ERROR] Timeout waiting for DNS resolution
+
+      [ERROR] Unexpected Cluster-IP
+
+   and :program:`install-lockss` will fail.
+
+   .. admonition:: Troubleshooting
+
+      FIXME
+
+3. Finally, you will see the message:
+
+   .. code-block:: text
+
+      [success] Tested the K3s node
+
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`FIXME`).

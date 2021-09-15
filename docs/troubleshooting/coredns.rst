@@ -30,7 +30,7 @@ Enter a semicolon-separated list of DNS server IP addresses that are *not* loopb
 
 .. [#fnrunning]
 
-   See :doc:`/installing/k3s`.
+   See :ref:`configuring-coredns`.
 
 .. [#fnprivileged]
 
