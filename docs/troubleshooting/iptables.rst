@@ -2,7 +2,7 @@
 Troubleshooting :program:`iptables`
 ===================================
 
-K3s, the Kubernetes environment recommended for the LOCKSS system, does not currently work with :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, for instance in some Debian or Ubuntu systems [#fn1]_. If :program:`configure-firewall` (a script called by :program:`install-k3s`) detects this situation, you will see a warning message and the following prompt [#fn2]_:
+K3s, the Kubernetes environment recommended for the LOCKSS system, does not currently work with :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, for instance in some Debian or Ubuntu systems [#fn1]_. If :program:`configure-firewall` (a script called by :program:`install-k3s`) detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
 
 :guilabel:`Switch iptables to legacy mode via Alternatives?`
 
@@ -63,9 +63,9 @@ The remediation attempted by :program:`configure-firewall` is equivalent to:
 
    *  https://github.com/k3s-io/k3s/issues/703
 
-.. [#fn2]
+.. [#fninstaller]
 
-   See :doc:`/installing/running`.
+   See :doc:`/installing/installer`.
 
 .. [#fnprivileged]
 

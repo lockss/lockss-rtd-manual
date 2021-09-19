@@ -2,9 +2,31 @@
 Running the LOCKSS Installer
 ============================
 
-The next task is to run the LOCKSS Installer's :program:`install-lockss` script.
+.. note::
 
-FIXME overview
+   Commands in this section are run as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_.
+
+The next task is to run the LOCKSS Installer's :program:`install-lockss` script. The process of running :program:`install-lockss` consists of the following phases:
+
+*  :ref:`Checking the System User and Group`: no interaction expected.
+
+*  :ref:`configuring-firewalld`: if necessary, will prompt you to confirm before modifying the configuration of :program:`firewalld` (which might prompt you for your :program:`sudo` password).
+
+*  :ref:`configuring-ufw`: if necessary, will prompt you to confirm before modifying the configuration of :program:`ufw` (which might prompt you for your :program:`sudo` password).
+
+*  :ref:`Configuring CoreDNS for K3s`: if necessary, will prompt you to enter non-loopback IP addresses of DNS servers.
+
+*  :ref:`Installing K3s`: will prompt you for a Kubernetes state data storage directory.
+
+*  :ref:`Checking the K3s Configuration`: no interaction expected (might prompt you for your :program:`sudo` password).
+
+*  :ref:`Testing the K3s Node`: no interaction expected.
+
+To start the installation process, run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_:
+
+.. code-block:: shell
+
+   scripts/install-lockss
 
 ----------------------------------
 Checking the System User and Group
@@ -46,7 +68,7 @@ This phase begins with the label :guilabel:`Checking the system user and group..
 
    .. code-block:: text
 
-      [success] User and group present
+      [success] System user and group present
 
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-firewalld`).
 
@@ -84,7 +106,11 @@ This phase begins with the label :guilabel:`Configuring firewalld for K3s...`.
 
    :guilabel:`Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone?`
 
-   Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets). (If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.)
+   Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
+
+   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
+
+   *  You may be prompted for your :program:`sudo` password.
 
    .. warning::
 
@@ -148,13 +174,17 @@ This phase begins with the label :guilabel:`Configuring firewalld for ufw...`.
 
       [success] Skipping (ufw is not active)
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-coredns`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Configuring CoreDNS for K3s`).
 
 2. If :program:`ufw` is active, you will receive the following prompt:
 
    :guilabel:`Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw?`
 
-   Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets). (If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.)
+   Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
+
+   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
+
+   *  You may be prompted for your :program:`sudo` password.
 
    .. warning::
 
@@ -164,7 +194,7 @@ This phase begins with the label :guilabel:`Configuring firewalld for ufw...`.
 
          [Warning] Leaving ufw unchanged; see manual for details
 
-      and :program:`install-lockss` will immediately proceed to the next phase (:ref:`configuring-coredns`), but K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
+      and :program:`install-lockss` will immediately proceed to the next phase (:ref:`Configuring CoreDNS for K3s`), but K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
 
 3. If the :program:`ufw` configuration attempt fails, you will see one of these error messages:
 
@@ -188,9 +218,7 @@ This phase begins with the label :guilabel:`Configuring firewalld for ufw...`.
 
       [success] Configured ufw for K3s
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-coredns`).
-
-.. _configuring-coredns:
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Configuring CoreDNS for K3s`).
 
 ---------------------------
 Configuring CoreDNS for K3s
@@ -216,13 +244,15 @@ This phase begins with the label :guilabel:`Configuring CoreDNS for K3s...`.
 
       [success] Using system resolv.conf files
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`installing-k3s`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Installing K3s`).
 
 2. If your system's DNS configuration will not work with CoreDNS, or if :program:`install-lockss` was invoked with the ``--force-dns-prompt`` option, you will receive the following prompt:
 
    :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
-   Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested value will be offered to you in square brackets, consisting of non-loopback addresses collected from your machine's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value. (If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the suggested value is automatically accepted witout the prompt.)
+   Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested value will be offered to you in square brackets, consisting of non-loopback IP addresses collected from your machine's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value.
+
+   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the suggested value is automatically accepted witout the prompt.
 
 3. If the creation of the CoreDNS configuration file fails, you will see error messages similar to these:
 
@@ -246,9 +276,7 @@ This phase begins with the label :guilabel:`Configuring CoreDNS for K3s...`.
 
       [success] Configured CoreDNS for K3s
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`installing-k3s`).
-
-.. _installing-k3s:
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Installing K3s`).
 
 --------------
 Installing K3s
@@ -270,7 +298,7 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
       [success] Skipping (--skip-install-k3s)
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`k3s-check-config`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Checking the K3s Configuration`).
 
 2. If K3s is already present, :program:`install-lockss` will display the warning ``[Warning] K3s is already installed; skipping the K3s Installer`` and continue on to the next step. Otherwise:
 
@@ -278,7 +306,11 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
       :guilabel:`K3s state data directory`
 
-      Enter a directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets. (If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt. If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.)
+      Enter a directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets.
+
+      *  If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt.
+
+      *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.
 
    2. The K3s Installer will then be downloaded from https://get.k3s.io/ and invoked with suitable options. Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
 
@@ -294,11 +326,9 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
    .. code-block:: text
 
-      [ERROR] Could not write to configs/k8s.cfg
+      [ERROR] Could not write k8s.cfg
 
-      [ERROR] Could not append to configs/k8s.cfg
-
-      [ERROR] configs/k8s.cfg is not owned by lockss:lockss
+      [ERROR] Could not append to k8s.cfg
 
    and :program:`install-lockss` will fail.
 
@@ -312,9 +342,7 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
       [success] Configured CoreDNS for K3s
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`k3s-check-config`).
-
-.. _k3s-check-config:
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Checking the K3s Configuration`).
 
 ------------------------------
 Checking the K3s Configuration
@@ -338,7 +366,7 @@ This phase begins with the label :guilabel:`Checking the K3s configuration...`
 
       [success] Skipping (--skip-check-k3s-config)
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`testing-k3s`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
 
 2. Next, :program:`install-lockss` will invoke :program:`k3s check-config` via :program:`sudo` (which may prompt for the user's :program:`sudo` password).
 
@@ -356,9 +384,7 @@ This phase begins with the label :guilabel:`Checking the K3s configuration...`
 
       [success] Checked the K3s configuration
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`testing-k3s`).
-
-.. _testing-k3s:
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
 
 --------------------
 Testing the K3s Node
@@ -382,7 +408,7 @@ This phase begins with the label :guilabel:`Testing the K3s node...`.
 
       [success] Skipping (--skip-test-k3s)
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`FIXME`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Completion of the LOCKSS Installation Process`).
 
 2. Next, :program:`install-lockss` will run a series of tests. If a test fails, you will see one of these error messages:
 
@@ -440,4 +466,24 @@ This phase begins with the label :guilabel:`Testing the K3s node...`.
 
       [success] Tested the K3s node
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`FIXME`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Completion of the LOCKSS Installation Process`).
+
+---------------------------------------------
+Completion of the LOCKSS Installation Process
+---------------------------------------------
+
+If all phases completed successfully, you will see the message:
+
+.. code-block:: text
+
+   [success] Successful completion of the LOCKSS installation process
+
+and :program:`install-lockss` will terminate.
+
+----
+
+.. rubric:: Footnotes
+
+.. [#fnprivileged]
+
+   See :doc:`/appendix/privileged`.

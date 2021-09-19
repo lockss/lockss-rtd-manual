@@ -19,6 +19,6 @@ Installing the LOCKSS System
    :maxdepth: 1
 
    user
-   downloading
-   running
+   downloader
+   installer
    check-sys

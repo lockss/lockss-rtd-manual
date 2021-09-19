@@ -2,7 +2,11 @@
 Creating the ``lockss`` User
 ============================
 
-The LOCKSS system runs under a system user named ``lockss``.
+.. note::
+
+   Commands in this section are run as ``root``  [#fnroot]_.
+
+The LOCKSS system runs under a system user named ``lockss``, in a system group named ``lockss``.
 
 Run this :program:`useradd` command as ``root`` [#fnroot]_ :
 
