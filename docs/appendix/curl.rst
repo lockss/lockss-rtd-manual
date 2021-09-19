@@ -32,6 +32,10 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. include:: curl-apt.rst
 
+   .. group-tab:: EuroLinux
+
+      .. include:: curl-dnf.rst
+
    .. group-tab:: Fedora
 
       .. include:: curl-dnf.rst

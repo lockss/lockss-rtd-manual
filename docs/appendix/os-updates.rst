@@ -40,6 +40,10 @@ If you wish to update software packages manually, select your operating system b
 
       .. include:: os-updates-apt.rst
 
+   .. group-tab:: EuroLinux
+
+      .. include:: os-updates-dnf.rst
+
    .. group-tab:: Fedora
 
       .. include:: os-updates-dnf.rst

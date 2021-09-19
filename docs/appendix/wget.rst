@@ -32,6 +32,10 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. include:: wget-apt.rst
 
+   .. group-tab:: EuroLinux
+
+      .. include:: wget-dnf.rst
+
    .. group-tab:: Fedora
 
       .. include:: wget-dnf.rst
