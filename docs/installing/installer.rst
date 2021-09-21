@@ -48,7 +48,7 @@ This phase begins with the label :guilabel:`Checking the system user and group..
 
       [success] Skipping (--skip-check-system-user)
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-firewalld`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-iptables`).
 
 2. If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
 
@@ -69,6 +69,88 @@ This phase begins with the label :guilabel:`Checking the system user and group..
    .. code-block:: text
 
       [success] System user and group present
+
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-iptables`).
+
+.. _configuring-iptables:
+
+---------------------------------------
+Configuring :program:`iptables` for K3s
+---------------------------------------
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if necessary.
+
+.. rubric:: Label
+
+This phase begins with the label :guilabel:`Configuring iptables for K3s...`.
+
+.. rubric:: Steps
+
+1. If :program:`install-lockss` was invoked with the ``--skip-configure-iptables`` option (implied by ``--skip-install-k3s``), or if no changes to the configuration of :program:`iptables` are necessary (:program:`iptables` is not present, :program:`iptables` is not version 1.8.0 or later, :program:`iptables` is not running in ``nf_tables`` mode, :program:`iptables` is not run via Alternatives), you will see one of these messages:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-configure-iptables)
+
+      [success] Skipping (iptables is not on the PATH nor run via Alternatives)
+
+      [success] Skipping (iptables is not version 1.8.0 or later)
+
+      [success] Skipping (iptables is not in nf_tables mode)
+
+      [success] Skipping (iptables is not running via Alternatives)
+
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-firewalld`).
+
+2. Otherwise, you will receive the following prompt:
+
+   :guilabel:`Switch iptables to legacy mode via Alternatives?`
+
+   Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
+
+   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
+
+   *  You may be prompted for your :program:`sudo` password.
+
+   .. warning::
+
+      If you bypass the proposed :program:`iptables` configuration, you will see the warning:
+
+      .. code-block:: text
+
+         [Warning] Leaving iptables unchanged; see manual for details
+
+      and :program:`install-lockss` will immediately proceed to the next phase (:ref:`configuring-firewalld`), but K3s may malfunction without further intervention. See :doc:`/troubleshooting/iptables` for details.
+
+3. If the :program:`iptables` configuration attempt fails, you will see one of these error messages:
+
+   .. code-block:: text
+
+      [ERROR] Error deactivating ufw
+
+      [ERROR] Error applying update-alternatives to iptables
+
+      [ERROR] Error applying update-alternatives to ip6tables
+
+      [ERROR] Error flushing iptables
+
+      [ERROR] Error reactivating ufw
+
+   and :program:`install-lockss` will fail.
+
+   .. admonition:: Troubleshooting
+
+      See :doc:`/troubleshooting/iptables` for remediation details.
+
+4. Finally, you will see the message:
+
+   .. code-block:: text
+
+      [success] Configured iptables for K3s
 
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-firewalld`).
 
