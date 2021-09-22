@@ -10,15 +10,11 @@ The next task is to run the LOCKSS Installer's :program:`install-lockss` script.
 
 *  :ref:`Checking the System User and Group`: no interaction expected.
 
-*  :ref:`configuring-firewalld`: if necessary, will prompt you to confirm before modifying the configuration of :program:`firewalld` (which might prompt you for your :program:`sudo` password).
-
-*  :ref:`configuring-ufw`: if necessary, will prompt you to confirm before modifying the configuration of :program:`ufw` (which might prompt you for your :program:`sudo` password).
+*  :ref:`configuring-iptables`, :ref:`configuring-firewalld`, :ref:`configuring-ufw`: if necessary, will prompt you to confirm before modifying the configuration of :program:`iptables`, :program:`firewalld` or :program:`ufw` (respectively), which might incidentally prompt you for your :program:`sudo` password.
 
 *  :ref:`Configuring CoreDNS for K3s`: if necessary, will prompt you to enter non-loopback IP addresses of DNS servers.
 
 *  :ref:`Installing K3s`: will prompt you for a Kubernetes state data storage directory.
-
-*  :ref:`Checking the K3s Configuration`: no interaction expected (might prompt you for your :program:`sudo` password).
 
 *  :ref:`Testing the K3s Node`: no interaction expected.
 
@@ -88,7 +84,7 @@ This phase begins with the label :guilabel:`Configuring iptables for K3s...`.
 
 .. rubric:: Steps
 
-1. If :program:`install-lockss` was invoked with the ``--skip-configure-iptables`` option (implied by ``--skip-install-k3s``), or if no changes to the configuration of :program:`iptables` are necessary (:program:`iptables` is not present, :program:`iptables` is not version 1.8.0 or later, :program:`iptables` is not running in ``nf_tables`` mode, :program:`iptables` is not run via Alternatives), you will see one of these messages:
+1. If :program:`install-lockss` was invoked with the ``--skip-configure-iptables`` option (implied by ``--skip-install-k3s``), or if no changes to the configuration of :program:`iptables` are necessary, you will see one of these messages:
 
    .. code-block:: text
 
@@ -98,11 +94,13 @@ This phase begins with the label :guilabel:`Configuring iptables for K3s...`.
 
       [success] Skipping (iptables is not on the PATH nor run via Alternatives)
 
-      [success] Skipping (iptables is not version 1.8.0 or later)
+      [success] Skipping (iptables version is older than 1.8.0)
 
-      [success] Skipping (iptables is not in nf_tables mode)
+      [success] Skipping (iptables version is newer than 1.8.3)
 
-      [success] Skipping (iptables is not running via Alternatives)
+      [success] Skipping (iptables is in legacy mode)
+
+      [success] Skipping (iptables is not run via Alternatives)
 
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`configuring-firewalld`).
 
@@ -380,7 +378,7 @@ This phase begins with the label :guilabel:`Installing K3s...`.
 
       [success] Skipping (--skip-install-k3s)
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Checking the K3s Configuration`).
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
 
 2. If K3s is already present, :program:`install-lockss` will display the warning ``[Warning] K3s is already installed; skipping the K3s Installer`` and continue on to the next step. Otherwise:
 
@@ -423,48 +421,6 @@ This phase begins with the label :guilabel:`Installing K3s...`.
    .. code-block:: text
 
       [success] Configured CoreDNS for K3s
-
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Checking the K3s Configuration`).
-
-------------------------------
-Checking the K3s Configuration
-------------------------------
-
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` will invoke :program:`k3s check-config`, a configuration checker provided by K3s.
-
-.. rubric:: Label
-
-This phase begins with the label :guilabel:`Checking the K3s configuration...`
-
-.. rubric:: Steps
-
-1. If :program:`install-lockss` was invoked with the ``--skip-k3s-check-config`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-install-k3s)
-
-      [success] Skipping (--skip-check-k3s-config)
-
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
-
-2. Next, :program:`install-lockss` will invoke :program:`k3s check-config` via :program:`sudo` (which may prompt for the user's :program:`sudo` password).
-
-   If the K3s configuration checker does not succeed, it will display its own error messages, then :program:`install-lockss` will fail.
-
-   .. admonition:: Troubleshooting
-
-      See :ref:`Troubleshooting the K3s Configuration Checker` for remediation details. Error messages that the K3s configuration checker may display include:
-
-      *  FIXME
-
-3. Finally, you will see the message:
-
-   .. code-block:: text
-
-      [success] Checked the K3s configuration
 
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
 
