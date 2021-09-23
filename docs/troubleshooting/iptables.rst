@@ -2,21 +2,17 @@
 Troubleshooting :program:`iptables`
 ===================================
 
-K3s, the Kubernetes environment recommended for the LOCKSS system, does not currently work with :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, for instance in some Debian or Ubuntu systems [#fn1]_. If :program:`configure-firewall` (a script called by :program:`install-k3s`) detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
+K3s 1.21.5+k3s1 (the version used by LOCKSS 2.0-alpha5) does not always work with :program:`iptables` version 1.8.0-1.8.3 run via Alternatives not in ``legacy`` mode, for instance in some Debian or Ubuntu systems [#fnreference]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
 
 :guilabel:`Switch iptables to legacy mode via Alternatives?`
 
-Enter :kbd:`Y` for "yes" and :kbd:`N` for "no", or simply hit :kbd:`Enter` to accept the proposed answer (displayed in square brackets).
+Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration. **If you bypass the proposed configuration, K3s may malfunction.**
 
-.. caution::
-
-   If you opt out of the proposed remediation, K3s may malfunction.
-
-The remediation attempted by :program:`configure-firewall` is equivalent to:
+The remediation attempted by :program:`install-lockss` is equivalent to:
 
 .. code-block:: shell
 
-   # Needed if ufw is installed and active
+   # Required only if ufw is active
    ufw disable
 
    # Required
@@ -34,22 +30,24 @@ The remediation attempted by :program:`configure-firewall` is equivalent to:
    # Required
    iptables --flush
 
-   # Needed if ufw is installed and was active
+   # Required only if ufw was active
    ufw enable
 
 .. tip::
 
-   If your system did not initially need an adjustment for :program:`iptables` at the time K3s was installed, but later does (for example because :program:`iptables` is upgraded from a pre-1.8.0 version to version 1.8.0 or later), re-run this command in the ``lockss`` user's :file:`lockss-installer` directory as a privileged user who can become root via :program:`sudo` [#fnprivileged]_:
+   If your system did not initially need an adjustment for :program:`iptables` at the time K3s was installed, but later does (for example because :program:`iptables` is upgraded from a pre-1.8.0 version to version 1.8.0 or later), run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
 
    .. code-block:: shell
 
-      scripts/configure-firewall
+      scripts/install-lockss --configure-iptables
+
+   This will run only the :ref:`configuring-iptables` phase of :program:`install-lockss`.
 
 ----
 
 .. rubric:: Footnotes
 
-.. [#fn1]
+.. [#fnreference]
 
    References:
 
@@ -65,7 +63,7 @@ The remediation attempted by :program:`configure-firewall` is equivalent to:
 
 .. [#fninstaller]
 
-   See :doc:`/installing/installer`.
+   See :ref:`configuring-iptables`.
 
 .. [#fnprivileged]
 
