@@ -8,18 +8,20 @@ This section offers troubleshooting information when the K3s installer or the K3
 Troubleshooting the K3s Installer
 ---------------------------------
 
-The LOCKSS Installer's :program:`install-lockss` script installs K3s by executing Rancher's official K3s Installer from https://get.k3s.io/, after making sure many firewall and DNS issues are resolved [#fninstallk3s]_. However, the installer can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
+The LOCKSS Installer's :program:`install-lockss` script installs K3s by executing Rancher's official K3s Installer [#fninstallk3s]_ from https://get.k3s.io/ after making sure various firewall and DNS issues are addressed [#fniptables]_ [#fnfirewalld]_ [#fnufw]_ [#fncoredns]_. However, the installer can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
 
-Failed to apply container_runtime_exec_t
-========================================
+Failed to apply container_runtime_exec_t to /usr/local/bin/k3s
+==============================================================
 
-In some Fedora systems, you may see an error message similar to the following:
+.. COMMENT updated for alpha5
+
+In some Fedora systems, the K3s installer may fail with an error message similar to the following:
 
 .. code-block:: text
 
    [ERROR]  Failed to apply container_runtime_exec_t to /usr/local/bin/k3s, please install:
        yum install -y container-selinux selinux-policy-base
-       yum install -y https://rpm.rancher.io/k3s/stable/common/centos/7/noarch/k3s-selinux-0.2-1.el7_8.noarch.rpm
+       yum install -y https://rpm.rancher.io/k3s/stable/common/centos/8/noarch/k3s-selinux-0.3-0.el8.noarch.rpm
 
 The specific commands and version numbers may vary from the example above.
 
@@ -27,10 +29,12 @@ To resolve this problem:
 
 1. Run the recommended commands as ``root`` [#fnroot]_.
 
-2. Re-run :program:`install-k3s` [#fninstallk3s]_. FIXME
+2. Re-run :program:`install-lockss` [#fninstalllockss]_.
 
 k3s-selinux requires container-selinux
 ======================================
+
+.. COMMENT updated for alpha5
 
 In some Oracle Linux 7 systems, you may see an error message similar to the following:
 
@@ -40,6 +44,7 @@ In some Oracle Linux 7 systems, you may see an error message similar to the foll
               Requires: container-selinux >= 2.107-3
     You could try using --skip-broken to work around the problem
     You could try running: rpm -Va --nofiles --nodigest
+
 
 The specific commands and version numbers may vary from the example above.
 
@@ -53,43 +58,45 @@ To resolve this problem:
 
       yum-config-manager --enable ol7_addons
 
-2. Re-run :program:`install-k3s` [#fninstallk3s]_. FIXME
+2. Re-run :program:`install-lockss` [#fninstalllockss]_.
 
 ---------------------------------------------
 Troubleshooting the K3s Configuration Checker
 ---------------------------------------------
 
-After installing K3s with :program:`install-k3s` [#fninstallk3s]_ and successfully running :program:`check-k3s` [#fncheckk3s]_, you can run the following command as ``root`` [#fnroot]_:
+After installing K3s [#fninstallk3s]_, :program:`install-lockss` runs the K3s configuration checker :program:`k3s check-config` [#fncheckk3s]_. This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" system aspects needed by K3s.
 
-.. code-block:: shell
+Some failures, especially in "optional" aspects, may not actually prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
 
-   k3s check-config
+iptables should be older than v1.8.0, newer than v1.8.3, or in legacy mode
+==========================================================================
 
-This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" aspects for K3s to operate.
-
-As a rule of thumb, if :program:`k3s check-config` ends successfully with ``STATUS: pass``, there is a good chance the K3s cluster is configured correctly.
-
-Some failures, especially in "optional" aspects, may not actually prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes, but if possible they should be addressed. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
-
-iptables should be older than v1.8.0 or in legacy mode
-======================================================
+.. COMMENT updated for alpha5
 
 In some instances, you may encounter an error message similar to the following:
 
 .. code-block:: text
 
-   iptables v1.8.4 (nf_tables): should be older than v1.8.0 or in legacy mode (fail)
+   /usr/sbin iptables v1.8.2 (nf_tables): should be older than v1.8.0, newer than v1.8.3, or in legacy mode (fail)
 
-This error message is generally spurious, because the LOCKSS Installer should have previously detected and offered to correct this issue in the circumstances where it applies, and Rancher has a documented bug report that the K3s configuration checker keeps reporting this issue even in circumstances where it does not apply [#fnk3sbug]_.
+In previous versions of K3s, this error message was also sometimes phrased as ``should be older than v1.8.0 or in legacy mode``.
 
-*  If :program:`check-k3s` ran successfully [#fncheckk3s]_, your K3s cluster is probably running normally and you can ignore this error message even if you receive it.
+The :program:`install-lockss` script should detect this situation and offer to switch :program:`iptables` to legacy mode via Alernatives (see :doc:`iptables`). If the error above occurs:
 
-*  If your system is running :program:`iptables` version 1.8.0 or later in ``nf_tables`` mode via Alternatives, as can be the case in some Debian or Ubuntu systems, :program:`iptables` needs to be switched to ``legacy`` mode via Alternatives. The :program:`configure-firewall` script called by :program:`install-k3s` is supposed to detect this condition and offer to fix it for you [#fninstallk3s]_. See :doc:`/troubleshooting/iptables`.
+*  Verify that the :ref:`configuring-iptables` phase of :program:`install-lockss` was not skipped.
+
+*  Verify that, if applicable, the proposed :program:`iptables` configuration changes in the :ref:`configuring-iptables` phase of :program:`install-lockss` were not bypassed.
+
+*  Using the :doc:`iptables` section as reference, verify that the remediation attempted by :program:`install-lockss` has taken effect.
+
+*  Search the `K3s issues database <https://github.com/k3s-io/k3s/issues>`_ for issues related to :program:`k3s check-config`, :program:`iptables` and your operating system.
 
 User namespaces disabled
 ========================
 
-In the RHEL/CentOS family of operating systems, you may receive the following error message:
+.. COMMENT updated for alpha5
+
+In the RHEL 7 family of operating systems (CentOS 7, Scientific Linux 7...), you may receive the following error message:
 
 .. code-block:: text
 
@@ -121,10 +128,41 @@ To resolve this issue [#fnusernamespaces]_:
 
 4. Re-run :program:`k3s check-config` [#fnk3scheckconfig]_.
 
+cgroup hierarchy: nonexistent
+=============================
+
+.. COMMENT updated for alpha5
+
+In some Arch Linux, Debian and Fedora systems, you may see the following error message:
+
+.. code-block:: text
+
+   cgroup hierarchy: nonexistent?? (fail)
+
+K3s supports ``cgroup2`` but :program:`k3s check-config` version 1.21.5+k3s1 (used in LOCKSS 2.0-alpha5) does not process this condition correctly. **This warning can be ignored.**
+
+links: aux/iptables should link to iptables-detect.sh
+=====================================================
+
+.. COMMENT updated for alpha5
+
+In some Fedora and OpenSUSE systems, you may encounter six related error messages like the following:
+
+.. code-block:: text
+
+   - links: aux/ip6tables should link to iptables-detect.sh (fail)
+   - links: aux/ip6tables-restore should link to iptables-detect.sh (fail)
+   - links: aux/ip6tables-save should link to iptables-detect.sh (fail)
+   - links: aux/iptables should link to iptables-detect.sh (fail)
+   - links: aux/iptables-restore should link to iptables-detect.sh (fail)
+   - links: aux/iptables-save should link to iptables-detect.sh (fail)
+
+This is due to a bug in :program:`k3s check-config` [#fniptablesdetectbug]_, triggered in environments where there is no :program:`iptables` system package installed. **This warning can be ignored.**
+
 swap should be disabled
 =======================
 
-This warning can be ignored:
+**This warning can be ignored:**
 
 .. code-block:: text
 
@@ -133,7 +171,7 @@ This warning can be ignored:
 CONFIG_INET_XFRM_MODE_TRANSPORT missing
 =======================================
 
-This warning can be ignored:
+**This warning can be ignored:**
 
 .. code-block:: text
 
@@ -143,13 +181,33 @@ This warning can be ignored:
 
 .. rubric:: Footnotes
 
+.. [#fninstalllockss]
+
+   See :doc:`/installing/installer`.
+
 .. [#fninstallk3s]
 
-   See :ref:`install-k3s`.
+   See :ref:`Installing K3s`.
+
+.. [#fniptables]
+
+   See :ref:`configuring-iptables`.
+
+.. [#fnfirewalld]
+
+   See :ref:`configuring-firewalld`.
+
+.. [#fnufw]
+
+   See :ref:`configuring-ufw`.
+
+.. [#fncoredns]
+
+   See :ref:`Configuring CoreDNS for K3s`.
 
 .. [#fncheckk3s]
 
-   See :ref:`check-k3s <check-k3s>`. FIXME
+   See :ref:`Checking the K3s Configuration`.
 
 .. [#fnk3scheckconfig]
 
@@ -166,6 +224,14 @@ This warning can be ignored:
    References:
 
    *  https://fortuitousengineer.com/installing-kubernetes-k3s-on-centos-rhel-hosts/
+
+.. [#fniptablesdetectbug]
+
+   Reference:
+
+   *  https://github.com/k3s-io/k3s/issues/4066
+
+      *  https://github.com/k3s-io/k3s/issues/4066#issuecomment-925137706
 
 .. [#fnroot]
 
