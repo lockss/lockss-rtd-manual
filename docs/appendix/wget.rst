@@ -28,6 +28,10 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
             .. include:: wget-dnf.rst
 
+         .. group-tab:: CentOS Stream
+
+            .. include:: wget-dnf.rst
+
    .. group-tab:: Debian
 
       .. include:: wget-apt.rst
@@ -46,7 +50,15 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
    .. group-tab:: OpenSUSE
 
-      .. include:: wget-zypper.rst
+      .. tabs::
+
+         .. group-tab:: OpenSUSE Leap 15
+
+            .. include:: wget-zypper.rst
+
+         .. group-tab:: OpenSUSE Tumbleweed
+
+            .. include:: wget-zypper.rst
 
    .. group-tab:: Oracle Linux
 
@@ -75,6 +87,10 @@ Select your operating system below and follow the instructions as root [#fnroot]
    .. group-tab:: Rocky Linux
 
       .. include:: wget-dnf.rst
+
+   .. group-tab:: Scientific Linux
+
+      .. include:: wget-yum.rst
 
    .. group-tab:: Ubuntu
 

@@ -36,6 +36,10 @@ If you wish to update software packages manually, select your operating system b
 
             .. include:: os-updates-dnf.rst
 
+         .. group-tab:: CentOS Stream
+
+            .. include:: os-updates-dnf.rst
+
    .. group-tab:: Debian
 
       .. include:: os-updates-apt.rst
@@ -54,7 +58,15 @@ If you wish to update software packages manually, select your operating system b
 
    .. group-tab:: OpenSUSE
 
-      .. include:: os-updates-zypper.rst
+      .. tabs::
+
+         .. group-tab:: OpenSUSE Leap 15
+
+            .. include:: os-updates-zypper.rst
+
+         .. group-tab:: OpenSUSE Tumbleweed
+
+            .. include:: os-updates-zypper.rst
 
    .. group-tab:: Oracle Linux
 
@@ -83,6 +95,10 @@ If you wish to update software packages manually, select your operating system b
    .. group-tab:: Rocky Linux
 
       .. include:: os-updates-dnf.rst
+
+   .. group-tab:: Scientific Linux
+
+      .. include:: os-updates-yum.rst
 
    .. group-tab:: Ubuntu
 

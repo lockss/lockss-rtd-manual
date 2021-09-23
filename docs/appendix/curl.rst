@@ -28,6 +28,10 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
             .. include:: curl-dnf.rst
 
+         .. group-tab:: CentOS Stream
+
+            .. include:: curl-dnf.rst
+
    .. group-tab:: Debian
 
       .. include:: curl-apt.rst
@@ -46,7 +50,15 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
    .. group-tab:: OpenSUSE
 
-      .. include:: curl-zypper.rst
+      .. tabs::
+
+         .. group-tab:: OpenSUSE Leap 15
+
+            .. include:: curl-zypper.rst
+
+         .. group-tab:: OpenSUSE Tumbleweed
+
+            .. include:: curl-zypper.rst
 
    .. group-tab:: Oracle Linux
 
@@ -75,6 +87,10 @@ Select your operating system below and follow the instructions as root [#fnroot]
    .. group-tab:: Rocky Linux
 
       .. include:: curl-dnf.rst
+
+   .. group-tab:: Scientific Linux
+
+      .. include:: curl-yum.rst
 
    .. group-tab:: Ubuntu
 
