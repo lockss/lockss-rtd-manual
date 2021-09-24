@@ -8,6 +8,10 @@ Running the LOCKSS Installer
 
 The next task is to run the LOCKSS Installer's :program:`install-lockss` script. The process of running :program:`install-lockss` consists of the following phases:
 
+--------------------------------
+Overview of the LOCKSS Installer
+--------------------------------
+
 *  :ref:`Checking the System User and Group`: no interaction expected.
 
 *  :ref:`configuring-iptables`, :ref:`configuring-firewalld`, :ref:`configuring-ufw`: if necessary, will prompt you to confirm before modifying the configuration of :program:`iptables`, :program:`firewalld` or :program:`ufw` (respectively), which might incidentally prompt you for your :program:`sudo` password.
@@ -17,6 +21,10 @@ The next task is to run the LOCKSS Installer's :program:`install-lockss` script.
 *  :ref:`Installing K3s`: will prompt you for a Kubernetes state data storage directory.
 
 *  :ref:`Testing the K3s Node`: no interaction expected.
+
+-----------------------------
+Invoking the LOCKSS Installer
+-----------------------------
 
 To start the installation process, run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_:
 
@@ -517,6 +525,55 @@ If all phases completed successfully, you will see the message:
    [success] Successful completion of the LOCKSS installation process
 
 and :program:`install-lockss` will terminate.
+
+-------------------------------------
+Running the K3s Configuration Checker
+-------------------------------------
+
+K3s comes with :program:`k3s check-config`, a configuration checker tool. The K3s configuration checker is capable of detecting complex underlying system situations that definitely require fixing (or applications running in the K3s cluster will not be able to function properly). On the other hand, the versions of the K3s configuration checker available at the time LOCKSS 2.0-alpha4 and LOCKSS 2.0-alpha5 were released contained bugs that reported spurious issues that are either inaccurate or moot. As a result, we have decided against running :program:`k3s check-config` as part of :program:`install-lockss` at this time, to avoid unnecessary interruptions in the installation of the LOCKSS system in many cases where there is no particular cause for concern.
+
+That being said, we still recommend running :program:`k3s check-config` and interpreting the results using the :ref:`Troubleshooting the K3s Configuration Checker` section of the manual:
+
+1. Run this command:
+
+   .. code-block:: text
+
+      k3s check-config
+
+2. The following error messages in the output are indicative of system situations that require attention:
+
+   .. code-block:: text
+
+      /usr/sbin iptables v1.8.2 (nf_tables): should be older than v1.8.0, newer than v1.8.3, or in legacy mode (fail)
+
+      RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line (fail)
+
+   .. admonition:: Troubleshooting
+
+      See :ref:`Troubleshooting the K3s Configuration Checker` for details.
+
+3. The following error messages in the output can be ignored:
+
+   .. code-block:: text
+
+      cgroup hierarchy: nonexistent?? (fail)
+
+      links: aux/ip6tables should link to iptables-detect.sh (fail)
+      links: aux/ip6tables-restore should link to iptables-detect.sh (fail)
+      links: aux/ip6tables-save should link to iptables-detect.sh (fail)
+      links: aux/iptables should link to iptables-detect.sh (fail)
+      links: aux/iptables-restore should link to iptables-detect.sh (fail)
+      links: aux/iptables-save should link to iptables-detect.sh (fail)
+
+      swap: should be disabled
+
+      CONFIG_INET_XFRM_MODE_TRANSPORT: missing
+
+   .. admonition:: Troubleshooting
+
+      See :ref:`Troubleshooting the K3s Configuration Checker` for details.
+
+4. For other error messages, check the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_, search for `K3s issues database on GitHub <https://github.com/k3s-io/k3s/issues>`_ or the Web for resources matching your error message or operating system, and/or contact us so we can help investigate and document for future reference.
 
 ----
 

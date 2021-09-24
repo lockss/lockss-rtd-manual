@@ -21,4 +21,3 @@ Installing the LOCKSS System
    user
    downloader
    installer
-   check-sys

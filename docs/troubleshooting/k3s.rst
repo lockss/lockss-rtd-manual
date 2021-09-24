@@ -81,7 +81,7 @@ In some instances, you may encounter an error message similar to the following:
 
 In previous versions of K3s, this error message was also sometimes phrased as ``should be older than v1.8.0 or in legacy mode``.
 
-The :program:`install-lockss` script should detect this situation and offer to switch :program:`iptables` to legacy mode via Alernatives (see :doc:`iptables`). If the error above occurs:
+The :program:`install-lockss` script should detect this situation and offer to switch :program:`iptables` to legacy mode via Alternatives (see :doc:`iptables`). If the error above occurs:
 
 *  Verify that the :ref:`configuring-iptables` phase of :program:`install-lockss` was not skipped.
 
@@ -96,11 +96,11 @@ User namespaces disabled
 
 .. COMMENT updated for alpha5
 
-In the RHEL 7 family of operating systems (CentOS 7, Scientific Linux 7...), you may receive the following error message:
+In the RHEL 7 family of operating systems (CentOS 7, EuroLinux 7, Scientific Linux 7...), you may receive the following error message:
 
 .. code-block:: text
 
-   RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line
+   RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line (fail)
 
 To resolve this issue [#fnusernamespaces]_:
 
