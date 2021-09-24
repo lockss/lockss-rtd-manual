@@ -32,9 +32,9 @@ Checking the System User and Group
 
 During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system.
 
-.. rubric:: Label
+.. rubric:: Heading
 
-This phase begins with the label :guilabel:`Checking the system user and group...`.
+This phase begins with the heading :guilabel:`Checking the system user and group...`.
 
 .. rubric:: Steps
 
@@ -78,9 +78,9 @@ Configuring :program:`iptables` for K3s
 
 During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if necessary.
 
-.. rubric:: Label
+.. rubric:: Heading
 
-This phase begins with the label :guilabel:`Configuring iptables for K3s...`.
+This phase begins with the heading :guilabel:`Configuring iptables for K3s...`.
 
 .. rubric:: Steps
 
@@ -162,9 +162,9 @@ Configuring :program:`firewalld` for K3s
 
 During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if necessary.
 
-.. rubric:: Label
+.. rubric:: Heading
 
-This phase begins with the label :guilabel:`Configuring firewalld for K3s...`.
+This phase begins with the heading :guilabel:`Configuring firewalld for K3s...`.
 
 .. rubric:: Steps
 
@@ -236,9 +236,9 @@ Configuring :program:`ufw` for K3s
 
 During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary.
 
-.. rubric:: Label
+.. rubric:: Heading
 
-This phase begins with the label :guilabel:`Configuring firewalld for ufw...`.
+This phase begins with the heading :guilabel:`Configuring firewalld for ufw...`.
 
 .. rubric:: Steps
 
@@ -308,9 +308,9 @@ Configuring CoreDNS for K3s
 
 During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary.
 
-.. rubric:: Label
+.. rubric:: Heading
 
-This phase begins with the label :guilabel:`Configuring CoreDNS for K3s...`.
+This phase begins with the heading :guilabel:`Configuring CoreDNS for K3s...`.
 
 .. rubric:: Steps
 
@@ -366,9 +366,9 @@ Installing K3s
 
 During this phase, :program:`install-lockss` will install K3s.
 
-.. rubric:: Label
+.. rubric:: Heading
 
-This phase begins with the label :guilabel:`Installing K3s...`.
+This phase begins with the heading :guilabel:`Installing K3s...`.
 
 .. rubric:: Steps
 
@@ -432,9 +432,9 @@ Testing the K3s Node
 
 During this phase, :program:`install-lockss` runs a series of tests to verify that the K3s node is operational.
 
-.. rubric:: Label
+.. rubric:: Heading
 
-This phase begins with the label :guilabel:`Testing the K3s node...`.
+This phase begins with the heading :guilabel:`Testing the K3s node...`.
 
 .. rubric:: Steps
 
