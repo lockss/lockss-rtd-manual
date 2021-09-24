@@ -408,7 +408,16 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
          See :ref:`Troubleshooting the K3s Installer` for remediation details. Error messages that the K3s Installer may display include:
 
-         *  FIXME
+         .. code-block:: text
+
+            [ERROR]  Failed to apply container_runtime_exec_t to /usr/local/bin/k3s, please install:
+                yum install -y container-selinux selinux-policy-base
+                yum install -y https://rpm.rancher.io/k3s/stable/common/centos/8/noarch/k3s-selinux-0.3-0.el8.noarch.rpm
+
+            Error: Package: k3s-selinux-0.3-0.el7.noarch (rancher-k3s-common-stable)
+                       Requires: container-selinux >= 2.107-3
+             You could try using --skip-broken to work around the problem
+             You could try running: rpm -Va --nofiles --nodigest
 
 3. Whether or not the K3s Installer was invoked, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`configs/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
 
@@ -547,6 +556,8 @@ That being said, we still recommend running :program:`k3s check-config` and inte
       /usr/sbin iptables v1.8.2 (nf_tables): should be older than v1.8.0, newer than v1.8.3, or in legacy mode (fail)
 
       RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line (fail)
+
+      apparmor: enabled, but apparmor_parser missing (fail)
 
    .. admonition:: Troubleshooting
 

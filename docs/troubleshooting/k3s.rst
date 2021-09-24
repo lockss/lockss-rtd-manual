@@ -45,7 +45,6 @@ In some Oracle Linux 7 systems, you may see an error message similar to the foll
     You could try using --skip-broken to work around the problem
     You could try running: rpm -Va --nofiles --nodigest
 
-
 The specific commands and version numbers may vary from the example above.
 
 This can occur in environments where the Oracle Linux 7 Addons Yum repository is not enabled by default, so Rancher's official K3s installer is unable to install the package ``container-selinux`` automatically.
@@ -128,8 +127,35 @@ To resolve this issue [#fnusernamespaces]_:
 
 4. Re-run :program:`k3s check-config` [#fnk3scheckconfig]_.
 
-cgroup hierarchy: nonexistent
-=============================
+apparmor enabled but apparmor_parser missing
+============================================
+
+In some OpenSUSE systems, you may receive the following error:
+
+.. code-block:: text
+
+   apparmor: enabled, but apparmor_parser missing (fail)
+
+This is because a common tool found in most Linux environments is not installed by default in some OpenSUSE versions.
+
+To resolve this issue, run these :program:`zypper` commands as ``root`` [#fnroot]_:
+
+.. code-block:: shell
+
+   zypper refresh
+
+   zypper --non-interactive install apparmor-parser
+
+or equivalently:
+
+.. code-block:: shell
+
+   zypper refresh
+
+   zypper -n install apparmor-parser
+
+cgroup hierarchy nonexistent
+============================
 
 .. COMMENT updated for alpha5
 
@@ -150,12 +176,12 @@ In some Fedora and OpenSUSE systems, you may encounter six related error message
 
 .. code-block:: text
 
-   - links: aux/ip6tables should link to iptables-detect.sh (fail)
-   - links: aux/ip6tables-restore should link to iptables-detect.sh (fail)
-   - links: aux/ip6tables-save should link to iptables-detect.sh (fail)
-   - links: aux/iptables should link to iptables-detect.sh (fail)
-   - links: aux/iptables-restore should link to iptables-detect.sh (fail)
-   - links: aux/iptables-save should link to iptables-detect.sh (fail)
+   links: aux/ip6tables should link to iptables-detect.sh (fail)
+   links: aux/ip6tables-restore should link to iptables-detect.sh (fail)
+   links: aux/ip6tables-save should link to iptables-detect.sh (fail)
+   links: aux/iptables should link to iptables-detect.sh (fail)
+   links: aux/iptables-restore should link to iptables-detect.sh (fail)
+   links: aux/iptables-save should link to iptables-detect.sh (fail)
 
 This is due to a bug in :program:`k3s check-config` [#fniptablesdetectbug]_, triggered in environments where there is no :program:`iptables` system package installed. **This warning can be ignored.**
 
