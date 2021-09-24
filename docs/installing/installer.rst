@@ -535,9 +535,13 @@ If all phases completed successfully, you will see the message:
 
 and :program:`install-lockss` will terminate.
 
--------------------------------------
-Running the K3s Configuration Checker
--------------------------------------
+------------------------------
+Checking the K3s Configuration
+------------------------------
+
+.. note::
+
+   This section is optional.
 
 K3s comes with :program:`k3s check-config`, a configuration checker tool. The K3s configuration checker is capable of detecting complex underlying system situations that definitely require fixing (or applications running in the K3s cluster will not be able to function properly). On the other hand, the versions of the K3s configuration checker available at the time LOCKSS 2.0-alpha4 and LOCKSS 2.0-alpha5 were released contained bugs that reported spurious issues that are either inaccurate or moot. As a result, we have decided against running :program:`k3s check-config` as part of :program:`install-lockss` at this time, to avoid unnecessary interruptions in the installation of the LOCKSS system in many cases where there is no particular cause for concern.
 

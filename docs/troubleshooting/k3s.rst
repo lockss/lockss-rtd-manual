@@ -63,7 +63,7 @@ To resolve this problem:
 Troubleshooting the K3s Configuration Checker
 ---------------------------------------------
 
-After installing K3s [#fninstallk3s]_, :program:`install-lockss` runs the K3s configuration checker :program:`k3s check-config` [#fncheckk3s]_. This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" system aspects needed by K3s.
+After installing K3s [#fninstallk3s]_, :program:`install-lockss` runs the K3s configuration checker :program:`k3s check-config` [#fnk3scheckconfig]_. This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" system aspects needed by K3s.
 
 Some failures, especially in "optional" aspects, may not actually prevent the cluster from working normally in the limited ways the LOCKSS system uses Kubernetes. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
 
@@ -231,13 +231,9 @@ CONFIG_INET_XFRM_MODE_TRANSPORT missing
 
    See :ref:`Configuring CoreDNS for K3s`.
 
-.. [#fncheckk3s]
-
-   See :ref:`Checking the K3s Configuration`.
-
 .. [#fnk3scheckconfig]
 
-   See :ref:`k3s-check-config <k3s-check-config>`. FIXME
+   See :ref:`Checking the K3s Configuration`.
 
 .. [#fnk3sbug]
 
