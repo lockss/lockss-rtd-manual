@@ -38,7 +38,15 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
    .. group-tab:: EuroLinux
 
-      .. include:: curl-dnf.rst
+      .. tabs::
+
+         .. group-tab:: EuroLinux 7
+
+            .. include:: curl-yum.rst
+
+         .. group-tab:: EuroLinux 8
+
+            .. include:: curl-dnf.rst
 
    .. group-tab:: Fedora
 

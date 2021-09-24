@@ -46,7 +46,15 @@ If you wish to update software packages manually, select your operating system b
 
    .. group-tab:: EuroLinux
 
-      .. include:: os-updates-dnf.rst
+      .. tabs::
+
+         .. group-tab:: EuroLinux 7
+
+            .. include:: os-updates-yum.rst
+
+         .. group-tab:: EuroLinux 8
+
+            .. include:: os-updates-dnf.rst
 
    .. group-tab:: Fedora
 
