@@ -392,9 +392,9 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
    If an older version of K3s is already present, :program:`install-lockss` will display ``'Detected K3s version <installed-ver> is older than expected version <exp-ver>'`` and offer to install the newer version:
 
-   :guilabel:`Upgrade K3s??`
+   :guilabel:`Upgrade K3s?`
 
-   Enter :kbd:`Y` to install the newer k3s version or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
+   Enter :kbd:`Y` to install the newer K3s version or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
 
    If a more recent version of K3s is already present, :program:`install-lockss` will display ``'Detected K3s version <installed-ver> is more recent than expected version <exp-ver>'`` and continue on to the next step. Otherwise:
 
