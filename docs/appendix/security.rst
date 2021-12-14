@@ -27,7 +27,7 @@ Remediation
 
       git fetch --all --tags
 
-4. Move the LOCKSS Installer from the version tagged `version-2.0-alpha4` to the version tagged `version-2.0-alpha4b` with this :command:`git` command:
+4. Move the LOCKSS Installer from the version tagged ``version-2.0-alpha4`` to the version tagged ``version-2.0-alpha4b`` with this :command:`git` command:
 
    .. code-block:: shell
 
