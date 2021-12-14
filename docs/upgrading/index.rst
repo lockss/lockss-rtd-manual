@@ -70,7 +70,7 @@ We have provided an upgrade script to upgrade on-disk structures. To run it, log
 
 .. code-block:: shell
 
-   scripts/upgrade/upgrade-alpha4-to-alpha5
+   scripts/upgrades/upgrade-alpha4-to-alpha5
 
 ----------
 Next Steps
