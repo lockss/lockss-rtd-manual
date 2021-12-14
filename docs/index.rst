@@ -11,6 +11,14 @@ LOCKSS 2.0-alpha4 System Manual
 | Released: 2021-06-28.
 | Last modified: |today|.
 
+.. warning::
+
+   **Security advisory: CVE-2021-44228**
+
+   **LOCKSS 2.0-alpha4, Solr and OpenWayback are affected.**
+
+   :ref:`Click here for mitigation instructions <CVE-2021-44228>`
+
 .. only:: html
 
    .. _release-notes:

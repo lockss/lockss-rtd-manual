@@ -8,6 +8,7 @@ This appendix contains pages of additional information about the LOCKSS system.
    :caption: Chapter Overview
    :maxdepth: 1
 
+   security
    root
    privileged
    lockss
