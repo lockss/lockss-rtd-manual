@@ -13,7 +13,7 @@ LOCKSS 2.0-alpha4 System Manual
 
 .. warning::
 
-   **Security advisory: CVE-2021-44228**
+   **Security advisory: CVE-2021-44228 ("Log4Shell"), CVE-2021-45046, CVE-2021-4104**
 
    **LOCKSS 2.0-alpha4, Solr and OpenWayback are affected.**
 
