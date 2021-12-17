@@ -10,7 +10,7 @@ Downloading the LOCKSS Installer using :program:`git`
 
 .. tip::
 
-   Follow the instructions in :doc:`/appendix/git` to install :program:`git`.
+   Follow the instructions in :doc:`/appendix/git` to install :program:`git`, if it is not yet available on your system.
 
 Follow these instructions as the ``lockss`` user [#fnlockss]_:
 
