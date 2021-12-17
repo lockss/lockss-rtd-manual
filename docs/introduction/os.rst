@@ -14,7 +14,7 @@ Flavors of Linux we have successfully tested include:
 
 *  `CentOS <https://www.centos.org/>`_ 8.4, 8.3, 8.2, 8.1, 8.0, 7.9, 7.8, 7.7, 7.6, 7.5, 7.4, 7.3, and CentOS Stream (rolling release).
 
-*  `Debian <https://www.debian.org/>`_ 11.0, 10.10, 10.9, 10.8, 10.7, 10.6, 10.5, 10.4, 10.3, 10.2, 10.1, 10.0, 9.13, 9.12, 9.11, 9.9, 9.8, 9.7, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0.
+*  `Debian <https://www.debian.org/>`_ 11.1, 11.0, 10.10, 10.9, 10.8, 10.7, 10.6, 10.5, 10.4, 10.3, 10.2, 10.1, 10.0, 9.13, 9.12, 9.11, 9.9, 9.8, 9.7, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0.
 
 *  `EuroLinux <https://en.euro-linux.com/>`_ 8.4, 8.3, 7.9, 7.8, 7.7, 7.6.
 
@@ -32,7 +32,7 @@ Flavors of Linux we have successfully tested include:
 
 *  `Scientific Linux <https://scientificlinux.org/>`_ 7.9, 7.8, 7.7, 7.6.
 
-*  `Ubuntu <https://ubuntu.com/>`_ 21.04, 20.10, 20.04 LTS, 19.10, 19.04, 18.10, 18.04 LTS.
+*  `Ubuntu <https://ubuntu.com/>`_ 21.10, 21.04, 20.10, 20.04 LTS, 19.10, 19.04, 18.10, 18.04 LTS.
 
 The LOCKSS system can likely be installed successfully on slightly different versions of the Linux flavors above, as well as other Linux flavors altogether.
 
