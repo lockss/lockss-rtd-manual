@@ -37,7 +37,7 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
 
    *  Numerous fixes and improvements to the LOCKSS Repository Service, in support of performance and LOCKSS 1.x to 2.x migration.
 
-   *  Revamped LOCKSS Installer distributed without requiring Git, and rolls up most individual installation steps into a single script.
+   *  Revamped LOCKSS Installer distributed without requiring Git, rolling up most individual installation steps into a single script.
 
    *  Upgrade from Solr 7.2.1 to 8.9.0.
 
