@@ -34,7 +34,7 @@ Log in as the ``lockss`` user and run the following command in the :file:`lockss
 Update the LOCKSS Installer
 ---------------------------
 
-The official way to download the LOCKSS Installer is now through the LOCKSS Downloader, rather than cloning the LOCKSS Installer as a Git project as in previous releases.
+The official way to download the LOCKSS Installer is now through the LOCKSS Downloader, rather than cloning the LOCKSS Installer as a Git project as in previous releases. However, advanced users may continue to use :program:`git` if they wish (see :doc:`/appendix/git-downloader` for instructions).
 
 Move the existing 2.0-alpha4 LOCKSS Installer out-of-the-way:
 
