@@ -18,7 +18,7 @@ Overview of the LOCKSS Installer
 
 *  :ref:`Configuring CoreDNS for K3s`: if necessary, will prompt you to enter non-loopback IP addresses of DNS servers.
 
-*  :ref:`Installing K3s`: will prompt you for a Kubernetes state data storage directory.
+*  :ref:`Installing K3s`: if necessary, will prompt you for a Kubernetes state data storage directory and to confirm before upgrading from an earlier version of K3s.
 
 *  :ref:`Testing the K3s Node`: no interaction expected.
 
@@ -388,35 +388,17 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
 
-2. Next, :program:`install-lockss` will determine if K3s needs to be installed or upgraded. There are five cases:
+2. If the expected version of K3s is already present, :program:`install-lockss` will display ``'K3s version <installed-ver> is already installed; skipping'`` and continue on to the next step. Otherwise:
 
-   a. If K3s is not present, :program:`install-lockss` will display ``K3s is not present``, and will install K3s in the next step.
+   If an older version of K3s is already present, :program:`install-lockss` will display ``'Detected K3s version <installed-ver> is older than expected version <exp-ver>'`` and offer to install the newer version:
 
-   b. If the expected version of K3s is already present, :program:`install-lockss` will display :samp:`K3s version {installed_version} is already installed; skipping`, and will not install K3s in the next step.
+   :guilabel:`Upgrade K3s?`
 
-   c. If a more recent version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {installed_version} is more recent than expected version {expected_version}`, and will not install K3s in the next step.
+   Enter :kbd:`Y` to install the newer K3s version or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
 
-   d. If an older version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {installed_version} is older than expected version {expected_version}` and you will receive the following prompt:
+   If a more recent version of K3s is already present, :program:`install-lockss` will display ``'Detected K3s version <installed-ver> is more recent than expected version <exp-ver>'`` and continue on to the next step. Otherwise:
 
-      :guilabel:`Upgrade K3s from {installed_version} to {expected_version}?`
-
-      Enter :kbd:`Y` and :program:`install-lockss` will install the newer K3s version in the next step, or :kbd:`N` and :program:`install-lockss` will not install the newer K3s version in the next step to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
-
-      *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
-
-   e. If K3s is detected but the installed and expected version numbers cannot be compared automatically, you will see the following warning:
-
-      .. code-block:: text
-
-         [Warning] Detected K3s version {installed_version}, expected version ${expected_version}, comparison failure, skipping
-
-      and :program:`install-lockss` will not install K3s in the next step.
-
-3. If :program:`install-lockss` determined in the previous step that it will not install K3s, it will display ``Not installing K3s`` and go to the next step.
-
-   Otherwise, it will display :samp:`Installing K3s version {expected_version}`, and K3s will be installed:
-
-   1. First, :program:`install-lockss` will warn you that the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) should not be attached to a space-limited volume. You will see the following prompt:
+   1. Next, :program:`install-lockss` will warn you that the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) should not be attached to a space-limited volume. You will see the following prompt:
 
       :guilabel:`K3s state data directory`
 
@@ -426,7 +408,7 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
       *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.
 
-   2. Next, the K3s Installer will be downloaded from https://get.k3s.io/ and invoked with suitable options. Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
+   2. The K3s Installer will then be downloaded from https://get.k3s.io/ and invoked with suitable options. Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
 
       If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail.
 
@@ -445,7 +427,7 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
              You could try using --skip-broken to work around the problem
              You could try running: rpm -Va --nofiles --nodigest
 
-4. Whether or not K3s was installed, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`configs/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
+3. Whether or not the K3s Installer was invoked, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`configs/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
 
    .. code-block:: text
 
@@ -459,7 +441,7 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
       FIXME
 
-5. Finally, you will see the message:
+4. Finally, you will see the message:
 
    .. code-block:: text
 
