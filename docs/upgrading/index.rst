@@ -44,6 +44,16 @@ Move the existing 2.0-alpha4 LOCKSS Installer out-of-the-way:
 
 Then follow the steps in :doc:`/installing/index` to download the 2.0-alpha5 version of the LOCKSS Installer, skipping over the earlier sections of the chapter that are not required in the context of an upgrade (:doc:`/installing/user`).
 
+----------------------
+Run the Upgrade Script
+----------------------
+
+We have provided an upgrade script to upgrade on-disk structures. To run it, log in as the ``lockss`` user and run the following command in the :file:`lockss-installer` directory:
+
+.. code-block:: shell
+
+   scripts/upgrades/upgrade-alpha4-to-alpha5
+
 ---------------------------
 Re-run the Configure Script
 ---------------------------
@@ -55,16 +65,6 @@ Copy the existing LOCKSS system configuration into the new 2.0-alpha5 environmen
    cp lockss-installer.alpha4/config/system.cfg lockss-installer/config/system.cfg
 
 Then follow the instructions in :doc:`configuring` to ensure all existing configuration parameters are still correct and to configure any new parameters.
-
-----------------------
-Run the Upgrade Script
-----------------------
-
-We have provided an upgrade script to upgrade on-disk structures. To run it, log in as the ``lockss`` user and run the following command in the :file:`lockss-installer` directory:
-
-.. code-block:: shell
-
-   scripts/upgrades/upgrade-alpha4-to-alpha5
 
 ----------
 Next Steps
