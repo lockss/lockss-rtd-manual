@@ -2,30 +2,18 @@
    :alt: LOCKSS 2.0-alpha5 logo
    :align: right
 
-.. comment FIX-AFTER-RELEASE
-
-==============================================
-LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
-==============================================
-
-.. comment FIX-AFTER-RELEASE
-
-.. warning::
-
-   **You are viewing a work in progress for a future version of the LOCKSS System.**
+===============================
+LOCKSS 2.0-alpha5 System Manual
+===============================
 
    .. only:: html
 
       `Click here to go to the latest released version </projects/manual/en/latest>`_.
 
-.. comment FIX-AFTER-RELEASE
+**Welcome to the LOCKSS 2.0-alpha5 System Manual.**
 
-**Welcome to the LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual.**
-
-.. comment FIX-AFTER-RELEASE
-
-| Released: 2021-XX-XX.
-| Last modified: |today|.
+| Released: 2021-12-17
+| Last modified: |today|
 
 .. only:: html
 
