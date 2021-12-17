@@ -521,7 +521,7 @@ This phase begins with the heading :guilabel:`Testing the K3s node...`.
 
    .. admonition:: Troubleshooting
 
-      The reasons for some of these tests failing vary. Some wait for K3s to start up and retry a number of times but eventually give up, even though K3s will eventually come up fully. Youi can invoke just this portion of :program:`lockss-install` by invoking:
+      The reasons for some of these tests failing vary. Some wait for K3s to start up and retry a number of times but eventually give up, even though K3s will eventually come up fully. You can invoke just this portion of :program:`lockss-install` by invoking:
 
       .. code-block:: shell
 
