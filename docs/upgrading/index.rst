@@ -42,7 +42,7 @@ Move the existing 2.0-alpha4 LOCKSS Installer out-of-the-way:
 
    mv lockss-installer lockss-installer.alpha4
 
-Then follow the steps in :doc:`/installing/index` to download the 2.0-alpha5 version of the LOCKSS Installer, skipping over the earlier sections of the chapter that are not required in the context of an upgrade (:doc:`/installing/user`).
+Then follow the steps in :doc:`/installing/index` to download the 2.0-alpha5 version of the LOCKSS Installer, skipping over the earlier sections of the chapter that are not required in the context of an upgrade (e.g., :doc:`/installing/user`).
 
 ----------------------
 Run the Upgrade Script
@@ -74,7 +74,7 @@ Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha5 instan
 
 .. note::
 
-   The first time 2.0-alpha5 is started after an upgrade, it may take several minutes before the system becomes available, while it re-indexes all previously archived content.
+   The first time 2.0-alpha5 is started after an upgrade from 2.0-alpha4, it may take several minutes before the system becomes available, while it re-indexes all previously archived content.
 
 ----
 
