@@ -439,7 +439,7 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
    .. admonition:: Troubleshooting
 
-      FIXME
+      Check file permission mismatches between the user running :program:`install-lockss` and the :file:`lockss-installer/config` directory, then try again.
 
 4. Finally, you will see the message:
 
@@ -521,7 +521,21 @@ This phase begins with the heading :guilabel:`Testing the K3s node...`.
 
    .. admonition:: Troubleshooting
 
-      FIXME
+      The reasons for some of these tests failing vary. Some wait for K3s to start up and retry a number of times but eventually give up, even though K3s will eventually come up fully. Youi can invoke just this portion of :program:`lockss-install` by invoking:
+
+      .. code-block:: shell
+
+         install-lockss --test-k3s
+
+      or equivalently:
+
+      .. code-block:: shell
+
+         install-lockss -T
+
+      You can also alter the number of retries and the number of seconds between retries with :samp:`--retries={N}` and :samp:`--wait={S}` respectively.
+
+      Other problems may require reaching out to the LOCKSS support team at ``lockss-support (at) lockss (dot) org`` for assistance.
 
 3. Finally, you will see the message:
 
