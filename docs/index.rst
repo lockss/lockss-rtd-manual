@@ -2,9 +2,13 @@
    :alt: LOCKSS 2.0-alpha5 logo
    :align: right
 
+.. comment FIX-AFTER-RELEASE
+
 ==============================================
 LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
 ==============================================
+
+.. comment FIX-AFTER-RELEASE
 
 .. warning::
 
@@ -14,7 +18,11 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
 
       `Click here to go to the latest released version </projects/manual/en/latest>`_.
 
+.. comment FIX-AFTER-RELEASE
+
 **Welcome to the LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual.**
+
+.. comment FIX-AFTER-RELEASE
 
 | Released: 2021-XX-XX.
 | Last modified: |today|.
@@ -27,7 +35,9 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
    What's New?
    -----------
 
-   *  The LOCKSS Installer is now distributed from GitHub but without requiring :program:`git` and rolls up most individual installation steps into a single script.
+   *  The LOCKSS Installer is now distributed from GitHub but without requiring Git, and rolls up most individual installation steps into a single script.
+
+   *  All system components and the custom Solr and OpenWayback included in the system now contain only the latest version of Log4j (2.16.0), which is not vulnerable to CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104.
 
    *  **FIXME**
 
@@ -35,15 +45,13 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
    Installation
    ------------
 
-   **FIXME**
-
-   In order to install and test the LOCKSS 2.0-alpha4 system, you will need:
+   In order to install and test the LOCKSS 2.0-alpha5 system, you will need:
 
    *  64-bit **Linux** host (physical or virtual) with at least 4 CPU cores and 8 GB of memory, and adequate storage.
 
-   *  Commonplace Linux system utilities like :program:`curl`/:program:`wget` and :program:`tar` to download and run the LOCKSS Installer.
+   *  Commonplace Linux system utilities like :program:`curl`/:program:`wget` and :program:`tar` to run the LOCKSS Downloader and the LOCKSS Installer.
 
-   *  **K3s**, a lightweight Kubernetes environment installed via the LOCKSS Installer.
+   *  **K3s**, a lightweight Kubernetes environment (installed via the LOCKSS Installer).
 
    See :doc:`/introduction/prerequisites` and :doc:`/installing/index` for more details.
 
@@ -51,20 +59,25 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
    Upgrade
    -------
 
-   **FIXME**
+   If you were running LOCKSS 2.0-alpha4, Git is no longer required. See :doc:`/upgrading/index` for upgrade instructions.
 
-   If you were running LOCKSS 2.0-alpha4, you no longer need Git. See :doc:`upgrading/index` for more details.
+   .. important::
+
+      The LOCKSS 2.0-alpha4 system, and the Solr and OpenWayback containers it includes, are affected by CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104. Please `see the LOCKSS 2.0-alpha4 security advisory </projects/manual/en/2.0-alpha4/appendix/security>`_ and :doc:`upgrade to LOCKSS 2.0-alpha5 </upgrading/index>`.
 
    ---------------------
    Questions and Answers
    ---------------------
 
-   **FIXME**
+   Is LOCKSS 2.0-alpha5 vulnerable to CVE-2021-44228 ("Log4Shell")?
+      No. The LOCKSS 2.0-alpha5 system, and the custom Solr 8.9.0 and OpenWayback 2.4.0 Docker containers it ships with, contain the only the latest version of Log4j (2.16.0), which is not vulnerable to CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104. See :doc:`/appendix/security`.
 
    I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha5?
-      **FIXME**
+      The LOCKSS 2.0-alpha5 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.8) to a LOCKSS 2.0 system for production purposes.
 
-      The LOCKSS 2.0-alpha4 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.5) to a LOCKSS 2.0 system. To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha4 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
+      However, an upcoming version of the classic LOCKSS system will contain an experimental tool to test the migration of select archival units (AUs) from a production 1.x system to a test 2.x system.
+
+      To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha5 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
 
    I have a LOCKSS system running 2.0-alpha4. Can I upgrade to LOCKSS 2.0-alpha5?
       Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha4 and start from scratch, but there is an :ref:`upgrade path <Upgrade>` from LOCKSS 2.0-alpha4.
@@ -72,8 +85,12 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
    Can I use my own PostgreSQL database? Can I use my own Solr database?
       Yes, you can configure the system to use your institution's Postgres database and/or Solr database -- or you can simply let system run included ones locally.
 
+      Please note that as of this writing, only Solr 8.11.1 is not vulnerable to CVE-2021-44228 ("Log4Shell") and CVE-2021-45046. If you choose to run an external Solr database, you are responsible for ensuring it is not vulnerable.
+
    Can I replay Web content with my own Pywb instance? Can I replay Web content with my own OpenWayback instance?
       Yes, you can configure your own Pywb instance and/or OpenWayback instance to connect directly to the LOCKSS Repository Service -- or you can let the system run included ones locally, or you can choose not to run any Web replay engine at all.
+
+      Please note that as of this writing, OpenWayback is vulnerable to CVE-2021-44228 ("Log4Shell") and CVE-2021-45046. If you choose to run an external OpenWayback replay engine, you are responsible for ensuring it is not vulnerable.
 
    ----------
    Contact Us
