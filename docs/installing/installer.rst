@@ -427,7 +427,7 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
              You could try using --skip-broken to work around the problem
              You could try running: rpm -Va --nofiles --nodigest
 
-3. Whether or not the K3s Installer was invoked, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`configs/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
+3. Whether or not the K3s Installer was invoked, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
 
    .. code-block:: text
 
