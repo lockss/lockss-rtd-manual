@@ -35,15 +35,15 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
    What's New?
    -----------
 
-   *  Numerous fixes and improvements to the LOCKSS Repository Service, in support of performance and LOCKSS 1.x to 2.x migration.
+   *  Numerous bug fixes and substantial performance improvements in the LOCKSS Repository Service, in support of reliability, scalability, and LOCKSS 1.x to 2.x migration.
 
-   *  Revamped LOCKSS Installer distributed without requiring Git, rolling up most individual installation steps into a single script.
+   *  Improved LOCKSS Installer distributed without requiring Git, rolling up most individual installation steps into a single script.
 
    *  Upgrade from Solr 7.2.1 to 8.9.0.
 
-   *  All system components and the custom Solr and OpenWayback Docker containers included in the system now contain only the latest version of Log4j (2.16.0), which is not vulnerable to CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104.
+   *  Revamped HTTP error response handling, including new HTTP response/error categories and custom handling of categories in plugins.
 
-   *  **FIXME**
+   *  All system components and the custom Solr and OpenWayback Docker containers included in the system now contain only the latest version of Log4j (2.16.0), which is not vulnerable to CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104.
 
    ------------
    Installation
