@@ -43,6 +43,8 @@ LOCKSS 2.0-alpha5 (NOT RELEASED) System Manual
 
    *  Revamped HTTP error response handling, including new HTTP response/error categories and custom handling of categories in plugins.
 
+   *  Support for communicating with APIs via POST requests during crawls.
+
    *  All system components and the custom Solr and OpenWayback Docker containers included in the system now contain only the latest version of Log4j (2.16.0), which is not vulnerable to CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104.
 
    ------------
