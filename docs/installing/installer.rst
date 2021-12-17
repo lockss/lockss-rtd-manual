@@ -400,7 +400,7 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
       :guilabel:`Upgrade K3s from {installed_version} to {expected_version}?`
 
-      Enter :kbd:`Y` and :program:`install-lockss` will install the newer K3s version in the next step, or :kbd:`N` and :program:`install-lockss` will not install the newer K3s version in the next step to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
+      Enter :kbd:`Y` and :program:`install-lockss` will install the newer K3s version in the next step, or :kbd:`N` and :program:`install-lockss` will not install the newer K3s version in the next step (or hit :kbd:`Enter` to accept the default in square brackets).
 
       *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
 
