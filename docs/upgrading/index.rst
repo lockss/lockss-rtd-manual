@@ -12,17 +12,11 @@ Upgrading From LOCKSS 2.0-alpha4
 
 .. tip::
 
-   Before you begin upgrading from 2.0-alpha4, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/appendix/os-updates` in the appendix.
-
-*  **FIXME** Please note that the upgrade process includes re-running the LOCKSS configuration tool, which **will require you to re-enter the PostgreSQL database password**.
+   Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/appendix/os-updates` in the appendix.
 
 .. contents:: Chapter Overview
    :local:
    :depth: 1
-
-| **FIXME**
-| **FIXME**
-| **FIXME**
 
 ----------------------
 Stop LOCKSS 2.0-alpha4
@@ -48,7 +42,7 @@ Move the existing 2.0-alpha4 LOCKSS Installer out-of-the-way:
 
    mv lockss-installer lockss-installer.alpha4
 
-Then follow the steps in :doc:`installing/index` to download the 2.0-alpha5 version of the LOCKSS Installer, skipping over the earlier sections of the chapter that are not required in an upgrade situation (:doc:`/installing/user`).
+Then follow the steps in :doc:`installing/index` to download the 2.0-alpha5 version of the LOCKSS Installer, skipping over the earlier sections of the chapter that are not required in the context of an upgrade (:doc:`/installing/user`).
 
 ---------------------------
 Re-run the Configure Script
@@ -66,7 +60,7 @@ Then follow the instructions in :doc:`configuring` to ensure all existing config
 Run the Upgrade Script
 ----------------------
 
-We have provided an upgrade script to upgrade on-disk structures. To run it, login as the ``lockss`` user and run the following command in the :file:`lockss-installer` directory:
+We have provided an upgrade script to upgrade on-disk structures. To run it, log in as the ``lockss`` user and run the following command in the :file:`lockss-installer` directory:
 
 .. code-block:: shell
 
@@ -76,7 +70,11 @@ We have provided an upgrade script to upgrade on-disk structures. To run it, log
 Next Steps
 ----------
 
-Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha5 instance. Please note that the first time 2.0-alpha5 is started, it may take several minutes before the system becomes available, while it re-indexes all previously archived content.
+Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha5 instance.
+
+.. note::
+
+   The first time 2.0-alpha5 is started after an upgrade, it may take several minutes before the system becomes available, while it re-indexes all previously archived content.
 
 ----
 
