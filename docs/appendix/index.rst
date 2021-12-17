@@ -13,6 +13,7 @@ This appendix contains pages of additional information about the LOCKSS system.
    privileged
    lockss
    os-updates
+   git-downloader
    curl
    wget
    migrating
