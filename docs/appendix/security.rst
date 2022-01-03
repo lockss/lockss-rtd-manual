@@ -8,69 +8,41 @@ Security Advisories
 
 ----
 
+.. _cve-2021-45105:
+
+.. _cve-2021-44832:
+
+---------------------------------
+CVE-2021-45105 and CVE-2021-44832
+---------------------------------
+
+| *First published: 2021-01-02*
+
+.. attention::
+
+   **The LOCKSS 2.x system up to and including version 2.0-alpha5 (originally released 2021-12-17), and the custom Solr and OpenWayback containers it includes, are affected by CVE-2021-45105 and CVE-2021-44832.**
+
+   **The recommended remediation is to upgrade LOCKSS 2.x version 2.0-alpha5 (originally released 2021-12-17) or earlier to LOCKSS 2.0-alpha5b.**
+
+   See :doc:`lockss:security/cve-2021-45105` in our :doc:`lockss:security/index` pages.
+
+.. _cve-2021-44228:
+
 .. _cve-2021-45046:
 
 .. _cve-2021-4104:
 
---------------
-CVE-2021-44228
---------------
+------------------------------------------------
+CVE-2021-44228, CVE-2021-45046 and CVE-2021-4104
+------------------------------------------------
 
 | *First published: 2021-12-13*
-| *Last updated: 2021-12-16*
+| *Last updated: 2021-01-02*
 
 .. attention::
 
-   **The LOCKSS 2.0-alpha4 system, and the Solr and OpenWayback containers it includes, are affected by CVE-2021-44228, CVE-2021-45046 and CVE-2021-4104.** See the :ref:`cve-2021-4104-remediation` section.
+   **The LOCKSS 2.x system up to and including version 2.0-alpha4b, and the custom Solr and OpenWayback containers it includes, are affected by CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104.**
 
-.. rubric:: Description
+   **Now that the LOCKSS 2.0-alpha5 system is available and that additional vulnerabilities in Log4j 2.x have been discovered, the recommended remediation is to upgrade LOCKSS 2.x version 2.0-alpha4b or earlier to LOCKSS 2.0-alpha5 immediately.**
 
-A critical remote code execution vulnerability has been identified in Apache Log4j 2.x, a ubiquitous Java library for recording information to software logs. Tracked as CVE-2021-44228 and also nicknamed "Log4Shell" or "LogJam", this vulnerability led to the discovery of related, less severe, vulnerabilities in Log4j 1.x and 2.x, such as CVE-2021-45046 and CVE-2021-4104.
-
-.. rubric:: Scope
-
-These vulnerabilities affect the LOCKSS system version 2.0-alpha4, and the Solr and OpenWayback containers it includes, requiring an upgrade to fix.
-
-.. important::
-
-   If you use LOCKSS 2.0-alpha4 with an external Solr database or external OpenWayback replay engine, you are responsible for ensuring that these external systems are not vulnerable in their respective environments.
-
-.. _cve-2021-4104-remediation:
-
-.. rubric:: Remediation
-
-1. Log in as the ``lockss`` user and navigate to the :file:`lockss-installer` directory.
-
-2. Stop the LOCKSS system with this command:
-
-   .. code-block:: shell
-
-      scripts/stop-lockss
-
-3. Synchronize the LOCKSS Installer with GitHub with this :command:`git` command:
-
-   .. code-block:: shell
-
-      git fetch --all --tags
-
-4. Move the LOCKSS Installer from the version tagged ``version-2.0-alpha4`` to the version tagged ``version-2.0-alpha4c`` with this :command:`git` command:
-
-   .. code-block:: shell
-
-      git reset --hard version-2.0-alpha4c
-
-5. Start the LOCKSS system back up with this command:
-
-   .. code-block:: shell
-
-      scripts/start-lockss
-
-.. rubric:: References
-
-*  https://logging.apache.org/log4j/2.x/security.html
-
-*  https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228
-
-*  https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45046
-
-*  https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-4104
+   See :doc:`lockss:security/cve-2021-44228` in our :doc:`lockss:security/index` pages.
