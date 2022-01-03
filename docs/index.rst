@@ -15,6 +15,14 @@ LOCKSS 2.0-alpha5 System Manual
 | Released: 2021-12-17
 | Last modified: |today|
 
+.. attention::
+
+   **Security advisories: CVE-2021-45105, CVE-2021-44832**
+
+   **LOCKSS 2.0-alpha5 and the custom Solr and OpenWayback containers it includes are affected.**
+
+   See :doc:`/appendix/security`.
+
 .. only:: html
 
    .. _release-notes:
@@ -64,7 +72,7 @@ LOCKSS 2.0-alpha5 System Manual
    ---------------------
 
    Is LOCKSS 2.0-alpha5 vulnerable to CVE-2021-44228 ("Log4Shell")?
-      No. The LOCKSS 2.0-alpha5 system, and the custom Solr 8.9.0 and OpenWayback 2.4.0 Docker containers it ships with, contain the only the latest version of Log4j (2.16.0), which is not vulnerable to CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104. See :doc:`/appendix/security`.
+      No, **but** it is affected by additional Log4j 2.x vulnerabilities discovered after the original 2021-12-17 release of LOCKSS 2.0-alpha5. See :doc:`/appendix/security`.
 
    I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha5?
       The LOCKSS 2.0-alpha5 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.8) to a LOCKSS 2.0 system for production purposes.
@@ -79,12 +87,8 @@ LOCKSS 2.0-alpha5 System Manual
    Can I use my own PostgreSQL database? Can I use my own Solr database?
       Yes, you can configure the system to use your institution's Postgres database and/or Solr database -- or you can simply let system run included ones locally.
 
-      Please note that as of this writing, only Solr 8.11.1 is not vulnerable to CVE-2021-44228 ("Log4Shell") and CVE-2021-45046. If you choose to run an external Solr database, you are responsible for ensuring it is not vulnerable.
-
    Can I replay Web content with my own Pywb instance? Can I replay Web content with my own OpenWayback instance?
       Yes, you can configure your own Pywb instance and/or OpenWayback instance to connect directly to the LOCKSS Repository Service -- or you can let the system run included ones locally, or you can choose not to run any Web replay engine at all.
-
-      Please note that as of this writing, OpenWayback is vulnerable to CVE-2021-44228 ("Log4Shell") and CVE-2021-45046. If you choose to run an external OpenWayback replay engine, you are responsible for ensuring it is not vulnerable.
 
    ----------
    Contact Us

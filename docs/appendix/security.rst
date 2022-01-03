@@ -2,12 +2,26 @@
 Security Advisories
 ===================
 
-*Last updated: 2021-12-16*
+.. contents:: Topic Overview
+   :local:
+   :depth: 1
 
-There are no security advisories related to the LOCKSS 2.0-alpha5 system at this time.
+----
 
-.. note::
+.. _cve-2021-45105:
 
-   The LOCKSS 2.0-alpha5 system, and the custom Solr and OpenWayback containers it includes, are **not affected** by `CVE-2021-44228 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44228>`_ and `CVE-2021-45046 <https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45046>`_.
+.. _cve-2021-44832:
 
-   **If you use LOCKSS 2.0-alpha5 with an external Solr database or external OpenWayback replay engine, you are responsible for ensuring that these external systems are not vulnerable in their respective environments.**
+---------------------------------
+CVE-2021-45105 and CVE-2021-44832
+---------------------------------
+
+| *First published: 2021-01-02*
+
+.. attention::
+
+   **The LOCKSS 2.x system up to and including version 2.0-alpha5 (originally released 2021-12-17), and the custom Solr and OpenWayback containers it includes, are affected by CVE-2021-45105 and CVE-2021-44832.**
+
+   **The recommended remediation is to upgrade LOCKSS 2.x version 2.0-alpha5 (originally released 2021-12-17) or earlier to LOCKSS 2.0-alpha5b.**
+
+   See :doc:`lockss:security/cve-2021-45105` in our :doc:`lockss:security/index` pages.
