@@ -4,9 +4,9 @@ Versions
 
 .. COMMENT MOSTRECENTRELEASE
 
-The LOCKSS 2.0-alpha5b system (released 2022-01-02) consists of a configurable set of the following components:
+The LOCKSS 2.0-alpha5c system (released 2022-01-05) consists of a configurable set of the following components:
 
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.12.2
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.12.3
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.6.2
 
