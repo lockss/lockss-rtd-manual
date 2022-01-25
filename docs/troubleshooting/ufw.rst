@@ -2,6 +2,12 @@
 Troubleshooting :program:`ufw`
 ==============================
 
+This section provides troubleshooting information for the :ref:`configuring-ufw` phase of :doc:`/installing/installer`.
+
+--------------------------------------------------------
+Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw
+--------------------------------------------------------
+
 If your system is running the :program:`ufw` firewall, it is necessary to allow traffic from K3s' pod and service subnets [#fnk3ssubnets]_ via :program:`ufw` for K3s to work properly [#fnreference]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
 
 :guilabel:`Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw?`
@@ -18,15 +24,17 @@ The :program:`firewalld` configuration attempted by :program:`install-lockss` is
 
    ufw reload
 
-.. tip::
+-------------------------------------------
+Post-Installation Changes to :program:`ufw`
+-------------------------------------------
 
-   If your system did not initially use :program:`ufw` at the time K3s was installed, but later does (for example because :program:`ufw` becomes enabled), run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
+If your system did not initially use :program:`ufw` at the time K3s was installed, but later does (for example because :program:`ufw` becomes enabled), run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
 
-   .. code-block:: shell
+.. code-block:: shell
 
-      scripts/install-lockss --configure-ufw
+   scripts/install-lockss --configure-ufw
 
-   This will run only the :ref:`configuring-ufw` phase of :program:`install-lockss`.
+This will run only the :ref:`configuring-ufw` phase of :program:`install-lockss`.
 
 ----
 

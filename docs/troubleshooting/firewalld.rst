@@ -2,6 +2,12 @@
 Troubleshooting :program:`firewalld`
 ====================================
 
+This section provides troubleshooting information for the :ref:`configuring-firewalld` phase of :doc:`/installing/installer`.
+
+-------------------------------------------------------------
+Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone
+-------------------------------------------------------------
+
 If your system is running the :program:`firewalld` firewall, it is necessary to add K3s' pod and service subnets [#fnk3ssubnets]_ to :program:`firewalld`'s ``trusted`` zone for K3s to work properly [#fnreference]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
 
 :guilabel:`Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone?`
@@ -18,15 +24,17 @@ The :program:`firewalld` configuration attempted by :program:`install-lockss` is
 
    firewall-cmd --reload
 
-.. tip::
+-------------------------------------------------
+Post-Installation Changes to :program:`firewalld`
+-------------------------------------------------
 
-   If your system did not initially use :program:`firewalld` at the time K3s was installed, but later does (for example because :program:`firewalld` becomes enabled), run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
+If your system did not initially use :program:`firewalld` at the time K3s was installed, but later does (for example because :program:`firewalld` becomes enabled), run this command (relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
 
-   .. code-block:: shell
+.. code-block:: shell
 
-      scripts/install-lockss --configure-firewalld
+   scripts/install-lockss --configure-firewalld
 
-   This will run only the :ref:`configuring-firewalld` phase of :program:`install-lockss`.
+This will run only the :ref:`configuring-firewalld` phase of :program:`install-lockss`.
 
 ----
 

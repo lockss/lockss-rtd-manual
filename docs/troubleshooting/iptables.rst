@@ -2,7 +2,16 @@
 Troubleshooting :program:`iptables`
 ===================================
 
-K3s 1.21.5+k3s1 (the version used by LOCKSS 2.0-alpha5) does not always work with :program:`iptables` version 1.8.0-1.8.3 run via Alternatives not in ``legacy`` mode, for instance in some Debian or Ubuntu systems [#fnreference]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
+This section provides troubleshooting information for the :ref:`configuring-iptables` phase of :doc:`/installing/installer`.
+
+.. COMMENT LATESTVERSION
+.. COMMENT K3SVERSION
+
+-----------------------------------------------
+Switch iptables to legacy mode via Alternatives
+-----------------------------------------------
+
+K3s 1.21.5+k3s1 (the version used by LOCKSS 2.0-alpha5) does not always work with :program:`iptables` version 1.8.0-1.8.3 when run via Alternatives but not in ``legacy`` mode, for instance in some Debian or Ubuntu systems [#fnreference]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
 
 :guilabel:`Switch iptables to legacy mode via Alternatives?`
 
@@ -27,21 +36,20 @@ The remediation attempted by :program:`install-lockss` is equivalent to:
    # Optional
    update-alternatives --set ebtables /usr/sbin/ebtables-legacy
 
-   # Required
-   iptables --flush
-
    # Required only if ufw was active
    ufw enable
 
-.. tip::
+------------------------------------------------
+Post-Installation Changes to :program:`iptables`
+------------------------------------------------
 
-   If your system did not initially need an adjustment for :program:`iptables` at the time K3s was installed, but later does (for example because :program:`iptables` is upgraded from a pre-1.8.0 version to version 1.8.0 or later), run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
+If your system did not initially need an adjustment for :program:`iptables` at the time K3s was installed, but later does (for example because :program:`iptables` is upgraded from a pre-1.8.0 version to version 1.8.0 or later), run this command (relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
 
-   .. code-block:: shell
+.. code-block:: shell
 
-      scripts/install-lockss --configure-iptables
+   scripts/install-lockss --configure-iptables
 
-   This will run only the :ref:`configuring-iptables` phase of :program:`install-lockss`.
+This will run only the :ref:`configuring-iptables` phase of :program:`install-lockss`.
 
 ----
 
