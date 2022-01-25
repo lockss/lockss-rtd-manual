@@ -6,43 +6,49 @@ Running the LOCKSS Installer
 
    Commands in this section are run as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_.
 
-The next task is to run the LOCKSS Installer's :program:`install-lockss` script. The process of running :program:`install-lockss` consists of the following phases:
+The next task is to run the LOCKSS Installer.
 
 --------------------------------
 Overview of the LOCKSS Installer
 --------------------------------
 
-*  :ref:`Checking the System User and Group`: no interaction expected.
+When you invoke the LOCKSS Installer, the installation process goes through various phases:
 
-*  :ref:`configuring-iptables`, :ref:`configuring-firewalld`, :ref:`configuring-ufw`: if necessary, will prompt you to confirm before modifying the configuration of :program:`iptables`, :program:`firewalld` or :program:`ufw` (respectively), which might incidentally prompt you for your :program:`sudo` password.
+*  Checking that the ``lockss`` system user and group exist. No user interaction is expected.
 
-*  :ref:`Configuring CoreDNS for K3s`: if necessary, will prompt you to enter non-loopback IP addresses of DNS servers.
+*  Configuring :program:`iptables`, :program:`firewalld` and :program:`ufw` for K3s. If applicable, you will be prompted to confirm before your system configuration is modified. You may incidentally be prompted for your :program:`sudo` password.
 
-*  :ref:`Installing K3s`: will prompt you for a Kubernetes state data storage directory.
+*  Configuring CoreDNS for K3s. If applicable, you will be prompted to enter non-loopback IP addresses of DNS servers.
 
-*  :ref:`Testing the K3s Node`: no interaction expected.
+*  Installing K3s. If applicable, you will be prompted for a Kubernetes state data storage directory.
+
+*  Testing the K3s node. No user interaction is expected.
+
+After the LOCKSS Installer succeeds, you can also optionally run the K3s Configuration Checker.
 
 -----------------------------
 Invoking the LOCKSS Installer
 -----------------------------
 
-To start the installation process, run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_:
+To start the installation process, run this command (relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_:
 
 .. code-block:: shell
 
    scripts/install-lockss
 
+The installer will run through its phases, each of which is described in its own section below. The first phase is :ref:`Checking the System User and Group`.
+
 ----------------------------------
 Checking the System User and Group
 ----------------------------------
 
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system.
-
 .. rubric:: Heading
 
 This phase begins with the heading :guilabel:`Checking the system user and group...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system.
 
 .. rubric:: Steps
 
@@ -82,13 +88,13 @@ This phase begins with the heading :guilabel:`Checking the system user and group
 Configuring :program:`iptables` for K3s
 ---------------------------------------
 
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if necessary.
-
 .. rubric:: Heading
 
 This phase begins with the heading :guilabel:`Configuring iptables for K3s...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if applicable.
 
 .. rubric:: Steps
 
@@ -166,13 +172,13 @@ This phase begins with the heading :guilabel:`Configuring iptables for K3s...`.
 Configuring :program:`firewalld` for K3s
 ----------------------------------------
 
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if necessary.
-
 .. rubric:: Heading
 
 This phase begins with the heading :guilabel:`Configuring firewalld for K3s...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if applicable.
 
 .. rubric:: Steps
 
@@ -240,13 +246,13 @@ This phase begins with the heading :guilabel:`Configuring firewalld for K3s...`.
 Configuring :program:`ufw` for K3s
 ----------------------------------
 
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary.
-
 .. rubric:: Heading
 
 This phase begins with the heading :guilabel:`Configuring firewalld for ufw...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary.
 
 .. rubric:: Steps
 
@@ -312,13 +318,13 @@ This phase begins with the heading :guilabel:`Configuring firewalld for ufw...`.
 Configuring CoreDNS for K3s
 ---------------------------
 
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary.
-
 .. rubric:: Heading
 
 This phase begins with the heading :guilabel:`Configuring CoreDNS for K3s...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary.
 
 .. rubric:: Steps
 
@@ -334,7 +340,7 @@ This phase begins with the heading :guilabel:`Configuring CoreDNS for K3s...`.
 
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Installing K3s`).
 
-2. If your system's DNS configuration will not work with CoreDNS, or if :program:`install-lockss` was invoked with the ``--force-dns-prompt`` option, you will receive the following prompt:
+2. If your system's DNS configuration will not work with CoreDNS, or if :program:`install-lockss` was invoked with the ``--force-dns-prompt`` option, you will receive a message including ``CoreDNS does not allow a loopback address to be given to Kubernetes pods as an upstream DNS server``, and the following prompt:
 
    :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
@@ -370,13 +376,13 @@ This phase begins with the heading :guilabel:`Configuring CoreDNS for K3s...`.
 Installing K3s
 --------------
 
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` will install K3s.
-
 .. rubric:: Heading
 
 This phase begins with the heading :guilabel:`Installing K3s...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will install K3s.
 
 .. rubric:: Steps
 
@@ -426,13 +432,15 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
       *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.
 
-   2. Next, the K3s Installer will be downloaded from https://get.k3s.io/ and invoked with suitable options. Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
+   2. Next, the K3s Installer will be downloaded from https://get.k3s.io/ and invoked with suitable options.
+
+      Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
 
       If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail.
 
       .. admonition:: Troubleshooting
 
-         See :ref:`Troubleshooting the K3s Installer` for remediation details. Error messages that the K3s Installer may display include:
+         Error messages that the K3s Installer may display include:
 
          .. code-block:: text
 
@@ -444,6 +452,8 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
                        Requires: container-selinux >= 2.107-3
              You could try using --skip-broken to work around the problem
              You could try running: rpm -Va --nofiles --nodigest
+
+         See :doc:`/troubleshooting/k3s-installer` for remediation details.
 
 4. Whether or not K3s was installed, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
 
@@ -463,7 +473,7 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 
    .. code-block:: text
 
-      [success] Configured CoreDNS for K3s
+      [success] Installed K3s
 
    and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
 
@@ -471,13 +481,13 @@ This phase begins with the heading :guilabel:`Installing K3s...`.
 Testing the K3s Node
 --------------------
 
-.. rubric:: Description
-
-During this phase, :program:`install-lockss` runs a series of tests to verify that the K3s node is operational.
-
 .. rubric:: Heading
 
 This phase begins with the heading :guilabel:`Testing the K3s node...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` runs a series of tests to verify that the K3s node is operational.
 
 .. rubric:: Steps
 
@@ -579,7 +589,7 @@ and :program:`install-lockss` will terminate.
 Checking the K3s Configuration
 ------------------------------
 
-.. note::
+.. tip::
 
    This section is optional.
 
@@ -605,7 +615,7 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
    .. admonition:: Troubleshooting
 
-      See :ref:`Troubleshooting the K3s Configuration Checker` for details.
+      See :doc:`/troubleshooting/k3s-checker` for details.
 
 3. The following error messages in the output can be ignored:
 
@@ -626,7 +636,7 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
    .. admonition:: Troubleshooting
 
-      See :ref:`Troubleshooting the K3s Configuration Checker` for details.
+      See :doc:`/troubleshooting/k3s-checker` for details.
 
 4. For other error messages, check the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_, search for `K3s issues database on GitHub <https://github.com/k3s-io/k3s/issues>`_ or the Web for resources matching your error message or operating system, and/or contact us so we can help investigate and document for future reference.
 
