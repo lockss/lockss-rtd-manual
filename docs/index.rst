@@ -19,9 +19,7 @@ LOCKSS 2.0-alpha5 System Manual
 
    **Security advisories: CVE-2021-45105, CVE-2021-44832**
 
-   **LOCKSS 2.0-alpha5 and the custom Solr and OpenWayback containers it includes are affected.**
-
-   See :doc:`/appendix/security`.
+   **LOCKSS 2.0-alpha5 (originally released 2021-12-17) and the custom Solr and OpenWayback containers it includes are affected.** See :ref:`CVE-2021-45105 and CVE-2021-44832`.
 
 .. only:: html
 
@@ -30,6 +28,19 @@ LOCKSS 2.0-alpha5 System Manual
    -----------
    What's New?
    -----------
+
+   What's New in 2.0-alpha5c?
+   ==========================
+
+   *  Bug fixes in the LOCKSS Repository Service.
+
+   What's New in 2.0-alpha5b?
+   ==========================
+
+   *  Include only Apache Log4j 2.17.1 to address :ref:`CVE-2021-45105 and CVE-2021-44832`. See :doc:`/appendix/security`.
+
+   What's New Since 2.0-alpha4?
+   ============================
 
    *  Numerous bug fixes and substantial performance improvements in the LOCKSS Repository Service, in support of reliability, scalability, and LOCKSS 1.x to 2.x migration.
 
@@ -63,7 +74,7 @@ LOCKSS 2.0-alpha5 System Manual
 
    If you were running LOCKSS 2.0-alpha4, Git is no longer required. See :doc:`/upgrading/index` for upgrade instructions.
 
-   .. important::
+   .. attention::
 
       The LOCKSS 2.0-alpha4 system, and the Solr and OpenWayback containers it includes, are affected by CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104. Please `see the LOCKSS 2.0-alpha4 security advisory </projects/manual/en/2.0-alpha4/appendix/security>`_ and :doc:`upgrade to LOCKSS 2.0-alpha5 </upgrading/index>`.
 
