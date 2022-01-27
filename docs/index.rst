@@ -29,6 +29,11 @@ LOCKSS 2.0-alpha5 System Manual
    What's New?
    -----------
 
+   What's New in 2.0-alpha5d?
+   ==========================
+
+   *  Bug fixes in the LOCKSS Installer.
+
    What's New in 2.0-alpha5c?
    ==========================
 
