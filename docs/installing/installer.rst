@@ -422,11 +422,11 @@ During this phase, :program:`install-lockss` will install K3s.
 
    Otherwise, it will display :samp:`Installing K3s version {expected_version}`, and K3s will be installed:
 
-   1. First, :program:`install-lockss` will warn you that the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) should not be attached to a space-limited volume. You will see the following prompt:
+   1. First, :program:`install-lockss` will warn you that if the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) is space-limited, you should specify a different directory, but not one on NFS [#fnk3sdatadir]_. You will see the following prompt:
 
       :guilabel:`K3s state data directory`
 
-      Enter a directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets.
+      Enter a non-NFS directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets.
 
       *  If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt.
 
@@ -647,3 +647,7 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 .. [#fnprivileged]
 
    See :doc:`/appendix/privileged`.
+
+.. [#fnk3sdatadir]
+
+   See https://github.com/containerd/containerd/discussions/6140.
