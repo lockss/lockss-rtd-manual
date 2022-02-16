@@ -6,10 +6,6 @@
 LOCKSS 2.0-alpha5 System Manual
 ===============================
 
-   .. only:: html
-
-      `Click here to go to the latest released version </projects/manual/en/latest>`_.
-
 **Welcome to the LOCKSS 2.0-alpha5 System Manual.**
 
 | Released: 2021-12-17
