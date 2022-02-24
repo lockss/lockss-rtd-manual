@@ -12,10 +12,6 @@ Upgrading From LOCKSS 2.0-alpha4
 
    Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
-.. contents:: Chapter Overview
-   :local:
-   :depth: 1
-
 ----------------------
 Stop LOCKSS 2.0-alpha4
 ----------------------

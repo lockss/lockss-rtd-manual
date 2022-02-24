@@ -4,10 +4,6 @@ Running Commands as the ``lockss`` User
 
 Unless otherwise noted, most commands in this manual are intended to be run as the ``lockss`` user (oftentimes in the ``lockss`` user's :file:`lockss-installer` directory). This section describes two methods for doing so.
 
-.. contents:: Topic Overview
-   :local:
-   :depth: 1
-
 ---------------------------------------------------
 Running Commands as ``lockss`` With :program:`sudo`
 ---------------------------------------------------

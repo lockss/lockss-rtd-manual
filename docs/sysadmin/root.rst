@@ -4,10 +4,6 @@ Running Commands as ``root``
 
 Some commands or scripts in this manual are intended to be run as ``root``. This section describes two methods for doing so.
 
-.. contents:: Topic Overview
-   :local:
-   :depth: 1
-
 -------------------------------------------------
 Running Commands as ``root`` With :program:`sudo`
 -------------------------------------------------
