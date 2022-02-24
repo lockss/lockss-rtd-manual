@@ -46,11 +46,11 @@ This will download and invoke the LOCKSS Downloader, which in turn will download
 
 .. [#fnlockss]
 
-   See :doc:`/appendix/lockss`.
+   See :doc:`/sysadmin/lockss`.
 
 .. [#fncurlwget]
 
-   Most typical Linux systems have at least one of :program:`curl` or :program:`wget` installed by default. You can check by typing ``curl --version`` or ``wget --version`` and verifying that the output is not an error message. If you need to install :program:`curl`, see :doc:`/appendix/curl`. If you prefer to install :program:`wget`, see :doc:`/appendix/wget`.
+   Most typical Linux systems have at least one of :program:`curl` or :program:`wget` installed by default. You can check by typing ``curl --version`` or ``wget --version`` and verifying that the output is not an error message. If you need to install :program:`curl`, see :doc:`/sysadmin/curl`. If you prefer to install :program:`wget`, see :doc:`/sysadmin/wget`.
 
 .. [#fndownloader]
 

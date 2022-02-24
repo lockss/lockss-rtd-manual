@@ -435,4 +435,4 @@ Final Steps
 
 .. [#fnlockss]
 
-   See :doc:`/appendix/lockss`.
+   See :doc:`/sysadmin/lockss`.

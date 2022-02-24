@@ -60,4 +60,4 @@ This will run only the :ref:`configuring-firewalld` phase of :program:`install-l
 
 .. [#fnprivileged]
 
-   See :doc:`/appendix/privileged`.
+   See :doc:`/sysadmin/privileged`.

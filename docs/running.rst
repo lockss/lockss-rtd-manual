@@ -50,4 +50,4 @@ To remove all configurations, volumes and networks configured by the LOCKSS syst
 
 .. [#fnlockss]
 
-   See :doc:`/appendix/lockss`
+   See :doc:`/sysadmin/lockss`

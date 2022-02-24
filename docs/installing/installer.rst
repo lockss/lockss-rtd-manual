@@ -646,7 +646,7 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
 .. [#fnprivileged]
 
-   See :doc:`/appendix/privileged`.
+   See :doc:`/sysadmin/privileged`.
 
 .. [#fnk3sdatadir]
 

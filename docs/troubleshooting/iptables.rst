@@ -75,4 +75,4 @@ This will run only the :ref:`configuring-iptables` phase of :program:`install-lo
 
 .. [#fnprivileged]
 
-   See :doc:`/appendix/privileged`.
+   See :doc:`/sysadmin/privileged`.

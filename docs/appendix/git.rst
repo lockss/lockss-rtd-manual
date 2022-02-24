@@ -90,4 +90,4 @@ Follow these instructions to install Git:
 
 .. [#fnroot]
 
-   See :doc:`/appendix/root`.
+   See :doc:`/sysadmin/root`.

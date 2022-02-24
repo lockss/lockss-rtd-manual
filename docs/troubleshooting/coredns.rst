@@ -42,4 +42,4 @@ This will run only the :ref:`Configuring CoreDNS for K3s` phase of :program:`ins
 
 .. [#fnprivileged]
 
-   See :doc:`/appendix/privileged`.
+   See :doc:`/sysadmin/privileged`.
