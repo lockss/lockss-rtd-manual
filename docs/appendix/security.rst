@@ -2,12 +2,6 @@
 Security Advisories
 ===================
 
-.. contents:: Topic Overview
-   :local:
-   :depth: 1
-
-----
-
 .. _cve-2021-45105:
 
 .. _cve-2021-44832:
