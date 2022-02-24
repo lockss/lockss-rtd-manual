@@ -10,7 +10,7 @@ Upgrading From LOCKSS 2.0-alpha4
 
 .. tip::
 
-   Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/appendix/os-updates` in the appendix.
+   Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
 .. contents:: Chapter Overview
    :local:
@@ -73,11 +73,3 @@ Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha5 instan
 .. note::
 
    The first time 2.0-alpha5 is started after an upgrade from 2.0-alpha4, it may take several minutes before the system becomes available, while it re-indexes all previously archived content.
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnprivileged]
-
-   See :doc:`/appendix/privileged`.

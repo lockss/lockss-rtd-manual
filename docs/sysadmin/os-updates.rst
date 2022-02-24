@@ -118,4 +118,4 @@ If you wish to update software packages manually, select your operating system b
 
 .. [#fnroot]
 
-   See :doc:`/appendix/root`.
+   See :doc:`/sysadmin/root`.

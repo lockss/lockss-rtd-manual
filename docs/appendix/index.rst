@@ -9,13 +9,7 @@ This appendix contains pages of additional information about the LOCKSS system.
    :maxdepth: 1
 
    security
-   root
-   privileged
-   lockss
-   os-updates
    git-downloader
-   curl
-   wget
    migrating
    postgresql
    lcap-ssl

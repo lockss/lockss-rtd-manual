@@ -85,4 +85,4 @@ To change the password of the embedded PostgreSQL database, perform the followin
 
 .. [#fnlockss]
 
-   See :doc:`/appendix/lockss`.
+   See :doc:`/sysadmin/lockss`.

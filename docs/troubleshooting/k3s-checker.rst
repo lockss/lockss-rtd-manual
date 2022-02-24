@@ -189,4 +189,4 @@ CONFIG_INET_XFRM_MODE_TRANSPORT missing
 
 .. [#fnroot]
 
-   See :doc:`/appendix/root`.
+   See :doc:`/sysadmin/root`.

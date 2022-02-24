@@ -44,5 +44,5 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
 
 .. [#fnlockss]
 
-   See :doc:`/appendix/lockss`
+   See :doc:`/sysadmin/lockss`
 

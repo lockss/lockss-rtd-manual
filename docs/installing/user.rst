@@ -28,4 +28,4 @@ This will create a ``lockss`` system user, a ``lockss`` system group, and a home
 
 .. [#fnroot]
 
-   See :doc:`/appendix/root`.
+   See :doc:`/sysadmin/root`.

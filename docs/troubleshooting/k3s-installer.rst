@@ -87,4 +87,4 @@ To resolve this problem:
 
 .. [#fnroot]
 
-   See :doc:`/appendix/root`.
+   See :doc:`/sysadmin/root`.

@@ -10,7 +10,7 @@ Installing the LOCKSS System
 
 .. tip::
 
-   Before you begin installing the LOCKSS system, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/appendix/os-updates` in the appendix.
+   Before you begin installing the LOCKSS system, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates`.
 
 .. toctree::
    :caption: Chapter Overview

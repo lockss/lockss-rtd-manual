@@ -11,13 +11,13 @@ LOCKSS 2.0-alpha5 System Manual
 | Released: 2021-12-17
 | Last modified: |today|
 
-.. attention::
-
-   **Security advisories: CVE-2021-45105, CVE-2021-44832**
-
-   **LOCKSS 2.0-alpha5 (originally released 2021-12-17) and the custom Solr and OpenWayback containers it includes are affected.** See :ref:`CVE-2021-45105 and CVE-2021-44832`.
-
 .. only:: html
+
+   .. attention::
+
+      **Security advisories: CVE-2021-45105, CVE-2021-44832**
+
+      **LOCKSS 2.0-alpha5 (originally released 2021-12-17) and the custom Solr and OpenWayback containers it includes are affected.** See :ref:`CVE-2021-45105 and CVE-2021-44832`.
 
    .. _release-notes:
 
@@ -121,6 +121,7 @@ LOCKSS 2.0-alpha5 System Manual
    running
    using/index
    troubleshooting/index
+   sysadmin/index
    appendix/index
 
 .. only:: html

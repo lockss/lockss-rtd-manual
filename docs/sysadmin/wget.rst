@@ -110,4 +110,4 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
 .. [#fnroot]
 
-   See :doc:`/appendix/root`.
+   See :doc:`/sysadmin/root`.

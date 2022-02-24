@@ -58,4 +58,4 @@ This will run only the :ref:`configuring-ufw` phase of :program:`install-lockss`
 
 .. [#fnprivileged]
 
-   See :doc:`/appendix/privileged`.
+   See :doc:`/sysadmin/privileged`.
