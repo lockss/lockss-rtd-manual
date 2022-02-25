@@ -131,5 +131,4 @@ LOCKSS 2.0-alpha5 System Manual
       :maxdepth: 1
       :hidden:
 
-      Home <https://lockss.readthedocs.io/>
-      LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/>
+      < Back <https://lockss.readthedocs.io/>
