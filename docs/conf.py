@@ -80,6 +80,8 @@ html_theme_options = {
     'prev_next_buttons_location': 'both',
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-collapse_navigation
     'collapse_navigation': False,
+    # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-navigation_depth
+    'navigation_depth': -1,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-style_external_links
     'style_external_links': True,
 }
