@@ -110,7 +110,6 @@ LOCKSS 2.0-alpha5 System Manual
 
 .. toctree::
    :caption: LOCKSS 2.0-alpha5 System Manual
-   :maxdepth: 4
    :hidden:
    :numbered:
 
@@ -127,8 +126,8 @@ LOCKSS 2.0-alpha5 System Manual
 .. only:: html
 
    .. toctree::
-      :caption: LOCKSS Documentation Portal
-      :maxdepth: 1
+      :caption: Navigation
       :hidden:
 
-      < Back <https://lockss.readthedocs.io/>
+      « LOCKSS Documentation Portal <https://lockss.readthedocs.io/>
+      « LOCKSS Web Site <https://www.lockss.org/>
