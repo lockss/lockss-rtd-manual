@@ -563,7 +563,7 @@ During this phase, :program:`install-lockss` runs a series of tests to verify th
 
       You can also alter the number of retries and the number of seconds between retries with :samp:`--retries={N}` and :samp:`--wait={S}` respectively.
 
-      Other problems may require reaching out to the LOCKSS support team at ``lockss-support (at) lockss (dot) org`` for assistance.
+      Other problems may require reaching out to the LOCKSS support team at :email:`lockss-support@lockss.org` for assistance.
 
 3. Finally, you will see the message:
 
