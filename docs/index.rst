@@ -106,7 +106,7 @@ LOCKSS 2.0-alpha5 System Manual
    Contact Us
    ----------
 
-   Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to ``lockss-support (at) lockss (dot) org``. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
+   Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to :email:`lockss-support@lockss.org`. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
 
 .. toctree::
    :caption: LOCKSS 2.0-alpha5 System Manual
