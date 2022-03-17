@@ -18,4 +18,4 @@ CVE-2021-45105 and CVE-2021-44832
 
    **The recommended remediation is to upgrade LOCKSS 2.x version 2.0-alpha5 (originally released 2021-12-17) or earlier to LOCKSS 2.0-alpha5b.**
 
-   See :doc:`lockss:security/cve-2021-45105` in our :doc:`lockss:security/index` pages.
+   See :doc:`lockss:security/cve-2021-45105` in the LOCKSS Documentation Portal's :doc:`lockss:security/index` pages.
