@@ -2,12 +2,11 @@
 Software License
 ================
 
-LOCKSS software is available under a 3-Clause BSD License.
+Unless otherwise noted, LOCKSS software is made available under the 3-Clause BSD License.
 
 .. code-block:: text
 
    Copyright (c) 2000-2022, Board of Trustees of Leland Stanford Jr. University
-   All rights reserved.
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are met:
@@ -35,8 +34,4 @@ LOCKSS software is available under a 3-Clause BSD License.
    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
    POSSIBILITY OF SUCH DAMAGE.
 
-----
-
-.. rubric:: See Also
-
-*  `The 3-Clause BSD License <https://opensource.org/licenses/BSD-3-Clause>`_ at the `Open Source Initiative <https://opensource.org/>`_
+For more information, visit the :doc:`lockss:license` page in the LOCKSS Documentation Portal.
