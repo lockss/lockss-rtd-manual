@@ -1,7 +1,3 @@
-.. image:: /images/lockss-2.0-alpha5_200.png
-   :alt: LOCKSS 2.0-alpha5 logo
-   :align: right
-
 ===============================
 LOCKSS 2.0-alpha5 System Manual
 ===============================
