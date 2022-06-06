@@ -1,10 +1,14 @@
 ================================
-Upgrading From LOCKSS 2.0-alpha4
+Upgrading From LOCKSS 2.0-alpha5
 ================================
+
+**FIXME FIXME FIXME**
+
+.. COMMENT LATESTVERSION
 
 .. note::
 
-   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha4 system to 2.0-alpha5.
+   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-beta1.
 
    If you are installing the LOCKSS system for the first time, go to :doc:`/installing/index` instead.
 
