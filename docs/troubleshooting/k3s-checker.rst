@@ -2,11 +2,9 @@
 Troubleshooting the K3s Configuration Checker
 =============================================
 
-This section provides troubleshooting information for the optional :ref:`Checking the K3s Configuration` phase of :doc:`/installing/installer`.
+After installing K3s [#fninstallk3s]_, you may optionally run the K3s configuration checker :program:`k3s check-config` [#fnk3scheckconfig]_ (see :ref:`Checking the K3s Configuration`). This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" system aspects needed by K3s.
 
-After installing K3s [#fninstallk3s]_, you may optionally run the K3s configuration checker :program:`k3s check-config` [#fnk3scheckconfig]_. This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" system aspects needed by K3s.
-
-Some failures, especially in "optional" aspects, may not actually prevent the cluster from working normally, in the limited ways the LOCKSS system uses Kubernetes. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up the specific error message.
+Some failures, especially in "optional" aspects, may not actually prevent the cluster from working normally, in the limited ways the LOCKSS system uses Kubernetes. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up a specific error message.
 
 --------------------------------------------------------------------------
 iptables should be older than v1.8.0, newer than v1.8.3, or in legacy mode
@@ -36,67 +34,25 @@ The :program:`install-lockss` script should detect this situation and offer to s
 User namespaces disabled
 ------------------------
 
-.. COMMENT updated for alpha5
-
-In the RHEL 7 family of operating systems (CentOS 7, EuroLinux 7, Scientific Linux 7...), you may receive the following error message:
+In some RHEL 7 and CentOS 7 systems, you may receive the following error message:
 
 .. code-block:: text
 
    RHEL7/CentOS7: User namespaces disabled; add 'user_namespace.enable=1' to boot command line (fail)
 
-To resolve this issue [#fnusernamespaces]_:
-
-1. Edit the file :file:`/etc/default/grub` as ``root`` [#fnroot]_.
-
-   1. Look for the line beginning with ``GRUB_CMDLINE_LINUX=``, for example:
-
-      .. code-block:: text
-
-         GRUB_CMDLINE_LINUX="no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto"
-
-   2. Add ``user_namespace.enable=1`` to the space-separated list of boot arguments, for instance:
-
-      .. code-block:: text
-
-         GRUB_CMDLINE_LINUX="user_namespace.enable=1 no_timer_check console=tty0 console=ttyS0,115200n8 net.ifnames=0 biosdevname=0 elevator=noop crashkernel=auto"
-
-2. Run the following command as ``root``:
-
-   .. code-block:: shell
-
-      grub2-mkconfig -o /boot/grub2/grub.cfg
-
-3. Reboot the system.
-
-4. Re-run :program:`k3s check-config` [#fnk3scheckconfig]_.
+To resolve this issue, see :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7`.
 
 --------------------------------------------
 apparmor enabled but apparmor_parser missing
 --------------------------------------------
 
-In some OpenSUSE systems, you may receive the following error:
+In some systems where Apparmor is enabled, you may receive the following error:
 
 .. code-block:: text
 
    apparmor: enabled, but apparmor_parser missing (fail)
 
-This is because a common tool found in most Linux environments is not installed by default in some OpenSUSE versions.
-
-To resolve this issue, run these :program:`zypper` commands as ``root`` [#fnroot]_:
-
-.. code-block:: shell
-
-   zypper refresh
-
-   zypper --non-interactive install apparmor-parser
-
-or equivalently:
-
-.. code-block:: shell
-
-   zypper refresh
-
-   zypper -n install apparmor-parser
+To resolve this issue, see :ref:`installing-apparmor_parser`.
 
 ----------------------------
 cgroup hierarchy nonexistent

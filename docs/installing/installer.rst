@@ -14,6 +14,8 @@ Overview of the LOCKSS Installer
 
 When you invoke the LOCKSS Installer, the installation process goes through various phases:
 
+*  Checking that some prerequisites to install K3s are met. No user interaction is expected.
+
 *  Checking that the ``lockss`` system user and group exist. No user interaction is expected.
 
 *  Configuring :program:`iptables`, :program:`firewalld` and :program:`ufw` for K3s. If applicable, you will be prompted to confirm before your system configuration is modified. You may incidentally be prompted for your :program:`sudo` password.
@@ -36,7 +38,63 @@ To start the installation process, run this command (relative to the :ref:`locks
 
    scripts/install-lockss
 
-The installer will run through its phases, each of which is described in its own section below. The first phase is :ref:`Checking the System User and Group`.
+The installer will run through its phases, each of which is described in its own section below. The first phase is :ref:`Checking K3s Prerequisites`.
+
+--------------------------
+Checking K3s Prerequisites
+--------------------------
+
+.. rubric:: Heading
+
+This phase begins with the heading :guilabel:`Checking K3s prerequisites...`.
+
+.. rubric:: Description
+
+During this phase, :program:`install-lockss` will check that certain preprequisites to installing K3s are met.
+
+.. rubric:: Steps
+
+1. If :program:`install-lockss` was invoked with the ``--skip-check-prerequisites`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-check-prerequisites)
+
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Checking the System User and Group`).
+
+2. Next, :program:`install-lockss` will check that user namespaces are enabled. In some RHEL 7 and CentOS 7 systems, user namespaces are not enabled by default; if this is the case, you will see the error message:
+
+   .. code-block:: text
+
+      [ERROR] User namespaces must be enabled in RHEL/CentOS 7; see manual
+
+   and :program:`install-lockss` will fail.
+
+   .. admonition:: Troubleshooting
+
+      See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7`.
+
+3. Then :program:`install-lockss` will check that :program:`apparmor_parser` is installed if Apparmor is enabled. If Apparmor is enabled but :program:`apparmor_parser` is not installed, you will see the error message:
+
+   .. code-block:: text
+
+      [ERROR] apparmor enabled but apparmor_parser missing; see manual
+
+   and :program:`install-lockss` will fail.
+
+   .. admonition:: Troubleshooting
+
+      See :ref:`installing-apparmor_parser`.
+
+4. Finally, you will see the message:
+
+   .. code-block:: text
+
+      [success] K3s prerequisites checked
+
+   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Checking the System User and Group`).
 
 ----------------------------------
 Checking the System User and Group
