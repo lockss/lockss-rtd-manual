@@ -50,7 +50,7 @@ This phase begins with the heading :guilabel:`Checking K3s prerequisites...`.
 
 .. rubric:: Description
 
-During this phase, :program:`install-lockss` will check that certain preprequisites to installing K3s are met.
+During this phase, :program:`install-lockss` will check that certain prerequisites to installing K3s are met.
 
 .. rubric:: Steps
 
@@ -470,9 +470,7 @@ During this phase, :program:`install-lockss` will install K3s.
 
    e. If K3s is detected but the installed and expected version numbers cannot be compared automatically, you will see the following warning:
 
-      .. code-block:: text
-
-         [Warning] Detected K3s version {installed_version}, expected version ${expected_version}, comparison failure, skipping
+      :samp:`[Warning] Detected K3s version {installed_version}, expected version {expected_version}, comparison failure, skipping`
 
       and :program:`install-lockss` will not install K3s in the next step.
 
@@ -480,17 +478,45 @@ During this phase, :program:`install-lockss` will install K3s.
 
    Otherwise, it will display :samp:`Installing K3s version {expected_version}`, and K3s will be installed:
 
-   1. First, :program:`install-lockss` will warn you that if the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) is space-limited, you should specify a different directory, but not one on NFS [#fnk3sdatadir]_. You will see the following prompt:
+   1. First, :program:`install-lockss` will warn you that if the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) is space-limited, you should specify a different directory (but not one on NFS, or XFS with legacy ``ftype=0``). You will see the following prompt:
 
       :guilabel:`K3s state data directory`
 
-      Enter a non-NFS directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets.
+      Enter a suitable directory path for the K3s state directory, or simply hit :kbd:`Enter` to accept the default in square brackets.
 
       *  If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt.
 
       *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.
 
-   2. Next, the K3s Installer will be downloaded from https://get.k3s.io/ and invoked with suitable options.
+   2. Next, :program:`install-lockss` will attempt to infer the filesystem type for the K3s state directory (which cannot be NFS, or XFS with legacy ``ftype=0``).
+
+      *  If the filesystem type is NFS, or XFS with legacy ``ftype=0``, you will see one of the following error messages:
+
+         :samp:`[ERROR] Filesystem type of {mountpoint} is NFS; see manual`
+
+         :samp:`[ERROR] Filesystem type of {mountpoint} is XFS with legacy ftype=0; see manual`
+
+         and :program:`install-lockss` will fail.
+
+         .. admonition:: Troubleshooting
+
+            FIXME
+
+      *  If the filesystem type cannot be inferred automatically, or if the filesystem type is XFS but its ``ftype`` cannot be inferred automatically, you will see one of these warning messages:
+
+         :samp:`Filesystem type of {mountpoint} unknown (findmnt not present)`
+
+         :samp:`Filesystem type of {mountpoint} is XFS but ftype unknown (xfs_info not present)`
+
+         and :program:`install-lockss` will proceed to the next step.
+
+         .. warning::
+
+            FIXME
+
+      *  Otherwise, :program:`install-lockss` will display the filesystem type and proceed to the next step.
+
+   3. Finally, the K3s Installer will be downloaded from https://get.k3s.io/ and invoked with suitable options.
 
       Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
 
@@ -706,6 +732,10 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
    See :doc:`/sysadmin/privileged`.
 
-.. [#fnk3sdatadir]
+.. [#fnk3sdatadirnfs]
 
    See https://github.com/containerd/containerd/discussions/6140.
+
+.. [#fnk3sdatadirxfs]
+
+   See https://docs.docker.com/storage/storagedriver/overlayfs-driver/#prerequisites.
