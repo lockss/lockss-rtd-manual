@@ -21,6 +21,13 @@ LOCKSS 2.0-alpha5 System Manual
    What's New?
    -----------
 
+   What's New in 2.0-alpha5e?
+   ==========================
+
+   *  Fix Solr logging and increase heap size.
+
+   *  Bug fixes in the LOCKSS Installer.
+
    What's New in 2.0-alpha5d?
    ==========================
 
