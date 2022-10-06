@@ -71,9 +71,6 @@ extensions = [
 
     # See https://github.com/sphinx-contrib/email
     'sphinxcontrib.email',
-    
-    # See https://sphinxcontrib-openapi.readthedocs.io/
-    'sphinxcontrib.openapi',
 ]
 
 intersphinx_mapping = {
@@ -113,7 +110,7 @@ html_css_files = [
 master_doc = 'index'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
-html_logo = 'images/lockss-2.0-alpha5_200.png'
+html_logo = 'images/lockss-2.0-alpha6_200.png'
 
 # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html
 html_theme_options = {
