@@ -9,11 +9,11 @@ This appendix contains pages of additional information about the LOCKSS system.
    :maxdepth: 1
 
    security
+   release-notes
+   past-versions
    root
    privileged
    lockss
    postgresql
    lcap-ssl
    ports
-   versions
-   past-versions
