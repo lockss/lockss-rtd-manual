@@ -4,8 +4,9 @@ LOCKSS 2.0-alpha5 System Manual
 
 **Welcome to the LOCKSS 2.0-alpha5 System Manual.**
 
-| Released: 2021-12-17
-| Last modified: |today|
+| Latest release: 2.0.55-alpha5 (2022-07-06)
+| First release: 2.0.51-alpha5 (2021-12-17)
+| System manual last built: |today|
 
 .. only:: html
 
@@ -13,64 +14,21 @@ LOCKSS 2.0-alpha5 System Manual
 
       **Security advisories: CVE-2021-45105, CVE-2021-44832**
 
-      **LOCKSS 2.0.51-alpha5 (originally released 2021-12-17) and the custom Solr and OpenWayback containers it includes are affected.** See :ref:`CVE-2021-45105 and CVE-2021-44832`.
-
-   .. _release-notes:
+      **LOCKSS 2.0.51-alpha5 and the custom Solr and OpenWayback containers it includes are affected.** See :ref:`CVE-2021-45105 and CVE-2021-44832`.
 
    -----------
    What's New?
    -----------
 
-   What's New in 2.0.55-alpha5?
-   ============================
+   An improved LOCKSS Installer rolling up most individual installation steps into a single script, numerous bug fixes and substantial performance improvements in the LOCKSS Repository Service, Solr 8.9.0, and more.
 
-   *  Fix Solr logging and increase heap size.
-
-   *  Bug fixes in the LOCKSS Installer.
-
-   What's New in 2.0.54-alpha5?
-   ============================
-
-   *  Bug fixes in the LOCKSS Installer.
-
-   What's New in 2.0.53-alpha5?
-   ============================
-
-   *  Bug fixes in the LOCKSS Repository Service.
-
-   What's New in 2.0.52-alpha5?
-   ============================
-
-   *  Include only Apache Log4j 2.17.1 to address :ref:`CVE-2021-45105 and CVE-2021-44832`. See :doc:`/appendix/security`.
-
-   What's New Since 2.0-alpha4?
-   ============================
-
-   LOCKSS 2.0.51-alpha5 features:
-
-   *  Numerous bug fixes and substantial performance improvements in the LOCKSS Repository Service, in support of reliability, scalability, and LOCKSS 1.x to 2.x migration.
-
-   *  Improved LOCKSS Installer distributed without requiring Git, rolling up most individual installation steps into a single script.
-
-   *  Upgrade from Solr 7.2.1 to 8.9.0.
-
-   *  Revamped HTTP error response handling, including new HTTP response/error categories and custom handling of categories in plugins.
-
-   *  Added support for communicating with APIs via POST requests during crawls.
-
-   *  All system components and the custom Solr and OpenWayback Docker containers included in the system now contain only the latest version of Log4j (2.16.0), which is not vulnerable to CVE-2021-44228 ("Log4Shell"), CVE-2021-45046 and CVE-2021-4104.
+   See :doc:`/appendix/release-notes` for more details.
 
    ------------
    Installation
    ------------
 
-   In order to install and test the LOCKSS 2.0-alpha5 system, you will need:
-
-   *  64-bit **Linux** host (physical or virtual) with at least 4 CPU cores and 8 GB of memory, and adequate storage.
-
-   *  Commonplace Linux system utilities like :program:`curl`/:program:`wget` and :program:`tar` to run the LOCKSS Downloader and the LOCKSS Installer.
-
-   *  **K3s**, a lightweight Kubernetes environment (installed via the LOCKSS Installer).
+   In order to install and test the LOCKSS 2.0-alpha5 system, you will need a 64-bit **Linux** host (physical or virtual) with at least 4 CPU cores and 8 GB of memory, and adequate storage; commonplace Linux system utilities like :program:`curl`/:program:`wget` and :program:`tar` to run the LOCKSS Downloader and the LOCKSS Installer; and **K3s**, a lightweight Kubernetes environment (installed via the LOCKSS Installer).
 
    See :doc:`/introduction/prerequisites` and :doc:`/installing/index` for more details.
 
@@ -89,7 +47,7 @@ LOCKSS 2.0-alpha5 System Manual
    ---------------------
 
    Is LOCKSS 2.0-alpha5 vulnerable to CVE-2021-44228 ("Log4Shell")?
-      No, **but** it is affected by additional Log4j 2.x vulnerabilities discovered after the original 2021-12-17 release of LOCKSS 2.0.51-alpha5. See :doc:`/appendix/security`.
+      Only LOCKSS 2.0.51-alpha5 and the custom Solr and OpenWayback containers it included are affected; LOCKSS 2.0.52-alpha5 and later are not affected. See :doc:`/appendix/security`.
 
    I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha5?
       The LOCKSS 2.0-alpha5 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.8) to a LOCKSS 2.0 system for production purposes.

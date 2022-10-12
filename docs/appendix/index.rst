@@ -10,10 +10,10 @@ Sections including security advisories; reference information such as list of po
    :hidden:
 
    security
+   release-notes
+   past-versions
    license
    ports
-   versions
-   past-versions
    git-downloader
    postgresql
    lcap-ssl
