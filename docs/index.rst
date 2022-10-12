@@ -13,7 +13,7 @@ LOCKSS 2.0-alpha5 System Manual
 
       **Security advisories: CVE-2021-45105, CVE-2021-44832**
 
-      **LOCKSS 2.0-alpha5 (originally released 2021-12-17) and the custom Solr and OpenWayback containers it includes are affected.** See :ref:`CVE-2021-45105 and CVE-2021-44832`.
+      **LOCKSS 2.0.51-alpha5 (originally released 2021-12-17) and the custom Solr and OpenWayback containers it includes are affected.** See :ref:`CVE-2021-45105 and CVE-2021-44832`.
 
    .. _release-notes:
 
@@ -21,30 +21,32 @@ LOCKSS 2.0-alpha5 System Manual
    What's New?
    -----------
 
-   What's New in 2.0-alpha5e?
-   ==========================
+   What's New in 2.0.55-alpha5?
+   ============================
 
    *  Fix Solr logging and increase heap size.
 
    *  Bug fixes in the LOCKSS Installer.
 
-   What's New in 2.0-alpha5d?
-   ==========================
+   What's New in 2.0.54-alpha5?
+   ============================
 
    *  Bug fixes in the LOCKSS Installer.
 
-   What's New in 2.0-alpha5c?
-   ==========================
+   What's New in 2.0.53-alpha5?
+   ============================
 
    *  Bug fixes in the LOCKSS Repository Service.
 
-   What's New in 2.0-alpha5b?
-   ==========================
+   What's New in 2.0.52-alpha5?
+   ============================
 
    *  Include only Apache Log4j 2.17.1 to address :ref:`CVE-2021-45105 and CVE-2021-44832`. See :doc:`/appendix/security`.
 
    What's New Since 2.0-alpha4?
    ============================
+
+   LOCKSS 2.0.51-alpha5 features:
 
    *  Numerous bug fixes and substantial performance improvements in the LOCKSS Repository Service, in support of reliability, scalability, and LOCKSS 1.x to 2.x migration.
 
@@ -87,7 +89,7 @@ LOCKSS 2.0-alpha5 System Manual
    ---------------------
 
    Is LOCKSS 2.0-alpha5 vulnerable to CVE-2021-44228 ("Log4Shell")?
-      No, **but** it is affected by additional Log4j 2.x vulnerabilities discovered after the original 2021-12-17 release of LOCKSS 2.0-alpha5. See :doc:`/appendix/security`.
+      No, **but** it is affected by additional Log4j 2.x vulnerabilities discovered after the original 2021-12-17 release of LOCKSS 2.0.51-alpha5. See :doc:`/appendix/security`.
 
    I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha5?
       The LOCKSS 2.0-alpha5 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.8) to a LOCKSS 2.0 system for production purposes.
