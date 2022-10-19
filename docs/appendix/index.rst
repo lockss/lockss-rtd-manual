@@ -12,7 +12,7 @@ Sections including security advisories; reference information such as list of po
    :maxdepth: 1
 
    security
-   versions
+   release-notes
 
    git-downloader
    postgresql
