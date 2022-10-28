@@ -87,5 +87,5 @@ Can I replay Web content with my own OpenWayback instance?
    :maxdepth: 1
    :hidden:
 
-   Home <https://lockss.readthedocs.io/>
-   LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/>
+   Home <https://docs.lockss.org/>
+   LOCKSS System Manual <https://docs.lockss.org/projects/manual/>
