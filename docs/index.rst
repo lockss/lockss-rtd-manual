@@ -38,5 +38,5 @@ NOT YET RELEASED LOCKSS 2.0-alpha6 System Manual
       :caption: Navigation
       :hidden:
 
-      « LOCKSS Documentation Portal <https://lockss.readthedocs.io/>
+      « LOCKSS Documentation Portal <https://docs.lockss.org/>
       « LOCKSS Web Site <https://www.lockss.org/>
