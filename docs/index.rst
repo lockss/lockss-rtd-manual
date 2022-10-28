@@ -267,5 +267,5 @@ This has the effect of calling ``docker stack rm lockss-stack1``. Note that it t
    :maxdepth: 1
    :hidden:
 
-   Home <https://lockss.readthedocs.io/>
-   LOCKSS System Manual <https://lockss.readthedocs.io/projects/manual/>
+   Home <https://docs.lockss.org/>
+   LOCKSS System Manual <https://docs.lockss.org/projects/manual/>
