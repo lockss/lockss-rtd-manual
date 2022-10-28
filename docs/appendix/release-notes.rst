@@ -8,9 +8,21 @@ Release Notes
 LOCKSS 2.0.60-alpha6
 --------------------
 
-FIXME
+Released: FIXME
 
-The system consists of a configurable set of the following components:
+.. COMMENT LATESTVERSION
+
+LOCKSS 2.0.60-alpha6 is the first release of the LOCKSS 2.0-alpha6 system.
+
+.. rubric:: Release Notes
+
+*  FIXME
+
+.. rubric:: Component Versions
+
+.. COMMENT LATESTVERSION
+
+LOCKSS 2.0.60-alpha6 consists of a configurable set of the following components:
 
 *  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.60-alpha6
 
@@ -18,11 +30,11 @@ The system consists of a configurable set of the following components:
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.7.0
 
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.5.0
+
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.6.0
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.5.0
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.5.0
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
