@@ -29,11 +29,11 @@ LOCKSS 2.0.55-alpha5 consists of a configurable set of the following components:
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.6.2
 
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
+
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.5.2
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.4.2
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
@@ -66,11 +66,11 @@ LOCKSS 2.0.54-alpha5 consists of a configurable set of the following components:
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.6.2
 
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
+
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.5.2
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.4.2
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
@@ -103,11 +103,11 @@ LOCKSS 2.0.53-alpha5 consists of a configurable set of the following components:
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.6.2
 
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
+
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.5.2
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.4.2
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
@@ -140,11 +140,11 @@ LOCKSS 2.0.52-alpha5 consists of a configurable set of the following components:
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.6.2
 
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
+
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.5.2
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.4.2
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.2
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
@@ -187,11 +187,11 @@ LOCKSS 2.0.51-alpha5 consists of a configurable set of the following components:
 
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.6.0
 
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.0
+
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.5.0
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.4.0
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.4.0
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
