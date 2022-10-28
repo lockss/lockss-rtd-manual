@@ -21,15 +21,15 @@ LOCKSS 2.0.43-alpha4 consists of a configurable set of the following components:
 
 *  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.43-alpha4
 
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
+
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.5.0
 
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.4.0
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.3.0
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
@@ -58,15 +58,15 @@ LOCKSS 2.0.42-alpha4 consists of a configurable set of the following components:
 
 *  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.42-alpha4
 
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
+
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.5.0
 
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.4.0
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.3.0
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
@@ -103,15 +103,15 @@ LOCKSS 2.0.41-alpha4 consists of a configurable set of the following components:
 
 *  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.41-alpha4
 
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
+
 *  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.5.0
 
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.11.0
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
 *  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.4.0
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.3.0
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.3.0
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
