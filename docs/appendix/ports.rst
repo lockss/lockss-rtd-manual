@@ -6,18 +6,6 @@ This section describes the default network ports used by the LOCKSS system.
 
 Unless otherwise noted, all ports are **TCP**.
 
-===== ========================= ====
-Port  Component                 Note
-===== ========================= ====
-8080  OpenWayback               [#fnopenwayback]_
-9729  LCAP                      LOCKSS polling and repair
-24600                           *reserved*
-24602 PostgreSQL                
-24603 Solr                      
-24606 ActiveMQ                  Inter-component communication
-24610 LOCKSS Repository Service 
-===== ========================= ====
-
 All ports in the 24600-24699 range should be considered reserved. The LCAP (LOCKSS polling and repair) port retains its historical value of 9729.
 
 *  8080: OpenWayback replay engine [#fnopenwayback]_
