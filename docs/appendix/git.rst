@@ -14,73 +14,73 @@ Follow these instructions to install Git:
 
 2. If the output is a version number (for example ``git version 2.31.1``), Git is already installed; however if you see an error message (for example ``bash: git: command not found``), follow the instructions corresponding to your operating system below to install Git as ``root`` [#fnroot]_:
 
-   .. tabs::
+   .. tab-set::
 
-      .. group-tab:: AlmaLinux
+      .. tab-item:: AlmaLinux
 
          .. include:: git-dnf.rst
 
-      .. group-tab:: Arch Linux
+      .. tab-item:: Arch Linux
 
          .. include:: git-pacman.rst
 
-      .. group-tab:: CentOS
+      .. tab-item:: CentOS
 
-         .. tabs::
+         .. tab-set::
 
-            .. group-tab:: CentOS 7
+            .. tab-item:: CentOS 7
 
                .. include:: git-yum.rst
 
-            .. group-tab:: CentOS 8
+            .. tab-item:: CentOS 8
 
                .. include:: git-dnf.rst
 
-      .. group-tab:: Debian
+      .. tab-item:: Debian
 
          .. include:: git-apt.rst
 
-      .. group-tab:: Fedora
+      .. tab-item:: Fedora
 
          .. include:: git-dnf.rst
 
-      .. group-tab:: Linux Mint
+      .. tab-item:: Linux Mint
 
          .. include:: git-apt.rst
 
-      .. group-tab:: OpenSUSE
+      .. tab-item:: OpenSUSE
 
          .. include:: git-zypper.rst
 
-      .. group-tab:: Oracle Linux
+      .. tab-item:: Oracle Linux
 
-         .. tabs::
+         .. tab-set::
 
-            .. group-tab:: Oracle Linux 7
-
-               .. include:: git-yum.rst
-
-            .. group-tab:: Oracle Linux 8
-
-               .. include:: git-dnf.rst
-
-      .. group-tab:: RHEL
-
-         .. tabs::
-
-            .. group-tab:: RHEL 7
+            .. tab-item:: Oracle Linux 7
 
                .. include:: git-yum.rst
 
-            .. group-tab:: RHEL 8
+            .. tab-item:: Oracle Linux 8
 
                .. include:: git-dnf.rst
 
-      .. group-tab:: Rocky Linux
+      .. tab-item:: RHEL
+
+         .. tab-set::
+
+            .. tab-item:: RHEL 7
+
+               .. include:: git-yum.rst
+
+            .. tab-item:: RHEL 8
+
+               .. include:: git-dnf.rst
+
+      .. tab-item:: Rocky Linux
 
          .. include:: git-dnf.rst
 
-      .. group-tab:: Ubuntu
+      .. tab-item:: Ubuntu
 
          .. include:: git-apt.rst
 

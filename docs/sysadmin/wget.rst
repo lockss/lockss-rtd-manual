@@ -6,101 +6,126 @@ Downloading and running the LOCKSS Installer requires either :program:`curl` or 
 
 Select your operating system below and follow the instructions as root [#fnroot]_:
 
-.. tabs::
+.. tab-set::
+   :class: sd-bg-light
 
-   .. group-tab:: AlmaLinux
+   .. tab-item:: AlmaLinux
+      :sync: alma
 
       .. include:: wget-dnf.rst
 
-   .. group-tab:: Arch Linux
+   .. tab-item:: Arch Linux
+      :sync: arch
 
       .. include:: wget-pacman.rst
 
-   .. group-tab:: CentOS
+   .. tab-item:: CentOS
+      :sync: centos
 
-      .. tabs::
+      .. tab-set::
 
-         .. group-tab:: CentOS 7
+         .. tab-item:: CentOS 7
+            :sync: centos7
 
             .. include:: wget-yum.rst
 
-         .. group-tab:: CentOS 8
+         .. tab-item:: CentOS 8
+            :sync: centos8
 
             .. include:: wget-dnf.rst
 
-         .. group-tab:: CentOS Stream
+         .. tab-item:: CentOS Stream 8-9
+            :sync: centosstream8
 
             .. include:: wget-dnf.rst
 
-   .. group-tab:: Debian
+   .. tab-item:: Debian
+      :sync: debian
 
       .. include:: wget-apt.rst
 
-   .. group-tab:: EuroLinux
+   .. tab-item:: EuroLinux
+      :sync: eurolinux
 
-      .. tabs::
+      .. tab-set::
 
-         .. group-tab:: EuroLinux 7
+         .. tab-item:: EuroLinux 7
+            :sync: eurolinux7
 
             .. include:: wget-yum.rst
 
-         .. group-tab:: EuroLinux 8
+         .. tab-item:: EuroLinux 8
+            :sync: eurolinux8
 
             .. include:: wget-dnf.rst
 
-   .. group-tab:: Fedora
+   .. tab-item:: Fedora
+      :sync: fedora
 
       .. include:: wget-dnf.rst
 
-   .. group-tab:: Linux Mint
+   .. tab-item:: Linux Mint
+      :sync: mint
 
       .. include:: wget-apt.rst
 
-   .. group-tab:: OpenSUSE
+   .. tab-item:: OpenSUSE
+      :sync: opensuse
 
-      .. tabs::
+      .. tab-set::
 
-         .. group-tab:: OpenSUSE Leap 15
-
-            .. include:: wget-zypper.rst
-
-         .. group-tab:: OpenSUSE Tumbleweed
+         .. tab-item:: OpenSUSE Leap 15
+            :sync: opensuse15
 
             .. include:: wget-zypper.rst
 
-   .. group-tab:: Oracle Linux
+         .. tab-item:: OpenSUSE Tumbleweed
+            :sync: opensusetumbleweed
 
-      .. tabs::
+            .. include:: wget-zypper.rst
 
-         .. group-tab:: Oracle Linux 7
+   .. tab-item:: Oracle Linux
+      :sync: oracle
 
-            .. include:: wget-yum.rst
+      .. tab-set::
 
-         .. group-tab:: Oracle Linux 8
-
-            .. include:: wget-dnf.rst
-
-   .. group-tab:: RHEL
-
-      .. tabs::
-
-         .. group-tab:: RHEL 7
+         .. tab-item:: Oracle Linux 7
+            :sync: oracle7
 
             .. include:: wget-yum.rst
 
-         .. group-tab:: RHEL 8
+         .. tab-item:: Oracle Linux 8
+            :sync: oracle8
 
             .. include:: wget-dnf.rst
 
-   .. group-tab:: Rocky Linux
+   .. tab-item:: RHEL
+      :sync: rhel
+
+      .. tab-set::
+
+         .. tab-item:: RHEL 7
+            :sync: rhel7
+
+            .. include:: wget-yum.rst
+
+         .. tab-item:: RHEL 8
+            :sync: rhel8
+
+            .. include:: wget-dnf.rst
+
+   .. tab-item:: Rocky Linux
+      :sync: rocky
 
       .. include:: wget-dnf.rst
 
-   .. group-tab:: Scientific Linux
+   .. tab-item:: Scientific Linux
+      :sync: scientific
 
       .. include:: wget-yum.rst
 
-   .. group-tab:: Ubuntu
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
 
       .. include:: wget-apt.rst
 
