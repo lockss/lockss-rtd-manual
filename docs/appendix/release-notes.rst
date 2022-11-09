@@ -38,7 +38,7 @@ LOCKSS 2.0.60-alpha6 consists of a configurable set of the following components:
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
-*  `Apache Solr <https://lucene.apache.org/solr/>`_ version 8.9.0 (custom version 8.9.0-slim-2)
+*  `Apache Solr <https://solr.apache.org/>`_ version 8.9.0 (custom version 8.9.0-slim-2)
 
 *  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom version 2.4.2-2)
 
