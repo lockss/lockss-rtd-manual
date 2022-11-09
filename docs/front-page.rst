@@ -1,3 +1,81 @@
+.. grid:: 1 1 2 2
+
+   .. grid-item::
+
+      .. card:: Latest Release
+         :text-align: center
+
+         .. COMMENT LATESTVERSION
+
+         .. COMMENT RELEASEDATE
+
+         2.0.60-alpha6 (NOT YET RELEASED)
+
+         .. button-ref:: appendix/release-notes
+            :ref-type: doc
+            :color: info
+            :expand:
+
+         .. button-ref:: troubleshooting/support
+            :ref-type: doc
+            :color: info
+            :expand:
+
+         .. COMMENT add :outline: if there are no advisories for that version yet, remove it when there are:
+
+         .. button-ref:: appendix/security
+            :ref-type: doc
+            :color: danger
+            :expand:
+            :outline:
+
+   .. grid-item::
+
+      .. card:: How To...
+         :text-align: center
+
+         .. button-ref:: upgrading/index
+            :ref-type: doc
+            :color: primary
+            :expand:
+
+            Upgrade
+
+         .. button-ref:: installing/index
+            :ref-type: doc
+            :color: primary
+            :expand:
+
+            Install
+
+         .. button-ref:: configuring
+            :ref-type: doc
+            :color: primary
+            :expand:
+
+            Configure
+
+         .. button-ref:: running
+            :ref-type: doc
+            :color: primary
+            :expand:
+
+            Run
+
+         .. button-ref:: using/index
+            :ref-type: doc
+            :color: primary
+            :expand:
+
+            Use
+
+         .. button-ref:: troubleshooting/index
+            :ref-type: doc
+            :color: primary
+            :expand:
+
+            Troubleshoot
+
 .. COMMENT LATESTVERSION
 
 -------------------------
@@ -64,3 +142,6 @@ Contact Us
 
 Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to :email:`lockss-support@lockss.org`. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
 
+----
+
+System manual last built: |today|

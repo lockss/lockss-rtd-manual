@@ -2,15 +2,6 @@
 NOT YET RELEASED LOCKSS 2.0-alpha6 System Manual
 ================================================
 
-.. COMMENT LATESTVERSION
-
-**Welcome to the NOT YET RELEASED LOCKSS 2.0-alpha6 System Manual.**
-
-.. COMMENT RELEASEDATE
-
-| First release: NOT YET RELEASED
-| System manual last built: |today|
-
 .. only:: html
 
    .. include:: front-page.rst
