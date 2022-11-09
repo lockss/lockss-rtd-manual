@@ -13,12 +13,19 @@
 
          .. button-ref:: appendix/release-notes
             :ref-type: doc
-            :color: info
+            :color: secondary
             :expand:
+
+         .. button-ref:: prerequisites/index
+            :ref-type: doc
+            :color: secondary
+            :expand:
+
+            Prerequisites
 
          .. button-ref:: troubleshooting/support
             :ref-type: doc
-            :color: info
+            :color: secondary
             :expand:
 
          .. COMMENT add :outline: if there are no advisories for that version yet, remove it when there are:
@@ -26,8 +33,8 @@
          .. button-ref:: appendix/security
             :ref-type: doc
             :color: danger
-            :expand:
             :outline:
+            :expand:
 
    .. grid-item::
 
@@ -75,6 +82,8 @@
             :expand:
 
             Troubleshoot
+
+----
 
 .. COMMENT LATESTVERSION
 
