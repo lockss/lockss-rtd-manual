@@ -45,10 +45,3 @@ sphinx-tabs
 # https://pypi.org/project/sphinxcontrib-email/
 # https://github.com/sphinx-contrib/email
 sphinxcontrib-email
-
-# The sphinxcontrib.openapi extension, to render OpenAPI/Swagger specs
-# https://pypi.org/project/sphinxcontrib-openapi/
-# https://sphinxcontrib-openapi.readthedocs.io/
-mistune==0.8.4 # See e.g. https://github.com/Tribler/tribler/issues/6624
-sphinxcontrib-openapi
-

@@ -6,8 +6,12 @@ This chapter contains pages of additional information about troubleshooting the 
 
 Sections include guidance for troubleshooting networking-related components like :program:`iptables`, :program:`firewalld`, and :program:`ufw`, and K3s-related components like CoreDNS, the K3s Installer, the K3s Configuration Checker.
 
+.. only:: html
+
+   .. rubric:: Chapter Table of Contents
+
 .. toctree::
-   :hidden:
+   :maxdepth: 1
 
    known-issues
    iptables

@@ -70,10 +70,7 @@ extensions = [
     'sphinx_tabs.tabs',
 
     # See https://github.com/sphinx-contrib/email
-    'sphinxcontrib.email',
-    
-    # See https://sphinxcontrib-openapi.readthedocs.io/
-    'sphinxcontrib.openapi',
+    'sphinxcontrib.email',   
 ]
 
 intersphinx_mapping = {
