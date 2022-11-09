@@ -11,7 +11,9 @@ The 2.x series of the LOCKSS system stems from the LAAWS (LOCKSS Architected As 
 This version, LOCKSS 2.0-alpha6, is the sixth preview release on the road to LOCKSS 2.0.
 
 
-.. rubric:: Chapter Table of Contents
+.. only:: html
+
+   .. rubric:: Chapter Table of Contents
 
 .. toctree::
    :maxdepth: 1
