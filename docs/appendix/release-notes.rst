@@ -45,6 +45,6 @@ LOCKSS 2.0.11-alpha1 consists of a configurable set of the following components:
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 9.6.12
 
-*  `Apache Solr <https://lucene.apache.org/solr/>`_ version 7.2.1
+*  `Apache Solr <https://lucene.apache.org/solr/>`_ version 6.6.5
 
 *  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.2.20190410 (custom version 2.2.20190410-1)
