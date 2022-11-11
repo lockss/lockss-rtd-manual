@@ -2,21 +2,27 @@
 Upgrading From LOCKSS 2.0-alpha5
 ================================
 
-.. COMMENT PREVIOUSVERSION
-
-.. COMMENT LATESTVERSION
-
-**FIXME FIXME FIXME**
-
 .. note::
+
+   .. COMMENT PREVIOUSVERSION
+
+   .. COMMENT LATESTVERSION
 
    This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6.
 
-   If you are installing the LOCKSS system for the first time, go to :doc:`/installing/index` instead.
+   Are you installing the LOCKSS 2.x system for the first time?
+
+   .. button-ref:: /installing/index
+      :ref-type: doc
+      :color: primary
+      :align: center
 
 .. tip::
 
    Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
+
+**FIXME FIXME FIXME**
+
 
 .. COMMENT PREVIOUSVERSION
 

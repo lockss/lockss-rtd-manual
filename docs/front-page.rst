@@ -16,12 +16,10 @@
             :color: secondary
             :expand:
 
-         .. button-ref:: prerequisites/index
+         .. button-ref:: introduction/prerequisites
             :ref-type: doc
             :color: secondary
             :expand:
-
-            Prerequisites
 
          .. button-ref:: troubleshooting/support
             :ref-type: doc

@@ -10,7 +10,12 @@ Installing the LOCKSS System
 
    .. COMMENT PREVIOUSVERSION
 
-   If you are upgrading an existing LOCKSS 2.0-alpha5 system, go to :doc:`/upgrading/index` instead.
+   Are you upgrading an existing LOCKSS 2.0-alpha5 system?
+
+   .. button-ref:: /upgrading/index
+      :ref-type: doc
+      :color: primary
+      :align: center
 
 .. tip::
 

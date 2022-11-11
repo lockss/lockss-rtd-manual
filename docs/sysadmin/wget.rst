@@ -6,6 +6,8 @@ Downloading and running the LOCKSS Installer requires either :program:`curl` or 
 
 Select your operating system below and follow the instructions as root [#fnroot]_:
 
+.. COMMENT OSTABS
+
 .. tab-set::
    :class: sd-bg-light
 
@@ -24,20 +26,15 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. tab-set::
 
+         .. tab-item:: CentOS Stream
+            :sync: centosstream
+
+            .. include:: wget-dnf.rst
+
          .. tab-item:: CentOS 7
             :sync: centos7
 
             .. include:: wget-yum.rst
-
-         .. tab-item:: CentOS 8
-            :sync: centos8
-
-            .. include:: wget-dnf.rst
-
-         .. tab-item:: CentOS Stream 8-9
-            :sync: centosstream8
-
-            .. include:: wget-dnf.rst
 
    .. tab-item:: Debian
       :sync: debian
@@ -49,17 +46,17 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. tab-set::
 
-         .. tab-item:: EuroLinux 7
-            :sync: eurolinux7
-
-            .. include:: wget-yum.rst
-
          .. tab-item:: EuroLinux 8
             :sync: eurolinux8
 
             .. include:: wget-dnf.rst
 
-   .. tab-item:: Fedora
+         .. tab-item:: EuroLinux 7
+            :sync: eurolinux7
+
+            .. include:: wget-yum.rst
+
+   .. tab-item:: Fedora Linux
       :sync: fedora
 
       .. include:: wget-dnf.rst
@@ -74,13 +71,13 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. tab-set::
 
-         .. tab-item:: OpenSUSE Leap 15
-            :sync: opensuse15
+         .. tab-item:: OpenSUSE Tumbleweed
+            :sync: opensusetumbleweed
 
             .. include:: wget-zypper.rst
 
-         .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensusetumbleweed
+         .. tab-item:: OpenSUSE Leap
+            :sync: opensuseleap
 
             .. include:: wget-zypper.rst
 
@@ -89,30 +86,30 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. tab-set::
 
+         .. tab-item:: Oracle Linux 8-9
+            :sync: oracle8
+
+            .. include:: wget-dnf.rst
+
          .. tab-item:: Oracle Linux 7
             :sync: oracle7
 
             .. include:: wget-yum.rst
-
-         .. tab-item:: Oracle Linux 8
-            :sync: oracle8
-
-            .. include:: wget-dnf.rst
 
    .. tab-item:: RHEL
       :sync: rhel
 
       .. tab-set::
 
+         .. tab-item:: RHEL 8-9
+            :sync: rhel8
+
+            .. include:: wget-dnf.rst
+
          .. tab-item:: RHEL 7
             :sync: rhel7
 
             .. include:: wget-yum.rst
-
-         .. tab-item:: RHEL 8
-            :sync: rhel8
-
-            .. include:: wget-dnf.rst
 
    .. tab-item:: Rocky Linux
       :sync: rocky
