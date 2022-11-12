@@ -6,170 +6,205 @@ The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compati
 
 The LOCKSS team has successfully tested the LOCKSS system installation process on many flavors of Linux, some of which are listed below:
 
-.. COMMENT OSTABS
-
-.. tab-set::
-   :class: sd-bg-light
-
-   .. tab-item:: AlmaLinux
-      :sync: alma
-
-      The LOCKSS system is compatible with `AlmaLinux <https://almalinux.org/>`_ 8.4, 8.3.
-
-   .. tab-item:: Arch Linux
-      :sync: arch
-
-      The LOCKSS system is compatible with `Arch Linux <https://archlinux.org/>`_ :bdg-info:`rolling release`.
-
-   .. tab-item:: CentOS
-      :sync: centos
-
-      The LOCKSS system is compatible with different flavors of `CentOS <https://centos.org>`_:
-
-      .. tab-set::
-
-         .. tab-item:: CentOS Stream
-            :sync: centosstream
-
-            The LOCKSS system is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_ :bdg-info:`rolling release`.
-
-         .. tab-item:: CentOS Linux 7
-            :sync: centos7
-
-
-            The LOCKSS system is compatible with `CentOS Linux <https://centos.org/centos-linux/>`_ 7.9, 7.8, 7.7, 7.6, 7.5, 7.4, 7.3.
-
-            .. warning::
-
-               The end-of-life date for CentOS Linux 7 is 2024-06-30.
-
-   .. tab-item:: Debian
-      :sync: debian
-
-      The LOCKSS system is compatible with `Debian <https://www.debian.org/>`_ 11.1, 11.0, 10.10, 10.9, 10.8, 10.7, 10.6, 10.5, 10.4, 10.3, 10.2, 10.1, 10.0.
-
-         .. warning::
-
-            The end-of-life date for Debian 10 (Buster) is June 2024.
-
-   .. tab-item:: EuroLinux
-      :sync: eurolinux
-
-      The LOCKSS system is compatible with different flavors of `EuroLinux <https://en.euro-linux.com/eurolinux>`_:
-
-      .. tab-set::
-
-         .. tab-item:: EuroLinux 8-9
-            :sync: eurolinux8
-
-            The LOCKSS system is compatible with `EuroLinux <https://en.euro-linux.com/eurolinux>`_ 8.4, 8.3.
-
-         .. tab-item:: EuroLinux 7
-            :sync: eurolinux7
-
-            The LOCKSS system is compatible with `EuroLinux <https://en.euro-linux.com/eurolinux>`_ 8.4, 8.3, 7.9, 7.8, 7.7, 7.6.
-
-            .. warning::
-
-               The end-of-life date for EuroLinux 7 is 2024-06-30.
-
-   .. tab-item:: Fedora Linux
-      :sync: fedora
-
-      The LOCKSS system is compatible with `Fedora Linux <https://getfedora.org/>`_ 34.
-
-      .. warning::
-
-         The end-of-life date for Fedora Linux 34 was 2022-06-07.
-
-   .. tab-item:: Linux Mint
-      :sync: mint
-
-      The LOCKSS system is compatible with `Linux Mint <https://linuxmint.com/>`_ 20.2, 20.1, 20.0, 19.3, 19.2, 19.1, 19.0.
-
-      .. caution::
-
-          The end-of-life date for Linux Mint 19 is April 2023.
-
-   .. tab-item:: OpenSUSE
-      :sync: opensuse
-
-      The LOCKSS system is compatible with different flavors of `OpenSUSE <https://www.opensuse.org/>`_:
-
-      .. tab-set::
-
-         .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensusetumbleweed
-
-            The LOCKSS system is compatible with `OpenSUSE Tumbleweed <https://get.opensuse.org/tumbleweed>`_ :bdg-info:`rolling release`.
-
-         .. tab-item:: OpenSUSE Leap
-            :sync: opensuseleap
-
-            The LOCKSS system is compatible with `OpenSUSE Leap <https://get.opensuse.org/leap>`_ Leap 15.3.
-
-   .. tab-item:: Oracle Linux
-      :sync: oracle
-
-      The LOCKSS system is compatible with different flavors of `Oracle Linux <https://www.oracle.com/linux>`_:
-
-      .. tab-set::
-
-         .. tab-item:: Oracle Linux 8-9
-            :sync: oracle8
-
-            The LOCKSS system is compatible with `Oracle Linux <https://www.oracle.com/linux/>`_ 8.4, 8.3, 8.2, 8.1.
-
-         .. tab-item:: Oracle Linux 7
-            :sync: oracle7
-
-            The LOCKSS system is compatible with `Oracle Linux <https://www.oracle.com/linux/>`_ 7.9, 7.8, 7.7, 7.6.
-
-   .. tab-item:: RHEL
-      :sync: rhel
-
-      The LOCKSS system is compatible with different flavors of `RHEL <https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux>`_:
-
-      .. tab-set::
-
-         .. tab-item:: RHEL 8-9
-            :sync: rhel8
-
-            The LOCKSS system is compatible with `RHEL <https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux>`_ 8.3.
-
-         .. tab-item:: RHEL 7
-            :sync: rhel7
-
-            The LOCKSS system is compatible with RHEL 7.
-
-            .. warning::
-
-                The end-of-life date for RHEL 7 is 2024-06-30.
-
-   .. tab-item:: Rocky Linux
-      :sync: rocky
-
-      The LOCKSS system is compatible with `Rocky Linux <https://rockylinux.org/>`_ 8.4.
-
-   .. tab-item:: Scientific Linux
-      :sync: scientific
-
-      The LOCKSS system is compatible with `Scientific Linux <https://scientificlinux.org/>`_ 7.9, 7.8, 7.7, 7.6.
-
-      .. warning::
-
-          The end-of-life date for Scientific Linux 7 is 2024-06-30.
-
-   .. tab-item:: Ubuntu
-      :sync: ubuntu
-
-      The LOCKSS system is compatible with `Ubuntu <https://ubuntu.com/>`_ 21.10, 21.04, 20.10, 20.04 :bdg-success:`LTS`, 18.04 :bdg-success:`LTS`.
-
-.. COMMENT the pipe below is to force some vertical space, otherwise it's too cramped
-
-|
-
-The LOCKSS system can likely be installed successfully on slightly different versions of the Linux flavors above, as well as other Linux flavors altogether.
+.. dropdown:: AlmaLinux
+
+   The LOCKSS system is compatible with `AlmaLinux <https://almalinux.org/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   AlmaLinux           9.0       2027-05-31     2032-05-31
+   AlmaLinux           8.7       2024-05-31     2029-05-31
+   AlmaLinux           8.6       2024-05-31     2029-05-31
+   AlmaLinux           8.5       2024-05-31     2029-05-31
+   AlmaLinux           8.4       2024-05-31     2029-05-31
+   AlmaLinux           8.3       2024-05-31     2029-05-31
+   =================== ========= ============== ================ =====
+
+.. dropdown:: Arch Linux
+
+   The LOCKSS system is compatible with `Arch Linux <https://archlinux.org/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Arch Linux          rolling
+   =================== ========= ============== ================ =====
+
+.. dropdown:: CentOS
+
+   The LOCKSS system is compatible with `CentOS <https://centos.org>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   CentOS Stream       rolling
+   CentOS Linux        7.9       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   CentOS Linux        7.8       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   CentOS Linux        7.7       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   CentOS Linux        7.6       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   CentOS Linux        7.5       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   CentOS Linux        7.4       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   CentOS Linux        7.3       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   =================== ========= ============== ================ =====
+
+.. dropdown:: Debian
+
+   The LOCKSS system is compatible with `Debian <https://www.debian.org/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Debian              11.4      June 2026      2026-08-15
+   Debian              11.3      June 2026      2026-08-15
+   Debian              11.2      June 2026      2026-08-15
+   Debian              11.1      June 2026      2026-08-15
+   Debian              11.0      June 2026      2026-08-15
+   Debian              10.11     2024-06-30     2024-06-01
+   Debian              10.10     2024-06-30     2024-06-01
+   Debian              10.9      2024-06-30     2024-06-01
+   Debian              10.8      2024-06-30     2024-06-01
+   Debian              10.7      2024-06-30     2024-06-01
+   Debian              10.6      2024-06-30     2024-06-01
+   Debian              10.5      2024-06-30     2024-06-01
+   Debian              10.4      2024-06-30     2024-06-01
+   Debian              10.3      2024-06-30     2024-06-01
+   Debian              10.2      2024-06-30     2024-06-01
+   Debian              10.1      2024-06-30     2024-06-01
+   Debian              10.0      2024-06-30     2024-06-01
+   =================== ========= ============== ================ =====
+
+.. dropdown:: EuroLinux
+
+   The LOCKSS system is compatible with `EuroLinux <https://en.euro-linux.com/eurolinux>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   EuroLinux           9.0       2032-05-31     2032-06-30
+   EuroLinux           8.6       2029-03-01     2029-06-30
+   EuroLinux           8.5       2029-03-01     2029-06-30
+   EuroLinux           8.4       2029-03-01     2029-06-30
+   EuroLinux           8.3       2029-03-01     2029-06-30
+   EuroLinux           7.9       2024-07-31     2024-07-31
+   EuroLinux           7.8       2024-07-31     2024-07-31
+   EuroLinux           7.7       2024-07-31     2024-07-31
+   EuroLinux           7.6       2024-07-31     2024-07-31
+   =================== ========= ============== ================ =====
+
+.. dropdown:: Fedora Linux
+
+   The LOCKSS system is compatible with `Fedora Linux <https://getfedora.org/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Fedora Linux        36        2023-05-16     2023-05-16
+   Fedora Linux        35        2022-12-13     2022-12-13       :bdg-warning:`upcoming EOL`
+   =================== ========= ============== ================ =====
+
+.. dropdown:: Linux Mint
+
+   The LOCKSS system is compatible with `Linux Mint <https://linuxmint.com/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Linux Mint          20.2      2025-04-01     2025-04-01
+   Linux Mint          20.1      Yes            2025-04-01
+   Linux Mint          20        No             2025-04-01       :bdg-danger:`EOL`
+   Linux Mint          19.3      No             2023-04-01       :bdg-danger:`EOL`
+   Linux Mint          19.2      No             2023-04-01       :bdg-danger:`EOL`
+   Linux Mint          19.1      No             2023-04-01       :bdg-danger:`EOL`
+   Linux Mint          19        No             2023-04-01       :bdg-danger:`EOL`
+   =================== ========= ============== ================ =====
+
+.. dropdown:: OpenSUSE
+
+   The LOCKSS system is compatible with `OpenSUSE <https://www.opensuse.org/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   OpenSUSE Tumbleweed rolling
+   OpenSUSE Leap       15.4      2023-12-01     2023-12-01
+   OpenSUSE Leap       15.3      2022-12-01     2022-12-01       :bdg-warning:`upcoming EOL`
+   =================== ========= ============== ================ =====
+
+.. dropdown:: Oracle Linux
+
+   The LOCKSS system is compatible with `Oracle Linux <https://www.oracle.com/linux>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Oracle Linux        9.0       2032-07-01     2034-06-01
+   Oracle Linux        8.6       2029-07-01     2029-07-01
+   Oracle Linux        8.5       2029-07-01     2029-07-01
+   Oracle Linux        8.4       2029-07-01     2029-07-01
+   Oracle Linux        8.3       2029-07-01     2029-07-01
+   Oracle Linux        8.2       2029-07-01     2029-07-01
+   Oracle Linux        8.1       2029-07-01     2029-07-01
+   Oracle Linux        7.9       2024-07-01     2026-06-01
+   Oracle Linux        7.8       2024-07-01     2026-06-01
+   Oracle Linux        7.7       2024-07-01     2026-06-01
+   Oracle Linux        7.6       2024-07-01     2026-06-01
+   =================== ========= ============== ================ =====
+
+.. dropdown:: RHEL
+
+   The LOCKSS system is compatible with `RHEL <https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   RHEL                8.3       2024-05-31     2029-05-31
+   =================== ========= ============== ================ =====
+
+.. dropdown:: Rocky Linux
+
+   The LOCKSS system is compatible with `Rocky Linux <https://rockylinux.org/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Rocky Linux         9.0       2025-05-31     2032-05-31
+   Rocky Linux         8.6       2024-05-31     2029-05-31
+   Rocky Linux         8.5       2024-05-31     2029-05-31
+   Rocky Linux         8.4       2024-05-31     2029-05-31
+   =================== ========= ============== ================ =====
+
+   .. tip::
+
+      `Rocky Linux <https://rockylinux.org/>`_ is the operating system we currently recommend for new installations, and for existing installations based on CentOS.
+
+.. dropdown:: Scientific Linux
+
+   The LOCKSS system is compatible with `Scientific Linux <https://scientificlinux.org/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Scientific Linux    7.9       2024-06-30     2024-06-30
+   Scientific Linux    7.8       2024-06-30     2024-06-30
+   Scientific Linux    7.7       2024-06-30     2024-06-30
+   Scientific Linux    7.6       2024-06-30     2024-06-30
+   =================== ========= ============== ================ =====
+
+.. dropdown:: Ubuntu
+
+   The LOCKSS system is compatible with `Ubuntu <https://ubuntu.com/>`_:
+
+   =================== ========= ============== ================ =====
+   Operating System    Version   Active Support Security Support Notes
+   =================== ========= ============== ================ =====
+   Ubuntu              22.10     2023-07-20     2023-07-20
+   Ubuntu              22.04 LTS 2027-04-21     2032-04-01
+   Ubuntu              20.04 LTS 2025-04-02     2030-04-01
+   Ubuntu              18.04 LTS 2023-04-02     2028-04-01
+   =================== ========= ============== ================ =====
+
+The LOCKSS system can likely be installed successfully on slightly different versions of the Linux flavors above, as well as other Linux flavors altogether, including commercial variants like `RHEL <https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux>`_ or `SLES <https://www.suse.com/products/server>`_. We welcome reports of successful installations from the community so they can be added to the list above.
 
 .. tip::
 
