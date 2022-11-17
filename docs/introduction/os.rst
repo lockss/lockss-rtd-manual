@@ -99,6 +99,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Fedora Linux        37        2023-12-15     2023-12-15
    Fedora Linux        36        2023-05-16     2023-05-16
    Fedora Linux        35        2022-12-13     2022-12-13       :bdg-warning:`upcoming EOL`
    =================== ========= ============== ================ =====
