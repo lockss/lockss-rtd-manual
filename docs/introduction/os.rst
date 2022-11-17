@@ -18,7 +18,7 @@ Flavors of Linux we have successfully tested include:
 
 *  `EuroLinux <https://en.euro-linux.com/>`_ 9.0, 8.6, 8.5, 8.4, 8.3, 7.9, 7.8, 7.7, 7.6.
 
-*  `Fedora <https://getfedora.org/>`_ 36, 35, 34, 33, 32, 31, 30, 29, 28.
+*  `Fedora <https://getfedora.org/>`_ 37, 36, 35, 34, 33, 32, 31, 30, 29, 28.
 
 *  `Linux Mint <https://linuxmint.com/>`_ 20.2, 20.1, 20.0, 19.3, 19.2, 19.1, 19.0.
 
