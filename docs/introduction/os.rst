@@ -8,7 +8,7 @@ Rancher states [#fnk3sos]_ that "K3s is expected to work on most modern Linux sy
 
 Flavors of Linux we have successfully tested include:
 
-*  `AlmaLinux <https://almalinux.org/>`_ 9.0, 8.7, 8.6, 8.5, 8.4, 8.3.
+*  `AlmaLinux <https://almalinux.org/>`_ 9.1, 9.0, 8.7, 8.6, 8.5, 8.4, 8.3.
 
 *  `Arch Linux <https://archlinux.org/>`_ (rolling release).
 
