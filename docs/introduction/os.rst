@@ -55,6 +55,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Debian              11.5      June 2026      2026-08-15
    Debian              11.4      June 2026      2026-08-15
    Debian              11.3      June 2026      2026-08-15
    Debian              11.2      June 2026      2026-08-15
@@ -111,13 +112,11 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   Linux Mint          20.2      2025-04-01     2025-04-01
-   Linux Mint          20.1      Yes            2025-04-01
+   Linux Mint          21        Yes            2027-04-01
+   Linux Mint          20.3      Yes            2025-04-01
+   Linux Mint          20.2      Yes            2025-04-01
+   Linux Mint          20.1      No             2025-04-01       :bdg-danger:`EOL`
    Linux Mint          20        No             2025-04-01       :bdg-danger:`EOL`
-   Linux Mint          19.3      No             2023-04-01       :bdg-danger:`EOL`
-   Linux Mint          19.2      No             2023-04-01       :bdg-danger:`EOL`
-   Linux Mint          19.1      No             2023-04-01       :bdg-danger:`EOL`
-   Linux Mint          19        No             2023-04-01       :bdg-danger:`EOL`
    =================== ========= ============== ================ =====
 
 .. dropdown:: OpenSUSE
@@ -209,7 +208,7 @@ The LOCKSS system can likely be installed successfully on slightly different ver
 
 .. tip::
 
-   We currently recommend `Rocky Linux <https://rockylinux.org/>`_.
+   `Rocky Linux <https://rockylinux.org/>`_ is the operating system we currently recommend for new installations, and for existing installations based on CentOS.
 
 ----
 
