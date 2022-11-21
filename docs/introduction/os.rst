@@ -13,6 +13,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   AlmaLinux           9.1       2027-05-31     2032-05-31
    AlmaLinux           9.0       2027-05-31     2032-05-31
    AlmaLinux           8.7       2024-05-31     2029-05-31
    AlmaLinux           8.6       2024-05-31     2029-05-31
