@@ -16,7 +16,7 @@ Flavors of Linux we have successfully tested include:
 
 *  `Debian <https://www.debian.org/>`_ 11.5, 11.4, 11.3, 11.2, 11.1, 11.0, 10.11, 10.10, 10.9, 10.8, 10.7, 10.6, 10.5, 10.4, 10.3, 10.2, 10.1, 10.0, 9.13, 9.12, 9.11, 9.9, 9.8, 9.7, 9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0.
 
-*  `EuroLinux <https://en.euro-linux.com/>`_ 9.0, 8.6, 8.5, 8.4, 8.3, 7.9, 7.8, 7.7, 7.6.
+*  `EuroLinux <https://en.euro-linux.com/>`_ 9.1, 9.0, 8.6, 8.5, 8.4, 8.3, 7.9, 7.8, 7.7, 7.6.
 
 *  `Fedora <https://getfedora.org/>`_ 37, 36, 35, 34, 33, 32, 31, 30, 29, 28.
 
@@ -24,11 +24,11 @@ Flavors of Linux we have successfully tested include:
 
 *  `OpenSUSE <https://www.opensuse.org/>`_ Leap 15.4, 15.3, 15.2, 15.1, 15.0, and OpenSUSE Tumbleweed (rolling release)
 
-*  `Oracle Linux <https://www.oracle.com/linux/>`_ 9.0, 8.6, 8.5, 8.4, 8.3, 8.2, 8.1, 7.9, 7.8, 7.7, 7.6.
+*  `Oracle Linux <https://www.oracle.com/linux/>`_ 9.0, 8.7, 8.6, 8.5, 8.4, 8.3, 8.2, 8.1, 7.9, 7.8, 7.7, 7.6.
 
 *  `RHEL <https://www.redhat.com/>`_ 8.3.
 
-*  `Rocky Linux <https://rockylinux.org/>`_ 9.0, 8.6, 8.5, 8.4.
+*  `Rocky Linux <https://rockylinux.org/>`_ 9.1, 9.0, 8.7, 8.6, 8.5, 8.4.
 
 *  `Scientific Linux <https://scientificlinux.org/>`_ 7.9, 7.8, 7.7, 7.6.
 
