@@ -15,12 +15,12 @@ Sections include security advisories; reference information such as list of port
 
    security
    release-notes
+   faq
+   license
+   ports
+   past-versions
 
    git-downloader
    postgresql
    lcap-ssl
    migrating
-
-   license
-   ports
-   past-versions

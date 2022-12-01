@@ -8,9 +8,7 @@ Upgrading From LOCKSS 2.0-alpha5
 
    .. COMMENT LATESTVERSION
 
-   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6.
-
-   Are you installing the LOCKSS 2.x system for the first time?
+   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6. Are you installing the LOCKSS 2.x system for the first time? Go to:
 
    .. button-ref:: /installing/index
       :ref-type: doc
@@ -86,6 +84,8 @@ Copy the existing LOCKSS system configuration into the new 2.0-alpha6 environmen
 
    cp lockss-installer.alpha5/config/system.cfg lockss-installer/config/system.cfg
 
+.. COMMENT FIXME :doc: syntax error
+
 Then follow the instructions in :doc:`configuring` to ensure all existing configuration parameters are still correct and to configure any new parameters.
 
 ----------
@@ -93,6 +93,8 @@ Next Steps
 ----------
 
 .. COMMENT LATESTVERSION
+
+.. COMMENT FIXME :doc: syntax error
 
 Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha6 instance.
 
