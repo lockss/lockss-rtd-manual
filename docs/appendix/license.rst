@@ -2,7 +2,7 @@
 Software License
 ================
 
-Unless otherwise noted, LOCKSS software is made available under the 3-Clause BSD License.
+The LOCKSS system is made available under the terms of the 3-Clause BSD License, a permissive open-source license.
 
 .. code-block:: text
 
@@ -34,4 +34,4 @@ Unless otherwise noted, LOCKSS software is made available under the 3-Clause BSD
    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
    POSSIBILITY OF SUCH DAMAGE.
 
-For more information, visit the :doc:`lockss:license` page in the LOCKSS Documentation Portal.
+For more information, visit the `Software License <https://www.lockss.org/license>`_ page on the LOCKSS Web site.
