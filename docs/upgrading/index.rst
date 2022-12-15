@@ -8,7 +8,8 @@ Upgrading From LOCKSS 2.0-alpha5
 
    .. COMMENT LATESTVERSION
 
-   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6. Are you installing the LOCKSS 2.x system for the first time? Go to:
+   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6. If you are installing the
+   LOCKSS 2.x system for the first time, please see the Installation instructions:
 
    .. button-ref:: /installing/index
       :ref-type: doc
@@ -30,63 +31,95 @@ Stop LOCKSS 2.0-alpha5
 
 .. COMMENT PREVIOUSVERSION
 
-The first step is to stop the LOCKSS 2.0-alpha5 system.
-
-Log in as the ``lockss`` user and run the following command in the :file:`lockss-installer` directory:
+The first step is to stop the LOCKSS 2.0-alpha5 system. Log in as the ``lockss`` user and run the following 
+command in your :file:`lockss-installer` directory. The default location of this directory is within the 
+``lockss`` user's home directory :file:`{$HOME}/lockss-installer` (which typically resolves to 
+:file:`/home/lockss/lockss-installer`).
 
 .. code-block:: shell
 
    scripts/stop-lockss
 
+You may verify all LOCKSS components have stopped by running the following command:
+
+.. code-block:: shell
+
+   k3s kubectl get deployments -n lockss
+
+Which should return:
+
+.. code-block:: text
+
+   No resources found in lockss namespace.
+
 ---------------------------
 Update the LOCKSS Installer
 ---------------------------
 
-The official way to download the LOCKSS Installer is now through the LOCKSS Downloader, rather than cloning the LOCKSS Installer as a Git project as in previous releases. However, advanced users may continue to use :program:`git` if they wish (see :doc:`/appendix/git-downloader` for instructions).
+As of alpha5, the official way to install and upgrade the LOCKSS Installer is using the LOCKSS Downloader, rather than
+cloning the LOCKSS Installer as a Git project. The instructions below detail the use of the LOCKSS Downloader. Advanced
+users may continue to use :program:`git` if they wish (please see :doc:`/appendix/git-downloader` for instructions).
 
-.. COMMENT PREVIOUSVERSION
-
-Move the existing 2.0-alpha5 LOCKSS Installer out of the way:
-
-.. COMMENT PREVIOUSVERSION
+As the ``lockss`` user, run either this :program:`curl` command:
 
 .. code-block:: shell
 
-   mv lockss-installer lockss-installer.alpha5
+   curl -sSfL https://www.lockss.org/downloader | sh -s -
 
-.. COMMENT PREVIOUSVERSION
+Or this :program:`wget` command:
 
-Then follow the steps in :doc:`/installing/index` to download the 2.0-alpha6 version of the LOCKSS Installer, skipping over the earlier sections of the chapter that are not required in the context of an upgrade (e.g., :doc:`/installing/user`).
+.. code-block:: shell
+
+   wget -qO- https://www.lockss.org/downloader | sh -s -
+
+This will download and invoke the LOCKSS Downloader, which in turn will install the latest version of the LOCKSS
+Installer into the existing LOCKSS Installer installation (by default, :file:`{$HOME}/lockss-installer`, which typically
+resolves to :file:`/home/lockss/lockss-installer`).
+
+.. tip::
+
+   The LOCKSS Downloader has command line arguments that can customize your LOCKSS Installer installation:
+
+   * To upgrade a LOCKSS Installer in another directory :samp:`{DIR}`, add :samp:`--download-dir={DIR}` after
+     ``sh -s -``, like so:
+
+   .. code-block:: shell
+
+      ... | sh -s - --download-dir=DIR
+
+   .. COMMENT PREVIOUS VERSION
+
+   * To install a specific version of the LOCKSS Installer, the LOCKSS Downloader the :samp:`--git-branch`,
+     :samp:`--git-commit`, :samp:`--git-tag` options. Developers testing the latest pre-release version of the LOCKSS
+     Installer should use the `develop` branch, like so:
+
+   .. code-block:: shell
+
+      ... | sh -s - --git-branch=develop
 
 ----------------------
 Run the Upgrade Script
 ----------------------
 
-**FIXME**
-
-We have provided an upgrade script to upgrade on-disk structures. To run it, log in as the ``lockss`` user and run the following command in the :file:`lockss-installer` directory:
+The next step is to update archived content from the previous release version. Log in as the ``lockss`` user and run the 
+following command from the :file:`lockss-installer` directory:
 
 .. code-block:: shell
 
-   scripts/upgrades/upgrade-alpha4-to-alpha5
+   scripts/upgrades/upgrade-to-alpha6
 
 ---------------------------
 Re-run the Configure Script
 ---------------------------
 
-.. COMMENT LATESTVERSION
+.. COMMENT FIXME :doc: syntax error
 
-Copy the existing LOCKSS system configuration into the new 2.0-alpha6 environment:
-
-.. COMMENT PREVIOUSVERSION
+Re-run the configuration script by running the command below and follow the instructions in :doc:`configuring` to ensure all existing 
+configuration parameters are still correct and to configure any new parameters.
 
 .. code-block:: shell
 
-   cp lockss-installer.alpha5/config/system.cfg lockss-installer/config/system.cfg
-
-.. COMMENT FIXME :doc: syntax error
-
-Then follow the instructions in :doc:`configuring` to ensure all existing configuration parameters are still correct and to configure any new parameters.
+   scripts/configure-lockss
 
 ----------
 Next Steps
@@ -98,9 +131,11 @@ Next Steps
 
 Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha6 instance.
 
-.. note::
+.. code-block:: shell
 
-   **FIXME**
+   scripts/start-lockss
+
+.. note::
 
    .. COMMENT PREVIOUSVERSION
 
