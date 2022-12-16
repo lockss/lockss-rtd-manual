@@ -108,6 +108,10 @@ following command from the :file:`lockss-installer` directory:
 
    scripts/upgrades/upgrade-to-alpha6
 
+.. note::
+
+   It may take several minutes for the upgrade script to make a backup of your existing Solr index.
+
 ---------------------------
 Re-run the Configure Script
 ---------------------------
