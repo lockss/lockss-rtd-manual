@@ -13,7 +13,6 @@ Sections include guidance for troubleshooting networking-related components like
 .. toctree::
    :maxdepth: 1
 
-   support
    known-issues
    iptables
    firewalld
