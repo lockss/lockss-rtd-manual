@@ -142,6 +142,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Oracle Linux        9.1       2032-07-01     2034-06-01
    Oracle Linux        9.0       2032-07-01     2034-06-01
    Oracle Linux        8.7       2029-07-01     2029-07-01
    Oracle Linux        8.6       2029-07-01     2029-07-01
