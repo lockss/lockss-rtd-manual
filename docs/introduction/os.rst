@@ -34,6 +34,10 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
 
 .. dropdown:: CentOS
 
+   .. caution::
+
+      We no longer recommend CentOS for new installations; we recommend Rocky Linux instead.
+
    The LOCKSS system is compatible with `CentOS <https://centos.org>`_:
 
    =================== ========= ============== ================ =====
@@ -104,7 +108,6 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Fedora Linux        37        2023-12-15     2023-12-15
    Fedora Linux        36        2023-05-16     2023-05-16
-   Fedora Linux        35        2022-12-13     2022-12-13       :bdg-warning:`upcoming EOL`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Linux Mint
@@ -130,7 +133,6 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    OpenSUSE Tumbleweed rolling
    OpenSUSE Leap       15.4      2023-12-01     2023-12-01
-   OpenSUSE Leap       15.3      2022-12-01     2022-12-01       :bdg-warning:`upcoming EOL`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Oracle Linux
@@ -166,6 +168,10 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
 
 .. dropdown:: Rocky Linux
 
+   .. tip::
+
+      `Rocky Linux <https://rockylinux.org/>`_ is the operating system we currently recommend for new installations, and for existing installations based on CentOS or Scientific Linux.
+
    The LOCKSS system is compatible with `Rocky Linux <https://rockylinux.org/>`_:
 
    =================== ========= ============== ================ =====
@@ -179,11 +185,11 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    Rocky Linux         8.4       2024-05-31     2029-05-31
    =================== ========= ============== ================ =====
 
-   .. tip::
-
-      `Rocky Linux <https://rockylinux.org/>`_ is the operating system we currently recommend for new installations, and for existing installations based on CentOS.
-
 .. dropdown:: Scientific Linux
+
+   .. caution::
+
+      We no longer recommend Scientific Linux for new installations; we recommend Rocky Linux instead.
 
    The LOCKSS system is compatible with `Scientific Linux <https://scientificlinux.org/>`_:
 
@@ -213,7 +219,7 @@ The LOCKSS system can likely be installed successfully on slightly different ver
 
 .. tip::
 
-   `Rocky Linux <https://rockylinux.org/>`_ is the operating system we currently recommend for new installations, and for existing installations based on CentOS.
+   `Rocky Linux <https://rockylinux.org/>`_ is the operating system we currently recommend for new installations, and for existing installations based on CentOS or Scientific Linux.
 
 ----
 
