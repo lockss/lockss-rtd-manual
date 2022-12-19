@@ -86,23 +86,17 @@
       .. card::
          :text-align: center
 
-         .. button-ref:: /troubleshooting/support
-            :ref-type: doc
+         .. button-link:: https://www.lockss.org/support
             :color: secondary
             :expand:
 
-         .. button-ref:: Contact Us
-            :ref-type: ref
+            Support
+
+         .. button-link:: https://www.lockss.org/contact
             :color: secondary
             :expand:
 
-            Contact Us
-
-----------
-Contact Us
-----------
-
-Please contact us for questions, feedback and bug reports. Open a ticket by sending e-mail to :email:`lockss-support@lockss.org`. Your contribution toward the final LOCKSS 2.0 release is very important to us and greatly appreciated by the community.
+            Contact
 
 ----
 
