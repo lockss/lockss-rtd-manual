@@ -2,13 +2,37 @@
 Configuring the LOCKSS System
 =============================
 
-After `installing the LOCKSS system <installing>`_, configure the system with the :program:`configure-lockss` script by running this command in the ``lockss`` user's :file:`lockss-installer` directory as ``lockss`` [#fnlockss]_:
+After `installing the LOCKSS system <installing>`_, you will configure it with the :program:`configure-lockss` script. If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.
 
-.. code-block:: shell
+-------------------------------------------
+Before Invoking :program:`configure-lockss`
+-------------------------------------------
 
-   scripts/configure-lockss
+You will need to gather information to answer configuration questions asked by :program:`configure-lockss`, including:
 
-If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.
+*  The name (FQDN) of the host.
+
+*  The IP address of the host, and if behind NAT, the external IP address for NAT.
+
+*  The mail relay host, and optionally mail credentials, for sending e-mail from the host.
+
+*  The e-mail address for the administrator of the system.
+
+*  The configuration URL and preservation group or groups corresponding to the LOCKSS network your system is joining.
+
+*  The path for the primary content data storage area, any additional content data storage areas, log data storage area and temporary data storage area.
+
+*  Username and password for the Web user interfaces.
+
+*  A password for the PostgreSQL database.
+
+   *  Alternatively, if using an existing PostgreSQL database, the host name, port, schema, username and password for the external PostgreSQL database, as well as a prefix for database names.
+
+*  A username and password for the Solr database.
+
+   *  Alternatively, if using an existing Solr database, the host name, port, username and password for the external Solr database, as well as the core name for the LOCKSS repository.
+
+*  Whether you wish to use the LOCKSS Metadata Extraction Serice, LOCKSS metadata Service, LOCKSS SOAP Compatibility Service, OpenWayback Web replay engine, and Pywb Web replay engine.
 
 Some notes about using :program:`configure-lockss`:
 
@@ -17,6 +41,18 @@ Some notes about using :program:`configure-lockss`:
 *  Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged.
 
 *  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
+
+------------------------------------
+Invoking :program:`configure-lockss`
+------------------------------------
+
+To invoke :program:`configure-lockss`, simply run this command in the ``lockss`` user's :file:`lockss-installer` directory as ``lockss`` [#fnlockss]_:
+
+.. code-block:: shell
+
+   scripts/configure-lockss
+
+The script will begin with the first series of configuration questions, about :ref:`Network Settings`.
 
 ----------------
 Network Settings
@@ -140,7 +176,7 @@ Configuration URL
 
       :guilabel:`Server certificate keystore`
 
-      Enter the path of a Java keystore used to vverify the authenticity of the configuration server.
+      Enter the path of a Java keystore used to verify the authenticity of the configuration server.
 
 Configuration Proxy
 ===================
@@ -378,6 +414,13 @@ Metadata Extraction Service
 Prompt: :guilabel:`Use LOCKSS Metadata Extraction Service?`
 
 Enter :kbd:`Y` if you want the metadata extraction service to be run, otherwise :kbd:`N`.
+
+SOAP Compatibility Service
+==========================
+
+Prompt: :guilabel:`Use LOCKSS SOAP Compatibility Service?`
+
+Enter :kbd:`Y` if you want the SOAP compatibility servvice to be run, otherwise :kbd:`N`.
 
 -------------------
 Web Replay Settings
