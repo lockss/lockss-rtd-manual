@@ -2,45 +2,59 @@
 Downloading the LOCKSS Installer
 ================================
 
-FIXME
-
 .. note::
 
    Commands in this section are run as the ``lockss`` user  [#fnlockss]_.
 
-The next task is to download the LOCKSS Installer. To do this, you will use :program:`curl` or :program:`wget` [#fncurlwget]_ to invoke the LOCKSS Downloader [#fndownloader]_. (Alternatively, for security purposes, you can inspect the LOCKSS Downloader before executing it manually [#fnsecurity]_.)
+The next task is to download the LOCKSS Installer.
+
+--------------------------
+LOCKSS Installer Directory
+--------------------------
+
+The LOCKSS Installer will be installed into a directory that will simply be known as the **LOCKSS Installer Directory**. Many commands in upcoming sections of this manual, such as those to install, configure, start and stop the LOCKSS system, will be listed relative to the LOCKSS Installer Directory.
+
+.. _default-lockss-install-directory:
+
+**By default**, the LOCKSS Installer Directory is a directory named :file:`lockss-installer` in the ``lockss`` user's home directory.
+
+-----------------------------
+Running the LOCKSS Downloader
+-----------------------------
+
+To install the LOCKSS Installer, you will use :program:`curl` or :program:`wget` [#fncurlwget]_ to invoke the LOCKSS Downloader [#fndownloader]_. (Alternatively, for security purposes, you can download and inspect the LOCKSS Downloader before executing it manually [#fnsecurity]_.)
 
 As the ``lockss`` user [#fnlockss]_, run either this :program:`curl` command:
 
 .. code-block:: shell
 
-   curl -sSfL https://www.lockss.org/downloader | sh -s -
+   curl -sSfL https://lockss.org/downloader | sh -s -
 
 or this :program:`wget` command:
 
 .. code-block:: shell
 
-   wget -qO- https://www.lockss.org/downloader | sh -s -
+   wget -qO- https://lockss.org/downloader | sh -s -
 
-This will download and invoke the LOCKSS Downloader, which in turn will download the latest version of the LOCKSS Installer into :file:`{$HOME}/lockss-installer` (in this case :file:`/home/lockss/lockss-installer`).
+You can add options after ``| sh -s -``:
 
-.. tip::
-
-   To install it into another directory :samp:`{DIR}`, add :samp:`--download-dir={DIR}` after ``sh -s -``, like so:
+*  If you need your LOCKSS Installer Directory to be a directory :samp:`{DIR}` other than :ref:`the default <default-lockss-install-directory>`, add :samp:`--download-dir={DIR}` (or alternatively :samp:`-d {DIR}`) after ``| sh -s -``, like so:
 
    .. code-block:: shell
 
       ... | sh -s - --download-dir=DIR
 
-   The :program:`lockss-downloader` script accepts other options after ``sh -s -``. You can list them by invoking it with the ``--help`` option.
+   and the LOCKSS Installer will be installed into the custom LOCKSS Installer Directory :samp:`{DIR}`.
 
-.. important::
+*  (Advanced uses only.) If you have a reason to install a version of the LOCKSS Installer other than the latest stable release, you can do so by making references to the ``lockss-installer`` Git repository on GitHub [#fninstaller]_:
 
-   .. _lockss-installer-directory:
+   *  You can install a version labeled by the Git tag :samp:`{TAG}` (e.g. ``version-2.0.61-alpha6``) by adding :samp:`--git-tag={TAG}` (or :samp:`-t {TAG}`).
 
-   .. rubric:: LOCKSS Installer Directory
+   *  You can install a version from the tip of a Git branch :samp:`{BRA}` (e.g. ``develop``) by adding :samp:`--git-branch={BRA}` (or :samp:`-b {BRA}`).
 
-   Whether it is the default directory :file:`{$HOME}/lockss-installer` or a custom directory passed to the LOCKSS Downloader via the ``--download-dir`` option, make a note of the LOCKSS Installer directory, as many commands in this manual are documented relative to this directory.
+   *  You can even install a version as of a specific Git commit identifier :samp:`{COM}` by adding :samp:`--git-commit={COM}` (or :samp:`-c {COM}`).
+
+*  The LOCKSS Downloader accepts other options after ``| sh -s -``; you can list them by adding ``--help`` (or ``-h``).
 
 ----
 
@@ -66,7 +80,7 @@ This will download and invoke the LOCKSS Downloader, which in turn will download
 
    For security purposes, you may wish to inspect the LOCKSS Downloader before executing it.
 
-   One option is to review the contents of the script directly on GitHub to your satisfaction, then execute it as described above. The URL https://www.lockss.org/downloader redirects to https://github.com/lockss/lockss-downloader/raw/main/lockss-downloader.
+   One option is to review the contents of the script directly on GitHub to your satisfaction, then execute it as described above. The URL https://lockss.org/downloader redirects to https://github.com/lockss/lockss-downloader/raw/main/lockss-downloader.
 
    Another option is to download a copy of the LOCKSS Downloader, review the :program:`lockss-downloader` script, then execute it, all locally. To do so, follow this procedure:
 
@@ -74,13 +88,13 @@ This will download and invoke the LOCKSS Downloader, which in turn will download
 
       .. code-block:: shell
 
-         curl -Lo /tmp/lockss-downloader https://www.lockss.org/downloader
+         curl -Lo /tmp/lockss-downloader https://lockss.org/downloader
 
       or:
 
       .. code-block:: shell
 
-         wget -O /tmp/lockss-downloader https://www.lockss.org/downloader
+         wget -O /tmp/lockss-downloader https://lockss.org/downloader
 
       to download the :program:`lockss-downloader` script to :file:`/tmp/lockss-downloader`.
 
