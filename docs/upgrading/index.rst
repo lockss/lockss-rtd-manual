@@ -8,8 +8,7 @@ Upgrading From LOCKSS 2.0-alpha5
 
    .. COMMENT LATESTVERSION
 
-   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6. If you are installing the
-   LOCKSS 2.x system for the first time, please see the Installation instructions:
+   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions:
 
    .. button-ref:: /installing/index
       :ref-type: doc
@@ -28,10 +27,7 @@ Stop LOCKSS 2.0-alpha5
 
 .. COMMENT PREVIOUSVERSION
 
-The first step is to stop the LOCKSS 2.0-alpha5 system. Log in as the ``lockss`` user and run the following 
-command in your :file:`lockss-installer` directory. The default location of this directory is within the 
-``lockss`` user's home directory :file:`{$HOME}/lockss-installer` (which typically resolves to 
-:file:`/home/lockss/lockss-installer`).
+The first step is to stop the LOCKSS 2.0-alpha5 system. Log in as the ``lockss`` user and run the following command in the :ref:`LOCKSS Installer Directory` (by default :file:`{$HOME}/lockss-installer`, typically :file:`/home/lockss/lockss-installer`).
 
 .. code-block:: shell
 
@@ -43,7 +39,7 @@ You may verify all LOCKSS components have stopped by running the following comma
 
    k3s kubectl get deployments -n lockss
 
-Which should return:
+which should return:
 
 .. code-block:: text
 
@@ -53,68 +49,50 @@ Which should return:
 Update the LOCKSS Installer
 ---------------------------
 
-As of alpha5, the official way to install and upgrade the LOCKSS Installer is using the LOCKSS Downloader, rather than
-cloning the LOCKSS Installer as a Git project. The instructions below detail the use of the LOCKSS Downloader. Advanced
-users may continue to use :program:`git` if they wish (please see :doc:`/appendix/git-downloader` for instructions).
+.. COMMENT PREVIOUSVERSION
+
+As of 2.0-alpha5, the official way to install and upgrade the LOCKSS Installer is using the LOCKSS Downloader, rather than cloning the LOCKSS Installer as a Git project. The instructions below detail the use of the LOCKSS Downloader. (Advanced
+users may continue to use :program:`git` if they wish; please see :doc:`/appendix/git-downloader` for instructions.)
 
 As the ``lockss`` user, run either this :program:`curl` command:
 
 .. code-block:: shell
 
-   curl -sSfL https://www.lockss.org/downloader | sh -s -
+   curl -sSfL https://lockss.org/downloader | sh -s -
 
 Or this :program:`wget` command:
 
 .. code-block:: shell
 
-   wget -qO- https://www.lockss.org/downloader | sh -s -
+   wget -qO- https://lockss.org/downloader | sh -s -
 
-This will download and invoke the LOCKSS Downloader, which in turn will install the latest version of the LOCKSS
-Installer into the existing LOCKSS Installer installation (by default, :file:`{$HOME}/lockss-installer`, which typically
-resolves to :file:`/home/lockss/lockss-installer`).
-
-.. tip::
-
-   The LOCKSS Downloader has command line arguments that can customize your LOCKSS Installer installation:
-
-   * To upgrade a LOCKSS Installer in another directory :samp:`{DIR}`, add :samp:`--download-dir={DIR}` after
-     ``sh -s -``, like so:
-
-   .. code-block:: shell
-
-      ... | sh -s - --download-dir=DIR
-
-   .. COMMENT PREVIOUS VERSION
-
-   * To install a specific version of the LOCKSS Installer, the LOCKSS Downloader the :samp:`--git-branch`,
-     :samp:`--git-commit`, :samp:`--git-tag` options. Developers testing the latest pre-release version of the LOCKSS
-     Installer should use the ``develop`` branch, like so:
-
-   .. code-block:: shell
-
-      ... | sh -s - --git-branch=develop
+This will download and invoke the LOCKSS Downloader, which in turn will install the latest version of the LOCKSS Installer into the default LOCKSS Installer Directory (:file:`{$HOME}/lockss-installer`). If you are using a custom LOCKSS Installer Directory :samp:`{DIR}`, remember to use :samp:`--download-dir={DIR}`; see :ref:`Running the LOCKSS Downloader` for details.
 
 ----------------------
 Run the Upgrade Script
 ----------------------
 
-The next step is to update archived content from the previous release version. Log in as the ``lockss`` user and run the 
-following command from the :file:`lockss-installer` directory:
+The next step is to update archived content from the previous release version. As the ``lockss`` user, run the following command in the :ref:`LOCKSS Installer Directory`:
+
+.. COMMENT PREVIOUSVERSION
 
 .. code-block:: shell
 
    scripts/upgrades/upgrade-to-alpha6
 
-.. note::
+.. hint::
 
-   It may take several minutes for the upgrade script to make a backup of your existing Solr index.
+   .. COMMENT PREVIOUSVERSION
+
+   .. COMMENT LATESTVERSION
+
+   If it takes more than a few seconds for ``upgrade-to-alpha6`` above to run, the reindexing of all previously archived content which occurs the first time you start 2.0-alpha6 after upgrading from 2.0-alpha5 may take prohibitively long. This performance issue will be addressed in the next release. If you do not need the previously stored content during alpha testing, you could delete it and skip this reindexing step; see :doc:`/sysadmin/resetting`.
 
 ---------------------------
 Re-run the Configure Script
 ---------------------------
 
-Re-run the configuration script by running the command below and follow the instructions in :doc:`/configuring` to ensure all existing 
-configuration parameters are still correct and to configure any new parameters.
+Re-run the configuration script by running the command below and follow the instructions in :doc:`/configuring` to ensure all existing configuration parameters are still correct and to configure any new parameters:
 
 .. code-block:: shell
 
@@ -126,18 +104,16 @@ Start LOCKSS 2.0-alpha6
 
 .. COMMENT LATESTVERSION
 
-Follow the instructions in :doc:`/running` to start your LOCKSS 2.0-alpha6 instance.
+Follow the instructions in :doc:`/running` to start your LOCKSS 2.0-alpha6 instance:
 
 .. code-block:: shell
 
    scripts/start-lockss
 
-.. note::
+.. hint::
 
    .. COMMENT PREVIOUSVERSION
 
    .. COMMENT LATESTVERSION
 
-   The first time 2.0-alpha6 is started after an upgrade from 2.0-alpha5, it may take a while before the system becomes available, while it reindexes all previously archived content.
-
-   If running ``scripts/upgrades/upgrade-to-alpha6`` above took more than a few seconds, this reindexing process may take prohibitively long. This performance issue will be addressed in the next release. If you do not need the content during alpha testing, you could delete it and skip this reindexing step; see FIXME.
+   If it takes more than a few seconds for ``upgrade-to-alpha6`` above to run, the reindexing of all previously archived content which occurs the first time you start 2.0-alpha6 after upgrading from 2.0-alpha5 may take prohibitively long. This performance issue will be addressed in the next release. If you do not need the previously stored content during alpha testing, you could delete it and skip this reindexing step; see :doc:`/sysadmin/resetting`.
