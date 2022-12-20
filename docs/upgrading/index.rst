@@ -20,9 +20,6 @@ Upgrading From LOCKSS 2.0-alpha5
 
    Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
-**FIXME FIXME FIXME**
-
-
 .. COMMENT PREVIOUSVERSION
 
 ----------------------
@@ -91,7 +88,7 @@ resolves to :file:`/home/lockss/lockss-installer`).
 
    * To install a specific version of the LOCKSS Installer, the LOCKSS Downloader the :samp:`--git-branch`,
      :samp:`--git-commit`, :samp:`--git-tag` options. Developers testing the latest pre-release version of the LOCKSS
-     Installer should use the `develop` branch, like so:
+     Installer should use the ``develop`` branch, like so:
 
    .. code-block:: shell
 
@@ -116,24 +113,20 @@ following command from the :file:`lockss-installer` directory:
 Re-run the Configure Script
 ---------------------------
 
-.. COMMENT FIXME :doc: syntax error
-
-Re-run the configuration script by running the command below and follow the instructions in :doc:`configuring` to ensure all existing 
+Re-run the configuration script by running the command below and follow the instructions in :doc:`/configuring` to ensure all existing 
 configuration parameters are still correct and to configure any new parameters.
 
 .. code-block:: shell
 
    scripts/configure-lockss
 
-----------
-Next Steps
-----------
+-----------------------
+Start LOCKSS 2.0-alpha6
+-----------------------
 
 .. COMMENT LATESTVERSION
 
-.. COMMENT FIXME :doc: syntax error
-
-Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha6 instance.
+Follow the instructions in :doc:`/running` to start your LOCKSS 2.0-alpha6 instance.
 
 .. code-block:: shell
 
@@ -145,4 +138,6 @@ Follow the instructions in :doc:`running` to start your LOCKSS 2.0-alpha6 instan
 
    .. COMMENT LATESTVERSION
 
-   The first time 2.0-alpha6 is started after an upgrade from 2.0-alpha5, it may take several minutes before the system becomes available, while it re-indexes all previously archived content.
+   The first time 2.0-alpha6 is started after an upgrade from 2.0-alpha5, it may take a while before the system becomes available, while it reindexes all previously archived content.
+
+   If running ``scripts/upgrades/upgrade-to-alpha6`` above took more than a few seconds, this reindexing process may take prohibitively long. This performance issue will be addressed in the next release. If you do not need the content during alpha testing, you could delete it and skip this reindexing step; see FIXME.

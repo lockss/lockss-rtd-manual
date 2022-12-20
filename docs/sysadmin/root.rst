@@ -24,13 +24,6 @@ If you are logged in as ``root`` directly, you can simply run the command as lis
 
 ----
 
-.. rubric:: See Also
-
-*  :doc:`privileged`
-*  :doc:`lockss`
-
-----
-
 .. rubric:: Footnotes
 
 .. [#fn1]

@@ -19,3 +19,4 @@ Sections include how to run commands as the ``root`` user, a privileged user who
    os-updates
    curl
    wget
+   resetting

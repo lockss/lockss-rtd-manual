@@ -2,6 +2,8 @@
 Downloading the LOCKSS Installer
 ================================
 
+FIXME
+
 .. note::
 
    Commands in this section are run as the ``lockss`` user  [#fnlockss]_.

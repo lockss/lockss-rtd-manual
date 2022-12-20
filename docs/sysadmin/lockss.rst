@@ -70,13 +70,6 @@ If you are logged in as ``root`` but your system does not have :program:`sudo` (
 
 ----
 
-.. rubric:: See Also
-
-*  :doc:`root`
-*  :doc:`privileged`
-
-----
-
 .. rubric:: Footnotes
 
 .. [#fn1]

@@ -4,7 +4,7 @@ Running the LOCKSS Installer
 
 .. note::
 
-   Commands in this section are run as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_.
+   Commands in this section must be run **as a privileged user** who can become ``root`` and ``lockss`` via :program:`sudo` [#fnprivileged]_.
 
 The next task is to run the LOCKSS Installer.
 
@@ -32,7 +32,7 @@ After the LOCKSS Installer succeeds, you can also optionally run the K3s Configu
 Invoking the LOCKSS Installer
 -----------------------------
 
-To start the installation process, run this command (relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` or ``lockss`` via :program:`sudo` [#fnprivileged]_:
+To start the installation process, run this command (relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` and ``lockss`` via :program:`sudo` [#fnprivileged]_:
 
 .. code-block:: shell
 
