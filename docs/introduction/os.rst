@@ -29,7 +29,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   Arch Linux          rolling
+   Arch Linux                                                    :bdg-info:`rolling updates`
    =================== ========= ============== ================ =====
 
 .. dropdown:: CentOS
@@ -43,14 +43,14 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   CentOS Stream       rolling
-   CentOS Linux        7.9       2020-08-06     2024-06-30       :bdg-danger:`EOL`
-   CentOS Linux        7.8       2020-08-06     2024-06-30       :bdg-danger:`EOL`
-   CentOS Linux        7.7       2020-08-06     2024-06-30       :bdg-danger:`EOL`
-   CentOS Linux        7.6       2020-08-06     2024-06-30       :bdg-danger:`EOL`
-   CentOS Linux        7.5       2020-08-06     2024-06-30       :bdg-danger:`EOL`
-   CentOS Linux        7.4       2020-08-06     2024-06-30       :bdg-danger:`EOL`
-   CentOS Linux        7.3       2020-08-06     2024-06-30       :bdg-danger:`EOL`
+   CentOS Stream                                                 :bdg-info:`rolling updates`
+   CentOS Linux        7.9       2020-08-06     2024-06-30       :bdg-danger:`end of life`
+   CentOS Linux        7.8       2020-08-06     2024-06-30       :bdg-danger:`end of life`
+   CentOS Linux        7.7       2020-08-06     2024-06-30       :bdg-danger:`end of life`
+   CentOS Linux        7.6       2020-08-06     2024-06-30       :bdg-danger:`end of life`
+   CentOS Linux        7.5       2020-08-06     2024-06-30       :bdg-danger:`end of life`
+   CentOS Linux        7.4       2020-08-06     2024-06-30       :bdg-danger:`end of life`
+   CentOS Linux        7.3       2020-08-06     2024-06-30       :bdg-danger:`end of life`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Debian
@@ -122,8 +122,8 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    Linux Mint          21        Yes            2027-04-01
    Linux Mint          20.3      Yes            2025-04-01
    Linux Mint          20.2      Yes            2025-04-01
-   Linux Mint          20.1      No             2025-04-01       :bdg-danger:`EOL`
-   Linux Mint          20        No             2025-04-01       :bdg-danger:`EOL`
+   Linux Mint          20.1      No             2025-04-01       :bdg-danger:`end of life`
+   Linux Mint          20        No             2025-04-01       :bdg-danger:`end of life`
    =================== ========= ============== ================ =====
 
 .. dropdown:: OpenSUSE
@@ -133,7 +133,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   OpenSUSE Tumbleweed rolling
+   OpenSUSE Tumbleweed                                           :bdg-info:`rolling updates`
    OpenSUSE Leap       15.4      2023-12-01     2023-12-01
    =================== ========= ============== ================ =====
 
@@ -199,10 +199,10 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   Scientific Linux    7.9       2024-06-30     2024-06-30
-   Scientific Linux    7.8       2024-06-30     2024-06-30
-   Scientific Linux    7.7       2024-06-30     2024-06-30
-   Scientific Linux    7.6       2024-06-30     2024-06-30
+   Scientific Linux    7.9       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
+   Scientific Linux    7.8       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
+   Scientific Linux    7.7       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
+   Scientific Linux    7.6       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Ubuntu
