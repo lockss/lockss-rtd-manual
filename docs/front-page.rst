@@ -63,7 +63,7 @@
 
          .. COMMENT RELEASEDATE
 
-         2.0.60-alpha6 (NOT YET RELEASED)
+         2.0.61-alpha6 (NOT YET RELEASED)
 
          .. button-ref:: /appendix/release-notes
             :ref-type: doc

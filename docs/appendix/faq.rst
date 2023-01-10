@@ -11,9 +11,9 @@ I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 
 
    .. COMMENT LATESTVERSION
 
-   The LOCKSS 2.0-alpha6 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.75.9) to a LOCKSS 2.0 system for *production* purposes.
+   The LOCKSS 2.0-alpha6 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.76.4) to a LOCKSS 2.0 system for *production* purposes.
 
-   However, version 1.76 of the classic LOCKSS system contains a prototype tool to test the migration of archival units (AUs) from a production 1.x system to a *test* 2.x system, for *testing* purposes.
+   However, version 1.76 of the classic LOCKSS system contains a prototype tool to test the migration of archival units (AUs) from a production 1.76 system to a *test* 2.0-alpha6 system, for *testing* purposes. See https://github.com/lockss/community/wiki/Migration-Tool.
 
    .. COMMENT LATESTVERSION
 
@@ -31,4 +31,3 @@ Can I use my own PostgreSQL database? Can I use my own Solr database?
 
 Can I replay Web content with my own Pywb instance? Can I replay Web content with my own OpenWayback instance?
    Yes, you can configure your own Pywb instance and/or OpenWayback instance to connect directly to the LOCKSS Repository Service -- or you can let the system run included ones locally, or you can choose not to run any Web replay engine at all.
-
