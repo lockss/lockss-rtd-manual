@@ -54,7 +54,7 @@ You can add options after ``| sh -s -``:
 
    *  You can even install a version as of a specific Git commit identifier :samp:`{COM}` by adding :samp:`--git-commit={COM}` (or :samp:`-c {COM}`).
 
-*  The LOCKSS Downloader accepts other options after ``| sh -s -``; you can list them by adding ``--help`` (or ``-h``).
+*  The LOCKSS Downloader accepts other options after ``| sh -s -``; you can list them by adding ``--help`` (or ``-h``) after ``| sh -s -``.
 
 ----
 
