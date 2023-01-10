@@ -8,7 +8,7 @@ Upgrading From LOCKSS 2.0-alpha5
 
    .. COMMENT LATESTVERSION
 
-   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions:
+   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter:
 
    .. button-ref:: /installing/index
       :ref-type: doc

@@ -8,7 +8,7 @@ Installing the LOCKSS System
 
    .. COMMENT PREVIOUSVERSION
 
-   This chapter describes how to install the LOCKSS 2.0-alpha6 system from scratch. Are you upgrading an existing LOCKSS 2.0-alpha5 system? Go to:
+   This chapter describes how to install the LOCKSS 2.0-alpha6 system from scratch. If you are upgrading an existing LOCKSS 2.0-alpha5 system to 2.0-alpha6, please see the upgrade instructions in the previous chapter:
 
    .. button-ref:: /upgrading/index
       :ref-type: doc

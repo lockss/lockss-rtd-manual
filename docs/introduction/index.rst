@@ -20,4 +20,3 @@ This version, LOCKSS 2.0-alpha6, is the sixth preview release on the road to LOC
 
    prerequisites
    os
-   next-steps

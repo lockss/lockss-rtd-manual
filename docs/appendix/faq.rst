@@ -7,8 +7,6 @@ This section answers some common questions about the LOCKSS system.
 .. COMMENT LATESTVERSION
 
 I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha6?
-   FIXME
-
    .. COMMENT LATESTVERSION
 
    The LOCKSS 2.0-alpha6 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.76.4) to a LOCKSS 2.0 system for *production* purposes.
@@ -16,6 +14,8 @@ I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 
    However, version 1.76 of the classic LOCKSS system contains a prototype tool to test the migration of archival units (AUs) from a production 1.76 system to a *test* 2.0-alpha6 system, for *testing* purposes. See https://github.com/lockss/community/wiki/Migration-Tool.
 
    .. COMMENT LATESTVERSION
+
+   .. COMMENT FIXME does this contact us link go anywhere anymore?
 
    To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha6 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
 
