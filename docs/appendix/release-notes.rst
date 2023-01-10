@@ -40,7 +40,7 @@ LOCKSS 2.0.61-alpha6 is the first release of the LOCKSS 2.0-alpha6 system.
 
 *  Many of the capabilities needed to migrate content from 1.x to 2.x are present in this release (in conjunction with the 1.76 release of 1.x).
 
-*  Installer changes
+*  **LOCKSS Installer changes**
 
    *  Add SOAP Compatibility Service
 
@@ -52,58 +52,55 @@ LOCKSS 2.0.61-alpha6 is the first release of the LOCKSS 2.0-alpha6 system.
 
    *  Fix Solr logging.
 
-   * Adjusted some heap limits.
+   *  Adjusted some heap limits.
 
-   * Allow service-specific JVM flags and port mappings to be specified through environment variables, to support profiling and other uses.
+   *  Allow service-specific JVM flags and port mappings to be specified through environment variables, to support profiling and other uses.
 
-*  Service changes
+*  **LOCKSS Configuration Service changes**
 
-   *  Configuration Service
+   *  Added a REST endpoint to calculate AUIDs for non-crawled content.
 
-      *  Added a REST endpoint to calculate AUIDs for non-crawled content.
+*  **LOCKSS Repository Service changes**
 
-   *  Repository Service
+   *  API changes
 
-      *  API changes
+      * ``HttpResponse`` and plain resource artifacts are stored and fetched in different formats, natural to each. Internally they are stored in WARC Response records or Resource records, respectively.
 
-         * ``HttpResponse`` and plain resource artifacts are stored and fetched in different formats, natural to each. Internally they are stored in WARC Response records or Resource records, respectively.
+      *  Several other cleanups to resolve inconsistencies.
 
-         *  Several other cleanups to resolve inconsistencies.
+      *  New endpoint to import the individual members of archive files (currently just WARC).
 
-         *  New endpoint to import the individual members of archive files (currently just WARC).
+      *  The confusingly-named ``collection`` attribute of ``Artifact`` objects has been renamed ``namespace``.
 
-         *  The confusingly-named ``collection`` attribute of ``Artifact`` objects has been renamed ``namespace``.
+      *  ``artifactId`` is now ``artifactUuid``.
 
-         *  ``artifactId`` is now ``artifactUuid``.
+      *  The Solr schema has changed. Clusters using our embedded Solr database are updated automatically. In the event you are using an external Solr, please contact us (or start over from scratch).
 
-         *  The Solr schema has changed. Clusters using our embedded Solr database are updated automatically. In the event you are using an external Solr, please contact us (or start over from scratch).
+      * AU size information now includes uncompressed size, compressed size and total disk usage.
 
-         * AU size information now includes uncompressed size, compressed size and total disk usage.
+   *  Performance improvements
 
-      *  Performance improvements
+      *  Reduced file copies when storing Artifacts.
 
-         *  Reduced file copies when storing Artifacts.
+      *  Reduced lock contention.
 
-         *  Reduced lock contention.
+      *  Algorithmic improvements to temporary WARC handling to allow garbage collection to run much more frequently, also reducing startup time.
 
-         *  Algorithmic improvements to temporary WARC handling to allow garbage collection to run much more frequently, also reducing startup time.
+      *  Reduced the number of Solr commits and queries.
 
-         *  Reduced the number of Solr commits and queries.
+      *  Bulk storage mode removes most Solr overhead for migration and reindexing in case of index lossage.
 
-         *  Bulk storage mode removes most Solr overhead for migration and reindexing in case of index lossage.
+   *  Support for huge filesystems (> 8 EiB).
 
-      *  Support for huge filesystems (> 8 EiB).
+   *  Bug fixes
 
+      *  Gracefully handle truncated WARCs resulting from abrupt shutdown.
 
-      *  Bug fixes
+      *  Fixed incorrect character encoding in HTTP headers in WARC response records. (This may cause the headers of ``Artifact``\ s stored with pre-alpha6 releases to not load correctly.)
 
-         *  Gracefully handle truncated WARCs resulting from abrupt shutdown.
+*  **LOCKSS Poller Service changes**
 
-         *  Fixed incorrect character encoding in HTTP headers in WARC response records. (This may cause the headers of ``Artifact``\ s stored with pre-alpha6 releases to not load correctly.)
-
-   *  Poller Service
-
-      * Renamed the REST endpoints that exist only for the interim SOAP Compatibility Service to a distinct path (``/ws``).
+   * Renamed the REST endpoints that exist only for the interim SOAP Compatibility Service to a distinct path (``/ws``).
 
 *  Building plugins now performs well-formedness checks, similar to 1.x.
 
