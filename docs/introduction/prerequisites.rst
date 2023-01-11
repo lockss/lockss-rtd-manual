@@ -20,7 +20,7 @@ The CPU requirements depend on which components of the LOCKSS system you choose 
 Memory
 ------
 
-Likewise, the memory requirements also depend on which components of the LOCKSS system you choose to run. We recommend at least **8 GB** of memory, preferably 16 GB.
+Likewise, the memory requirements also depend on which components of the LOCKSS system you choose to run. We recommend at least **16 GB** of memory, preferably more.
 
 -------
 Storage
