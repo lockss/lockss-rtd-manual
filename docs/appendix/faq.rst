@@ -17,7 +17,7 @@ I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 
 
    .. COMMENT FIXME does this contact us link go anywhere anymore?
 
-   To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha6 release on a test machine and :ref:`providing us with your feedback <Contact Us>`.
+   To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha6 release on a test machine and `providing us with your feedback <https://www.lockss.org/contact>`_.
 
 .. COMMENT PREVIOUSVERSION
 
