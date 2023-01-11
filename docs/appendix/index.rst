@@ -18,9 +18,7 @@ Sections include security advisories; reference information such as list of port
    faq
    license
    ports
-   past-versions
 
    git-downloader
    postgresql
    lcap-ssl
-   migrating
