@@ -20,3 +20,4 @@ Sections include guidance for troubleshooting networking-related components like
    coredns
    k3s-installer
    k3s-checker
+   xfs
