@@ -36,7 +36,7 @@ Setup of the latter is described below. Commands should be run as the ``root`` u
 
          findmnt --target /var/lib/rancher
 
-      The output should be similar to the following (some parameters may be different):
+      The output should look similar to the following (some parameters may be different):
 
       .. code-block:: text
 
