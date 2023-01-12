@@ -4,20 +4,19 @@ Troubleshooting OverlayFS with XFS
 
 This section provides troubleshooting information for the :ref:`check_xfs` phase of :doc:`/installing/installer`.
 
--------------------------------------------------------------------------
-Filesystem backing `/var/lib/rancher` is an XFS filesystem with `ftype=0`
--------------------------------------------------------------------------
+-----------------------------------------------------------------------------
+Filesystem backing ``/var/lib/rancher`` is an XFS filesystem with ``ftype=0``
+-----------------------------------------------------------------------------
 
 The OverlayFS driver used by K3s will fail and prevent containers from starting, if the filesystem backing
 ``/var/lib/rancher`` is an XFS filesystem configured with the legacy ``ftype=0`` setting that some older Linux systems
 defaulted to when creating XFS filesystems. To view or verify the setting of ``ftype`` from an XFS filesystem, use
 ``xfs_info`` (see step 1 below).
 
-The recommended way fix to this issue is to reformat the XFS filesystem with ``mkfs.xfs`` flag ``-n ftype=1``, or use a
-different filesystem type altogether (e.g., ext4). If this is not possible (e.g., because you are performing an in-place
-migration from LOCKSS 1.x to 2.x and the filesystem backing ``/var/lib/rancher`` is shared with other parts of the
-system), the workaround is to create a new XFS filesystem on another partition or a loopback device backed by a file on
-an existing filesystem.
+The recommended way fix to this issue is to reformat the XFS filesystem with ``ftype=1``, or with another filesystem
+such as ext4. If this is not possible (e.g., because you are performing an in-place migration from LOCKSS 1.x to 2.x and
+the filesystem backing ``/var/lib/rancher`` is shared with other parts of the system), the workaround is to create a new
+XFS filesystem on another partition or a loopback device backed by a file on an existing filesystem.
 
 Setup of the latter is described below. Commands should be run as the ``root`` user  [#fnroot]_.
 
@@ -37,7 +36,7 @@ Setup of the latter is described below. Commands should be run as the ``root`` u
 
          findmnt --target /var/lib/rancher
 
-      The output should similar to the following (some parameters may be different):
+      The output should be similar to the following (some parameters may be different):
 
       .. code-block:: text
 
@@ -61,12 +60,10 @@ Setup of the latter is described below. Commands should be run as the ``root`` u
                =                       sectsz=4096  sunit=1 blks, lazy-count=1
       realtime =none                   extsz=4096   blocks=0, rtextents=0
 
-   Note that in the example above, ``ftype=0``.
-
    .. note::
 
-      If the output contains ``ftype=1``, there is nothing wrong with your XFS filesystem and you should not proceed
-      with the instructions on this page!
+      In the example above, ``ftype=0``. If your output contains ``ftype=1``, there is nothing wrong with your XFS
+      filesystem and you should not proceed with the instructions on this page!
 
 2. Stop the K3s service:
 
