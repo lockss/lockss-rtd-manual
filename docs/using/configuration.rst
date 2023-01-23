@@ -4,7 +4,7 @@ Using the LOCKSS Configuration Service
 
 .. note::
 
-   This page is under construction.
+   This section is under construction.
 
 --------------------------------
 Accessing the Web User Interface
