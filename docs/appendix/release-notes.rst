@@ -104,7 +104,7 @@ LOCKSS 2.0.61-alpha6 is the first release of the LOCKSS 2.0-alpha6 system.
 
 *  Building plugins now performs well-formedness checks, similar to 1.x.
 
-*  All changes in LOCKSS `1.75.9 <https://github.com/lockss/lockss-daemon/releases/tag/release-candidate_1-75-b9>`_ and 1.76.4.
+*  All changes in LOCKSS `1.75.9 <https://github.com/lockss/lockss-daemon/releases/tag/release-candidate_1-75-b9>`_ and `1.76.5 <https://github.com/lockss/lockss-daemon/releases/tag/release-candidate_1-76-b5>`_.
 
 .. rubric:: Component Versions
 
@@ -130,6 +130,6 @@ LOCKSS 2.0.61-alpha6 consists of a configurable set of the following components:
 
 *  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom version 8.11.2-slim-1)
 
-*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom version 2.4.2-2)
+*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom version 2.4.2-3)
 
-*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom version 2.4.0-4)
+*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom version 2.4.0-5)
