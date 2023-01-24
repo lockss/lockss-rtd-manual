@@ -4,11 +4,13 @@ Release Notes
 
 .. COMMENT LATESTVERSION
 
+.. COMMENT RELEASEDATE
+
 --------------------
 LOCKSS 2.0.61-alpha6
 --------------------
 
-Released: FIXME
+Released: 2023-01-23
 
 .. COMMENT LATESTVERSION
 
