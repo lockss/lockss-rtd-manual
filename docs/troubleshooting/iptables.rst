@@ -12,7 +12,7 @@ Switch iptables to legacy mode via Alternatives
 
 .. COMMENT K3SVERSION
 
-K3s 1.21.5+k3s1 (the version used by LOCKSS 2.0-alpha6) does not always work with :program:`iptables` version 1.8.0-1.8.3 when run via Alternatives but not in ``legacy`` mode, for instance in some Debian or Ubuntu systems [#fnreference]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
+K3s 1.21.5+k3s1 (the version used by LOCKSS 2.0-beta1) does not always work with :program:`iptables` versions 1.8.0-1.8.3 when run via Alternatives but not in ``legacy`` mode, for instance in some Debian or Ubuntu systems [#fnreference]_. If :program:`install-lockss` detects this situation, you will see a warning message and the following prompt [#fninstaller]_:
 
 :guilabel:`Switch iptables to legacy mode via Alternatives?`
 

@@ -6,23 +6,25 @@ This section answers some common questions about the LOCKSS system.
 
 .. COMMENT LATESTVERSION
 
-I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-alpha6?
+I have an existing classic LOCKSS system (version 1.x). Can I upgrade to LOCKSS 2.0-beta1?
    .. COMMENT LATESTVERSION
 
-   The LOCKSS 2.0-alpha6 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.76.4) to a LOCKSS 2.0 system for *production* purposes.
+   FIXME (beta is less tentative than alpha)
+
+   The LOCKSS 2.0-beta1 release is a technology preview which we are excited to share with the community for testing purposes. It is not yet possible to convert from a classic LOCKSS system (e.g. version 1.76.4) to a LOCKSS 2.0 system for *production* purposes.
 
    However, version 1.76 of the classic LOCKSS system contains a prototype tool to test the migration of archival units (AUs) from a production 1.76 system to a *test* 2.0-alpha6 system, for *testing* purposes. See https://github.com/lockss/community/wiki/Migration-Tool.
 
    .. COMMENT LATESTVERSION
 
-   To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-alpha6 release on a test machine and `providing us with your feedback <https://www.lockss.org/contact>`_.
+   To help us advance toward the final LOCKSS 2.0 release, please consider installing and running the LOCKSS 2.0-beta1 release on a test machine and `providing us with your feedback <https://www.lockss.org/contact>`_.
 
 .. COMMENT PREVIOUSVERSION
 
 .. COMMENT LATESTVERSION
 
-I have a LOCKSS system running 2.0-alpha5. Can I upgrade to LOCKSS 2.0-alpha6?
-   Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha6 and start from scratch, but there is an :doc:`upgrade path </upgrading/index>` from LOCKSS 2.0-alpha5.
+I have a LOCKSS system running 2.0-alpha6. Can I upgrade to LOCKSS 2.0-beta1?
+   Yes. You are welcome to wipe your testing data from LOCKSS 2.0-alpha6 and start from scratch, but there is an :doc:`upgrade path </upgrading/index>` from LOCKSS 2.0-alpha6.
 
 Can I use my own PostgreSQL database? Can I use my own Solr database?
    Yes, you can configure the system to use your institution's Postgres database and/or Solr database -- or you can simply let system run included ones locally.

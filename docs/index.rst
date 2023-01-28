@@ -1,6 +1,6 @@
-===============================
-LOCKSS 2.0-alpha6 System Manual
-===============================
+===============================================
+NOT YET RELEASED LOCKSS 2.0-beta1 System Manual
+===============================================
 
 .. only:: html
 
@@ -9,7 +9,7 @@ LOCKSS 2.0-alpha6 System Manual
 .. COMMENT LATESTVERSION
 
 .. toctree::
-   :caption: LOCKSS 2.0-alpha6 System Manual
+   :caption: NOT YET RELEASED LOCKSS 2.0-beta1 System Manual
    :hidden:
    :numbered:
 

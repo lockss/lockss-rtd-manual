@@ -8,7 +8,7 @@ The 2.x series of the LOCKSS system stems from the LAAWS (LOCKSS Architected As 
 
 .. COMMENT LATESTVERSION
 
-This version, LOCKSS 2.0-alpha6, is the sixth preview release on the road to LOCKSS 2.0.
+This version, LOCKSS 2.0-beta1, is the first "beta" release of the LOCKSS system on the road to LOCKSS 2.0.
 
 
 .. only:: html
