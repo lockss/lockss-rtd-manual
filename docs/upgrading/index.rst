@@ -1,14 +1,10 @@
-================================
-Upgrading From LOCKSS 2.0-alpha5
-================================
+======================================
+Upgrading From LOCKSS |PREVIOUS_MINOR|
+======================================
 
 .. note::
 
-   .. COMMENT PREVIOUSVERSION
-
-   .. COMMENT LATESTVERSION
-
-   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha6 system to 2.0-beta1. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter:
+   This chapter describes how to upgrade an existing LOCKSS |PREVIOUS_MINOR| system to |LATEST_MINOR|. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter:
 
    .. button-ref:: /installing/index
       :ref-type: doc
@@ -21,13 +17,11 @@ Upgrading From LOCKSS 2.0-alpha5
 
 .. COMMENT PREVIOUSVERSION
 
-----------------------
-Stop LOCKSS 2.0-alpha6
-----------------------
+----------------------------
+Stop LOCKSS |PREVIOUS_MINOR|
+----------------------------
 
-.. COMMENT PREVIOUSVERSION
-
-The first step is to stop the LOCKSS 2.0-alpha6 system. Log in as the ``lockss`` user and run the following command in the :ref:`LOCKSS Installer Directory` (by default :file:`{$HOME}/lockss-installer`, typically :file:`/home/lockss/lockss-installer`).
+The first step is to stop the LOCKSS |PREVIOUS_MINOR| system. Log in as the ``lockss`` user and run the following command in the :ref:`LOCKSS Installer Directory` (by default :file:`{$HOME}/lockss-installer`, typically :file:`/home/lockss/lockss-installer`).
 
 .. code-block:: shell
 
@@ -100,9 +94,7 @@ Re-run the configuration script by running the command below and follow the inst
 Start LOCKSS 2.0-alpha6
 -----------------------
 
-.. COMMENT LATESTVERSION
-
-Follow the instructions in :doc:`/running` to start your LOCKSS 2.0-beta1 instance:
+Follow the instructions in :doc:`/running` to start your LOCKSS |LATEST_MINOR| instance:
 
 .. code-block:: shell
 

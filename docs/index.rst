@@ -1,12 +1,14 @@
-===============================================
-NOT YET RELEASED LOCKSS 2.0-beta1 System Manual
-===============================================
+.. COMMENT RELEASEDATE
+
+====================================================
+NOT YET RELEASED LOCKSS |LATEST_MINOR| System Manual
+====================================================
 
 .. only:: html
 
    .. include:: front-page.rst
 
-.. COMMENT LATESTVERSION
+.. COMMENT RELEASEDATE (also substitution doesn't work here)
 
 .. toctree::
    :caption: NOT YET RELEASED LOCKSS 2.0-beta1 System Manual

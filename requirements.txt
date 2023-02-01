@@ -45,3 +45,8 @@ sphinxcontrib-email
 # https://pypi.org/project/sphinx_design
 # https://sphinx-design.readthedocs.io/
 sphinx_design
+
+# The Sphinx Global Substitutions extension
+# https://pypi.org/project/sphinxcontrib-globalsubs/
+# https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
+sphinxcontrib-globalsubs

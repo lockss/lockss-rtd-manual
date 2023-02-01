@@ -2,9 +2,7 @@
 Release Notes
 =============
 
-.. COMMENT LATESTVERSION
-
-.. COMMENT RELEASEDATE
+.. _latest:
 
 -------------------
 LOCKSS 2.0.70-beta1
@@ -14,8 +12,6 @@ LOCKSS 2.0.70-beta1
 
 Released: NOT YET RELEASED
 
-.. COMMENT LATESTVERSION
-
 LOCKSS 2.0.70-beta1 is the first release of the LOCKSS 2.0-beta1 system.
 
 .. rubric:: Release Notes
@@ -23,8 +19,6 @@ LOCKSS 2.0.70-beta1 is the first release of the LOCKSS 2.0-beta1 system.
 FIXME (insert release notes here)
 
 .. rubric:: Component Versions
-
-.. COMMENT LATESTVERSION
 
 LOCKSS 2.0.70-beta1 consists of a configurable set of the following components:
 

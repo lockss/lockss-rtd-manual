@@ -59,11 +59,9 @@
       .. card:: Latest Release
          :text-align: center
 
-         .. COMMENT LATESTVERSION
-
          .. COMMENT RELEASEDATE
 
-         2.0.70-beta1 (NOT YET RELEASED)
+         |LATEST_PATCH| (NOT YET RELEASED)
 
          .. button-ref:: /appendix/release-notes
             :ref-type: doc
