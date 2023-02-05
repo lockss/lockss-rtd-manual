@@ -6,13 +6,7 @@ Running the LOCKSS Installer
 
    Commands in this section are run as ``root``  [#fnroot]_.
 
-The next task is to run the LOCKSS Installer.
-
---------------------------------
-Overview of the LOCKSS Installer
---------------------------------
-
-When you invoke the LOCKSS Installer, the installation process goes through various phases:
+The next task is to run the LOCKSS Installer. The installation process goes through various phases:
 
 *  Checking that some prerequisites to install K3s are met. No user interaction is expected.
 
@@ -28,117 +22,89 @@ When you invoke the LOCKSS Installer, the installation process goes through vari
 
 After the LOCKSS Installer succeeds, you can also optionally run the K3s Configuration Checker.
 
------------------------------
-Invoking the LOCKSS Installer
------------------------------
-
 To start the installation process, run this command (relative to the :ref:`lockss-installer-directory`) as ``root``  [#fnroot]_:
 
 .. code-block:: shell
 
    scripts/install-lockss
 
-The installer will run through its phases, each of which is described in its own section below. The first phase is :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`).
+The installer will run through its phases, each of which is described in its own section below, starting with :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`).
 
 --------------------------
 Checking K3s Prerequisites
 --------------------------
 
-.. rubric:: Heading
+During this phase, :program:`install-lockss` will check that certain prerequisites to installing K3s are met [#fnprereq]_. This phase begins with this heading:
 
-This phase begins with the heading :guilabel:`Checking K3s prerequisites...`.
+.. code-block:: text
 
-.. rubric:: Description
+   Checking K3s prerequisites...
 
-During this phase, :program:`install-lockss` will check that certain prerequisites to installing K3s are met.
+No user interaction is expected; if everything goes well, you will see this message:
 
-.. rubric:: Steps
+.. code-block:: text
 
-1. If :program:`install-lockss` was invoked with the ``--skip-check-prerequisites`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
+   [success] K3s prerequisites checked
 
-   .. code-block:: text
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`).
 
-      [success] Skipping (--skip-install-k3s)
+.. error::
 
-      [success] Skipping (--skip-check-prerequisites)
+   Below are some error conditions you may encounter and what to do about them.
 
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`).
+   .. dropdown:: User namespaces must be enabled in RHEL/CentOS 7
 
-2. Next, :program:`install-lockss` will check that user namespaces are enabled. In some RHEL 7 and CentOS 7 systems, user namespaces are not enabled by default; if this is the case, you will see the error message:
+      In some RHEL 7 and CentOS 7 systems, user namespaces are not enabled by default. If this is the case, you will see the error message:
 
-   .. code-block:: text
+      .. code-block:: text
 
-      [ERROR] User namespaces must be enabled in RHEL/CentOS 7; see manual
+         [ERROR] User namespaces must be enabled in RHEL/CentOS 7; see manual
 
-   and :program:`install-lockss` will fail.
+      and :program:`install-lockss` will fail. See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
 
-   .. admonition:: Troubleshooting
+   .. dropdown:: Apparmor enabled but :program:`apparmor_parser` missing
 
-      See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
+      In some systems, Apparmor is enabled but :program:`apparmor_parser` is not installed. If this is the case, you will see the error message:
 
-3. Then :program:`install-lockss` will check that :program:`apparmor_parser` is installed if Apparmor is enabled. If Apparmor is enabled but :program:`apparmor_parser` is not installed, you will see the error message:
+      .. code-block:: text
 
-   .. code-block:: text
+         [ERROR] apparmor enabled but apparmor_parser missing; see manual
 
-      [ERROR] apparmor enabled but apparmor_parser missing; see manual
-
-   and :program:`install-lockss` will fail.
-
-   .. admonition:: Troubleshooting
-
-      See :ref:`installing-apparmor_parser` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
-
-4. Finally, you will see the message:
-
-   .. code-block:: text
-
-      [success] K3s prerequisites checked
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`).
+      and :program:`install-lockss` will fail. See :ref:`installing-apparmor_parser` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
 
 ----------------------------------
 Checking the System User and Group
 ----------------------------------
 
-.. rubric:: Heading
+During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system [#fnuser]_. This phase begins with the heading:
 
-This phase begins with the heading :guilabel:`Checking the system user and group...`.
+.. code-block:: text
 
-.. rubric:: Description
+   Checking the system user and group...
 
-During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system.
+No user interaction is expected; if everything goes well, you will see this message:
 
-.. rubric:: Steps
+.. code-block:: text
 
-1. If :program:`install-lockss` was invoked with the ``--skip-check-system-user`` option, you will see the message:
+   [success] System user and group present
 
-   .. code-block:: text
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
 
-      [success] Skipping (--skip-check-system-user)
+.. error::
 
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
+   Below are some error conditions you may encounter and what to do about them.
 
-2. If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
+   .. dropdown:: ``lockss`` user or group does not exist
 
-   .. code-block:: text
+      If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
 
-      [ERROR] The lockss user does not exist
+      .. code-block:: text
 
-      [ERROR] The lockss group does not exist
+         [ERROR] The lockss user does not exist
 
-   and :program:`install-lockss` will fail.
+         [ERROR] The lockss group does not exist
 
-   .. admonition:: Troubleshooting
-
-      See the :doc:`user` section to create the ``lockss`` user and group, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
-
-3. Finally, you will see the message:
-
-   .. code-block:: text
-
-      [success] System user and group present
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
+      and :program:`install-lockss` will fail. See the :doc:`user` section to create the ``lockss`` user and group, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
 
 .. _configuring-iptables:
 
@@ -146,83 +112,65 @@ During this phase, :program:`install-lockss` will check that the ``lockss`` user
 Configuring :program:`iptables` for K3s
 ---------------------------------------
 
-.. rubric:: Heading
+During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if applicable [#fniptables]_. This phase begins with the heading:
 
-This phase begins with the heading :guilabel:`Configuring iptables for K3s...`.
+.. code-block:: text
 
-.. rubric:: Description
+   Configuring iptables for K3s...
 
-During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if applicable.
+In many situations, no configuration of :program:`iptables` is needed; you will see one of these messages:
 
-.. rubric:: Steps
+.. code-block:: text
 
-1. If :program:`install-lockss` was invoked with the ``--skip-configure-iptables`` option (implied by ``--skip-install-k3s``), or if no changes to the configuration of :program:`iptables` are necessary, you will see one of these messages:
+   [success] Skipping (iptables is not on the PATH nor run via Alternatives)
+
+   [success] Skipping (iptables version is older than 1.8.0)
+
+   [success] Skipping (iptables version is newer than 1.8.3)
+
+   [success] Skipping (iptables is in legacy mode)
+
+   [success] Skipping (iptables is not run via Alternatives)
+
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
+
+Otherwise, you will receive the following prompt:
+
+:guilabel:`Switch iptables to legacy mode via Alternatives?`
+
+Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
+
+.. warning::
+
+   If you choose to bypass the proposed :program:`iptables` configuration, you will see the warning:
 
    .. code-block:: text
 
-      [success] Skipping (--skip-install-k3s)
+      [Warning] Leaving iptables unchanged; see manual for details
 
-      [success] Skipping (--skip-configure-iptables)
+   and :program:`install-lockss` will immediately proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`). But K3s may malfunction without further intervention; see :doc:`/troubleshooting/iptables` for details.
 
-      [success] Skipping (iptables is not on the PATH nor run via Alternatives)
+.. error::
 
-      [success] Skipping (iptables version is older than 1.8.0)
+   Below are some error conditions you may encounter and what to do about them.
 
-      [success] Skipping (iptables version is newer than 1.8.3)
+   .. dropdown:: :program:`iptables` configuration attempt fails
 
-      [success] Skipping (iptables is in legacy mode)
-
-      [success] Skipping (iptables is not run via Alternatives)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
-
-2. Otherwise, you will receive the following prompt:
-
-   :guilabel:`Switch iptables to legacy mode via Alternatives?`
-
-   Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
-
-   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
-
-   *  You may be prompted for your :program:`sudo` password.
-
-   .. warning::
-
-      If you bypass the proposed :program:`iptables` configuration, you will see the warning:
+      If the :program:`iptables` configuration attempt fails, you will see one of these error messages:
 
       .. code-block:: text
 
-         [Warning] Leaving iptables unchanged; see manual for details
+         [ERROR] Error deactivating ufw
 
-      and :program:`install-lockss` will immediately proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`). But K3s may malfunction without further intervention; see :doc:`/troubleshooting/iptables` for details.
+         [ERROR] Error applying update-alternatives to iptables
 
-3. If the :program:`iptables` configuration attempt fails, you will see one of these error messages:
+         [ERROR] Error applying update-alternatives to ip6tables
 
-   .. code-block:: text
+         [ERROR] Error flushing iptables
 
-      [ERROR] Error deactivating ufw
+         [ERROR] Error reactivating ufw
 
-      [ERROR] Error applying update-alternatives to iptables
-
-      [ERROR] Error applying update-alternatives to ip6tables
-
-      [ERROR] Error flushing iptables
-
-      [ERROR] Error reactivating ufw
-
-   and :program:`install-lockss` will fail.
-
-   .. admonition:: Troubleshooting
-
-      See :doc:`/troubleshooting/iptables` for remediation details.
-
-4. Finally, you will see the message:
-
-   .. code-block:: text
-
-      [success] Configured iptables for K3s
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
+      and :program:`install-lockss` will fail. See :doc:`/troubleshooting/iptables` for remediation details.
 
 .. _configuring-firewalld:
 
@@ -230,73 +178,55 @@ During this phase, :program:`install-lockss` will configure :program:`iptables` 
 Configuring :program:`firewalld` for K3s
 ----------------------------------------
 
-.. rubric:: Heading
+During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if applicable [#fnfirewalld]_. This phase begins with the heading:
 
-This phase begins with the heading :guilabel:`Configuring firewalld for K3s...`.
+.. code-block:: text
 
-.. rubric:: Description
+   Configuring firewalld for K3s...
 
-During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if applicable.
+In many situations, no configuration of :program:`firewalld` is needed; you will see one of these messages:
 
-.. rubric:: Steps
+.. code-block:: text
 
-1. If :program:`install-lockss` was invoked with the ``--skip-configure-firewalld`` option (implied by ``--skip-install-k3s``), or if :program:`firewalld` is not present or is not running, you will see one of these messages:
+   [success] Skipping (firewall-cmd is not on the PATH)
 
-   .. code-block:: text
+   [success] Skipping (firewalld is not running)
 
-      [success] Skipping (--skip-install-k3s)
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`).
 
-      [success] Skipping (--skip-configure-firewalld)
-
-      [success] Skipping (firewall-cmd is not on the PATH)
-
-      [success] Skipping (firewalld is not running)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`).
-
-2. If :program:`firewalld` is running, you will receive the following prompt:
+Otherwise, you will receive the following prompt:
 
    :guilabel:`Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone?`
 
-   Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
+Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
 
-   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
+.. warning::
 
-   *  You may be prompted for your :program:`sudo` password.
+   If you choose to bypass the proposed :program:`firewalld` configuration, you will see the warning:
 
-   .. warning::
+   .. code-block:: text
 
-      If you bypass the proposed :program:`firewalld` configuration, you will see the warning:
+      [Warning] Leaving firewalld unchanged; see manual for details
+
+   and :program:`install-lockss` will immediately proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`). But K3s may malfunction without further intervention; see :doc:`/troubleshooting/firewalld` for details.
+
+.. error::
+
+   Below are some error conditions you may encounter and what to do about them.
+
+   .. dropdown:: :program:`firewalld` configuration attempt fails
+
+      If the :program:`firewalld` configuration attempt fails, you will see one of these error messages:
 
       .. code-block:: text
 
-         [Warning] Leaving firewalld unchanged; see manual for details
+         [ERROR] Could not add 10.42.0.0/16 to firewalld's trusted zone
 
-      and :program:`install-lockss` will immediately proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`). But K3s may malfunction without further intervention; see :doc:`/troubleshooting/firewalld` for details.
+         [ERROR] Could not add 10.43.0.0/16 to firewalld's trusted zone
 
-3. If the :program:`firewalld` configuration attempt fails, you will see one of these error messages:
+         [ERROR] Could not reload firewalld
 
-   .. code-block:: text
-
-      [ERROR] Could not add 10.42.0.0/16 to firewalld's trusted zone
-
-      [ERROR] Could not add 10.43.0.0/16 to firewalld's trusted zone
-
-      [ERROR] Could not reload firewalld
-
-   and :program:`install-lockss` will fail.
-
-   .. admonition:: Troubleshooting
-
-      See :doc:`/troubleshooting/firewalld` for remediation details.
-
-4. Finally, you will see the message:
-
-   .. code-block:: text
-
-      [success] Configured firewalld for K3s
-
-   and :program:`install-lockss` will successfully proceed to the next phase :ref:`configuring-ufw` (:numref:`configuring-ufw`).
+      and :program:`install-lockss` will fail. See :doc:`/troubleshooting/firewalld` for remediation details.
 
 .. _configuring-ufw:
 
@@ -304,131 +234,97 @@ During this phase, :program:`install-lockss` will configure :program:`firewalld`
 Configuring :program:`ufw` for K3s
 ----------------------------------
 
-.. rubric:: Heading
+During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary [#fnufw]_. This phase begins with the heading:
 
-This phase begins with the heading :guilabel:`Configuring firewalld for ufw...`.
+.. code-block:: text
 
-.. rubric:: Description
+   Configuring ufw for K3s...
 
-During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary.
+In many situations, no configuration of :program:`firewalld` is needed; you will see one of these messages:
 
-.. rubric:: Steps
+.. code-block:: text
 
-1. If :program:`install-lockss` was invoked with the ``--skip-configure-ufw`` option (implied by ``--skip-install-k3s``), or if :program:`ufw` is not present or is not active, you will see one of these messages:
+   [success] Skipping (ufw is not on the PATH)
+
+   [success] Skipping (ufw is not active)
+
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`).
+
+Otherwise, you will receive the following prompt:
+
+:guilabel:`Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw?`
+
+Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
+
+.. warning::
+
+   If you choose to bypass the proposed :program:`ufw` configuration, you will see the warning:
 
    .. code-block:: text
 
-      [success] Skipping (--skip-install-k3s)
+      [Warning] Leaving ufw unchanged; see manual for details
 
-      [success] Skipping (--skip-configure-ufw)
+   and :program:`install-lockss` will immediately proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`). But K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
 
-      [success] Skipping (ufw is not on the PATH)
+.. error::
 
-      [success] Skipping (ufw is not active)
+   Below are some error conditions you may encounter and what to do about them.
 
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`).
+   .. dropdown:: :program:`ufw` configuration attempt fails
 
-2. If :program:`ufw` is active, you will receive the following prompt:
-
-   :guilabel:`Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw?`
-
-   Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration or :kbd:`N` to bypass (or hit :kbd:`Enter` to accept the default in square brackets).
-
-   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
-
-   *  You may be prompted for your :program:`sudo` password.
-
-   .. warning::
-
-      If you bypass the proposed :program:`ufw` configuration, you will see the warning:
+      If the :program:`ufw` configuration attempt fails, you will see one of these error messages:
 
       .. code-block:: text
 
-         [Warning] Leaving ufw unchanged; see manual for details
+         [ERROR] Could not allow traffic from 10.42.0.0/16 via ufw
 
-      and :program:`install-lockss` will immediately proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`). But K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
+         [ERROR] Could not allow traffic from 10.43.0.0/16 via ufw
 
-3. If the :program:`ufw` configuration attempt fails, you will see one of these error messages:
+         [ERROR] Could not reload ufw
 
-   .. code-block:: text
-
-      [ERROR] Could not allow traffic from 10.42.0.0/16 via ufw
-
-      [ERROR] Could not allow traffic from 10.43.0.0/16 via ufw
-
-      [ERROR] Could not reload ufw
-
-   and :program:`install-lockss` will fail.
-
-   .. admonition:: Troubleshooting
-
-      See :doc:`/troubleshooting/ufw` for remediation details.
-
-4. Finally, you will see the message:
-
-   .. code-block:: text
-
-      [success] Configured ufw for K3s
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`).
+      and :program:`install-lockss` will fail. See :doc:`/troubleshooting/ufw` for remediation details.
 
 ---------------------------
 Configuring CoreDNS for K3s
 ---------------------------
 
-.. rubric:: Heading
+During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary [#fncoredns]_. This phase begins with the heading:
 
-This phase begins with the heading :guilabel:`Configuring CoreDNS for K3s...`.
+.. code-block:: text
 
-.. rubric:: Description
+   Configuring CoreDNS for K3s...
 
-During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary.
+In many situations, no configuration of :program:`firewalld` is needed; you will see this message:
 
-.. rubric:: Steps
+.. code-block:: text
 
-1. If :program:`install-lockss` was invoked with the ``--skip-configure-coredns`` option (implied by ``--skip-install-k3s``), or if your system's DNS configuration will simply work with CoreDNS, you will see one of these messages:
+   [success] Using system resolv.conf files
 
-   .. code-block:: text
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Installing K3s` (:numref:`Installing K3s`).
 
-      [success] Skipping (--skip-install-k3s)
+Otherwise [#fnforcedns]_, you will receive a message including ``CoreDNS does not allow a loopback address to be given to Kubernetes pods as an upstream DNS server``, and the following prompt:
 
-      [success] Skipping (--skip-configure-dns)
+:guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
-      [success] Using system resolv.conf files
+Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested value will be offered to you in square brackets, consisting of non-loopback IP addresses collected from your machine's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value [#fnyes2]_.
 
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Installing K3s` (:numref:`Installing K3s`).
+.. error::
 
-2. If your system's DNS configuration will not work with CoreDNS, or if :program:`install-lockss` was invoked with the ``--force-dns-prompt`` option, you will receive a message including ``CoreDNS does not allow a loopback address to be given to Kubernetes pods as an upstream DNS server``, and the following prompt:
+   Below are some error conditions you may encounter and what to do about them.
 
-   :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
+   .. dropdown:: CoreDNS configuration attempt fails
 
-   Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested value will be offered to you in square brackets, consisting of non-loopback IP addresses collected from your machine's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value.
+      If the CoreDNS configuration attempt fails, you will see one of these error messages:
 
-   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the suggested value is automatically accepted witout the prompt.
+      .. code-block:: text
 
-3. If the creation of the CoreDNS configuration file fails, you will see error messages similar to these:
+         [ERROR] Could not create /etc/lockss
 
-   .. code-block:: text
+         [ERROR] Error rendering config/templates/k3s/resolv.conf.mustache to config/resolv.conf
 
-      [ERROR] Could not create /etc/lockss
+         [ERROR] Could not copy config/resolv.conf to /etc/lockss/resolv.conf
 
-      [ERROR] Error rendering config/templates/k3s/resolv.conf.mustache to config/resolv.conf
-
-      [ERROR] Could not copy config/resolv.conf to /etc/lockss/resolv.conf
-
-   and :program:`install-lockss` will fail.
-
-   .. admonition:: Troubleshooting
-
-      See :doc:`/troubleshooting/coredns` for remediation details.
-
-4. Finally, you will see the message:
-
-   .. code-block:: text
-
-      [success] Configured CoreDNS for K3s
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Installing K3s` (:numref:`Installing K3s`).
+      and :program:`install-lockss` will fail. See :doc:`/troubleshooting/coredns` for remediation details.
 
 --------------
 Installing K3s
@@ -747,6 +643,88 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 .. [#fnroot]
 
    See :doc:`/sysadmin/root`.
+
+.. [#fnyes]
+
+   If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
+
+.. [#fnyes2]
+
+   If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the suggested value is automatically accepted for you.
+
+.. [#fnprereq]
+
+   If :program:`install-lockss` was invoked with the ``--skip-check-prerequisites`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-check-prerequisites)
+
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`).
+
+.. [#fnuser]
+
+   If :program:`install-lockss` was invoked with the ``--skip-check-system-user`` option, you will see the message:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-check-system-user)
+
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
+
+.. [#fniptables]
+
+   If install-lockss was invoked with the ``--skip-configure-iptables`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-configure-iptables)
+
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
+
+.. [#fnfirewalld]
+
+   If :program:`install-lockss` was invoked with the ``--skip-configure-firewalld`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-configure-firewalld)
+
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`).
+
+.. [#fnufw]
+
+   If :program:`install-lockss` was invoked with the ``--skip-configure-ufw`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-configure-ufw)
+
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`).
+
+.. [#fncoredns]
+
+   If :program:`install-lockss` was invoked with the ``--skip-configure-coredns`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+      [success] Skipping (--skip-configure-dns)
+
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Installing K3s` (:numref:`Installing K3s`).
+
+.. [#fnforcedns]
+
+   Or if your :program:`install-lockss` was invoked with the ``--force-dns-prompt`` option.
 
 .. [#fnk3sdatadirnfs]
 
