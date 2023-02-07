@@ -50,7 +50,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
 .. error::
 
-   Below are some error conditions you may encounter and what to do about them.
+   Below are some error conditions you may encounter here and what to do about them.
 
    .. dropdown:: User namespaces must be enabled in RHEL/CentOS 7
 
@@ -92,7 +92,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
 .. error::
 
-   Below are some error conditions you may encounter and what to do about them.
+   Below are some error conditions you may encounter here and what to do about them.
 
    .. dropdown:: ``lockss`` user or group does not exist
 
@@ -140,7 +140,7 @@ Otherwise, you will receive the following prompt:
 
 Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
 
-.. warning::
+.. caution::
 
    If you choose to bypass the proposed :program:`iptables` configuration, you will see the warning:
 
@@ -148,11 +148,11 @@ Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or ente
 
       [Warning] Leaving iptables unchanged; see manual for details
 
-   and :program:`install-lockss` will immediately proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`). But K3s may malfunction without further intervention; see :doc:`/troubleshooting/iptables` for details.
+   and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention; see :doc:`/troubleshooting/iptables` for details.
 
 .. error::
 
-   Below are some error conditions you may encounter and what to do about them.
+   Below are some error conditions you may encounter here and what to do about them.
 
    .. dropdown:: :program:`iptables` configuration attempt fails
 
@@ -200,7 +200,7 @@ Otherwise, you will receive the following prompt:
 
 Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
 
-.. warning::
+.. caution::
 
    If you choose to bypass the proposed :program:`firewalld` configuration, you will see the warning:
 
@@ -208,11 +208,11 @@ Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or ent
 
       [Warning] Leaving firewalld unchanged; see manual for details
 
-   and :program:`install-lockss` will immediately proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`). But K3s may malfunction without further intervention; see :doc:`/troubleshooting/firewalld` for details.
+   and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention; see :doc:`/troubleshooting/firewalld` for details.
 
 .. error::
 
-   Below are some error conditions you may encounter and what to do about them.
+   Below are some error conditions you may encounter here and what to do about them.
 
    .. dropdown:: :program:`firewalld` configuration attempt fails
 
@@ -256,7 +256,7 @@ Otherwise, you will receive the following prompt:
 
 Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
 
-.. warning::
+.. caution::
 
    If you choose to bypass the proposed :program:`ufw` configuration, you will see the warning:
 
@@ -264,11 +264,11 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kb
 
       [Warning] Leaving ufw unchanged; see manual for details
 
-   and :program:`install-lockss` will immediately proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`). But K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
+   and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
 
 .. error::
 
-   Below are some error conditions you may encounter and what to do about them.
+   Below are some error conditions you may encounter here and what to do about them.
 
    .. dropdown:: :program:`ufw` configuration attempt fails
 
@@ -310,7 +310,7 @@ Enter a semicolon-separated list of DNS server IP addresses that are *not* loopb
 
 .. error::
 
-   Below are some error conditions you may encounter and what to do about them.
+   Below are some error conditions you may encounter here and what to do about them.
 
    .. dropdown:: CoreDNS configuration attempt fails
 
@@ -330,148 +330,124 @@ Enter a semicolon-separated list of DNS server IP addresses that are *not* loopb
 Installing K3s
 --------------
 
-.. rubric:: Heading
+During this phase, :program:`install-lockss` will install K3s |K3S_PATCH|, if applicable [#fnk3sinstall]_. This phase begins with the heading:
 
-This phase begins with the heading :guilabel:`Installing K3s...`.
+.. code-block:: text
 
-.. rubric:: Description
+   Installing K3s...
 
-During this phase, :program:`install-lockss` will install K3s.
+This phase consists of these steps:
 
-.. rubric:: Steps
+1. First, :program:`install-lockss` will determine if K3s |K3S_PATCH| needs to be installed:
 
-1. If :program:`install-lockss` was invoked with the ``--skip-install-k3s`` option, you will see the message:
+   *  If K3s is not present, :program:`install-lockss` will display ``K3s is not present``, and *will* install K3s |K3S_PATCH|.
 
-   .. code-block:: text
+   *  If an older version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {<installed_version>} is older than expected version {<expected_version>}`, and you will receive the following prompt:
 
-      [success] Skipping (--skip-install-k3s)
+      :guilabel:`Upgrade K3s from <installed_version> to <expected_version>?`
 
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`).
+      Enter :kbd:`Y` and :program:`install-lockss` *will* install K3s |K3S_PATCH|, or enter :kbd:`N` and :program:`install-lockss` *will not* install K3s |K3S_PATCH|, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_.
 
-2. Next, :program:`install-lockss` will determine if K3s needs to be installed or upgraded. There are five cases:
+   *  If the expected version of K3s is already present, :program:`install-lockss` will display :samp:`K3s version {<installed_version>} is already installed; skipping`, and *will not* install K3s |K3S_PATCH|.
 
-   *  Case 1: If K3s is not present, :program:`install-lockss` will display ``K3s is not present``, and will install K3s.
+   *  If a more recent version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {<installed_version>} is more recent than expected version {<expected_version>}`, and *will not* install K3s |K3S_PATCH|.
 
-   *  Case 2: If the expected version of K3s is already present, :program:`install-lockss` will display :samp:`K3s version {installed_version} is already installed; skipping`, and will *not* install K3s.
+   *  If K3s is detected but the installed and expected version numbers cannot be compared automatically, :program:`install-lockss` will display :samp:`[Warning] Detected K3s version {<installed_version>}, expected version {<expected_version>}, comparison failure, skipping`, and :program:`install-lockss` *will not* install K3s.
 
-   *  Case 3: If a more recent version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {installed_version} is more recent than expected version {expected_version}`, and will *not* install K3s.
+2. If :program:`install-lockss` determined it *will not* install K3s |K3S_PATCH|, you will see the confirmation ``Not installing K3s``, and nothing will happen in this step.
 
-   *  Case 4: If an older version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {installed_version} is older than expected version {expected_version}` and you will receive the following prompt:
+   But if :program:`install-lockss` determined it *will* install K3s |K3S_PATCH|, you will see the confirmation :samp:`Installing K3s version {<expected_version>}`, and this step will proceed with two sub-steps:
 
-      :guilabel:`Upgrade K3s from {installed_version} to {expected_version}?`
+   a. First, :program:`install-lockss` will warn you that if the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) is space-limited, you should specify a different directory. You will see the following prompt:
 
-      Enter :kbd:`Y` and :program:`install-lockss` will install the newer K3s version, or :kbd:`N` and :program:`install-lockss` will *not* install the newer K3s version (or hit :kbd:`Enter` to accept the default in square brackets).
+      :guilabel:`K3s state data directory`
 
-      *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
+      Enter a suitable directory path for the K3s state data directory, or simply hit :kbd:`Enter` to accept the default in square brackets [#fnyes2]_ [#fnk3sdatadir]_.
 
-   *  Case 5: If K3s is detected but the installed and expected version numbers cannot be compared automatically, you will see the following warning:
+      Then :program:`install-lockss` will attempt to determine the filesystem type of the selected K3s state data directory. In many situations, it will simply display the filesystem type in a message similar to this (for example, :samp:`{<fs_type>}` might be ``ext4``):
 
-      :samp:`[Warning] Detected K3s version {installed_version}, expected version {expected_version}, comparison failure, skipping`
+      :samp:`Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is {<fs_type>}; proceeding`
 
-      and :program:`install-lockss` will *not* install K3s.
+      .. warning::
 
-   If :program:`install-lockss` determines that it will *not* install K3s, it will confirm ``Not installing K3s``, then will :ref:`skip the next 3 steps <write-k8s-config>`.
+         Below are some warning messages you may see here and how to respond to them.
 
-   Otherwise, :program:`install-lockss` will confirm :samp:`Installing K3s version {expected_version}` and will simply proceed to the next step.
+         .. dropdown:: Filesystem type of K3s state data directory unknown
 
-3. First, :program:`install-lockss` will warn you that if the directory K3s uses to store state data (by default :file:`/var/lib/rancher/k3s`) is space-limited, you should specify a different directory. You will see the following prompt:
+            If the filesystem type backing the K3s state data directory cannot be inferred automatically, you will see the warning:
 
-   :guilabel:`K3s state data directory`
+            :samp:`[Warning] Filesystem type of {<k3s_dir>} unknown (findmnt not present); proceeding`
 
-   Enter a suitable directory path for the K3s state data directory, or simply hit :kbd:`Enter` to accept the default in square brackets.
+            and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s state data directory is one that does not work with K3s, such as NFS, or XFS with legacy ``ftype=0``; see the error conditions below.
 
-   *  If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt.
+         .. dropdown:: Filesystem type of K3s state data directory is XFS but ``ftype`` unknown
 
-   *  If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the default is automatically used without the prompt.
-
-4. Next, :program:`install-lockss` will detect the filesystem type backing the K3s state data directory, because some filesystem types (like NFS, or XFS with legacy ``ftype=0``) are not suitable or require special handling:
-
-   a. If the filesystem type backing the K3s state data directory cannot be inferred automatically, you will see the warning:
-
-      :samp:`[Warning] Filesystem type of {k3s_dir} unknown (findmnt not present); proceeding`
-
-      and :program:`install-lockss` will :ref:`proceed to the next step <write-k8s-config>`.
-
-   b. If the filesystem type backing the K3s state data directory is NFS, you will see the error message:
-
-      :samp:`[ERROR] Filesystem type of {k3s_dir} ({k3s_mountpoint}) is NFS; see manual`
-
-      and :program:`install-lockss` will fail.
-
-   c. If the filesystem type backing the K3s state data directory is XFS, :program:`install-lockss` will determine its ``ftype`` (an internal characteristic):
-
-      (i) If the XFS filesystem backing the K3s state data directory has legacy ``ftype=0``, you will see the error message:
-
-         :samp:`[ERROR] Filesystem type of {k3s_dir} ({k3s_mountpoint}) is XFS with legacy ftype=0; see manual for workaround`
-
-         and :program:`install-lockss` will fail.
-
-      (ii) If the XFS filesystem backing the K3s state data directory does not have legacy ``ftype=0``, you will see one of these messages:
-
-         :samp:`Filesystem type of {k3s_dir} ({k3s_mountpoint}) is XFS with ftype=1; proceeding`
-
-         :samp:`Filesystem type of {k3s_dir} ({k3s_mountpoint}) is XFS but not with legacy ftype=0; proceeding`
-
-         and :program:`install-lockss` will :ref:`proceed to the next step <write-k8s-config>`.
-
-      (iii) If the ``ftype`` of the XFS filesystem backing the K3s state data directory cannot be inferred automatically, you will see the warning:
+            If the ``ftype`` of the XFS filesystem backing the K3s state data directory cannot be inferred automatically, you will see the warning:
 
             :samp:`[Warning] Filesystem type of {k3s_dir} ({k3s_mountpoint}) is XFS but ftype unknown (xfs_info not present); proceeding`
 
-         and :program:`install-lockss` will :ref:`proceed to the next step <write-k8s-config>`.
+            and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s state data directory is XFS with legacy ``ftype=0``; see the corresponding error condition below.
 
-      (iv) Otherwise, :program:`install-lockss` will display the filesystem type backing the K3s state data directory in a message similar to this:
+      .. error::
 
-         :samp:`Filesystem type of {k3s_dir} ({k3s_mountpoint}) is {fs_type}; proceeding`
+         Below are some error conditions you may encounter here and what to do about them.
 
-         (for some filesystem type :samp:`{fs_type}`, for example ``ext4``), and will :ref:`proceed to the next step <write-k8s-config>`.
+         .. dropdown:: Filesystem type of K3s state data directory is NFS
 
-5. Finally, the K3s Installer will be downloaded from https://get.k3s.io/ and invoked with suitable options.
+            If the filesystem type backing the K3s state data directory is NFS, you will see the error message:
 
-   Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
+            :samp:`[ERROR] Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is NFS; see manual`
 
-   If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail.
+            and :program:`install-lockss` will fail. It is not possible to run K3s with a state data directory backed by NFS [#fnk3sdatadirnfs]_. Re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by NFS.
 
-   .. admonition:: Troubleshooting
+         .. dropdown:: Filesystem type of K3s state data directory is XFS with legacy ``ftype=0``
 
-      Error messages that the K3s Installer may display include:
+            If the filesystem type backing the K3s state data directory is XFS with legacy ``ftype=0``, you will see the error message:
 
-      .. code-block:: text
+            :samp:`[ERROR] Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is XFS with legacy ftype=0; see manual for workaround`
 
-         [ERROR]  Failed to apply container_runtime_exec_t to /usr/local/bin/k3s, please install:
-             yum install -y container-selinux selinux-policy-base
-             yum install -y https://rpm.rancher.io/k3s/stable/common/centos/8/noarch/k3s-selinux-0.3-0.el8.noarch.rpm
+            and :program:`install-lockss` will fail. Contemporary XFS filesystems with modern ``ftype=1`` work well with K3s, but older XFS filesystems with legacy ``ftype=0`` are not compatible. Ideally, re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by XFS with legacy ``ftype=0``. Alternatively, you can read about a workaround in :doc:`/troubleshooting/xfs`.
 
-         Error: Package: k3s-selinux-0.3-0.el7.noarch (rancher-k3s-common-stable)
-                    Requires: container-selinux >= 2.107-3
-          You could try using --skip-broken to work around the problem
-          You could try running: rpm -Va --nofiles --nodigest
+   b. Then :program:`install-lockss` will download the K3s Installer from https://get.k3s.io/ and invoke it with suitable options. This may take several minutes, during which the output will be that of the K3s Installer.
 
-      See :doc:`/troubleshooting/k3s-installer` for remediation details.
+      Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
 
-.. _write-k8s-config:
+      .. error::
 
-6. Whether or not K3s was installed, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg`, relative to the LOCKSS Installer home directory. If the creation of the file fails, you will see one of these error messages:
+         If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail. See :doc:`/troubleshooting/k3s-installer` for remediation details.
 
-   .. code-block:: text
+         .. dropdown:: Sample error messages from the K3s Installer
 
-      [ERROR] Could not write k8s.cfg
+            Error messages that the K3s Installer may display include:
 
-      [ERROR] Could not append to k8s.cfg
+            .. code-block:: text
 
-   and :program:`install-lockss` will fail.
+               [ERROR]  Failed to apply container_runtime_exec_t to /usr/local/bin/k3s, please install:
+                   yum install -y container-selinux selinux-policy-base
+                   yum install -y https://rpm.rancher.io/k3s/stable/common/centos/8/noarch/k3s-selinux-0.3-0.el8.noarch.rpm
 
-   .. admonition:: Troubleshooting
+                Error: Package: k3s-selinux-0.3-0.el7.noarch (rancher-k3s-common-stable)
+                          Requires: container-selinux >= 2.107-3
+                You could try using --skip-broken to work around the problem
+                You could try running: rpm -Va --nofiles --nodigest
 
-      Check file permission mismatches between the user running :program:`install-lockss` and the :file:`lockss-installer/config` directory, then try again.
+3. Whether or not K3s was installed, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg`, relative to the LOCKSS Installer home directory.
 
-7. Finally, you will see the message:
+   .. error::
 
-   .. code-block:: text
+      Below are some error conditions you may encounter here and what to do about them.
 
-      [success] Installed K3s
+      .. dropdown:: Could not write or append to :file:`k8s.cfg`
 
-   and :program:`install-lockss` will successfully proceed to the next phase (:ref:`Testing the K3s Node`).
+         If the creation of the file fails, you will see one of these error messages:
+
+         .. code-block:: text
+
+            [ERROR] Could not write k8s.cfg
+
+            [ERROR] Could not append to k8s.cfg
+
+         and :program:`install-lockss` will fail. Check for file permission mismatches between the user running :program:`install-lockss` and the :file:`lockss-installer/config` directory, then try again.
 
 --------------------
 Testing the K3s Node
@@ -725,6 +701,20 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 .. [#fnforcedns]
 
    Or if your :program:`install-lockss` was invoked with the ``--force-dns-prompt`` option.
+
+.. [#fnk3sinstall]
+
+   If :program:`install-lockss` was invoked with the ``--skip-install-k3s`` option, you will see the message:
+
+   .. code-block:: text
+
+      [success] Skipping (--skip-install-k3s)
+
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`).
+
+.. [#fnk3sdatadir]
+
+   If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt.
 
 .. [#fnk3sdatadirnfs]
 
