@@ -18,7 +18,7 @@ Follow these instructions to install Git:
 
    .. tab-set::
 
-      .. tab-item:: AlmaLinux
+      .. tab-item:: AlmaLinux OS
          :sync: alma
 
          .. include:: git-dnf.rst

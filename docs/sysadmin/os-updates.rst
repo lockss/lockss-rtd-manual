@@ -19,7 +19,7 @@ If you wish to update software packages manually, select your operating system b
 .. tab-set::
    :class: sd-bg-light
 
-   .. tab-item:: AlmaLinux
+   .. tab-item:: AlmaLinux OS
       :sync: alma
 
       .. include:: os-updates-dnf.rst

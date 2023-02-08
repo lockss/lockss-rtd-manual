@@ -46,7 +46,7 @@ This will run only the :ref:`configuring-firewalld` phase of :program:`install-l
 
 .. [#fnreference]
 
-   For operating systems in the RHEL family (CentOS, Rocky Linux, AlmaLinux...), the action recommended by the K3s manual is to disable :program:`firewalld` entirely (see https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux), but :program:`install-lockss` takes a lighter approach commonly used in the K3s community.
+   For operating systems in the RHEL family (CentOS, Rocky Linux, AlmaLinux OS...), the action recommended by the K3s manual is to disable :program:`firewalld` entirely (see https://rancher.com/docs/k3s/latest/en/advanced/#additional-preparation-for-red-hat-centos-enterprise-linux), but :program:`install-lockss` takes a lighter approach commonly used in the K3s community.
 
    References:
 

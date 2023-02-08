@@ -11,7 +11,7 @@ Select your operating system below and follow the instructions as root [#fnroot]
 .. tab-set::
    :class: sd-bg-light
 
-   .. tab-item:: AlmaLinux
+   .. tab-item:: AlmaLinux OS
       :sync: alma
 
       .. include:: curl-dnf.rst
