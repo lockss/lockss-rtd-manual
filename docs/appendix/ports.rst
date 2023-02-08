@@ -27,6 +27,8 @@ Port  Component
 24641 LOCKSS Metadata Extraction Service - UI port
 24650 LOCKSS Metadata Service - REST port
 24651 LOCKSS Metadata Service - UI port
+24660 LOCKSS Crawler Service - REST port
+24661 LOCKSS Crawler Service - UI port
 24670 LOCKSS Proxy
 24671 *reserved*
 24672 LOCKSS Audit Proxy
