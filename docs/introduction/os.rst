@@ -6,20 +6,20 @@ The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compati
 
 The LOCKSS team has successfully tested the LOCKSS system installation process on many flavors of Linux, some of which are listed below:
 
-.. dropdown:: AlmaLinux
+.. dropdown:: AlmaLinux OS
 
-   The LOCKSS system is compatible with `AlmaLinux <https://almalinux.org/>`_:
+   The LOCKSS system is compatible with `AlmaLinux OS <https://almalinux.org/>`_:
 
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   AlmaLinux           9.1       2027-05-31     2032-05-31
-   AlmaLinux           9.0       2027-05-31     2032-05-31
-   AlmaLinux           8.7       2024-05-31     2029-05-31
-   AlmaLinux           8.6       2024-05-31     2029-05-31
-   AlmaLinux           8.5       2024-05-31     2029-05-31
-   AlmaLinux           8.4       2024-05-31     2029-05-31
-   AlmaLinux           8.3       2024-05-31     2029-05-31
+   AlmaLinux OS        9.1       2027-05-31     2032-05-31
+   AlmaLinux OS        9.0       2027-05-31     2032-05-31
+   AlmaLinux OS        8.7       2024-05-31     2029-05-31
+   AlmaLinux OS        8.6       2024-05-31     2029-05-31
+   AlmaLinux OS        8.5       2024-05-31     2029-05-31
+   AlmaLinux OS        8.4       2024-05-31     2029-05-31
+   AlmaLinux OS        8.3       2024-05-31     2029-05-31
    =================== ========= ============== ================ =====
 
 .. dropdown:: Arch Linux
