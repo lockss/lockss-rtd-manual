@@ -642,15 +642,13 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
 .. [#fnuser]
 
-   .. compound::
+   If :program:`install-lockss` was invoked with the ``--skip-check-system-user`` option, you will see the message:
 
-      If :program:`install-lockss` was invoked with the ``--skip-check-system-user`` option, you will see the message:
+   .. code-block:: text
 
-      .. code-block:: text
+      [success] Skipping (--skip-check-system-user)
 
-         [success] Skipping (--skip-check-system-user)
-
-      and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
+   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
 
 .. [#fniptables]
 
