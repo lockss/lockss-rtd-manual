@@ -29,7 +29,6 @@
 # Sphinx itself
 # https://pypi.org/project/Sphinx/
 # https://www.sphinx-doc.org/
-docutils==0.17.1
 sphinx==5.3.0
 
 # The Sphinx theme by Read The Docs
