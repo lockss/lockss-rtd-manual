@@ -1,4 +1,4 @@
-# Copyright (c) 2000-2022, Board of Trustees of Leland Stanford Jr. University
+# Copyright (c) 2000-2023, Board of Trustees of Leland Stanford Jr. University
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -29,7 +29,8 @@
 # Sphinx itself
 # https://pypi.org/project/Sphinx/
 # https://www.sphinx-doc.org/
-sphinx
+docutils<0.18
+sphinx<6
 
 # The Sphinx theme by Read The Docs
 # https://pypi.org/project/sphinx-rtd-theme/
