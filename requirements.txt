@@ -29,7 +29,6 @@
 # Sphinx itself
 # https://pypi.org/project/Sphinx/
 # https://www.sphinx-doc.org/
-docutils==0.17.1
 sphinx==5.3.0
 
 # The Sphinx theme by Read The Docs
@@ -40,7 +39,7 @@ sphinx-rtd-theme==1.1.1
 # The sphinx_tabs.tabs extension, to make tabbed panes
 # https://pypi.org/project/sphinx-tabs/
 # https://sphinx-tabs.readthedocs.io/
-sphinx-tabs==3.4.1
+sphinx-tabs==3.4.0
 
 # The sphinxcontrib.email extension, to obfuscate mailto links
 # https://pypi.org/project/sphinxcontrib-email/
