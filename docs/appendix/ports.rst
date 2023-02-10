@@ -34,6 +34,7 @@ Port  Component
 24672 LOCKSS Audit Proxy
 24673 *reserved*
 24674 (**UDP**) ICP server
+24675 LOCKSS SOAP Compatibility Service - SOAP port
 24680 LOCKSS Content Server (ServeContent)
 24681 Pywb replay engine
 24682 *reserved* (OpenWayback)
