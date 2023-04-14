@@ -29,7 +29,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   Arch Linux                                                    :bdg-info:`rolling updates`
+   Arch Linux                                                    :bdg-info:`rolling release`
    =================== ========= ============== ================ =====
 
 .. dropdown:: CentOS
@@ -43,7 +43,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   CentOS Stream                                                 :bdg-info:`rolling updates`
+   CentOS Stream                                                 :bdg-info:`rolling release`
    CentOS Linux        7.9       2020-08-06     2024-06-30       :bdg-danger:`end of life`
    CentOS Linux        7.8       2020-08-06     2024-06-30       :bdg-danger:`end of life`
    CentOS Linux        7.7       2020-08-06     2024-06-30       :bdg-danger:`end of life`
@@ -67,20 +67,20 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    Debian              11.2      2024-07-01     2026-06-30
    Debian              11.1      2024-07-01     2026-06-30
    Debian              11.0      2024-07-01     2026-06-30
-   Debian              10.13     2022-09-10     2024-06-30
-   Debian              10.12     2022-09-10     2024-06-30
-   Debian              10.11     2022-09-10     2024-06-30
-   Debian              10.10     2022-09-10     2024-06-30
-   Debian              10.9      2022-09-10     2024-06-30
-   Debian              10.8      2022-09-10     2024-06-30
-   Debian              10.7      2022-09-10     2024-06-30
-   Debian              10.6      2022-09-10     2024-06-30
-   Debian              10.5      2022-09-10     2024-06-30
-   Debian              10.4      2022-09-10     2024-06-30
-   Debian              10.3      2022-09-10     2024-06-30
-   Debian              10.2      2022-09-10     2024-06-30
-   Debian              10.1      2022-09-10     2024-06-30
-   Debian              10.0      2022-09-10     2024-06-30
+   Debian              10.13     2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.12     2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.11     2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.10     2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.9      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.8      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.7      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.6      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.5      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.4      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.3      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.2      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.1      2022-09-10     2024-06-30       :bdg-danger:`end of life`
+   Debian              10.0      2022-09-10     2024-06-30       :bdg-danger:`end of life`
    =================== ========= ============== ================ =====
 
 .. dropdown:: EuroLinux
@@ -134,7 +134,7 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   OpenSUSE Tumbleweed                                           :bdg-info:`rolling updates`
+   OpenSUSE Tumbleweed                                           :bdg-info:`rolling release`
    OpenSUSE Leap       15.4      2023-12-01     2023-12-01
    =================== ========= ============== ================ =====
 
@@ -200,10 +200,10 @@ The LOCKSS team has successfully tested the LOCKSS system installation process o
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   Scientific Linux    7.9       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
-   Scientific Linux    7.8       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
-   Scientific Linux    7.7       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
-   Scientific Linux    7.6       2024-06-30     2024-06-30       :bdg-danger:`obsolescent`
+   Scientific Linux    7.9       2024-06-30     2024-06-30       :bdg-warning:`obsolescent`
+   Scientific Linux    7.8       2024-06-30     2024-06-30       :bdg-warning:`obsolescent`
+   Scientific Linux    7.7       2024-06-30     2024-06-30       :bdg-warning:`obsolescent`
+   Scientific Linux    7.6       2024-06-30     2024-06-30       :bdg-warning:`obsolescent`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Ubuntu
