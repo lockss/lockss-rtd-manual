@@ -4,15 +4,15 @@ Release Notes
 
 .. _latest:
 
--------------------
-LOCKSS 2.0.70-beta1
--------------------
+--------------------
+LOCKSS 2.0.70-alpha7
+--------------------
 
 .. COMMENT RELEASEDATE
 
 Released: NOT YET RELEASED
 
-LOCKSS 2.0.70-beta1 is the first release of the LOCKSS 2.0-beta1 system.
+LOCKSS 2.0.70-alpha7 is the first release of the LOCKSS 2.0-alpha7 system.
 
 .. rubric:: Release Notes
 
@@ -20,9 +20,9 @@ FIXME (insert release notes here)
 
 .. rubric:: Component Versions
 
-LOCKSS 2.0.70-beta1 consists of a configurable set of the following components:
+LOCKSS 2.0.70-alpha7 consists of a configurable set of the following components:
 
-*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.70-beta1
+*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.70-alpha7
 
 *  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.14.0
 

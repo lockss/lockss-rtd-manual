@@ -11,7 +11,7 @@ NOT YET RELEASED LOCKSS |LATEST_MINOR| System Manual
 .. COMMENT RELEASEDATE (also substitution doesn't work here)
 
 .. toctree::
-   :caption: NOT YET RELEASED LOCKSS 2.0-beta1 System Manual
+   :caption: NOT YET RELEASED LOCKSS 2.0-alpha7 System Manual
    :hidden:
    :numbered:
 

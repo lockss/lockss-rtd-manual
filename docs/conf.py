@@ -83,8 +83,8 @@ intersphinx_mapping = {
 
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
-    'LATEST_MINOR': '2.0-beta1',
-    'LATEST_PATCH': '2.0.70-beta1',
+    'LATEST_MINOR': '2.0-alpha7',
+    'LATEST_PATCH': '2.0.70-alpha7',
     'PREVIOUS_MINOR': '2.0-alpha6',
     'PREVIOUS_PATCH': '2.0.61-alpha6',
     'K8S_MINOR': '1.21',
@@ -127,7 +127,7 @@ html_css_files = [
 master_doc = 'index'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
-html_logo = 'images/lockss-2.0-beta1_200.png'
+html_logo = 'images/lockss-2.0-alpha7_200.png'
 
 # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html
 html_theme_options = {
