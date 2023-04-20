@@ -18,7 +18,7 @@ Enter a semicolon-separated list of DNS server IP addresses that are *not* loopb
 Post-Installation Changes to DNS
 --------------------------------
 
-If the DNS settings of your system change after K3s is initially installed (for example if DNS servers are added or removed), run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
+If the DNS settings of your system change after K3s is initially installed (for example if DNS servers are added or removed), run this command (which is relative to the :ref:`LOCKSS Installer Directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
 
 .. code-block:: shell
 

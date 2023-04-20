@@ -28,7 +28,7 @@ The :program:`firewalld` configuration attempted by :program:`install-lockss` is
 Post-Installation Changes to :program:`ufw`
 -------------------------------------------
 
-If your system did not initially use :program:`ufw` at the time K3s was installed, but later does (for example because :program:`ufw` becomes enabled), run this command (which is relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
+If your system did not initially use :program:`ufw` at the time K3s was installed, but later does (for example because :program:`ufw` becomes enabled), run this command (which is relative to the :ref:`LOCKSS Installer Directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
 
 .. code-block:: shell
 

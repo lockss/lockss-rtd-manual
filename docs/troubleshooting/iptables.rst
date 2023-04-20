@@ -40,7 +40,7 @@ The remediation attempted by :program:`install-lockss` is equivalent to:
 Post-Installation Changes to :program:`iptables`
 ------------------------------------------------
 
-If your system did not initially need an adjustment for :program:`iptables` at the time K3s was installed, but later does (for example because :program:`iptables` is upgraded from a pre-1.8.0 version to version 1.8.0 or later), run this command (relative to the :ref:`lockss-installer-directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
+If your system did not initially need an adjustment for :program:`iptables` at the time K3s was installed, but later does (for example because :program:`iptables` is upgraded from a pre-1.8.0 version to version 1.8.0 or later), run this command (relative to the :ref:`LOCKSS Installer Directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
 
 .. code-block:: shell
 
