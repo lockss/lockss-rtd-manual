@@ -24,4 +24,4 @@ Installing the LOCKSS System
 
    user
    downloading
-   installer
+   running
