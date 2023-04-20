@@ -1,4 +1,4 @@
-To install :program:`wget`, run this :program:`pacman` command (as ``root``):
+To install Wget with Pacman, run this command (as ``root``):
 
 .. code-block:: shell
 

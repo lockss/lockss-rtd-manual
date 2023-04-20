@@ -1,4 +1,4 @@
-To install :program:`curl`, run this :program:`yum` command (as ``root``):
+To install Curl with Yum, run thiscommand (as ``root``):
 
 .. code-block:: shell
 

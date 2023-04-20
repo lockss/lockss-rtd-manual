@@ -1,4 +1,4 @@
-To install :program:`curl`, run this :program:`pacman` command (as ``root``):
+To install Curl with Pacman, run this command (as ``root``):
 
 .. code-block:: shell
 

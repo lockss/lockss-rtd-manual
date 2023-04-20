@@ -1,4 +1,4 @@
-To install Curl with Apt, follow these steps (as ``root``):
+To install HTTPie with Apt, follow these instructions (as ``root``):
 
 1. Run this :program:`apt` command:
 
@@ -10,10 +10,10 @@ To install Curl with Apt, follow these steps (as ``root``):
 
    .. code-block:: shell
 
-      apt install --assume-yes curl
+      apt install --assume-yes httpie
 
    or equivalently:
 
    .. code-block:: shell
 
-      apt -y install curl
+      apt -y install httpie

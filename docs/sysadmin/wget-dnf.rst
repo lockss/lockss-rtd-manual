@@ -1,4 +1,4 @@
-To install :program:`wget`, run this :program:`dnf` command (as ``root``):
+To install Wget with Dnf, run this command (as ``root``):
 
 .. code-block:: shell
 

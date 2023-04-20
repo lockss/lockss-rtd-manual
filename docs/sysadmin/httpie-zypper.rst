@@ -1,4 +1,4 @@
-To install Wget with Zypper, run these commands (as ``root``):
+To install HTTPie with Zypper, run these commands (as ``root``):
 
 1. Run this :program:`zypper` command:
 
@@ -10,10 +10,10 @@ To install Wget with Zypper, run these commands (as ``root``):
 
    .. code-block:: shell
 
-      zypper --non-interactive install wget
+      zypper --non-interactive install httpie
 
    or equivalently:
 
    .. code-block:: shell
 
-      zypper -n install wget
+      zypper -n install httpie

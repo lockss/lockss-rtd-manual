@@ -1,4 +1,4 @@
-To install :program:`curl`, run this :program:`dnf` command (as ``root``):
+To install Curl with Dnf, run this command (as ``root``):
 
 .. code-block:: shell
 

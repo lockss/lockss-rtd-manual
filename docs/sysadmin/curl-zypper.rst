@@ -1,15 +1,19 @@
-To install :program:`curl`, run these :program:`zypper` (as ``root``):
+To install Curl with Zypper, follow these steps (as ``root``):
 
-.. code-block:: shell
+1. Run this :program:`zypper` command:
 
-   zypper refresh
+   .. code-block:: shell
 
-   zypper --non-interactive install curl
+      zypper refresh
 
-or equivalently:
+2. Run this :program:`zypper` command:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-   zypper refresh
+      zypper --non-interactive install curl
 
-   zypper -n install curl
+   or equivalently:
+
+   .. code-block:: shell
+
+      zypper -n install curl

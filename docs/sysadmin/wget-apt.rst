@@ -1,4 +1,4 @@
-To install :program:`wget`, follow these instructions (as ``root``):
+To install Wget with Apt, follow these steps (as ``root``):
 
 1. Run this :program:`apt` command:
 

@@ -1,8 +1,10 @@
-==========================
-Installing :program:`curl`
-==========================
+===============
+Installing Curl
+===============
 
-Downloading and running the LOCKSS Installer requires either :program:`curl` or :program:`wget`. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version`` or ``wget --version`` and verifying that the output is not an error message. This section describes how to install :program:`curl` if necessary. (If you prefer to install :program:`wget`, see :doc:`wget`.)
+:doc:`/installing/downloading` requires `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version``, and seeing which ones do not output an error message.
+
+This section describes how to install `Curl <https://curl.se/>`_ if necessary.
 
 Select your operating system below and follow the instructions as root [#fnroot]_:
 

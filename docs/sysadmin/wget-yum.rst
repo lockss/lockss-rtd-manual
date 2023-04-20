@@ -1,4 +1,4 @@
-To install :program:`wget`, run this :program:`yum` command (as ``root``):
+To install Wget with Yum, run this command (as ``root``):
 
 .. code-block:: shell
 
