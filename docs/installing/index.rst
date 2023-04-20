@@ -23,5 +23,5 @@ Installing the LOCKSS System
    :maxdepth: 1
 
    user
-   downloader
+   downloading
    installer
