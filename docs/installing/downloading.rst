@@ -56,6 +56,8 @@ This will download the LOCKSS Installer into the :ref:`default-lockss-installer-
 
 .. tip::
 
+   Below are some advanced tips for this section.
+
    .. dropdown:: Inspecting the LOCKSS Downloader before running it
 
       For security purposes, you may wish to inspect the LOCKSS Downloader before executing it.
