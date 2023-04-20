@@ -6,7 +6,9 @@ Running the LOCKSS Installer
 
    Commands in this section are run as ``root``  [#fnroot]_.
 
-The next task is to run the LOCKSS Installer. The installation process goes through various phases:
+**The next task is to run the LOCKSS Installer.**
+
+The installation process goes through various phases:
 
 *  Checking that some prerequisites to install K3s are met. No user interaction is expected.
 
@@ -22,19 +24,72 @@ The next task is to run the LOCKSS Installer. The installation process goes thro
 
 After the LOCKSS Installer succeeds, you can also optionally run the K3s Configuration Checker.
 
-To start the installation process, run this command (relative to the :ref:`lockss-installer-directory`) as ``root``  [#fnroot]_:
+-----------------------------
+Invoking the LOCKSS Installer
+-----------------------------
+
+To start the installation process, run this command (relative to the :ref:`LOCKSS Installer Directory`) as ``root``  [#fnroot]_:
 
 .. code-block:: shell
 
    scripts/install-lockss
 
-The installer will run through its phases, each of which is described in its own section below, starting with :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`).
+The installer will run through its phases, each of which is described in its own section below from :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`) to :ref:`Completion of the LOCKSS Installation Process` (:numref:`Completion of the LOCKSS Installation Process`).
+
+.. tip::
+
+   Below are some advanced tips for this section.
+
+   .. dropdown:: Skipping some phases
+
+      You may need to skip some of the phases of :program:`lockss-installer`, for example to overcome an incompatibility with the specifics of your host system. If this is necessary, invoke :program:`lockss-installer` with one or more of the following options:
+
+      ============================== =============
+      Option                         Phase skipped
+      ============================== =============
+      ``--skip-check-prerequisites`` :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+      ``--skip-check-system-user``   :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`)
+      ``--skip-configure-iptables``  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+      ``--skip-configure-firewalld`` :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+      ``--skip-configure-ufw``       :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+      ``--skip-configure-coredns``   :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+      ``--skip-install-k3s``         * :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+                                     * :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+                                     * :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+                                     * :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+                                     * :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+                                     * :ref:`Installing K3s` (:numref:`Installing K3s`)
+      ``--skip-test-k3s``            :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
+      ============================== =============
+
+      When a phase is skipped as a result of one of these options, you will see a message similar to this during the corresponding phase:
+
+      .. code-block:: text
+
+          [success] Skipping (--skip-configure-firewalld)
+
+   .. dropdown:: Running only one phase
+
+      Conversely, you may need to run or re-run only one phase of :program:`lockss-installer`, for example re-running the :ref:`Testing the K3s Node` phase after it fails and you perform some troubleshooting. If this is necessary, invoke :program:`lockss-installer` with exactly one of the following options:
+
+      ===================================== ==============
+      Option                                Phase executed
+      ===================================== ==============
+      ``--check-prerequisites`` (or ``-P``) :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+      ``--check-system-user``               :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`)
+      ``--configure-iptables`` (or ``-I``)  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+      ``--configure-firewalld`` (or ``-F``) :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+      ``--configure-ufw`` (or ``-U``)       :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+      ``--configure-coredns`` (or ``-C``)   :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+      ``--install-k3s`` (or ``-K``)         :ref:`Installing K3s` (:numref:`Installing K3s`)
+      ``--test-k3s`` (or ``-T``)            :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
+      ===================================== ==============
 
 --------------------------
 Checking K3s Prerequisites
 --------------------------
 
-During this phase, :program:`install-lockss` will check that certain prerequisites to installing K3s are met [#fnprereq]_. This phase begins with this heading:
+During this phase, :program:`install-lockss` will check that certain prerequisites to installing K3s are met. This phase begins with this heading:
 
 .. code-block:: text
 
@@ -76,7 +131,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 Checking the System User and Group
 ----------------------------------
 
-During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system [#fnuser]_. This phase begins with the heading:
+During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -112,7 +167,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 Configuring :program:`iptables` for K3s
 ---------------------------------------
 
-During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if applicable [#fniptables]_. This phase begins with the heading:
+During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if applicable. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -178,7 +233,7 @@ Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or ente
 Configuring :program:`firewalld` for K3s
 ----------------------------------------
 
-During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if applicable [#fnfirewalld]_. This phase begins with the heading:
+During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if applicable. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -234,7 +289,7 @@ Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or ent
 Configuring :program:`ufw` for K3s
 ----------------------------------
 
-During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary [#fnufw]_. This phase begins with the heading:
+During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -288,7 +343,7 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kb
 Configuring CoreDNS for K3s
 ---------------------------
 
-During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary [#fncoredns]_. This phase begins with the heading:
+During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -330,7 +385,7 @@ Enter a semicolon-separated list of DNS server IP addresses that are *not* loopb
 Installing K3s
 --------------
 
-During this phase, :program:`install-lockss` will install K3s |K3S_PATCH|, if applicable [#fnk3sinstall]_. This phase begins with the heading:
+During this phase, :program:`install-lockss` will install K3s |K3S_PATCH|, if applicable. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -628,89 +683,9 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
    If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the suggested value is automatically accepted for you.
 
-.. [#fnprereq]
-
-   If :program:`install-lockss` was invoked with the ``--skip-check-prerequisites`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-install-k3s)
-
-      [success] Skipping (--skip-check-prerequisites)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`).
-
-.. [#fnuser]
-
-   If :program:`install-lockss` was invoked with the ``--skip-check-system-user`` option, you will see the message:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-check-system-user)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
-
-.. [#fniptables]
-
-   If install-lockss was invoked with the ``--skip-configure-iptables`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-install-k3s)
-
-      [success] Skipping (--skip-configure-iptables)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
-
-.. [#fnfirewalld]
-
-   If :program:`install-lockss` was invoked with the ``--skip-configure-firewalld`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-install-k3s)
-
-      [success] Skipping (--skip-configure-firewalld)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`).
-
-.. [#fnufw]
-
-   If :program:`install-lockss` was invoked with the ``--skip-configure-ufw`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-install-k3s)
-
-      [success] Skipping (--skip-configure-ufw)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`).
-
-.. [#fncoredns]
-
-   If :program:`install-lockss` was invoked with the ``--skip-configure-coredns`` option (implied by ``--skip-install-k3s``), you will see one of these messages:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-install-k3s)
-
-      [success] Skipping (--skip-configure-dns)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Installing K3s` (:numref:`Installing K3s`).
-
 .. [#fnforcedns]
 
    Or if your :program:`install-lockss` was invoked with the ``--force-dns-prompt`` option.
-
-.. [#fnk3sinstall]
-
-   If :program:`install-lockss` was invoked with the ``--skip-install-k3s`` option, you will see the message:
-
-   .. code-block:: text
-
-      [success] Skipping (--skip-install-k3s)
-
-   and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`).
 
 .. [#fnk3sdatadir]
 

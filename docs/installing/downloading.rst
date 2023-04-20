@@ -6,7 +6,7 @@ Downloading the LOCKSS Installer
 
    Commands in this section are run as the ``lockss`` user  [#fnlockss]_.
 
-The next task is to download the LOCKSS Installer.
+**The next task is to download the LOCKSS Installer.**
 
 --------------------------
 LOCKSS Installer Directory
