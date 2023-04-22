@@ -14,9 +14,9 @@ LOCKSS Installer Directory
 
 The directory into which the LOCKSS Installer is downloaded will simply be known as the **LOCKSS Installer Directory**. Many commands in upcoming sections of this manual, such as those to install, configure, start and stop the LOCKSS system, will be listed relative to the LOCKSS Installer Directory.
 
-.. _default-lockss-installer-directory:
-
-.. rubric:: Default LOCKSS Installer Directory
+----------------------------------
+Default LOCKSS Installer Directory
+----------------------------------
 
 Unless you use the ``--download-dir`` option below to customize the LOCKSS Installer Directory on your host, the **default LOCKSS Installer Directory** will be ``${HOME}/lockss-installer``, where ``${HOME}`` refers to the ``lockss`` user's home directory.
 
@@ -52,7 +52,7 @@ As the ``lockss`` user [#fnlockss]_, run this Curl, Wget or HTTPie command [#fnf
 
          wget -qO- https://lockss.org/downloader | sh -s -
 
-This will download the LOCKSS Installer into the :ref:`default-lockss-installer-directory`.
+This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer Directory`.
 
 .. tip::
 
@@ -115,7 +115,7 @@ This will download the LOCKSS Installer into the :ref:`default-lockss-installer-
 
    .. dropdown:: Custom LOCKSS Installer Directory
 
-      If you need your :ref:`LOCKSS Installer Directory` to be a directory :samp:`{DIR}` other than the :ref:`default-lockss-installer-directory`, add :samp:`--download-dir={DIR}` (or :samp:`-d {DIR}`) after ``| sh -s -``, like so:
+      If you need your :ref:`LOCKSS Installer Directory` to be a directory :samp:`{DIR}` other than the :ref:`Default LOCKSS Installer Directory`, add :samp:`--download-dir={DIR}` (or :samp:`-d {DIR}`) after ``| sh -s -``, like so:
 
          .. code-block:: shell
 

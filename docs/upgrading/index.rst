@@ -9,6 +9,7 @@ Upgrading From LOCKSS |PREVIOUS_MINOR|
    .. button-ref:: /installing/index
       :ref-type: doc
       :color: primary
+      :outline:
       :align: center
 
 .. tip::

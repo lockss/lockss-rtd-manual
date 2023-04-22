@@ -6,7 +6,7 @@ Creating the ``lockss`` User
 
    Commands in this section are run as ``root``  [#fnroot]_.
 
-The first task is to create a system user named ``lockss``, under which the LOCKSS system will run.
+**The first task is to create a system user named ``lockss``, under which the LOCKSS system will run.**
 
 Run this :program:`useradd` command as ``root`` [#fnroot]_ :
 
