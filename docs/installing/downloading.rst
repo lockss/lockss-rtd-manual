@@ -12,13 +12,15 @@ Downloading the LOCKSS Installer
 LOCKSS Installer Directory
 --------------------------
 
-The directory into which the LOCKSS Installer is downloaded will simply be known as the **LOCKSS Installer Directory**. Many commands in upcoming sections of this manual, such as those to install, configure, start and stop the LOCKSS system, will be listed relative to the LOCKSS Installer Directory.
+The directory into which the LOCKSS Installer is downloaded is simply known as the **LOCKSS Installer Directory**.
+
+Many commands in this manual, such as those to install, configure, start and stop the LOCKSS system, are relative to the LOCKSS Installer Directory, meaning you need to navigate to it at the console before issuing the relevant command.
 
 ----------------------------------
 Default LOCKSS Installer Directory
 ----------------------------------
 
-Unless you use the ``--download-dir`` option below to customize the LOCKSS Installer Directory on your host, the **default LOCKSS Installer Directory** will be ``${HOME}/lockss-installer``, where ``${HOME}`` refers to the ``lockss`` user's home directory.
+Unless you use the LOCKSS Downloader's ``--download-dir`` option to set a custom LOCKSS Installer Directory, the **default LOCKSS Installer Directory** will be ``${HOME}/lockss-installer``, where ``${HOME}`` refers to the ``lockss`` user's home directory.
 
 -----------------------------
 Running the LOCKSS Downloader
@@ -77,21 +79,21 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
                .. code-block:: shell
 
-                  curl -Lo lockss-downloader https://lockss.org/downloader | sh -s -
+                  curl -Lo lockss-downloader https://lockss.org/downloader
 
             .. tab-item:: HTTPie
                :sync: httpie
 
                .. code-block:: shell
 
-                  http -qdo lockss-downloader https://lockss.org/downloader | sh -s -
+                  http -qdo lockss-downloader https://lockss.org/downloader
 
             .. tab-item:: Wget
                :sync: wget
 
                .. code-block:: shell
 
-                  wget -qO lockss-downloader https://lockss.org/downloader | sh -s -
+                  wget -qO lockss-downloader https://lockss.org/downloader
 
          This will download the LOCKSS Downloader script into the current directory as :file:`lockss-downloader`.
 
@@ -103,7 +105,7 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
             chmod +x lockss-downloader
 
-         to make the LOCKSS Downloade4r script executable.
+         to make the LOCKSS Downloader script executable.
 
       4. Type:
 

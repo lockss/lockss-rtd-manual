@@ -16,13 +16,17 @@ Upgrading From LOCKSS |PREVIOUS_MINOR|
 
    Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
+.. note::
+
+   Commands in this section are run as the ``lockss`` user  [#fnlockss]_.
+
 .. COMMENT PREVIOUSVERSION
 
 ----------------------------
 Stop LOCKSS |PREVIOUS_MINOR|
 ----------------------------
 
-The first step is to stop the LOCKSS |PREVIOUS_MINOR| system. Log in as the ``lockss`` user and run the following command in the :ref:`LOCKSS Installer Directory` (by default :file:`{$HOME}/lockss-installer`, typically :file:`/home/lockss/lockss-installer`).
+The first step is to stop the LOCKSS |PREVIOUS_MINOR| system. Log in as the ``lockss`` user and run the following command in the :ref:`LOCKSS Installer Directory`:
 
 .. code-block:: shell
 
@@ -110,3 +114,11 @@ Follow the instructions in :doc:`/running` to start your LOCKSS |LATEST_MINOR| i
     FIXME (this section is likely different for beta1)
 
    If it takes more than a few seconds for ``upgrade-to-alpha6`` above to run, the reindexing of all previously archived content which occurs the first time you start 2.0-alpha6 after upgrading from 2.0-alpha5 may take prohibitively long. This performance issue will be addressed in the next release. If you do not need the previously stored content during alpha testing, you could delete it and skip this reindexing step; see :doc:`/sysadmin/resetting`.
+
+----
+
+.. rubric:: Footnotes
+
+.. [#fnlockss]
+
+   See :doc:`/sysadmin/lockss`.
