@@ -6,7 +6,7 @@ Running the LOCKSS Installer
 
    Commands in this section are run as ``root``  [#fnroot]_.
 
-**The next task is to run the LOCKSS Installer.**
+The next task is to run the LOCKSS Installer.
 
 The installation process goes through various phases:
 
