@@ -14,7 +14,7 @@ The installation process goes through various phases:
 
 *  Checking that the ``lockss`` system user and group exist. No user interaction is expected.
 
-*  Configuring :program:`iptables`, :program:`firewalld` and :program:`ufw` for K3s. If applicable, you will be prompted to confirm before your system configuration is modified. You may incidentally be prompted for your :program:`sudo` password.
+*  Configuring :program:`firewalld` and :program:`ufw` for K3s. If applicable, you will be prompted to confirm before your system configuration is modified. You may incidentally be prompted for your :program:`sudo` password.
 
 *  Configuring CoreDNS for K3s. If applicable, you will be prompted to enter non-loopback IP addresses of DNS servers.
 
@@ -49,12 +49,10 @@ The installer will run through its phases, each of which is described in its own
       ============================== ================
       ``--skip-check-prerequisites`` :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
       ``--skip-check-system-user``   :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`)
-      ``--skip-configure-iptables``  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
       ``--skip-configure-firewalld`` :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
       ``--skip-configure-ufw``       :ref:`configuring-ufw` (:numref:`configuring-ufw`)
       ``--skip-configure-coredns``   :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
       ``--skip-install-k3s``         * :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
-                                     * :ref:`configuring-iptables` (:numref:`configuring-iptables`)
                                      * :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
                                      * :ref:`configuring-ufw` (:numref:`configuring-ufw`)
                                      * :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
@@ -77,7 +75,6 @@ The installer will run through its phases, each of which is described in its own
       ===================================== ==============
       ``--check-prerequisites`` (or ``-P``) :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
       ``--check-system-user``  (or ``-L``)  :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`)
-      ``--configure-iptables`` (or ``-I``)  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
       ``--configure-firewalld`` (or ``-F``) :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
       ``--configure-ufw`` (or ``-U``)       :ref:`configuring-ufw` (:numref:`configuring-ufw`)
       ``--configure-coredns`` (or ``-C``)   :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
@@ -87,7 +84,8 @@ The installer will run through its phases, each of which is described in its own
 
    .. dropdown:: Running :program:`install-lockss` on auto-pilot
 
-      If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :ref:`configuring-iptables` (:numref:`configuring-iptables`), :ref:`configuring-firewalld` (:numref:`configuring-firewalld`), :ref:`configuring-ufw` (:numref:`configuring-ufw`), :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`) and :ref:`Installing K3s` (:numref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+      If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run
+without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :ref:`configuring-firewalld` (:numref:`configuring-firewalld`), :ref:`configuring-ufw` (:numref:`configuring-ufw`), :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`) and :ref:`Installing K3s` (:numref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
 
 --------------------------
 Checking K3s Prerequisites
@@ -147,7 +145,7 @@ No user interaction is expected; if everything goes well, you will see this mess
 
    [success] System user and group present
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
 
 .. error::
 
@@ -164,72 +162,6 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
          [ERROR] The lockss group does not exist
 
       and :program:`install-lockss` will fail. Go back to the :doc:`user` section to create the ``lockss`` user and group, then return to :ref:`Invoking the LOCKSS Installer` to try again.
-
-.. _configuring-iptables:
-
----------------------------------------
-Configuring :program:`iptables` for K3s
----------------------------------------
-
-During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if applicable. This phase begins with the heading:
-
-.. code-block:: text
-
-   Configuring iptables for K3s...
-
-In many situations, no configuration of :program:`iptables` is needed; you will see one of these messages:
-
-.. code-block:: text
-
-   [success] Skipping (iptables is not on the PATH nor run via Alternatives)
-
-   [success] Skipping (iptables version is older than 1.8.0)
-
-   [success] Skipping (iptables version is newer than 1.8.3)
-
-   [success] Skipping (iptables is in legacy mode)
-
-   [success] Skipping (iptables is not run via Alternatives)
-
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
-
-Otherwise, you will receive the following prompt:
-
-:guilabel:`Switch iptables to legacy mode via Alternatives?`
-
-Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
-
-.. caution::
-
-   If you choose to bypass the proposed :program:`iptables` configuration, you will see the warning:
-
-   .. code-block:: text
-
-      [Warning] Leaving iptables unchanged; see manual for details
-
-   and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention; see :doc:`/troubleshooting/iptables` for details.
-
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
-
-   .. dropdown:: :program:`iptables` configuration attempt fails
-
-      If the :program:`iptables` configuration attempt fails, you will see one of these error messages:
-
-      .. code-block:: text
-
-         [ERROR] Error deactivating ufw
-
-         [ERROR] Error applying update-alternatives to iptables
-
-         [ERROR] Error applying update-alternatives to ip6tables
-
-         [ERROR] Error flushing iptables
-
-         [ERROR] Error reactivating ufw
-
-      and :program:`install-lockss` will fail. See :doc:`/troubleshooting/iptables` for remediation details.
 
 .. _configuring-firewalld:
 
