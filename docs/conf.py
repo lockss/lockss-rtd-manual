@@ -84,15 +84,15 @@ intersphinx_mapping = {
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
     'LATEST_MINOR': '2.0-alpha7',
-    'LATEST_PATCH': '2.0.70-alpha7',
+    'LATEST_PATCH': '2.0.71-alpha7',
     'PREVIOUS_MINOR': '2.0-alpha6',
     'PREVIOUS_PATCH': '2.0.61-alpha6',
     'K8S_MINOR': '1.21',
     'K8S_PATCH': '1.21.5',
     'K3S_MINOR': '1.21',
     'K3S_PATCH': '1.21.5+k3s1',
-    'CLASSIC_MINOR': '1.76',
-    'CLASSIC_PATCH': '1.76.5',
+    'CLASSIC_MINOR': '1.77',
+    'CLASSIC_PATCH': '1.77.1',
 }
 
 # Add any paths that contain templates here, relative to this directory.
