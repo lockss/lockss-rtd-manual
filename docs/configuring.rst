@@ -10,17 +10,15 @@ Before Invoking :program:`configure-lockss`
 
 You will need to gather information to answer configuration questions asked by :program:`configure-lockss`, including:
 
-*  The name (FQDN) of the host.
+*  The name (FQDN) of the host, the IP address of the host, and if behind NAT, the external IP address for NAT.
 
-*  The IP address of the host, and if behind NAT, the external IP address for NAT.
-
-*  The mail relay host, and optionally mail credentials, for sending e-mail from the host.
-
-*  The e-mail address for the administrator of the system.
+*  The mail relay host, and optionally mail credentials, for sending e-mail from the host, and the e-mail address for the administrator of the system.
 
 *  The configuration URL and preservation group or groups corresponding to the LOCKSS network your system is joining.
 
-*  The path for the primary content data storage area, any additional content data storage areas, log data storage area and temporary data storage area.
+*  The paths for the primary content storage area, any additional content storage areas, the data storage area, the temporary storage area, and the log storage area.
+
+   Each of these paths needs to be writeable by the ``lockss`` user. If this is not the case, set them up as ``root`` before running :program:`configure-lockss`.
 
 *  Username and password for the Web user interfaces.
 
@@ -32,7 +30,7 @@ You will need to gather information to answer configuration questions asked by :
 
    *  Alternatively, if using an existing Solr database, the host name, port, username and password for the external Solr database, as well as the core name for the LOCKSS repository.
 
-*  Whether you wish to use the LOCKSS Metadata Extraction Serice, LOCKSS metadata Service, LOCKSS SOAP Compatibility Service, OpenWayback Web replay engine, and Pywb Web replay engine.
+*  Whether you wish to use the LOCKSS Crawler Service, LOCKSS Metadata Extraction Service, LOCKSS Metadata Service, LOCKSS SOAP Compatibility Service, Pywb Web replay engine, and OpenWayback Web replay engine.
 
 Some notes about using :program:`configure-lockss`:
 
@@ -52,7 +50,17 @@ To invoke :program:`configure-lockss`, simply run this command in the ``lockss``
 
    scripts/configure-lockss
 
-The script will begin with the first series of configuration questions, about :ref:`Network Settings`.
+The script will begin with the first series of configuration questions, about :ref:`Kubernetes Settings`.
+
+-------------------
+Kubernetes Settings
+-------------------
+
+Prompt: :guilabel:`Command to use to execute kubectl commands`
+
+Enter the command to invoke :program:`kubectl` in your environment. If you are using the K3s Kubernetes environment that ships with the LOCKSS system, the proposed value is already correct.
+
+.. FIXME the script can exit here if the K8s (sic) config file can't be written to
 
 ----------------
 Network Settings
@@ -190,52 +198,49 @@ Preservation Groups
 
 Prompt: :guilabel:`Preservation group(s)`
 
-Accept the default (:samp:`demo`) if you are not running your own LOCKSS network; otherwise, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator, for example :samp:`ournetwork` or :samp:`prod;usdocspln`.
+If you are setting up a test box in the Global LOCKSS Network, enter :samp:`demoprod`. If you are setting up a test box in a private LOCKSS network, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator, for example :samp:`ournetwork` or :samp:`prod;usdocspln`. Otherwise, accept the default (:samp:`demo`).
 
 -------------
 Storage Areas
 -------------
 
-The LOCKSS system needs storage areas to store data:
+The LOCKSS system needs several kinds of storage areas, as described in the :ref:`Storage` section.
 
-*  One or more **content data storage areas** to store preserved content, as well as several databases.
+Depending on your host system's layout, these storage areas may all be the same, or all be different mount points or paths. Each path must be writeable by the ``lockss`` user.
 
-*  A **log data storage area** to store log files.
+Subdirectories will be created in each storage area to fit the needs of each system component; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's data directory in the data storage area, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log directory in the log storage area.
 
-*  A **temporary data storage area** to store temporary files.
+Data Storage Area
+=================
 
-Depending on your host system's layout, these storage areas may all be the same, or all be different mount points or paths.
+Prompt: :guilabel:`Root path for data storage`
 
-Subdirectories will be created in each storage area to fit the needs of a system component; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's content data directory in the content data storage areas, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log data directory in the log data storage area.
+This directory is used as the root of the storage area for databases and other state files. Enter the desired path, or hit :kbd:`Enter` to accept a previously-entered value (if re-configuring).
 
-Content Data Storage Areas
-==========================
-
-1. Prompt: :guilabel:`Root path for primary content data storage`
-
-   Enter the full path of a directory to use as the root of the main storage area of the LOCKSS system, where preserved content will be stored along with several databases. It is the analog of :file:`/cache0` in the classic LOCKSS system.
-
-2. Prompt: :guilabel:`Use additional directories for content data storage?`
-
-   If you want to use more than one filesystem to store preserved content, enter :kbd:`Y`; otherwise, enter :kbd:`N`.
-
-3. If you answered :kbd:`Y`, you will be asked an additional configuration question:
-
-   :guilabel:`Root path for additional content data storage <count> (q to quit)`
-
-   On each line, enter the full path of a directory to use as the root of an additional storage area, and enter :kbd:`q` when done.
-
-Log Data Storage Area
+Content Storage Areas
 =====================
 
-Prompt: :guilabel:`Root path for log data storage`
+1. Prompt: :guilabel:`Root path(s) for content storage`
+
+   Enter a semicolon-separated list of full paths of directories to be used to store preserved content.
+
+2. If the answer to the question is different than that from a previous configuration run, you will see the warning:
+
+   ``If you have removed or reordered content storage directories, you must run scripts/reindex-artifacts``
+
+   If you have done anything other add new content storage areas to the end of the previously-entered value, you must run ``scripts/reindex-artifacts`` after completion of :program:`configure-lockss`, before starting the system.
+
+Log Storage Area
+================
+
+Prompt: :guilabel:`Root path for log storage`
 
 This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
-Temporary Data Storage Area
-===========================
+Temporary Storage Area
+======================
 
-Prompt: :guilabel:`Root path for temporary data storage (local storage preferred)`
+Prompt: :guilabel:`Root path for temporary storage (local storage preferred)`
 
 This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
 
