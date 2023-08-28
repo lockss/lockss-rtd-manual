@@ -406,6 +406,23 @@ If you select this option, you will be asked additional configuration questions:
 LOCKSS Services
 ---------------
 
+Crawler Service
+======================
+
+1. Prompt: :guilabel:`Use LOCKSS Crawler Service?`
+
+A. Enter :kbd:`Y` if you want the crawler service to run. This is recommended in most cases.  If the crawler service is disabled all content crawling will be disabled.
+
+B. Enter :kbd:`N` Select this option if you will be importing content directly into the repository.
+
+2. Prompt: :guilabel:`Enable classic LOCKSS crawler?`
+
+Enter :kbd:`Y` if you want continue to perform crawls withe the classic LOCKSS crawler, otherwise :kbd:`N`.
+
+3. Prompt: :guilabel:`Enable wget crawler?`
+
+Enter :kbd:`Y` if you want to enable the usage of the external wget crawler, otherwise :kbd:`N`.
+
 Metadata Query Service
 ======================
 
