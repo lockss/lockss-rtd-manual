@@ -20,7 +20,7 @@ Many commands in this manual, such as those to install, configure, start and sto
 Default LOCKSS Installer Directory
 ----------------------------------
 
-Unless you use the LOCKSS Downloader's ``--download-dir`` option to set a custom LOCKSS Installer Directory, the **default LOCKSS Installer Directory** will be ``${HOME}/lockss-installer``, where ``${HOME}`` refers to the ``lockss`` user's home directory.
+The **default LOCKSS Installer Directory** will be ``${HOME}/lockss-installer`` (where ``${HOME}`` refers to the ``lockss`` user's home directory, typically :file:`/home/lockss`), unless you use the LOCKSS Downloader's ``--download-dir`` option to set a custom LOCKSS Installer Directory.
 
 -----------------------------
 Running the LOCKSS Downloader
