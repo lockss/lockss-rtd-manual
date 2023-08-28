@@ -94,7 +94,7 @@ Re-run the configuration script by running the command below and follow the inst
    scripts/configure-lockss
 
 -----------------------
-Start LOCKSS 2.0-alpha6
+Start LOCKSS 2.0-alpha7
 -----------------------
 
 Follow the instructions in :doc:`/running` to start your LOCKSS |LATEST_MINOR| instance:
