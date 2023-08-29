@@ -32,7 +32,7 @@ LOCKSS makes use of several storage areas.  During configuration, the administra
 
    The amount of space required depends on the amount of content that will be preserved. The content is efficiently stored in large, compressed WARC files. Unlike LOCKSS 1.x, inode usage is very low. Multiple content storage areas may be specified, and more can be added later.
 
-*  **Data storage:** This is used for databases (unless using external PostgreSQL and/or Solr) and other state files. **We strongly recommend placing this on a filesystem with low latency, that is, locally-attached storage**, as performance will be severely impacted if on network-attached storage.
+*  **State data storage:** This is used for databases (unless using external PostgreSQL and/or Solr) and other state data. **We strongly recommend placing this on a filesystem with low latency, that is, locally-attached storage**, as performance will be severely impacted if on network-attached storage.
 
 *  **Temporary storage:** The LOCKSS software makes heavy use of temporary storage. **We strongly recommend placing this on a filesystem with low latency, that is, locally-attached storage**, as performance will be severely impacted if on network-attached storage.
 
