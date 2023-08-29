@@ -16,7 +16,7 @@ You will need to gather information to answer configuration questions asked by :
 
 *  The configuration URL and preservation group or groups corresponding to the LOCKSS network your system is joining.
 
-*  The paths for the primary content storage area, any additional content storage areas, the data storage area, the temporary storage area, and the log storage area.
+*  The paths for the primary content storage area, any additional content storage areas, the state data storage area, the temporary storage area, and the log storage area.
 
    Each of these paths needs to be writeable by the ``lockss`` user. If this is not the case, set them up as ``root`` before running :program:`configure-lockss`.
 
@@ -208,14 +208,14 @@ The LOCKSS system needs several kinds of storage areas, as described in the :ref
 
 Depending on your host system's layout, these storage areas may all be the same, or all be different mount points or paths. Each path must be writeable by the ``lockss`` user.
 
-Subdirectories will be created in each storage area to fit the needs of each system component; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's data directory in the data storage area, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log directory in the log storage area.
+Subdirectories will be created in each storage area to fit the needs of each system component; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's state data directory in the state data storage area, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log directory in the log storage area.
 
-Data Storage Area
-=================
+State Data Storage Area
+=======================
 
-Prompt: :guilabel:`Root path for data storage`
+Prompt: :guilabel:`Root path for state data storage`
 
-This directory is used as the root of the storage area for databases and other state files. Enter the desired path, or hit :kbd:`Enter` to accept a previously-entered value (if re-configuring).
+This directory is used as the root of the storage area for databases and other state data. Enter the desired path, or if reconfiguring, hit :kbd:`Enter` to accept a previously-entered value.
 
 Content Storage Areas
 =====================
