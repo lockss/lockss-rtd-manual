@@ -91,7 +91,9 @@ Re-run the configuration script by running the command below and follow the inst
 
 .. code-block:: shell
 
-   scripts/configure-lockss
+   scripts/configure-lockss -r
+
+The ``-r`` ("replay") option will re-use all previously-entered configuration values, and only ask questions for new prompts added since the previous release.
 
 -----------------------
 Start LOCKSS 2.0-alpha7

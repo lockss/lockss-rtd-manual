@@ -92,7 +92,7 @@ global_substitutions = {
     'K3S_MINOR': '1.21',
     'K3S_PATCH': '1.21.5+k3s1',
     'CLASSIC_MINOR': '1.77',
-    'CLASSIC_PATCH': '1.77.2',
+    'CLASSIC_PATCH': '1.77.3',
 }
 
 # Add any paths that contain templates here, relative to this directory.

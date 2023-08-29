@@ -16,9 +16,11 @@ You will need to gather information to answer configuration questions asked by :
 
 *  The configuration URL and preservation group or groups corresponding to the LOCKSS network your system is joining.
 
-*  The paths for the primary content storage area, any additional content storage areas, the state data storage area, the temporary storage area, and the log storage area.
+*  The paths for the primary content storage area, any additional content storage areas, the state data storage area, the temporary storage area, and the log storage area. See the :ref:`Storage` and :ref:`Network-Attached Storage` sections for important information about performance requirements for these storage areas.
 
-   Each of these paths needs to be writeable by the ``lockss`` user. If this is not the case, set them up as ``root`` before running :program:`configure-lockss`.
+   .. caution::
+
+      Each of these paths needs to be writeable by the ``lockss`` user. If this is not the case, set them up as ``root`` before running :program:`configure-lockss`.
 
 *  Username and password for the Web user interfaces.
 
@@ -204,7 +206,7 @@ If you are setting up a test box in the Global LOCKSS Network, enter :samp:`demo
 Storage Areas
 -------------
 
-The LOCKSS system needs several kinds of storage areas, as described in the :ref:`Storage` section.
+The LOCKSS system needs several kinds of storage areas, as described in the :ref:`Storage` section. See also the :ref:`Network-Attached Storage` section for important information about performance requirements for these storage areas.
 
 Depending on your host system's layout, these storage areas may all be the same, or all be different mount points or paths. Each path must be writeable by the ``lockss`` user.
 
@@ -228,7 +230,7 @@ Content Storage Areas
 
    ``If you have removed or reordered content storage directories, you must run scripts/reindex-artifacts``
 
-   If you have done anything other add new content storage areas to the end of the previously-entered value, you must run ``scripts/reindex-artifacts`` after completion of :program:`configure-lockss`, before starting the system.
+   If you have done anything other add new content storage areas to the end of the previously-entered list, you must run ``scripts/reindex-artifacts`` after completion of :program:`configure-lockss`, before starting the system.
 
 Log Storage Area
 ================
@@ -243,14 +245,6 @@ Temporary Storage Area
 Prompt: :guilabel:`Root path for temporary storage (local storage preferred)`
 
 This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
-
-.. tip::
-
-   The LOCKSS software makes heavy use of temporary storage, and we recommend that temporary directories be placed on a filesystem with relatively low latency. If the content data storage directories are on network storage (for example NFS), system performance may be improved by supplying a local directory for temporary data storage.
-
-.. caution::
-
-   Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. Do not use a RAM-based ``tmpfs`` volume, or a directory in a space-constrained partition.
 
 ---------------------------
 Web User Interface Settings
@@ -407,21 +401,21 @@ LOCKSS Services
 ---------------
 
 Crawler Service
-======================
+===============
 
 1. Prompt: :guilabel:`Use LOCKSS Crawler Service?`
 
-A. Enter :kbd:`Y` if you want the crawler service to run. This is recommended in most cases.  If the crawler service is disabled all content crawling will be disabled.
+   Enter :kbd:`Y` if you want the crawler service to be run, otherwise :kbd:`N`. (The only situation where a crawler service is not needed is LOCKSS networks that are exclusively using direct deposit to store content, most LOCKSS networks need the crawler service.)
 
-B. Enter :kbd:`N` Select this option if you will be importing content directly into the repository.
+2. If you answer :kbd:`Y`: to the previous question, you will see these additional questions:
 
-2. Prompt: :guilabel:`Enable classic LOCKSS crawler?`
+   1. Prompt: :guilabel:`Enable classic LOCKSS crawler?`
 
-Enter :kbd:`Y` if you want continue to perform crawls withe the classic LOCKSS crawler, otherwise :kbd:`N`.
+      Enter :kbd:`Y` if you want to run the classic LOCKSS crawler, otherwise :kbd:`N`. (Most LOCKSS networks using the crawler service use the classic LOCKSS crawler.)
 
-3. Prompt: :guilabel:`Enable wget crawler?`
+   2. Prompt: :guilabel:`Enable Wget crawler?`
 
-Enter :kbd:`Y` if you want to enable the usage of the external wget crawler, otherwise :kbd:`N`.
+      Enter :kbd:`Y` if you want to enable the usage of the external Wget crawler, otherwise :kbd:`N`.
 
 Metadata Query Service
 ======================
@@ -442,7 +436,7 @@ SOAP Compatibility Service
 
 Prompt: :guilabel:`Use LOCKSS SOAP Compatibility Service?`
 
-Enter :kbd:`Y` if you want the SOAP compatibility servvice to be run, otherwise :kbd:`N`.
+Enter :kbd:`Y` if you want the SOAP compatibility service to be run, otherwise :kbd:`N`. (This is only needed if you have external tools using the LOCKSS' legacy SOAP Web Services.)
 
 -------------------
 Web Replay Settings

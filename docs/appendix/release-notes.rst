@@ -10,7 +10,7 @@ LOCKSS 2.0.71-alpha7
 
 .. COMMENT RELEASEDATE
 
-Released: NOT YET RELEASED
+Released: 2023-08-29
 
 LOCKSS 2.0.71-alpha7 is the first release of the LOCKSS 2.0-alpha7 system.
 
@@ -38,11 +38,33 @@ LOCKSS 2.0.71-alpha7 is the first release of the LOCKSS 2.0-alpha7 system.
 
    *  Dependency upgrades: Jsoup 1.16.1, Apache Log4J 2.20.0, Apache Commons FileUpload 1.5, Apache Commons Compress 1.23.0, Apache Commons CSV 1.10.0, Apache Commons Codec 1.16.0, Apache Commons IO 2.13.0, Jonix 2023-05, Json-Path 2.8.0, MARC4J 2.9.5, JDBC PostgreSQL client 42.5.0.
 
+*  **Bug fixes**
+
+   *  Improved robustness handling corrupted WARC files (generally caused by abrupt shutdown).
+
+   *  Fixed bug causing most services to periodically reload config files even when not changed.
+
+   *  Reduced spurious undeleted temp files.
+
+   *  Fixed a unicode normalization vulnerability that might have allowed specially crafted bibliographic info in the title DB to cause the UI to misbehave.
+
+   *  Fixed config file precedence problem due to inconsistent/wrong loading order.
+
+   *  Fixed Repository Service startup problem when Solr is not quite ready.
+
+   *  Fixed a bug preventing hash estimate padding from being fully configurable.
+
+   *  Error logs sometimes omitted Timestamp messages.
+
+   *  PostgreSQL logs no longer accumulate forever.
+
 *  **LOCKSS Installer changes**
 
    *  Now allows the content, state data (including databases), logs, and temporary storage areas to be placed on different devices. We strongly discourage placing the state data and temporary storage areas on network-attached storage such as NFS.
 
    *  Allows more end-user control over runtime environment and JVM command line (e.g. to change heap size or add profiling or debugging agents).
+
+   *  When reconfiguring the system after an upgrade, it is no longer necessary to see and accept the default for each answer. If :program:`configure-lockss` is invoked in replay mode with the ``-r`` option, all prompts that already have an answer will simply be echoed and the script will proceed to the next prompt. It will be necessary to enter info (or accept the default) only for new prompts added since the previous release.
 
 *  **LOCKSS Repository Service changes**
 
@@ -89,26 +111,6 @@ LOCKSS 2.0.71-alpha7 is the first release of the LOCKSS 2.0-alpha7 system.
    *  Reduced start script time.
 
    *  Applied PostgreSQL tuning.
-
-*  **Bug fixes**
-
-   *  Improved robustness handling corrupted WARC files (generally caused by abrupt shutdown).
-
-   *  Fixed bug causing most services to periodically reload config files even when not changed.
-
-   *  Reduced spurious undeleted temp files.
-
-   *  Fixed a unicode normalization vulnerability that might have allowed specially crafted bibliographic info in the title DB to cause the UI to misbehave.
-
-   *  Fixed config file precedence problem due to inconsistent/wrong loading order.
-
-   *  Fixed Repository Service startup problem when Solr is not quite ready.
-
-   *  Fixed a bug preventing hash estimate padding from being fully configurable.
-
-   *  Error logs sometimes omitted Timestamp messages.
-
-   *  PostgreSQL logs no longer accumulate forever.
 
 .. rubric:: Component Versions
 
