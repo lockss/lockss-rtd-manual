@@ -5,6 +5,48 @@ Release Notes
 .. _latest:
 
 --------------------
+LOCKSS 2.0.72-alpha7
+--------------------
+
+Released: 2023-09-02
+
+LOCKSS 2.0.72-alpha7 is a bug fix release of the LOCKSS 2.0-alpha7 system. If you are running 2.0.71-alpha7, you will need to follow the instructions in :doc:`/upgrading/index`.
+
+.. rubric:: Release Notes
+
+*  **Bug Fixes**
+
+   *  Fixed an errant Java 11 dependency impacting the repository service's reindexing code, typically involved only in the 2.0-alpha5 to 2.0-alpha7 upgrade procedure.
+
+.. rubric:: Component Versions
+
+LOCKSS 2.0.72-alpha7 consists of a configurable set of the following components:
+
+*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.72-alpha7
+
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.14.1
+
+*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.8.0
+
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.6.0
+
+*  `LOCKSS Crawler Service <https://github.com/lockss/laaws-crawler-service>`_ version 1.0.0
+
+*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.7.0
+
+*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.6.0
+
+*  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.4.0
+
+*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7
+
+*  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom version 8.11.2-slim-1)
+
+*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom version 2.4.2-3)
+
+*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom version 2.4.0-5)
+
+--------------------
 LOCKSS 2.0.71-alpha7
 --------------------
 
@@ -38,7 +80,7 @@ LOCKSS 2.0.71-alpha7 is the first release of the LOCKSS 2.0-alpha7 system.
 
    *  Dependency upgrades: Jsoup 1.16.1, Apache Log4J 2.20.0, Apache Commons FileUpload 1.5, Apache Commons Compress 1.23.0, Apache Commons CSV 1.10.0, Apache Commons Codec 1.16.0, Apache Commons IO 2.13.0, Jonix 2023-05, Json-Path 2.8.0, MARC4J 2.9.5, JDBC PostgreSQL client 42.5.0.
 
-*  **Bug fixes**
+*  **Bug Fixes**
 
    *  Improved robustness handling corrupted WARC files (generally caused by abrupt shutdown).
 
