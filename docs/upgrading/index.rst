@@ -110,19 +110,27 @@ The ``-r`` ("replay") option will re-use all previously-entered configuration va
 Start LOCKSS |LATEST_MINOR|
 ---------------------------
 
-Follow the instructions in :doc:`/running` to start your LOCKSS |LATEST_MINOR| instance:
+You are now ready to start the LOCKSS system.
 
-.. code-block:: shell
+*  If you were upgrading from LOCKSS 2.0.71-alpha7, run this command:
 
-   scripts/start-lockss
+   .. code-block:: shell
 
-.. hint::
+      scripts/start-lockss -u
 
-   .. COMMENT PREVIOUSVERSION
+*  If you were upgrading from LOCKSS 2.0-alpha5 or LOCKSS 2.0-alpha6, run this command:
 
-   .. COMMENT LATESTVERSION
+   .. code-block:: shell
 
-   If it takes more than a few seconds for ``upgrade-to-alpha7`` above to run, the reindexing of all previously archived content which occurs the first time you start 2.0-alpha6 after upgrading from 2.0-alpha5 may take prohibitively long. This performance issue will be addressed in a later release. If you do not need the previously stored content during alpha testing, you could delete it and skip this reindexing step; see :doc:`/sysadmin/resetting`.
+      scripts/start-lockss
+
+   .. hint::
+
+      .. COMMENT PREVIOUSVERSION
+
+      .. COMMENT LATESTVERSION
+
+      If it takes more than a few seconds for ``upgrade-to-alpha7`` above to run, the reindexing of all previously archived content which occurs the first time you start 2.0-alpha7 after upgrading from 2.0-alpha5 may take prohibitively long. This performance issue will be addressed in a later release. If you do not need the previously stored content during alpha testing, you could delete it and skip this reindexing step; see :doc:`/sysadmin/resetting`.
 
 ----
 
