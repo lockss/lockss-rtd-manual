@@ -83,7 +83,6 @@ intersphinx_mapping = {
 
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
-<<<<<<< HEAD
     'LATEST_MINOR': '2.0-beta1 NOT YET RELEASED',
     'LATEST_PATCH': '2.0.80-beta1 NOT YET RELEASED',
     'PREVIOUS_MINOR': '2.0-alpha7',
