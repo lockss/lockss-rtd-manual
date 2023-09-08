@@ -78,7 +78,6 @@
          .. button-ref:: /appendix/security
             :ref-type: doc
             :color: danger
-            :outline:
             :expand:
 
       .. card::
