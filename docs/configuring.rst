@@ -174,7 +174,24 @@ Configuration URL
 
 1. Prompt: :guilabel:`Configuration URL`
 
-   Accept the default (:samp:`http://props.lockss.org:8001/demo/lockss.xml`) if you are not running your own LOCKSS network; otherwise, enter the URL of the LOCKSS network configuration file provided by your LOCKSS network administrator.
+   Enter the URL of your LOCKSS network's configuration file. Select a scenario below for more details:
+
+   .. tab-set::
+
+      .. tab-item:: LOCKSS Demo Network
+         :sync: demo
+
+         If you are trying out LOCKSS 2.x, enter :samp:`http://props.lockss.org:8001/demo/lockss.xml` (or simply hit :kbd:`Enter`, as this is the default).
+
+      .. tab-item:: Global LOCKSS Network
+         :sync: gln
+
+         If you are participating in the Global LOCKSS Network and trying out LOCKSS 2.x, enter :samp:`http://props.lockss.org:8001/demo/lockss.xml` (or simply hit :kbd:`Enter`, as this is the default).
+
+      .. tab-item:: Other LOCKSS Network
+         :sync: other
+
+         If you are configuring your LOCKSS node to participate in a given LOCKSS network, enter the configuration URL provided for that LOCKSS network by your administrators (for example :samp:`https://admin.mynetwork.org/config/lockss.xml`).
 
 2. If the configuration URL begins with ``https:``, you will be asked additional configuration questions:
 
@@ -200,7 +217,24 @@ Preservation Groups
 
 Prompt: :guilabel:`Preservation group(s)`
 
-If you are setting up a test box in the Global LOCKSS Network, enter :samp:`demoprod`. If you are setting up a test box in a private LOCKSS network, enter a semicolon-separated list of LOCKSS network identifiers as provided by your LOCKSS network administrator, for example :samp:`ournetwork` or :samp:`prod;usdocspln`. Otherwise, accept the default (:samp:`demo`).
+Enter a preservation group identifier or semicolon-separated list of preservation group identifiers. Select a scenario below for more details:
+
+   .. tab-set::
+
+      .. tab-item:: LOCKSS Demo Network
+         :sync: demo
+
+         If you are trying out LOCKSS 2.x, enter :samp:`demo` (or simply hit :kbd:`Enter`, as this is the default).
+
+      .. tab-item:: Global LOCKSS Network
+         :sync: gln
+
+         If you are participating in the Global LOCKSS Network and trying out LOCKSS 2.x, enter :samp:`demoprod`.
+
+      .. tab-item:: Other LOCKSS Network
+         :sync: other
+
+         If you are configuring your LOCKSS node to participate in a given LOCKSS network, enter the preservation group(s) provided for that LOCKSS network by your administrators (for example :samp:`mynetwork`, or :samp:`mynetwork;mygroup1;mygroup2`).
 
 -------------
 Storage Areas
