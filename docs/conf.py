@@ -64,7 +64,7 @@ extensions = [
     'sphinx.ext.intersphinx',
 
     # See https://sphinx-rtd-theme.readthedocs.io/
-    'sphinx_rtd_theme',
+    #'sphinx_rtd_theme',
 
     # See https://github.com/sphinx-contrib/email
     'sphinxcontrib.email',
@@ -111,7 +111,9 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 #html_theme = 'alabaster'
 # See https://sphinx_rtd_theme.readthedocs.io/
-html_theme = 'sphinx_rtd_theme'
+#html_theme = 'sphinx_rtd_theme'
+# See https://insipid-sphinx-theme.readthedocs.io/
+html_theme = 'insipid'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
