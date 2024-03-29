@@ -64,7 +64,7 @@ extensions = [
     'sphinx.ext.intersphinx',
 
     # See https://sphinx-rtd-theme.readthedocs.io/
-    #'sphinx_rtd_theme',
+    'sphinx_rtd_theme',
 
     # See https://github.com/sphinx-contrib/email
     'sphinxcontrib.email',

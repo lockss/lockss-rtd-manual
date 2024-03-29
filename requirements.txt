@@ -38,7 +38,7 @@ docutils==0.20.1
 # The Sphinx theme by Read The Docs
 # https://pypi.org/project/sphinx-rtd-theme/
 # https://sphinx-rtd-theme.readthedocs.io/
-#sphinx-rtd-theme==1.1.1
+sphinx-rtd-theme==2.0.0
 
 # The Insipid Sphinx theme
 # https://pypi.org/project/insipid-sphinx-theme/
