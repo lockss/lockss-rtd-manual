@@ -129,7 +129,7 @@ html_css_files = [
 master_doc = 'index'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
-html_logo = 'images/lockss-2.0-alpha7_200.png'
+html_logo = 'images/lockss-2.0-beta1-128x128.png'
 
 # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html
 html_theme_options = {
@@ -141,7 +141,17 @@ html_theme_options = {
     'navigation_depth': -1,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-style_external_links
     'style_external_links': True,
+    # See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#theme-option-breadcrumbs
+    'breadcrumbs': True,
+    # See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#theme-option-strip_section_numbers
+    'strip_section_numbers': False,
 }
+
+# See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#confval-html_show_sourcelink
+html_show_sourcelink = False
+
+# See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#configuration
+html_permalinks_icon = '#'
 
 # See https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#default-substitutions
 # and https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-today_fmt
