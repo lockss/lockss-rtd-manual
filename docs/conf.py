@@ -52,6 +52,8 @@ project = 'LOCKSS System Manual'
 copyright = '2000-2024, LOCKSS Program'
 author = 'LOCKSS Program'
 
+# See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_title
+html_title = project
 
 # -- General configuration ---------------------------------------------------
 
@@ -159,3 +161,7 @@ today_fmt = '%Y-%m-%d'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-smartquotes
 smartquotes = False
+
+# See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#example
+html_use_index = False
+html_domain_indices = False
