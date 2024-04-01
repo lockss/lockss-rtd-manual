@@ -14,3 +14,8 @@ div.rst-other-versions > dl:nth-child(4) { /* On GitHub */
 .sd-tab-content {
     box-shadow: none;
 }
+
+/* Insipid */
+a.previous, a.next {
+    color: #888;
+}
