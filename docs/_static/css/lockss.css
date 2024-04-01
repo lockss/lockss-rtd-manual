@@ -5,6 +5,9 @@ div.rst-other-versions > dl:nth-child(3) { /* On Read the Docs */
 div.rst-other-versions > dl:nth-child(4) { /* On GitHub */
     display: none;
 }
+div.rst-other-versions > dl:nth-child(5) { /* Read The Docs based search box */
+    display: none;
+}
 
 /* Add border around sphinx_design tab groups to make them more legible in the larger page flow */
 .sd-tab-set {
@@ -16,6 +19,9 @@ div.rst-other-versions > dl:nth-child(4) { /* On GitHub */
 }
 
 /* Insipid */
-a.previous, a.next {
-    color: #888;
+.relbar, .relbar > a:hover .direction {
+    color: #666;
+}
+.relbar .icon, nav.crumbs, #topbar, #titlebar a, #titlebar a:visited {
+    color: #333;
 }
