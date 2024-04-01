@@ -149,6 +149,11 @@ html_theme_options = {
     'strip_section_numbers': False,
 }
 
+# See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#theme-option-left_buttons
+html_context = {
+    'display_github': False,
+}
+
 # See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#confval-html_show_sourcelink
 html_show_sourcelink = False
 
