@@ -25,3 +25,7 @@ div.rst-other-versions > dl:nth-child(5) { /* Read The Docs based search box */
 .relbar .icon, nav.crumbs, #topbar, #titlebar a, #titlebar a:visited {
     color: #333;
 }
+.nav-icon, .nav-icon:visited {
+    color: #666;
+}
+
