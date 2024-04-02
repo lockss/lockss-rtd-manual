@@ -83,20 +83,6 @@ intersphinx_mapping = {
     'lockss-manual': ('https://docs.lockss.org/projects/manual/en/latest/', None)
 }
 
-# See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
-global_substitutions = {
-    'LATEST_MINOR': '2.0-beta1 NOT YET RELEASED',
-    'LATEST_PATCH': '2.0.80-beta1 NOT YET RELEASED',
-    'PREVIOUS_MINOR': '2.0-alpha7',
-    'PREVIOUS_PATCH': '2.0.72-alpha7',
-    'K8S_MINOR': '1.21',
-    'K8S_PATCH': '1.21.5',
-    'K3S_MINOR': '1.21',
-    'K3S_PATCH': '1.21.5+k3s1',
-    'CLASSIC_MINOR': '1.77',
-    'CLASSIC_PATCH': '1.77.6',
-}
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -138,11 +124,11 @@ html_theme_options = {
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-prev_next_buttons_location
     'prev_next_buttons_location': 'both',
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-collapse_navigation
-    'collapse_navigation': False,
+    #'collapse_navigation': False,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-navigation_depth
-    'navigation_depth': -1,
+    #'navigation_depth': -1,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-style_external_links
-    'style_external_links': True,
+    #'style_external_links': True,
     # See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#theme-option-breadcrumbs
     'breadcrumbs': True,
     # See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#theme-option-strip_section_numbers
@@ -170,3 +156,18 @@ smartquotes = False
 # See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#example
 html_use_index = False
 html_domain_indices = False
+
+# See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
+global_substitutions = {
+    'LATEST_MINOR': '2.0-beta1 NOT YET RELEASED',
+    'LATEST_PATCH': '2.0.80-beta1 NOT YET RELEASED',
+    'PREVIOUS_MINOR': '2.0-alpha7',
+    'PREVIOUS_PATCH': '2.0.72-alpha7',
+    'K8S_MINOR': '1.21',
+    'K8S_PATCH': '1.21.5',
+    'K3S_MINOR': '1.21',
+    'K3S_PATCH': '1.21.5+k3s1',
+    'CLASSIC_MINOR': '1.77',
+    'CLASSIC_PATCH': '1.77.6',
+}
+

@@ -29,7 +29,7 @@ LOCKSS |LATEST_MINOR| System Manual
       :caption: Navigation
       :hidden:
 
-      LOCKSS Web Site <https://www.lockss.org/>
+      LOCKSS Program Web Site <https://www.lockss.org/>
       LOCKSS Documentation Portal <https://docs.lockss.org/>
       LOCKSS Community Wiki <https://github.com/lockss/community/wiki>
       LOCKSS Community Discussions <https://github.com/lockss/community/discussions>
