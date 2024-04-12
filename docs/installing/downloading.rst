@@ -58,9 +58,10 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
 .. tip::
 
-   Below are some advanced tips for this section.
-
    .. dropdown:: Inspecting the LOCKSS Downloader before running it
+      :name: downloading-inspecting
+      :icon: light-bulb
+      :animate: fade-in-slide-down
 
       For security purposes, you may wish to inspect the LOCKSS Downloader before executing it.
 
@@ -116,14 +117,20 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
          to run the LOCKSS Downloader script. You can append to ``./lockss-downloader`` all the same options that can be appended to ``| sh -s -`` in the normal procedure documented in this section, for instance :samp:`./lockss-downloader --download-dir={DIR}`.
 
    .. dropdown:: Custom LOCKSS Installer Directory
+      :name: downloading-directory
+      :icon: light-bulb
+      :animate: fade-in-slide-down
 
       If you need your :ref:`LOCKSS Installer Directory` to be a directory :samp:`{DIR}` other than the :ref:`Default LOCKSS Installer Directory`, add :samp:`--download-dir={DIR}` (or :samp:`-d {DIR}`) after ``| sh -s -``, like so:
 
-         .. code-block:: shell
+      .. code-block:: shell
 
-            ... | sh -s - --download-dir=DIR
+         ... | sh -s - --download-dir=DIR
 
    .. dropdown:: Custom version of the LOCKSS Installer
+      :name: downloading-version
+      :icon: light-bulb
+      :animate: fade-in-slide-down
 
       If you have a reason to install a version of the LOCKSS Installer other than the latest stable release |LATEST_PATCH|, you can do so by making references to the ``lockss-installer`` Git repository on GitHub [#fninstaller]_:
 
@@ -134,6 +141,9 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
       *  You can install a version as of a specific commit identifier :samp:`{COM}` of the ``lockss-installer`` Git repository by adding :samp:`--git-commit={COM}` (or :samp:`-c {COM}`) after ``| sh -s -``. This might be needed if you are helping the LOCKSS Team test a development version of the LOCKSS Installer.
 
    .. dropdown:: Considerations if using ``sudo -u``
+      :name: downloading-sudo-u
+      :icon: light-bulb
+      :animate: fade-in-slide-down
 
       If you must use:
 

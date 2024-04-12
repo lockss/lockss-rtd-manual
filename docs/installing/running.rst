@@ -38,9 +38,10 @@ The installer will run through its phases, each of which is described in its own
 
 .. tip::
 
-   Below are some advanced tips for this section.
-
    .. dropdown:: Skipping :program:`install-lockss` phases
+      :name: running-skipping
+      :icon: light-bulb
+      :animate: fade-in-slide-down
 
       You may need to skip some of the phases of :program:`install-lockss`, for example to overcome an incompatibility with the specifics of your host system. If this is necessary, invoke :program:`install-lockss` with one or more of the following options:
 
@@ -67,6 +68,9 @@ The installer will run through its phases, each of which is described in its own
           [success] Skipping (--skip-configure-firewalld)
 
    .. dropdown:: Running only one :program:`install-lockss` phase
+      :name: running-only
+      :icon: light-bulb
+      :animate: fade-in-slide-down
 
       Conversely, you may need to run or re-run only one phase of :program:`install-lockss`, for example re-running the :ref:`Testing the K3s Node` phase after it fails and you perform some troubleshooting. If this is necessary, invoke :program:`install-lockss` with exactly one of the following options:
 
@@ -83,9 +87,11 @@ The installer will run through its phases, each of which is described in its own
       ===================================== ==============
 
    .. dropdown:: Running :program:`install-lockss` on auto-pilot
+      :name: running-autopilot
+      :icon: light-bulb
+      :animate: fade-in-slide-down
 
-      If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run
-without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :ref:`configuring-firewalld` (:numref:`configuring-firewalld`), :ref:`configuring-ufw` (:numref:`configuring-ufw`), :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`) and :ref:`Installing K3s` (:numref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+      If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :ref:`configuring-firewalld` (:numref:`configuring-firewalld`), :ref:`configuring-ufw` (:numref:`configuring-ufw`), :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`) and :ref:`Installing K3s` (:numref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
 
 --------------------------
 Checking K3s Prerequisites
@@ -105,11 +111,12 @@ No user interaction is expected; if everything goes well, you will see this mess
 
 and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`).
 
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
+.. admonition:: Error conditions and what to do about them
 
    .. dropdown:: User namespaces must be enabled in RHEL/CentOS 7
+      :name: running-user-namespaces
+      :icon: stop
+      :animate: fade-in-slide-down
 
       In some RHEL 7 and CentOS 7 systems, user namespaces are not enabled by default. If this is the case, you will see the error message:
 
@@ -120,6 +127,9 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
       and :program:`install-lockss` will fail. See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
 
    .. dropdown:: Apparmor enabled but :program:`apparmor_parser` missing
+      :name: running-apparmor
+      :icon: stop
+      :animate: fade-in-slide-down
 
       In some systems, Apparmor is enabled but :program:`apparmor_parser` is not installed. If this is the case, you will see the error message:
 
@@ -147,11 +157,12 @@ No user interaction is expected; if everything goes well, you will see this mess
 
 and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
 
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
+.. admonition:: Error conditions and what to do about them
 
    .. dropdown:: ``lockss`` user or group does not exist
+      :name: running-user-group
+      :icon: stop
+      :animate: fade-in-slide-down
 
       If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
 
@@ -187,7 +198,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
 Otherwise, you will receive the following prompt:
 
-   :guilabel:`Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone?`
+:guilabel:`Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone?`
 
 Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_. (You may be prompted for your :program:`sudo` password.)
 
@@ -201,11 +212,12 @@ Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or ent
 
    and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention; see :doc:`/troubleshooting/firewalld` for details.
 
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
+.. admonition:: Error conditions and what to do about them
 
    .. dropdown:: :program:`firewalld` configuration attempt fails
+      :name: running-firewalld
+      :icon: stop
+      :animate: fade-in-slide-down
 
       If the :program:`firewalld` configuration attempt fails, you will see one of these error messages:
 
@@ -257,11 +269,12 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kb
 
    and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
 
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
+.. admonition:: Error conditions and what to do about them
 
    .. dropdown:: :program:`ufw` configuration attempt fails
+      :name: running-ufw
+      :icon: stop
+      :animate: fade-in-slide-down
 
       If the :program:`ufw` configuration attempt fails, you will see one of these error messages:
 
@@ -299,11 +312,12 @@ Otherwise [#fnforcedns]_, you will receive a message including ``CoreDNS does no
 
 Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested value will be offered to you in square brackets, consisting of non-loopback IP addresses collected from your machine's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value [#fnyes2]_.
 
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
+.. admonition:: Error conditions and what to do about them
 
    .. dropdown:: CoreDNS configuration attempt fails
+      :name: running-coredns
+      :icon: stop
+      :animate: fade-in-slide-down
 
       If the CoreDNS configuration attempt fails, you will see one of these error messages:
 
@@ -361,11 +375,12 @@ This phase consists of these steps:
 
       :samp:`Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is {<fs_type>}; proceeding`
 
-      .. error::
-
-         Below are some error conditions you may encounter here and what to do about them.
+      .. admonition:: Error conditions and warnings and what to do about them
 
          .. dropdown:: Filesystem type of K3s state data directory is NFS
+            :name: running-k3s-nfs
+            :icon: stop
+            :animate: fade-in-slide-down
 
             If the filesystem type backing the K3s state data directory is NFS, you will see the error message:
 
@@ -374,6 +389,9 @@ This phase consists of these steps:
             and :program:`install-lockss` will fail. It is not possible to run K3s with a state data directory backed by NFS [#fnk3sdatadirnfs]_. Re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by NFS.
 
          .. dropdown:: Filesystem type of K3s state data directory is XFS with legacy ``ftype=0``
+            :name: running-k3s-xfs-ftype-0
+            :icon: stop
+            :animate: fade-in-slide-down
 
             If the filesystem type backing the K3s state data directory is XFS with legacy ``ftype=0``, you will see the error message:
 
@@ -381,11 +399,10 @@ This phase consists of these steps:
 
             and :program:`install-lockss` will fail. Contemporary XFS filesystems with modern ``ftype=1`` work well with K3s, but older XFS filesystems with legacy ``ftype=0`` are not compatible. Ideally, re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by XFS with legacy ``ftype=0``. Alternatively, you can read about a workaround in :doc:`/troubleshooting/xfs`.
 
-      .. warning::
-
-         Below are some warning messages you may see here and how to respond to them.
-
          .. dropdown:: Filesystem type of K3s state data directory unknown
+            :name: running-k3s-unknown
+            :icon: alert
+            :animate: fade-in-slide-down
 
             If the filesystem type backing the K3s state data directory cannot be inferred automatically, you will see the warning:
 
@@ -394,6 +411,9 @@ This phase consists of these steps:
             and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s state data directory is one that does not work with K3s, such as NFS, or XFS with legacy ``ftype=0``; see the error conditions above.
 
          .. dropdown:: Filesystem type of K3s state data directory is XFS but ``ftype`` unknown
+            :name: running-k3s-xfs-ftype-unknown
+            :icon: alert
+            :animate: fade-in-slide-down
 
             If the ``ftype`` of the XFS filesystem backing the K3s state data directory cannot be inferred automatically, you will see the warning:
 
@@ -405,11 +425,14 @@ This phase consists of these steps:
 
       Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
 
-      .. error::
+      .. admonition:: Error conditions and what to do about them
 
-         If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail. See :doc:`/troubleshooting/k3s-installer` for remediation details.
+         .. dropdown:: Error messages from the K3s Installer
+            :name: running-k3s-installer
+            :icon: stop
+            :animate: fade-in-slide-down
 
-         .. dropdown:: Sample error messages from the K3s Installer
+            If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail. See :doc:`/troubleshooting/k3s-installer` for remediation details.
 
             Error messages that the K3s Installer may display include:
 
@@ -428,11 +451,12 @@ This phase consists of these steps:
 
 3. Finally, whether or not K3s was installed, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg` (relative to the :ref:`LOCKSS Installer Directory`).
 
-   .. error::
-
-      Below are some error conditions you may encounter here and what to do about them.
+   .. admonition:: Error conditions and what to do about them
 
       .. dropdown:: Could not write or append to :file:`k8s.cfg`
+         :name: running-k8s.cfg-write
+         :icon: stop
+         :animate: fade-in-slide-down
 
          If the creation of the file fails, you will see one of these error messages:
 
@@ -464,11 +488,12 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
 Otherwise, you will see an error message corresponding to the test that did not pass, and :program:`install-lockss` will fail.
 
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
+.. admonition:: Error conditions and what to do about them
 
    .. dropdown:: Problems with :file:`config/k8s.cfg`
+      :name: running-k8s.cfg-problems
+      :icon: stop
+      :animate: fade-in-slide-down
 
       At the end of :numref:`Installing K3s` (:ref:`Installing K3s`), some Kubernetes-related data is stored in :file:`config/k8s.cfg` (relative to the :ref:`LOCKSS Installer Directory`). If the file cannot be found or read, or if it contains invalid or unexpected data, you may see one of these error messages:
 
@@ -491,6 +516,9 @@ Otherwise, you will see an error message corresponding to the test that did not 
       Check the contents of :file:`config/k8s.cfg` and contact us (:email:`lockss-support@lockss.org`) for troubleshooting if necessary.
 
    .. dropdown:: Problems with the K3s node
+      :name: running-k3s-node
+      :icon: stop
+      :animate: fade-in-slide-down
 
       If the K3s node is not behaving as expected, you may see one of these errors:
 
@@ -507,6 +535,9 @@ Otherwise, you will see an error message corresponding to the test that did not 
       If the K3s node is newly installed, it may simply be that there has not yet been enough time for it to come up; you can re-run this phase with ``scripts/install-lockss --test-k3s`` (or ``scripts/install-lockss -K``) to retry. Contact us (:email:`lockss-support@lockss.org`) for troubleshooting if necessary.
 
    .. dropdown:: Problems with DNS
+      :name: running-dns
+      :icon: stop
+      :animate: fade-in-slide-down
 
       If the K3s node's DNS environment is not working properly, you may see one of these errors:
 
