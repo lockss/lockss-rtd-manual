@@ -1,22 +1,23 @@
-=============================
+===============================================
 Configuring the LOCKSS 2.x System for Migration
-=============================
+===============================================
 
-After `installing the LOCKSS system <installing>`_, you will configure it with the :program:`configure-lockss --migrate` script. If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.
+After `installing the LOCKSS system <installing>`, you will configure it with the :program:`configure-lockss --migrate` script. If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.
 
--------------------------------------------
+-----------------------------------------------------
 Before Invoking :program:`configure-lockss --migrate`
--------------------------------------------
-* Gathering Information
+-----------------------------------------------------
+
+Gathering Information
 
 * You will need to gather all of the information listed in 4.1 except for the first three bullet points
 
 * If you are migrating from a different host, we strongly reccomend copy the :file:`/etc/lockss/config.dat` from the LOCKSS 1.x host to a file on the LOCKSS 2.x host eg file:`/tmp/v1config.dat`
 
 
-------------------------------------
+----------------------------------------------
 Invoking :program:`configure-lockss --migrate`
-------------------------------------
+----------------------------------------------
 
 To invoke :program:`configure-lockss`, simply run this command in the ``lockss`` user's :file:`lockss-installer` directory as ``lockss`` [#fnlockss]_:
 
@@ -69,34 +70,35 @@ Prompt: :guilabel:`Location of copied LOCKSS 1.x config.dat file.: [/tmp/v1confi
 
 The data will be read from the copied configuration file and you will be asked to confirm each configuration value (see below)
 
-If you answered :kbd: `N`, you will need to enter more informationsee section blah.
+If you answered :kbd: `N`, you will need to enter more information see section below.
 
-
+-----------------
 Imported Settings
-=================
+-----------------
 The following values were imported from your LOCKSS 1.x configuration.
 You will be asked to confirm the settings which were set by importing the data. Hit :kbd:`Enter` to accept the default in square brackets.
+For more information on each setting see :doc:`/configuring`
 
    .. caution::
 
       Only in exceptional circumstances should you modify the defaults as given.
 
 Hostname
-========
+--------
 
 Prompt: :guilabel:`Fully qualified hostname (FQDN) of this machine`
 
 The machine's fully-qualified hostname (meaning with its domain name), for example :samp:`locksstest.myuniversity.edu`.
 
 IP Address
-==========
+--------
 
 Prompt: :guilabel:`IP address of this machine`
 
 If the machine is publicly routable, meaning it has an IP address that can be used to identify it over the Internet, the publicly routable IP address. Otherwise, if the machine is accessible via network address translation (NAT), meaning it has an IP address that is valid only on your local network but it can be reached from the Internet via a NAT router, enter the internal IP address.
 
 Initial UI Subnet
-=================
+--------
 
 Prompt: :guilabel:`Initial subnet(s) for admin UI access`
 
@@ -109,8 +111,8 @@ Prompt: :guilabel:`LCAP protocol port`
 
 The port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
-Temporary LOCKSS 2.x LCAP PORT for same host migration.
-==============================
+Temporary LOCKSS 2.x LCAP PORT( same host migration ).
+======================================================
 
 Prompt: :guilabel:`Temporary LOCKSS 2.x LCAP port`
 
@@ -128,10 +130,6 @@ Network Address Translation
    :guilabel:`External IP address for NAT`
 
    The publicly routable IP address of the NAT router.
-
--------------
-Mail Settings
--------------
 
 Mail Relay
 ==========
@@ -169,10 +167,6 @@ Prompt: :guilabel:`E-mail address for administrator`
 The e-mail address of the person or team who will administer the LOCKSS system on this machine.
 
 
------------------------------
-Preservation Network Settings
------------------------------
-
 Configuration URL
 =================
 
@@ -192,12 +186,12 @@ Preservation Groups
 ===================
 
 Prompt: :guilabel:`Preservation group(s)`
+
 The preservation group identifier or semicolon-separated list of preservation group identifiers. Select a scenario below for more details:
 
 
----------------------------
 Web User Interface Settings
----------------------------
+===========================
 
 1. Prompt: :guilabel:`User name for web UI administration`
 
@@ -213,12 +207,12 @@ Mark this the end of defaults
 
    Re-enter the password for the primary administrative user. If the two passwords do not match, the password will be asked again.
 
-Continue with the configure script, (ref).
+Continue with the configure script :doc:`/configuring`.
 
 
---------------------------------
+--------------------------------------------
 No LOCKSS 1.x  configuration file available.
---------------------------------
+--------------------------------------------
 If the configuration file from the LOCKSS 1.x host is not available. More information will be needed.
 
 Prompt: :guilabel:`Is the LOCKSS 1.x machine behind NAT?`
@@ -243,7 +237,9 @@ Enter the IP address that the LOCKSS 2.x machine will use to talk to the LOCKSS 
 
 Prompt: :guilabel:`LOCKSS 1.x LCAP port`
 
-Continue with the configure script, 4.6
+The port in use by LOCKSS 1.x
+
+Continue with the configure script, :doc:`/configuring` 4.6
 ----
 
 .. rubric:: Footnotes
