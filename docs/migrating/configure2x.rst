@@ -98,28 +98,28 @@ Prompt: :guilabel:`IP address of this machine`
 If the machine is publicly routable, meaning it has an IP address that can be used to identify it over the Internet, the publicly routable IP address. Otherwise, if the machine is accessible via network address translation (NAT), meaning it has an IP address that is valid only on your local network but it can be reached from the Internet via a NAT router, enter the internal IP address.
 
 Initial UI Subnet
---------
+-----------------
 
 Prompt: :guilabel:`Initial subnet(s) for admin UI access`
 
 The semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces (UI) of the system. The access list can be modified later via the UI.
 
 LCAP Port
-=========
+---------
 
 Prompt: :guilabel:`LCAP protocol port`
 
 The port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
-Temporary LOCKSS 2.x LCAP PORT( same host migration ).
-======================================================
+Temporary LOCKSS 2.x LCAP PORT
+-----------------------------------------------------
 
 Prompt: :guilabel:`Temporary LOCKSS 2.x LCAP port`
 
 When migrating on the same host, the system will need an LCAP port different from the one used by LOCKSS 1.x during migration.
 
 Network Address Translation
-===========================
+---------------------------
 
 1. Prompt: :guilabel:`Is this machine behind NAT?`
 
@@ -132,14 +132,14 @@ Network Address Translation
    The publicly routable IP address of the NAT router.
 
 Mail Relay
-==========
+----------
 
 Prompt: :guilabel:`Mail relay for this machine`
 
 The hostname of this machine's outgoing mail server, for example :samp:`smtp.myuniversity.edu`.
 
 Mail Relay Credentials
-======================
+----------------------
 
 1. Prompt: :guilabel:`Does the mail relay <mailhost> need a username and password?`
 
@@ -160,7 +160,7 @@ Mail Relay Credentials
       Re-enter the password for the username on the mail server.
 
 Administrator Email
-===================
+-------------------
 
 Prompt: :guilabel:`E-mail address for administrator`
 
@@ -168,7 +168,7 @@ The e-mail address of the person or team who will administer the LOCKSS system o
 
 
 Configuration URL
-=================
+-----------------
 
 1. Prompt: :guilabel:`Configuration URL`
 
@@ -176,14 +176,14 @@ Configuration URL
 
 
 Configuration Proxy
-===================
+-------------------
 
 Prompt: :guilabel:`Configuration proxy (host:port)`
 
 If the configuration URL can be reached directly, leave this blank; otherwise, if a proxy server is required to reach the configuration URL, enter its host and port in :samp:`{host}:{port}` format (for example :samp:`proxy.myuniversity.edu:8080`).
 
 Preservation Groups
-===================
+-------------------
 
 Prompt: :guilabel:`Preservation group(s)`
 
@@ -191,7 +191,7 @@ The preservation group identifier or semicolon-separated list of preservation gr
 
 
 Web User Interface Settings
-===========================
+---------------------------
 
 1. Prompt: :guilabel:`User name for web UI administration`
 
