@@ -38,7 +38,7 @@ Some notes about using :program:`configure-lockss`:
 
 *  When run the first time, some of the questions asked by the script will have a suggested or default value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`.
 
-*  Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged.
+*  Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged. Use :program:`configure-lockss --replay` to prompt only for info not already found in the config file.
 
 *  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
 
@@ -82,6 +82,20 @@ Prompt: :guilabel:`IP address of this machine`
 
 If the machine is publicly routable, meaning it has an IP address that can be used to identify it over the Internet, enter the publicly routable IP address. Otherwise, if the machine is accessible via network address translation (NAT), meaning it has an IP address that is valid only on your local network but it can be reached from the Internet via a NAT router, enter the internal IP address.
 
+Initial UI Subnet
+=================
+
+Prompt: :guilabel:`Initial subnet(s) for admin UI access`
+
+Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces (UI) of the system. The access list can be modified later via the UI.
+
+LCAP Port
+=========
+
+Prompt: :guilabel:`LCAP protocol port`
+
+Enter the port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
+
 Network Address Translation
 ===========================
 
@@ -94,37 +108,6 @@ Network Address Translation
    :guilabel:`External IP address for NAT`
 
    Enter the publicly routable IP address of the NAT router.
-
-Initial UI Subnet
-=================
-
-Prompt: :guilabel:`Initial subnet(s) for admin UI access`
-
-Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces (UI) of the system. The access list can be modified later via the UI.
-
-Container Subnet
-================
-
-1. If :program:`configure-lockss` detects a discrepancy between a previously used subnet for inter-container communication in the system and the subnet it would choose now, you may either see the warning:
-
-   :guilabel:`Container subnet has changed from <former_subnet> to <new_subnet>`
-
-   or be asked the question:
-
-   :guilabel:`Container subnet was <former_subnet>, we think it should now be <new_subnet>. Do you want to change it?`
-
-   in which case you should enter :kbd:`Y` (recommended) or :kbd:`N`.
-
-2. Prompt: :guilabel:`LOCKSS subnet for inter-service access control`
-
-   Enter the subnet used for inter-container communication. We recommend accepting the proposed value by hitting :kbd:`Enter`.
-
-LCAP Port
-=========
-
-Prompt: :guilabel:`LCAP V3 protocol port`
-
-Enter the port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
 -------------
 Mail Settings
@@ -164,6 +147,7 @@ Administrator Email
 Prompt: :guilabel:`E-mail address for administrator`
 
 Enter the e-mail address of the person or team who will administer the LOCKSS system on this machine.
+
 
 -----------------------------
 Preservation Network Settings
@@ -236,6 +220,41 @@ Enter a preservation group identifier or semicolon-separated list of preservatio
 
          If you are configuring your LOCKSS node to participate in a given LOCKSS network, enter the preservation group(s) provided for that LOCKSS network by your administrators (for example :samp:`mynetwork`, or :samp:`mynetwork;mygroup1;mygroup2`).
 
+---------------------------
+Web User Interface Settings
+---------------------------
+
+1. Prompt: :guilabel:`User name for web UI administration`
+
+   Enter a username for the primary administrative user in the LOCKSS system's Web user interfaces.
+
+2. Prompt: :guilabel:`Password for web UI administration user <uiuser>`
+
+   Enter a password for the primary administrative user.
+
+3. Prompt: :guilabel:`Password for web UI administration user <uiuser> (again)`
+
+   Re-enter the password for the primary administrative user. If the two passwords do not match, the password will be asked again.
+
+
+Container Subnet
+================
+
+1. If :program:`configure-lockss` detects a discrepancy between a previously used subnet for inter-container communication in the system and the subnet it would choose now, you may either see the warning:
+
+   :guilabel:`Container subnet has changed from <former_subnet> to <new_subnet>`
+
+   or be asked the question:
+
+   :guilabel:`Container subnet was <former_subnet>, we think it should now be <new_subnet>. Do you want to change it?`
+
+   in which case you should enter :kbd:`Y` (recommended) or :kbd:`N`.
+
+2. Prompt: :guilabel:`LOCKSS subnet for inter-service access control`
+
+   Enter the subnet used for inter-container communication. We recommend accepting the proposed value by hitting :kbd:`Enter`.
+
+
 -------------
 Storage Areas
 -------------
@@ -279,22 +298,6 @@ Temporary Storage Area
 Prompt: :guilabel:`Root path for temporary storage (local storage preferred)`
 
 This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
-
----------------------------
-Web User Interface Settings
----------------------------
-
-1. Prompt: :guilabel:`User name for web UI administration`
-
-   Enter a username for the primary administrative user in the LOCKSS system's Web user interfaces.
-
-2. Prompt: :guilabel:`Password for web UI administration user <uiuser>`
-
-   Enter a password for the primary administrative user.
-
-3. Prompt: :guilabel:`Password for web UI administration user <uiuser> (again)`
-
-   Re-enter the password for the primary administrative user. If the two passwords do not match, the password will be asked again.
 
 -----------------
 Database Settings
