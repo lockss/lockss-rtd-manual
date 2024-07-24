@@ -44,6 +44,8 @@ Some notes about using :program:`configure-lockss`:
 
 *  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
 
+.. _invoking-configure-lockss:
+
 ------------------------------------
 Invoking :program:`configure-lockss`
 ------------------------------------
