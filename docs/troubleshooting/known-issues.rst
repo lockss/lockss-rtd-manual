@@ -2,7 +2,15 @@
 Known Issues
 ============
 
-*This section was last updated: 2023-01-23.*
+*This section was last updated: 2024-07-24.*
+
+.. _known-issue-peer-links:
+
+.. rubric:: Peer Links
+
+Peer links in poll detail screens may link to the wrong UI port for that peer, depending on whether the peer is really running LOCKSS 1.x or LOCKSS 2.x.
+
+**Workaround:** Alter the port to the poller port (24631) in the URL bar to access the correct page.
 
 .. _known-issue-k3s-cert:
 
