@@ -4,6 +4,8 @@ Configuring the LOCKSS System
 
 After `installing the LOCKSS system <installing>`_, you will configure it with the :program:`configure-lockss` script. If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.
 
+.. _before-invoking-configure-lockss:
+
 -------------------------------------------
 Before Invoking :program:`configure-lockss`
 -------------------------------------------
