@@ -55,7 +55,7 @@ If you answered :kbd:`Y`, the data will be read from the config.dat file and you
 
    .. caution::
 
-      If you enter :kbd:`N', you will immediately exit. Migrating from another host while a LOCKSS 1.x installation is present on this host is not supported
+      If you enter :kbd:`N`, you will immediately exit. Migrating from another host while a LOCKSS 1.x installation is present on this host is not supported
 
 No LOCKSS 1.x installation detected on machine.
 ================================================
@@ -70,11 +70,11 @@ Prompt: :guilabel:`Location of copied LOCKSS 1.x config.dat file.: [/tmp/v1confi
 
 The data will be read from the copied configuration file and you will be asked to confirm each configuration value (see below)
 
-If you answered :kbd: `N`, you will need to enter more information see section below.
+If you answered :kbd:`N`, you will need to enter more information see section below.
 
------------------
+
 Imported Settings
------------------
+=================
 The following values were imported from your LOCKSS 1.x configuration.
 You will be asked to confirm the settings which were set by importing the data. Hit :kbd:`Enter` to accept the default in square brackets.
 For more information on each setting see :doc:`/configuring`
@@ -91,7 +91,7 @@ Prompt: :guilabel:`Fully qualified hostname (FQDN) of this machine`
 The machine's fully-qualified hostname (meaning with its domain name), for example :samp:`locksstest.myuniversity.edu`.
 
 IP Address
---------
+----------
 
 Prompt: :guilabel:`IP address of this machine`
 
@@ -112,7 +112,7 @@ Prompt: :guilabel:`LCAP protocol port`
 The port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
 Temporary LOCKSS 2.x LCAP PORT
------------------------------------------------------
+------------------------------
 
 Prompt: :guilabel:`Temporary LOCKSS 2.x LCAP port`
 
@@ -209,10 +209,10 @@ Mark this the end of defaults
 
 Continue with the configure script :doc:`/configuring`.
 
+--------------------------------------------
+No LOCKSS 1.x configuration file available.
+--------------------------------------------
 
---------------------------------------------
-No LOCKSS 1.x  configuration file available.
---------------------------------------------
 If the configuration file from the LOCKSS 1.x host is not available. More information will be needed.
 
 Prompt: :guilabel:`Is the LOCKSS 1.x machine behind NAT?`
@@ -240,6 +240,7 @@ Prompt: :guilabel:`LOCKSS 1.x LCAP port`
 The port in use by LOCKSS 1.x
 
 Continue with the configure script, :doc:`/configuring` 4.6
+
 ----
 
 .. rubric:: Footnotes
