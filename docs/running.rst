@@ -2,27 +2,22 @@
 Running the LOCKSS System
 =========================
 
-The commands in this section are all run as the ``lockss`` user [#fnlockss]_ in the ``lockss`` user's :file:`lockss-installer` directory.
+The commands in this section are all run as the ``lockss`` user [#fnlockss]_ in the :ref:`LOCKSS Installer Directory`.
 
 --------------------------
 Starting the LOCKSS System
 --------------------------
 
-Run ``scripts/start-lockss``. This script will call in turn:
+To start the LOCKSS system, run the following command:
 
-   *  ``scripts/generate-lockss``: This script takes your configuration data and turns it into a set of configuration files containing the right values.
+.. code-block:: shell
 
-   *  ``scripts/assemble-lockss``: This script puts the configuration files and puts them in the right places, and ensures that all storage volumes are ready for use (creating them if necessary).
-
-   *  ``scripts/deploy-lockss``: This script deploys your LOCKSS stack by invoking Kubernetes.
+   scripts/start-lockss
 
 The :program:`start-lockss` accepts some options:
 
-``--update`` (``-u``)
-   Force the system to check for newer container images of the system's components (LOCKSS services, embedded databases, embedded Web replay engines...) before deploying the system to Kubernetes.
-
 ``--wait`` (``-w``)
-   After deploying the system to Kubernetes and waiting for the system's containers to come up, additionally wait for an internal signal from the system that the system's components are fully initialized. (Currently this internal signal comes from the poller service.)
+   Wait for an internal signal from the system that the its components are initialized. (Currently this internal signal comes from the poller service.)
 
 -------------------------------
 Shutting down the LOCKSS System
