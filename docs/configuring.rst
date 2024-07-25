@@ -513,7 +513,7 @@ Final Steps
 
 1. Prompt: :guilabel:`OK to store this configuration?`
 
-  Enter :kbd:`Y` if the configuration values are to your liking; otherwise, enter :kbd:`N` to make edits.
+   Enter :kbd:`Y` if the configuration values are to your liking; otherwise, enter :kbd:`N` to make edits.
 
 2. If you answer :kbd:`Y`, :program:`configure-lockss` will perform the final configuration steps. You may be asked to confirm before directories are created for the first time:
 
