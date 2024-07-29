@@ -64,8 +64,7 @@ LOCKSS 2.0.81-beta1 is the first release of the LOCKSS 2.0-beta1 system. LOCKSS 
 
    *  GenerateLcapKeys omitted the public keystore from the generated zip/tgz.
 
-   *  Files received as repairs in a poll may not have been findable (e.g.
-  by ServeContent) if on a plugin's additional host.
+   *  Files received as repairs in a poll may not have been findable (e.g. by ServeContent) if on a plugin's additional host.
 
    *  The standard redirection of ``stderr`` output to ``...-logs/stderr.log`` results in truncated output in some startup error scenarios, making it impossible to see the error. This redirection can be disabled by setting the environment variable ``SUPPRESS_STD_REDIR`` to a non-empty string, then the ``stderr`` output will be recorded in the K3s log.
 
@@ -97,12 +96,12 @@ LOCKSS 2.0.81-beta1 consists of a configurable set of the following components:
 
 *  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.7.0
 
-*  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.4.0
+*  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.5.0
 
-*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7
+*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7 (14.7-alpine container)
 
-*  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom version 8.11.2-slim-1)
+*  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom 8.11.2-slim-1 container)
 
-*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom version 2.4.2-3)
+*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom 2.4.2-3 container)
 
-*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom version 2.4.0-5)
+*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom 2.4.0-5 container)
