@@ -12,7 +12,7 @@ LOCKSS 2.0.81-beta1
 
 Released: 2024-07-29
 
-LOCKSS 2.0.81-beta1 is the first release of the LOCKSS 2.0-beta1 system. LOCKSS 2.0-beta1 is now feature-complete compared to LOCKSS 1.x.
+LOCKSS 2.0.81-beta1 is the first beta release of the LOCKSS 2.0 system. LOCKSS 2.0-beta1 is now feature-complete compared to LOCKSS 1.x.
 
 .. rubric:: Release Notes
 
@@ -76,7 +76,7 @@ LOCKSS 2.0.81-beta1 is the first release of the LOCKSS 2.0-beta1 system. LOCKSS 
 
 *  **Security**
 
-   *  Do not unnecessarily disclose the Jetty version in responses.
+   *  Following best practices, we are removing unnecessary version number disclosures in HTTP responses and UI pages.
 
 .. rubric:: Component Versions
 
