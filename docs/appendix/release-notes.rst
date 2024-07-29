@@ -50,7 +50,7 @@ LOCKSS 2.0.81-beta1 is the first beta release of the LOCKSS 2.0 system. LOCKSS 2
 
    *  Added a CLOCKSS permission statement with open access qualification.
 
-   * ``start-lockss``, ``stop-lockss``, and ``restart-lockss`` can now start, stop, or restart only selected services, by specifying ``-s "<space-separated-list-of-service-names>"``.
+   * ``start-lockss``, ``stop-lockss``, and ``restart-lockss`` can now start, stop, or restart only selected services, by specifying ``-s "<semicolon-separated-list-of-service-names>"``.
 
 *  **Bugs**
 
