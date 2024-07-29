@@ -4,173 +4,98 @@ Release Notes
 
 .. _latest:
 
---------------------
-LOCKSS 2.0.72-alpha7
---------------------
-
-Released: 2023-09-02
-
-LOCKSS 2.0.72-alpha7 is a bug fix release of the LOCKSS 2.0-alpha7 system. If you are running 2.0.71-alpha7, you will need to follow the instructions in :doc:`/upgrading/index`.
-
-.. rubric:: Release Notes
-
-*  **Bug Fixes**
-
-   *  Fixed an errant Java 11 dependency impacting the repository service's reindexing code, typically involved only in the 2.0-alpha5 to 2.0-alpha7 upgrade procedure.
-
-.. rubric:: Component Versions
-
-LOCKSS 2.0.72-alpha7 consists of a configurable set of the following components:
-
-*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.72-alpha7
-
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.14.1
-
-*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.8.0
-
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.6.0
-
-*  `LOCKSS Crawler Service <https://github.com/lockss/laaws-crawler-service>`_ version 1.0.0
-
-*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.7.0
-
-*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.6.0
-
-*  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.4.0
-
-*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7
-
-*  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom version 8.11.2-slim-1)
-
-*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom version 2.4.2-3)
-
-*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom version 2.4.0-5)
-
---------------------
-LOCKSS 2.0.71-alpha7
---------------------
+-------------------
+LOCKSS 2.0.81-beta1
+-------------------
 
 .. COMMENT RELEASEDATE
 
-Released: 2023-08-29
+Released: 2024-07-29
 
-LOCKSS 2.0.71-alpha7 is the first release of the LOCKSS 2.0-alpha7 system.
+LOCKSS 2.0.81-beta1 is the first release of the LOCKSS 2.0-beta1 system. LOCKSS 2.0-beta1 is now feature-complete compared to LOCKSS 1.x.
 
 .. rubric:: Release Notes
 
 *  **Features**
 
-   *  The major new feature in this release is the LOCKSS Crawler Service, which provides a REST interface to crawling services. This will allow users to integrate external crawlers by defining a Pluggable Crawler Plugin (similar to the way publisher plugins can be defined).  Initially, Wget is supported (along with the classic LOCKSS crawler).
+   *  The major new feature in this release is support for migration from LOCKSS 1.78 to LOCKSS 2.0-beta1. See the :doc:`lockss:migration/index`.
 
-   *  The provided PostgreSQL container is upgraded to version 14.7. The upgrade script converts existing databases by dumping and reloading them. This may take some time for large databases. **It is very important to run the upgrade script.**
+      *  Added a ``--migrate`` option to ``configure-lockss`` to configure LOCKSS 2.0-beta1 for migration from LOCKSS 1.78.
 
-   *  ``NamedPlugin`` can now be used for both direct deposit and with pluggable crawlers.
+      *  Display warnings on UI elements that should be used cautiously during migration.
 
-   *  Added ``StartupStatus`` enum to ``ApiStatus`` REST response, allows clients  to determine when AUs are fully started.
+      *  Functionality underpinning the migration of configuration data, the copy of databases (PostgreSQL or Derby), and the forwarding of polling traffic and content access requests.
 
-   *  Self-generated SSL certificates for admin UI or ServeContent now have 2048-bit keys.
+   *  Bump LCAP protocol minor version for 1.x/2.x compatibility.
 
-   *  Added Flush Artifact Caches button to DebugPanel to assist with benchmarking repository performance.
+   *  Upgraded from Java 8 to Java 17.
 
-   *  ``AuQuery`` Web Services response now includes AU access URLs.
+      *  Upgraded key dependent libraries to adjust to Java 17, including the Spring framework, XStream.
 
-   *  The remaining (deprecated) REST endpoints in service of Web Services queries have been moved to a ``/ws/...`` path.
+      *  Switched to the new Doclet framework for Javadoc.
 
-   *  The AUID is displayed in the AU detail page, and available in metadata index status tables.
+   *  Upgraded REST API specifications and processing to OpenAPI 3, and cleaned up several of the API descriptions.
 
-   *  Dependency upgrades: Jsoup 1.16.1, Apache Log4J 2.20.0, Apache Commons FileUpload 1.5, Apache Commons Compress 1.23.0, Apache Commons CSV 1.10.0, Apache Commons Codec 1.16.0, Apache Commons IO 2.13.0, Jonix 2023-05, Json-Path 2.8.0, MARC4J 2.9.5, JDBC PostgreSQL client 42.5.0.
+   *  User account creation is now supported, as in LOCKSS 1.x.
 
-*  **Bug Fixes**
+   *  Optional configuration files may now be in XML format (``.xml.opt``).
 
-   *  Improved robustness handling corrupted WARC files (generally caused by abrupt shutdown).
+   *  ``org.lockss.proxy.preferGlobal`` set to ``true`` causes the global proxy setting to override any per-AU proxy setting from the title database. (This is useful in certain testing scenarios.)
 
-   *  Fixed bug causing most services to periodically reload config files even when not changed.
+   *  Changed the default values of many configuration parameters to what is appropriate or likely for private LOCKSS networks, rather than the Global LOCKSS Network or CLOCKSS, which simplifies initial PLN setup. See also :doc:`lockss:admin/starter`.
 
-   *  Reduced spurious undeleted temp files.
+   *  Added the plugin identifier and parent plugins to the PluginReloaded alert.
 
-   *  Fixed a unicode normalization vulnerability that might have allowed specially crafted bibliographic info in the title DB to cause the UI to misbehave.
+   *  It is no longer necessary to define the standard titlesets (``AllAus``, ``ActiveAus``, ``InactiveAus``) in the props file. Can be disabled with ``org.lockss.addStandardTitleSets=false``.
 
-   *  Fixed config file precedence problem due to inconsistent/wrong loading order.
+   *  Added a CLOCKSS permission statement with open access qualification.
 
-   *  Fixed Repository Service startup problem when Solr is not quite ready.
+   * ``start-lockss``, ``stop-lockss``, and ``restart-lockss`` can now start, stop, or restart only selected services, by specifying ``-s "<space-separated-list-of-service-names>"``.
 
-   *  Fixed a bug preventing hash estimate padding from being fully configurable.
+*  **Bugs**
 
-   *  Error logs sometimes omitted Timestamp messages.
+   *  Retrieving large files from the repository could cause ``OutOfMemoryError``.
 
-   *  PostgreSQL logs no longer accumulate forever.
+   *  Database connections were not always closed, which could eventually cause hangs when the connection pool was exhausted.
 
-*  **LOCKSS Installer changes**
+   *  The RIS metadata extractor did not treat ``TY`` tag values case-independently.
 
-   *  Now allows the content, state data (including databases), logs, and temporary storage areas to be placed on different devices. We strongly discourage placing the state data and temporary storage areas on network-attached storage such as NFS.
+   *  Disallowed or disabled servlets return a more appropriate status code (403 or 503).
 
-   *  Allows more end-user control over runtime environment and JVM command line (e.g. to change heap size or add profiling or debugging agents).
+   *  GenerateLcapKeys omitted the public keystore from the generated zip/tgz.
 
-   *  When reconfiguring the system after an upgrade, it is no longer necessary to see and accept the default for each answer. If :program:`configure-lockss` is invoked in replay mode with the ``-r`` option, all prompts that already have an answer will simply be echoed and the script will proceed to the next prompt. It will be necessary to enter info (or accept the default) only for new prompts added since the previous release.
+   *  Files received as repairs in a poll may not have been findable (e.g.
+  by ServeContent) if on a plugin's additional host.
 
-*  **LOCKSS Repository Service changes**
+   *  The standard redirection of ``stderr`` output to ``...-logs/stderr.log`` results in truncated output in some startup error scenarios, making it impossible to see the error. This redirection can be disabled by setting the environment variable ``SUPPRESS_STD_REDIR`` to a non-empty string, then the ``stderr`` output will be recorded in the K3s log.
 
-   *  New endpoints to retrieve artifact data with a streaming response. (The multipart response, still supported, generally precluded    clients streaming data into an application, negatively impacting performance.)
-
-   *  Added ``excludeStatusPattern`` to ``addArtifacts()``, allows skipped artifacts based on HTTP response code in WARC record.
-
-   *  Added duplicate detection to ``addArtifacts()``.
-
-   *  Removed ``isCompressed`` argument from ``addArtifacts``. The repository service now detects whether the archive file is compressed.
-
-   *  Performance improvements in repository to spend less time recalculating AU sizes.
-
-   *  ``getStoreageInfo`` API now only optionally queries Solr index space, as it is quite slow.
-
-*  **Plugin Packager changes**
-
-   *  Plugin key ``plugin_aux_packages`` allows declaration of packages that should in included in the plugin JAR.
-
-   *  Improved plugin validation.
-
-   *  Validation is now also performed after packaging.
+   *  Removed dependency on several internal ``sun.com`` packages.
 
 *  **Performance**
 
-   *  Substantial reductions in memory requirements.
+   *  Removed a performance bottleneck recording VoteBlocks during hashing.
 
-   *  Eliminated many duplicate strings and other objects.
+*  **Security**
 
-   *  Periodically clear PDFBox's (monotonically growing) caches.
-
-   *  Improved hashing performance.
-
-   *  Removed a slow Solr call that was causing some UI pages to be very slow.
-
-   *  Reduced extraneous inter-service network traffic. (Unnecessary config file reloading and redundant storing of some state objects.)
-
-   *  Greatly reduced startup time of services that don't need to load the Title DB.
-
-   *  Implemented database connection pooling.
-
-   *  Improved REST connection pooling.
-
-   *  Reduced start script time.
-
-   *  Applied PostgreSQL tuning.
+   *  Do not unnecessarily disclose the Jetty version in responses.
 
 .. rubric:: Component Versions
 
-LOCKSS 2.0.71-alpha7 consists of a configurable set of the following components:
+LOCKSS 2.0.81-beta1 consists of a configurable set of the following components:
 
-*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.71-alpha7
+*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.81-beta1
 
-*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.14.0
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.15.0
 
-*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.8.0
+*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.9.0
 
-*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.6.0
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.7.0
 
-*  `LOCKSS Crawler Service <https://github.com/lockss/laaws-crawler-service>`_ version 1.0.0
+*  `LOCKSS Crawler Service <https://github.com/lockss/laaws-crawler-service>`_ version 1.1.0
 
-*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.7.0
+*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.8.0
 
-*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.6.0
+*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.7.0
 
 *  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.4.0
 
