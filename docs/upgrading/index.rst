@@ -78,7 +78,7 @@ This will download and invoke the LOCKSS Downloader, which in turn will install 
 Run the Upgrade Script
 ----------------------
 
-The next step will update PostgreSQL from 9.6.12 to 14.7 if applicable. In addition, if updating from 2.0-alpha5, the archived content will then be reindexed. As the ``lockss`` user, run the following command in the :ref:`LOCKSS Installer Directory`:
+If you are upgrading from a version prior to alpha7, the next step will update PostgreSQL from 9.6.12 to 14.7. In addition, if updating from 2.0-alpha5, the archived content will then be reindexed. Either of these operations, may take some time. As the ``lockss`` user, run the following command in the :ref:`LOCKSS Installer Directory`:
 
 .. code-block:: shell
 
@@ -90,7 +90,7 @@ The next step will update PostgreSQL from 9.6.12 to 14.7 if applicable. In addit
 
    .. COMMENT LATESTVERSION
 
-  If it takes more than a few seconds for ``upgrade-to-alpha7`` above to run, the reindexing of all previously archived content which occurs the first time you start 2.0-alpha7 after upgrading from 2.0-alpha5 may take prohibitively long. This performance issue will be addressed in a later release. If you do not need the previously stored content during alpha testing, you could delete it and skip this reindexing step; see :doc:`/sysadmin/resetting`.
+  If you have collected a substantial amount of content in the alpha system this may take a prohibitively long time. If you do not need that content, you can delete it and save time; see :doc:`/sysadmin/resetting`.
 
 ---------------------------
 Re-run the Configure Script
@@ -110,25 +110,11 @@ Start LOCKSS |LATEST_MINOR|
 
 You are now ready to start the LOCKSS system.
 
-*  If you were upgrading from LOCKSS 2.0.71-alpha7, run this command:
-
-   .. code-block:: shell
-
-      scripts/start-lockss -u
-
-*  If you were upgrading from LOCKSS 2.0-alpha5 or LOCKSS 2.0-alpha6, run this command:
+*  Run this command:
 
    .. code-block:: shell
 
       scripts/start-lockss
-
-   .. hint::
-
-      .. COMMENT PREVIOUSVERSION
-
-      .. COMMENT LATESTVERSION
-
-      If it takes more than a few seconds for ``upgrade-to-alpha7`` above to run, the reindexing of all previously archived content which occurs the first time you start 2.0-alpha7 after upgrading from 2.0-alpha5 may take prohibitively long. This performance issue will be addressed in a later release. If you do not need the previously stored content during alpha testing, you could delete it and skip this reindexing step; see :doc:`/sysadmin/resetting`.
 
 ----
 
