@@ -20,8 +20,6 @@ Upgrading the LOCKSS System
 
    Commands in this section are run as the ``lockss`` user  [#fnlockss]_.
 
-.. COMMENT PREVIOUSVERSION
-
 ----------------------
 Stop the LOCKSS System
 ----------------------
@@ -84,7 +82,7 @@ The next step will update PostgreSQL from 9.6.12 to 14.7 if applicable. In addit
 
 .. code-block:: shell
 
-   scripts/upgrades/upgrade-to-alpha7
+   scripts/upgrades/upgrade-to-beta1
 
 .. hint::
 
@@ -102,9 +100,9 @@ Re-run the configuration script by running the command below and follow the inst
 
 .. code-block:: shell
 
-   scripts/configure-lockss -r
+   scripts/configure-lockss --replay
 
-The ``-r`` ("replay") option will re-use all previously-entered configuration values, and only ask questions for new prompts added since the previous release.
+The ``--replay`` option will re-use all previously-entered configuration values, and only ask questions for new prompts added since the previous release.
 
 ---------------------------
 Start LOCKSS |LATEST_MINOR|

@@ -9,7 +9,7 @@ LOCKSS |LATEST_MINOR| System Manual
 .. COMMENT LATESTVERSION (substitution doesn't work here)
 
 .. toctree::
-   :caption: LOCKSS 2.0-beta1 NOT YET RELEASED System Manual
+   :caption: LOCKSS 2.0-beta1 System Manual
    :hidden:
    :numbered:
 
