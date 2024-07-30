@@ -100,6 +100,12 @@ Re-run the configuration script by running the command below and follow the inst
 
 .. code-block:: shell
 
+   scripts/configure-lockss
+
+If you not need to review the existing configuration values, run this command instead:
+
+.. code-block:: shell
+
    scripts/configure-lockss --replay
 
 The ``--replay`` option will re-use all previously-entered configuration values, and only ask questions for new prompts added since the previous release.
