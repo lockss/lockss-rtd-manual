@@ -61,7 +61,7 @@
 
          .. COMMENT RELEASEDATE
 
-         |LATEST_PATCH| (2023-09-02)
+         |LATEST_PATCH| (2024-07-29)
 
          .. button-ref:: /appendix/release-notes
             :ref-type: doc
