@@ -221,11 +221,12 @@ Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or ente
 
    and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention; see :doc:`/troubleshooting/iptables` for details.
 
-.. error::
-
-   Below are some error conditions you may encounter here and what to do about them.
+.. admonition:: Error conditions and what to do about them
 
    .. dropdown:: :program:`iptables` configuration attempt fails
+      :name: iptables-configuration-fails
+      :icon: stop
+      :animate: fade-in-slide-down
 
       If the :program:`iptables` configuration attempt fails, you will see one of these error messages:
 
