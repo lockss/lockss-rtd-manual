@@ -26,7 +26,7 @@ LOCKSS 2.0.81-beta1 is the first beta release of the LOCKSS 2.0 system. LOCKSS 2
 
       *  Functionality underpinning the migration of configuration data, the copy of databases (PostgreSQL or Derby), and the forwarding of polling traffic and content access requests.
 
-   *  Bump LCAP protocol minor version for 1.x/2.x compatibility.
+   *  Bumped LCAP protocol minor version for 1.x/2.x compatibility.
 
    *  Upgraded from Java 8 to Java 17.
 
@@ -40,7 +40,7 @@ LOCKSS 2.0.81-beta1 is the first beta release of the LOCKSS 2.0 system. LOCKSS 2
 
    *  Optional configuration files may now be in XML format (``.xml.opt``).
 
-   *  ``org.lockss.proxy.preferGlobal`` set to ``true`` causes the global proxy setting to override any per-AU proxy setting from the title database. (This is useful in certain testing scenarios.)
+   * ``start-lockss``, ``stop-lockss``, and ``restart-lockss`` can now start, stop, or restart only selected services, by specifying ``-s "<semicolon-separated-list-of-service-names>"``.
 
    *  Changed the default values of many configuration parameters to what is appropriate or likely for private LOCKSS networks, rather than the Global LOCKSS Network or CLOCKSS, which simplifies initial PLN setup. See also :doc:`lockss:admin/starter`.
 
@@ -50,7 +50,7 @@ LOCKSS 2.0.81-beta1 is the first beta release of the LOCKSS 2.0 system. LOCKSS 2
 
    *  Added a CLOCKSS permission statement with open access qualification. Now accepting legacy Creative Commons 2.1, CC0, CERTIFICATION 1.0 and PDM 1.0 licenses.
 
-   * ``start-lockss``, ``stop-lockss``, and ``restart-lockss`` can now start, stop, or restart only selected services, by specifying ``-s "<semicolon-separated-list-of-service-names>"``.
+   *  ``org.lockss.proxy.preferGlobal`` set to ``true`` causes the global proxy setting to override any per-AU proxy setting from the title database. (This is useful in certain testing scenarios.)
 
 *  **Bugs**
 
