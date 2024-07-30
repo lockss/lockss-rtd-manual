@@ -133,15 +133,15 @@ Mail Relay Credentials
 
 2. If you answered :kbd:`Y`, you will be asked additional configuration questions:
 
-   1. Prompt: :guilabel:`User for <mailhost>`
+   a. Prompt: :guilabel:`User for <mailhost>`
 
       Enter a username for the mail server.
 
-   2. Prompt: :guilabel:`Password for <mailuser>@<mailhost>`
+   b. Prompt: :guilabel:`Password for <mailuser>@<mailhost>`
 
       Enter the password for the username on the mail server.
 
-   3. Prompt: :guilabel:`Password for <mailuser>@<mailhost> (again)`
+   c. Prompt: :guilabel:`Password for <mailuser>@<mailhost> (again)`
 
       Re-enter the password for the username on the mail server. If the two passwords do not match, the password will be asked again.
 
@@ -183,11 +183,11 @@ Configuration URL
 
 2. If the configuration URL begins with ``https:``, you will be asked additional configuration questions:
 
-   1. Prompt: :guilabel:`Verify configuration server authenticity?`
+   a. Prompt: :guilabel:`Verify configuration server authenticity?`
 
       Enter :kbd:`Y` if you would like to check the authenticity of the configuration server using a custom keystore; otherwise enter :kbd:`N`.
 
-   2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
+   b. If you answered :kbd:`Y`, you will be asked an additional configuration question:
 
       :guilabel:`Server certificate keystore`
 
@@ -450,11 +450,11 @@ Crawler Service
 
 2. If you answer :kbd:`Y`: to the previous question, you will see these additional questions:
 
-   1. Prompt: :guilabel:`Enable classic LOCKSS crawler?`
+   a. Prompt: :guilabel:`Enable classic LOCKSS crawler?`
 
       Enter :kbd:`Y` if you want to run the classic LOCKSS crawler, otherwise :kbd:`N`. (Most LOCKSS networks using the crawler service use the classic LOCKSS crawler.)
 
-   2. Prompt: :guilabel:`Enable Wget crawler?`
+   b. Prompt: :guilabel:`Enable Wget crawler?`
 
       Enter :kbd:`Y` if you want to enable the usage of the external Wget crawler, otherwise :kbd:`N`.
 
