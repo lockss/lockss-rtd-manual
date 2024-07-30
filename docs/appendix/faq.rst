@@ -5,7 +5,6 @@ Frequently Asked Questions
 This section answers some common questions about the LOCKSS system.
 
 I have an existing classic LOCKSS system (version 1.x). Can I migrate to LOCKSS |LATEST_MINOR|?
-
    It is possible to migrate from LOCKSS 1.78 to LOCKSS |LATEST_MINOR| now, except for LOCKSS nodes participating in the Global LOCKSS Network (GLN), in which case we strongly recommend waiting until a subsequent beta release of LOCKSS 2.x for that node. We invite you to read the :doc:`lockss:migration/index` and give us feedback to help improve the documentation.
 
 I have a LOCKSS system running |PREVIOUS_MINOR|. Can I upgrade to LOCKSS |LATEST_MINOR|?
