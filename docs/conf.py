@@ -177,6 +177,6 @@ global_substitutions = {
     'K3S_MINOR': '1.21',
     'K3S_PATCH': '1.21.5+k3s1',
     'CLASSIC_MINOR': '1.78',
-    'CLASSIC_PATCH': '1.78.2',
+    'CLASSIC_PATCH': '1.78.3',
 }
 
