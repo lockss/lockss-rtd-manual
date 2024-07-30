@@ -18,7 +18,7 @@ You will need to gather information to answer configuration questions asked by :
 
 *  The configuration URL and preservation group or groups corresponding to the LOCKSS network your system is joining.
 
-*  The paths for the primary content storage area, any additional content storage areas, the state data storage area, the temporary storage area, and the log storage area. See the :ref:`Storage` and :ref:`Network-Attached Storage` sections for important information about performance requirements for these storage areas.
+*  The paths for the primary content storage area, any additional content storage areas, the state data storage area, the temporary storage area, and the log storage area. See the :ref:`Storage` sections for important information about performance requirements for these storage areas.
 
    .. caution::
 
@@ -207,22 +207,22 @@ Prompt: :guilabel:`Preservation group(s)`
 
 Enter a preservation group identifier or semicolon-separated list of preservation group identifiers. Select a scenario below for more details:
 
-   .. tab-set::
+.. tab-set::
 
-      .. tab-item:: LOCKSS Demo Network
-         :sync: demo
+   .. tab-item:: LOCKSS Demo Network
+      :sync: demo
 
-         If you are trying out LOCKSS 2.x, enter :samp:`demo` (or simply hit :kbd:`Enter`, as this is the default).
+      If you are trying out LOCKSS 2.x, enter :samp:`demo` (or simply hit :kbd:`Enter`, as this is the default).
 
-      .. tab-item:: Global LOCKSS Network
-         :sync: gln
+   .. tab-item:: Global LOCKSS Network
+      :sync: gln
 
-         If you are participating in the Global LOCKSS Network and trying out LOCKSS 2.x, enter :samp:`demoprod`.
+      If you are participating in the Global LOCKSS Network and trying out LOCKSS 2.x, enter :samp:`demoprod`.
 
-      .. tab-item:: Other LOCKSS Network
-         :sync: other
+   .. tab-item:: Other LOCKSS Network
+      :sync: other
 
-         If you are configuring your LOCKSS node to participate in a given LOCKSS network, enter the preservation group(s) provided for that LOCKSS network by your administrators (for example :samp:`mynetwork`, or :samp:`mynetwork;mygroup1;mygroup2`).
+      If you are configuring your LOCKSS node to participate in a given LOCKSS network, enter the preservation group(s) provided for that LOCKSS network by your administrators (for example :samp:`mynetwork`, or :samp:`mynetwork;mygroup1;mygroup2`).
 
 ---------------------------
 Web User Interface Settings
@@ -263,7 +263,7 @@ Container Subnet
 Storage Areas
 -------------
 
-The LOCKSS system needs several kinds of storage areas, as described in the :ref:`Storage` section. See also the :ref:`Network-Attached Storage` section for important information about performance requirements for these storage areas.
+The LOCKSS system needs several kinds of storage areas, as described in the :ref:`Storage` section. See also the :ref:`Storage` section for important information about performance requirements for these storage areas.
 
 Depending on your host system's layout, these storage areas may all be the same, or all be different mount points or paths. Each path must be writeable by the ``lockss`` user.
 
