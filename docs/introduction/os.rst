@@ -58,7 +58,7 @@ The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compati
 
    .. warning::
 
-      CentOS Linux is at end of life and is not suitable for use with LOCKSS 2.x.
+      `CentOS Linux <https://www.centos.org/centos-linux/>`_ is at end of life and is not suitable for use with LOCKSS 2.x.
 
    .. tip::
 
@@ -399,11 +399,11 @@ The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compati
    Ubuntu              20.04 LTS 2022-10-01     2025-04-02       :octicon:`thumbsup` :bdg-warning-line:`obsolescent`
    =================== ========= ============== ================ =====
 
-The LOCKSS system can likely be installed successfully on additional flavors of  Linux flavors. We welcome reports of successful installations from the community so they can be added to the list above.
+The LOCKSS system can likely be installed successfully on additional flavors of  Linux. We welcome reports of successful installations from the community so they can be added to the list above.
 
 .. tip::
 
-   If your IT environment does not favor a particular flavor of Linux, we recommend :ref:`os-rocky-linux`, both for brand-new installations and for either new-host or same-host migrations from LOCKSS 1.x.
+   If your IT environment does not favor a particular flavor of Linux, we recommend :ref:`os-rocky-linux`, both for brand-new installations and for :doc:`either new-host or same-host migrations from LOCKSS 1.x <lockss:migration/index>`.
 
 ----
 
