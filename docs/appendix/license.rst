@@ -6,7 +6,7 @@ The LOCKSS system is made available under the terms of the 3-Clause BSD License,
 
 .. code-block:: text
 
-   Copyright (c) 2000-2022, Board of Trustees of Leland Stanford Jr. University
+   Copyright (c) 2000-2024, Board of Trustees of Leland Stanford Jr. University
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are met:
