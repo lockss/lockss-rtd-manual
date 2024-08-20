@@ -172,7 +172,6 @@ global_substitutions = {
     'LATEST_PATCH': '2.0.90-beta2 NOT YET RELEASED',
     'PREVIOUS_MINOR': '2.0-beta1',
     'PREVIOUS_PATCH': '2.0.82-beta1',
-release.)
     'K8S_MINOR': '1.21',
     'K8S_PATCH': '1.21.5',
     'K3S_MINOR': '1.21',
