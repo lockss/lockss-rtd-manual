@@ -126,7 +126,7 @@ html_css_files = [
 master_doc = 'index'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_logo
-html_logo = 'images/lockss-2.0-beta1-128x128.png'
+html_logo = 'images/lockss-2.0-beta2-128x128.png'
 
 # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html
 html_theme_options = {
