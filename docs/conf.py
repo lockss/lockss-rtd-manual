@@ -180,4 +180,3 @@ release.)
     'CLASSIC_MINOR': '1.78',
     'CLASSIC_PATCH': '1.78.3',
 }
-
