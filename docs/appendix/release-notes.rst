@@ -5,6 +5,54 @@ Release Notes
 .. _latest:
 
 -------------------
+LOCKSS 2.0.82-beta1
+-------------------
+
+.. COMMENT RELEASEDATE
+
+Released: 2024-08-19
+
+LOCKSS 2.0.82-beta1 is a bugfix release of LOCKSS 2.0-beta1, bringing minor improvements to the LOCKSS Installer.
+
+.. rubric:: Release Notes
+
+*  **Bugs**
+
+   *  Better path normalization during configuration.
+
+   *  Make the Global LOCKSS Network the default, as was the case in LOCKSS 1.x.
+
+   *  Avoid harmless error message when installing the Kubernetes dashboard.
+
+.. rubric:: Component Versions
+
+LOCKSS 2.0.82-beta1 consists of a configurable set of the following components:
+
+*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.82-beta1
+
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.15.0
+
+*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.9.0
+
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.7.0
+
+*  `LOCKSS Crawler Service <https://github.com/lockss/laaws-crawler-service>`_ version 1.1.0
+
+*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.8.0
+
+*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.7.0
+
+*  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.5.0
+
+*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7 (14.7-alpine container)
+
+*  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom 8.11.2-slim-1 container)
+
+*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom 2.4.2-3 container)
+
+*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom 2.4.0-5 container)
+
+-------------------
 LOCKSS 2.0.81-beta1
 -------------------
 

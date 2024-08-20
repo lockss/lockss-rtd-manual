@@ -169,7 +169,7 @@ html_domain_indices = False
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
     'LATEST_MINOR': '2.0-beta1',
-    'LATEST_PATCH': '2.0.81-beta1',
+    'LATEST_PATCH': '2.0.82-beta1',
     'PREVIOUS_MINOR': '2.0-alpha7',
     'PREVIOUS_PATCH': '2.0.72-alpha7',
     'K8S_MINOR': '1.21',
@@ -179,4 +179,3 @@ global_substitutions = {
     'CLASSIC_MINOR': '1.78',
     'CLASSIC_PATCH': '1.78.3',
 }
-
