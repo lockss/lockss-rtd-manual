@@ -2,23 +2,19 @@
 Upgrading the LOCKSS System
 ===========================
 
-.. note::
-
-   This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5, 2.0-alpha6, 2.0-alpha7, or 2.0.81-beta1 system, to |LATEST_MINOR|. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter:
-
-   .. button-ref:: /installing/index
-      :ref-type: doc
-      :color: primary
-      :outline:
-      :align: center
-
-.. tip::
-
-   Before you begin the upgrade, we strongly recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
+This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5, 2.0-alpha6, 2.0-alpha7, or 2.0.81-beta1 system, to |LATEST_PATCH|. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter (:doc:`/installing/index`).
 
 .. note::
 
-   Commands in this section are run as the ``lockss`` user  [#fnlockss]_.
+   Commands in this chapter are run as the ``lockss`` user  [#fnlockss]_.
+
+-----------------------------
+Upgrade Your Operating System
+-----------------------------
+
+`Optional.`
+
+Before you begin the upgrade, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
 ----------------------
 Stop the LOCKSS System
@@ -90,7 +86,7 @@ If you are upgrading from a version prior to alpha7, the next step will update P
 
    .. COMMENT LATESTVERSION
 
-  If you have collected a substantial amount of content in the alpha system this may take a prohibitively long time. If you do not need that content, you can delete it and save time; see :doc:`/sysadmin/resetting`.
+   If you have collected a substantial amount of content in the alpha system this may take a prohibitively long time. If you do not need that content, you can delete it and save time; see :doc:`/sysadmin/resetting`.
 
 ---------------------------
 Re-run the Configure Script
@@ -102,25 +98,23 @@ Re-run the configuration script by running the command below and follow the inst
 
    scripts/configure-lockss
 
-If you not need to review the existing configuration values, run this command instead:
+If you do not need to review the existing configuration values, run this command instead:
 
 .. code-block:: shell
 
    scripts/configure-lockss --replay
 
-The ``--replay`` option will re-use all previously-entered configuration values, and only ask questions for new prompts added since the previous release.
+The ``--replay`` (or equivalently ``-r``) option will re-use all previously-entered configuration values, and only ask questions for new prompts added since the previous release.
 
 ---------------------------
 Start LOCKSS |LATEST_MINOR|
 ---------------------------
 
-You are now ready to start the LOCKSS system.
+You are now ready to start the LOCKSS system. Run this command as the ``lockss`` user [#fnlockss]_:
 
-*  Run this command:
+.. code-block:: shell
 
-   .. code-block:: shell
-
-      scripts/start-lockss
+   scripts/start-lockss
 
 ----
 
