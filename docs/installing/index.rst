@@ -2,7 +2,7 @@
 Installing the LOCKSS System
 ============================
 
-This chapter describes how to install the LOCKSS |LATEST_MINOR| system from scratch, specifically |LATEST_PATCH|. If you are upgrading an existing LOCKSS 2.0-alpha5, 2.0-alpha6 or 2.0-alpha7, or 2.0.81-beta1 system to |LATEST_PATCH|, please see the upgrade instructions in the previous chapter (:doc:`/upgrading/index`).
+This chapter describes how to install the LOCKSS |LATEST_MINOR| system from scratch, specifically |LATEST_PATCH|. If you are upgrading an existing LOCKSS 2.0-alpha5, 2.0-alpha6 or 2.0-alpha7, 2.0.81-beta1, or 2.0.82-beta1 system to |LATEST_PATCH|, please see the upgrade instructions in the previous chapter (:doc:`/upgrading/index`).
 
 .. tip::
 

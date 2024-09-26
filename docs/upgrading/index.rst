@@ -2,7 +2,7 @@
 Upgrading the LOCKSS System
 ===========================
 
-This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5, 2.0-alpha6, 2.0-alpha7, or 2.0.81-beta1 system, to |LATEST_PATCH|. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter (:doc:`/installing/index`).
+This chapter describes how to upgrade an existing LOCKSS 2.0-alpha5, 2.0-alpha6, 2.0-alpha7, 2.0.81-beta1, or 2.0.82-beta1 system, to |LATEST_PATCH|. If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter (:doc:`/installing/index`).
 
 .. note::
 
