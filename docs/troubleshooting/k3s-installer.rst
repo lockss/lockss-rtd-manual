@@ -2,7 +2,7 @@
 Troubleshooting the K3s Installer
 =================================
 
-The LOCKSS Installer's :program:`install-lockss` script installs K3s by executing Rancher's official K3s Installer from https://get.k3s.io/, after checking that various system, firewall and DNS prerequisites are addressed (see :doc:`/installing/installer`). However, the installation can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up a specific error message.
+The LOCKSS Installer's :program:`install-lockss` script installs K3s by executing SUSE's official K3s Installer from https://get.k3s.io/, after checking that various system, firewall and DNS prerequisites are addressed (see :doc:`/installing/installer`). However, the installation can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up a specific error message.
 
 -----------------------------------------------
 Enabling User Namespaces in RHEL 7 and CentOS 7
@@ -105,7 +105,7 @@ In some Oracle Linux 7 systems, you may see an error message similar to the foll
 
 The specific commands and version numbers may vary from the example above.
 
-This can occur in environments where the Oracle Linux 7 Addons Yum repository is not enabled by default, so Rancher's official K3s installer is unable to install the package ``container-selinux`` automatically.
+This can occur in environments where the Oracle Linux 7 Addons Yum repository is not enabled by default, so SUSE's official K3s installer is unable to install the package ``container-selinux`` automatically.
 
 To resolve this problem in Oracle Linux 7, run the following command as ``root`` [#fnroot]_:
 
