@@ -25,6 +25,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   AlmaLinux OS        9.5       2027-05-31     2032-05-31       :octicon:`thumbsup`
    AlmaLinux OS        9.4       2027-05-31     2032-05-31       :octicon:`thumbsup`
    AlmaLinux OS        9.3       2027-05-31     2032-05-31       :octicon:`thumbsup`
    AlmaLinux OS        9.2       2027-05-31     2032-05-31       :octicon:`thumbsup`
@@ -68,6 +69,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Debian              12.8      2026-06-10     2028-06-10       :octicon:`thumbsup`
    Debian              12.7      2026-06-10     2028-06-10       :octicon:`thumbsup`
    Debian              12.6      2026-06-10     2028-06-10       :octicon:`thumbsup`
    Debian              12.5      2026-06-10     2028-06-10       :octicon:`thumbsup`
@@ -128,8 +130,8 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
-   Fedora Linux        40        2025-05-13     2025-05-13       :octicon:`thumbsup`
-   Fedora Linux        39        2024-11-12     2024-11-12       :octicon:`alert` :bdg-warning-line:`obsolescent`
+   Fedora Linux        41        2025-11-19     2025-11-19       :octicon:`thumbsup`
+   Fedora Linux        40        2025-05-28     2025-05-28       :octicon:`thumbsup`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Linux Mint :bdg-success-line:`new since LOCKSS 1.x`
@@ -163,7 +165,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    OpenSUSE Tumbleweed           Rolling        Rolling          :octicon:`thumbsup`
    OpenSUSE Leap       15.6      2025-12-31     2025-12-31       :octicon:`thumbsup`
-   OpenSUSE Leap       15.5      2024-12-31     2024-12-31       :octicon:`thumbsup`
+   OpenSUSE Leap       15.5      2024-12-31     2024-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Oracle Linux
@@ -177,6 +179,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Oracle Linux        9.5       2032-06-30     2035-06-30       :octicon:`thumbsup`
    Oracle Linux        9.4       2032-06-30     2035-06-30       :octicon:`thumbsup`
    Oracle Linux        9.3       2032-06-30     2035-06-30       :octicon:`thumbsup`
    Oracle Linux        9.2       2032-06-30     2035-06-30       :octicon:`thumbsup`
@@ -216,6 +219,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   RHEL                9.5       2027-05-31     2032-05-31       :octicon:`thumbsup`
    RHEL                9.4       2027-05-31     2032-05-31       :octicon:`thumbsup`
    RHEL                9.3       2027-05-31     2032-05-31       :octicon:`thumbsup`
    RHEL                9.2       2027-05-31     2032-05-31       :octicon:`thumbsup`
@@ -245,6 +249,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Rocky Linux         9.5       2027-05-31     2032-05-31       :octicon:`thumbsup`
    Rocky Linux         9.4       2027-05-31     2032-05-31       :octicon:`thumbsup`
    Rocky Linux         9.3       2027-05-31     2032-05-31       :octicon:`thumbsup`
    Rocky Linux         9.2       2027-05-31     2032-05-31       :octicon:`thumbsup`
@@ -365,11 +370,12 @@ The following operating systems are unsuitable for use with LOCKSS 2.x, either b
 
       If you are currently running LOCKSS 1.x on a CentOS Stream 8 host and you are considering a :doc:`same-host migration to LOCKSS 2.x <lockss:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, :ref:`os-rhel`, or :ref:`os-eurolinux`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
 
-   LOCKSS 2.x is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_ 9, which is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_, but we do not recommend CentOS Stream.
+   LOCKSS 2.x is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_ 9 or 10, which is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_, but we do not recommend CentOS Stream.
 
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   CentOS Stream       10        2030-01-01     2030-01-01       :octicon:`thumbsdown` :bdg-info-line:`not recommended`
    CentOS Stream       9         2027-05-31     2027-05-31       :octicon:`thumbsdown` :bdg-info-line:`not recommended`
    CentOS Stream       8         2024-05-31     2024-05-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
    =================== ========= ============== ================ =====
