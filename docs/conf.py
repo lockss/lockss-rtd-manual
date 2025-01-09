@@ -136,6 +136,8 @@ html_theme_options = {
     'navigation_depth': -1,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-style_external_links
     'style_external_links': True,
+    # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-flyout_display
+    'flyout_display': 'attached',
 }
 
 # See https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#default-substitutions
