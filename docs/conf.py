@@ -108,9 +108,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 #html_theme = 'alabaster'
 # See https://sphinx_rtd_theme.readthedocs.io/
-#html_theme = 'sphinx_rtd_theme'
-# See https://insipid-sphinx-theme.readthedocs.io/
-html_theme = 'insipid'
+html_theme = 'sphinx_rtd_theme'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -133,27 +131,12 @@ html_theme_options = {
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-prev_next_buttons_location
     'prev_next_buttons_location': 'both',
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-collapse_navigation
-    #'collapse_navigation': False,
+    'collapse_navigation': False,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-navigation_depth
-    #'navigation_depth': -1,
+    'navigation_depth': -1,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-style_external_links
-    #'style_external_links': True,
-    # See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#theme-option-breadcrumbs
-    'breadcrumbs': True,
-    # See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#theme-option-strip_section_numbers
-    'strip_section_numbers': False,
+    'style_external_links': True,
 }
-
-# See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#theme-option-left_buttons
-html_context = {
-    'display_github': False,
-}
-
-# See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#confval-html_show_sourcelink
-html_show_sourcelink = False
-
-# See https://insipid-sphinx-theme.readthedocs.io/en/latest/configuration.html#configuration
-html_permalinks_icon = '#'
 
 # See https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#default-substitutions
 # and https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-today_fmt
