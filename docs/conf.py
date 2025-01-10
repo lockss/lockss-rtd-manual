@@ -147,10 +147,6 @@ today_fmt = '%Y-%m-%d'
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-smartquotes
 smartquotes = False
 
-# See https://insipid-sphinx-theme.readthedocs.io/en/0.4.2/configuration.html#example
-html_use_index = False
-html_domain_indices = False
-
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
     'LATEST_MINOR': '2.0-beta2 NOT YET RELEASED',
