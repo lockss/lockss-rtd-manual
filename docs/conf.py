@@ -1,4 +1,4 @@
-# Copyright (c) 2000-2024, Board of Trustees of Leland Stanford Jr. University
+# Copyright (c) 2000-2025, Board of Trustees of Leland Stanford Jr. University
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -45,13 +45,24 @@ import sphinx_rtd_theme
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+######## See https://about.readthedocs.com/blog/2024/07/addons-by-default/
+import os
+# Define the canonical URL if you are using a custom domain on Read the Docs
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "")
+# Tell Jinja2 templates the build is running on Read the Docs
+if os.environ.get("READTHEDOCS", "") == "True":
+    if "html_context" not in globals():
+        html_context = {}
+    html_context["READTHEDOCS"] = True
 
 # -- Project information -----------------------------------------------------
 
 project = 'LOCKSS System Manual'
-copyright = '2000-2024, LOCKSS Program'
+copyright = '2000-2023, LOCKSS Program'
 author = 'LOCKSS Program'
 
+# See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_title
+html_title = project
 
 # -- General configuration ---------------------------------------------------
 
@@ -79,20 +90,6 @@ extensions = [
 intersphinx_mapping = {
     'lockss': ('https://docs.lockss.org/en/latest/', None),
     'lockss-manual': ('https://docs.lockss.org/projects/manual/en/latest/', None)
-}
-
-# See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
-global_substitutions = {
-    'LATEST_MINOR': '2.0-alpha7',
-    'LATEST_PATCH': '2.0.72-alpha7',
-    'PREVIOUS_MINOR': '2.0-alpha6',
-    'PREVIOUS_PATCH': '2.0.61-alpha6',
-    'K8S_MINOR': '1.21',
-    'K8S_PATCH': '1.21.5',
-    'K3S_MINOR': '1.21',
-    'K3S_PATCH': '1.21.5+k3s1',
-    'CLASSIC_MINOR': '1.77',
-    'CLASSIC_PATCH': '1.77.6',
 }
 
 # Add any paths that contain templates here, relative to this directory.
@@ -139,6 +136,8 @@ html_theme_options = {
     'navigation_depth': -1,
     # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-style_external_links
     'style_external_links': True,
+    # See https://sphinx-rtd-theme.readthedocs.io/en/stable/configuring.html#confval-flyout_display
+    'flyout_display': 'attached',
 }
 
 # See https://www.sphinx-doc.org/en/master/usage/restructuredtext/roles.html#default-substitutions
@@ -147,3 +146,17 @@ today_fmt = '%Y-%m-%d'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-smartquotes
 smartquotes = False
+
+# See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
+global_substitutions = {
+    'LATEST_MINOR': '2.0-alpha7',
+    'LATEST_PATCH': '2.0.72-alpha7',
+    'PREVIOUS_MINOR': '2.0-alpha6',
+    'PREVIOUS_PATCH': '2.0.61-alpha6',
+    'K8S_MINOR': '1.21',
+    'K8S_PATCH': '1.21.5',
+    'K3S_MINOR': '1.21',
+    'K3S_PATCH': '1.21.5+k3s1',
+    'CLASSIC_MINOR': '1.77',
+    'CLASSIC_PATCH': '1.77.6',
+}
