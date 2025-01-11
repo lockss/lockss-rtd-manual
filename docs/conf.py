@@ -85,6 +85,9 @@ extensions = [
 
     # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
     'sphinxcontrib.globalsubs',
+
+    # See https://sphinx-version-warning.readthedocs.io/
+    'versionwarning.extension',
 ]
 
 intersphinx_mapping = {
