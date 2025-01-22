@@ -2,9 +2,7 @@
 Running the LOCKSS Installer
 ============================
 
-.. note::
-
-   Commands in this section are run as ``root``  [#fnroot]_.
+.. rubric:: Section Summary
 
 The next task is to run the LOCKSS Installer.
 
@@ -23,6 +21,15 @@ The installation process goes through various phases:
 *  Testing the K3s node. No user interaction is expected.
 
 After the LOCKSS Installer succeeds, you can also optionally run the K3s Configuration Checker.
+
+.. note::
+
+   Commands in this section are run as ``root``  [#fnroot]_.
+
+.. contents:: Section Table of Contents
+   :local:
+   :backlinks: none
+   :depth: 1
 
 -----------------------------
 Invoking the LOCKSS Installer
@@ -118,7 +125,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
    .. dropdown:: User namespaces must be enabled in RHEL/CentOS 7
       :name: running-user-namespaces
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       In some RHEL 7 and CentOS 7 systems, user namespaces are not enabled by default. If this is the case, you will see the error message:
@@ -131,7 +138,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
    .. dropdown:: Apparmor enabled but :program:`apparmor_parser` missing
       :name: running-apparmor
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       In some systems, Apparmor is enabled but :program:`apparmor_parser` is not installed. If this is the case, you will see the error message:
@@ -164,7 +171,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
    .. dropdown:: ``lockss`` user or group does not exist
       :name: running-user-group
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
@@ -225,7 +232,7 @@ Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or ente
 
    .. dropdown:: :program:`iptables` configuration attempt fails
       :name: iptables-configuration-fails
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       If the :program:`iptables` configuration attempt fails, you will see one of these error messages:
@@ -286,7 +293,7 @@ Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or ent
 
    .. dropdown:: :program:`firewalld` configuration attempt fails
       :name: running-firewalld
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       If the :program:`firewalld` configuration attempt fails, you will see one of these error messages:
@@ -343,7 +350,7 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kb
 
    .. dropdown:: :program:`ufw` configuration attempt fails
       :name: running-ufw
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       If the :program:`ufw` configuration attempt fails, you will see one of these error messages:
@@ -386,7 +393,7 @@ Enter a semicolon-separated list of DNS server IP addresses that are *not* loopb
 
    .. dropdown:: CoreDNS configuration attempt fails
       :name: running-coredns
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       If the CoreDNS configuration attempt fails, you will see one of these error messages:
@@ -449,7 +456,7 @@ This phase consists of these steps:
 
          .. dropdown:: Filesystem type of K3s state data directory is NFS
             :name: running-k3s-nfs
-            :icon: stop
+            :icon: x-circle-fill
             :animate: fade-in-slide-down
 
             If the filesystem type backing the K3s state data directory is NFS, you will see the error message:
@@ -460,7 +467,7 @@ This phase consists of these steps:
 
          .. dropdown:: Filesystem type of K3s state data directory is XFS with legacy ``ftype=0``
             :name: running-k3s-xfs-ftype-0
-            :icon: stop
+            :icon: x-circle-fill
             :animate: fade-in-slide-down
 
             If the filesystem type backing the K3s state data directory is XFS with legacy ``ftype=0``, you will see the error message:
@@ -499,7 +506,7 @@ This phase consists of these steps:
 
          .. dropdown:: Error messages from the K3s Installer
             :name: running-k3s-installer
-            :icon: stop
+            :icon: x-circle-fill
             :animate: fade-in-slide-down
 
             If the K3s Installer does not succeed, it will display its own error messages, then :program:`install-lockss` will fail. See :doc:`/troubleshooting/k3s-installer` for remediation details.
@@ -525,7 +532,7 @@ This phase consists of these steps:
 
       .. dropdown:: Could not write or append to :file:`k8s.cfg`
          :name: running-k8s.cfg-write
-         :icon: stop
+         :icon: x-circle-fill
          :animate: fade-in-slide-down
 
          If the creation of the file fails, you will see one of these error messages:
@@ -562,7 +569,7 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
    .. dropdown:: Problems with :file:`config/k8s.cfg`
       :name: running-k8s.cfg-problems
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       At the end of :numref:`Installing K3s` (:ref:`Installing K3s`), some Kubernetes-related data is stored in :file:`config/k8s.cfg` (relative to the :ref:`LOCKSS Installer Directory`). If the file cannot be found or read, or if it contains invalid or unexpected data, you may see one of these error messages:
@@ -587,7 +594,7 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
    .. dropdown:: Problems with the K3s node
       :name: running-k3s-node
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       If the K3s node is not behaving as expected, you may see one of these errors:
@@ -606,7 +613,7 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
    .. dropdown:: Problems with DNS
       :name: running-dns
-      :icon: stop
+      :icon: x-circle-fill
       :animate: fade-in-slide-down
 
       If the K3s node's DNS environment is not working properly, you may see one of these errors:
