@@ -4,18 +4,20 @@ Configuring the LOCKSS System
 
 .. rubric:: Section Summary
 
-After `installing the LOCKSS system <installing>`_, you will configure it with the :program:`configure-lockss` script. If you have experience with classic LOCKSS daemon version 1.x, this is the equivalent of :program:`hostconfig`.
+After :doc:`/installing/index`, you will configure it with the :program:`configure-lockss` script.
+
+.. tip::
+
+   If you have experience with LOCKSS 1.x, this is the equivalent of the :program:`hostconfig` script.
 
 .. contents:: Section Table of Contents
    :local:
    :backlinks: none
    :depth: 1
 
-.. _before-invoking-configure-lockss:
-
--------------------------------------------
-Before Invoking :program:`configure-lockss`
--------------------------------------------
+---------------------------
+Configuration Prerequisites
+---------------------------
 
 You will need to gather information to answer configuration questions asked by :program:`configure-lockss`, including:
 
@@ -57,13 +59,13 @@ Some notes about using :program:`configure-lockss`:
 Invoking :program:`configure-lockss`
 ------------------------------------
 
-To invoke :program:`configure-lockss`, simply run this command in the ``lockss`` user's :file:`lockss-installer` directory as ``lockss`` [#fnlockss]_:
+To invoke :program:`configure-lockss`, simply run this command as the ``lockss`` user [#fnlockss]_ in the :ref:`LOCKSS Installer Directory`:
 
 .. code-block:: shell
 
    scripts/configure-lockss
 
-The script will begin with the first series of configuration questions, about :ref:`Kubernetes Settings`.
+The script will begin with the first series of configuration questions, about :ref:`Kubernetes Settings` (:numref:`Kubernetes Settings`).
 
 -------------------
 Kubernetes Settings
@@ -158,7 +160,6 @@ Administrator Email
 Prompt: :guilabel:`E-mail address for administrator`
 
 Enter the e-mail address of the person or team who will administer the LOCKSS system on this machine.
-
 
 -----------------------------
 Preservation Network Settings
@@ -264,7 +265,6 @@ Container Subnet
 2. Prompt: :guilabel:`LOCKSS subnet for inter-service access control`
 
    Enter the subnet used for inter-container communication. We recommend accepting the proposed value by hitting :kbd:`Enter`.
-
 
 -------------
 Storage Areas
