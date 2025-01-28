@@ -4,6 +4,70 @@ Release Notes
 
 .. COMMENT RELEASEDATE
 
+------------------------------------
+LOCKSS 2.0.84-beta1 NOT YET RELEASED
+------------------------------------
+
+.. caution::
+
+   LOCKSS 2.0.84-beta1 has not been released yet. See the release notes for the latest version: :ref:`latest`.
+
+Released: NOT YET RELEASED
+
+LOCKSS 2.0.84-beta1 NOT YET RELEASED is a bugfix release of LOCKSS 2.0-beta1.
+
+.. rubric:: Release Notes
+
+*  **Features**
+
+   *  Removed a bottleneck in the V2 repository that impacts 1.x to 2.x migration.
+
+   *  Make HashCUS stats human-readable.
+
+*  **Bugs**
+
+   *  Fix migration NAT configuration.
+
+   *  Re-enable migrator access to store user accounts.
+
+   *  Ensure repository data connections are closed.
+
+   *  Logging bug in ``CreativeCommonsPermissionChecker``.
+
+   *  Avoid unit test hangs due to entropy starvation.
+
+   *  Check global excludes when following redirects.
+
+   *  Removed unused dependency on obsolete ``json`` version 20140107.
+
+.. rubric:: Component Versions
+
+LOCKSS 2.0.83-beta1 consists of a configurable set of the following components:
+
+*  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.84-beta1
+
+*  `LOCKSS Repository Service <https://github.com/lockss/laaws-repository-service>`_ version 2.15.2
+
+*  `LOCKSS Configuration Service <https://github.com/lockss/laaws-configservice>`_ version 2.9.2
+
+*  `LOCKSS Poller Service <https://github.com/lockss/laaws-poller>`_ version 2.7.2
+
+*  `LOCKSS Crawler Service <https://github.com/lockss/laaws-crawler-service>`_ version 1.1.2
+
+*  `LOCKSS Metadata Extraction Service <https://github.com/lockss/laaws-metadataextractor>`_ version 2.8.2
+
+*  `LOCKSS Metadata Service <https://github.com/lockss/laaws-metadataservice>`_ version 2.7.2
+
+*  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.5.2
+
+a*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7 (14.7-alpine container)
+
+*  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom 8.11.2-slim-1 container)
+
+*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom 2.4.2-3 container)
+
+*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom 2.4.0-5 container)
+
 .. _latest:
 
 -------------------
