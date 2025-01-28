@@ -2,13 +2,7 @@
 Upgrading the LOCKSS System
 ===========================
 
-.. rubric:: Chapter Summary
-
-This chapter describes how to upgrade an existing LOCKSS 2.0 system to LOCKSS |LATEST_PATCH|, the latest version of LOCKSS |LATEST_MINOR|, namely:
-
-*  From all versions of LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, and LOCKSS 2.0-alpha7 to LOCKSS |LATEST_PATCH|.
-
-*  From earlier versions of LOCKSS |LATEST_MINOR|, such as LOCKSS 2.0.81-beta1 or LOCKSS 2.0.82-beta1, to LOCKSS |LATEST_PATCH|.
+This chapter describes how to upgrade an existing LOCKSS 2.0 system from LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, LOCKSS 2.0-alpha7, and earlier versions of LOCKSS |LATEST_MINOR| (LOCKSS 2.0.81-beta1, LOCKSS 2.0.82-beta1), to LOCKSS |LATEST_PATCH|, the latest version of LOCKSS |LATEST_MINOR|.
 
 .. tip::
 
@@ -16,18 +10,18 @@ This chapter describes how to upgrade an existing LOCKSS 2.0 system to LOCKSS |L
 
 .. note::
 
-   Commands in this chapter are run as the ``lockss`` user  [#fnlockss]_.
+   Commands in this chapter are run as the ``lockss`` user [#fnlockss]_.
 
-.. contents:: Chapter Table of Contents
-   :local:
-   :backlinks: none
-   :depth: 1
+.. tip::
 
------------------------------
-Upgrade Your Operating System
------------------------------
+   Before you begin the upgrade, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
-Before you begin the upgrade, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
+.. only:: html
+
+   .. contents:: Chapter Table of Contents
+      :local:
+      :backlinks: none
+      :depth: 1
 
 ----------------------
 Stop the LOCKSS System

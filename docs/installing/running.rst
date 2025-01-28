@@ -4,23 +4,7 @@ Running the LOCKSS Installer
 
 .. rubric:: Section Summary
 
-The next task is to run the LOCKSS Installer.
-
-The installation process goes through various phases:
-
-*  Checking that some prerequisites to install K3s are met. No user interaction is expected.
-
-*  Checking that the ``lockss`` system user and group exist. No user interaction is expected.
-
-*  Configuring :program:`iptables`, :program:`firewalld` and :program:`ufw` for K3s. If applicable, you will be prompted to confirm before your system configuration is modified. You may incidentally be prompted for your :program:`sudo` password.
-
-*  Configuring CoreDNS for K3s. If applicable, you will be prompted to enter non-loopback IP addresses of DNS servers.
-
-*  Installing K3s. If applicable, you will be prompted for a Kubernetes state data storage directory.
-
-*  Testing the K3s node. No user interaction is expected.
-
-After the LOCKSS Installer succeeds, you can also optionally run the K3s Configuration Checker.
+The next task is to run the LOCKSS Installer. The installation process goes through various phases -- checking system prerequisites, configuring firewall and DNS settings, installing the K3s Kubernetes distribution, and testing the K3s node. After the LOCKSS Installer succeeds, you can also optionally run the K3s Configuration Checker.
 
 .. note::
 
@@ -35,7 +19,7 @@ After the LOCKSS Installer succeeds, you can also optionally run the K3s Configu
 Invoking the LOCKSS Installer
 -----------------------------
 
-To start the installation process, run this command (relative to the :ref:`LOCKSS Installer Directory`) as ``root``  [#fnroot]_:
+To start the installation process, run this command as ``root`` [#fnroot]_, relative to the :ref:`LOCKSS Installer Directory`:
 
 .. code-block:: shell
 
@@ -46,7 +30,7 @@ The installer will run through its phases, each of which is described in its own
 .. tip::
 
    .. dropdown:: Skipping :program:`install-lockss` phases
-      :name: running-skipping
+      :name: skipping-install-lockss-phases
       :icon: light-bulb
       :animate: fade-in-slide-down
 
@@ -77,7 +61,7 @@ The installer will run through its phases, each of which is described in its own
           [success] Skipping (--skip-configure-firewalld)
 
    .. dropdown:: Running only one :program:`install-lockss` phase
-      :name: running-only
+      :name: running-only-one-install-lockss-phase
       :icon: light-bulb
       :animate: fade-in-slide-down
 
@@ -97,7 +81,7 @@ The installer will run through its phases, each of which is described in its own
       ===================================== ==============
 
    .. dropdown:: Running :program:`install-lockss` on auto-pilot
-      :name: running-autopilot
+      :name: running-install-lockss-on-auto-pilot
       :icon: light-bulb
       :animate: fade-in-slide-down
 
@@ -444,7 +428,7 @@ This phase consists of these steps:
 
       :guilabel:`K3s state data directory`
 
-      By default, this is :file:`/var/lib/rancher/k3s`. However, if :file:`/var` is space-limited, you should specify a different directory, that has ample space and is not backed by NFS or by XFS with legacy ``ftype=0``.
+      By default, this is :file:`/var/lib/rancher/k3s`. However, if :file:`/var` is space-limited, you should specify a different directory that has ample space, and is not backed by NFS or by XFS with legacy ``ftype=0``.
 
       Enter a suitable directory path for the K3s state data directory, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes2]_ [#fnk3sdatadir]_.
 
@@ -452,7 +436,7 @@ This phase consists of these steps:
 
       :samp:`Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is {<fs_type>}; proceeding`
 
-      .. admonition:: Error conditions and warnings and what to do about them
+      .. admonition:: Error conditions and warnings, and what to do about them
 
          .. dropdown:: Filesystem type of K3s state data directory is NFS
             :name: running-k3s-nfs
@@ -474,7 +458,7 @@ This phase consists of these steps:
 
             :samp:`[ERROR] Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is XFS with legacy ftype=0; see manual for workaround`
 
-            and :program:`install-lockss` will fail. Contemporary XFS filesystems with modern ``ftype=1`` work well with K3s, but older XFS filesystems with legacy ``ftype=0`` are not compatible. Ideally, re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by XFS with legacy ``ftype=0``. Alternatively, you can read about a workaround in :doc:`/troubleshooting/xfs`.
+            and :program:`install-lockss` will fail. Contemporary XFS filesystems with modern ``ftype=1`` work well with K3s, but older XFS filesystems with legacy ``ftype=0`` are not compatible [#fnk3sdatadirxfs]_. Ideally, re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by XFS with legacy ``ftype=0``. Alternatively, you can read about a workaround in :doc:`/troubleshooting/xfs`.
 
          .. dropdown:: Filesystem type of K3s state data directory unknown
             :name: running-k3s-unknown
@@ -638,7 +622,7 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
          [ERROR] Unexpected Cluster-IP
 
-      If the K3s node is newly installed, it may simply be that there has not yet been enough time for CoreDNS to come up; you can re-run this phase with ``scripts/install-lockss --test-k3s`` (or ``scripts/install-lockss -T``) to retry. You can also use the :program:`install-lockss` options :samp:`--retries={N}` (to increase the number of retries in DNS lookup tests to :samp:`{N}` from 5) or :samp:`--wait={S}` (to increase the delay between retries in DNS lookup tests to :samp:`{S}` seconds from 10). Contact us (:email:`lockss-support@lockss.org`) for troubleshooting if necessary.
+      If the K3s node is newly installed, it may simply be that there has not yet been enough time for CoreDNS to come up; you can re-run this phase with ``scripts/install-lockss --test-k3s`` (or ``scripts/install-lockss -T``) to retry. You can also use the :program:`install-lockss` options :samp:`--retries={N}` (to increase the number of retries in DNS lookup tests to :samp:`{N}` from 5) and/or :samp:`--wait={S}` (to increase the delay between retries in DNS lookup tests to :samp:`{S}` seconds from 10). Contact us (:email:`lockss-support@lockss.org`) for troubleshooting if necessary.
 
 ---------------------------------------------
 Completion of the LOCKSS Installation Process
