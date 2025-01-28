@@ -160,3 +160,12 @@ global_substitutions = {
     'CLASSIC_MINOR': '1.78',
     'CLASSIC_PATCH': '1.78.3',
 }
+
+# See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-rst_prolog
+rst_prolog = f"""
+.. caution::
+
+   **You are accessing a version of the {project} that is not released yet.**
+
+   Please visit the `latest version of the {project} <{html_baseurl}>`_.
+"""
