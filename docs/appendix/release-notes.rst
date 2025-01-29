@@ -20,7 +20,13 @@ LOCKSS 2.0.84-beta1 NOT YET RELEASED is a bugfix release of LOCKSS 2.0-beta1.
 
 *  **Features**
 
-   *  Removed a bottleneck in the V2 repository that impacts 1.x to 2.x migration.
+   *  Migration from LOCKSS 1.x to 2.x
+
+      *  Removed a bottleneck in the V2 repository that impacts 1.x to 2.x migration.
+
+      *  LCAP message forwarding (for migration) status is displayed in Comm Channels.
+
+   *  User accounts (AccountManager) enabled by default.
 
    *  Make HashCUS stats human-readable.
 
