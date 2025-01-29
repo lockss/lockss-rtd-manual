@@ -10,10 +10,12 @@ After :doc:`/installing/index`, you will configure it with the :program:`configu
 
    If you have experience with LOCKSS 1.x, this is the equivalent of the :program:`hostconfig` script.
 
-.. contents:: Section Table of Contents
-   :local:
-   :backlinks: none
-   :depth: 1
+.. only:: html
+
+   .. contents:: Section Table of Contents
+      :local:
+      :backlinks: none
+      :depth: 1
 
 ---------------------------
 Configuration Prerequisites
