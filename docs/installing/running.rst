@@ -10,10 +10,12 @@ The next task is to run the LOCKSS Installer. The installation process goes thro
 
    Commands in this section are run as ``root``  [#fnroot]_.
 
-.. contents:: Section Table of Contents
-   :local:
-   :backlinks: none
-   :depth: 1
+.. only:: html
+
+   .. contents:: Section Table of Contents
+      :local:
+      :backlinks: none
+      :depth: 1
 
 -----------------------------
 Invoking the LOCKSS Installer
