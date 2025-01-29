@@ -48,7 +48,7 @@ LOCKSS 2.0.84-beta1 NOT YET RELEASED is a bugfix release of LOCKSS 2.0-beta1.
 
 .. rubric:: Component Versions
 
-LOCKSS 2.0.83-beta1 consists of a configurable set of the following components:
+LOCKSS 2.0.84-beta1 NOT YET RELEASED consists of a configurable set of the following components:
 
 *  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.84-beta1
 
