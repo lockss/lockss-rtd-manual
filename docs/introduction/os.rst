@@ -69,6 +69,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Debian              12.9      2026-06-10     2028-06-10       :octicon:`thumbsup`
    Debian              12.8      2026-06-10     2028-06-10       :octicon:`thumbsup`
    Debian              12.7      2026-06-10     2028-06-10       :octicon:`thumbsup`
    Debian              12.6      2026-06-10     2028-06-10       :octicon:`thumbsup`
@@ -143,6 +144,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
+   Linux Mint          22.1      Yes            2029-04-30       :octicon:`thumbsup`
    Linux Mint          22        Yes            2029-04-30       :octicon:`thumbsup`
    Linux Mint          21.3      Yes            2027-04-30       :octicon:`thumbsup`
    Linux Mint          21.2      Yes            2027-04-30       :octicon:`thumbsup`
@@ -165,7 +167,6 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    =================== ========= ============== ================ =====
    OpenSUSE Tumbleweed           Rolling        Rolling          :octicon:`thumbsup`
    OpenSUSE Leap       15.6      2025-12-31     2025-12-31       :octicon:`thumbsup`
-   OpenSUSE Leap       15.5      2024-12-31     2024-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Oracle Linux
@@ -275,10 +276,9 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    Operating System    Version   Active Support Security Support Notes
    =================== ========= ============== ================ =====
    SLES                15.6      Yes            Yes              :octicon:`thumbsup`
-   SLES                15.5      2024-12-31     2027-12-31       :octicon:`thumbsup`
+   SLES                15.5      2024-12-31     2027-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
    SLES                15.4      2023-12-31     2026-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
    SLES                15.3      2022-12-31     2025-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   SLES                15.2      2021-12-31     2024-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
    =================== ========= ============== ================ =====
 
 .. dropdown:: Ubuntu :bdg-success-line:`new since LOCKSS 1.x`
