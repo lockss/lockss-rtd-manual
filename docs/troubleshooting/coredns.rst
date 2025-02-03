@@ -2,7 +2,7 @@
 Troubleshooting CoreDNS
 =======================
 
-This section provides troubleshooting information for the :ref:`Configuring CoreDNS for K3s` phase of :doc:`/installing/installer`.
+This section provides troubleshooting information for the :ref:`Configuring CoreDNS for K3s` phase of :doc:`/installing/running`.
 
 --------------------------------------------------------------------------------------------------
 CoreDNS does not allow a loopback address to be given to Kubernetes pods as an upstream DNS server
