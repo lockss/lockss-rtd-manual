@@ -2,7 +2,7 @@
 Troubleshooting :program:`iptables`
 ===================================
 
-This section provides troubleshooting information for the :ref:`configuring-iptables` phase of :doc:`/installing/installer`.
+This section provides troubleshooting information for the :ref:`configuring-iptables` phase of :doc:`/installing/running`.
 
 -----------------------------------------------
 Switch iptables to legacy mode via Alternatives

@@ -113,7 +113,7 @@ CONFIG_INET_XFRM_MODE_TRANSPORT missing
 
 .. [#fninstalllockss]
 
-   See :doc:`/installing/installer`.
+   See :doc:`/installing/running`.
 
 .. [#fninstallk3s]
 

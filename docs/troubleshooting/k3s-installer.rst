@@ -2,7 +2,7 @@
 Troubleshooting the K3s Installer
 =================================
 
-The LOCKSS Installer's :program:`install-lockss` script installs K3s by executing SUSE's official K3s Installer from https://get.k3s.io/, after checking that various system, firewall and DNS prerequisites are addressed (see :doc:`/installing/installer`). However, the installation can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up a specific error message.
+The LOCKSS Installer's :program:`install-lockss` script installs K3s by executing SUSE's official K3s Installer from https://get.k3s.io/, after checking that various system, firewall and DNS prerequisites are addressed (see :doc:`/installing/installing`). However, the installation can still run into issues and fail. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up a specific error message.
 
 -----------------------------------------------
 Enabling User Namespaces in RHEL 7 and CentOS 7
