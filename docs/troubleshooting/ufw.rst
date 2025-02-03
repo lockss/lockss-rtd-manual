@@ -2,7 +2,7 @@
 Troubleshooting :program:`ufw`
 ==============================
 
-This section provides troubleshooting information for the :ref:`configuring-ufw` phase of :doc:`/installing/installer`.
+This section provides troubleshooting information for the :ref:`configuring-ufw` phase of :doc:`/installing/running`.
 
 --------------------------------------------------------
 Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw
