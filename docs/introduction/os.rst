@@ -12,7 +12,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
 .. tip::
 
-   If your IT environment does not favor a particular flavor of Linux, we recommend :ref:`os-rocky-linux`, both for brand-new installations and for :doc:`either new-host or same-host migrations from LOCKSS 1.x <lockss:migration/index>`.
+   If your IT environment does not favor a particular flavor of Linux, we recommend :ref:`os-rocky-linux`, both for brand-new installations and for :doc:`either new-host or same-host migrations from LOCKSS 1.x <lockss-portal:migration/index>`.
 
 .. dropdown:: AlmaLinux OS
    :name: os-almalinux

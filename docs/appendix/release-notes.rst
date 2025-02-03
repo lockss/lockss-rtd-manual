@@ -178,7 +178,7 @@ LOCKSS 2.0.81-beta1 is the first beta release of the LOCKSS 2.0 system. LOCKSS 2
 
 *  **Features**
 
-   *  The major new feature in this release is support for migration from LOCKSS 1.78 to LOCKSS 2.0-beta1. See the :doc:`lockss:migration/index`.
+   *  The major new feature in this release is support for migration from LOCKSS 1.78 to LOCKSS 2.0-beta1. See the :doc:`lockss-portal:migration/index`.
 
       *  Added a ``--migrate`` option to ``configure-lockss`` to configure LOCKSS 2.0-beta1 for migration from LOCKSS 1.78.
 
@@ -202,7 +202,7 @@ LOCKSS 2.0.81-beta1 is the first beta release of the LOCKSS 2.0 system. LOCKSS 2
 
    * ``start-lockss``, ``stop-lockss``, and ``restart-lockss`` can now start, stop, or restart only selected services, by specifying ``-s "<semicolon-separated-list-of-service-names>"``.
 
-   *  Changed the default values of many configuration parameters to what is appropriate or likely for private LOCKSS networks, rather than the Global LOCKSS Network or CLOCKSS, which simplifies initial PLN setup. See also :doc:`lockss:admin/starter`.
+   *  Changed the default values of many configuration parameters to what is appropriate or likely for private LOCKSS networks, rather than the Global LOCKSS Network or CLOCKSS, which simplifies initial PLN setup. See also :doc:`lockss-portal:admin/starter`.
 
    *  Added the plugin identifier and parent plugins to the PluginReloaded alert.
 
