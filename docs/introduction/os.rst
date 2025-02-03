@@ -312,7 +312,7 @@ The following operating systems are unsuitable for use with LOCKSS 2.x, either b
 
    .. tip::
 
-      If you are currently running LOCKSS 1.x on a CentOS Linux host and you are considering a :doc:`same-host migration to LOCKSS 2.x <lockss:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, :ref:`os-rhel`, or :ref:`os-eurolinux`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
+      If you are currently running LOCKSS 1.x on a CentOS Linux host and you are considering a :doc:`same-host migration to LOCKSS 2.x <lockss-portal:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, :ref:`os-rhel`, or :ref:`os-eurolinux`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
 
    =================== ========= ============== ================ =====
    Operating System    Version   Active Support Security Support Notes
@@ -368,7 +368,7 @@ The following operating systems are unsuitable for use with LOCKSS 2.x, either b
 
    .. tip::
 
-      If you are currently running LOCKSS 1.x on a CentOS Stream 8 host and you are considering a :doc:`same-host migration to LOCKSS 2.x <lockss:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, :ref:`os-rhel`, or :ref:`os-eurolinux`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
+      If you are currently running LOCKSS 1.x on a CentOS Stream 8 host and you are considering a :doc:`same-host migration to LOCKSS 2.x <lockss-portal:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, :ref:`os-rhel`, or :ref:`os-eurolinux`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
 
    LOCKSS 2.x is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_ 9 or 10, which is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_, but we do not recommend CentOS Stream.
 
@@ -413,4 +413,4 @@ The following operating systems are unsuitable for use with LOCKSS 2.x, either b
 
 .. [#fnsamehostmigration]
 
-   Reference: :doc:`lockss:migration/index`
+   Reference: :doc:`lockss-portal:migration/index`
