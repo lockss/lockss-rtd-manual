@@ -88,7 +88,7 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    'lockss': ('https://docs.lockss.org/en/latest/', None),
+    'lockss-portal': ('https://docs.lockss.org/en/latest/', None),
     'lockss-manual': ('https://docs.lockss.org/projects/manual/en/latest/', None)
 }
 
