@@ -2,7 +2,7 @@
 Troubleshooting OverlayFS with XFS
 ==================================
 
-This section provides troubleshooting information for the :ref:`check_xfs` phase of :doc:`/installing/running`.
+This section provides troubleshooting information for the XFS-related portions of the :ref:`Installing K3s` phase of :doc:`/installing/running`.
 
 -----------------------------------------------------------------------------
 Filesystem backing ``/var/lib/rancher`` is an XFS filesystem with ``ftype=0``
