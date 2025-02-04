@@ -410,21 +410,21 @@ This phase consists of these steps:
 
    *  If K3s is not present, :program:`install-lockss` will display ``K3s is not present``, and *will* install K3s |K3S_PATCH| in the next step.
 
-   *  If an older version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {<installed_version>} is older than expected version {<expected_version>}`, and you will receive the following prompt:
+   *  If an older version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {<installed version of K3s>} is older than expected version {<target version of K3s>}`, and you will receive the following prompt:
 
-      :guilabel:`Upgrade K3s from <installed_version> to <expected_version>?`
+      :guilabel:`Upgrade K3s from <installed version of K3s> to <target version of K3s>?`
 
       Enter :kbd:`Y` and :program:`install-lockss` *will* install K3s |K3S_PATCH| in the next step, or enter :kbd:`N` and :program:`install-lockss` *will not* install K3s |K3S_PATCH| in the next step, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes]_.
 
-   *  If the expected version of K3s is already present, :program:`install-lockss` will display :samp:`K3s version {<installed_version>} is already installed; skipping`, and *will not* install K3s |K3S_PATCH| in the next step.
+   *  If the expected version of K3s is already present, :program:`install-lockss` will display :samp:`K3s version {<installed version of K3s>} is already installed; skipping`, and *will not* install K3s |K3S_PATCH| in the next step.
 
-   *  If a more recent version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {<installed_version>} is more recent than expected version {<expected_version>}`, and *will not* install K3s |K3S_PATCH| in the next step.
+   *  If a more recent version of K3s is present, :program:`install-lockss` will display :samp:`Detected K3s version {<installed version of K3s>} is more recent than expected version {<target version of K3s>}`, and *will not* install K3s |K3S_PATCH| in the next step.
 
-   *  If K3s is detected but the installed and expected version numbers cannot be compared automatically, :program:`install-lockss` will display :samp:`[Warning] Detected K3s version {<installed_version>}, expected version {<expected_version>}, comparison failure, skipping`, and :program:`install-lockss` *will not* install K3s in the next step.
+   *  If K3s is detected but the installed and expected version numbers cannot be compared automatically, :program:`install-lockss` will display :samp:`[Warning] Detected K3s version {<installed version of K3s>}, expected version {<target version of K3s>}, comparison failure, skipping`, and :program:`install-lockss` *will not* install K3s in the next step.
 
 2. If :program:`install-lockss` determined in the previous step that it *will not* install K3s |K3S_PATCH|, you will see the confirmation ``Not installing K3s``, and nothing will happen in this step.
 
-   But if :program:`install-lockss` determined in the previous step that it *will* install K3s |K3S_PATCH|, you will see the confirmation :samp:`Installing K3s version {<expected_version>}`, and this step will proceed as follows:
+   But if :program:`install-lockss` determined in the previous step that it *will* install K3s |K3S_PATCH|, you will see the confirmation :samp:`Installing K3s version {<target version of K3s>}`, and this step will proceed as follows:
 
    a. First, :program:`install-lockss` will ask you to specify the K3s state data directory (the directory K3s uses to store state data), with this prompt:
 
@@ -434,9 +434,9 @@ This phase consists of these steps:
 
       Enter a suitable directory path for the K3s state data directory, or hit :kbd:`Enter` to accept the default in square brackets [#fnyes2]_ [#fnk3sdatadir]_.
 
-   b. Then :program:`install-lockss` will attempt to determine the filesystem type of the specified K3s state data directory. In many situations, it will simply display the filesystem type in a message similar to this (for example, :samp:`{<fs_type>}` might be ``ext4``):
+   b. Then :program:`install-lockss` will attempt to determine the filesystem type of the specified K3s state data directory. In many situations, it will simply display the filesystem type in a message similar to this (for example, :samp:`{<filesystem type>}` might be ``ext4``):
 
-      :samp:`Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is {<fs_type>}; proceeding`
+      :samp:`Filesystem type of {<path of K3s state data directory>} ({<mountpoint of K3s state data directory>}) is {<filesystem type>}; proceeding`
 
       .. admonition:: Error conditions and warnings, and what to do about them
 
@@ -447,7 +447,7 @@ This phase consists of these steps:
 
             If the filesystem type backing the K3s state data directory is NFS, you will see the error message:
 
-            :samp:`[ERROR] Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is NFS; see manual`
+            :samp:`[ERROR] Filesystem type of {<path of K3s state data directory>} ({<mountpoint of K3s state data directory>}) is NFS; see manual`
 
             and :program:`install-lockss` will fail. It is not possible to run K3s with a state data directory backed by NFS [#fnk3sdatadirnfs]_. Re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by NFS.
 
@@ -458,7 +458,7 @@ This phase consists of these steps:
 
             If the filesystem type backing the K3s state data directory is XFS with legacy ``ftype=0``, you will see the error message:
 
-            :samp:`[ERROR] Filesystem type of {<k3s_dir>} ({<k3s_mountpoint>}) is XFS with legacy ftype=0; see manual for workaround`
+            :samp:`[ERROR] Filesystem type of {<path of K3s state data directory>} ({<mountpoint of K3s state data directory>}) is XFS with legacy ftype=0; see manual for workaround`
 
             and :program:`install-lockss` will fail. Contemporary XFS filesystems with modern ``ftype=1`` work well with K3s, but older XFS filesystems with legacy ``ftype=0`` are not compatible [#fnk3sdatadirxfs]_. Ideally, re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by XFS with legacy ``ftype=0``. Alternatively, you can read about a workaround in :doc:`/troubleshooting/xfs`.
 
@@ -469,7 +469,7 @@ This phase consists of these steps:
 
             If the filesystem type backing the K3s state data directory cannot be inferred automatically, you will see the warning:
 
-            :samp:`[Warning] Filesystem type of {<k3s_dir>} unknown (findmnt not present); proceeding`
+            :samp:`[Warning] Filesystem type of {<path of K3s state data directory>} unknown (findmnt not present); proceeding`
 
             and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s state data directory is one that does not work with K3s, such as NFS, or XFS with legacy ``ftype=0``; see the error conditions above.
 
@@ -480,7 +480,7 @@ This phase consists of these steps:
 
             If the ``ftype`` of the XFS filesystem backing the K3s state data directory cannot be inferred automatically, you will see the warning:
 
-            :samp:`[Warning] Filesystem type of {k3s_dir} ({k3s_mountpoint}) is XFS but ftype unknown (xfs_info not present); proceeding`
+            :samp:`[Warning] Filesystem type of {<path of K3s state data directory>} ({<mountpoint of K3s state data directory>}) is XFS but ftype unknown (xfs_info not present); proceeding`
 
             and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s state data directory is XFS with legacy ``ftype=0``; see the corresponding error condition above.
 
