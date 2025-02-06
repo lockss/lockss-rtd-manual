@@ -32,9 +32,11 @@ LOCKSS 2.0.84-beta1 NOT YET RELEASED is a bugfix release of LOCKSS 2.0-beta1.
 
 *  **Bugs**
 
-   *  Fix migration NAT configuration.
+   *  Migration from LOCKSS 1.x to 2.x
 
-   *  Re-enable migrator access to store user accounts.
+      *  Fix migration NAT configuration.
+
+      *  Re-enable migrator access to store user accounts.
 
    *  Ensure repository data connections are closed.
 
@@ -45,6 +47,14 @@ LOCKSS 2.0.84-beta1 NOT YET RELEASED is a bugfix release of LOCKSS 2.0-beta1.
    *  Check global excludes when following redirects.
 
    *  Removed unused dependency on obsolete ``json`` version 20140107.
+
+   *  LOCKSS Installer
+
+      *  New error conditions on Debian/Ubuntu with SELinux currently or previously enabled.
+
+      *  Avoid error message if :program:`iptables` is not on the PATH.
+
+      *  Avoid :program:`grep` warning.
 
 .. rubric:: Component Versions
 
