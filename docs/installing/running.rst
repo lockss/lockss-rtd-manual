@@ -135,6 +135,38 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
       and :program:`install-lockss` will fail. See :ref:`installing-apparmor_parser` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
 
+   .. dropdown:: K3s Installer will fail on Debian/Ubuntu with SELinux enabled
+      :name: running-debian-selinux-enabled
+      :icon: x-circle-fill
+      :animate: fade-in-slide-down
+
+      On Debian and Ubuntu, the K3s Installer will fail if SELinux is installed and enabled. If this is the case, you will see the error message:
+
+      .. code-block:: text
+
+         [ERROR] K3s Installer will fail on Debian/Ubuntu with SELinux enabled; see manual
+
+      and run :program:`install-lockss` again.
+
+   .. dropdown:: K3s Installer will fail on Debian/Ubuntu with /usr/local/bin/k3s labeled by SELinux
+      :name: running-debian-selinux-labeled
+      :icon: x-circle-fill
+      :animate: fade-in-slide-down
+
+      On Debian and Ubuntu, the K3s Installer will fail if SELinux was previously enabled, and :file:`/usr/local/bin/k3s` has already been installed and labeled by SELinux. If this is the case, you will see the error message:
+
+      .. code-block:: text
+
+         [ERROR] K3s Installer will fail on Debian/Ubuntu with /usr/local/bin/k3s labeled by SELinux; see manual
+
+      and :program:`install-lockss` will fail.  To fix this, run the following as ``root``:
+
+      .. code-block:: shell
+
+         chcon -t unlabeled_t /usr/local/bin/k3s
+
+      and run :program:`install-lockss` again.
+
 ----------------------------------
 Checking the System User and Group
 ----------------------------------
