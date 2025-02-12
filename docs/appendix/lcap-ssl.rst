@@ -46,7 +46,7 @@ To use the command line tool:
 Interactive Tool
 ================
 
-1. Bring up a LOCKSS stack, either in the production environment or ``runcluster``. In the UI, select :menuselection:`DebugPanel --> Generate LCAP Keys`.
+1. Bring up a LOCKSS stack, either in the production environment or ``runcluster``. In the UI, select :menuselection:`DebugPanel --> Generate LCAP SSL Keys`.
 
 2. Enter the hostname of each of the LOCKSS boxes in the :guilabel:`Hostnames` text box, then click the :guilabel:`Generate Keystores` button. A .tgz or a .zip file will be generated and offered for download. This file will contain the private keystore and password file for each host, as well as the shared public keystore.
 
