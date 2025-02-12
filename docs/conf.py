@@ -150,7 +150,7 @@ smartquotes = False
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
     'LATEST_MINOR': '2.0-beta1',
-    'LATEST_PATCH': '2.0.83-beta1',
+    'LATEST_PATCH': '2.0.84-beta1',
     'PREVIOUS_MINOR': '2.0-alpha7',
     'PREVIOUS_PATCH': '2.0.72-alpha7',
     'K8S_MINOR': '1.21',
@@ -158,5 +158,5 @@ global_substitutions = {
     'K3S_MINOR': '1.21',
     'K3S_PATCH': '1.21.5+k3s1',
     'CLASSIC_MINOR': '1.78',
-    'CLASSIC_PATCH': '1.78.3',
+    'CLASSIC_PATCH': '1.78.5',
 }
