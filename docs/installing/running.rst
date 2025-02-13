@@ -711,6 +711,7 @@ That being said, we still recommend running :program:`k3s check-config` and inte
    .. code-block:: text
 
       cgroup hierarchy: nonexistent?? (fail)
+        (see https://github.com/tianon/cgroupfs-mount)
 
    .. code-block:: text
 
