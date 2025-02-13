@@ -74,7 +74,7 @@ LOCKSS 2.0.84-beta1 consists of a configurable set of the following components:
 
 *  `LOCKSS SOAP Compatibility Service <https://github.com/lockss/laaws-soap-service>`_ version 1.5.2
 
-a*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7 (14.7-alpine container)
+*  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7 (14.7-alpine container)
 
 *  `Apache Solr <https://solr.apache.org/>`_ version 8.11.2 (custom 8.11.2-slim-1 container)
 
