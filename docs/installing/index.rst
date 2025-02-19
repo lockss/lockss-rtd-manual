@@ -12,7 +12,7 @@ This chapter describes how to install LOCKSS |LATEST_PATCH|, the latest version 
 
    Before you begin the installation, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
-.. only:: html
+.. only:: html and not singlehtml
 
    .. rubric:: Chapter Table of Contents
 
