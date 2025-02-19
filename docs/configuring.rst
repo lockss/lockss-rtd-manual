@@ -10,7 +10,7 @@ After :doc:`/installing/index`, you will configure it with the :program:`configu
 
    If you have experience with LOCKSS 1.x, this is the equivalent of the :program:`hostconfig` script.
 
-.. only:: html
+.. only:: html and not singlehtml
 
    .. contents:: Section Table of Contents
       :local:

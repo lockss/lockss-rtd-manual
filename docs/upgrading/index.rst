@@ -16,7 +16,7 @@ This chapter describes how to upgrade an existing LOCKSS 2.0 system from LOCKSS 
 
    Before you begin the upgrade, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
-.. only:: html
+.. only:: html and not singlehtml
 
    .. contents:: Chapter Table of Contents
       :local:
