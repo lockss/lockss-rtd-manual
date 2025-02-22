@@ -81,3 +81,10 @@ div.rst-other-versions > div.injected > dl:nth-child(4) { /* Read The Docs based
     background: #f4f4ff; /* very light blue */
 }
 
+/*
+ * Help format complex footnotes better
+ */
+
+.footnote > ul, .footnote > ol {
+    grid-column-start: 4;
+}
