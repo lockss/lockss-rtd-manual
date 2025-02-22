@@ -4,17 +4,15 @@ Release Notes
 
 .. COMMENT RELEASEDATE
 
-------------------------------------
-LOCKSS 2.0.84-beta1 NOT YET RELEASED
-------------------------------------
+.. _latest:
 
-.. caution::
+-------------------
+LOCKSS 2.0.84-beta1
+-------------------
 
-   LOCKSS 2.0.84-beta1 has not been released yet. See the release notes for the latest version: :ref:`latest`.
+Released: 2025-02-12
 
-Released: NOT YET RELEASED
-
-LOCKSS 2.0.84-beta1 NOT YET RELEASED is a bugfix release of LOCKSS 2.0-beta1.
+LOCKSS 2.0.84-beta1 is a bugfix release of LOCKSS 2.0-beta1.
 
 .. rubric:: Release Notes
 
@@ -58,7 +56,7 @@ LOCKSS 2.0.84-beta1 NOT YET RELEASED is a bugfix release of LOCKSS 2.0-beta1.
 
 .. rubric:: Component Versions
 
-LOCKSS 2.0.84-beta1 NOT YET RELEASED consists of a configurable set of the following components:
+LOCKSS 2.0.84-beta1 consists of a configurable set of the following components:
 
 *  `LOCKSS Installer <https://github.com/lockss/lockss-installer>`_ version 2.0.84-beta1
 
@@ -83,8 +81,6 @@ LOCKSS 2.0.84-beta1 NOT YET RELEASED consists of a configurable set of the follo
 *  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom 2.4.2-3 container)
 
 *  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.0 (custom 2.4.0-5 container)
-
-.. _latest:
 
 -------------------
 LOCKSS 2.0.83-beta1
