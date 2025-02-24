@@ -25,6 +25,8 @@ All ports are in the 24600-24699 range, except the LCAP (LOCKSS polling and repa
       *  :bdg-danger-line:`reserved`
    *  *  24602
       *  PostgreSQL
+   *  *  24603
+      *  :bdg-danger-line:`reserved`
    *  *  24606
       *  ActiveMQ
    *  *  24610
