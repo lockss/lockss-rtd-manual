@@ -6,15 +6,13 @@ System Prerequisites
 Host
 ----
 
-The LOCKSS system runs in a **64-bit Linux** host (physical or virtual).
-
-See the next section (:doc:`os`) for operating system choices.
+The LOCKSS system runs on a physical or virtual host running the **Linux kernel version 5.4 or later** [#fnkernel]_. The :doc:`os` section lists numerous suitable operating system choices, including many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), Ubuntu, and others.
 
 ---
 CPU
 ---
 
-The CPU requirements depend on which components of the LOCKSS system you choose to run. We recommend **4 CPU cores**, preferably 8.
+The LOCKSS system runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which components of the LOCKSS system you choose to run.
 
 ------
 Memory
@@ -47,3 +45,19 @@ During configuration, the administrator must specify the location of these stora
 .. admonition:: What's the Minimum for Experimentation?
 
    To review the installation instructions and test the installation of K3s in various operating systems, we routinely install and bring up minimal LOCKSS |LATEST_MINOR|, with no metadata services or Web replay engines, and with empty embedded PostgreSQL and Solr databases, in Vagrant virtual machines with Virtualbox using 2 CPU cores and 3 GB of memory. These minimal VMs would not support a production load, but it can be a useful tool to try out the installation instructions or evaluate the system.
+
+----
+
+.. rubric:: Footnotes
+
+.. [#fnkernel]
+
+   In the Linux kernel version 5.3 or earlier, processes might block (wait exceedingly long) or hang (wait forever) due to lack of entropy (cryptographically secure randomness sources). This is a problem for systems like LOCKSS that are meant to operate largely autonomously, without incidental interaction that might create more entropy and unblock processes waiting for cryptographically secure randomness. Mitigation of this problem first appeared in the Linux kernel version 5.4; see:
+
+   *  https://blogs.oracle.com/linux/post/rngd1
+
+   *  https://git.kernel.org/pub/scm/linux/kernel/git/crng/random.git/commit/?id=50ee7529ec45
+
+   *  https://www.zx2c4.com/projects/linux-rng-5.17-5.18/
+
+   The :doc:`os` section offers ways to upgrade :ref:`os-rhel` 8, :ref:`os-rocky-linux` 8, :ref:`os-almalinux` 8 and :ref:`os-oracle-linux` 8 to a kernel version 5.4 or later.
