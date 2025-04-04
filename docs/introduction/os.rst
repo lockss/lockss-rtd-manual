@@ -2,6 +2,8 @@
 Operating System
 ================
 
+*Section last updated 2025-04-02.*
+
 The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compatible with `K3s <https://k3s.io/>`_, a lightweight open source Kubernetes distribution by `SUSE <https://www.suse.com/>`_. The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fnk3sos]_ (which are documented in this manual and integrated into the LOCKSS Installer). Compatibility information for various operating systems can be found in this section.
 
 ----------------------------
@@ -22,31 +24,84 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    AlmaLinux OS is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   AlmaLinux OS        9.5       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   AlmaLinux OS        9.4       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   AlmaLinux OS        9.3       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   AlmaLinux OS        9.2       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   AlmaLinux OS        9.1       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   AlmaLinux OS        9.0       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   AlmaLinux OS        8.10      2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
+   .. list-table::
+      :header-rows: 1
 
-   AlmaLinux OS        8.9       2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-
-   AlmaLinux OS        8.8       2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-
-   AlmaLinux OS        8.7       2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-
-   AlmaLinux OS        8.6       2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-
-   AlmaLinux OS        8.5       2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-
-   AlmaLinux OS        8.4       2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-
-   AlmaLinux OS        8.3       2024-05-01     2029-03-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  AlmaLinux OS
+         *  9.5
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  AlmaLinux OS
+         *  9.4
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  AlmaLinux OS
+         *  9.3
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  AlmaLinux OS
+         *  9.2
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  AlmaLinux OS
+         *  9.1
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  AlmaLinux OS
+         *  9.0
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  AlmaLinux OS
+         *  8.10
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  AlmaLinux OS
+         *  8.9
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  AlmaLinux OS
+         *  8.8
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  AlmaLinux OS
+         *  8.7
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  AlmaLinux OS
+         *  8.6
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  AlmaLinux OS
+         *  8.5
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  AlmaLinux OS
+         *  8.4
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  AlmaLinux OS
+         *  8.3
+         *  :octicon:`alert-fill` 2024-05-01
+         *  2029-03-01
+         *  :octicon:`info` [#fnelrepo]_
 
 .. dropdown:: Arch Linux :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-arch-linux
@@ -54,11 +109,50 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    LOCKSS 2.x is compatible with `Arch Linux <https://archlinux.org/>`_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Arch Linux                    Rolling        Rolling          :octicon:`thumbsup`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Arch Linux
+         *  Rolling
+         *  Rolling
+         *  Rolling
+         *  
+
+.. dropdown:: CentOS Stream
+   :name: os-centos-stream
+   :animate: fade-in-slide-down
+
+   .. caution::
+
+      CentOS Stream, which is suitable for use with LOCKSS 2.x, should not be confused with :ref:`CentOS Linux <os-centos-linux>`, which is at end of life and is **not** suitable for use with LOCKSS 2.x.
+
+   LOCKSS 2.x is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_.
+
+   CentOS Stream is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
+
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  CentOS Stream
+         *  10
+         *  2030-01-01
+         *  2030-01-01
+         *  
+      *  *  CentOS Stream
+         *  9
+         *  2027-05-31
+         *  2027-05-31
+         *  
 
 .. dropdown:: Debian :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-debian
@@ -66,61 +160,129 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    LOCKSS 2.x is compatible with `Debian <https://www.debian.org/>`_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Debian              12.9      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.8      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.7      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.6      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.5      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.4      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.3      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.2      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.1      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              12.0      2026-06-10     2028-06-10       :octicon:`thumbsup`
-   Debian              11.11     2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.10     2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.9      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.8      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.7      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.6      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.5      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.4      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.3      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.2      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.1      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Debian              11.0      2024-08-14     2026-08-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
 
-.. dropdown:: EuroLinux
-   :name: os-eurolinux
-   :animate: fade-in-slide-down
-
-   LOCKSS 2.x is compatible with `EuroLinux <https://en.euro-linux.com/eurolinux>`_.
-
-   EuroLinux is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
-
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   EuroLinux           9.4       2032-05-31     2032-06-30       :octicon:`thumbsup`
-   EuroLinux           9.3       2032-05-31     2032-06-30       :octicon:`thumbsup`
-   EuroLinux           9.2       2032-05-31     2032-06-30       :octicon:`thumbsup`
-   EuroLinux           9.1       2032-05-31     2032-06-30       :octicon:`thumbsup`
-   EuroLinux           9.0       2032-05-31     2032-06-30       :octicon:`thumbsup`
-   EuroLinux           8.10      2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.9       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.8       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.7       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.6       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.5       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.4       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.3       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.2       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.1       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   EuroLinux           8.0       2029-03-01     2029-06-30       :octicon:`thumbsup`
-   =================== ========= ============== ================ =====
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Debian
+         *  12.10
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.9
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.8
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.7
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.6
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.5
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.4
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.3
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.2
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.1
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  12.0
+         *  2026-06-10
+         *  2028-06-10
+         *  
+      *  *  Debian
+         *  11.11
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.10
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.9
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.8
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.7
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.6
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.5
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.4
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.3
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.2
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.1
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
+      *  *  Debian
+         *  11.0
+         *  :octicon:`alert-fill` 2024-08-14
+         *  2026-08-31
+         *  
 
 .. dropdown:: Fedora Linux :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-fedora-linux
@@ -128,12 +290,24 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    LOCKSS 2.x is compatible with `Fedora Linux <https://getfedora.org/>`_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Fedora Linux        41        2025-11-19     2025-11-19       :octicon:`thumbsup`
-   Fedora Linux        40        2025-05-28     2025-05-28       :octicon:`thumbsup`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Fedora Linux
+         *  41
+         *  2025-11-19
+         *  2025-11-19
+         *  
+      *  *  Fedora Linux
+         *  40
+         *  :octicon:`alert` 2025-05-28
+         *  :octicon:`alert` 2025-05-28
+         *  
 
 .. dropdown:: Linux Mint :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-linux-mint
@@ -141,20 +315,64 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    LOCKSS 2.x is compatible with `Linux Mint <https://linuxmint.com/>`_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Linux Mint          22.1      Yes            2029-04-30       :octicon:`thumbsup`
-   Linux Mint          22        Yes            2029-04-30       :octicon:`thumbsup`
-   Linux Mint          21.3      Yes            2027-04-30       :octicon:`thumbsup`
-   Linux Mint          21.2      Yes            2027-04-30       :octicon:`thumbsup`
-   Linux Mint          21.1      Yes            2027-04-30       :octicon:`thumbsup`
-   Linux Mint          21        Yes            2027-04-30       :octicon:`thumbsup`
-   Linux Mint          20.3      Yes            2025-04-25       :octicon:`thumbsup`
-   Linux Mint          20.2      Yes            2025-04-25       :octicon:`thumbsup`
-   Linux Mint          20.1      No             2025-04-25       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Linux Mint          20        No             2025-04-25       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Linux Mint
+         *  22.1
+         *  Yes
+         *  2029-04-30
+         *  
+      *  *  Linux Mint
+         *  22
+         *  Yes
+         *  2029-04-30
+         *  
+      *  *  Linux Mint
+         *  21.3
+         *  Yes
+         *  2027-04-30
+         *  
+      *  *  Linux Mint
+         *  21.2
+         *  Yes
+         *  2027-04-30
+         *  
+      *  *  Linux Mint
+         *  21.1
+         *  Yes
+         *  2027-04-30
+         *  
+      *  *  Linux Mint
+         *  21
+         *  Yes
+         *  2027-04-30
+         *  
+      *  *  Linux Mint
+         *  20.3
+         *  Yes
+         *  :octicon:`alert` 2025-04-30
+         *  
+      *  *  Linux Mint
+         *  20.2
+         *  Yes
+         *  :octicon:`alert` 2025-04-30
+         *  
+      *  *  Linux Mint
+         *  20.1
+         *  :octicon:`alert-fill` No
+         *  :octicon:`alert` 2025-04-30
+         *  
+      *  *  Linux Mint
+         *  20
+         *  :octicon:`alert-fill` No
+         *  :octicon:`alert` 2025-04-30
+         *  
 
 .. dropdown:: OpenSUSE :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-opensuse
@@ -162,12 +380,24 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    LOCKSS 2.x is compatible with `OpenSUSE <https://www.opensuse.org/>`_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   OpenSUSE Tumbleweed           Rolling        Rolling          :octicon:`thumbsup`
-   OpenSUSE Leap       15.6      2025-12-31     2025-12-31       :octicon:`thumbsup`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  OpenSUSE Tumbleweed
+         *  Rolling
+         *  Rolling
+         *  Rolling
+         *  
+      *  *  OpenSUSE Leap
+         *  15.6
+         *  2025-12-31
+         *  2025-12-31
+         *  
 
 .. dropdown:: Oracle Linux
    :name: os-oracle-linux
@@ -177,37 +407,99 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    Oracle Linux is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Oracle Linux        9.5       2032-06-30     2035-06-30       :octicon:`thumbsup`
-   Oracle Linux        9.4       2032-06-30     2035-06-30       :octicon:`thumbsup`
-   Oracle Linux        9.3       2032-06-30     2035-06-30       :octicon:`thumbsup`
-   Oracle Linux        9.2       2032-06-30     2035-06-30       :octicon:`thumbsup`
-   Oracle Linux        9.1       2032-06-30     2035-06-30       :octicon:`thumbsup`
-   Oracle Linux        9.0       2032-06-30     2035-06-30       :octicon:`thumbsup`
-   Oracle Linux        8.10      2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.9       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.8       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.7       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.6       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.5       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.4       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.3       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.2       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.1       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        8.0       2029-07-31     2032-07-31       :octicon:`thumbsup`
-   Oracle Linux        7.9       2024-12-31     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.8       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.7       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.6       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.5       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.4       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.3       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.2       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.1       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Oracle Linux        7.0       2024-07-01     2028-06-30       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Oracle Linux
+         *  9.5
+         *  2032-06-30
+         *  2035-06-30
+         *  
+      *  *  Oracle Linux
+         *  9.4
+         *  2032-06-30
+         *  2035-06-30
+         *  
+      *  *  Oracle Linux
+         *  9.3
+         *  2032-06-30
+         *  2035-06-30
+         *  
+      *  *  Oracle Linux
+         *  9.2
+         *  2032-06-30
+         *  2035-06-30
+         *  
+      *  *  Oracle Linux
+         *  9.1
+         *  2032-06-30
+         *  2035-06-30
+         *  
+      *  *  Oracle Linux
+         *  9.0
+         *  2032-06-30
+         *  2035-06-30
+         *  
+      *  *  Oracle Linux
+         *  8.10
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.9
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.8
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.7
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.6
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.5
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.4
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.3
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.2
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.1
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
+      *  *  Oracle Linux
+         *  8.0
+         *  2029-07-31
+         *  2032-07-31
+         *  :octicon:`info` [#fnuek]_
 
 .. dropdown:: Red Hat Enterprise Linux (RHEL)
    :name: os-rhel
@@ -217,27 +509,99 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    RHEL is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   RHEL                9.5       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   RHEL                9.4       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   RHEL                9.3       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   RHEL                9.2       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   RHEL                9.1       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   RHEL                9.0       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   RHEL                8.10      2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.9       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.8       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.7       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.6       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.5       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.4       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.3       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.2       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.1       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   RHEL                8.0       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  RHEL
+         *  9.5
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  RHEL
+         *  9.4
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  RHEL
+         *  9.3
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  RHEL
+         *  9.2
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  RHEL
+         *  9.1
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  RHEL
+         *  9.0
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  RHEL
+         *  8.10
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.9
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.8
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.7
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.6
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.5
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.4
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.3
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.2
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.1
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  RHEL
+         *  8.0
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2029-05-31
+         *  :octicon:`info` [#fnelrepo]_
 
 .. dropdown:: Rocky Linux
    :name: os-rocky-linux
@@ -247,24 +611,84 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    Rocky Linux is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Rocky Linux         9.5       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   Rocky Linux         9.4       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   Rocky Linux         9.3       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   Rocky Linux         9.2       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   Rocky Linux         9.1       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   Rocky Linux         9.0       2027-05-31     2032-05-31       :octicon:`thumbsup`
-   Rocky Linux         8.10      2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Rocky Linux         8.9       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Rocky Linux         8.8       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Rocky Linux         8.7       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Rocky Linux         8.6       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Rocky Linux         8.5       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Rocky Linux         8.4       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Rocky Linux         8.3       2024-05-31     2029-05-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Rocky Linux
+         *  9.5
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  Rocky Linux
+         *  9.4
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  Rocky Linux
+         *  9.3
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  Rocky Linux
+         *  9.2
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  Rocky Linux
+         *  9.1
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  Rocky Linux
+         *  9.0
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  Rocky Linux
+         *  8.10
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  Rocky Linux
+         *  8.9
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  Rocky Linux
+         *  8.8
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  Rocky Linux
+         *  8.7
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  Rocky Linux
+         *  8.6
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  Rocky Linux
+         *  8.5
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  Rocky Linux
+         *  8.4
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
+      *  *  Rocky Linux
+         *  8.3
+         *  :octicon:`alert-fill` 2024-05-31
+         *  2032-05-31
+         *  :octicon:`info` [#fnelrepo]_
 
 .. dropdown:: SUSE Linux Enterprise Server (SLES) :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-sles
@@ -272,14 +696,34 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    LOCKSS 2.x is compatible with `SLES <https://www.suse.com/products/server/>`_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   SLES                15.6      Yes            Yes              :octicon:`thumbsup`
-   SLES                15.5      2024-12-31     2027-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   SLES                15.4      2023-12-31     2026-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   SLES                15.3      2022-12-31     2025-12-31       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  SLES
+         *  15.6
+         *  Yes
+         *  Yes
+         *  
+      *  *  SLES
+         *  15.5
+         *  :octicon:`alert-fill` 2024-12-31
+         *  2027-12-31
+         *  
+      *  *  SLES
+         *  15.4
+         *  :octicon:`alert-fill` 2023-12-31
+         *  2026-12-31
+         *  
+      *  *  SLES
+         *  15.3
+         *  :octicon:`alert-fill` 2022-12-31
+         *  2025-12-31
+         *  
 
 .. dropdown:: Ubuntu :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-ubuntu
@@ -287,20 +731,40 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    LOCKSS 2.x is compatible with `Ubuntu <https://ubuntu.com/>`_.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Ubuntu              24.10     2025-07-11     2025-07-11       :octicon:`thumbsup`
-   Ubuntu              24.04 LTS 2029-04-25     2029-04-25       :octicon:`thumbsup`
-   Ubuntu              22.04 LTS 2024-09-20     2027-04-01       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   Ubuntu              20.04 LTS 2022-10-01     2025-04-02       :octicon:`alert` :bdg-warning-line:`obsolescent`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Ubuntu
+         *  24.10
+         *  :octicon:`alert` 2025-07-11
+         *  :octicon:`alert` 2025-07-11
+         *  
+      *  *  Ubuntu
+         *  24.04 LTS
+         *  2029-04-25
+         *  2029-04-25
+         *  
+      *  *  Ubuntu
+         *  22.04 LTS
+         *  :octicon:`alert-fill` 2024-09-20
+         *  2027-04-01
+         *  
+      *  *  Ubuntu
+         *  20.04 LTS
+         *  :octicon:`alert-fill` 2022-10-01
+         *  :octicon:`alert` 2025-05-31
+         *  
 
 ----------------------------
 Unsuitable Operating Systems
 ----------------------------
 
-The following operating systems are unsuitable for use with LOCKSS 2.x, either because they are at end of life or because we do not recommend them.
+The following operating systems are unsuitable for use with LOCKSS 2.x because they are at end of life.
 
 .. dropdown:: CentOS Linux :bdg-danger-line:`end of life`
    :name: os-centos-linux
@@ -312,73 +776,308 @@ The following operating systems are unsuitable for use with LOCKSS 2.x, either b
 
    .. tip::
 
-      If you are currently running LOCKSS 1.x on a CentOS Linux host and you are considering a :doc:`same-host migration to LOCKSS 2.x <lockss-portal:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, :ref:`os-rhel`, or :ref:`os-eurolinux`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
+      If you are currently running LOCKSS 1.x on a CentOS Linux host, we recommend a :doc:`new-host migration to LOCKSS 2.x <lockss-portal:migration/index>`. However, if you perform a :doc:`same-host migration to LOCKSS 2.x <lockss-portal:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, or :ref:`os-rhel`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   CentOS Linux        8.5       2021-12-31     2021-12-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        8.4       2021-12-31     2021-12-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        8.3       2021-12-31     2021-12-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        8.2       2021-12-31     2021-12-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        8.1       2021-12-31     2021-12-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        8.0       2021-12-31     2021-12-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.9       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.8       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.7       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.6       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.5       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.4       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.3       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.2       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.1       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        7.0       2020-08-06     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.10      2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.9       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.8       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.7       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.6       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.5       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.4       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.3       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.2       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.1       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        6.0       2017-05-10     2020-11-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.11      2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.10      2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.9       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.8       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.7       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.6       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.5       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.4       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.3       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.2       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.1       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   CentOS Linux        5.0       2014-01-31     2017-03-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
 
-.. dropdown:: CentOS Stream :bdg-info-line:`not recommended`
-   :name: os-centos-stream
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  CentOS Linux
+         *  8.5
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  8.4
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  8.3
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  8.2
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  8.1
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  8.0
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`alert-fill` 2021-12-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.9
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.8
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.7
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.6
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.5
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.4
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.3
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.2
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.1
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  7.0
+         *  :octicon:`alert-fill` 2020-08-06
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.10
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.9
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.8
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.7
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.6
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.5
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.4
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.3
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.2
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.1
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  6.0
+         *  :octicon:`alert-fill` 2017-05-10
+         *  :octicon:`alert-fill` 2020-11-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.11
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.10
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.9
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.8
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.7
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.6
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.5
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.4
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.3
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.2
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.1
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  CentOS Linux
+         *  5.0
+         *  :octicon:`alert-fill` 2014-01-31
+         *  :octicon:`alert-fill` 2017-03-31
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+
+.. dropdown:: EuroLinux :bdg-danger-line:`end of life`
+   :name: os-eurolinux
    :animate: fade-in-slide-down
 
    .. warning::
 
-      CentOS Stream 8 is at end of life and is not suitable for use with LOCKSS 2.x.
+      LOCKSS 2.x was compatible with `EuroLinux <https://docs.euro-linux.com/>`_, but EuroLinux was discontinued as of November 2024 and is therefore not suitable for use with LOCKSS 2.x. `EuroLinux users are urged to migrate to Rocky Linux. <https://docs.euro-linux.com/HowTo/migrate_to_rocky_linux/>`_
 
-   .. tip::
+   .. list-table::
+      :header-rows: 1
 
-      If you are currently running LOCKSS 1.x on a CentOS Stream 8 host and you are considering a :doc:`same-host migration to LOCKSS 2.x <lockss-portal:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, :ref:`os-rhel`, or :ref:`os-eurolinux`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
-
-   LOCKSS 2.x is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_ 9 or 10, which is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_, but we do not recommend CentOS Stream.
-
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   CentOS Stream       10        2030-01-01     2030-01-01       :octicon:`thumbsdown` :bdg-info-line:`not recommended`
-   CentOS Stream       9         2027-05-31     2027-05-31       :octicon:`thumbsdown` :bdg-info-line:`not recommended`
-   CentOS Stream       8         2024-05-31     2024-05-31       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   =================== ========= ============== ================ =====
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  EuroLinux
+         *  9.4
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  9.3
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  9.2
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  9.1
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  9.0
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.10
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.9
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.8
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.7
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.6
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.5
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.4
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.3
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.2
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.1
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  EuroLinux
+         *  8.0
+         *  :octicon:`alert-fill` 2024-10-23
+         *  :octicon:`alert-fill` 2024-11-03
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
 
 .. dropdown:: Scientific Linux :bdg-danger-line:`end of life`
    :name: os-scientific-linux
@@ -388,20 +1087,64 @@ The following operating systems are unsuitable for use with LOCKSS 2.x, either b
 
       `Scientific Linux <https://scientificlinux.org/>`_ is at end of life and is not suitable for use with LOCKSS 2.x.
 
-   =================== ========= ============== ================ =====
-   Operating System    Version   Active Support Security Support Notes
-   =================== ========= ============== ================ =====
-   Scientific Linux    7.9       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.8       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.7       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.6       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.5       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.4       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.3       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.2       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.1       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   Scientific Linux    7.0       2024-06-30     2024-06-30       :octicon:`x-circle-fill` :bdg-danger:`end of life`
-   =================== ========= ============== ================ =====
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
+         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  Scientific Linux
+         *  7.9
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.8
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.7
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.6
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.5
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.4
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.3
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.2
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.1
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
+      *  *  Scientific Linux
+         *  7.0
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`alert-fill` 2024-06-30
+         *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
 
 ----
 
@@ -414,3 +1157,11 @@ The following operating systems are unsuitable for use with LOCKSS 2.x, either b
 .. [#fnsamehostmigration]
 
    Reference: :doc:`lockss-portal:migration/index`
+
+.. [#fnelrepo]
+
+   To meet the :ref:`Host` kernel prerequisite with this operating system, you will need to install a Linux kernel version 5.4 or later from a package in the `ELRepo Project <https://elrepo.org/>`_ repository.
+
+.. [#fnuek]
+
+   To meet the :ref:`Host` kernel prerequisite with this operating system, you will need to install a Linux kernel version 5.4 or later from Oracle's `Unbreakable Enterprise Kernel <https://docs.oracle.com/en/operating-systems/uek/>`_ repository.
