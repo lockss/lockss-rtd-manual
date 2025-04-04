@@ -52,12 +52,4 @@ During configuration, the administrator must specify the location of these stora
 
 .. [#fnkernel]
 
-   In the Linux kernel version 5.3 or earlier, processes might block (wait exceedingly long) or hang (wait forever) due to lack of entropy (cryptographically secure randomness sources). This is a problem for systems like LOCKSS that are meant to operate largely autonomously, without incidental interaction that might create more entropy and unblock processes waiting for cryptographically secure randomness. Mitigation of this problem first appeared in the Linux kernel version 5.4; see:
-
-   *  https://blogs.oracle.com/linux/post/rngd1
-
-   *  https://git.kernel.org/pub/scm/linux/kernel/git/crng/random.git/commit/?id=50ee7529ec45
-
-   *  https://www.zx2c4.com/projects/linux-rng-5.17-5.18/
-
-   The :doc:`os` section offers ways to upgrade :ref:`os-rhel` 8, :ref:`os-rocky-linux` 8, :ref:`os-almalinux` 8 and :ref:`os-oracle-linux` 8 to a kernel version 5.4 or later.
+   In the Linux kernel version 5.3 or earlier, the LOCKSS system at startup might block (wait exceedingly long) or hang (wait forever) due to lack of entropy (cryptographically secure randomness sources) in the Linux environment. `Mitigation of this problem <https://git.kernel.org/pub/scm/linux/kernel/git/crng/random.git/commit/?id=50ee7529ec45>`_ first appeared in the Linux kernel version 5.4. The :doc:`os` section offers ways to upgrade :ref:`os-rhel` 8, :ref:`os-rocky-linux` 8, :ref:`os-almalinux` 8 and :ref:`os-oracle-linux` 8 to a kernel version 5.4 or later.
