@@ -738,6 +738,12 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
 ----
 
+.. tip::
+
+   Are you in the middle of the :doc:`lockss-portal:migration/index`? Don't forget to go back to the end of Chapter 4 (:doc:`lockss-portal:migration/installing2`) when you reach this point.
+
+----
+
 .. rubric:: Footnotes
 
 .. [#fnroot]

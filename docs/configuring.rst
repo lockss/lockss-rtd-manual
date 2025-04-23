@@ -2,17 +2,17 @@
 Configuring the LOCKSS System
 =============================
 
-.. rubric:: Section Summary
-
-After :doc:`/installing/index`, you will configure it with the :program:`configure-lockss` script.
-
 .. tip::
 
-   If you have experience with LOCKSS 1.x, this is the equivalent of the :program:`hostconfig` script.
+   Are you in the middle of the :doc:`lockss-portal:migration/index`? Beware that this point in the :doc:`/index` is between the end of Chapter 4 (:doc:`lockss-portal:migration/installing2`) and the beginning of Section 5.2 (:ref:`lockss-portal:running-configure-lockss-migrate`) of the migration guide. Don't forget to go back to Section 5.1 (:ref:`lockss-portal:Importing Configuration From LOCKSS 1.x`) of the migration guide before proceeding past this point.
+
+.. rubric:: Chapter Summary
+
+After :doc:`/installing/index`, you will configure it with the :program:`configure-lockss` script. (If you have experience with LOCKSS 1.x, this is the equivalent of the :program:`hostconfig` script.)
 
 .. only:: html and not singlehtml
 
-   .. contents:: Section Table of Contents
+   .. contents:: Chapter Table of Contents
       :local:
       :backlinks: none
       :depth: 1
