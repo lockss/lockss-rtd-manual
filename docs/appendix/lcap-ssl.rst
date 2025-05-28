@@ -10,7 +10,7 @@ In order to ensure that only authorized nodes may participate, each node is issu
 
 .. note::
 
-   The Classic LOCKSS system (version 1.x) does not support PKCS12, so if building keystores for a network that includes classic LOCKSS nodes, JCEKS should be selected.
+   LOCKSS 1.x does not support PKCS12, so if building keystores for a network that includes any LOCKSS 1.x nodes, JCEKS should be selected.
 
 --------------------
 Generating Keystores
@@ -18,20 +18,41 @@ Generating Keystores
 
 The authority in charge of the private LOCKSS network (PLN) must create and distribute Java keystores to all participants. Each box receives two keystores: one containing its own private key (along with a password file containing the secret password for the private key) and another containing the public certificates for each of the boxes in the network. There are two methods available to create these keystores:
 
-*  A :ref:`Command Line Tool` run in the LOCKSS development environment.
+*  An :ref:`Interactive Tool` invoked in a running LOCKSS 2.x node.
 
-*  An :ref:`Interactive Tool` invoked in a running LOCKSS node.
+*  A :ref:`Command Line Tool` run in a LOCKSS development environment.
 
 In both cases, the admin creating the keystores must know the complete set of hostnames of boxes in the network. More hosts can be added at any time, but a new public keystore must be created and distributed to each box.
+
+Interactive Tool
+================
+
+1. Bring up a LOCKSS stack, either in the production environment or ``runcluster``. In the UI, select :menuselection:`DebugPanel --> Generate LCAP SSL Keys`.
+
+2. Enter the hostname of each of the LOCKSS boxes in the :guilabel:`Hostnames` text box, separated by spaces or newlines, then click the :guilabel:`Generate Keystores` button. A .tgz or a .zip file will be generated and offered for download. This file will contain the private keystore and password file for each host, as well as the shared public keystore.
+
+3. To add additional hosts, use the :guilabel:`Browse` button to supply the existing public keystore, and enter the new hosts in the :guilabel:`Hostnames` text box.  The downloaded file will contain the private keystore and password files for each new host, as well as the updated shared public keystore, which must be installed on all hosts.
 
 Command Line Tool
 =================
 
 To use the command line tool:
 
-1. Clone the `lockss-core <https://github.com/lockss/lockss-core>`_ and `laaws-dev-scripts <https://github.com/lockss/laaws-dev-scripts>`_ projects from GitHub, in sibling directories.
+1. Clone the `lockss-core <https://github.com/lockss/lockss-core>`_ and `laaws-dev-scripts <https://github.com/lockss/laaws-dev-scripts>`_ projects from GitHub, in sibling directories:
 
-2. Build ``lockss-core``.
+   .. code-block:: shell
+
+      git clone https://github.com/lockss/lockss-core
+
+      git clone https://github.com/lockss/laaws-dev-scripts
+
+2. Build ``lockss-core``:
+
+   .. code-block:: shell
+
+      cd lockss-core
+
+      mvn package
 
 3. In the root directory of ``lockss-core``, run this command:
 
@@ -43,18 +64,13 @@ To use the command line tool:
 
 4. To add additional hosts, provide the existing public keystore as the value of the ``-s`` argument, and list the new hosts. The new public keys will be added to the existing public keystore.
 
-Interactive Tool
-================
-
-1. Bring up a LOCKSS stack, either in the production environment or ``runcluster``. In the UI, select :menuselection:`DebugPanel --> Generate LCAP SSL Keys`.
-
-2. Enter the hostname of each of the LOCKSS boxes in the :guilabel:`Hostnames` text box, then click the :guilabel:`Generate Keystores` button. A .tgz or a .zip file will be generated and offered for download. This file will contain the private keystore and password file for each host, as well as the shared public keystore.
-
-3. To add additional hosts, use the :guilabel:`Browse` button to supply the existing public keystore, and enter the new hosts in the :guilabel:`Hostnames` text box.  The downloaded file will contain the private keystore and password files for each new host, as well as the updated shared public keystore, which must be installed on all hosts.
-
 ------------------------
 Installing the Keystores
 ------------------------
+
+.. note::
+
+   The instructions in this section are for installing keystores onto a LOCKSS 2.x node. `See the instructions for installing keystores onto a LOCKSS 1.x node here. <https://lockss.github.io/assets/LCAP_over_SSL.pdf>`_
 
 1. **Securely** transmit to each box its two files and the public keystore. Put them in :file:`~lockss/lockss-installer/config/keys`, and set the owner and group to ``lockss:lockss`` and the permissions to ``600``.
 
