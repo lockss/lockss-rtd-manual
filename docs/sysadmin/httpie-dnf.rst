@@ -2,10 +2,10 @@ To install HTTPie with Dnf, run this command (as ``root``):
 
 .. code-block:: shell
 
-   dnf --assumeyes install httpie
+   dnf --refresh --assumeyes install httpie
 
 or equivalently:
 
 .. code-block:: shell
 
-   dnf -y install httpie
+   dnf --refresh -y install httpie
