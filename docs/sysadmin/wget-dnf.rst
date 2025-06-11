@@ -2,11 +2,11 @@ To install Wget with Dnf, run this command (as ``root``):
 
 .. code-block:: shell
 
-   dnf --assumeyes install wget
+   dnf --refresh --assumeyes install wget
 
 or equivalently:
 
 .. code-block:: shell
 
-   dnf -y install wget
+   dnf --refresh -y install wget
 

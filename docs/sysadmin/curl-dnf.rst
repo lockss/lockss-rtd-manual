@@ -2,11 +2,10 @@ To install Curl with Dnf, run this command (as ``root``):
 
 .. code-block:: shell
 
-   dnf --assumeyes install curl
+   dnf --refresh --assumeyes install wget
 
 or equivalently:
 
 .. code-block:: shell
 
-   dnf -y install curl
-
+   dnf --refresh -y install curl

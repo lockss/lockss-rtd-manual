@@ -6,7 +6,23 @@ System Prerequisites
 Host
 ----
 
-The LOCKSS system runs on a physical or virtual host running the **Linux kernel version 5.4 or later** [#fnkernel]_. The :doc:`os` section lists numerous suitable operating system choices, including many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), Ubuntu, and others.
+The LOCKSS system runs on a physical or virtual Linux host, on one of many :ref:`Compatible Operating Systems`, including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
+
+Linux Kernel Requirements
+=========================
+
+Linux kernel 5.4 or later is required. Most versions of the :ref:`Compatible Operating Systems` meet this requirement out of the box [#fnkernel54]_.
+
+
+
+System Software Requirements
+============================
+
+1. nftables or legacy iptables.
+
+2. At least one of Curl, Wget, or HTTPie is required. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version`` at the host's command line and verifying that at least one of them outputs a valid version number (meaning the corresponding software is installed). See :doc:`/sysadmin/curl`, :doc:`/sysadmin/wget` or :doc:`/sysadmin/httpie` if you need to install one of them.
+
+3. Tar (:program:`tar` or :program:`gtar`) and Gzip (:program:`gzip`) are required. Linux systems almost universally have them installed by default. You can check by typing ``tar --version`` (or ``gtar --version``) and ``gzip --version`` at the host's command line and verifying that they both output a valid version number (meaning the corresponding software is installed).
 
 ---
 CPU
@@ -50,6 +66,8 @@ During configuration, the administrator must specify the location of these stora
 
 .. rubric:: Footnotes
 
-.. [#fnkernel]
+.. [#fnkernel54]
 
-   In the Linux kernel version 5.3 or earlier, the LOCKSS system at startup might block (wait exceedingly long) or hang (wait forever) due to lack of entropy (cryptographically secure randomness sources) in the Linux environment. `Mitigation of this problem <https://git.kernel.org/pub/scm/linux/kernel/git/crng/random.git/commit/?id=50ee7529ec45>`_ first appeared in the Linux kernel version 5.4. The :doc:`os` section offers ways to upgrade :ref:`os-rhel` 8, :ref:`os-rocky-linux` 8, :ref:`os-almalinux` 8 and :ref:`os-oracle-linux` 8 to a kernel version 5.4 or later.
+   You can check the Linux kernel version by typing ``uname --kernel-release`` (or equivalently ``uname -r``) at the command line. The :doc:`os` section offers ways to upgrade :ref:`os-almalinux` 8, :ref:`os-oracle-linux` 8, :ref:`os-rhel` 8, and :ref:`os-rocky-linux` 8 to a kernel version 5.4 or later.
+
+   In the Linux kernel version 5.3 or earlier, the LOCKSS system at startup might block (wait exceedingly long) or hang (wait forever) due to lack of entropy (cryptographically secure randomness sources) in the Linux environment. `Mitigation of this problem <https://git.kernel.org/pub/scm/linux/kernel/git/crng/random.git/commit/?id=50ee7529ec45>`_ first appeared in the Linux kernel version 5.4.

@@ -2,9 +2,7 @@
 Installing Wget
 ===============
 
-:doc:`/installing/downloading` requires `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version``, and seeing which ones do not output an error message.
-
-This section describes how to install `Wget <https://www.gnu.org/software/wget/>`_ if necessary.
+:doc:`/installing/downloading` requires `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version`` at the command line and verifying that at least one of them outputs a valid version number (meaning the corresponding software is installed). This section describes how to install `Wget <https://www.gnu.org/software/wget/>`_ if necessary.
 
 Select your operating system below and follow the instructions as root [#fnroot]_:
 
@@ -23,40 +21,15 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. include:: wget-pacman.rst
 
-   .. tab-item:: CentOS
-      :sync: centos
+   .. tab-item:: CentOS Stream
+      :sync: centos-stream
 
-      .. tab-set::
-
-         .. tab-item:: CentOS Stream
-            :sync: centosstream
-
-            .. include:: wget-dnf.rst
-
-         .. tab-item:: CentOS 7
-            :sync: centos7
-
-            .. include:: wget-yum.rst
+      .. include:: wget-dnf.rst
 
    .. tab-item:: Debian
       :sync: debian
 
       .. include:: wget-apt.rst
-
-   .. tab-item:: EuroLinux
-      :sync: eurolinux
-
-      .. tab-set::
-
-         .. tab-item:: EuroLinux 8
-            :sync: eurolinux8
-
-            .. include:: wget-dnf.rst
-
-         .. tab-item:: EuroLinux 7
-            :sync: eurolinux7
-
-            .. include:: wget-yum.rst
 
    .. tab-item:: Fedora Linux
       :sync: fedora
@@ -74,54 +47,34 @@ Select your operating system below and follow the instructions as root [#fnroot]
       .. tab-set::
 
          .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensusetumbleweed
+            :sync: opensuse-tumbleweed
 
             .. include:: wget-zypper.rst
 
          .. tab-item:: OpenSUSE Leap
-            :sync: opensuseleap
+            :sync: opensuse-leap
 
             .. include:: wget-zypper.rst
 
    .. tab-item:: Oracle Linux
       :sync: oracle
 
-      .. tab-set::
+      .. include:: wget-dnf.rst
 
-         .. tab-item:: Oracle Linux 8-9
-            :sync: oracle8
-
-            .. include:: wget-dnf.rst
-
-         .. tab-item:: Oracle Linux 7
-            :sync: oracle7
-
-            .. include:: wget-yum.rst
-
-   .. tab-item:: RHEL
+   .. tab-item:: Red Hat Enterprise Linux
       :sync: rhel
 
-      .. tab-set::
-
-         .. tab-item:: RHEL 8-9
-            :sync: rhel8
-
-            .. include:: wget-dnf.rst
-
-         .. tab-item:: RHEL 7
-            :sync: rhel7
-
-            .. include:: wget-yum.rst
+      .. include:: wget-dnf.rst
 
    .. tab-item:: Rocky Linux
       :sync: rocky
 
       .. include:: wget-dnf.rst
 
-   .. tab-item:: Scientific Linux
-      :sync: scientific
+   .. tab-item:: SUSE Linux Enterprise Server
+      :sync: sles
 
-      .. include:: wget-yum.rst
+      .. include:: wget-zypper.rst
 
    .. tab-item:: Ubuntu
       :sync: ubuntu
