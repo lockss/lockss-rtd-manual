@@ -10,7 +10,7 @@ You will want to update your Linux operating system at different times:
 
 *  When security-related updates are released for the Linux kernel (which requires rebooting the machine) or other installed software packages.
 
-Your system may be set up for automatic updates or your system administrator may have policies for which packages can be udpated and when.
+Your system may be set up for automatic updates or your system administrator may have policies regarding which packages can be udpated and when.
 
 If you wish to update software packages manually, select your operating system below and follow the instructions as ``root`` [#fnroot]_:
 
@@ -29,40 +29,15 @@ If you wish to update software packages manually, select your operating system b
 
       .. include:: os-updates-pacman.rst
 
-   .. tab-item:: CentOS
-      :sync: centos
+   .. tab-item:: CentOS Stream
+      :sync: centos-stream
 
-      .. tab-set::
-
-         .. tab-item:: CentOS Stream
-            :sync: centosstream
-
-            .. include:: os-updates-dnf.rst
-
-         .. tab-item:: CentOS 7
-            :sync: centos7
-
-            .. include:: os-updates-yum.rst
+      .. include:: os-updates-dnf.rst
 
    .. tab-item:: Debian
       :sync: debian
 
       .. include:: os-updates-apt.rst
-
-   .. tab-item:: EuroLinux
-      :sync: eurolinux
-
-      .. tab-set::
-
-         .. tab-item:: EuroLinux 8
-            :sync: eurolinux8
-
-            .. include:: os-updates-dnf.rst
-
-         .. tab-item:: EuroLinux 7
-            :sync: eurolinux7
-
-            .. include:: os-updates-yum.rst
 
    .. tab-item:: Fedora Linux
       :sync: fedora
@@ -80,54 +55,34 @@ If you wish to update software packages manually, select your operating system b
       .. tab-set::
 
          .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensusetumbleweed
+            :sync: opensuse-tumbleweed
 
             .. include:: os-updates-zypper.rst
 
          .. tab-item:: OpenSUSE Leap
-            :sync: opensuseleap
+            :sync: opensuse-leap
 
             .. include:: os-updates-zypper.rst
 
    .. tab-item:: Oracle Linux
       :sync: oracle
 
-      .. tab-set::
+      .. include:: os-updates-dnf.rst
 
-         .. tab-item:: Oracle Linux 8-9
-            :sync: oracle8
-
-            .. include:: os-updates-dnf.rst
-
-         .. tab-item:: Oracle Linux 7
-            :sync: oracle7
-
-            .. include:: os-updates-yum.rst
-
-   .. tab-item:: RHEL
+   .. tab-item:: Red Hat Enterprise Linux
       :sync: rhel
 
-      .. tab-set::
-
-         .. tab-item:: RHEL 8-9
-            :sync: rhel8
-
-            .. include:: os-updates-dnf.rst
-
-         .. tab-item:: RHEL 7
-            :sync: rhel7
-
-            .. include:: os-updates-yum.rst
+      .. include:: os-updates-dnf.rst
 
    .. tab-item:: Rocky Linux
       :sync: rocky
 
       .. include:: os-updates-dnf.rst
 
-   .. tab-item:: Scientific Linux
-      :sync: scientific
+   .. tab-item:: SUSE Linux Enterprise Server
+      :sync: sles
 
-      .. include:: os-updates-yum.rst
+      .. include:: os-updates-zypper.rst
 
    .. tab-item:: Ubuntu
       :sync: ubuntu

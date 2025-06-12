@@ -2,7 +2,7 @@
 Installing HTTPie
 =================
 
-:doc:`/installing/downloading` requires `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version`` at the command line and verifying that at least one of them outputs a valid version number (meaning the corresponding software is installed). This section describes how to install `HTTPie <https://httpie.io/>`_ if necessary.
+:doc:`/installing/downloading` requires `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version`` at the command line and verifying that at least one of them outputs a valid version message (meaning the corresponding software is installed). This section describes how to install `HTTPie <https://httpie.io/>`_ if necessary.
 
 Select your operating system below and follow the instructions as root [#fnroot]_:
 
