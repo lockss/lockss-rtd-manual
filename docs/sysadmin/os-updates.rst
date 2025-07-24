@@ -54,13 +54,13 @@ If you wish to update software packages manually, select your operating system b
 
       .. tab-set::
 
-         .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensuse-tumbleweed
+         .. tab-item:: OpenSUSE Leap
+            :sync: opensuse-leap
 
             .. include:: os-updates-zypper.rst
 
-         .. tab-item:: OpenSUSE Leap
-            :sync: opensuse-leap
+         .. tab-item:: OpenSUSE Tumbleweed
+            :sync: opensuse-tumbleweed
 
             .. include:: os-updates-zypper.rst
 

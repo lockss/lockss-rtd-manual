@@ -1,7 +1,13 @@
-To manually update software packages, run these :program:`apt` commands as ``root``:
+To manually update software packages with Apt, follow these steps (as ``root``):
 
-.. code-block:: shell
+1. Run this :program:`apt` command:
 
-   apt update
+   .. code-block:: shell
 
-   apt upgrade
+      apt update
+
+2. Run this :program:`apt` command:
+
+   .. code-block:: shell
+
+      apt upgrade

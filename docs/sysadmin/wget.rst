@@ -2,9 +2,9 @@
 Installing Wget
 ===============
 
-:doc:`/installing/downloading` requires `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version`` at the command line and verifying that at least one of them outputs a valid version message (meaning the corresponding software is installed). This section describes how to install `Wget <https://www.gnu.org/software/wget/>`_ if necessary.
+:doc:`/installing/downloading` and :doc:`/installing/running` require `Curl <https://curl.se/>`_ or `Wget <https://www.gnu.org/software/wget/>`_. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version`` and ``wget --version`` at the command line and verifying that at least one of them outputs a valid version message (meaning the corresponding software is installed). This section describes how to install `Wget <https://www.gnu.org/software/wget/>`_ if necessary.
 
-Select your operating system below and follow the instructions as root [#fnroot]_:
+Select your operating system below and follow the instructions as ``root`` [#fnroot]_:
 
 .. COMMENT OSTABS
 
@@ -46,13 +46,13 @@ Select your operating system below and follow the instructions as root [#fnroot]
 
       .. tab-set::
 
-         .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensuse-tumbleweed
+         .. tab-item:: OpenSUSE Leap
+            :sync: opensuse-leap
 
             .. include:: wget-zypper.rst
 
-         .. tab-item:: OpenSUSE Leap
-            :sync: opensuse-leap
+         .. tab-item:: OpenSUSE Tumbleweed
+            :sync: opensuse-tumbleweed
 
             .. include:: wget-zypper.rst
 

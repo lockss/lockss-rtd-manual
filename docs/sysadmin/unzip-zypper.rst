@@ -1,4 +1,4 @@
-To install Wget with Zypper, follow these steps (as ``root``):
+To install Unzip with Zypper, follow these steps (as ``root``):
 
 1. Run this :program:`zypper` command:
 
@@ -16,11 +16,10 @@ To install Wget with Zypper, follow these steps (as ``root``):
 
    .. code-block:: shell
 
-      zypper install wget
+      zypper install unzip
 
    or equivalently:
 
    .. code-block:: shell
 
-      zypper in wget
-
+      zypper in unzip

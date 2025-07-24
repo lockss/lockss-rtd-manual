@@ -1,4 +1,4 @@
-To manually update software packages, run this :program:`pacman` command as ``root``:
+To manually update software packages with Pacman, run this command (as ``root``):
 
 .. code-block:: shell
 

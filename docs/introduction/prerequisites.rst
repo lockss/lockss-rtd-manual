@@ -6,21 +6,77 @@ System Prerequisites
 Host
 ----
 
-The LOCKSS system runs on a physical or virtual Linux host, on one of many :ref:`Compatible Operating Systems`, including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
+LOCKSS |LATEST_MINOR| runs on a Linux host (physical machine or virtual machine), on one of many :ref:`Compatible Operating Systems`, including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
 
 Linux Kernel Requirements
 =========================
 
-Linux kernel 5.4 or later is required. Most versions of the :ref:`Compatible Operating Systems` satisfy this requirement out of the box [#fnkernel54]_.
+Most versions of the :ref:`Compatible Operating Systems` satisfy the Linux kernel requirements for LOCKSS |LATEST_MINOR| out of the box:
+
+1. .. dropdown:: Linux kernel 5.4 or later is required
+
+      Linux kernel 5.4 or later is required. You can check the Linux kernel version by typing:
+
+      .. code-block:: shell
+
+         uname --kernel-release
+
+      or equivalently:
+
+      .. code-block:: shell
+
+         uname -r
+
+      at the host's command line.
+
+      *  If a version number 5.4 or later is output, the host satisfies the Linux kernel version requirement.
+
+      *  If a version number 5.3 or earlier is output, see :doc:`/sysadmin/kernel54`.
+
+2. .. dropdown:: ``ip_tables`` loadable kernel module is required
+
+      The ``ip_tables`` loadable kernel module is required, even if :program:`iptables` or :program:`nftables` is not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
+
+      .. code-block:: shell
+
+         modinfo ip_tables
+
+      at the host's command line.
+
+      .. note::
+
+         Note that in this context, the correct name is ``ip_tables``, not ``iptables`` as in many other contexts.
+
+      *  If technical information about the module is output [#fniptablesexample]_, the host satisfies the ``ip_tables`` loadable kernel module requirement.
+
+      *  If an error message similar to the following is output:
+
+         .. code-block:: text
+
+            modinfo: ERROR: Module ip_tables not found.
+
+         see :doc:`/sysadmin/kernel-iptables`.
 
 System Software Requirements
 ============================
 
-1. :program:`nftables` or legacy :program:`iptables`.
+The LOCKSS Downloader and LOCKSS Installer require basic system software that is almost always present out of the box on :ref:`Compatible Operating Systems`:
 
-2. At least one of Curl, Wget, or HTTPie is required. Most typical Linux systems have at least one installed by default [#fnfetcher]_.
+1. .. dropdown:: Curl or Wget is required
 
-3. Tar (:program:`tar` or :program:`gtar`) and Gzip (:program:`gzip`) are required. Linux systems almost universally satisfy this requirement out of the box [#fntargzip]_.
+      At least one of Curl or Wget is required. You can check by typing ``curl --version`` or ``wget --version`` at the host's command line.
+
+      *  If either outputs a valid version message, the host satisfies the fetcher requirement.
+
+      *  If both output an error message, see :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget`.
+
+2. .. dropdown:: Tar and Unzip are required
+
+      Both Tar (:program:`tar` or :program:`gtar`) and Unzip (:program:`unzip`) are required. You can check by typing ``tar --version`` (or ``gtar --version``) and ``unzip --version`` at the host's command line.
+
+      *  If both output a valid version message, the host satisfies the archiver requirement.
+
+      *  If either outputs an error message, see :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip` accordingly.
 
 ---
 CPU
@@ -64,16 +120,9 @@ During configuration, the administrator must specify the location of these stora
 
 .. rubric:: Footnotes
 
-.. [#fnkernel54]
+.. [#fniptablesexample]
 
-   You can check the Linux kernel version by typing ``uname --kernel-release`` (or equivalently ``uname -r``) at the host's command line. The :doc:`os` section offers ways to upgrade :ref:`os-almalinux` 8, :ref:`os-oracle-linux` 8, :ref:`os-rhel` 8, and :ref:`os-rocky-linux` 8 to a kernel version 5.4 or later.
+   Sample output:
 
-   In the Linux kernel version 5.3 or earlier, the LOCKSS system at startup might block (wait exceedingly long) or hang (wait forever) due to lack of entropy (cryptographically secure randomness sources) in the Linux environment. `Mitigation of this problem <https://git.kernel.org/pub/scm/linux/kernel/git/crng/random.git/commit/?id=50ee7529ec45>`_ first appeared in the Linux kernel version 5.4.
-
-.. [#fnfetcher]
-
-   You can check by typing ``curl --version``, ``wget --version`` or ``http --version`` at the host's command line and verifying that at least one of them outputs a valid version message (meaning the corresponding software is installed). See :doc:`/sysadmin/curl`, :doc:`/sysadmin/wget` or :doc:`/sysadmin/httpie` if you need to install one of them.
-
-.. [#fntargzip]
-
-   You can check by typing ``tar --version`` (or ``gtar --version``) and ``gzip --version`` at the host's command line and verifying that they both output a valid version message (meaning the corresponding software is installed).
+   .. literalinclude:: prerequisites-iptables-example.txt
+      :language: text
