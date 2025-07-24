@@ -28,9 +28,9 @@ You can override this default by using the LOCKSS Downloader's ``--download-dir`
 Running the LOCKSS Downloader
 -----------------------------
 
-To download the LOCKSS Installer, you will use `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_ [#fnfetcher]_ to invoke the LOCKSS Downloader [#fndownloader]_, whose default action is to download the LOCKSS Installer.
+To download the LOCKSS Installer, you will use `Curl <https://curl.se/>`_ or `Wget <https://www.gnu.org/software/wget/>`_ [#fnfetcher]_ to invoke the LOCKSS Downloader [#fndownloader]_, whose default action is to download the LOCKSS Installer.
 
-As the ``lockss`` user [#fnlockss]_, run this Curl, Wget or HTTPie command [#fnfetcher]_:
+As the ``lockss`` user [#fnlockss]_, run this Curl or Wget command [#fnfetcher]_:
 
 .. tab-set::
    :class: sd-bg-light
@@ -41,13 +41,6 @@ As the ``lockss`` user [#fnlockss]_, run this Curl, Wget or HTTPie command [#fnf
       .. code-block:: shell
 
          curl -sSfL https://lockss.org/downloader | sh -s -
-
-   .. tab-item:: HTTPie
-      :sync: httpie
-
-      .. code-block:: shell
-
-         http -qd https://lockss.org/downloader | sh -s -
 
    .. tab-item:: Wget
       :sync: wget
@@ -71,7 +64,7 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
       Another option is to download a copy of the LOCKSS Downloader script, review it, then execute it, all locally. To do so, follow this procedure:
 
-      1. As the ``lockss`` user [#fnlockss]_, run this Curl, Wget or HTTPie command [#fnfetcher]_:
+      1. As the ``lockss`` user [#fnlockss]_, run this Curl or Wget command [#fnfetcher]_:
 
          .. tab-set::
             :class: sd-bg-light
@@ -83,13 +76,6 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
                .. code-block:: shell
 
                   curl -Lo lockss-downloader.sh https://lockss.org/downloader
-
-            .. tab-item:: HTTPie
-               :sync: httpie
-
-               .. code-block:: shell
-
-                  http -qdo lockss-downloader.sh https://lockss.org/downloader
 
             .. tab-item:: Wget
                :sync: wget
@@ -118,7 +104,7 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
          to run the LOCKSS Downloader script.
 
-         You can append to ``./lockss-downloader.sh`` all the same options that can be appended to the ``| sh -s -`` part of the Curl, HTTPie or Wget commands documented in this section, for instance :samp:`./lockss-downloader --download-dir={DIR}`; see :ref:`custom-lockss-installer-directory` or :ref:`custom-lockss-installer-directory` below.
+         You can append to ``./lockss-downloader.sh`` all the same options that can be appended to the ``| sh -s -`` part of the Curl or Wget commands documented in this section, for instance :samp:`./lockss-downloader --download-dir={DIR}`; see :ref:`custom-lockss-installer-directory` or :ref:`custom-lockss-installer-directory` below.
 
    .. dropdown:: Custom LOCKSS Installer Directory
       :name: custom-lockss-installer-directory
@@ -171,11 +157,11 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
 .. [#fnfetcher]
 
-   Most typical Linux systems have at least one of `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_ installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version``, and seeing which ones do not output an error message. See :doc:`/sysadmin/curl`, :doc:`/sysadmin/wget` or :doc:`/sysadmin/httpie` for installation instructions.
+   Most typical Linux systems have at least one of `Curl <https://curl.se/>`_ or `Wget <https://www.gnu.org/software/wget/>`_ installed by default. You can check by typing ``curl --version`` or ``wget --version``, and seeing which ones do not output an error message. See :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget` for installation instructions.
 
 .. [#fndownloader]
 
-   The LOCKSS Downloader is a script to download GitHub projects without Git, with Curl, Wget or HTTPie instead. See https://github.com/lockss/lockss-downloader.
+   The LOCKSS Downloader is a script to download GitHub projects without Git, with Curl or Wget instead. See https://github.com/lockss/lockss-downloader.
 
 .. [#fninstaller]
 

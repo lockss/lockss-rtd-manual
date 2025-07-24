@@ -1,4 +1,4 @@
-To install Curl with Apt, follow these steps (as ``root``):
+To install Unzip with Apt, follow these steps (as ``root``):
 
 1. Run this :program:`apt` command:
 
@@ -10,4 +10,4 @@ To install Curl with Apt, follow these steps (as ``root``):
 
    .. code-block:: shell
 
-      apt install curl
+      apt install unzip

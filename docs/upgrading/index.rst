@@ -49,7 +49,7 @@ which should return:
 Update the LOCKSS Installer
 ---------------------------
 
-As the ``lockss`` user [#fnlockss]_, run this Curl, Wget or HTTPie command [#fnfetcher]_:
+As the ``lockss`` user [#fnlockss]_, run this Curl or Wget command [#fnfetcher]_:
 
 .. tab-set::
    :class: sd-bg-light
@@ -60,13 +60,6 @@ As the ``lockss`` user [#fnlockss]_, run this Curl, Wget or HTTPie command [#fnf
       .. code-block:: shell
 
          curl -sSfL https://lockss.org/downloader | sh -s -
-
-   .. tab-item:: HTTPie
-      :sync: httpie
-
-      .. code-block:: shell
-
-         http -qd https://lockss.org/downloader | sh -s -
 
    .. tab-item:: Wget
       :sync: wget
@@ -133,4 +126,4 @@ You are now ready to start the LOCKSS system. Run this command as the ``lockss``
 
 .. [#fnfetcher]
 
-   Most typical Linux systems have at least one of `Curl <https://curl.se/>`_, `Wget <https://www.gnu.org/software/wget/>`_ or `HTTPie <https://httpie.io/>`_ installed by default. You can check by typing ``curl --version``, ``wget --version`` or ``http --version``, and seeing which ones do not output an error message. See :doc:`/sysadmin/curl`, :doc:`/sysadmin/wget` or :doc:`/sysadmin/httpie` for installation instructions.
+   Most typical Linux systems have at least one of `Curl <https://curl.se/>`_ or `Wget <https://www.gnu.org/software/wget/>`_ installed by default. You can check by typing ``curl --version`` or ``wget --version`` and seeing which ones do not output an error message. See :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget` for installation instructions.

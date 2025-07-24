@@ -88,3 +88,11 @@ div.rst-other-versions > div.injected > dl:nth-child(4) { /* Read The Docs based
 .footnote > ul, .footnote > ol {
     grid-column-start: 4;
 }
+
+/*
+ * Help format complex footnotes better
+ */
+
+.footnote > ul, .footnote > ol, .footnote > div.highlight-text {
+    grid-column-start: 4;
+}

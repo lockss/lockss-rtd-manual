@@ -2,10 +2,10 @@ To install Curl with Pacman, run this command (as ``root``):
 
 .. code-block:: shell
 
-   pacman --sync --noconfirm curl
+   pacman --sync --refresh curl
 
 or equivalently:
 
 .. code-block:: shell
 
-   pacman -S --noconfirm curl
+   pacman -Sy curl

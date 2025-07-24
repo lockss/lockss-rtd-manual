@@ -1,4 +1,4 @@
-To manually update software packages, run this :program:`dnf` command as ``root``:
+To manually update software packages with Dnf, run this command (as ``root``):
 
 .. code-block:: shell
 

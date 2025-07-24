@@ -4,7 +4,7 @@ System Administration Tasks
 
 This chapter covers some common system administration tasks related to running a LOCKSS system.
 
-Sections include how to run commands as the ``root`` user, as a privileged user who can become ``root`` via :program:`sudo`, or as the ``lockss`` user; how to update a Linux operating system; and how to install various system utilities like Curl, Wget or HTTPie.
+Sections include how to run commands as the ``root`` user, as a privileged user who can become ``root`` via :program:`sudo`, or as the ``lockss`` user; how to update a Linux operating system; and how to install various system utilities like Curl, Wget, Tar, or Gzip.
 
 .. only:: html and not singlehtml
 
@@ -17,7 +17,10 @@ Sections include how to run commands as the ``root`` user, as a privileged user 
    privileged
    lockss
    os-updates
+   kernel54
+   kernel-iptables
    curl
-   httpie
    wget
+   tar
+   unzip
    resetting

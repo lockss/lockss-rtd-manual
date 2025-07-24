@@ -10,10 +10,4 @@ To install Wget with Apt, follow these steps (as ``root``):
 
    .. code-block:: shell
 
-      apt install --assume-yes wget
-
-   or equivalently:
-
-   .. code-block:: shell
-
-      apt -y install wget
+      apt install wget
