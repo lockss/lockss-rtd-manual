@@ -2,8 +2,6 @@
 Running the LOCKSS Installer
 ============================
 
-.. rubric:: Section Summary
-
 The next task is to run the LOCKSS Installer. The installation process goes through various phases -- checking system prerequisites, configuring firewall and DNS settings, installing the K3s Kubernetes distribution, and testing the K3s node. After the LOCKSS Installer succeeds, you can also optionally run the K3s Configuration Checker.
 
 .. note::
@@ -38,23 +36,32 @@ The installer will run through its phases, each of which is described in its own
 
       You may need to skip some of the phases of :program:`install-lockss`, for example to overcome an incompatibility with the specifics of your host system. If this is necessary, invoke :program:`install-lockss` with one or more of the following options:
 
-      ============================== ================
-      Option                         Phase(s) skipped
-      ============================== ================
-      ``--skip-check-prerequisites`` :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
-      ``--skip-check-system-user``   :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`)
-      ``--skip-configure-iptables``  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
-      ``--skip-configure-firewalld`` :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
-      ``--skip-configure-ufw``       :ref:`configuring-ufw` (:numref:`configuring-ufw`)
-      ``--skip-configure-coredns``   :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
-      ``--skip-install-k3s``         * :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
-                                     * :ref:`configuring-iptables` (:numref:`configuring-iptables`)
-                                     * :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
-                                     * :ref:`configuring-ufw` (:numref:`configuring-ufw`)
-                                     * :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
-                                     * :ref:`Installing K3s` (:numref:`Installing K3s`)
-      ``--skip-test-k3s``            :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
-      ============================== ================
+      .. list-table::
+         :header-rows: 1
+
+         *  *  Option
+            *  Phase(s) Skipped
+         *  *  ``--skip-check-system-prerequisites``
+            *  :ref:`Checking System Prerequisites` (:numref:`Checking System Prerequisites`)
+         *  *  ``--skip-check-k3s-prerequisites``
+            *  :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+         *  *  ``--skip-configure-iptables``
+            * :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+         *  *  ``--skip-configure-firewalld``
+            *  :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+         *  *  ``--skip-configure-ufw``
+            *  :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+         *  *  ``--skip-configure-coredns``
+            *  :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+         *  *  ``--skip-install-k3s``
+            *  -  :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+               -  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+               -  :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+               -  :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+               -  :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+               -  :ref:`Installing K3s` (:numref:`Installing K3s`)
+         *  *  ``--skip-test-k3s``
+            *  :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
 
       When a phase is skipped as a result of one of these options, you will see a message similar to this during the corresponding phase:
 
@@ -69,18 +76,27 @@ The installer will run through its phases, each of which is described in its own
 
       Conversely, you may need to run or re-run only one phase of :program:`install-lockss`, for example re-running the :ref:`Testing the K3s Node` phase after it fails and you perform some troubleshooting. If this is necessary, invoke :program:`install-lockss` with exactly one of the following options:
 
-      ===================================== ==============
-      Option                                Phase executed
-      ===================================== ==============
-      ``--check-prerequisites`` (or ``-P``) :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
-      ``--check-system-user``  (or ``-L``)  :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`)
-      ``--configure-iptables`` (or ``-I``)  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
-      ``--configure-firewalld`` (or ``-F``) :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
-      ``--configure-ufw`` (or ``-U``)       :ref:`configuring-ufw` (:numref:`configuring-ufw`)
-      ``--configure-coredns`` (or ``-C``)   :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
-      ``--install-k3s`` (or ``-K``)         :ref:`Installing K3s` (:numref:`Installing K3s`)
-      ``--test-k3s`` (or ``-T``)            :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
-      ===================================== ==============
+      .. list-table::
+         :header-rows: 1
+
+         *  *  Option
+            *  Phase Executed
+         *  *  ``--check-system-prerequisites``  (or ``-S``)
+            *  :ref:`Checking System Prerequisites` (:numref:`Checking System Prerequisites`)
+         *  *  ``--check-k3s-prerequisites`` (or ``-P``)
+            *  :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+         *  *  ``--configure-iptables`` (or ``-I``)
+            *  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+         *  *  ``--configure-firewalld`` (or ``-F``)
+            *  :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+         *  *  ``--configure-ufw`` (or ``-U``)
+            *  :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+         *  *  ``--configure-coredns`` (or ``-C``)
+            *  :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+         *  *  ``--install-k3s`` (or ``-K``)
+            *  :ref:`Installing K3s` (:numref:`Installing K3s`)
+         *  *  ``--test-k3s`` (or ``-T``)
+            *  :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
 
    .. dropdown:: Running :program:`install-lockss` on auto-pilot
       :name: running-install-lockss-on-auto-pilot
@@ -88,6 +104,54 @@ The installer will run through its phases, each of which is described in its own
       :animate: fade-in-slide-down
 
       If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :ref:`configuring-iptables` (:numref:`configuring-iptables`), :ref:`configuring-firewalld` (:numref:`configuring-firewalld`), :ref:`configuring-ufw` (:numref:`configuring-ufw`), :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`) and :ref:`Installing K3s` (:numref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+
+-----------------------------
+Checking System Prerequisites
+-----------------------------
+
+During this phase, :program:`install-lockss` will check that certain system prerequisites are met. This phase begins with the heading:
+
+.. code-block:: text
+
+   Checking system prerequisites...
+
+No user interaction is expected; if everything goes well, you will see this message:
+
+.. code-block:: text
+
+   [success] System prerequisites checked
+
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`).
+
+.. admonition:: Error conditions and what to do about them
+
+   .. dropdown:: Linux kernel version 5.4 or later is required
+      :name: error-kernel54
+      :icon: x-circle-fill
+      :animate: fade-in-slide-down
+
+      Linux kernel version 5.4 or later is required. If Linux kernel version 5.3 or earlier is detected, you will see the error message:
+
+      .. code-block:: text
+
+         [ERROR] Linux kernel version 5.4 or later is required; see manual
+
+      and :program:`install-lockss` will fail. See :doc:`/sysadmin/kernel54` for how to install kernel version 5.4 or later, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
+
+   .. dropdown:: ``lockss`` user or group does not exist
+      :name: error-user-group
+      :icon: x-circle-fill
+      :animate: fade-in-slide-down
+
+      If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
+
+      .. code-block:: text
+
+         [ERROR] The lockss user does not exist
+
+         [ERROR] The lockss group does not exist
+
+      and :program:`install-lockss` will fail. Go back to the :doc:`user` section to create the ``lockss`` user and group, then return to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
 
 --------------------------
 Checking K3s Prerequisites
@@ -105,12 +169,12 @@ No user interaction is expected; if everything goes well, you will see this mess
 
    [success] K3s prerequisites checked
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking the System User and Group` (:numref:`Checking the System User and Group`).
+and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
 
 .. admonition:: Error conditions and what to do about them
 
    .. dropdown:: User namespaces must be enabled in RHEL/CentOS 7
-      :name: running-user-namespaces
+      :name: error-user-namespaces
       :icon: x-circle-fill
       :animate: fade-in-slide-down
 
@@ -120,23 +184,23 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] User namespaces must be enabled in RHEL/CentOS 7; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
+      and :program:`install-lockss` will fail. See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-check-user-namespaces`` option to skip it.
 
-   .. dropdown:: Apparmor enabled but :program:`apparmor_parser` missing
-      :name: running-apparmor
+   .. dropdown:: Apparmor enabled but :program:`apparmor_parser` not on the PATH
+      :name: error-apparmor
       :icon: x-circle-fill
       :animate: fade-in-slide-down
 
-      In some systems, Apparmor is enabled but :program:`apparmor_parser` is not installed. If this is the case, you will see the error message:
+      In some systems, Apparmor is enabled but :program:`apparmor_parser` is not on the PATH. If this is the case, you will see the error message:
 
       .. code-block:: text
 
          [ERROR] apparmor enabled but apparmor_parser missing; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`installing-apparmor_parser` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` to try again.
+      and :program:`install-lockss` will fail. See :ref:`installing-apparmor_parser` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-check-apparmor-parser`` option to skip it.
 
    .. dropdown:: K3s Installer will fail on Debian/Ubuntu with SELinux enabled
-      :name: running-debian-selinux-enabled
+      :name: error-debian-selinux-enabled
       :icon: x-circle-fill
       :animate: fade-in-slide-down
 
@@ -146,9 +210,9 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] K3s Installer will fail on Debian/Ubuntu with SELinux enabled; see manual
 
-      and run :program:`install-lockss` again.
+      and :program:`install-lockss` will fail. See your operating system's documentation for how to disable SELinux, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-check-selinux`` option to skip it.
 
-   .. dropdown:: K3s Installer will fail on Debian/Ubuntu with /usr/local/bin/k3s labeled by SELinux
+   .. dropdown:: K3s Installer will fail on Debian/Ubuntu with :file:`/usr/local/bin/k3s` labeled by SELinux
       :name: running-debian-selinux-labeled
       :icon: x-circle-fill
       :animate: fade-in-slide-down
@@ -165,42 +229,20 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          chcon -t unlabeled_t /usr/local/bin/k3s
 
-      and run :program:`install-lockss` again.
+      then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
 
-----------------------------------
-Checking the System User and Group
-----------------------------------
-
-During this phase, :program:`install-lockss` will check that the ``lockss`` user and group exist on the host system. This phase begins with the heading:
-
-.. code-block:: text
-
-   Checking the system user and group...
-
-No user interaction is expected; if everything goes well, you will see this message:
-
-.. code-block:: text
-
-   [success] System user and group present
-
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
-
-.. admonition:: Error conditions and what to do about them
-
-   .. dropdown:: ``lockss`` user or group does not exist
-      :name: running-user-group
+   .. dropdown:: ``ip_tables`` loadable kernel module is not present
+      :name: error-iptables-lkm
       :icon: x-circle-fill
       :animate: fade-in-slide-down
 
-      If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
+      The ``ip_tables`` loadable kernel module is required. If it is present, :program:`install-lockss` will load it with :program:`modprobe`. But if it is not present,  you will see the error message:
 
       .. code-block:: text
 
-         [ERROR] The lockss user does not exist
+         [ERROR] ip_tables loadable kernel module is not present; see manual
 
-         [ERROR] The lockss group does not exist
-
-      and :program:`install-lockss` will fail. Go back to the :doc:`user` section to create the ``lockss`` user and group, then return to :ref:`Invoking the LOCKSS Installer` to try again.
+      and :program:`install-lockss` will fail. See :doc:`/sysadmin/kernel-iptables` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-load-iptables`` option to skip it.
 
 .. _configuring-iptables:
 

@@ -22,4 +22,4 @@ Type ``modinfo ip_tables`` at the host's command line. If an error message simil
 
    .. note::
 
-      Note that in this context, the correct name is ``ip_tables``, not ``iptables`` as in many other contexts.
+      Note that in this context, the correct name is ``ip_tables`` (the loadable kernel module), not ``iptables`` (the program).
