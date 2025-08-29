@@ -6,7 +6,7 @@ The next task is to run the LOCKSS Installer. The installation process goes thro
 
 .. note::
 
-   Commands in this section are run as ``root``  [#fnroot]_.
+   Commands in this section are run as ``root`` [#fnroot]_.
 
 .. only:: html and not singlehtml
 
@@ -25,7 +25,7 @@ To start the installation process, run this command as ``root`` [#fnroot]_, rela
 
    scripts/install-lockss
 
-The installer will run through its phases, each of which is described in its own section below from :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`) to :ref:`Completion of the LOCKSS Installation Process` (:numref:`Completion of the LOCKSS Installation Process`).
+The installer will run through its phases, each of which is described in its own section below from :ref:`Checking System Prerequisites` (:numref:`Checking System Prerequisites`) to :ref:`Completion of the LOCKSS Installation Process` (:numref:`Completion of the LOCKSS Installation Process`).
 
 .. tip::
 
@@ -138,6 +138,8 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
       and :program:`install-lockss` will fail. See :doc:`/sysadmin/kernel54` for how to install kernel version 5.4 or later, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
 
+      If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-kernel-54`` option to skip it.
+
    .. dropdown:: ``lockss`` user or group does not exist
       :name: error-user-group
       :icon: x-circle-fill
@@ -184,7 +186,9 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] User namespaces must be enabled in RHEL/CentOS 7; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-check-user-namespaces`` option to skip it.
+      and :program:`install-lockss` will fail. See :ref:`Enabling User Namespaces in RHEL 7 and CentOS 7` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
+
+      If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-user-namespaces`` option to skip it.
 
    .. dropdown:: Apparmor enabled but :program:`apparmor_parser` not on the PATH
       :name: error-apparmor
@@ -197,7 +201,9 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] apparmor enabled but apparmor_parser missing; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`installing-apparmor_parser` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-check-apparmor-parser`` option to skip it.
+      and :program:`install-lockss` will fail. See :ref:`installing-apparmor_parser` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
+
+      If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-apparmor-parser`` option to skip it.
 
    .. dropdown:: K3s Installer will fail on Debian/Ubuntu with SELinux enabled
       :name: error-debian-selinux-enabled
@@ -210,7 +216,9 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] K3s Installer will fail on Debian/Ubuntu with SELinux enabled; see manual
 
-      and :program:`install-lockss` will fail. See your operating system's documentation for how to disable SELinux, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-check-selinux`` option to skip it.
+      and :program:`install-lockss` will fail. See your operating system's documentation for how to disable SELinux, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
+
+      If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-selinux-debian`` option to skip it.
 
    .. dropdown:: K3s Installer will fail on Debian/Ubuntu with :file:`/usr/local/bin/k3s` labeled by SELinux
       :name: running-debian-selinux-labeled
@@ -242,7 +250,9 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] ip_tables loadable kernel module is not present; see manual
 
-      and :program:`install-lockss` will fail. See :doc:`/sysadmin/kernel-iptables` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again. If you have reason to believe that this check fails even though the corresponding error condition is not present, you can re-run :program:`install-lockss` with the ``--skip-load-iptables`` option to skip it.
+      and :program:`install-lockss` will fail. See :doc:`/sysadmin/kernel-iptables` for troubleshooting, then go back to :ref:`Invoking the LOCKSS Installer` (:numref:`Invoking the LOCKSS Installer`) to try again.
+
+      If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-iptables-lkm`` option to skip it.
 
 .. _configuring-iptables:
 
