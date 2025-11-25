@@ -24,7 +24,7 @@ If you are logged in as a user who can run commands as ``lockss`` via :program:`
 
    2. Run commands as they are listed in the manual, for example ``scripts/start-lockss --wait``.
 
-   3. When you are done, exit the ``lockss`` shell session by typing ``exit`` or ``logout`` or hitting :kbd:`Ctrl + D`.
+   3. When you are done, exit the ``lockss`` shell session by typing ``exit`` or ``logout`` or hitting :kbd:`Ctrl+D`.
 
 *  Alternatively, you can use :program:`sudo` to run a single command as the ``lockss`` user.
 
@@ -52,7 +52,7 @@ If you are logged in as ``root`` but your system does not have :program:`sudo` (
 
    2. Run commands as they are listed in the manual, for example ``scripts/start-lockss --wait``.
 
-   3. When you are done, exit the ``lockss`` shell session by typing ``exit`` or ``logout`` or hitting :kbd:`Ctrl + D`.
+   3. When you are done, exit the ``lockss`` shell session by typing ``exit`` or ``logout`` or hitting :kbd:`Ctrl+D`.
 
 *  Alternatively, you can use :program:`su` to run a single command as the ``lockss`` user:
 
