@@ -57,7 +57,7 @@ To change the password of the embedded PostgreSQL database, perform the followin
 
       postgres=#
 
-   which you can exit by entering :kbd:`\q` or hitting :kbd:`Ctrl + D`. If the password change was unsuccessful or you do not enter :samp:`{newpassword}` correctly, you will see output similar to:
+   which you can exit by entering :samp:`\q` or hitting :kbd:`Ctrl+D`. If the password change was unsuccessful or you do not enter :samp:`{newpassword}` correctly, you will see output similar to:
 
    .. code-block:: text
 
