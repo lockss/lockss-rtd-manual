@@ -732,6 +732,10 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
    .. code-block:: text
 
+      CONFIG_RT_GROUP_SCHED: missing
+
+   .. code-block:: text
+
       CONFIG_INET_XFRM_MODE_TRANSPORT: missing
 
    .. admonition:: Troubleshooting
