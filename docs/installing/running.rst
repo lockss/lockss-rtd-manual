@@ -710,6 +710,10 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
    .. code-block:: text
 
+      modprobe: FATAL: Module configs not found in directory /lib/modules/6.8.0-88-generic
+
+   .. code-block:: text
+
       cgroup hierarchy: nonexistent?? (fail)
         (see https://github.com/tianon/cgroupfs-mount)
 
