@@ -2,7 +2,7 @@
 Operating System
 ================
 
-:Section last updated: 2025-07-24
+:Section last updated: 2025-12-19
 
 The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compatible with `K3s <https://k3s.io/>`_, a lightweight open source Kubernetes distribution by `SUSE <https://www.suse.com/>`_ (formerly by Rancher). The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fn-k3s-os]_ (which are documented in this manual and integrated into the LOCKSS Installer). Compatibility information for various operating systems can be found in this section.
 
@@ -32,6 +32,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Active Support
          *  Security Support
          *  Notes
+      *  *  AlmaLinux OS
+         *  10.1
+         *  2030-05-31
+         *  2035-05-31
+         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
       *  *  AlmaLinux OS
          *  10.0
          *  2030-05-31
@@ -179,64 +184,84 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Debian
+         *  13.2
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
+         *  13.1
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
+         *  13.0
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
+         *  12.12
+         *  2026-06-10
+         *  2028-06-30
+         *  
+      *  *  Debian
          *  12.11
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.10
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.9
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.8
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.7
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.6
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.5
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.4
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.3
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.2
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.1
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.0
          *  2026-06-10
-         *  2028-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  11.11
@@ -314,14 +339,14 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Fedora Linux
+         *  43
+         *  2026-12-09
+         *  2026-12-09
+         *  
+      *  *  Fedora Linux
          *  42
          *  2026-05-13
          *  2026-05-13
-         *  
-      *  *  Fedora Linux
-         *  41
-         *  2025-11-19
-         *  2025-11-19
          *  
 
 .. dropdown:: Linux Mint :bdg-success-line:`new since LOCKSS 1.x`
@@ -338,6 +363,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Active Support
          *  Security Support
          *  Notes
+      *  *  Linux Mint
+         *  22.2
+         *  Yes
+         *  2029-04-30
+         *  
       *  *  Linux Mint
          *  22.1
          *  Yes
@@ -389,9 +419,14 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Rolling
          *  
       *  *  OpenSUSE Leap
+         *  16.0
+         *  2027-10-31
+         *  2027-10-31
+         *  
+      *  *  OpenSUSE Leap
          *  15.6
-         *  2025-12-31
-         *  2025-12-31
+         *  2026-04-04
+         *  2026-04-04
          *  
 
 .. dropdown:: Oracle Linux
@@ -523,10 +558,20 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  RHEL
+         *  10.1
+         *  2030-05-31
+         *  2035-05-31
+         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+      *  *  RHEL
          *  10.0
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+      *  *  RHEL
+         *  9.7
+         *  2027-05-31
+         *  2032-05-31
+         *  
       *  *  RHEL
          *  9.6
          *  2027-05-31
@@ -635,14 +680,24 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Rocky Linux
-         *  10.0
-         *  2027-05-31
-         *  2032-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  Rocky Linux
-         *  9.6
+         *  10.1
          *  2030-05-31
          *  2035-05-31
+         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+      *  *  Rocky Linux
+         *  10.0
+         *  2030-05-31
+         *  2035-05-31
+         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+      *  *  Rocky Linux
+         *  9.7
+         *  2027-05-31
+         *  2032-05-31
+         *  
+      *  *  Rocky Linux
+         *  9.6
+         *  2027-05-31
+         *  2032-05-31
          *  
       *  *  Rocky Linux
          *  9.5
@@ -677,42 +732,42 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
       *  *  Rocky Linux
          *  8.10
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.9
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.8
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.7
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.6
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.5
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.4
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.3
          *  :octicon:`alert-fill` 2024-05-31
-         *  2032-05-31
+         *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
 
 .. dropdown:: SUSE Linux Enterprise Server (SLES) :bdg-success-line:`new since LOCKSS 1.x`
@@ -736,8 +791,8 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  
       *  *  SLES
          *  15.6
-         *  2025-11-28
-         *  2031-06-30
+         *  :octicon:`alert-fill` 2025-12-31
+         *  2028-06-30
          *  
       *  *  SLES
          *  15.5
@@ -748,11 +803,6 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  15.4
          *  :octicon:`alert-fill` 2023-12-31
          *  2026-12-31
-         *  
-      *  *  SLES
-         *  15.3
-         *  :octicon:`alert-fill` 2022-12-31
-         *  2025-12-31
          *  
 
 .. dropdown:: Ubuntu :bdg-success-line:`new since LOCKSS 1.x`
@@ -770,9 +820,9 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Ubuntu
-         *  25.04
-         *  :octicon:`alert` 2026-01-17
-         *  :octicon:`alert` 2026-01-17
+         *  25.10
+         *  :octicon:`alert` 2026-07-01
+         *  :octicon:`alert` 2026-07-01
          *  
       *  *  Ubuntu
          *  24.04 LTS
@@ -797,7 +847,7 @@ The following operating systems are unsuitable for use with LOCKSS 2.x because t
 
    .. warning::
 
-      `CentOS Linux <https://www.centos.org/centos-linux/>`_ is at end of life and is not suitable for use with LOCKSS 2.x.
+      `CentOS Linux <https://www.centos.org/centos-linux/>`_ is at end of life and is **not suitable** for use with LOCKSS 2.x.
 
    .. tip::
 
@@ -1013,7 +1063,7 @@ The following operating systems are unsuitable for use with LOCKSS 2.x because t
 
    .. warning::
 
-      LOCKSS 2.x was compatible with `EuroLinux <https://docs.euro-linux.com/>`_, but EuroLinux was discontinued as of November 2024 and is therefore not suitable for use with LOCKSS 2.x. `EuroLinux users are urged to migrate to Rocky Linux. <https://docs.euro-linux.com/HowTo/migrate_to_rocky_linux/>`_
+      LOCKSS 2.x was compatible with `EuroLinux <https://docs.euro-linux.com/>`_, but EuroLinux was discontinued as of November 2024 and is therefore **not suitable** for use with LOCKSS 2.x. `EuroLinux users are urged to migrate to Rocky Linux. <https://docs.euro-linux.com/HowTo/migrate_to_rocky_linux/>`_
 
    .. list-table::
       :header-rows: 1
@@ -1110,7 +1160,7 @@ The following operating systems are unsuitable for use with LOCKSS 2.x because t
 
    .. warning::
 
-      `Scientific Linux <https://scientificlinux.org/>`_ is at end of life and is not suitable for use with LOCKSS 2.x.
+      `Scientific Linux <https://scientificlinux.org/>`_ is at end of life and is **not suitable** for use with LOCKSS 2.x.
 
    .. list-table::
       :header-rows: 1
