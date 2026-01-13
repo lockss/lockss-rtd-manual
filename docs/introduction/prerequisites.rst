@@ -6,7 +6,7 @@ System Prerequisites
 Host
 ----
 
-LOCKSS |LATEST_MINOR| runs on a Linux host (physical machine or virtual machine), on one of many :ref:`Compatible Operating Systems`, including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
+LOCKSS |LATEST_MINOR| runs on a **Linux** host (physical machine or virtual machine), on one of many :ref:`Compatible Operating Systems`, including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
 
 Linux Kernel Requirements
 =========================
@@ -29,13 +29,13 @@ Most versions of the :ref:`Compatible Operating Systems` satisfy the Linux kerne
 
       at the host's command line.
 
-      *  If a version number 5.4 or later is output, the host satisfies the Linux kernel version requirement.
+      *  If version 5.4 or later is output, the host satisfies the Linux kernel version requirement.
 
-      *  If a version number 5.3 or earlier is output, see :doc:`/sysadmin/kernel54`.
+      *  If version 5.3 or earlier is output, see :doc:`/sysadmin/kernel54`.
 
 2. .. dropdown:: ``ip_tables`` loadable kernel module is required
 
-      The ``ip_tables`` loadable kernel module is required, even if :program:`iptables` or :program:`nftables` is not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
+      The ``ip_tables`` loadable kernel module is required, even if the programs :program:`iptables` or :program:`nftables` are not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
 
       .. code-block:: shell
 
@@ -45,7 +45,7 @@ Most versions of the :ref:`Compatible Operating Systems` satisfy the Linux kerne
 
       .. note::
 
-         Note that in this context, the correct name is ``ip_tables``, not ``iptables`` as in many other contexts.
+         Note that in this context, the correct name is ``ip_tables`` (a loadable kernel module), not ``iptables`` (a program) as in many other contexts.
 
       *  If technical information about the module is output [#fniptablesexample]_, the host satisfies the ``ip_tables`` loadable kernel module requirement.
 
@@ -68,7 +68,7 @@ The LOCKSS Downloader and LOCKSS Installer require basic system software that is
 
       *  If either outputs a valid version message, the host satisfies the fetcher requirement.
 
-      *  If both output an error message, see :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget`.
+      *  If both output an error message, see :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget` accordingly.
 
 2. .. dropdown:: Tar and Unzip are required
 
@@ -88,7 +88,7 @@ The LOCKSS system runs on a **64-bit CPU** with at least **4 CPU cores**, prefer
 Memory
 ------
 
-Likewise, the memory requirements also depend on which components of the LOCKSS system you choose to run. We recommend **32 GB** of memory for modest applications, more for machines involved in sizeable applications (like the Global LOCKSS Network).
+Likewise, the memory requirements also depend on which components of the LOCKSS system you choose to run. We recommend **32 GB** of memory for modest applications, more for machines involved in sizeable applications like the Global LOCKSS Network (GLN).
 
 -------
 Storage

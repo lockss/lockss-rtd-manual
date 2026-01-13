@@ -17,5 +17,6 @@ This version, LOCKSS 2.0-beta1, is the first "beta" release of the LOCKSS system
 .. toctree::
    :maxdepth: 1
 
+   components
    prerequisites
    os

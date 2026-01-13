@@ -4,53 +4,56 @@ Network Ports
 
 This section describes the default network ports used by the LOCKSS system.
 
-All ports are in the 24600-24699 range, except the LCAP (LOCKSS polling and repair) port which retains its historical value of 9729, and the OpenWayback port which is 8080.
+All ports are in the 24600-24699 range (246xx), except the LCAP (LOCKSS polling and repair) port which retains its historical value of 9729, and the OpenWayback port which is 8080.
 
-.. note::
+All ports are configurable, except currently the OpenWayback port (noted below as :bdg-warning-line:`not configurable`).
 
-   Unless otherwise noted, all ports are **TCP**.
+All ports are TCP, except the ICP port which is UDP (noted below as :bdg-success:`UDP`).
+
+The two ports of the :ref:`LOCKSS Crawler Service` have new default values since LOCKSS 2.0-beta2 (noted below as :bdg-info:`changed in 2.0-beta2`).
+
+All unspecified ports in the 246xx range should be considered reserved (some specific ports are explicitly noted below as :bdg-danger-line:`reserved`).
 
 .. list-table::
    :align: center
    :header-rows: 1
-   :widths: 10 90
 
    *  *  **Port**
       *  **Component**
    *  *  8080
-      *  OpenWayback Web replay engine
+      *  :ref:`OpenWayback` Web replay engine - :bdg-warning-line:`not configurable`
    *  *  9729
-      *  LCAP (LOCKSS polling and repair) - :bdg-info-line:`configurable`
+      *  :ref:`LOCKSS Poller Service` - LCAP port (LOCKSS polling and repair)
    *  *  24600
       *  :bdg-danger-line:`reserved`
    *  *  24602
-      *  PostgreSQL
+      *  :ref:`PostgreSQL`
    *  *  24603
       *  :bdg-danger-line:`reserved`
    *  *  24606
       *  ActiveMQ
    *  *  24610
-      *  LOCKSS Repository Service - REST port
+      *  :ref:`LOCKSS Repository Service` - REST port
    *  *  24611
       *  :bdg-danger-line:`reserved`
    *  *  24619
       *  :bdg-danger-line:`reserved`
    *  *  24620
-      *  LOCKSS Configuration Service - REST port
+      *  :ref:`LOCKSS Configuration Service` - REST port
    *  *  24621
-      *  LOCKSS Configuration Service - UI port
+      *  :ref:`LOCKSS Configuration Service` - UI port
    *  *  24630
-      *  LOCKSS Poller Service - REST port
+      *  :ref:`LOCKSS Poller Service` - REST port
    *  *  24631
-      *  LOCKSS Poller Service - UI port
+      *  :ref:`LOCKSS Poller Service` - UI port
    *  *  24640
-      *  LOCKSS Crawler Service - REST port - :bdg-info:`changed in 2.0-beta2`
+      *  :ref:`LOCKSS Crawler Service` - REST port - :bdg-info:`changed in 2.0-beta2`
    *  *  24641
-      *  LOCKSS Crawler Service - UI port - :bdg-info:`changed in 2.0-beta2`
+      *  :ref:`LOCKSS Crawler Service` - UI port - :bdg-info:`changed in 2.0-beta2`
    *  *  24650
-      *  LOCKSS Metadata Service - REST port
+      *  :ref:`LOCKSS Metadata Service` - REST port
    *  *  24651
-      *  LOCKSS Metadata Service - UI port
+      *  :ref:`LOCKSS Metadata Service` - UI port
    *  *  24670
       *  LOCKSS Proxy
    *  *  24671
@@ -59,13 +62,13 @@ All ports are in the 24600-24699 range, except the LCAP (LOCKSS polling and repa
       *  LOCKSS Audit Proxy
    *  *  24673
       *  :bdg-danger-line:`reserved`
-   *  *  24674
-      *  ICP server - :bdg-success:`UDP`
+   *  *  24674 :bdg-success:`UDP`
+      *  ICP server
    *  *  24675
-      *  LOCKSS SOAP Compatibility Service - SOAP port
+      *  :ref:`LOCKSS SOAP Compatibility Service` - SOAP port
    *  *  24680
-      *  LOCKSS Content Server (ServeContent)
+      *  :ref:`ServeContent` (LOCKSS content server)
    *  *  24681
-      *  Pywb Web replay engine
+      *  :ref:`Pywb` Web replay engine
    *  *  24682
       *  :bdg-danger-line:`reserved`
