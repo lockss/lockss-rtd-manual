@@ -58,7 +58,7 @@ if os.environ.get("READTHEDOCS", "") == "True":
 # -- Project information -----------------------------------------------------
 
 project = 'LOCKSS System Manual'
-copyright = '2000-2025, LOCKSS Program'
+copyright = '2000-2026, LOCKSS Program'
 author = 'LOCKSS Program'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_title
