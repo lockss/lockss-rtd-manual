@@ -4,7 +4,7 @@ Network Ports
 
 This section describes the default network ports used by the LOCKSS system.
 
-All ports are in the 24600-24699 range (246xx), except the LCAP (LOCKSS polling and repair) port which retains its historical value of 9729, and the OpenWayback port which is 8080.
+All ports are in the 24600-24699 range (246xx), except the LCAP (LOCKSS polling and repair) port which retains its historical value of 9729 (and 9739, used temporarily during migration from LOCKSS 1.x to LOCKSS 2.x), and the OpenWayback port which is 8080.
 
 All ports are configurable, except currently the OpenWayback port (noted below as :bdg-warning-line:`not configurable`).
 
@@ -16,6 +16,7 @@ All unspecified ports in the 246xx range should be considered reserved (some spe
 
 .. list-table::
    :align: center
+   :widths: 10 90
    :header-rows: 1
 
    *  *  **Port**
@@ -23,7 +24,9 @@ All unspecified ports in the 246xx range should be considered reserved (some spe
    *  *  8080
       *  :ref:`OpenWayback` Web replay engine - :bdg-warning-line:`not configurable`
    *  *  9729
-      *  :ref:`LOCKSS Poller Service` - LCAP port (LOCKSS polling and repair)
+      *  :ref:`LOCKSS Poller Service` - LCAP (LOCKSS polling and repair) port
+   *  *  9739
+      *  :ref:`LOCKSS Poller Service` - Migration LCAP (LOCKSS polling and repair) port, used temporarily during migration from LOCKSS 1.x to LOCKSS 2.x only
    *  *  24600
       *  :bdg-danger-line:`reserved`
    *  *  24602
