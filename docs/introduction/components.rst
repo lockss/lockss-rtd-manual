@@ -1,16 +1,17 @@
-==================
-Service Components
-==================
+================
+Stack Components
+================
 
-This section presents the various components of LOCKSS |LATEST_MINOR|, their function, and why you would run them as part of your LOCKSS stack.
-
-When :ref:`Configuring the LOCKSS System`, the configuration tool will allow you to select which components you wish to run.
+This section presents the various components of LOCKSS |LATEST_MINOR|, their function, and why you would run them as part of your LOCKSS stack. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
 
 .. only:: html and not singlehtml
 
-   .. contents:: Section Table of Contents
-      :local:
-      :backlinks: none
+   .. sidebar::
+
+      .. contents:: Section Table of Contents
+         :local:
+         :depth: 2
+         :backlinks: none
 
 -------------------------
 LOCKSS Service Components
@@ -26,21 +27,21 @@ By default, the LOCKSS Repository Service runs a REST API on port 24610 of your 
 LOCKSS Configuration Service
 ============================
 
-The **LOCKSS Configuration Service** is responsible for acting as the central nervous system of your LOCKSS stack, keeping state data and other information synchronized between system components. It is a **mandatory** component of a LOCKSS stack.
+The **LOCKSS Configuration Service** is responsible for acting as the central nervous system of your LOCKSS stack, keeping state data and other information synchronized between stack components. It is a **mandatory** component of a LOCKSS stack.
 
 By default, the LOCKSS Configuration Service runs a REST API on port 24620 and a Web user interface on port 24021 of your running LOCKSS stack [#fn-ports]_.
 
 LOCKSS Poller Service
 =====================
 
-The **LOCKSS Poller Service** is reponsible for the LOCKSS audit and repair protocol that allows the multiple nodes in the LOCKSS network your stack is configured to be part of to preserve data together. It is a **mandatory** component of a LOCKSS stack.
+The **LOCKSS Poller Service** is responsible for the LOCKSS audit and repair protocol that allows the multiple nodes in the LOCKSS network your stack is configured to be part of to preserve data together. It is a **mandatory** component of a LOCKSS stack.
 
 By default, the LOCKSS Poller Service runs a REST API on port 24630 and a Web user interface on port 24031 of your running LOCKSS stack [#fn-ports]_. Additionally, by default, the LOCKSS audit and repair protocol (otherwise known as the LCAPv3 port or simply the LCAP port) occurs on port 9729.
 
 LOCKSS Crawler Service
 ======================
 
-In simple use cases, data is stored into the :ref:`LOCKSS Repository Service` using its REST API, and then preserved among the nodes in the LOCKSS network the node is part of by the :ref:`LOCKSS Poller Service` using the LOCKSS audit and repair protocol. The LOCKSS system is also often used to preserve content stored in the repository from being harvested from the Web. The **LOCKSS Crawler Service** manages Web crawls performed by registered Web crawlers. The LOCKSS Crawler Service is an **optional** component of a LOCKSS stack, needed if your application involves Web harvesting activities.
+In simple use cases, data is stored into the :ref:`LOCKSS Repository Service` using its REST API, and then preserved among the nodes in the LOCKSS network the node is part of by the :ref:`LOCKSS Poller Service` using the LOCKSS audit and repair protocol. The LOCKSS system is also often used to preserve content stored in the repository after being harvested from the Web. The **LOCKSS Crawler Service** manages Web crawls performed by registered Web crawlers. The LOCKSS Crawler Service is an **optional** component of a LOCKSS stack, needed if your application involves Web harvesting activities.
 
 The LOCKSS Crawler Service ships with the Classic LOCKSS Crawler, a mature, highly extensible Web crawler built into the LOCKSS system. It also includes an API framework for registering additional crawlers, and comes with one such external crawler, based on Wget. LOCKSS plugins are used to control Web harvesting behavior and implement custom behavior.
 

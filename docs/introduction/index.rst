@@ -2,13 +2,9 @@
 Introduction
 ============
 
-The LOCKSS system is a distributed digital preservation software system developed by the `LOCKSS Program <https://www.lockss.org/>`_, a division of the `Digital Library Systems and Services <https://library.stanford.edu/department/digital-library-systems-and-services-dlss>`_ department at `Stanford  Libraries <https://library.stanford.edu/>`_.
-
-The 2.x series of the LOCKSS system stems from the LAAWS (LOCKSS Architected As Web Services) initiative, an ambitious modernization project that includes rewriting the classic LOCKSS daemon as a suite of containerized components, funded in part by a grant from the `Andrew W. Mellon Foundation <https://mellon.org/>`_.
-
 .. COMMENT LATESTVERSION
 
-This version, LOCKSS 2.0-beta1, is the first "beta" release of the LOCKSS system on the road to LOCKSS 2.0, after seven "alpha" releases.
+The **LOCKSS system** is a mature, open source, distributed digital preservation software system developed by the `LOCKSS Program <https://www.lockss.org/>`_ at `Stanford University Libraries <https://library.stanford.edu/>`_. This chapter introduces LOCKSS |LATEST_MINOR|, and this manual details most aspects of :doc:`upgrading </upgrading/index>`, :doc:`installing </installing/index>`, :doc:`configuring </configuring>`, :doc:`running </running>`, :doc:`using </using/index>`, :doc:`troubleshooting </troubleshooting/index>` and :doc:`maintaining </sysadmin/index>` a LOCKSS system.
 
 .. only:: html and not singlehtml
 
@@ -17,6 +13,7 @@ This version, LOCKSS 2.0-beta1, is the first "beta" release of the LOCKSS system
 .. toctree::
    :maxdepth: 1
 
+   primer
    components
    prerequisites
    os

@@ -2,20 +2,33 @@
 System Prerequisites
 ====================
 
+This section describes the Linux host, CPU, memory, and storage prerequisites for LOCKSS |LATEST_MINOR|, which vary depending on the scope of your application.
+
+.. only:: html and not singlehtml
+
+   .. sidebar::
+
+      .. contents:: Section Table of Contents
+         :local:
+         :depth: 1
+         :backlinks: none
+
 ----
 Host
 ----
 
-LOCKSS |LATEST_MINOR| runs on a **Linux** host (physical machine or virtual machine), on one of many :ref:`Compatible Operating Systems`, including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
+LOCKSS |LATEST_MINOR| runs on a **Linux** host (physical machine or virtual machine), on one of many :ref:`Compatible Operating Systems`, including many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
 
-Linux Kernel Requirements
-=========================
+Linux Kernel
+============
 
-Most versions of the :ref:`Compatible Operating Systems` satisfy the Linux kernel requirements for LOCKSS |LATEST_MINOR| out of the box:
+Most versions of :ref:`Compatible Operating Systems` satisfy the Linux kernel requirements for LOCKSS |LATEST_MINOR| out of the box:
 
 1. .. dropdown:: Linux kernel 5.4 or later is required
+      :name: requirement-kernel54
+      :animate: fade-in-slide-down
 
-      Linux kernel 5.4 or later is required. You can check the Linux kernel version by typing:
+      Linux kernel 5.4 or later is **required**. You can check the Linux kernel version by typing:
 
       .. code-block:: shell
 
@@ -31,9 +44,11 @@ Most versions of the :ref:`Compatible Operating Systems` satisfy the Linux kerne
 
       *  If version 5.4 or later is output, the host satisfies the Linux kernel version requirement.
 
-      *  If version 5.3 or earlier is output, see :doc:`/sysadmin/kernel54`.
+      *  If version 5.3 or earlier is output, the host does not satify the Linux kernel version requirement; see :doc:`/sysadmin/kernel54`.
 
-2. .. dropdown:: ``ip_tables`` loadable kernel module is required
+2. .. dropdown:: ``ip_tables`` loadable kernel module is **required**
+      :name: requirement-ip-tables
+      :animate: fade-in-slide-down
 
       The ``ip_tables`` loadable kernel module is required, even if the programs :program:`iptables` or :program:`nftables` are not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
 
@@ -47,7 +62,7 @@ Most versions of the :ref:`Compatible Operating Systems` satisfy the Linux kerne
 
          Note that in this context, the correct name is ``ip_tables`` (a loadable kernel module), not ``iptables`` (a program) as in many other contexts.
 
-      *  If technical information about the module is output [#fniptablesexample]_, the host satisfies the ``ip_tables`` loadable kernel module requirement.
+      *  If technical information about the module is output [#fn-iptables-example]_, the host satisfies the ``ip_tables`` loadable kernel module requirement.
 
       *  If an error message similar to the following is output:
 
@@ -55,60 +70,149 @@ Most versions of the :ref:`Compatible Operating Systems` satisfy the Linux kerne
 
             modinfo: ERROR: Module ip_tables not found.
 
-         see :doc:`/sysadmin/kernel-iptables`.
+         the host does not satisfy the ``ip_tables`` loadable kernel module requirement; see :doc:`/sysadmin/kernel-iptables`.
 
-System Software Requirements
-============================
+System Software
+===============
 
 The LOCKSS Downloader and LOCKSS Installer require basic system software that is almost always present out of the box on :ref:`Compatible Operating Systems`:
 
 1. .. dropdown:: Curl or Wget is required
+      :name: requirement-fetcher
+      :animate: fade-in-slide-down
 
-      At least one of Curl or Wget is required. You can check by typing ``curl --version`` or ``wget --version`` at the host's command line.
+      At least one of Curl or Wget is **required**. You can check by typing ``curl --version`` or ``wget --version`` at the host's command line.
 
       *  If either outputs a valid version message, the host satisfies the fetcher requirement.
 
-      *  If both output an error message, see :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget` accordingly.
+      *  If both output an error message, the host does not satisfy the fetcher requirement; see :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget` accordingly.
 
 2. .. dropdown:: Tar and Unzip are required
+      :name: requirement-archiver
+      :animate: fade-in-slide-down
 
-      Both Tar (:program:`tar` or :program:`gtar`) and Unzip (:program:`unzip`) are required. You can check by typing ``tar --version`` (or ``gtar --version``) and ``unzip --version`` at the host's command line.
+      Both Tar (:program:`tar` or :program:`gtar`) and Unzip (:program:`unzip`) are **required**. You can check by typing ``tar --version`` (or ``gtar --version``) and ``unzip --version`` at the host's command line.
 
       *  If both output a valid version message, the host satisfies the archiver requirement.
 
-      *  If either outputs an error message, see :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip` accordingly.
+      *  If either outputs an error message, the host does not satisfy the archiver requirement; see :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip` accordingly.
 
 ---
 CPU
 ---
 
-The LOCKSS system runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which components of the LOCKSS system you choose to run.
+The LOCKSS system runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which :doc:`components` you choose to run.
 
 ------
 Memory
 ------
 
-Likewise, the memory requirements also depend on which components of the LOCKSS system you choose to run. We recommend **32 GB** of memory for modest applications, more for machines involved in sizeable applications like the Global LOCKSS Network (GLN).
+Likewise, the **memory** requirements also depend on which :doc:`components` you choose to run. We recommend **32 GB** of memory for typical applications, or more for machines involved in sizeable applications like the Global LOCKSS Network (GLN) or CLOCKSS.
 
 -------
 Storage
 -------
 
-The LOCKSS system makes use of several storage areas:
+The LOCKSS system's **storage** needs are three-fold:
 
-*  **Content storage areas:** This is where all the preserved content preserved in the LOCKSS node is stored.
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
 
-*  **State data storage area:** This is where databases (unless LOCKSS is configured to use external PostgreSQL and/or Solr databases) and other state data files used by the LOCKSS system are stored.
+   *  *  Storage type
+      *  Primary use
+      *  Description
+   *  *  :ref:`System Storage`
+      *  Software and related assets
+      *  Storage space needed for installed software, downloaded containers, data generated by the underlying Kubernetes environment, etc.
+   *  *  :ref:`Operating Storage`
+      *  Internal stack data, other than preserved content
+      *  Storage space devoted to the internal operating needs of the LOCKSS stack, both persistent data (database data, state files, log files, etc.) and working data (temporary files, off-heap runtime data, etc.).
+   *  *  :ref:`Content Storage`
+      *  Preserved content
+      *  Storage space devoted to the content being preserved by the LOCKSS stack. This can consist of multiple content storage areas.
 
-*  **Temporary storage area:** This is where temporary data files are written. LOCKSS makes heavy use of temporary storage.
+During :doc:`configuration </configuring>`, you will specify the location of the :ref:`Operating Storage` and :ref:`Content Storage` areas, as well as the most significant :ref:`System Storage` area (the K3s state data directory [#fn-k3s-directory]_), by supplying directory paths to the installation and configuration scripts.
 
-*  **Log storage area:** This is where software logs generated by the LOCKSS system's components are written.
+System Storage
+==============
 
-During configuration, the administrator must specify the location of these storage areas by supplying one or more directory paths. By default, the state data storage area, the temporary storage area, the log storage area, and the first content storage area go under a single directory, but different storage areas have different size and performance requirements:
+FIXME
 
-*  For acceptable performance, we strongly recommend that the state data, temporary, and log storage areas be placed on locally-attached storage, not network-attached storage. Ideally, the content storage areas should also use locally-attached storage, but if necessary can use network-attached storage, such as NFS and iSCSI.
+Requirements for **system storage** (storage space needed for installed software, downloaded containers, data generated by the underlying Kubernetes environment, etc.) are as follows:
 
-*  Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. Do not use a RAM-based ``tmpfs`` volume, or a directory in a space-constrained partition, for the temporary storage area.
+1. .. dropdown:: Local system storage is required
+      :name: requirement-system-storage-local
+      :animate: fade-in-slide-down
+
+      All system storage **must be local**, in other words cannot be backed by NFS or other non-local filesystems. In particular, this applies to the K3s state data directory [#fn-k3s-directory]_.
+
+2. .. dropdown:: Legacy XFS filesystem with ``ftype=0`` is not compatible with K3s
+      :name: requirement-k3s-legacy-xfs
+      :animate: fade-in-slide-down
+
+      The K3s state data directory [#fn-k3s-directory]_ **cannot be backed by a legacy XFS filesystem** with ``ftype=0``. This is expected to be an issue only for XFS filesystems from older Linux installations, as modern XFS filesystems use ``ftype=1``. See :doc:`/troubleshooting/xfs`.
+
+3. .. dropdown:: System storage size requirements
+      :name: requirement-system-storage-size
+      :animate: fade-in-slide-down
+
+      FIXME
+
+The location of installed software depends on your operating system. The location of the **K3s state data directory** [#fn-k3s-directory]_, where the majority of system storage is needed, is configurable in the LOCKSS Installer in :ref:`Installing K3s` (:numref:`Installing K3s`).
+
+Operating Storage
+=================
+
+FIXME
+
+**Operating storage** (storage space devoted to the internal operating needs of the LOCKSS stack, such as database data, state files, log files, temporary files, off-heap runtime data, etc.) consists of three distinct storage areas:
+
+.. list-table::
+   :header-rows: 1
+   :stub-columns: 1
+
+   *  *  Operating storage area
+      *  Primary use
+      *  Configuration step
+   *  *  State data storage area
+      *  Database data and state files
+      *  :ref:`State Data Storage Area` (:numref:`State Data Storage Area`)
+   *  *  Log storage area
+      *  Log files
+      *  :ref:`Log Storage Area` (:numref:`Log Storage Area`)
+   *  *  Temporary storage area
+      *  Temporary file and other working data
+      *  :ref:`Temporary Storage Area` (:numref:`Temporary Storage Area`)
+
+Requirements for operating storage are as follows:
+
+1. .. dropdown:: Local operating storage is strongly recommended
+      :name: requirement-operating-storage-local
+      :animate: fade-in-slide-down
+
+      For operating storage, **local storage is strongly recommended**, in other words NFS or other non-local filesystems are strongly discouraged, as remote filesystems can dramatically impact the performance of the LOCKSS system.
+
+2. .. dropdown:: Temporary storage area filesystem requirements
+      :name: requirement-temporary-storage-size
+      :animate: fade-in-slide-down
+
+      Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. A RAM-based ``tmpfs`` volume or a directory in a space-constrained partition are **not suitable for the temporary storage area**.
+
+3. .. dropdown:: Operating storage size requirements
+      :name: requirement-operating-storage-size
+      :animate: fade-in-slide-down
+
+      FIXME
+
+Content Storage
+===============
+
+**Content storage** (storage space devoted to the content being preserved by the LOCKSS stack) can be backed by NFS or other non-local filesystems (although locally-attached storage is more performant), and can consist of multiple content storage areas (for example multiple RAID arrays).
+
+The list of content storage areas is configurable in :ref:`Content Storage Areas` (:numref:`Content Storage Areas`).
+
+FIXME
 
 ----
 
@@ -120,9 +224,13 @@ During configuration, the administrator must specify the location of these stora
 
 .. rubric:: Footnotes
 
-.. [#fniptablesexample]
+.. [#fn-iptables-example]
 
    Sample output:
 
    .. literalinclude:: prerequisites-iptables-example.txt
       :language: text
+
+.. [#fn-k3s-directory]
+
+   `K3s <https://k3s.io/>`_ (the Kubernetes distribution on which the containers of the LOCKSS stack run) downloads containers and stores its internal data in the **K3s state data directory**. The location of the K3s state data directory is configurable in the LOCKSS Installer (see :ref:`Installing K3s`, :numref:`Installing K3s`), and by default is :file:`/var/lib/rancher/k3s`.

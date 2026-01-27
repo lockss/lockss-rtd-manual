@@ -2,52 +2,46 @@
 Creating the ``lockss`` User
 ============================
 
-.. rubric:: Section Summary
-
-This section describes how to create the ``lockss`` system user (if necessary), under which the LOCKSS system will run.
-
 .. note::
 
-   Commands in this section are run as ``root``  [#fnroot]_.
+   Commands in this section are run as ``root`` .
 
-Run this :program:`id` command as ``root`` [#fnroot]_:
+This section describes how to create the ``lockss`` system user (if necessary), under which the LOCKSS stack will run.
 
-.. code-block:: shell
+Follow these steps:
 
-   id lockss
+1. Check if the ``lockss`` user already exists. Run this :program:`id` command as ``root``:
 
-If a ``lockss`` user already exists on the host, the :program:`id` command will output the information associated with it, including its user ID (``uid``) and group ID (``gid``), for example:
+   .. code-block:: shell
 
-.. code-block:: text
+      id lockss
 
-   uid=958(lockss) gid=958(lockss) groups=958(lockss)
+   *  If a ``lockss`` user already exists on the host, the :program:`id` command will output the information associated with it, including its user ID (``uid``) and group ID (``gid``), for example:
 
-In this case, a ``lockss`` user exists on the host already, and no action is needed.
+      .. code-block:: text
 
-Otherwise, the :program:`id` command above will output an error message, for example:
+         uid=958(lockss) gid=958(lockss) groups=958(lockss)
 
-.. code-block:: text
+      In this case, no further action is needed in this section.
 
-   id: ‘lockss’: no such user
+   *  Otherwise, the :program:`id` command above will output an error message, for example:
 
-In this case, you will need to create a ``lockss`` user on the host now. To do so, run this :program:`useradd` command as ``root`` [#fnroot]_:
+      .. code-block:: text
 
-.. code-block:: shell
+         id: ‘lockss’: no such user
 
-   useradd --system --user-group --create-home --shell=/bin/bash lockss
+      In this case, you will need to create a ``lockss`` user on the host now, by going on to the next step.
 
-or equivalently:
+2. If the ``lockss`` user needs to be created, run this :program:`useradd` command as ``root``:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-   useradd -rUms /bin/bash lockss
+      useradd --system --user-group --create-home --shell=/bin/bash lockss
 
-This will create a ``lockss`` system user, a ``lockss`` system group, and a home directory in :file:`/home/lockss`.
+   or equivalently:
 
-----
+   .. code-block:: shell
 
-.. rubric:: Footnotes
+      useradd -rUms /bin/bash lockss
 
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.
+   This will create a ``lockss`` system user, a ``lockss`` system group, and a home directory in :file:`${HOME}/lockss` (which is :file:`/home/lockss` on most Linux systems).

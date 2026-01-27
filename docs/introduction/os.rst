@@ -184,6 +184,16 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Debian
+         *  13.3
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
+         *  13.2
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
          *  13.2
          *  2028-08-09
          *  2030-06-30
@@ -364,6 +374,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Linux Mint
+         *  22.3
+         *  Yes
+         *  2029-04-30
+         *  
+      *  *  Linux Mint
          *  22.2
          *  Yes
          *  2029-04-30
@@ -445,6 +460,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Active Support
          *  Security Support
          *  Notes
+      *  *  Oracle Linux
+         *  10.1
+         *  Yes
+         *  Yes
+         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
       *  *  Oracle Linux
          *  10.0
          *  Yes
@@ -851,7 +871,7 @@ The following operating systems are unsuitable for use with LOCKSS 2.x because t
 
    .. tip::
 
-      If you are currently running LOCKSS 1.x on a CentOS Linux host, we recommend a :doc:`new-host migration to LOCKSS 2.x <lockss-portal:migration/index>`. However, if you perform a :doc:`same-host migration to LOCKSS 2.x <lockss-portal:migration/index>`, you must upgrade your host to a newer operating system in the RHEL 8 or 9 family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, or :ref:`os-rhel`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
+      If you are currently running LOCKSS 1.x on a CentOS Linux host, we recommend a :doc:`new-host migration to LOCKSS 2.x <lockss-portal:migration/index>`. However, if you perform a :doc:`same-host migration to LOCKSS 2.x <lockss-portal:migration/index>`, you must upgrade your host to a newer operating system in the RHEL family first, such as :ref:`os-rocky-linux`, :ref:`os-almalinux`, :ref:`os-oracle-linux`, or :ref:`os-rhel`. See `OS Upgrades <https://github.com/lockss/community/wiki/OS-Upgrades>`_ in the LOCKSS Community Wiki for guidance.
 
    .. list-table::
       :header-rows: 1
