@@ -58,7 +58,7 @@ if os.environ.get("READTHEDOCS", "") == "True":
 # -- Project information -----------------------------------------------------
 
 project = 'LOCKSS System Manual'
-copyright = '2000-2025, LOCKSS Program'
+copyright = '2000-2026, LOCKSS Program'
 author = 'LOCKSS Program'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_title
@@ -150,6 +150,10 @@ today_fmt = '%Y-%m-%d'
 
 # See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-smartquotes
 smartquotes = False
+
+# See https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-pygments_style
+# See https://pygments.org/styles/
+pygments_style = 'default'
 
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
