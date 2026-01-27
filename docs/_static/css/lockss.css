@@ -1,6 +1,6 @@
 /*
 
-Copyright (c) 2000-2025, Board of Trustees of Leland Stanford Jr. University
+Copyright (c) 2000-2026, Board of Trustees of Leland Stanford Jr. University
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -70,15 +70,15 @@ div.rst-other-versions > div.injected > dl:nth-child(4) { /* Read The Docs based
 }
 
 .sd-tab-set {
-    background: #fcfcff; /* very very very light blue */
+    background: #f3f6f6; /* "platinum" */
 }
 
 .sd-tab-set .sd-tab-set {
-    background: #f8f8ff; /* very very light blue */
+    background: #e1e4e5; /* "alabaster grey", lighter */
 }
 
 .sd-tab-set .sd-tab-set .sd-tab-set {
-    background: #f4f4ff; /* very light blue */
+    background: #dfe7e7; /* "alabaster grey", darker */
 }
 
 /*
