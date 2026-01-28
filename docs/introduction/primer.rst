@@ -2,8 +2,6 @@
 LOCKSS Primer
 =============
 
-This section offers a high-level introduction to the LOCKSS system, particularly LOCKSS 2.x.
-
 .. only:: html and not singlehtml
 
    .. sidebar::
@@ -12,6 +10,8 @@ This section offers a high-level introduction to the LOCKSS system, particularly
          :local:
          :depth: 1
          :backlinks: none
+
+This section offers a high-level introduction to the LOCKSS system, particularly LOCKSS 2.x.
 
 ---------------
 What Is LOCKSS?

@@ -23,15 +23,15 @@ LOCKSS Installer Directory
 
 The **LOCKSS Installer Directory** is the directory into which the LOCKSS Installer is downloaded and stored. In this manual, it will sometimes be represented as :samp:`${LOCKSS_INSTALLER_DIR}`. Many commands in this manual, such as those to configure, start and stop the LOCKSS stack, are relative to the LOCKSS Installer Directory, meaning you need to navigate to it at the console using :program:`cd` before issuing the relevant command:
 
-:samp:`cd ${LOCKSS_INSTALLER_DIR}`
+:samp:`cd {$LOCKSS_INSTALLER_DIR}`
 
 ----------------------------------
 Default LOCKSS Installer Directory
 ----------------------------------
 
-The **default LOCKSS Installer Directory** is :file:`${HOME}/lockss-installer` (meaning :file:`/home/lockss/lockss-installer` on most Linux systems).
+The **default** :ref:`LOCKSS Installer Directory` is :file:`{$HOME}/lockss-installer` (meaning :file:`/home/lockss/lockss-installer` on most Linux systems).
 
-You can override this default by using the LOCKSS Downloader's ``--download-dir`` option to set a :ref:`custom-lockss-installer-directory`.
+You can specify a :ref:`custom-lockss-installer-directory` when :ref:`Running the LOCKSS Downloader` by using its ``--download-dir`` option. If you specify a :ref:`custom-lockss-installer-directory` in the LOCKSS Downloader when :doc:`index` for the first time, you need to specify the same :ref:`custom-lockss-installer-directory` in the LOCKSS Downloader whenever :doc:`/upgrading/index` in the future.
 
 -----------------------------
 Running the LOCKSS Downloader
@@ -154,7 +154,7 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
          ... | sudo -u lockss sh -s -
 
-      to invoke the LOCKSS Downloader as the ``lockss`` user, beware that *typically* it will run in a context where :samp:`${HOME}` has been adjusted to the home directory of the ``lockss`` user, but this is *not guaranteed* -- it depends on the way :program:`sudo` is configured on your host system. To *ensure* :samp:`${HOME}` is set correctly, use the ``-H`` (``--set-home``) option of :program:`sudo`, for example like so:
+      to invoke the LOCKSS Downloader as the ``lockss`` user, beware that *typically* it will run in a context where :samp:`{$HOME}` has been adjusted to the home directory of the ``lockss`` user, but this is *not guaranteed* -- it depends on the way :program:`sudo` is configured on your host system. To *ensure* :samp:`{$HOME}` is set correctly, use the ``-H`` (``--set-home``) option of :program:`sudo`, for example like so:
 
       .. code-block:: shell
 

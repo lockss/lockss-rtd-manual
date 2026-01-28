@@ -2,7 +2,18 @@
 Operating System
 ================
 
-:Section last updated: 2025-12-19
+.. only:: html and not singlehtml
+
+   .. sidebar::
+
+      .. contents:: Section Table of Contents
+         :local:
+         :depth: 1
+         :backlinks: none
+
+:Section last updated: 2026-01-26
+
+This section
 
 The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compatible with `K3s <https://k3s.io/>`_, a lightweight open source Kubernetes distribution by `SUSE <https://www.suse.com/>`_ (formerly by Rancher). The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fn-k3s-os]_ (which are documented in this manual and integrated into the LOCKSS Installer). Compatibility information for various operating systems can be found in this section.
 

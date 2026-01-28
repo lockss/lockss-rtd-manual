@@ -2,8 +2,6 @@
 Stack Components
 ================
 
-This section presents the various components of LOCKSS |LATEST_MINOR|, their function, and why you would run them as part of your LOCKSS stack. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
-
 .. only:: html and not singlehtml
 
    .. sidebar::
@@ -12,6 +10,8 @@ This section presents the various components of LOCKSS |LATEST_MINOR|, their fun
          :local:
          :depth: 2
          :backlinks: none
+
+This section presents the various components of LOCKSS |LATEST_MINOR|, their function, and why you would run them as part of your LOCKSS stack. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
 
 -------------------------
 LOCKSS Service Components

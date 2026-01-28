@@ -2,8 +2,6 @@
 System Prerequisites
 ====================
 
-This section describes the Linux host, CPU, memory, and storage prerequisites for LOCKSS |LATEST_MINOR|, which vary depending on the scope of your application.
-
 .. only:: html and not singlehtml
 
    .. sidebar::
@@ -12,6 +10,8 @@ This section describes the Linux host, CPU, memory, and storage prerequisites fo
          :local:
          :depth: 1
          :backlinks: none
+
+This section describes the Linux host, CPU, memory, and storage prerequisites for LOCKSS |LATEST_MINOR|, which vary depending on the scope of your application.
 
 ----
 Host
