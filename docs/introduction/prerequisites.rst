@@ -47,7 +47,7 @@ Most versions of :ref:`Compatible Operating Systems` satisfy the Linux kernel re
       *  If version 5.3 or earlier is output, the host does not satify the Linux kernel version requirement; see :doc:`/sysadmin/kernel54`.
 
 2. .. dropdown:: ``ip_tables`` loadable kernel module is **required**
-      :name: requirement-ip-tables
+      :name: requirement-iptables-lkm
       :animate: fade-in-slide-down
 
       The ``ip_tables`` loadable kernel module is required, even if the programs :program:`iptables` or :program:`nftables` are not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
