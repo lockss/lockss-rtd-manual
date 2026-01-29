@@ -16,4 +16,3 @@ The **LOCKSS system** is a mature, open source, distributed digital preservation
    primer
    components
    prerequisites
-   os

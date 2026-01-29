@@ -2,9 +2,7 @@
 Appendix
 ========
 
-This appendix contains pages of additional information about the LOCKSS system.
-
-Sections include security advisories; reference information such as list of ports or component versions; and advanced topics like running the LCAP polling and repair protocol over SSL, working with PostgreSQL, or running the LOCKSS Installer from Git.
+This appendix contains additional information about the LOCKSS system.
 
 .. only:: html and not singlehtml
 
@@ -15,9 +13,10 @@ Sections include security advisories; reference information such as list of port
 
    security
    release-notes
-   faq
    license
+   os
    ports
+   faq
 
    git-downloader
    postgresql

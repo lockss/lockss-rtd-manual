@@ -21,7 +21,7 @@ This section describes how to download the LOCKSS Installer with the LOCKSS Down
 LOCKSS Installer Directory
 --------------------------
 
-The **LOCKSS Installer Directory** is the directory into which the LOCKSS Installer is downloaded and stored. In this manual, it will sometimes be represented as :samp:`{LOCKSS_INSTALLER_DIR}`. Many commands in this manual, such as those to configure, start and stop the LOCKSS stack, are relative to the LOCKSS Installer Directory, meaning you need to navigate to it at the console using :program:`cd` before issuing the relevant command:
+The **LOCKSS Installer Directory** is the directory into which the LOCKSS Installer is downloaded and stored. In this manual, it will sometimes be represented symbolically as :samp:`{LOCKSS_INSTALLER_DIR}`. Many commands in this manual, such as those to configure, start and stop the LOCKSS stack, are relative to the LOCKSS Installer Directory, meaning you need to navigate to it at the console using :program:`cd` before issuing the relevant command:
 
 :samp:`cd {LOCKSS_INSTALLER_DIR}`
 
@@ -170,7 +170,7 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
 .. [#fn-fetcher]
 
-   See :ref:`requirement-fetcher` and :ref:`requirement-archiver`.
+   See :ref:`prerequisite-fetcher` and :ref:`prerequisite-archiver` in the :doc:`/introduction/prerequisites`.
 
 .. [#fn-installer]
 

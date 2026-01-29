@@ -17,15 +17,15 @@ This section describes the Linux host, CPU, memory, and storage prerequisites fo
 Host
 ----
 
-LOCKSS |LATEST_MINOR| runs on a **Linux** host (physical machine or virtual machine), on one of many :ref:`Compatible Operating Systems`, including many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
+LOCKSS |LATEST_MINOR| requires a **Linux** host (physical machine or virtual machine), on one of many :ref:`Compatible Operating Systems`. The key prerequisite is that the Linux distribution must be compatible with `K3s <https://k3s.io/>`_, the lightweight open source Kubernetes distribution the LOCKSS stack runs on, which is true of many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu listed in the :doc:`/appendix/os` appendix.
 
 Linux Kernel
 ============
 
-Most versions of :ref:`Compatible Operating Systems` satisfy the Linux kernel requirements for LOCKSS |LATEST_MINOR| out of the box:
+Most versions of :ref:`Compatible Operating Systems` satisfy the **Linux kernel prerequisites** for LOCKSS |LATEST_MINOR| out of the box:
 
 1. .. dropdown:: Linux kernel 5.4 or later is required
-      :name: requirement-kernel54
+      :name: prerequisite-kernel54
       :animate: fade-in-slide-down
 
       Linux kernel 5.4 or later is **required**. You can check the Linux kernel version by typing:
@@ -44,10 +44,10 @@ Most versions of :ref:`Compatible Operating Systems` satisfy the Linux kernel re
 
       *  If version 5.4 or later is output, the host satisfies the Linux kernel version requirement.
 
-      *  If version 5.3 or earlier is output, the host does not satify the Linux kernel version requirement; see :doc:`/sysadmin/kernel54`.
+      *  If version 5.3 or earlier is output, the host does not satify the Linux kernel version requirement. See :doc:`/sysadmin/kernel54`.
 
 2. .. dropdown:: ``ip_tables`` loadable kernel module is **required**
-      :name: requirement-iptables-lkm
+      :name: prerequisite-iptables-lkm
       :animate: fade-in-slide-down
 
       The ``ip_tables`` loadable kernel module is required, even if the programs :program:`iptables` or :program:`nftables` are not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
@@ -70,32 +70,32 @@ Most versions of :ref:`Compatible Operating Systems` satisfy the Linux kernel re
 
             modinfo: ERROR: Module ip_tables not found.
 
-         the host does not satisfy the ``ip_tables`` loadable kernel module requirement; see :doc:`/sysadmin/kernel-iptables`.
+         the host does not satisfy the ``ip_tables`` loadable kernel module requirement. See :doc:`/sysadmin/kernel-iptables`.
 
 System Software
 ===============
 
-The LOCKSS Downloader and LOCKSS Installer require basic system software that is almost always present out of the box on :ref:`Compatible Operating Systems`:
+:doc:`/installing/index` and :doc:`/upgrading/index` uses the LOCKSS Downloader, which has basic **system software prerequisites** that are met by almost any of the :ref:`Compatible Operating Systems`:
 
 1. .. dropdown:: Curl or Wget is required
-      :name: requirement-fetcher
+      :name: prerequisite-fetcher
       :animate: fade-in-slide-down
 
       At least one of Curl or Wget is **required**. You can check by typing ``curl --version`` or ``wget --version`` at the host's command line.
 
       *  If either outputs a valid version message, the host satisfies the fetcher requirement.
 
-      *  If both output an error message, the host does not satisfy the fetcher requirement; see :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget` accordingly.
+      *  If both output an error message, the host does not satisfy the fetcher requirement. See :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget`.
 
 2. .. dropdown:: Tar and Unzip are required
-      :name: requirement-archiver
+      :name: prerequisite-archiver
       :animate: fade-in-slide-down
 
       Both Tar (:program:`tar` or :program:`gtar`) and Unzip (:program:`unzip`) are **required**. You can check by typing ``tar --version`` (or ``gtar --version``) and ``unzip --version`` at the host's command line.
 
       *  If both output a valid version message, the host satisfies the archiver requirement.
 
-      *  If either outputs an error message, the host does not satisfy the archiver requirement; see :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip` accordingly.
+      *  If either outputs an error message, the host does not satisfy the archiver requirement. See :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip`.
 
 ---
 CPU
@@ -142,19 +142,19 @@ FIXME
 Requirements for **system storage** (storage space needed for installed software, downloaded containers, data generated by the underlying Kubernetes environment, etc.) are as follows:
 
 1. .. dropdown:: Local system storage is required
-      :name: requirement-system-storage-local
+      :name: prerequisite-system-storage-local
       :animate: fade-in-slide-down
 
       All system storage **must be local**, in other words cannot be backed by NFS or other non-local filesystems. In particular, this applies to the K3s state data directory [#fn-k3s-directory]_.
 
 2. .. dropdown:: Legacy XFS filesystem with ``ftype=0`` is not compatible with K3s
-      :name: requirement-k3s-legacy-xfs
+      :name: prerequisite-k3s-legacy-xfs
       :animate: fade-in-slide-down
 
       The K3s state data directory [#fn-k3s-directory]_ **cannot be backed by a legacy XFS filesystem** with ``ftype=0``. This is expected to be an issue only for XFS filesystems from older Linux installations, as modern XFS filesystems use ``ftype=1``. See :doc:`/troubleshooting/xfs`.
 
 3. .. dropdown:: System storage size requirements
-      :name: requirement-system-storage-size
+      :name: prerequisite-system-storage-size
       :animate: fade-in-slide-down
 
       FIXME
@@ -188,19 +188,19 @@ FIXME
 Requirements for operating storage are as follows:
 
 1. .. dropdown:: Local operating storage is strongly recommended
-      :name: requirement-operating-storage-local
+      :name: prerequisite-operating-storage-local
       :animate: fade-in-slide-down
 
       For operating storage, **local storage is strongly recommended**, in other words NFS or other non-local filesystems are strongly discouraged, as remote filesystems can dramatically impact the performance of the LOCKSS system.
 
 2. .. dropdown:: Temporary storage area filesystem requirements
-      :name: requirement-temporary-storage-size
+      :name: prerequisite-temporary-storage-size
       :animate: fade-in-slide-down
 
       Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. A RAM-based ``tmpfs`` volume or a directory in a space-constrained partition are **not suitable for the temporary storage area**.
 
 3. .. dropdown:: Operating storage size requirements
-      :name: requirement-operating-storage-size
+      :name: prerequisite-operating-storage-size
       :animate: fade-in-slide-down
 
       FIXME

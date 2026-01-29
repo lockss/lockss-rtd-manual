@@ -145,7 +145,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] Linux kernel version 5.4 or later is required; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`requirement-kernel54` in the :doc:`/introduction/prerequisites`, then try again.
+      and :program:`install-lockss` will fail. See :ref:`prerequisite-kernel54` in the :doc:`/introduction/prerequisites`, then try again.
 
       If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-kernel-54`` option to skip it.
 
@@ -259,7 +259,7 @@ and :program:`install-lockss` will successfully proceed to the next phase, :ref:
 
          [ERROR] ip_tables loadable kernel module is not present; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`requirement-iptables-lkm` in the :doc:`/introduction/prerequisites`, then try again.
+      and :program:`install-lockss` will fail. See :ref:`prerequisite-iptables-lkm` in the :doc:`/introduction/prerequisites`, then try again.
 
       If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-iptables-lkm`` option to skip it.
 

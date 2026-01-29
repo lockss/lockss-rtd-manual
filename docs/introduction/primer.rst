@@ -45,7 +45,7 @@ LOCKSS 2.x offers an array of improvements compared to LOCKSS 1.x:
 
    *  **Right-sized functionality**. You can pick and choose which :doc:`functional components <components>` you operate as part of your LOCKSS stack, skipping functionality not needed for your particular application. For example, many applications do not make use of metadata extraction or Web replay, and some applications do not make use of the Web crawling infrastructure to speak of, so you could leaves these components out of your configured stack if applicable.
 
-   *  **Diverse Linux operating systems**. LOCKSS 2.x runs on the `K3s <https://k3s.io/>`_ Kubernetes distribution, which can be installed on diverse Linux :doc:`operating systems <os>` fitting your organizational IT infrastructure. Previously, LOCKSS 1.x was restricted to RHEL-compatible Linux operating systems.
+   *  **Diverse Linux operating systems**. LOCKSS 2.x runs on the `K3s <https://k3s.io/>`_ Kubernetes distribution, which can be installed on diverse Linux :doc:`/appendix/os` fitting your organizational IT infrastructure. Previously, LOCKSS 1.x was restricted to RHEL-compatible Linux operating systems.
 
 *  **Storage performance and scalability**: LOCKSS 2.x has a revamped storage backend. Advantages over LOCKSS 1.x include:
 

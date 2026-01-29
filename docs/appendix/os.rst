@@ -1,6 +1,6 @@
-================
-Operating System
-================
+=================
+Operating Systems
+=================
 
 .. only:: html and not singlehtml
 
@@ -11,29 +11,29 @@ Operating System
          :depth: 1
          :backlinks: none
 
-:Section last updated: 2026-01-26
+:Section last updated: 2026-01-29
 
 This section outlines the Linux operating systems compatible with LOCKSS |LATEST_MINOR|.
 
-The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compatible with `K3s <https://k3s.io/>`_, a lightweight open source Kubernetes distribution by `SUSE <https://www.suse.com/>`_ (formerly by Rancher). The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fn-k3s-os]_ (which are documented in this manual and integrated into the LOCKSS Installer). Compatibility information for various operating systems can be found in this section.
+As outlined in the :doc:`/introduction/prerequisites`, LOCKSS |LATEST_MINOR| requires a 64-bit Linux host [#fn-prerequisites]_ compatible with `K3s <https://k3s.io/>`_, a lightweight open source Kubernetes distribution. The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fn-k3s-os]_ (which are documented in this manual and integrated into the LOCKSS Installer).
 
 ----------------------------
 Compatible Operating Systems
 ----------------------------
 
-LOCKSS 2.x is compatible with the following operating systems. Note that the LOCKSS system can likely be installed successfully on additional flavors of Linux; we welcome reports of successful installations from the community so they can be added to the list below.
+LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. Note that it can likely be installed successfully on additional Linux distributions not listed here; we welcome reports of successful installations from the community so they can be added to the list below.
 
 .. tip::
 
-   If your IT environment does not favor a particular flavor of Linux, we recommend :ref:`os-rocky-linux`, both for brand-new installations and for :doc:`either new-host or same-host migrations from LOCKSS 1.x <lockss-portal:migration/index>`.
+   If you or your IT department do not have a strong preference in terms of Linux distribution, we recommend community-supported RHEL alternatives :ref:`os-almalinux` and :ref:`os-rocky-linux`.
 
 .. dropdown:: AlmaLinux OS
    :name: os-almalinux
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `AlmaLinux OS <https://almalinux.org/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `AlmaLinux OS <https://almalinux.org/>`_.
 
-   AlmaLinux OS is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
+   AlmaLinux OS is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fn-same-host-migration]_.
 
    .. list-table::
       :header-rows: 1
@@ -133,7 +133,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-arch-linux
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `Arch Linux <https://archlinux.org/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `Arch Linux <https://archlinux.org/>`_.
 
    .. list-table::
       :header-rows: 1
@@ -155,11 +155,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 
    .. caution::
 
-      CentOS Stream, which is suitable for use with LOCKSS 2.x, should not be confused with :ref:`CentOS Linux <os-centos-linux>`, which is at end of life and is **not** suitable for use with LOCKSS 2.x.
+      CentOS Stream, which is suitable for use with LOCKSS |LATEST_MINOR|, should not be confused with :ref:`CentOS Linux <os-centos-linux>`, which is at end of life and is **not** suitable for use with LOCKSS 2.x.
 
-   LOCKSS 2.x is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `CentOS Stream <https://centos.org/centos-stream/>`_.
 
-   CentOS Stream is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
+   CentOS Stream is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fn-same-host-migration]_.
 
    .. list-table::
       :header-rows: 1
@@ -184,7 +184,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-debian
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `Debian <https://www.debian.org/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `Debian <https://www.debian.org/>`_.
 
    .. list-table::
       :header-rows: 1
@@ -205,11 +205,6 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  2030-06-30
          *  
       *  *  Debian
-         *  13.2
-         *  2028-08-09
-         *  2030-06-30
-         *  
-      *  *  Debian
          *  13.1
          *  2028-08-09
          *  2030-06-30
@@ -218,6 +213,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  13.0
          *  2028-08-09
          *  2030-06-30
+         *  
+      *  *  Debian
+         *  12.13
+         *  2026-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.12
@@ -349,7 +349,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-fedora-linux
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `Fedora Linux <https://getfedora.org/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `Fedora Linux <https://getfedora.org/>`_.
 
    .. list-table::
       :header-rows: 1
@@ -374,7 +374,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-linux-mint
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `Linux Mint <https://linuxmint.com/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `Linux Mint <https://linuxmint.com/>`_.
 
    .. list-table::
       :header-rows: 1
@@ -429,7 +429,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-opensuse
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `OpenSUSE <https://www.opensuse.org/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE <https://www.opensuse.org/>`_.
 
    .. list-table::
       :header-rows: 1
@@ -459,9 +459,9 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-oracle-linux
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `Oracle Linux <https://www.oracle.com/linux>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `Oracle Linux <https://www.oracle.com/linux>`_.
 
-   Oracle Linux is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
+   Oracle Linux is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fn-same-host-migration]_.
 
    .. list-table::
       :header-rows: 1
@@ -576,9 +576,9 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-rhel
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `RHEL <https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `RHEL <https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux>`_.
 
-   RHEL is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
+   RHEL is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fn-same-host-migration]_.
 
    .. list-table::
       :header-rows: 1
@@ -698,9 +698,9 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-rocky-linux
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `Rocky Linux <https://rockylinux.org/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `Rocky Linux <https://rockylinux.org/>`_.
 
-   Rocky Linux is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fnsamehostmigration]_.
+   Rocky Linux is suitable for a same-host migration from LOCKSS 1.x to LOCKSS 2.x [#fn-same-host-migration]_.
 
    .. list-table::
       :header-rows: 1
@@ -805,7 +805,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-sles
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `SLES <https://www.suse.com/products/server/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `SLES <https://www.suse.com/products/server/>`_.
 
    .. list-table::
       :header-rows: 1
@@ -840,7 +840,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
    :name: os-ubuntu
    :animate: fade-in-slide-down
 
-   LOCKSS 2.x is compatible with `Ubuntu <https://ubuntu.com/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `Ubuntu <https://ubuntu.com/>`_.
 
    .. list-table::
       :header-rows: 1
@@ -870,7 +870,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
 Unsuitable Operating Systems
 ----------------------------
 
-The following operating systems are unsuitable for use with LOCKSS 2.x because they are at end of life.
+The following operating systems are **not suitable** for use with LOCKSS |LATEST_MINOR| because they are at end of life.
 
 .. dropdown:: CentOS Linux :bdg-danger-line:`end of life`
    :name: os-centos-linux
@@ -1256,11 +1256,15 @@ The following operating systems are unsuitable for use with LOCKSS 2.x because t
 
 .. rubric:: Footnotes
 
+.. [#fn-prerequisites]
+
+   See :ref:`Host` and :ref:`CPU` in the :doc:`/introduction/prerequisites`.
+
 .. [#fn-k3s-os]
 
    Reference: https://docs.k3s.io/installation/requirements#operating-systems
 
-.. [#fnsamehostmigration]
+.. [#fn-same-host-migration]
 
    Reference: :doc:`lockss-portal:migration/index`
 
