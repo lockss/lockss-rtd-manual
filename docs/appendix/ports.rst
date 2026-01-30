@@ -6,7 +6,7 @@ This section describes the default network ports used by the LOCKSS stack.
 
 **Almost all ports have changed in LOCKSS 2.0-beta2 compared to LOCKSS 2.0-beta1 and earlier "alpha" versions of LOCKSS 2.0.**
 
-All ports are in the 24600-24649 range (a subset of 24600-24699 previously), except the LCAP (LOCKSS polling and repair) port which retains its historical value of 9729 [#fn-lcap]_, and the OpenWayback port which is 8080.
+All ports are in the 24600-24649 range (a subset of 24600-24699 previously), except the LCAP (LOCKSS audit and repair) port which retains its historical value of 9729 [#fn-lcap]_, and the OpenWayback port which is 8080.
 
 All ports are configurable, except currently the OpenWayback port (noted below as :bdg-warning-line:`not configurable`).
 
@@ -19,120 +19,120 @@ All unspecified ports in the 24600-24649 range should be considered reserved (so
 
    *  *  Port
       *  Category
-      *  Component
       *  Description
+      *  Component
    *  *  8080
       *  Web replay
-      *  :ref:`OpenWayback`
       *  OpenWayback Web replay engine :bdg-warning-line:`not configurable`
+      *  :ref:`OpenWayback`
    *  *  9729
       *  LCAP protocol
-      *  :ref:`LOCKSS Poller Service`
       *  LCAP (LOCKSS audit and repair) port
+      *  :ref:`LOCKSS Poller Service`
    *  *  9739
       *  LCAP protocol
-      *  :ref:`LOCKSS Poller Service`
       *  Temporary LCAP (LOCKSS audit and repair) port [#fn-lcap]_
+      *  :ref:`LOCKSS Poller Service`
    *  *  24600
       *  Web UI
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
    *  *  24601
       *  Web UI
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
    *  *  24602
       *  Web UI
-      *  :ref:`LOCKSS Configuration Service`
       *  LOCKSS Configuration Service Web user interface
+      *  :ref:`LOCKSS Configuration Service`
    *  *  24603
       *  Web UI
-      *  :ref:`LOCKSS Poller Service`
       *  LOCKSS Poller Service Web user interface
+      *  :ref:`LOCKSS Poller Service`
    *  *  24604
       *  Web UI
-      *  :ref:`LOCKSS Crawler Service`
       *  LOCKSS Crawler Service Web user interface
+      *  :ref:`LOCKSS Crawler Service`
    *  *  24605
       *  Web UI
-      *  :ref:`LOCKSS Metadata Service`
       *  LOCKSS Metadata Service Web user interface
+      *  :ref:`LOCKSS Metadata Service`
    *  *  24606
       *  Web UI
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
    *  *  24610
       *  API
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
    *  *  24611
       *  API
-      *  :ref:`LOCKSS Repository Service`
       *  LOCKSS Repository Service REST API
+      *  :ref:`LOCKSS Repository Service`
    *  *  24612
       *  API
-      *  :ref:`LOCKSS Configuration Service`
       *  LOCKSS Configuration Service REST API
+      *  :ref:`LOCKSS Configuration Service`
    *  *  24613
       *  API
-      *  :ref:`LOCKSS Poller Service`
       *  LOCKSS Poller Service REST API
+      *  :ref:`LOCKSS Poller Service`
    *  *  24614
       *  API
-      *  :ref:`LOCKSS Crawler Service`
       *  LOCKSS Crawler Service REST API
+      *  :ref:`LOCKSS Crawler Service`
    *  *  24615
       *  API
-      *  :ref:`LOCKSS Metadata Service`
       *  LOCKSS Metadata Service REST API
+      *  :ref:`LOCKSS Metadata Service`
    *  *  24616
       *  API
-      *  :ref:`LOCKSS SOAP Compatibility Service`
       *  LOCKSS SOAP Compatibility Service SOAP API
+      *  :ref:`LOCKSS SOAP Compatibility Service`
    *  *  24620
       *  Internal
-      *  PostgreSQL
       *  PostgreSQL database
+      *  PostgreSQL
    *  *  24621
       *  Internal
-      *  :ref:`LOCKSS Configuration Service`
       *  ActiveMQ JMS port
+      *  :ref:`LOCKSS Configuration Service`
    *  *  24622
       *  Internal
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
    *  *  24623
       *  Internal
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
    *  *  24630
       *  Content access
-      *  :ref:`LOCKSS Poller Service`
       *  Content proxy
+      *  :ref:`LOCKSS Poller Service`
    *  *  24631
       *  Content access
-      *  :ref:`LOCKSS Poller Service`
       *  Audit proxy
+      *  :ref:`LOCKSS Poller Service`
    *  *  24632
       *  Content access
-      *  :ref:`LOCKSS Poller Service`
       *  ICP server :bdg-success:`UDP port`
+      *  :ref:`LOCKSS Poller Service`
    *  *  24640
       *  Web replay
-      *  :ref:`LOCKSS Poller Service`
       *  ServeContent Web replay engine and OpenURL resolver
+      *  :ref:`LOCKSS Poller Service`
    *  *  24641
       *  Web replay
-      *  Pywb
       *  Pywb Web replay engine
+      *  Pywb
    *  *  24642
       *  Web replay
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
    *  *  24643
       *  Web replay
-      *  
       *  :bdg-danger-line:`reserved`
+      *  
 
 ----
 
