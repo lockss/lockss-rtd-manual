@@ -29,7 +29,7 @@ The **LOCKSS Installer Directory** is the directory into which the LOCKSS Instal
 Default LOCKSS Installer Directory
 ----------------------------------
 
-The **default** :ref:`LOCKSS Installer Directory` is :file:`{$HOME}/lockss-installer` (meaning :file:`/home/lockss/lockss-installer` on most Linux systems).
+The **default** :ref:`LOCKSS Installer Directory` is :file:`{$HOME}/lockss-installer` relative to the ``lockss`` user (meaning :file:`/home/lockss/lockss-installer` on most Linux systems).
 
 You can specify a :ref:`custom-lockss-installer-directory` when :ref:`Running the LOCKSS Downloader` by using its ``--download-dir`` option. If you specify a :ref:`custom-lockss-installer-directory` in the LOCKSS Downloader when :doc:`index` for the first time, you need to specify the same :ref:`custom-lockss-installer-directory` in the LOCKSS Downloader whenever :doc:`/upgrading/index` in the future.
 
@@ -170,7 +170,7 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
 .. [#fn-fetcher]
 
-   See :ref:`prerequisite-fetcher` and :ref:`prerequisite-archiver` in the :doc:`/introduction/prerequisites`.
+   See :ref:`prerequisite-fetcher` and :ref:`prerequisite-archiver` in the :ref:`System Software` prerequisites.
 
 .. [#fn-installer]
 
