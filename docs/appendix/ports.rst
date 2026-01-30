@@ -95,7 +95,7 @@ All unspecified ports in the 24600-24649 range should be considered reserved (so
       *  PostgreSQL database
    *  *  24621
       *  Internal
-      *  ActiveMQ
+      *  :ref:`LOCKSS Configuration Service`
       *  ActiveMQ JMS port
    *  *  24622
       *  Internal
