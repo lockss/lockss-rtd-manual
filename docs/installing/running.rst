@@ -23,10 +23,9 @@ Invoking the LOCKSS Installer
 
 To start the installation process, follow these steps as ``root``:
 
-1. Navigate to the :ref:`LOCKSS Installer Directory`, symbolically:
+1. Navigate to the :ref:`LOCKSS Installer Directory` in a ``root`` shell, symbolically:
 
    :samp:`cd {LOCKSS_INSTALLER_DIR}`
-
 
 2. Run this command as ``root``:
 
@@ -51,26 +50,26 @@ The installer will run through its **phases**, each of which is described below 
          *  *  Option
             *  Phase(s) Skipped
          *  *  ``--skip-check-system-prerequisites``
-            *  :ref:`Checking System Prerequisites` (:numref:`Checking System Prerequisites`)
+            *  :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`)
          *  *  ``--skip-check-k3s-prerequisites``
-            *  :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+            *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
          *  *  ``--skip-configure-iptables``
-            * :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+            * :numref:`configuring-iptables` (:ref:`configuring-iptables`)
          *  *  ``--skip-configure-firewalld``
-            *  :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+            *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
          *  *  ``--skip-configure-ufw``
-            *  :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+            *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
          *  *  ``--skip-configure-coredns``
-            *  :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+            *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
          *  *  ``--skip-install-k3s``
-            *  -  :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
-               -  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
-               -  :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
-               -  :ref:`configuring-ufw` (:numref:`configuring-ufw`)
-               -  :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
-               -  :ref:`Installing K3s` (:numref:`Installing K3s`)
+            *  -  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
+               -  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
+               -  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
+               -  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
+               -  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
+               -  :numref:`Installing K3s` (:ref:`Installing K3s`)
          *  *  ``--skip-test-k3s``
-            *  :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
+            *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
 
       When a phase is skipped as a result of one of these options, you will see a message similar to this during the corresponding phase:
 
@@ -91,28 +90,28 @@ The installer will run through its **phases**, each of which is described below 
          *  *  Option
             *  Phase Executed
          *  *  ``--check-system-prerequisites``  (or ``-S``)
-            *  :ref:`Checking System Prerequisites` (:numref:`Checking System Prerequisites`)
+            *  :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`)
          *  *  ``--check-k3s-prerequisites`` (or ``-P``)
-            *  :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`)
+            *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
          *  *  ``--configure-iptables`` (or ``-I``)
-            *  :ref:`configuring-iptables` (:numref:`configuring-iptables`)
+            *  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
          *  *  ``--configure-firewalld`` (or ``-F``)
-            *  :ref:`configuring-firewalld` (:numref:`configuring-firewalld`)
+            *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
          *  *  ``--configure-ufw`` (or ``-U``)
-            *  :ref:`configuring-ufw` (:numref:`configuring-ufw`)
+            *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
          *  *  ``--configure-coredns`` (or ``-C``)
-            *  :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`)
+            *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
          *  *  ``--install-k3s`` (or ``-K``)
-            *  :ref:`Installing K3s` (:numref:`Installing K3s`)
+            *  :numref:`Installing K3s` (:ref:`Installing K3s`)
          *  *  ``--test-k3s`` (or ``-T``)
-            *  :ref:`Testing the K3s Node` (:numref:`Testing the K3s Node`)
+            *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
 
    .. dropdown:: Running :program:`install-lockss` on auto-pilot
       :name: running-install-lockss-on-auto-pilot
       :icon: light-bulb
       :animate: fade-in-slide-down
 
-      If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :ref:`configuring-iptables` (:numref:`configuring-iptables`), :ref:`configuring-firewalld` (:numref:`configuring-firewalld`), :ref:`configuring-ufw` (:numref:`configuring-ufw`), :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`) and :ref:`Installing K3s` (:numref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+      If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
 
 -----------------------------
 Checking System Prerequisites
@@ -130,7 +129,7 @@ No user interaction is expected; if everything goes well, you will see this mess
 
    [success] System prerequisites checked
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Checking K3s Prerequisites` (:numref:`Checking K3s Prerequisites`).
+and :program:`install-lockss` will successfully proceed to :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`).
 
 .. admonition:: Error conditions and what to do about them
 
@@ -180,7 +179,7 @@ No user interaction is expected; if everything goes well, you will see this mess
 
    [success] K3s prerequisites checked
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-iptables` (:numref:`configuring-iptables`).
+and :program:`install-lockss` will successfully proceed to :numref:`configuring-iptables` (:ref:`configuring-iptables`).
 
 .. admonition:: Error conditions and what to do about them
 
@@ -289,7 +288,7 @@ In many situations, no configuration of :program:`iptables` is needed; you will 
 
    [success] Skipping (iptables is not run via Alternatives)
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-firewalld` (:numref:`configuring-firewalld`).
+and :program:`install-lockss` will successfully proceed to :numref:`configuring-firewalld` (:ref:`configuring-firewalld`).
 
 Otherwise, you will receive the following prompt:
 
@@ -350,7 +349,7 @@ In many situations, no configuration of :program:`firewalld` is needed; you will
 
    [success] Skipping (firewalld is not running)
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`configuring-ufw` (:numref:`configuring-ufw`).
+and :program:`install-lockss` will successfully proceed to :numref:`configuring-ufw` (:ref:`configuring-ufw`).
 
 Otherwise, you will receive the following prompt:
 
@@ -407,7 +406,7 @@ In many situations, no configuration of :program:`firewalld` is needed; you will
 
    [success] Skipping (ufw is not active)
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Configuring CoreDNS for K3s` (:numref:`Configuring CoreDNS for K3s`).
+and :program:`install-lockss` will successfully proceed to :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`).
 
 Otherwise, you will receive the following prompt:
 
@@ -460,7 +459,7 @@ In many situations, no configuration of :program:`firewalld` is needed; you will
 
    [success] Using system resolv.conf files
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Installing K3s` (:numref:`Installing K3s`).
+and :program:`install-lockss` will successfully proceed to :numref:`Installing K3s` (:num:`Installing K3s`).
 
 Otherwise [#fn-force-dns]_, you will receive a message including ``CoreDNS does not allow a loopback address to be given to Kubernetes pods as an upstream DNS server``, and the following prompt:
 
@@ -644,7 +643,7 @@ No user interaction is expected. If all tests pass, you will see the message:
 
    [success] Tested the K3s node
 
-and :program:`install-lockss` will successfully proceed to the next phase, :ref:`Completion of the LOCKSS Installation Process` (:numref:`Completion of the LOCKSS Installation Process`).
+and :program:`install-lockss` will successfully proceed to :numref:`Completion of the LOCKSS Installation Process` (:ref:`Completion of the LOCKSS Installation Process`).
 
 Otherwise, you will see an error message corresponding to the test that did not pass, and :program:`install-lockss` will fail.
 
