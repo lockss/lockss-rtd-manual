@@ -527,59 +527,59 @@ This phase consists of these steps:
 
          By default, this is :file:`/var/lib/rancher/k3s`. However, if :file:`/var` is space-limited, you should specify a different directory that has ample space, and is not backed by NFS or legacy XFS with ``ftype=0``.
 
-         Enter a suitable directory path for the K3s state data directory, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes2]_ [#fn-k3s-data-dir]_.
+         Enter a suitable directory path for the K3s data directory, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes2]_ [#fn-k3s-data-dir]_.
 
-      b. Then :program:`install-lockss` will attempt to determine the filesystem type of the specified K3s state data directory. In many situations, it will simply display the filesystem type in a message similar to this (for example, :samp:`{<filesystem_type>}` might be ``ext4``):
+      b. Then :program:`install-lockss` will attempt to determine the filesystem type of the specified K3s data directory. In many situations, it will simply display the filesystem type in a message similar to this (for example, :samp:`{<filesystem_type>}` might be ``ext4``):
 
          :samp:`Filesystem type of {<path_of_k3s_dir>} ({<mountpoint_of_k3s_dir>}) is {<filesystem_type>}; proceeding`
 
          .. admonition:: Error conditions and warnings, and what to do about them
 
-            .. dropdown:: Filesystem type of K3s state data directory is NFS
+            .. dropdown:: Filesystem type of K3s data directory is NFS
                :name: running-k3s-nfs
                :icon: x-circle-fill
                :animate: fade-in-slide-down
 
-               If the filesystem type backing the K3s state data directory is NFS, you will see the error message:
+               If the filesystem type backing the K3s data directory is NFS, you will see the error message:
 
                :samp:`[ERROR] Filesystem type of {<path_of_k3s_dir>} ({<mountpoint_of_k3s_dir>}) is NFS; see manual`
 
-               and :program:`install-lockss` will fail. It is not possible to run K3s with a state data directory backed by NFS [#fn-k3s-data-dir-nfs]_. Re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by NFS.
+               and :program:`install-lockss` will fail. It is not possible to run K3s with a state data directory backed by NFS [#fn-k3s-data-dir-nfs]_. Re-run :program:`install-lockss` and designate a different K3s data directory that is not backed by NFS.
 
-            .. dropdown:: Filesystem type of K3s state data directory is legacy XFS with ``ftype=0``
+            .. dropdown:: Filesystem type of K3s data directory is legacy XFS with ``ftype=0``
                :name: running-k3s-xfs-ftype-0
                :icon: x-circle-fill
                :animate: fade-in-slide-down
 
-               If the filesystem type backing the K3s state data directory is XFS with legacy ``ftype=0``, you will see the error message:
+               If the filesystem type backing the K3s data directory is XFS with legacy ``ftype=0``, you will see the error message:
 
                :samp:`[ERROR] Filesystem type of {<path_of_k3s_dir>} ({<mountpoint_of_k3s_dir>}) is legacy XFS with ftype=0; see manual`
 
-               and :program:`install-lockss` will fail. Modern XFS filesystems with ``ftype=1`` work well with K3s, but legacy XFS filesystems with ``ftype=0`` are not compatible [#fn-k3s-data-dir-xfs]_. Ideally, re-run :program:`install-lockss` and designate a different K3s state data directory that is not backed by legacy XFS with ``ftype=0``. Alternatively, you can read about a workaround in :doc:`/troubleshooting/xfs`.
+               and :program:`install-lockss` will fail. Modern XFS filesystems with ``ftype=1`` work well with K3s, but legacy XFS filesystems with ``ftype=0`` are not compatible [#fn-k3s-data-dir-xfs]_. Ideally, re-run :program:`install-lockss` and designate a different K3s data directory that is not backed by legacy XFS with ``ftype=0``. Alternatively, you can read about a workaround in :doc:`/troubleshooting/xfs`.
 
-            .. dropdown:: Filesystem type of K3s state data directory unknown
+            .. dropdown:: Filesystem type of K3s state directory unknown
                :name: running-k3s-unknown
                :icon: alert
                :animate: fade-in-slide-down
 
-               If the filesystem type backing the K3s state data directory cannot be inferred automatically, you will see the warning:
+               If the filesystem type backing the K3s data directory cannot be inferred automatically, you will see the warning:
 
                :samp:`[Warning] Filesystem type of {<path_of_k3s_dir>} unknown (findmnt not present); proceeding`
 
-               and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s state data directory is one that does not work with K3s, such as NFS, or legacy XFS with ``ftype=0``; see :ref:`running-k3s-nfs` and :ref:`running-k3s-xfs-ftype-0` above.
+               and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s data directory is one that does not work with K3s, such as NFS, or legacy XFS with ``ftype=0``; see :ref:`running-k3s-nfs` and :ref:`running-k3s-xfs-ftype-0` above.
 
-            .. dropdown:: Filesystem type of K3s state data directory is XFS but ``ftype`` unknown
+            .. dropdown:: Filesystem type of K3s data directory is XFS but ``ftype`` unknown
                :name: running-k3s-xfs-ftype-unknown
                :icon: alert
                :animate: fade-in-slide-down
 
-               If the ``ftype`` of the XFS filesystem backing the K3s state data directory cannot be inferred automatically, you will see one of these warnings:
+               If the ``ftype`` of the XFS filesystem backing the K3s data directory cannot be inferred automatically, you will see one of these warnings:
 
                :samp:`[Warning] Filesystem type of {<path_of_k3s_dir>} ({<mountpoint_of_k3s_dir>}) is XFS but ftype unknown (xfs_info not present); proceeding`
 
                :samp:`[Warning] Filesystem type of {<path_of_k3s_dir>} ({<mountpoint_of_k3s_dir>}) is XFS but ftype unknown (xfs_info inconclusive); proceeding`
 
-               and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s state data directory is legacy XFS with ``ftype=0``; see :ref:`running-k3s-xfs-ftype-0` above.
+               and :program:`install-lockss` will keep going. But K3s may malfunction if the actual filesystem type backing the selected K3s data directory is legacy XFS with ``ftype=0``; see :ref:`running-k3s-xfs-ftype-0` above.
 
       c. Then :program:`install-lockss` will download the K3s Installer from https://get.k3s.io/ and invoke it with suitable options. This may take several minutes, during which the output to the console will be from the K3s Installer, not from :program:`install-lockss`.
 
