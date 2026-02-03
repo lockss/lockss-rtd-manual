@@ -2,17 +2,21 @@
 Network Ports
 =============
 
+.. note::
+
+   Almost all ports changed in LOCKSS 2.0-beta2 compared to LOCKSS 2.0-beta1 and earlier "alpha" versions of LOCKSS 2.0. This can impact firewall rules, custom scripting, and other aspects.
+
 This section describes the default network ports used by the LOCKSS stack.
 
-**Almost all ports have changed in LOCKSS 2.0-beta2 compared to LOCKSS 2.0-beta1 and earlier "alpha" versions of LOCKSS 2.0.**
+All ports are TCP in the 24600-24649 range (a subset of 24600-24699 previously), except:
 
-All ports are in the 24600-24649 range (a subset of 24600-24699 previously), except the LCAP (LOCKSS audit and repair) port which retains its historical value of 9729 [#fn-lcap]_, and the OpenWayback port which is 8080.
+*  The LCAP (LOCKSS audit and repair) port retains its historical value of 9729 [#fn-lcap]_.
 
-All ports are configurable, except currently the OpenWayback port (noted below as :bdg-warning-line:`not configurable`).
+*  The OpenWayback port (if in use) is 8080 [#fn-not-configurable]_.
 
-All ports are TCP, except the ICP port which is UDP (noted below as :bdg-success:`UDP port`).
+*  The ICP port (if in use) is UDP (noted below as :bdg-primary:`UDP`).
 
-All unspecified ports in the 24600-24649 range should be considered reserved (some specific ports are explicitly noted below as :bdg-danger-line:`reserved`).
+**Important ports are marked in bold.** Unspecified ports in the 24600-24649 range should be considered reserved, although some specific ports are called out as :bdg-danger-line:`reserved for internal use` or :bdg-warning-line:`reserved for future use`.
 
 .. list-table::
    :header-rows: 1
@@ -21,122 +25,130 @@ All unspecified ports in the 24600-24649 range should be considered reserved (so
       *  Category
       *  Description
       *  Component
-   *  *  8080
-      *  Web replay
-      *  OpenWayback Web replay engine :bdg-warning-line:`not configurable`
+   *  *  **8080** [#fn-not-configurable]_
+      *  :octicon:`browser` Web replay
+      *  OpenWayback Web replay engine
       *  :ref:`OpenWayback`
-   *  *  9729
-      *  LCAP protocol
+   *  *  **9729**
+      *  :octicon:`shield-check` LCAP
       *  LCAP (LOCKSS audit and repair) port
       *  :ref:`LOCKSS Poller Service`
    *  *  9739
-      *  LCAP protocol
-      *  Temporary LCAP (LOCKSS audit and repair) port [#fn-lcap]_
+      *  :octicon:`shield-check` LCAP
+      *  :bdg-danger-line:`reserved for internal use` (temporary LCAP port [#fn-lcap]_)
       *  :ref:`LOCKSS Poller Service`
    *  *  24600
-      *  Web UI
-      *  :bdg-danger-line:`reserved`
+      *  :octicon:`gear` Web UI
+      *  :bdg-warning-line:`reserved for future use` (centralized UI)
       *  
    *  *  24601
-      *  Web UI
-      *  :bdg-danger-line:`reserved`
+      *  :octicon:`gear` Web UI
+      *  :bdg-warning-line:`reserved for future use` (repository service UI)
       *  
-   *  *  24602
-      *  Web UI
+   *  *  **24602**
+      *  :octicon:`gear` Web UI
       *  LOCKSS Configuration Service Web user interface
       *  :ref:`LOCKSS Configuration Service`
-   *  *  24603
-      *  Web UI
+   *  *  **24603**
+      *  :octicon:`gear` Web UI
       *  LOCKSS Poller Service Web user interface
       *  :ref:`LOCKSS Poller Service`
-   *  *  24604
-      *  Web UI
+   *  *  **24604**
+      *  :octicon:`gear` Web UI
       *  LOCKSS Crawler Service Web user interface
       *  :ref:`LOCKSS Crawler Service`
-   *  *  24605
-      *  Web UI
+   *  *  **24605**
+      *  :octicon:`gear` Web UI
       *  LOCKSS Metadata Service Web user interface
       *  :ref:`LOCKSS Metadata Service`
    *  *  24606
-      *  Web UI
-      *  :bdg-danger-line:`reserved`
+      *  :octicon:`gear` Web UI
+      *  :bdg-warning-line:`reserved for future use` (SOAP service UI)
       *  
    *  *  24610
-      *  API
-      *  :bdg-danger-line:`reserved`
+      *  :octicon:`terminal` API
+      *  :bdg-warning-line:`reserved for future use` (centralized API)
       *  
-   *  *  24611
-      *  API
+   *  *  **24611**
+      *  :octicon:`terminal` API
       *  LOCKSS Repository Service REST API
       *  :ref:`LOCKSS Repository Service`
-   *  *  24612
-      *  API
+   *  *  **24612**
+      *  :octicon:`terminal` API
       *  LOCKSS Configuration Service REST API
       *  :ref:`LOCKSS Configuration Service`
-   *  *  24613
-      *  API
+   *  *  **24613**
+      *  :octicon:`terminal` API
       *  LOCKSS Poller Service REST API
       *  :ref:`LOCKSS Poller Service`
-   *  *  24614
-      *  API
+   *  *  **24614**
+      *  :octicon:`terminal` API
       *  LOCKSS Crawler Service REST API
       *  :ref:`LOCKSS Crawler Service`
-   *  *  24615
-      *  API
+   *  *  **24615**
+      *  :octicon:`terminal` API
       *  LOCKSS Metadata Service REST API
       *  :ref:`LOCKSS Metadata Service`
-   *  *  24616
-      *  API
+   *  *  **24616**
+      *  :octicon:`terminal` API
       *  LOCKSS SOAP Compatibility Service SOAP API
       *  :ref:`LOCKSS SOAP Compatibility Service`
    *  *  24620
-      *  Internal
+      *  :octicon:`stack` Internal
       *  PostgreSQL database
       *  PostgreSQL
    *  *  24621
-      *  Internal
+      *  :octicon:`stack` Internal
       *  ActiveMQ JMS port
       *  :ref:`LOCKSS Configuration Service`
    *  *  24622
-      *  Internal
-      *  :bdg-danger-line:`reserved`
+      *  :octicon:`stack` Internal
+      *  :bdg-warning-line:`reserved for future use` (Solr)
       *  
    *  *  24623
-      *  Internal
-      *  :bdg-danger-line:`reserved`
+      *  :octicon:`stack` Internal
+      *  :bdg-warning-line:`reserved for future use` (HDFS)
       *  
-   *  *  24630
-      *  Content access
+   *  *  **24630**
+      *  :octicon:`tools` Content access
       *  Content proxy
       *  :ref:`LOCKSS Poller Service`
-   *  *  24631
-      *  Content access
+   *  *  **24631**
+      *  :octicon:`tools` Content access
       *  Audit proxy
       *  :ref:`LOCKSS Poller Service`
-   *  *  24632
-      *  Content access
-      *  ICP server :bdg-success:`UDP port`
+   *  *  **24632** :bdg-primary:`UDP`
+      *  :octicon:`tools` Content access
+      *  ICP server
       *  :ref:`LOCKSS Poller Service`
-   *  *  24640
-      *  Web replay
+   *  *  24633
+      *  :octicon:`tools` Content access
+      *  :bdg-danger-line:`reserved for internal use` (content proxy SSL)
+      *  :ref:`LOCKSS Poller Service`
+   *  *  24634
+      *  :octicon:`tools` Content access
+      *  :bdg-danger-line:`reserved for internal use` (audit proxy SSL)
+      *  :ref:`LOCKSS Poller Service`
+   *  *  **24640**
+      *  :octicon:`browser` Web replay
       *  ServeContent Web replay engine and OpenURL resolver
       *  :ref:`LOCKSS Poller Service`
-   *  *  24641
-      *  Web replay
+   *  *  **24641**
+      *  :octicon:`browser` Web replay
       *  Pywb Web replay engine
       *  Pywb
    *  *  24642
-      *  Web replay
-      *  :bdg-danger-line:`reserved`
-      *  
-   *  *  24643
-      *  Web replay
-      *  :bdg-danger-line:`reserved`
+      *  :octicon:`browser` Web replay
+      *  :bdg-warning-line:`reserved for future use` (OpenWayback)
       *  
 
 ----
 
 .. rubric:: Footnotes
+
+.. [#fn-not-configurable]
+
+   This port is not currently configurable.
 
 .. [#fn-lcap]
 
