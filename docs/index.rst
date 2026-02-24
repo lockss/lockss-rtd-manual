@@ -26,6 +26,7 @@ Version |LATEST_MINOR|
    troubleshooting/index
    sysadmin/index
    appendix/index
+   glossary/index
 
 .. only:: html
 

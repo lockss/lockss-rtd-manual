@@ -2,7 +2,7 @@
 Troubleshooting the K3s Configuration Checker
 =============================================
 
-After installing K3s [#fninstallk3s]_, you may optionally run the K3s configuration checker :program:`k3s check-config` [#fnk3scheckconfig]_ (see :ref:`Checking the K3s Configuration`). This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" system aspects needed by K3s.
+After installing K3s [#fn-install-k3s]_, you may optionally run the K3s configuration checker :program:`k3s check-config` [#fn-k3s-check-config]_. This configuration checker runs through a more extensive series of tests, covering "required", "generally necessary", and "optional" system aspects needed by K3s.
 
 Some failures, especially in "optional" aspects, may not actually prevent the cluster from working normally, in the limited ways the LOCKSS system uses Kubernetes. Some of the error messages you might encounter are documented below, but you may need to refer to the official `K3s documentation <https://rancher.com/docs/k3s/latest/en/>`_ or use a search engine to look up a specific error message.
 
@@ -12,7 +12,7 @@ iptables should be older than v1.8.0, newer than v1.8.3, or in legacy mode
 
 .. COMMENT updated for alpha5
 
-In some instances, you may encounter an error message similar to the following:
+In some instances, you may encounter an error message similar to the following [#fn-k3s-bug]_:
 
 .. code-block:: text
 
@@ -34,7 +34,7 @@ The :program:`install-lockss` script should detect this situation and offer to s
 User namespaces disabled
 ------------------------
 
-In some RHEL 7 and CentOS 7 systems, you may receive the following error message:
+In some RHEL 7 and CentOS 7 systems, you may receive the following error message [#fn-user-namespaces]_:
 
 .. code-block:: text
 
@@ -85,7 +85,7 @@ In some Fedora and OpenSUSE systems, you may encounter six related error message
    links: aux/iptables-restore should link to iptables-detect.sh (fail)
    links: aux/iptables-save should link to iptables-detect.sh (fail)
 
-This is due to a bug in :program:`k3s check-config` [#fniptablesdetectbug]_, triggered in environments where there is no :program:`iptables` system package installed. **This warning can be ignored.**
+This is due to a bug in :program:`k3s check-config` [#fn-iptables-detect-bug]_, triggered in environments where there is no :program:`iptables` system package installed. **This warning can be ignored.**
 
 -----------------------
 swap should be disabled
@@ -111,38 +111,30 @@ CONFIG_INET_XFRM_MODE_TRANSPORT missing
 
 .. rubric:: Footnotes
 
-.. [#fninstalllockss]
-
-   See :doc:`/installing/running`.
-
-.. [#fninstallk3s]
+.. [#fn-install-k3s]
 
    See :ref:`Installing K3s`.
 
-.. [#fnk3scheckconfig]
+.. [#fn-k3s-check-config]
 
    See :ref:`Checking the K3s Configuration`.
 
-.. [#fnk3sbug]
+.. [#fn-k3s-bug]
 
    References:
 
    *  https://github.com/k3s-io/k3s/issues/2946
 
-.. [#fnusernamespaces]
+.. [#fn-user-namespaces]
 
    References:
 
    *  https://fortuitousengineer.com/installing-kubernetes-k3s-on-centos-rhel-hosts/
 
-.. [#fniptablesdetectbug]
+.. [#fn-iptables-detect-bug]
 
    Reference:
 
    *  https://github.com/k3s-io/k3s/issues/4066
 
       *  https://github.com/k3s-io/k3s/issues/4066#issuecomment-925137706
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.

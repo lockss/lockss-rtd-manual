@@ -170,7 +170,7 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
 .. [#fn-fetcher]
 
-   See :ref:`prerequisite-fetcher` and :ref:`prerequisite-archiver` in the :ref:`System Software` prerequisites.
+   See :ref:`prerequisites-fetcher` and :ref:`prerequisites-archiver` in the :ref:`System Software Prerequisites`.
 
 .. [#fn-installer]
 

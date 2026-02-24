@@ -144,7 +144,7 @@ and :program:`install-lockss` will successfully proceed to :numref:`Checking K3s
 
          [ERROR] Linux kernel version 5.4 or later is required; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`prerequisite-kernel54` in the :ref:`Linux Kernel` prerequisites, then try again.
+      and :program:`install-lockss` will fail. See :ref:`prerequisites-kernel54` in the :ref:`Linux Kernel Prerequisites`, then try again.
 
       If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-kernel-54`` option to skip it.
 
@@ -166,6 +166,8 @@ and :program:`install-lockss` will successfully proceed to :numref:`Checking K3s
 --------------------------
 Checking K3s Prerequisites
 --------------------------
+
+.. COMMENT This section is referenced in the glossary entry for K3s as the beginning of the sequence of preliminary steps for installing K3s
 
 During this phase, :program:`install-lockss` will check that certain prerequisites to installing K3s are met. This phase begins with this heading:
 
@@ -258,7 +260,7 @@ and :program:`install-lockss` will successfully proceed to :numref:`configuring-
 
          [ERROR] ip_tables loadable kernel module is not present; see manual
 
-      and :program:`install-lockss` will fail. See :ref:`prerequisite-iptables-lkm` in the :ref:`Linux Kernel` prerequisites, then try again.
+      and :program:`install-lockss` will fail. See :ref:`prerequisites-iptables-lkm` in the :ref:`Linux Kernel Prerequisites`, then try again.
 
       If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-iptables-lkm`` option to skip it.
 
@@ -447,6 +449,8 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kb
 Configuring CoreDNS for K3s
 ---------------------------
 
+.. COMMENT This section is referenced in the glossary entry for K3s as the end of the sequence of preliminary steps for installing K3s
+
 During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary. This phase begins with the heading:
 
 .. code-block:: text
@@ -459,7 +463,7 @@ In many situations, no configuration of :program:`firewalld` is needed; you will
 
    [success] Using system resolv.conf files
 
-and :program:`install-lockss` will successfully proceed to :numref:`Installing K3s` (:num:`Installing K3s`).
+and :program:`install-lockss` will successfully proceed to :numref:`Installing K3s` (:ref:`Installing K3s`).
 
 Otherwise [#fn-force-dns]_, you will receive a message including ``CoreDNS does not allow a loopback address to be given to Kubernetes pods as an upstream DNS server``, and the following prompt:
 
