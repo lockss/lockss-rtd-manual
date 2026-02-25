@@ -11,7 +11,7 @@ Stack Components
          :depth: 2
          :backlinks: none
 
-This section presents the various components of LOCKSS |LATEST_MINOR|, their function, and why you would run them as part of your LOCKSS stack. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
+This section presents the various components of the :term:`LOCKSS stack`, their function, and why you might run them as part of your stack. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
 
 -------------------------
 LOCKSS Service Components

@@ -1,0 +1,1 @@
+The :term:`LOCKSS stack`'s :term:`operating storage` is the storage space devoted to its internal operating needs, such as database data, state files, log files, temporary files, etc.

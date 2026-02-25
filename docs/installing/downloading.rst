@@ -15,15 +15,17 @@ Downloading the LOCKSS Installer
          :depth: 1
          :backlinks: none
 
-This section describes how to download the LOCKSS Installer with the LOCKSS Downloader [#fn-downloader]_.
+This section describes how to use the :term:`LOCKSS Downloader` to download the :term:`LOCKSS Installer`.
 
 --------------------------
 LOCKSS Installer Directory
 --------------------------
 
-The **LOCKSS Installer Directory** is the directory into which the LOCKSS Installer is downloaded and stored. In this manual, it will sometimes be represented symbolically as :samp:`{LOCKSS_INSTALLER_DIR}`. Many commands in this manual, such as those to configure, start and stop the LOCKSS stack, are relative to the LOCKSS Installer Directory, meaning you need to navigate to it at the console using :program:`cd` before issuing the relevant command:
+.. include:: /glossary/lockss-installer-directory.rst
 
-:samp:`cd {LOCKSS_INSTALLER_DIR}`
+In this manual, it will sometimes be represented symbolically as :samp:`{<LOCKSS_INSTALLER_DIR>}`. Many commands, such as those to configure, start and stop the :term:`LOCKSS stack`, are relative to the LOCKSS Installer Directory, meaning you need to navigate to it at the console using :program:`cd` before issuing the relevant command:
+
+:samp:`cd {<LOCKSS_INSTALLER_DIR>}`
 
 ----------------------------------
 Default LOCKSS Installer Directory
@@ -31,7 +33,7 @@ Default LOCKSS Installer Directory
 
 The **default** :ref:`LOCKSS Installer Directory` is :file:`{$HOME}/lockss-installer` relative to the ``lockss`` user (meaning :file:`/home/lockss/lockss-installer` on most Linux systems).
 
-You can specify a :ref:`custom-lockss-installer-directory` when :ref:`Running the LOCKSS Downloader` by using its ``--download-dir`` option. If you specify a :ref:`custom-lockss-installer-directory` in the LOCKSS Downloader when :doc:`index` for the first time, you need to specify the same :ref:`custom-lockss-installer-directory` in the LOCKSS Downloader whenever :doc:`/upgrading/index` in the future.
+You can specify a :ref:`custom-lockss-installer-directory` when :ref:`Running the LOCKSS Downloader` by using its ``--download-dir`` option.
 
 -----------------------------
 Running the LOCKSS Downloader
@@ -130,6 +132,10 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
          ... | sh -s - --download-dir=DIR
 
+      .. warning::
+
+         If you specify a custom LOCKSS Installer Directory in the LOCKSS Downloader when :doc:`index` for the first time, you need to specify the same custom LOCKSS Installer Directory in the LOCKSS Downloader whenever :doc:`/upgrading/index` in the future.
+
    .. dropdown:: Custom version of the LOCKSS Installer
       :name: custom-lockss-installer-version
       :icon: light-bulb
@@ -163,10 +169,6 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 ----
 
 .. rubric:: Footnotes
-
-.. [#fn-downloader]
-
-   The LOCKSS Downloader is a script to download GitHub projects without Git, but with Curl or Wget instead. See https://github.com/lockss/lockss-downloader.
 
 .. [#fn-fetcher]
 

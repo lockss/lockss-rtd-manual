@@ -6,7 +6,7 @@ Creating the ``lockss`` User
 
    Commands in this section are run as ``root`` .
 
-This section describes how to create the ``lockss`` system user (if necessary), under which the LOCKSS stack will run.
+This section describes how to create the ``lockss`` system user (if necessary), under which the :term:`LOCKSS stack` will run.
 
 Follow these steps:
 
@@ -22,7 +22,7 @@ Follow these steps:
 
          uid=958(lockss) gid=958(lockss) groups=958(lockss)
 
-      In this case, no further action is needed in this section, and you can proceed to the next section (:doc:`downloading`).
+      In this case, no further action is needed in this section, and you can proceed to :numref:`Downloading the LOCKSS Installer` (the next section (:ref:`Downloading the LOCKSS Installer`).
 
    *  Otherwise, the :program:`id` command above will output an error message, for example:
 
@@ -44,4 +44,4 @@ Follow these steps:
 
       useradd -rUms /bin/bash lockss
 
-   This will create a ``lockss`` system user, a ``lockss`` system group, and a home directory in :file:`${HOME}/lockss` (which is :file:`/home/lockss` on most Linux systems).
+   This will create a ``lockss`` system user, a ``lockss`` system group, and a home directory in :file:`{$HOME}/lockss` (which is :file:`/home/lockss` on most Linux systems).

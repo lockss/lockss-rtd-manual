@@ -1,6 +1,10 @@
-===========================
-Upgrading the LOCKSS System
-===========================
+.. danger::
+
+   **This entire section is not yet updated for LOCKSS 2.0-beta2.** This is just the text from LOCKSS 2.0-beta1. *FIXME*
+
+================
+Upgrading LOCKSS
+================
 
 This chapter describes how to upgrade an existing LOCKSS 2.0 system from LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, LOCKSS 2.0-alpha7, and earlier versions of LOCKSS |LATEST_MINOR| (LOCKSS 2.0.81-beta1, LOCKSS 2.0.82-beta1, LOCKSS 2.0.83-beta1), to LOCKSS |LATEST_PATCH|, the latest version of LOCKSS |LATEST_MINOR|.
 

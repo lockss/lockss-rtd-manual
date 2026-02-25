@@ -1,6 +1,6 @@
-============================
-Running the LOCKSS Installer
-============================
+=================================
+Running :program:`install-lockss`
+=================================
 
 .. note::
 
@@ -15,17 +15,17 @@ Running the LOCKSS Installer
          :depth: 1
          :backlinks: none
 
-The section describes how to run the LOCKSS Installer. The installation process goes through various phases -- checking system prerequisites, configuring firewall and DNS settings, installing the K3s Kubernetes distribution, and testing the K3s node.
+The section describes how to run :program:`install-lockss`, a script in the :term:`LOCKSS Installer` that installs the infrastructure necessary to run the :term:`LOCKSS stack` on your host system. The installation process goes through various phases -- checking system prerequisites, configuring firewall and DNS settings, installing the K3s Kubernetes distribution, and testing the K3s node.
 
------------------------------
-Invoking the LOCKSS Installer
------------------------------
+----------------------------------
+Invoking :program:`install-lockss`
+----------------------------------
 
 To start the installation process, follow these steps as ``root``:
 
 1. Navigate to the :ref:`LOCKSS Installer Directory` in a ``root`` shell, symbolically:
 
-   :samp:`cd {LOCKSS_INSTALLER_DIR}`
+   :samp:`cd {<LOCKSS_INSTALLER_DIR>}`
 
 2. Run this command as ``root``:
 

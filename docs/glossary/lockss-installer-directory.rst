@@ -1,0 +1,1 @@
+The :term:`LOCKSS Installer Directory` is simply the directory under which the :term:`LOCKSS Installer` is stored.
