@@ -9,7 +9,6 @@ Type ``unzip --version`` at the host's command line. If an error message like ``
 .. COMMENT OSTABS
 
 .. tab-set::
-   :class: sd-bg-light
 
    .. tab-item:: AlmaLinux OS
       :sync: alma

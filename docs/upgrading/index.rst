@@ -56,7 +56,6 @@ Update the LOCKSS Installer
 As the ``lockss`` user [#fnlockss]_, run this Curl or Wget command [#fnfetcher]_:
 
 .. tab-set::
-   :class: sd-bg-light
 
    .. tab-item:: Curl
       :sync: curl

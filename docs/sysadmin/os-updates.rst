@@ -17,7 +17,6 @@ If you wish to update software packages manually, select your operating system b
 .. COMMENT OSTABS
 
 .. tab-set::
-   :class: sd-bg-light
 
    .. tab-item:: AlmaLinux OS
       :sync: alma

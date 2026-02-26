@@ -9,7 +9,6 @@ Select your operating system below and follow the instructions as ``root`` [#fnr
 .. COMMENT OSTABS
 
 .. tab-set::
-   :class: sd-bg-light
 
    .. tab-item:: AlmaLinux OS
       :sync: alma

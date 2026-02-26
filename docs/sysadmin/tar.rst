@@ -9,7 +9,6 @@ Type ``tar --version`` (or ``gtar --version``) at the host's command line. If an
 .. COMMENT OSTABS
 
 .. tab-set::
-   :class: sd-bg-light
 
    .. tab-item:: AlmaLinux OS
       :sync: alma
