@@ -15,7 +15,7 @@ Running :program:`install-lockss`
          :depth: 1
          :backlinks: none
 
-The section describes how to run :program:`install-lockss`, a script in the :term:`LOCKSS Installer` that installs the infrastructure necessary to run the :term:`LOCKSS stack` on your host system. The installation process goes through various phases -- checking system prerequisites, configuring firewall and DNS settings, installing the K3s Kubernetes distribution, and testing the K3s node.
+This section describes how to run :program:`install-lockss`, a script in the :term:`LOCKSS Installer` that installs the infrastructure necessary to run the :term:`LOCKSS stack` on your host system. The installation process goes through various phases -- checking system prerequisites, configuring firewall and DNS settings, and installing and testing :term:`K3s`.
 
 ----------------------------------
 Invoking :program:`install-lockss`
@@ -169,7 +169,7 @@ Checking K3s Prerequisites
 
 .. COMMENT This section is referenced in the glossary entry for K3s as the beginning of the sequence of preliminary steps for installing K3s
 
-During this phase, :program:`install-lockss` will check that certain prerequisites to installing K3s are met. This phase begins with this heading:
+During this phase, :program:`install-lockss` will check that certain prerequisites to installing :term:`K3s` are met. This phase begins with this heading:
 
 .. code-block:: text
 
@@ -270,7 +270,7 @@ and :program:`install-lockss` will successfully proceed to :numref:`configuring-
 Configuring :program:`iptables` for K3s
 ---------------------------------------
 
-During this phase, :program:`install-lockss` will configure :program:`iptables` to work with K3s, if applicable. This phase begins with the heading:
+During this phase, :program:`install-lockss` will configure :program:`iptables` to work with :term:`K3s`, if applicable. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -298,7 +298,7 @@ Otherwise, you will receive the following prompt:
 
 Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_. (You may be prompted for your :program:`sudo` password.)
 
-.. caution::
+.. warning::
 
    If you select :kbd:`N` to bypass the proposed :program:`iptables` configuration, you will see the warning:
 
@@ -359,7 +359,7 @@ Otherwise, you will receive the following prompt:
 
 Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_. (You may be prompted for your :program:`sudo` password.)
 
-.. caution::
+.. warning::
 
    If you select :kbd:`N` to bypass the proposed :program:`firewalld` configuration, you will see the warning:
 
@@ -416,7 +416,7 @@ Otherwise, you will receive the following prompt:
 
 Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_. (You may be prompted for your :program:`sudo` password.)
 
-.. caution::
+.. warning::
 
    If you select :kbd:`N` to bypass the proposed :program:`ufw` configuration, you will see the warning:
 

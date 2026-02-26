@@ -7,23 +7,17 @@ Glossary
 
    container
    software container
-      A **software container**, or simply a **container**, is an abstraction bundling together software code, its dependencies, and its system environment, into a lightweight, isolated unit of software that can be virtually run on a variety of host environments.
-
-      The specialized functions of different containers can then be treated as building blocks to assemble a larger, cohesive software application called a :term:`stack` in LOCKSS parlance.
-
-      Containers are configured, deployed and managed by a :term:`container orchestration system`.
+      A **software container**, or simply a **container**, is a lightweight, narrow-purpose bundle of software code, its dependencies, and its environment, forming a virtual unit of software that can be run on a variety of host environments by a :term:`container orchestration system`.
 
       The LOCKSS system uses :term:`Docker` containers.
 
    container orchestration system
-      A **container orchestration system** is a software automation tool that configures, deploys and manages :term:`software containers <software container>` on a host system, providing them with a runtime environment and resources like storage and networking.
+      A **container orchestration system** is a software automation tool that configures, deploys and manages :term:`software containers <software container>` on a host system, providing them with a runtime environment and resources like storage and networking, and assembling them like building blocks into cohesive software applications called :term:`stacks <stack>` [#fn-stack]_.
 
-      The LOCKSS system uses :term:`Kubernetes` as its container orchestration system.
+      The LOCKSS system uses :term:`Kubernetes` as its container orchestration system, more specifically the :term:`K3s` Kubernetes distribution.
 
    content storage
       .. include:: content-storage.rst
-
-      It consists of one or more :term:`content storage areas <content storage area>`.
 
       Content storage is one of three kinds of storage needed by the LOCKSS stack, together with :term:`system storage` and :term:`operating storage`.
 
@@ -62,8 +56,6 @@ Glossary
 
       The LOCKSS Installer Directory and the symbol :file:`<LOCKSS_INSTALLER_DIRECTORY>` are defined in :numref:`LOCKSS Installer Directory` (:ref:`LOCKSS Installer Directory`). The default path for the LOCKSS Installer Directory is defined in :numref:`Default LOCKSS Installer Directory` (:ref:`Default LOCKSS Installer Directory`), and the value can be customized in :numref:`Running the LOCKSS Downloader` (:ref:`Running the LOCKSS Downloader`) under :ref:`custom-lockss-installer-directory`.
 
-
-
    LOCKSS stack
       The **LOCKSS stack** is the :term:`container stack` providing the functionality of the LOCKSS system as a whole.
 
@@ -83,9 +75,9 @@ Glossary
 
    stack
    container stack
-      A **container stack**, or simply a **stack**, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`. This term is not standardized; "stack" is common in the LOCKSS ecosystem.
+      A **container stack**, or simply a **stack** [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
 
-      The suite of containers providing the functionality of the LOCKSS system as a whole is referred to as the :term:`LOCKSS stack`.
+      In particular, the suite of containers providing the functionality of the LOCKSS system as a whole is referred to as the :term:`LOCKSS stack`.
 
    state data storage area
       The :term:`LOCKSS stack`'s **state data storage area** is devoted to database files, state files, and similar persistent data needed as part of normal operation. The state data storage area is one of the three areas of :term:`operating storage`, together with the :term:`log storage area` and the :term:`temporary storage area`.
@@ -105,3 +97,11 @@ Glossary
       The :term:`LOCKSS stack`'s **temporary storage area** is devoted to temporary files, staging areas for unpacking compressed files or off-heap data processing, etc. The temporary storage area is one of the three areas of :term:`operating storage`, together with the :term:`state data storage area` and the :term:`log storage area`.
 
       Some of the :ref:`Operating Storage Prerequisites` apply to the temporary storage area: FIXME. The temporary storage area for the LOCKSS stack is configured in :numref:`Temporary Storage Area` (:ref:`Temporary Storage Area`).
+
+----
+
+.. rubric:: Footnotes
+
+.. [#fn-stack]
+
+   There is no widespread term for a containerized application; "stack" is common in the LOCKSS ecosystem.

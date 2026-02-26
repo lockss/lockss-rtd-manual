@@ -1,1 +1,1 @@
-The :term:`LOCKSS stack`'s :term:`content storage` is the storage space devoted to the content being preserved by the system.
+The :term:`LOCKSS stack`'s :term:`content storage` is the storage space devoted to the content being preserved by the system, consisting of one or more :term:`content storage areas <content storage area>`.

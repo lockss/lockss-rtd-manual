@@ -22,7 +22,7 @@ LOCKSS |LATEST_MINOR| requires a **Linux** host (either a physical machine or a 
 Operating System Prerequisites
 ==============================
 
-More specifically, LOCKSS |LATEST_MINOR| requires a Linux distribution that is compatible with :term:`K3s`, the Kubernetes distribution the LOCKSS stack runs on. This prerequisite is met by many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu listed in the  :ref:`Compatible Operating Systems` appendix.
+More specifically, LOCKSS |LATEST_MINOR| requires a Linux distribution that is compatible with :term:`K3s`, the :term:`Kubernetes` distribution the :term:`LOCKSS stack` runs on. This prerequisite is met by many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu listed in the  :ref:`Compatible Operating Systems` appendix.
 
 Linux Kernel Prerequisites
 ==========================
@@ -80,7 +80,7 @@ Most versions of Linux distributions in the :ref:`Compatible Operating Systems` 
 System Software Prerequisites
 =============================
 
-:doc:`/installing/index` and :doc:`/upgrading/index` uses the LOCKSS Downloader, which has basic **system software prerequisites** that are met by almost any Linux distribution:
+:doc:`/installing/index` and :doc:`/upgrading/index` uses the :term:`LOCKSS Downloader`, which has basic **system software prerequisites** that are met by almost any Linux distribution:
 
 1. .. dropdown:: Curl or Wget is required
       :name: prerequisites-fetcher
@@ -179,7 +179,7 @@ The most significant portion of :term:`system storage` used by the LOCKSS stack 
 
       The :term:`K3s data directory` **cannot be backed by a legacy XFS filesystem** with ``ftype=0``.
 
-      This is expected to be an issue only for installations of LOCKSS 1.x using XFS filesystems old enough to have ``ftype=0``, looking to install LOCKSS |LATEST_MINOR| as part of a :doc:`same-host migration <lockss-portal:migration/index>`. Alternatives in this case include a :doc:`new-host migration <lockss-portal:migration/index>` or a potential workaround, see :doc:`/troubleshooting/xfs`.
+      This is expected to be an issue only for installations of LOCKSS 1.x using XFS filesystems old enough to have ``ftype=0``, looking to install LOCKSS |LATEST_MINOR| as part of a :doc:`same-host migration <lockss-portal:migration/index>`. Alternatives in this case include a :doc:`new-host migration <lockss-portal:migration/index>`, or a potential workaround; see :doc:`/troubleshooting/xfs`.
 
 3. .. dropdown:: System storage size requirements
       :name: prerequisites-system-storage-size
@@ -235,9 +235,9 @@ Content Storage Prerequisites
 
 .. include:: /glossary/content-storage.rst
 
-Content storage can be backed by NFS or other non-local filesystems (although locally-attached storage is more performant), and can consist of multiple :term:`content storage areas <content storage area>` (for example multiple RAID arrays).
+Content storage can be backed by NFS or other non-local filesystems (although locally-attached storage is more performant).
 
-The list of content storage areas is configurable in :ref:`Content Storage Areas` (:numref:`Content Storage Areas`).
+The list of :term:`content storage areas <content storage area>` is configurable in :ref:`Content Storage Areas` (:numref:`Content Storage Areas`).
 
 FIXME
 
@@ -245,7 +245,7 @@ FIXME
 
 .. admonition:: What's the Minimum for Experimentation?
 
-   To review the installation instructions and test the installation of K3s in various operating systems, we routinely install and bring up minimal LOCKSS |LATEST_MINOR|, with no metadata services or Web replay engines, and with empty embedded PostgreSQL and Solr databases, in Vagrant virtual machines with Virtualbox using 2 CPU cores and 3 GB of memory. These minimal VMs would not support a production load, but it can be a useful tool to try out the installation instructions or evaluate the system.
+   To review the installation instructions and test the installation of K3s in various operating systems, we routinely install and bring up minimal LOCKSS |LATEST_MINOR|, with no metadata services or Web replay engines, and with empty embedded PostgreSQL database, in Vagrant virtual machines with Virtualbox, using 2 CPU cores and 3 GB of memory. These minimal VMs would not support a production load, but it can be a useful tool to try out the installation instructions or evaluate the system.
 
 ----
 

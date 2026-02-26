@@ -1,21 +1,21 @@
-=============================
-Configuring the LOCKSS System
-=============================
+==================
+Configuring LOCKSS
+==================
 
-.. rubric:: Section Summary
+.. note::
 
-After :doc:`/installing/index`, you will configure it with the :program:`configure-lockss` script.
-
-.. tip::
-
-   If you have experience with LOCKSS 1.x, this is the equivalent of the :program:`hostconfig` script.
+   Commands in this section are run as the ``lockss`` user.
 
 .. only:: html and not singlehtml
 
-   .. contents:: Section Table of Contents
-      :local:
-      :backlinks: none
-      :depth: 1
+   .. sidebar::
+
+      .. contents:: Section Table of Contents
+         :local:
+         :depth: 1
+         :backlinks: none
+
+After :doc:`installing the LOCKSS stack </installing/index>`, you will configure it with the :term:`LOCKSS Installer`'s :program:`configure-lockss` script [#fn-hostconfig]_.
 
 ---------------------------
 Configuration Prerequisites
@@ -29,7 +29,7 @@ You will need to gather information to answer configuration questions asked by :
 
 *  The configuration URL and preservation group or groups corresponding to the LOCKSS network your system is joining.
 
-*  The paths for the primary content storage area, any additional content storage areas, the state data storage area, the temporary storage area, and the log storage area. See the :ref:`Storage` sections for important information about performance requirements for these storage areas.
+*  The paths for one or more :term:`content storage areas <content storage area>`, the :term:`state data storage area`, the :term:`temporary storage area`, and the :term:`log storage area`. See the :ref:`Storage Prerequisites` sections for important information about requirements for these storage areas.
 
    .. caution::
 
@@ -41,17 +41,13 @@ You will need to gather information to answer configuration questions asked by :
 
    *  Alternatively, if using an existing PostgreSQL database, the host name, port, schema, username and password for the external PostgreSQL database, as well as a prefix for database names.
 
-*  A username and password for the Solr database.
-
-   *  Alternatively, if using an existing Solr database, the host name, port, username and password for the external Solr database, as well as the core name for the LOCKSS repository.
-
-*  Whether you wish to use the LOCKSS Crawler Service, LOCKSS Metadata Extraction Service, LOCKSS Metadata Service, LOCKSS SOAP Compatibility Service, Pywb Web replay engine, and OpenWayback Web replay engine.
+*  Which :ref:`Stack Components` you wish to use.
 
 Some notes about using :program:`configure-lockss`:
 
 *  When run the first time, some of the questions asked by the script will have a suggested or default value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`.
 
-*  Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged. Use :program:`configure-lockss --replay` to prompt only for info not already found in the config file.
+*  Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged. Use ``configure-lockss --replay`` (or ``configure-lockss -r`` for short) to prompt only for info not already found in the configuration file.
 
 *  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
 
@@ -61,13 +57,19 @@ Some notes about using :program:`configure-lockss`:
 Invoking :program:`configure-lockss`
 ------------------------------------
 
-To invoke :program:`configure-lockss`, simply run this command as the ``lockss`` user [#fnlockss]_ in the :ref:`LOCKSS Installer Directory`:
+To invoke :program:`configure-lockss`, follow these steps as the ``lockss`` user:
 
-.. code-block:: shell
+1. Navigate to the :ref:`LOCKSS Installer Directory` in a ``root`` shell, symbolically:
 
-   scripts/configure-lockss
+   :samp:`cd {<LOCKSS_INSTALLER_DIR>}`
 
-The script will begin with the first series of configuration questions, about :ref:`Kubernetes Settings` (:numref:`Kubernetes Settings`).
+2. Run this command as the ``lockss`` user:
+
+   .. code-block:: shell
+
+      scripts/configure-lockss
+
+The script will begin with the first series of configuration questions from :numref:`Kubernetes Settings` (:ref:`Kubernetes Settings`).
 
 -------------------
 Kubernetes Settings
@@ -75,7 +77,7 @@ Kubernetes Settings
 
 Prompt: :guilabel:`Command to use to execute kubectl commands`
 
-Enter the command to invoke :program:`kubectl` in your environment. If you are using the K3s Kubernetes environment that ships with the LOCKSS system, the proposed value is already correct.
+Enter the command to invoke :program:`kubectl` in your environment. If you are using the :term:`K3s` Kubernetes environment that ships with the LOCKSS system, the proposed value is already correct.
 
 .. FIXME the script can exit here if the K8s (sic) config file can't be written to
 
@@ -95,7 +97,9 @@ IP Address
 
 Prompt: :guilabel:`IP address of this machine`
 
-If the machine is publicly routable, meaning it has an IP address that can be used to identify it over the Internet, enter the publicly routable IP address. Otherwise, if the machine is accessible via network address translation (NAT), meaning it has an IP address that is valid only on your local network but it can be reached from the Internet via a NAT router, enter the internal IP address.
+*  If the host is on the Internet, enter its *publicly routable IP address*.
+
+*  If the host is behind network address translation (NAT), enter its *internal IP address*. You will be asked the other IP address later in :numref:`Network Address Translation` (:ref:`Network Address Translation`).
 
 Initial UI Subnet
 =================
@@ -109,20 +113,20 @@ LCAP Port
 
 Prompt: :guilabel:`LCAP protocol port`
 
-Enter the port on the publicly routable IP address that will be used to receive LCAP (LOCKSS polling and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
+Enter the port on the that will be used to receive LCAP (LOCKSS audit and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
 Network Address Translation
 ===========================
 
 1. Prompt: :guilabel:`Is this machine behind NAT?`
 
-   If the machine is publicly routable, enter :kbd:`N`; otherwise, if the machine is not publicly routable but will be accessible via network address translation (NAT), enter :kbd:`Y`.
+   If the host is behind network address translation (NAT), enter :kbd:`Y`; otherwise, enter :kbd:`N`.
 
-2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
+2. If you answered :kbd:`Y` because the host is behind NAT, you will be asked an additional configuration question:
 
    :guilabel:`External IP address for NAT`
 
-   Enter the publicly routable IP address of the NAT router.
+   Enter the *publicly routable IP address of the NAT router*. This complements the other IP address you entered in :numref:`IP Address` (:ref:`IP Address`).
 
 -------------
 Mail Settings
@@ -133,20 +137,20 @@ Mail Relay
 
 Prompt: :guilabel:`Mail relay for this machine`
 
-Enter the hostname of this machine's outgoing mail server, for example :samp:`smtp.myuniversity.edu`.
+Enter the hostname of the host's outgoing mail server, for example :samp:`smtp.myuniversity.edu`, or :samp:`localhost` if the host is running a mail daemon.
 
 Mail Relay Credentials
 ======================
 
 1. Prompt: :guilabel:`Does the mail relay <mailhost> need a username and password?`
 
-   If the outgoing mail server does not require password authentication, enter :kbd:`N`; otherwise, enter :kbd:`Y`.
+   If the outgoing mail server requires password authentication, enter :kbd:`Y`; otherwise, enter :kbd:`N`.
 
-2. If you answered :kbd:`Y`, you will be asked additional configuration questions:
+2. If you answered :kbd:`Y` because the outgoing mail server requires password authentication, you will be asked additional configuration questions:
 
    a. Prompt: :guilabel:`User for <mailhost>`
 
-      Enter a username for the mail server.
+      Enter the username for the mail server.
 
    b. Prompt: :guilabel:`Password for <mailuser>@<mailhost>`
 
@@ -161,7 +165,7 @@ Administrator Email
 
 Prompt: :guilabel:`E-mail address for administrator`
 
-Enter the e-mail address of the person or team who will administer the LOCKSS system on this machine.
+Enter the e-mail address of the person or team who will administer the LOCKSS node.
 
 -----------------------------
 Preservation Network Settings
@@ -172,24 +176,7 @@ Configuration URL
 
 1. Prompt: :guilabel:`Configuration URL`
 
-   Enter the URL of your LOCKSS network's configuration file. Select a scenario below for more details:
-
-   .. tab-set::
-
-      .. tab-item:: LOCKSS Demo Network
-         :sync: demo
-
-         If you are trying out LOCKSS 2.x, enter :samp:`http://props.lockss.org:8001/demo/lockss.xml` (or simply hit :kbd:`Enter`, as this is the default).
-
-      .. tab-item:: Global LOCKSS Network
-         :sync: gln
-
-         If you are participating in the Global LOCKSS Network and trying out LOCKSS 2.x, enter :samp:`http://props.lockss.org:8001/demo/lockss.xml` (or simply hit :kbd:`Enter`, as this is the default).
-
-      .. tab-item:: Other LOCKSS Network
-         :sync: other
-
-         If you are configuring your LOCKSS node to participate in a given LOCKSS network, enter the configuration URL provided for that LOCKSS network by your administrators (for example :samp:`https://admin.mynetwork.org/config/lockss.xml`).
+   Enter the URL of your LOCKSS network's configuration file, for example :samp:`https://admin.mynetwork.org/lockss.xml`. This URL will be given to you by your LOCKSS network administrator. For example in the Global LOCKSS Network (GLN), this is ``https://props.lockss.org/daemon/lockss.xml``.
 
 2. If the configuration URL begins with ``https:``, you will be asked additional configuration questions:
 
@@ -197,7 +184,7 @@ Configuration URL
 
       Enter :kbd:`Y` if you would like to check the authenticity of the configuration server using a custom keystore; otherwise enter :kbd:`N`.
 
-   b. If you answered :kbd:`Y`, you will be asked an additional configuration question:
+   b. If you answered :kbd:`Y` because you would like to check the authenticity of the configuration server using a custom keystore, you will be asked an additional configuration question:
 
       :guilabel:`Server certificate keystore`
 
@@ -208,31 +195,14 @@ Configuration Proxy
 
 Prompt: :guilabel:`Configuration proxy (host:port)`
 
-If the configuration URL can be reached directly, leave this blank; otherwise, if a proxy server is required to reach the configuration URL, enter its host and port in :samp:`{host}:{port}` format (for example :samp:`proxy.myuniversity.edu:8080`).
+If the configuration URL can be reached directly, hit :kbd:`Enter` to leave this blank; otherwise, if a proxy server is required to reach the configuration URL, enter its host and port in :samp:`{host}:{port}` format (for example :samp:`proxy.myuniversity.edu:8888`).
 
 Preservation Groups
 ===================
 
 Prompt: :guilabel:`Preservation group(s)`
 
-Enter a preservation group identifier or semicolon-separated list of preservation group identifiers. Select a scenario below for more details:
-
-.. tab-set::
-
-   .. tab-item:: LOCKSS Demo Network
-      :sync: demo
-
-      If you are trying out LOCKSS 2.x, enter :samp:`demo` (or simply hit :kbd:`Enter`, as this is the default).
-
-   .. tab-item:: Global LOCKSS Network
-      :sync: gln
-
-      If you are participating in the Global LOCKSS Network and trying out LOCKSS 2.x, enter :samp:`demoprod`.
-
-   .. tab-item:: Other LOCKSS Network
-      :sync: other
-
-      If you are configuring your LOCKSS node to participate in a given LOCKSS network, enter the preservation group(s) provided for that LOCKSS network by your administrators (for example :samp:`mynetwork`, or :samp:`mynetwork;mygroup1;mygroup2`).
+Enter a preservation group identifier (or a semicolon-separated list of preservation group identifiers). This will be given to you by your LOCKSS network administrator. For example in the Global LOCKSS Network (GLN), this is ``prod``.
 
 ---------------------------
 Web User Interface Settings
@@ -240,7 +210,7 @@ Web User Interface Settings
 
 1. Prompt: :guilabel:`User name for web UI administration`
 
-   Enter a username for the primary administrative user in the LOCKSS system's Web user interfaces.
+   Enter a username for the primary administrative user in the LOCKSS stack's Web user interfaces.
 
 2. Prompt: :guilabel:`Password for web UI administration user <uiuser>`
 
@@ -256,11 +226,11 @@ Container Subnet
 
 1. If :program:`configure-lockss` detects a discrepancy between a previously used subnet for inter-container communication in the system and the subnet it would choose now, you may either see the warning:
 
-   :guilabel:`Container subnet has changed from <former_subnet> to <new_subnet>`
+   :samp:`Container subnet has changed from {<former_subnet>} to {<new_subnet>}`
 
    or be asked the question:
 
-   :guilabel:`Container subnet was <former_subnet>, we think it should now be <new_subnet>. Do you want to change it?`
+   :samp:`Container subnet was {<former_subnet>}, we think it should now be {<new_subnet>}. Do you want to change it?`
 
    in which case you should enter :kbd:`Y` (recommended) or :kbd:`N`.
 
@@ -272,25 +242,18 @@ Container Subnet
 Storage Areas
 -------------
 
-The LOCKSS system needs several kinds of storage areas, as described in the :ref:`Storage` section. See also the :ref:`Storage` section for important information about performance requirements for these storage areas.
+The :term:`LOCKSS stack` needs several kinds of :term:`content storage` and :term:`operating storage`, as described in the :ref:`Storage Prerequisites` section. (See also important information about performance requirements for these storage areas in that section.)
 
-Depending on your host system's layout, these storage areas may all be the same, or all be different mount points or paths. Each path must be writeable by the ``lockss`` user.
+Depending on your host system's layout, these storage areas may or may not be the same mount points or paths. Each path must be writeable by the ``lockss`` user.
 
-Subdirectories will be created in each storage area to fit the needs of each system component; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's state data directory in the state data storage area, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log directory in the log storage area.
-
-State Data Storage Area
-=======================
-
-Prompt: :guilabel:`Root path for state data storage`
-
-This directory is used as the root of the storage area for databases and other state data. Enter the desired path, or if reconfiguring, hit :kbd:`Enter` to accept a previously-entered value.
+Subdirectories will be created in each storage area to fit the needs of each :doc:`stack component </introduction/components>`; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's state data directory in the :term:`state data storage area`, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log directory in the :term:`log storage area`.
 
 Content Storage Areas
 =====================
 
-1. Prompt: :guilabel:`Root path(s) for content storage`
+1. Prompt: :guilabel:`Paths of the content storage areas (semicolon-separated)`
 
-   Enter a semicolon-separated list of full paths of directories to be used to store preserved content.
+   Enter a semicolon-separated list of full paths of directories to be used as :term:`content storage areas <content storage area>`.
 
 2. If the answer to the question is different than that from a previous configuration run, you will see the warning:
 
@@ -298,153 +261,102 @@ Content Storage Areas
 
    If you have done anything other add new content storage areas to the end of the previously-entered list, you must run ``scripts/reindex-artifacts`` after completion of :program:`configure-lockss`, before starting the system.
 
+State Data Storage Area
+=======================
+
+Prompt: :guilabel:`Path of the state data storage area`
+
+Enter the desired path for the :term:`state data storage area`, which by default is the same as the *first* of the :ref:`Content Storage Areas`.
+
 Log Storage Area
 ================
 
-Prompt: :guilabel:`Root path for log storage`
+Prompt: :guilabel:`Path of the log storage area`
 
-This directory is used as the root of the storage area for log files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
+Enter the desired path for the :term:`log storage area`, which by default is the same as the :ref:`State Data Storage Area`.
 
 Temporary Storage Area
 ======================
 
-Prompt: :guilabel:`Root path for temporary storage (local storage preferred)`
+Prompt: :guilabel:`Path of the temporary storage area`
 
-This directory is used as the root of the storage area for temporary files in the LOCKSS system. Accept the default (same directory as the content data storage directory root) by hitting :kbd:`Enter`, or enter a custom path.
+Enter the desired path for the :term:`temporary storage area`, which by default is the same as the :ref:`State Data Storage Area`.
 
 -----------------
 Database Settings
 -----------------
 
-PostgreSQL
-==========
+For the PostgreSQL database, you have two options:
 
-Prompt: :guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
+*  You can choose to use the :term:`LOCKSS stack`'s **embedded PostgreSQL database**, meaning a PostgreSQL database :term:`container` will be run and managed as part of the LOCKSS stack. This is the recommended option.
 
-Select **either** option A **or** option B:
+*  Alternatively, you can choose to use an **external PostgreSQL database**. Select this option if you wish to use an existing PostgreSQL database provisioned by your institution, or one that you run and manage yourself.
 
-A. Enter :kbd:`Y` to use the **embedded PostgreSQL database**. This is recommended in most cases; a PostgreSQL database will be run and managed by the LOCKSS system internally. If you choose this option, see :ref:`Embedded PostgreSQL Database`.
+You will receive the following prompt:
 
-B. Enter :kbd:`N` to use an **external PostgreSQL database**. Select this option if you wish to use an existing PostgreSQL database at your institution or one that you run and manage yourself. If you choose this option, see :ref:`External PostgreSQL Database`.
+:guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
 
-Embedded PostgreSQL Database
-----------------------------
+*  To use the **embedded PostgreSQL database**, enter :kbd:`Y`, then follow the steps in the :ref:`embedded-postgresql-settings` section below.
 
-If you select this option, you will be asked additional configuration questions:
+*  To use an **external PostgreSQL database**, enter :kbd:`N`, then follow the steps in the :ref:`external-postgresql-settings` section below.
 
-1. Prompt: :guilabel:`Password for PostgreSQL database`
+.. tab-set::
 
-   Enter the password for the embedded PostgreSQL database.
+   .. tab-item:: Embedded PostgreSQL Database
+      :sync: embedded-postgresql
+      :name: embedded-postgresql-settings
 
-   .. warning::
+      Follow these steps if you entered :kbd:`Y` to use the **embedded PostgreSQL database**:
 
-      This prompt is used to record the PostgreSQL database password in the LOCKSS system's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. See :doc:`/appendix/postgresql` for details.
+      1. Prompt: :guilabel:`Password for PostgreSQL database`
 
-2. Prompt: :guilabel:`Password for PostgreSQL database (again)`
+         Enter the password for the embedded PostgreSQL database.
 
-   Re-enter the password for the embedded PostgreSQL database. If the two passwords do not match, the password will be asked again.
+         .. note::
 
-3. Complete the :ref:`Solr` section next.
+            This prompt is used to record the PostgreSQL database password in the LOCKSS stack's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. See :doc:`/appendix/postgresql` for details.
 
-External PostgreSQL Database
-----------------------------
+      2. Prompt: :guilabel:`Password for PostgreSQL database (again)`
 
-If you select this option, you will be asked additional configuration questions:
+         Re-enter the password for the embedded PostgreSQL database. If the two passwords do not match, the password will be asked again.
 
-1. Prompt: :guilabel:`Fully qualified hostname (FQDN) of PostgreSQL host`
+   .. tab-item:: External PostgreSQL Database
+      :sync: external-postgresql
+      :name: external-postgresql-settings
 
-   Enter the hostname of the external PostgreSQL database, for example :samp:`postgres.myuniversity.edu`.
+      Follow these steps if you entered :kbd:`N` to use the **external PostgreSQL database**:
 
-2. Prompt: :guilabel:`Port used by PostgreSQL host`
+      1. Prompt: :guilabel:`Fully qualified hostname (FQDN) of PostgreSQL host`
 
-   Enter the port where the external PostgreSQL database can be reached, for example :samp:`5432`.
+         Enter the hostname of the external PostgreSQL database, for example :samp:`postgres.myuniversity.edu`.
 
-3. Prompt: :guilabel:`Schema for PostgreSQL service`
+      2. Prompt: :guilabel:`Port used by PostgreSQL host`
 
-   Enter the schema name to be used by the LOCKSS system. The schema name used in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different schema name to you.
+         Enter the port where the external PostgreSQL database can be reached, for example :samp:`5432`.
 
-4. Prompt: :guilabel:`Database name prefix for PostgreSQL service`
+      3. Prompt: :guilabel:`Schema for PostgreSQL service`
 
-   Enter the prefix to use for any LOCKSS-related database names in the schema. The database name prefix in the embedded PostgreSQL databse is :samp:`Lockss` (note the uppercase/lowercase), but your database administrator may assign a different database name prefix.
+         Enter the schema name to be used by the LOCKSS system. The schema name used in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different schema name to you.
 
-5. Prompt: :guilabel:`Login name for PostgreSQL service`
+      4. Prompt: :guilabel:`Database name prefix for PostgreSQL service`
 
-   Enter the username for the external PostgreSQL database. The username in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different username to you.
+         Enter the prefix to use for any LOCKSS-related database names in the schema. The database name prefix in the embedded PostgreSQL databse is :samp:`Lockss` (note the uppercase/lowercase), but your database administrator may assign a different database name prefix.
 
-6. Prompt: :guilabel:`Password for PostgreSQL database`
+      5. Prompt: :guilabel:`Login name for PostgreSQL service`
 
-   Enter the password for the username in the external PostgreSQL database.
+         Enter the username for the external PostgreSQL database. The username in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different username to you.
 
-   .. warning::
+      6. Prompt: :guilabel:`Password for PostgreSQL database`
 
-      This prompt is used to record the PostgreSQL database password in the LOCKSS system's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. Contact your PostgreSQL database administrator for details.
+         Enter the password for the username in the external PostgreSQL database.
 
-7. Prompt: :guilabel:`Password for PostgreSQL database (again)`
+         .. note::
 
-   Re-enter the password for the username in the external PostgreSQL database. If the two passwords do not match, the password will be asked again.
+            This prompt is used to record the PostgreSQL database password in the LOCKSS stack's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. Contact your PostgreSQL database administrator for details.
 
-8. Complete the :ref:`Solr` section next.
+      7. Prompt: :guilabel:`Password for PostgreSQL database (again)`
 
-Solr
-====
-
-Prompt: :guilabel:`Use embedded LOCKSS Solr Service?`
-
-Select **either** option A **or** option B:
-
-A. Enter :kbd:`Y` to use the **embedded Solr database**. This is recommended in most cases; a Solr database will be run and managed by the LOCKSS system internally. If you choose this option, see :ref:`Embedded Solr Database`.
-
-B. Enter :kbd:`N` to use an **external Solr database**. Select this option if you wish to use an existing Solr database at your institution or one that you run and manage yourself. If you choose this option, see :ref:`External Solr Database`.
-
-Embedded Solr Database
-----------------------
-
-If you select this option, you will be asked additional configuration questions:
-
-1. Prompt: :guilabel:`User name for LOCKSS Solr access`
-
-   Enter the username for the embedded Solr database.
-
-2. Prompt: :guilabel:`Password for LOCKSS Solr access`
-
-   Enter the password for the username in the embedded Solr database.
-
-3. Prompt: :guilabel:`Password for LOCKSS Solr access (again)`
-
-   Re-enter the password for the username in the embedded Solr database. If the two passwords do not match, the password will be asked again.
-
-4. Complete the :ref:`Metadata Query Service` section next.
-
-External Solr Database
-----------------------
-
-If you select this option, you will be asked additional configuration questions:
-
-1. Prompt: :guilabel:`Fully qualified hostname (FQDN) of Solr host`
-
-   Enter the hostname of the external Solr database server, for example :samp:`solr.myuniversity.edu`.
-
-2. Prompt: :guilabel:`Port used by Solr host:`
-
-   Enter the port used by the database server on the Solr host, for example :samp:`8983`.
-
-3. Prompt: :guilabel:`Solr core repo name:`
-
-   Enter name of the Solr core for the LOCKSS repository. The Solr core name used in the embedded Solr database is :samp:`lockss-repo`, but your database administrator may assign a different Solr core name.
-
-4. Prompt: :guilabel:`User name for LOCKSS Solr access`
-
-   Enter the username for the external Solr database.
-
-5. Prompt: :guilabel:`Password for LOCKSS Solr access`
-
-   Enter the password for the username in the external Solr database.
-
-6. Prompt: :guilabel:`Password for LOCKSS Solr access (again)`
-
-   Re-enter the password for the username in the external Solr database. If the two passwords do not match, the password will be asked again.
-
-7. Complete the :ref:`Metadata Query Service` section next.
+         Re-enter the password for the username in the external PostgreSQL database. If the two passwords do not match, the password will be asked again.
 
 ---------------
 LOCKSS Services
@@ -538,6 +450,6 @@ Final Steps
 
 .. rubric:: Footnotes
 
-.. [#fnlockss]
+.. [#fn-hostconfig]
 
-   See :doc:`/sysadmin/lockss`.
+   If you have experience with LOCKSS 1.x, this is the equivalent of the :program:`hostconfig` script.
