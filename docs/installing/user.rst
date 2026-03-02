@@ -22,7 +22,7 @@ Follow these steps:
 
          uid=958(lockss) gid=958(lockss) groups=958(lockss)
 
-      In this case, no further action is needed in this section, and you can proceed to :numref:`Downloading the LOCKSS Installer` (the next section (:ref:`Downloading the LOCKSS Installer`).
+      In this case, no further action is needed in this section, and you can proceed to :numref:`Downloading the LOCKSS Installer` (:ref:`Downloading the LOCKSS Installer`).
 
    *  Otherwise, the :program:`id` command above will output an error message, for example:
 

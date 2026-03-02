@@ -15,11 +15,15 @@ Configuring LOCKSS
          :depth: 1
          :backlinks: none
 
+.. index:: ! configure-lockss
+
 After :doc:`installing the LOCKSS stack </installing/index>`, you will configure it with the :term:`LOCKSS Installer`'s :program:`configure-lockss` script [#fn-hostconfig]_.
 
----------------------------
-Configuration Prerequisites
----------------------------
+.. index:: configure-lockss; preparation
+
+-----------------------------------
+Gathering Configuration Information
+-----------------------------------
 
 You will need to gather information to answer configuration questions asked by :program:`configure-lockss`, including:
 
@@ -51,6 +55,8 @@ Some notes about using :program:`configure-lockss`:
 
 *  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
 
+.. index:: configure-lockss; invocation
+
 .. _invoking-configure-lockss:
 
 ------------------------------------
@@ -71,6 +77,8 @@ To invoke :program:`configure-lockss`, follow these steps as the ``lockss`` user
 
 The script will begin with the first series of configuration questions from :numref:`Kubernetes Settings` (:ref:`Kubernetes Settings`).
 
+.. index:: configure-lockss; Kubernetes
+
 -------------------
 Kubernetes Settings
 -------------------
@@ -80,6 +88,8 @@ Prompt: :guilabel:`Command to use to execute kubectl commands`
 Enter the command to invoke :program:`kubectl` in your environment. If you are using the :term:`K3s` Kubernetes environment that ships with the LOCKSS system, the proposed value is already correct.
 
 .. FIXME the script can exit here if the K8s (sic) config file can't be written to
+
+.. index:: configure-lockss; network
 
 ----------------
 Network Settings
@@ -128,6 +138,8 @@ Network Address Translation
 
    Enter the *publicly routable IP address of the NAT router*. This complements the other IP address you entered in :numref:`IP Address` (:ref:`IP Address`).
 
+.. index:: configure-lockss; mail
+
 -------------
 Mail Settings
 -------------
@@ -167,6 +179,8 @@ Prompt: :guilabel:`E-mail address for administrator`
 
 Enter the e-mail address of the person or team who will administer the LOCKSS node.
 
+.. index:: configure-lockss; preservation network
+
 -----------------------------
 Preservation Network Settings
 -----------------------------
@@ -204,6 +218,8 @@ Prompt: :guilabel:`Preservation group(s)`
 
 Enter a preservation group identifier (or a semicolon-separated list of preservation group identifiers). This will be given to you by your LOCKSS network administrator. For example in the Global LOCKSS Network (GLN), this is ``prod``.
 
+.. index:: configure-lockss; Web user interface
+
 ---------------------------
 Web User Interface Settings
 ---------------------------
@@ -238,6 +254,8 @@ Container Subnet
 
    Enter the subnet used for inter-container communication. We recommend accepting the proposed value by hitting :kbd:`Enter`.
 
+.. index:: configure-lockss; storage areas
+
 -------------
 Storage Areas
 -------------
@@ -247,6 +265,8 @@ The :term:`LOCKSS stack` needs several kinds of :term:`content storage` and :ter
 Depending on your host system's layout, these storage areas may or may not be the same mount points or paths. Each path must be writeable by the ``lockss`` user.
 
 Subdirectories will be created in each storage area to fit the needs of each :doc:`stack component </introduction/components>`; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's state data directory in the :term:`state data storage area`, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log directory in the :term:`log storage area`.
+
+.. index:: content storage area; configuration
 
 Content Storage Areas
 =====================
@@ -261,12 +281,16 @@ Content Storage Areas
 
    If you have done anything other add new content storage areas to the end of the previously-entered list, you must run ``scripts/reindex-artifacts`` after completion of :program:`configure-lockss`, before starting the system.
 
+.. index:: state data storage area; configuration
+
 State Data Storage Area
 =======================
 
 Prompt: :guilabel:`Path of the state data storage area`
 
 Enter the desired path for the :term:`state data storage area`, which by default is the same as the *first* of the :ref:`Content Storage Areas`.
+
+.. index:: log storage area; configuration
 
 Log Storage Area
 ================
@@ -275,12 +299,16 @@ Prompt: :guilabel:`Path of the log storage area`
 
 Enter the desired path for the :term:`log storage area`, which by default is the same as the :ref:`State Data Storage Area`.
 
+.. index:: temporary storage area; configuration
+
 Temporary Storage Area
 ======================
 
 Prompt: :guilabel:`Path of the temporary storage area`
 
 Enter the desired path for the :term:`temporary storage area`, which by default is the same as the :ref:`State Data Storage Area`.
+
+.. index:: configure-lockss; database
 
 -----------------
 Database Settings
@@ -358,9 +386,11 @@ You will receive the following prompt:
 
          Re-enter the password for the username in the external PostgreSQL database. If the two passwords do not match, the password will be asked again.
 
----------------
-LOCKSS Services
----------------
+.. index:: configure-lockss; stack components
+
+-------------------------
+Stack Component Selection
+-------------------------
 
 Crawler Service
 ===============
@@ -379,19 +409,12 @@ Crawler Service
 
       Enter :kbd:`Y` if you want to enable the usage of the external Wget crawler, otherwise :kbd:`N`.
 
-Metadata Query Service
+Metadata Service
 ======================
 
-Prompt: :guilabel:`Use LOCKSS Metadata Query Service?`
+Prompt: :guilabel:`Use LOCKSS Metadata Service?`
 
-Enter :kbd:`Y` if you want the metadata query service to be run, otherwise :kbd:`N`.
-
-Metadata Extraction Service
-===========================
-
-Prompt: :guilabel:`Use LOCKSS Metadata Extraction Service?`
-
-Enter :kbd:`Y` if you want the metadata extraction service to be run, otherwise :kbd:`N`.
+Enter :kbd:`Y` if you want the metadata service to be run, otherwise :kbd:`N`.
 
 SOAP Compatibility Service
 ==========================
@@ -399,6 +422,8 @@ SOAP Compatibility Service
 Prompt: :guilabel:`Use LOCKSS SOAP Compatibility Service?`
 
 Enter :kbd:`Y` if you want the SOAP compatibility service to be run, otherwise :kbd:`N`. (This is only needed if you have external tools using the LOCKSS' legacy SOAP Web Services.)
+
+.. index:: configure-lockss; Web replay
 
 -------------------
 Web Replay Settings
@@ -427,6 +452,8 @@ OpenWayback
    :guilabel:`Not enabling OpenWayback Service`
 
    and OpenWayback will not be run.
+
+.. index:: configure-lockss; confirmation
 
 -----------
 Final Steps

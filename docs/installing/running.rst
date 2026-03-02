@@ -15,7 +15,11 @@ Running :program:`install-lockss`
          :depth: 1
          :backlinks: none
 
-This section describes how to run :program:`install-lockss`, a script in the :term:`LOCKSS Installer` that installs the infrastructure necessary to run the :term:`LOCKSS stack` on your host system. The installation process goes through various phases -- checking system prerequisites, configuring firewall and DNS settings, and installing and testing :term:`K3s`.
+.. include:: /glossary/install-lockss.rst
+
+This section describes how to run :term:`install-lockss`.
+
+.. index:: install-lockss; invocation
 
 ----------------------------------
 Invoking :program:`install-lockss`
@@ -33,16 +37,18 @@ To start the installation process, follow these steps as ``root``:
 
       scripts/install-lockss
 
-The installer will run through its **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`Completion of the LOCKSS Installation Process` (:ref:`Completion of the LOCKSS Installation Process`).
+:term:`install-lockss` will run through successive **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`Completion of the LOCKSS Installation Process` (:ref:`Completion of the LOCKSS Installation Process`).
 
 .. tip::
+
+   .. index:: install-lockss; skipping phases
 
    .. dropdown:: Skipping :program:`install-lockss` phases
       :name: skipping-install-lockss-phases
       :icon: light-bulb
       :animate: fade-in-slide-down
 
-      You may need to skip some of the phases of :program:`install-lockss`, for example to overcome an incompatibility with the specifics of your host system. If this is necessary, invoke :program:`install-lockss` with one or more of the following options:
+      You may need to skip some of the phases of :term:`install-lockss`, for example to overcome an incompatibility with the specifics of your host system. If this is necessary, invoke :term:`install-lockss` with one or more of the following options:
 
       .. list-table::
          :header-rows: 1
@@ -77,12 +83,14 @@ The installer will run through its **phases**, each of which is described below 
 
           [success] Skipping (--skip-configure-firewalld)
 
+   .. index:: install-lockss; running one phase
+
    .. dropdown:: Running only one :program:`install-lockss` phase
       :name: running-only-one-install-lockss-phase
       :icon: light-bulb
       :animate: fade-in-slide-down
 
-      Conversely, you may need to run or re-run only one phase of :program:`install-lockss`, for example re-running the :ref:`Testing the K3s Node` phase after it fails and you perform some troubleshooting. If this is necessary, invoke :program:`install-lockss` with exactly one of the following options:
+      Conversely, you may need to run or re-run only one phase of :term:`install-lockss`, for example re-running the :ref:`Testing the K3s Node` phase after it fails and you perform some troubleshooting. If this is necessary, invoke :term:`install-lockss` with exactly one of the following options:
 
       .. list-table::
          :header-rows: 1
@@ -106,18 +114,22 @@ The installer will run through its **phases**, each of which is described below 
          *  *  ``--test-k3s`` (or ``-T``)
             *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
 
+   .. index:: install-lockss; running on auto-pilot
+
    .. dropdown:: Running :program:`install-lockss` on auto-pilot
       :name: running-install-lockss-on-auto-pilot
       :icon: light-bulb
       :animate: fade-in-slide-down
 
-      If you invoke :program:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+      If you invoke :term:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+
+.. index:: install-lockss; system prerequisites
 
 -----------------------------
 Checking System Prerequisites
 -----------------------------
 
-During this phase, :program:`install-lockss` will check that certain system prerequisites are met. This phase begins with the heading:
+During this phase, :term:`install-lockss` will check that certain system prerequisites are met. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -130,6 +142,8 @@ No user interaction is expected; if everything goes well, you will see this mess
    [success] System prerequisites checked
 
 and :program:`install-lockss` will successfully proceed to :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`).
+
+.. index:: install-lockss; error condition
 
 .. admonition:: Error conditions and what to do about them
 
@@ -163,13 +177,15 @@ and :program:`install-lockss` will successfully proceed to :numref:`Checking K3s
 
       and :program:`install-lockss` will fail. See :doc:`user`, then try again.
 
+.. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
+
 --------------------------
 Checking K3s Prerequisites
 --------------------------
 
 .. COMMENT This section is referenced in the glossary entry for K3s as the beginning of the sequence of preliminary steps for installing K3s
 
-During this phase, :program:`install-lockss` will check that certain prerequisites to installing :term:`K3s` are met. This phase begins with this heading:
+During this phase, :term:`install-lockss` will check that certain prerequisites to installing :term:`K3s` are met. This phase begins with this heading:
 
 .. code-block:: text
 
@@ -182,6 +198,8 @@ No user interaction is expected; if everything goes well, you will see this mess
    [success] K3s prerequisites checked
 
 and :program:`install-lockss` will successfully proceed to :numref:`configuring-iptables` (:ref:`configuring-iptables`).
+
+.. index:: install-lockss; error condition
 
 .. admonition:: Error conditions and what to do about them
 
@@ -266,11 +284,14 @@ and :program:`install-lockss` will successfully proceed to :numref:`configuring-
 
 .. _configuring-iptables:
 
+.. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
+   pair: install-lockss; iptables
+
 ---------------------------------------
 Configuring :program:`iptables` for K3s
 ---------------------------------------
 
-During this phase, :program:`install-lockss` will configure :program:`iptables` to work with :term:`K3s`, if applicable. This phase begins with the heading:
+During this phase, :term:`install-lockss` will configure :term:`iptables` to work with :term:`K3s`, if applicable. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -308,6 +329,8 @@ Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or ente
 
    and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention; see :doc:`/troubleshooting/iptables` for details.
 
+.. index:: install-lockss; error condition
+
 .. admonition:: Error conditions and what to do about them
 
    .. dropdown:: :program:`iptables` configuration attempt fails
@@ -333,11 +356,14 @@ Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or ente
 
 .. _configuring-firewalld:
 
+.. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
+   pair: install-lockss; firewalld
+
 ----------------------------------------
 Configuring :program:`firewalld` for K3s
 ----------------------------------------
 
-During this phase, :program:`install-lockss` will configure :program:`firewalld` to work with K3s, if applicable. This phase begins with the heading:
+During this phase, :term:`install-lockss` will configure :term:`firewalld` to work with :term:`K3s`, if applicable. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -369,6 +395,8 @@ Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or ent
 
    and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention; see :doc:`/troubleshooting/firewalld` for details.
 
+.. index:: install-lockss; error condition
+
 .. admonition:: Error conditions and what to do about them
 
    .. dropdown:: :program:`firewalld` configuration attempt fails
@@ -390,17 +418,20 @@ Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or ent
 
 .. _configuring-ufw:
 
+.. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
+   pair: install-lockss; ufw
+
 ----------------------------------
 Configuring :program:`ufw` for K3s
 ----------------------------------
 
-During this phase, :program:`install-lockss` will configure :program:`ufw` to work with K3s, if necessary. This phase begins with the heading:
+During this phase, :term:`install-lockss` will configure :term:`ufw` to work with :term:`K3s`, if necessary. This phase begins with the heading:
 
 .. code-block:: text
 
    Configuring ufw for K3s...
 
-In many situations, no configuration of :program:`firewalld` is needed; you will see one of these messages:
+In many situations, no configuration of :program:`ufw` is needed; you will see one of these messages:
 
 .. code-block:: text
 
@@ -426,6 +457,8 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kb
 
    and :program:`install-lockss` will keep going. But K3s may malfunction without further intervention. See :doc:`/troubleshooting/ufw` for details.
 
+.. index:: install-lockss; error condition
+
 .. admonition:: Error conditions and what to do about them
 
    .. dropdown:: :program:`ufw` configuration attempt fails
@@ -445,13 +478,16 @@ Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kb
 
       and :program:`install-lockss` will fail. See :doc:`/troubleshooting/ufw` for remediation details.
 
+.. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
+   pair: install-lockss; CoreDNS
+
 ---------------------------
 Configuring CoreDNS for K3s
 ---------------------------
 
 .. COMMENT This section is referenced in the glossary entry for K3s as the end of the sequence of preliminary steps for installing K3s
 
-During this phase, :program:`install-lockss` will configure CoreDNS to work with K3s, if necessary. This phase begins with the heading:
+During this phase, :term:`install-lockss` will configure :term:`CoreDNS` to work with :term:`K3s`, if necessary. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -470,6 +506,8 @@ Otherwise [#fn-force-dns]_, you will receive a message including ``CoreDNS does 
 :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
 Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested value will be offered to you in square brackets, consisting of non-loopback IP addresses collected from your machine's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value [#fn-yes2]_.
+
+.. index:: install-lockss; error condition
 
 .. admonition:: Error conditions and what to do about them
 
@@ -490,11 +528,14 @@ Enter a semicolon-separated list of DNS server IP addresses that are *not* loopb
 
       and :program:`install-lockss` will fail. See :doc:`/troubleshooting/coredns` for remediation details.
 
+.. index:: K3s; installation
+   pair: install-lockss; K3s
+
 --------------
 Installing K3s
 --------------
 
-During this phase, :program:`install-lockss` will install K3s |K3S_PATCH|, if applicable. This phase begins with the heading:
+During this phase, :term:`install-lockss` will install :term:`K3s` |K3S_PATCH|, if applicable. This phase begins with the heading:
 
 .. code-block:: text
 
@@ -524,7 +565,7 @@ This phase consists of these steps:
 
    *  If :program:`install-lockss` determined in the previous step that it *will install* K3s |K3S_PATCH|, you will see the confirmation :samp:`Installing K3s version {<intended_version>}`, and this step will proceed as follows:
 
-      a. First, :program:`install-lockss` will ask you to specify the **K3s data directory** (the directory K3s uses to store state data), with this prompt:
+      a. First, :program:`install-lockss` will ask you to specify the :term:`K3s data directory` with this prompt:
 
          :guilabel:`K3s data directory`
 
@@ -535,6 +576,8 @@ This phase consists of these steps:
       b. Then :program:`install-lockss` will attempt to determine the filesystem type of the specified K3s data directory. In many situations, it will simply display the filesystem type in a message similar to this (for example, :samp:`{<filesystem_type>}` might be ``ext4``):
 
          :samp:`Filesystem type of {<path_of_k3s_dir>} ({<mountpoint_of_k3s_dir>}) is {<filesystem_type>}; proceeding`
+
+         .. index:: install-lockss; error condition
 
          .. admonition:: Error conditions and warnings, and what to do about them
 
@@ -586,7 +629,9 @@ This phase consists of these steps:
 
       c. Then :program:`install-lockss` will download the K3s Installer from https://get.k3s.io/ and invoke it with suitable options. This may take several minutes, during which the output to the console will be from the K3s Installer, not from :program:`install-lockss`.
 
-         Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components, using :program:`sudo` if necessary (which may prompt for the user's :program:`sudo` password).
+         Depending on your operating system and other factors, the K3s Installer may install additional software packages or configure system components.
+
+         .. index:: install-lockss; error condition
 
          .. admonition:: Error conditions and what to do about them
 
@@ -614,6 +659,8 @@ This phase consists of these steps:
 
 3. Finally, whether or not K3s was installed in the previous step, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg` (relative to the :ref:`LOCKSS Installer Directory`).
 
+   .. index:: install-lockss; error condition
+
    .. admonition:: Error conditions and what to do about them
 
       .. dropdown:: Could not write or append to :file:`k8s.cfg`
@@ -631,11 +678,13 @@ This phase consists of these steps:
 
          and :program:`install-lockss` will fail. Check for file permission mismatches between the user running :program:`install-lockss` and the :file:`lockss-installer/config` directory, then try again.
 
+.. index:: install-lockss; K3s testing, K3s; testing
+
 --------------------
 Testing the K3s Node
 --------------------
 
-During this phase, :program:`install-lockss` runs a series of tests to verify that the K3s node is operational and its networking and DNS infrastructure is working. This phase begins with the heading:
+During this phase, :term:`install-lockss` runs a series of tests to verify that the :term:`K3s` node is operational and its networking and DNS infrastructure is working. This phase begins with the heading:
 
 .. code-block::
 
@@ -650,6 +699,8 @@ No user interaction is expected. If all tests pass, you will see the message:
 and :program:`install-lockss` will successfully proceed to :numref:`Completion of the LOCKSS Installation Process` (:ref:`Completion of the LOCKSS Installation Process`).
 
 Otherwise, you will see an error message corresponding to the test that did not pass, and :program:`install-lockss` will fail.
+
+.. index:: install-lockss; error condition
 
 .. admonition:: Error conditions and what to do about them
 
@@ -749,7 +800,9 @@ If all phases completed successfully, you will see the message:
 
    [success] Successful completion of the LOCKSS installation process
 
-and :program:`install-lockss` will terminate.
+and :term:`install-lockss` will terminate.
+
+.. index:: K3s; configuration check, K3s; check-config
 
 ------------------------------
 Checking the K3s Configuration
@@ -759,7 +812,7 @@ Checking the K3s Configuration
 
    This section is optional.
 
-K3s comes with :program:`k3s check-config`, a configuration checker tool. The K3s configuration checker is capable of detecting complex underlying system situations that definitely require fixing (or applications running in the K3s cluster will not be able to function properly). On the other hand, the versions of the K3s configuration checker available at the time LOCKSS |LATEST_MINOR| was released contained bugs that reported spurious issues that are either inaccurate or moot. As a result, we have decided against running :program:`k3s check-config` as part of :program:`install-lockss` at this time, to avoid unnecessary interruptions in the installation of the LOCKSS system in many cases where there is no particular cause for concern.
+K3s comes with :program:`k3s check-config`, a configuration checker tool. The K3s configuration checker is capable of detecting complex underlying system situations that definitely require fixing (or applications running in the K3s cluster will not be able to function properly). On the other hand, the versions of the K3s configuration checker available at the time LOCKSS |LATEST_MINOR| was released contained bugs that reported spurious issues that are either inaccurate or moot. As a result, we have decided against running :program:`k3s check-config` as part of :term:`install-lockss` at this time, to avoid unnecessary interruptions in the installation of the LOCKSS system in many cases where there is no particular cause for concern.
 
 That being said, we still recommend running :program:`k3s check-config` and interpreting the results using the :ref:`Troubleshooting the K3s Configuration Checker` section of the manual:
 

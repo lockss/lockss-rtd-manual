@@ -27,6 +27,7 @@ Version |LATEST_MINOR|
    sysadmin/index
    appendix/index
    glossary/index
+   genindex
 
 .. only:: html
 

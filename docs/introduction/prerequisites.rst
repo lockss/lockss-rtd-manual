@@ -136,6 +136,8 @@ The LOCKSS system makes use of three kinds of **storage**:
       *  Preserved content
       *  :numref:`Content Storage Prerequisites` (:ref:`Content Storage Prerequisites`)
 
+.. index:: system storage; prerequisites
+
 System Storage Prerequisites
 ============================
 
@@ -187,6 +189,8 @@ The most significant portion of :term:`system storage` used by the LOCKSS stack 
 
       FIXME
 
+.. index:: operating storage; prerequisites
+
 Operating Storage Prerequisites
 ===============================
 
@@ -229,6 +233,8 @@ Operating storage consists of three storage areas:
       :animate: fade-in-slide-down
 
       FIXME
+
+.. index:: content storage; prerequisites
 
 Content Storage Prerequisites
 =============================

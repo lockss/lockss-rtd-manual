@@ -2,10 +2,6 @@
 Downloading the LOCKSS Installer
 ================================
 
-.. note::
-
-   Commands in this section are run as the ``lockss`` user.
-
 .. only:: html and not singlehtml
 
    .. sidebar::
@@ -23,9 +19,14 @@ LOCKSS Installer Directory
 
 .. include:: /glossary/lockss-installer-directory.rst
 
+.. index:: ! LOCKSS_INSTALLER_DIRECTORY
+   single: symbol; LOCKSS_INSTALLER_DIRECTORY
+
 In this manual, it will sometimes be represented symbolically as :samp:`{<LOCKSS_INSTALLER_DIR>}`. Many commands, such as those to configure, start and stop the :term:`LOCKSS stack`, are relative to the LOCKSS Installer Directory, meaning you need to navigate to it at the console using :program:`cd` before issuing the relevant command:
 
 :samp:`cd {<LOCKSS_INSTALLER_DIR>}`
+
+.. index:: LOCKSS Installer Directory; default
 
 ----------------------------------
 Default LOCKSS Installer Directory
@@ -35,11 +36,19 @@ The **default** :ref:`LOCKSS Installer Directory` is :file:`{$HOME}/lockss-insta
 
 You can specify a :ref:`custom-lockss-installer-directory` when :ref:`Running the LOCKSS Downloader` by using its ``--download-dir`` option.
 
+.. index::
+   single: LOCKSS Installer; installation
+   single: LOCKSS Downloader; invocation
+
 -----------------------------
 Running the LOCKSS Downloader
 -----------------------------
 
-To download the LOCKSS Installer, you will use `Curl <https://curl.se/>`_ or `Wget <https://www.gnu.org/software/wget/>`_ [#fn-fetcher]_ to invoke the LOCKSS Downloader [#fn-downloader]_, whose default action is to download the LOCKSS Installer.
+.. note::
+
+   Commands in this section are run as the ``lockss`` user.
+
+To download the LOCKSS Installer, you will use :term:`Curl` or :term:`Wget` [#fn-fetcher]_ to invoke the :term:`LOCKSS Downloader`, whose default action is to download the LOCKSS Installer.
 
 Run this Curl or Wget command [#fn-fetcher]_ as the ``lockss`` user:
 
@@ -121,6 +130,8 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
          You can append to ``./lockss-downloader.sh`` all the same options that can be appended to the ``| sh -s -`` part of the Curl or Wget commands documented in this section, for instance :samp:`./lockss-downloader --download-dir={DIR}`; see :ref:`custom-lockss-installer-directory` or :ref:`custom-lockss-installer-version` below.
 
+   .. index:: LOCKSS Installer Directory; custom, LOCKSS Installer; custom directory
+
    .. dropdown:: Custom LOCKSS Installer Directory
       :name: custom-lockss-installer-directory
       :icon: light-bulb
@@ -128,26 +139,26 @@ This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer 
 
       If you need your :ref:`LOCKSS Installer Directory` to be a directory :samp:`{DIR}` other than the :ref:`Default LOCKSS Installer Directory`, add :samp:`--download-dir={DIR}` (or :samp:`-d {DIR}`) after ``| sh -s -``, like so:
 
-      .. code-block:: shell
-
-         ... | sh -s - --download-dir=DIR
+      :samp:`... | sh -s - --download-dir={DIR}`
 
       .. warning::
 
-         If you specify a custom LOCKSS Installer Directory in the LOCKSS Downloader when :doc:`index` for the first time, you need to specify the same custom LOCKSS Installer Directory in the LOCKSS Downloader whenever :doc:`/upgrading/index` in the future.
+         If you specify a custom LOCKSS Installer Directory in the LOCKSS Downloader when :doc:`index` for the first time, you will need to specify the same custom LOCKSS Installer Directory in the LOCKSS Downloader whenever :doc:`/upgrading/index` in the future.
+
+   .. index:: LOCKSS Installer; custom version
 
    .. dropdown:: Custom version of the LOCKSS Installer
       :name: custom-lockss-installer-version
       :icon: light-bulb
       :animate: fade-in-slide-down
 
-      If you have a reason to install a version of the LOCKSS Installer other than the latest stable release |LATEST_PATCH|, you can do so by making references to the ``lockss-installer`` Git repository on GitHub [#fn-installer]_:
+      If you have a reason to install a version of the LOCKSS Installer other than the latest stable release |LATEST_PATCH|, you can do so by making references to the ``lockss-installer`` :term:`Git` repository on :term:`GitHub` [#fn-installer]_:
 
-      *  You can install a version from the tip of a given Git branch :samp:`{BRA}` of the ``lockss-installer`` repository (e.g. ``develop``) by adding :samp:`--git-branch={BRA}` (or :samp:`-b {BRA}`) after ``| sh -s -``. This might be needed if you are helping the LOCKSS Team test a development, pre-release, or hotfix version of the LOCKSS Installer.
+      *  You can install a version from the tip of a given Git branch :samp:`{BRA}` of the ``lockss-installer`` repository (e.g. ``develop``) by adding :samp:`--git-branch={BRA}` (or :samp:`-b {BRA}`) after ``| sh -s -`` in the command above. This might be needed if you are helping the LOCKSS Team test a development, pre-release, or hotfix version of the LOCKSS Installer.
 
-      *  You can install a version labeled by a given Git tag :samp:`{TAG}` of the ``lockss-installer`` repository (e.g. ``version-2.0.72-alpha7``) by adding :samp:`--git-tag={TAG}` (or :samp:`-t {TAG}`) after ``| sh -s -``. This might be needed if you are installing a specific past version of the LOCKSS Installer.
+      *  You can install a version labeled by a given Git tag :samp:`{TAG}` of the ``lockss-installer`` repository (e.g. ``version-2.0.81-beta1``) by adding :samp:`--git-tag={TAG}` (or :samp:`-t {TAG}`) after ``| sh -s -`` in the command above. This might be needed if you are installing a specific past version of the LOCKSS Installer.
 
-      *  You can install a version as of a specific Git commit :samp:`{COM}` of the ``lockss-installer`` repository by adding :samp:`--git-commit={COM}` (or :samp:`-c {COM}`) after ``| sh -s -``. This might be needed if you are helping the LOCKSS Team test a development version of the LOCKSS Installer from a specific point in time in its Git history.
+      *  You can install a version as of a specific Git commit :samp:`{COM}` of the ``lockss-installer`` repository by adding :samp:`--git-commit={COM}` (or :samp:`-c {COM}`) after ``| sh -s -`` in the command above. This might be needed if you are helping the LOCKSS Team test a development version of the LOCKSS Installer from a specific point in time in its Git history.
 
    .. dropdown:: Considerations if using ``sudo -u lockss``
       :name: considerations-if-using-sudo-u-lockss
