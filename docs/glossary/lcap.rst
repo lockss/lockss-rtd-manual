@@ -1,0 +1,1 @@
+:term:`LCAP`, short for LOCKSS Content Audit Protocol [#fn-lcap]_, is the sophisticated cryptographic audit and repair protocol at the heart of :term:`LOCKSS <LOCKSS system>`, that enables peer-to-peer networks called :term:`LOCKSS networks <LOCKSS network>` to preserve data together.

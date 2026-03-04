@@ -114,7 +114,7 @@ Prompt: :guilabel:`IP address of this machine`
 Initial UI Subnet
 =================
 
-Prompt: :guilabel:`Initial subnet(s) for admin UI access`
+Prompt: :guilabel:`Initial subnet(s) for admin UI access, separated by ';'`
 
 Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces (UI) of the system. The access list can be modified later via the UI.
 
@@ -214,7 +214,7 @@ If the configuration URL can be reached directly, hit :kbd:`Enter` to leave this
 Preservation Groups
 ===================
 
-Prompt: :guilabel:`Preservation group(s)`
+Prompt: :guilabel:`Preservation group(s), separated by ';'`
 
 Enter a preservation group identifier (or a semicolon-separated list of preservation group identifiers). This will be given to you by your LOCKSS network administrator. For example in the Global LOCKSS Network (GLN), this is ``prod``.
 
@@ -271,7 +271,7 @@ Subdirectories will be created in each storage area to fit the needs of each :do
 Content Storage Areas
 =====================
 
-1. Prompt: :guilabel:`Paths of the content storage areas (semicolon-separated)`
+1. Prompt: :guilabel:`Paths of the content storage areas, separated by ';'`
 
    Enter a semicolon-separated list of full paths of directories to be used as :term:`content storage areas <content storage area>`.
 

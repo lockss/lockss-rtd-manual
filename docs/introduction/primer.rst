@@ -11,15 +11,17 @@ LOCKSS Primer
          :depth: 1
          :backlinks: none
 
-This section offers a high-level introduction to the LOCKSS system, particularly LOCKSS 2.x.
+This section offers a high-level introduction to :term:`LOCKSS <LOCKSS system>`, particularly LOCKSS 2.x.
 
 ---------------
 What Is LOCKSS?
 ---------------
 
-The **LOCKSS system** is a mature, open source, distributed digital preservation software system developed by the `LOCKSS Program <https://www.lockss.org/>`_ at `Stanford University Libraries <https://library.stanford.edu/>`_.
+.. include:: /glossary/lockss-system.rst
 
-At the core of the LOCKSS system is **LCAP**, the LOCKSS Content Audit Protocol (originally the Library Content Audit Protocol), a sophisticated cryptographic audit and repair protocol that enables peer-to-peer networks called **LOCKSS networks** to preserve data together, with strong defense guarantees against digital preservation threats.
+At the core of the :term:`LOCKSS system` is :term:`LCAP`.
+
+.. include:: /glossary/lcap.rst
 
 The LOCKSS system also includes components, tools and features to support diverse digital preservation activities:
 
@@ -59,4 +61,11 @@ LOCKSS 2.x offers an array of improvements compared to LOCKSS 1.x:
 
 .. rubric:: Footnotes
 
-.. [#fn-warc] This is an implementation detail; to be stored, content does not have to be Web-harvested nor to be submitted as WARC files originally.
+
+.. [#fn-lcap]
+
+   Formely Library Audit Content Protocol.
+
+.. [#fn-warc]
+
+   This is an implementation detail; to be stored, content does not have to be Web-harvested nor to be submitted as WARC files originally.

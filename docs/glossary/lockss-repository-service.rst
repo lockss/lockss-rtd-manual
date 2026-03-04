@@ -1,0 +1,1 @@
+The :term:`LOCKSS Repository Service` is the mandatory component of the :term:`LOCKSS stack` responsible for storing data objects as :term:`artifacts <artifact>`.

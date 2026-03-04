@@ -1,0 +1,1 @@
+The :term:`LOCKSS Crawler Service` is an optional component of the :term:`LOCKSS stack` that can harvest content from the Web using a registered Web crawler.

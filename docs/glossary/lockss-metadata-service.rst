@@ -1,0 +1,1 @@
+The :term:`LOCKSS Metadata Service` is an optional component of the :term:`LOCKSS stack` that manages metadata extraction jobs and provides access to extracted metadata via DOI resolution, OpenURL queries, and other means.

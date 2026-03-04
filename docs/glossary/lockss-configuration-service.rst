@@ -1,0 +1,1 @@
+The :term:`LOCKSS Configuration Service` is the mandatory component of the :term:`LOCKSS stack` acting as its central nervous system, keeping state data and other configuration data information synchronized between :ref:`Stack Components`.

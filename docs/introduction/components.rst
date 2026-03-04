@@ -20,44 +20,54 @@ LOCKSS Service Components
 LOCKSS Repository Service
 =========================
 
-The **LOCKSS Repository Service** is responsible for storing data in artifacts (objects). It is a **mandatory** component of a LOCKSS stack.
+.. include:: /glossary/lockss-repository-service.rst
 
-By default, the LOCKSS Repository Service runs a REST API on port 24610 of your running LOCKSS stack [#fn-ports]_.
+By default, it runs a REST API on port 24611 [#fn-ports]_.
 
 LOCKSS Configuration Service
 ============================
 
-The **LOCKSS Configuration Service** is responsible for acting as the central nervous system of your LOCKSS stack, keeping state data and other information synchronized between stack components. It is a **mandatory** component of a LOCKSS stack.
+.. include:: /glossary/lockss-configuration-service.rst
 
-By default, the LOCKSS Configuration Service runs a REST API on port 24620 and a Web user interface on port 24021 of your running LOCKSS stack [#fn-ports]_.
+By default, it runs a REST API on port 24612 and a Web user interface on port 24602 [#fn-ports]_.
 
 LOCKSS Poller Service
 =====================
 
-The **LOCKSS Poller Service** is responsible for the LOCKSS audit and repair protocol that allows the multiple nodes in the LOCKSS network your stack is configured to be part of to preserve data together. It is a **mandatory** component of a LOCKSS stack.
+.. include:: /glossary/lockss-poller-service.rst
 
-By default, the LOCKSS Poller Service runs a REST API on port 24630 and a Web user interface on port 24031 of your running LOCKSS stack [#fn-ports]_. Additionally, by default, the LOCKSS audit and repair protocol (otherwise known as the LCAPv3 port or simply the LCAP port) occurs on port 9729.
+By default, it runs :term:`LCAP` on port 9729, a REST API on port 24603, and a Web user interface on port 24613 [#fn-ports]_.
 
 LOCKSS Crawler Service
 ======================
 
-In simple use cases, data is stored into the :ref:`LOCKSS Repository Service` using its REST API, and then preserved among the nodes in the LOCKSS network the node is part of by the :ref:`LOCKSS Poller Service` using the LOCKSS audit and repair protocol. The LOCKSS system is also often used to preserve content stored in the repository after being harvested from the Web. The **LOCKSS Crawler Service** manages Web crawls performed by registered Web crawlers. The LOCKSS Crawler Service is an **optional** component of a LOCKSS stack, needed if your application involves Web harvesting activities.
+.. include:: /glossary/lockss-crawler-service.rst
 
-The LOCKSS Crawler Service ships with the Classic LOCKSS Crawler, a mature, highly extensible Web crawler built into the LOCKSS system. It also includes an API framework for registering additional crawlers, and comes with one such external crawler, based on Wget. LOCKSS plugins are used to control Web harvesting behavior and implement custom behavior.
+Out of the box, the LOCKSS Crawler Service ships with the :term:`Classic LOCKSS Crawler`, a mature, highly extensible Web crawler built into :term:`LOCKSS <LOCKSS system>`.
 
-By default, the LOCKSS Crawler Service runs a REST API on port 24640 and a Web user interface on port 24041 of your running LOCKSS stack [#fn-ports]_.
+It also includes an API framework for registering external crawlers, and comes with one such external crawler, based on :term:`Wget`.
+
+:term:`LOCKSS plugins <LOCKSS plugin>` are used to control and customize Web harvesting behavior. You may run the LOCKSS Crawler Service as part of your LOCKSS stack if your application of :term:`LOCKSS <LOCKSS system>` involves Web crawling activities.
+
+By default, the LOCKSS Crawler Service runs a REST API on port 24614 and a Web user interface on port 24604 [#fn-ports]_.
 
 LOCKSS Metadata Service
 =======================
 
-LOCKSS plugins can also describe how to extract metadata or other meaning from preserved content, especially content harvested from the Web by the :ref:`LOCKSS Crawler Service`. The **LOCKSS Metadata Service** manages metadata extraction jobs and provides access to extracted metadata through DOI resolution, OpenURL queries and other means. The LOCKSS Metadata Service is an **optional** component of a LOCKSS stack, needed if your application involves metadata extraction and retrieval activities.
+.. include:: /glossary/lockss-metadata-service.rst
 
-By default, the LOCKSS Metadata Service runs a REST API on port 24650 and a Web user interface on port 24051 of your running LOCKSS stack [#fn-ports]_.
+:term:`LOCKSS plugins <LOCKSS plugin>` describe how to extract metadata or other meaning from preserved content, especially content harvested from the Web by the :term:`LOCKSS Crawler Service`. You may run the LOCKSS Metadata Service as part of your LOCKSS stack if your application of :term:`LOCKSS <LOCKSS system>` involves metadata extraction and retrieval activities.
+
+By default, the LOCKSS Metadata Service runs a REST API on port 24615 and a Web user interface on port 24605 [#fn-ports]_.
 
 LOCKSS SOAP Compatibility Service
 =================================
 
-LOCKSS 1.x offered a limited SOAP API. To help with the transition to the more comprehensive LOCKSS 2.x APIs, you can run the **LOCKSS SOAP Compatibility Service** as part of your stack, to offer an endpoint that implements a large subset of the LOCKSS 1.x SOAP API and translate the requests to corresponding LOCKSS 2.x REST API calls, routing them to the appropriate :ref:`LOCKSS Service Components`. This component is **optional**. By default, it runs on port 24675 of your running LOCKSS stack [#fn-ports]_.
+.. include:: /glossary/lockss-soap-compatibility-service.rst
+
+You may run it as part of your LOCKSS stack if your application of :term:`LOCKSS <LOCKSS system>` involves legacy use of the LOCKSS 1.x SOAP APIs, such as scripting.
+
+By default, it runs a SOAP API on port 24616 [#fn-ports]_.
 
 ------------------
 Web Replay Engines

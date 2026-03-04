@@ -884,11 +884,11 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
 .. [#fn-yes]
 
-   If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you.
+   If :program:`install-lockss` was invoked with the ``--assume-yes`` option, :kbd:`Y` is automatically entered for you. See :ref:`running-install-lockss-on-auto-pilot`.
 
 .. [#fn-yes2]
 
-   If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the suggested value is automatically accepted for you.
+   If :program:`install-lockss` was invoked with the ``--assume-yes`` option, the suggested value is automatically accepted for you. See :ref:`running-install-lockss-on-auto-pilot`.
 
 .. [#fn-force-dns]
 

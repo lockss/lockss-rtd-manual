@@ -1,0 +1,1 @@
+:term:`LOCKSS <LOCKSS system>` is an open source distributed digital preservation system developed by the :term:`LOCKSS program` at `Stanford University Libraries <https://library.stanford.edu/>`_.

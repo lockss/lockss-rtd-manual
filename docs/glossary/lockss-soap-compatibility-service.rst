@@ -1,0 +1,1 @@
+The :term:`LOCKSS SOAP Compatibility Service` is an optional component of the :term:`LOCKSS stack` that implements a subset of the limited LOCKSS 1.x SOAP APIs, to help with the transition to the comprehensive LOCKSS 2.x REST APIs.

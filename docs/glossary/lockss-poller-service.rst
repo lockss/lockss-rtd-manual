@@ -1,0 +1,1 @@
+The :term:`LOCKSS Poller Service` is the mandatory component of the :term:`LOCKSS stack` responsible for the operating :term:`LCAP`, the LOCKSS audit and repair protocol that allows the nodes in a :term:`LOCKSS network` to preserve data together.
