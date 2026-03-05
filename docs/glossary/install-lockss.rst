@@ -1,0 +1,1 @@
+:term:`install-lockss` is a script in the :term:`LOCKSS Installer` that installs the infrastructure necessary to run the :term:`LOCKSS stack` on your host system.
