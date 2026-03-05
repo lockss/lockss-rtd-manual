@@ -96,6 +96,8 @@ Glossary
    LCAP
       .. include:: lcap.rst
 
+      LCAP is named after `El Capitán <https://en.wikipedia.org/wiki/El_Capitan>`_. Before being called *LOCKSS Content Audit Protocol*, LCAP was called *Library Content Audit Protocol*.
+
    LOCKSS
       LOCKSS can refer to:
 
