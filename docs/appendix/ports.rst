@@ -4,7 +4,7 @@ Network Ports
 
 .. note::
 
-   Almost all ports changed in LOCKSS 2.0-beta2 compared to LOCKSS 2.0-beta1 and earlier "alpha" versions of LOCKSS 2.0. This can impact firewall rules, custom scripting, and other aspects.
+   Almost all ports changed in LOCKSS 2.0-beta2 compared to LOCKSS 2.0-beta1 and earlier "alpha" versions of LOCKSS 2.0. This can impact firewall rules, scripting, and other aspects. See :ref:`LOCKSS 2.0-beta2 Port Changes`.
 
 This section describes the default network ports used by the LOCKSS stack.
 
@@ -141,6 +141,77 @@ All ports are TCP in the 24600-24649 range (a subset of 24600-24699 previously),
       *  :octicon:`browser` Web replay
       *  :bdg-warning-line:`reserved for future use` (OpenWayback)
       *  
+
+-----------------------------
+LOCKSS 2.0-beta2 Port Changes
+-----------------------------
+
+.. list-table::
+   :header-rows: 1
+
+   *  *  Pre-2.0-beta2 Port
+      *  2.0-beta2 Port
+      *  Description
+   *  *  24602
+      *  24620
+      *  PostgreSQL
+   *  *  24603
+      *  n/a
+      *  Solr (no longer used)
+   *  *  24606
+      *  24621
+      *  ActiveMQ
+   *  *  24610
+      *  24611
+      *  LOCKSS Repository Service REST API
+   *  *  24620
+      *  24612
+      *  LOCKSS Configuration Service REST API
+   *  *  24621
+      *  24602
+      *  LOCKSS Configuration Service Web UI
+   *  *  24630
+      *  24613
+      *  LOCKSS Poller Service REST API
+   *  *  24631
+      *  24603
+      *  LOCKSS Poller Service Web UI
+   *  *  24640
+      *  n/a
+      *  LOCKSS Metadata Extraction Service REST API (merged into the LOCKSS Metadata Service)
+   *  *  24641
+      *  n/a
+      *  LOCKSS Metadata Extraction Service Web UI (merged into the LOCKSS Metadata Service)
+   *  *  24650
+      *  24615
+      *  LOCKSS Metadata Service REST API
+   *  *  24651
+      *  24605
+      *  LOCKSS Metadata Service Web UI
+   *  *  24660
+      *  24614
+      *  LOCKSS Crawler Service REST API
+   *  *  24661
+      *  24604
+      *  LOCKSS Crawler Service Web UI
+   *  *  24670
+      *  24630
+      *  Content proxy
+   *  *  24672
+      *  24631
+      *  Audit proxy
+   *  *  24674
+      *  24632
+      *  :bdg-primary:`UDP` ICP server
+   *  *  24675
+      *  24616
+      *  LOCKSS SOAP Compatibility Service SOAP API
+   *  *  24680
+      *  24640
+      *  ServeContent
+   *  *  24681
+      *  24641
+      *  Pywb
 
 ----
 
