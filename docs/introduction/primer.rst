@@ -19,8 +19,6 @@ What Is LOCKSS?
 
 .. include:: /glossary/lockss-system.rst
 
-At the core of the :term:`LOCKSS system` is :term:`LCAP`.
-
 .. include:: /glossary/lcap.rst
 
 The LOCKSS system also includes components, tools and features to support diverse digital preservation activities:

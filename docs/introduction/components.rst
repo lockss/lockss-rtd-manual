@@ -92,13 +92,15 @@ OpenWayback
 
 `OpenWayback <https://github.com/iipc/openwayback>`_ is an open source Web replay engine by the International Internet Preservation Cnsortium (IIPC). This **optional** component can be run as part of the LOCKSS stack and replay content from the :ref:`LOCKSS Repository Service`. By default, it runs on port 8080 of your running LOCKSS stack [#fn-ports]_.
 
----------------------
-Additional Components
----------------------
+------------------
+Support Components
+------------------
 
 .. tip::
 
-   LOCKSS |LATEST_MINOR| no longer requires a Solr database (embedded or external).
+   Since LOCKSS 2.0-beta2, LOCKSS no longer requires a `Solr <https://solr.apache.org/>`_ database (embedded or external).
+
+
 
 PostgreSQL Database
 ===================

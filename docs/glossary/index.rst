@@ -169,7 +169,7 @@ Glossary
       Operating storage consists of the :term:`state data storage area`, the :term:`log storage area`, and the :term:`temporary storage area`. All three can be set to the same actual directory.
 
    stack
-      A **container stack**, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
+      A *container stack*, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
 
       In particular, the suite of containers providing the functionality of the LOCKSS system as a whole is referred to as the :term:`LOCKSS stack`.
 
@@ -184,10 +184,10 @@ Glossary
       The most sizeable part of the system storage needs of the LOCKSS system is the :term:`K3s data directory`, which has its own particular requirements.
 
    temporary storage area
-      The :term:`LOCKSS stack`'s **temporary storage area** is devoted to temporary files, staging areas for unpacking compressed files or off-heap data processing, etc. The temporary storage area is one of the three areas of :term:`operating storage`, together with the :term:`state data storage area` and the :term:`log storage area`.
+      The :term:`LOCKSS stack`'s temporary storage area is devoted to temporary files, staging areas for unpacking compressed files or off-heap data processing, etc. The temporary storage area is one of the three areas of :term:`operating storage`, together with the :term:`state data storage area` and the :term:`log storage area`.
 
    ufw
-      `Ufw <https://launchpad.net/ufw>`_, also styled **UFW**, short for **Uncomplicated Firewall**, is an open source :term:`firewall` management tool for Linux.
+      `Ufw <https://launchpad.net/ufw>`_, also styled *UFW*, short for *Uncomplicated Firewall*, is an open source :term:`firewall` management tool for Linux.
 
       Ufw interacts with the Linux kernel's :term:`netfilter` framework via :term:`iptables`.
 
