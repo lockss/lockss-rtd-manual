@@ -108,9 +108,13 @@ Glossary
       *  The LOCKSS methodology. LOCKSS, short for "Lots Of Copies Keep Stuff Safe", is a digital preservation methodology.
 
    LOCKSS Configuration Service
+      .. index:: see: Configuration Service; LOCKSS Configuration Service
+
       .. include:: lockss-configuration-service.rst
 
    LOCKSS Crawler Service
+      .. index:: see: Crawler Service; LOCKSS Crawler Service
+
       .. include:: lockss-crawler-service.rst
 
    LOCKSS Downloader
@@ -125,18 +129,33 @@ Glossary
       .. include:: lockss-installer-directory.rst
 
    LOCKSS Metadata Service
+      .. index:: see: Metadata Service; LOCKSS Metadata Service
+
       .. include:: lockss-metadata-service.rst
 
    LOCKSS network
       A LOCKSS network is a peer-to-peer network of nodes running the :term:`LOCKSS  system`'s :term:`LCAP` audit and repair protocol to preserve data together.
 
+   LOCKSS plugin
+      .. index:: see: plugin; LOCKSS plugin
+
+      A LOCKSS plugin is a bundle of descriptors, rules and code that adapts the general :term:`LOCKSS <LOCKSS system>` software to a particular digital preservation target.
+
+      LOCKSS plugins offer numerous features that affect audit and repair (content canonicalization, poll weighting...), Web crawling (crawl initiation, crawl rules, crawl rates, ) FIXME
+
    LOCKSS Poller Service
+      .. index:: see: Poller Service; LOCKSS Poller Service
+
       .. include:: lockss-poller-service.rst
 
    LOCKSS program
       LOCKSS is a program of `Stanford University Libraries <https://library.stanford.edu/>`_, that develops the :term:`LOCKSS system` and provides digital preservation services.
 
    LOCKSS Repository Service
+      .. index::
+         see: Repository Service; LOCKSS Repository Service
+         see: Repository; LOCKSS Repository Service
+
       .. include:: lockss-repository-service.rst
 
    LOCKSS SOAP Compatibility Service
@@ -161,12 +180,26 @@ Glossary
 
       Nftables is developed by the `Netfilter <https://www.netfilter.org/>`_ project.
 
+   OpenWayback
+      FIXME
+
    operating storage
       .. include:: operating-storage.rst
 
       Operating storage is one of three kinds of storage needed by the LOCKSS stack, together with :term:`system storage` and :term:`content storage`.
 
       Operating storage consists of the :term:`state data storage area`, the :term:`log storage area`, and the :term:`temporary storage area`. All three can be set to the same actual directory.
+
+   PostgreSQL
+      `PostgreSQL <https://www.postgresql.org/>`_ is an open source relational database management system.
+
+      :term:`LOCKSS <LOCKSS system>` requires a PostgreSQL database. By default, it uses an embedded PostgreSQL database by running a PostgreSQL :term:`container` as part of the :term:`LOCKSS stack`, or it can be configured to use an external PostgreSQL database maintained outside the LOCKSS stack.
+
+   Pywb
+      FIXME
+
+   ServeContent
+      FIXME
 
    stack
       A *container stack*, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
@@ -193,6 +226,11 @@ Glossary
 
       Ufw is developed by `Canonical <https://canonical.com/>`_.
 
+   Web replay engine
+      A Web replay engine is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view the same URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
+
+      :term:`LOCKSS <LOCKSS system>` offers up to three Web replay engines: :term:`ServeContent`, :term:`Pywb`, and :term:`OpenWayback`.
+
    Wget
       `Wget <https://www.gnu.org/software/wget/>`_, or Wget for short, is an open source software package for downloading and uploading files.
 
@@ -202,10 +240,6 @@ Glossary
 
 .. rubric:: Footnotes
 
-
-.. [#fn-lcap]
-
-   Formely Library Audit Content Protocol.
 
 .. [#fn-stack]
 

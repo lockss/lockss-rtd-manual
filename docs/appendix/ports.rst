@@ -96,7 +96,7 @@ All ports are TCP in the 24600-24649 range (a subset of 24600-24699 previously),
    *  *  24620
       *  :octicon:`stack` Internal
       *  PostgreSQL database
-      *  PostgreSQL
+      *  :ref:`PostgreSQL`
    *  *  24621
       *  :octicon:`stack` Internal
       *  ActiveMQ JMS port
@@ -136,7 +136,7 @@ All ports are TCP in the 24600-24649 range (a subset of 24600-24699 previously),
    *  *  **24641**
       *  :octicon:`browser` Web replay
       *  Pywb Web replay engine
-      *  Pywb
+      *  :ref:`Pywb`
    *  *  24642
       *  :octicon:`browser` Web replay
       *  :bdg-warning-line:`reserved for future use` (OpenWayback)
