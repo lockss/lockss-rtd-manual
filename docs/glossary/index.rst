@@ -5,13 +5,29 @@ Glossary
 .. glossary::
    :sorted:
 
+   archival unit
+   AU
+      .. index::
+         see: AU; archival unit
+
+      In the :term:`LOCKSS system`, an archival unit, or *AU*, is an arbitrary collection of content preserved meaningfully together, such as a volume's worth of an academic journal, an e-book and all its related assets, a given collection of digitized materials, and similar.
+
+      Many LOCKSS functions operate at the AU level, such as :term:`LCAP` polling/voting, Web crawls, metadata extraction, and more. Each AU handled by the system is referenced by its :term:`archival unit identifier` or AUID. The shape and definition of an AU is determined by the :term:`LOCKSS plugin` that processes it.
+
+   archival unit identifier
+   AUID
+      .. index::
+         see: AUID; archival unit identifier
+
+      The unique identifier of a given :term:`archival unit` handled by the :term:`LOCKSS system`. The definition, and therefore AUID, of an AU is determined by the :term:`LOCKSS plugin` that processes it.
+
    container
       A software container, or simply a container, is a lightweight, narrow-purpose bundle of software code, its dependencies, and its environment, forming a virtual unit of software that can be run on a variety of host environments by a :term:`container orchestration system`.
 
       The LOCKSS system uses :term:`Docker` containers.
 
    container orchestration system
-      A container orchestration system is a software automation tool that configures, deploys and manages :term:`containers <container>` on a host system, providing them with a runtime environment and resources like storage and networking, and assembling them like building blocks into cohesive software applications called :term:`stacks <stack>` [#fn-stack]_.
+      A container orchestration system is a software automation tool that configures, deploys and manages :term:`containers <container>` on a host system, providing them with a runtime environment and resources such as storage and networking, and assembling them like building blocks into cohesive software applications called :term:`stacks <stack>` [#fn-stack]_.
 
       The LOCKSS system uses :term:`Kubernetes` as its container orchestration system.
 
@@ -27,8 +43,6 @@ Glossary
 
    Curl
       `Curl <https://curl.se/>`_, also styled **cURL**, is an open source software package for downloading and uploading files.
-
-      Curl is developed by a project community centered around its creator Daniel Stenberg.
 
    Docker
       `Docker <https://docs.docker.com/>`_ is a software development platform for :term:`containers <container>`.
@@ -66,7 +80,7 @@ Glossary
       .. include:: install-lockss.rst
 
    iptables
-      `iptables <https://netfilter.org/projects/iptables>`_ is an open source software package that implements :term:`firewall` rules using the Linux kernel's :term:`netfilter` packet filtering system.
+      `iptables <https://netfilter.org/projects/iptables>`_ is an open source software package that implements :term:`firewall` rules using the Linux kernel's :term:`netfilter` framework.
 
       Although still widely in use, iptables has been succeeded by :term:`nftables`.
 
@@ -80,20 +94,23 @@ Glossary
       K3s is developed by `Rancher <https://www.rancher.com/>`_, a subsidiary of `SUSE <https://www.suse.com/>`_.
 
    K3s data directory
-      :term:`K3s` downloads :term:`containers <container>` and stores configuration and other data into a directory known as the **K3s data directory**.
+      :term:`K3s` downloads :term:`containers <container>` and stores configuration and other data into a directory known as the K3s data directory.
 
       The K3s data directory is the most sizeable part of the :term:`system storage` needs of the LOCKSS system.
 
       Important prerequisites for running LOCKSS apply to the :term:`K3s data directory`, as outlined in :numref:`System Storage Prerequisites` (:ref:`System Storage Prerequisites`): :ref:`prerequisites-k3s-nfs`, :ref:`prerequisites-k3s-xfs`.
 
    Kubernetes
-      `Kubernetes <https://kubernetes.io/>`_ (pronounced *coo-burn-NET-ease*) is an open source :term:`container orchestration system`.
+      `Kubernetes <https://kubernetes.io/>`_, pronounced *coo-burn-NET-ease*, also styled *K8s*, is an open source :term:`container orchestration system`.
 
       The LOCKSS system uses the :term:`K3s` Kubernetes distribution.
 
       Kubernetes development is governed by the `Cloud Native Computing Foundation <https://www.cncf.io/>`_, a project of the `Linux Foundation <https://www.linuxfoundation.org/>`_.
 
+   LOCKSS Content Audit Protocol
    LCAP
+      .. index:: see: LCAP; LOCKSS Content Audit Protocol
+
       .. include:: lcap.rst
 
       LCAP is named after `El Capitán <https://en.wikipedia.org/wiki/El_Capitan>`_. Before being called *LOCKSS Content Audit Protocol*, LCAP was called *Library Content Audit Protocol*.
@@ -141,7 +158,7 @@ Glossary
 
       A LOCKSS plugin is a bundle of descriptors, rules and code that adapts the general :term:`LOCKSS <LOCKSS system>` software to a particular digital preservation target.
 
-      LOCKSS plugins offer numerous features that affect audit and repair (content canonicalization, poll weighting...), Web crawling (crawl initiation, crawl rules, crawl rates, ) FIXME
+      LOCKSS plugins offer numerous features that affect audit and repair (content canonicalization, poll result weighting...), Web crawling (crawl initiation, crawl rules, crawl rate limiting, HTTP response handling, URL normalization, custom link extraction...), metadata extraction, Web replay (link rewriting, HTML ``<meta>`` tag rewriting...), and more.
 
    LOCKSS Poller Service
       .. index:: see: Poller Service; LOCKSS Poller Service
@@ -181,7 +198,9 @@ Glossary
       Nftables is developed by the `Netfilter <https://www.netfilter.org/>`_ project.
 
    OpenWayback
-      FIXME
+      .. include:: openwayback.rst
+
+      OpenWayback development is shepherded by the `International Internet Preservation Consortium <https://www.netpreserve.org/>`_.
 
    operating storage
       .. include:: operating-storage.rst
@@ -196,10 +215,12 @@ Glossary
       :term:`LOCKSS <LOCKSS system>` requires a PostgreSQL database. By default, it uses an embedded PostgreSQL database by running a PostgreSQL :term:`container` as part of the :term:`LOCKSS stack`, or it can be configured to use an external PostgreSQL database maintained outside the LOCKSS stack.
 
    Pywb
-      FIXME
+      .. include:: pywb.rst
+
+      Pywb is developed by `Webrecorder <https://webrecorder.net/>`_.
 
    ServeContent
-      FIXME
+      .. include:: servecontent.rst
 
    stack
       A *container stack*, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
@@ -227,7 +248,8 @@ Glossary
       Ufw is developed by `Canonical <https://canonical.com/>`_.
 
    Web replay engine
-      A Web replay engine is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view the same URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
+   Web playback engine
+      A Web replay engine, or Web playback engine, is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view the same URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
 
       :term:`LOCKSS <LOCKSS system>` offers up to three Web replay engines: :term:`ServeContent`, :term:`Pywb`, and :term:`OpenWayback`.
 

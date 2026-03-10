@@ -1,0 +1,1 @@
+:term:`ServeContent` is an OpenURL resolver and sophisticated :term:`Web replay engine` built into :term:`LOCKSS <LOCKSS system>`, whose behavior can be customized via :term:`LOCKSS plugins <LOCKSS plugin>`.

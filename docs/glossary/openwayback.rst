@@ -1,0 +1,1 @@
+:term:`OpenWayback` (https://github.com/iipc/openwayback) is an open source :term:`Web replay engine`, available as an optional component of the :term:`LOCKSS stack`.

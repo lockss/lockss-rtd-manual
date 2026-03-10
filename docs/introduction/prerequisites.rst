@@ -1,3 +1,5 @@
+.. index:: system prerequisites
+
 ====================
 System Prerequisites
 ====================
@@ -13,16 +15,22 @@ System Prerequisites
 
 This section describes the Linux, CPU, memory, and storage prerequisites for LOCKSS |LATEST_MINOR|, which vary depending on the scope of your application.
 
+.. index:: system prerequisites; host
+
 ------------------
 Host Prerequisites
 ------------------
 
 LOCKSS |LATEST_MINOR| requires a **Linux** host (either a physical machine or a virtual machine), with at least some locally-attached storage.
 
+.. index:: system prerequisites; operating system
+
 Operating System Prerequisites
 ==============================
 
 More specifically, LOCKSS |LATEST_MINOR| requires a Linux distribution that is compatible with :term:`K3s`, the :term:`Kubernetes` distribution the :term:`LOCKSS stack` runs on. This prerequisite is met by many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu listed in the  :ref:`Compatible Operating Systems` appendix.
+
+.. index:: system prerequisites; Linux kernel
 
 Linux Kernel Prerequisites
 ==========================
@@ -77,6 +85,8 @@ Most versions of Linux distributions in the :ref:`Compatible Operating Systems` 
 
          the host does not satisfy the ``ip_tables`` loadable kernel module requirement. See :doc:`/sysadmin/kernel-iptables`.
 
+.. index:: system prerequisites; system software
+
 System Software Prerequisites
 =============================
 
@@ -102,11 +112,15 @@ System Software Prerequisites
 
       *  If either outputs an error message, the host does not satisfy the archiver requirement. See :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip`.
 
+.. index:: system prerequisites; CPU
+
 -----------------
 CPU Prerequisites
 -----------------
 
 The LOCKSS system runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which :doc:`components` you choose to run.
+
+.. index:: system prerequisites; memory
 
 --------------------
 Memory Prerequisites
@@ -136,7 +150,7 @@ The LOCKSS system makes use of three kinds of **storage**:
       *  Preserved content
       *  :numref:`Content Storage Prerequisites` (:ref:`Content Storage Prerequisites`)
 
-.. index:: system storage; prerequisites
+.. index:: system prerequisites; system storage, system storage; prerequisites
 
 System Storage Prerequisites
 ============================
@@ -191,6 +205,8 @@ The most significant portion of :term:`system storage` used by the LOCKSS stack 
 
 .. index:: operating storage; prerequisites
 
+.. index:: system prerequisites; operating storage, operating storage; prerequisites
+
 Operating Storage Prerequisites
 ===============================
 
@@ -235,6 +251,8 @@ Operating storage consists of three storage areas:
       FIXME
 
 .. index:: content storage; prerequisites
+
+.. index:: system prerequisites; content storage, content storage; prerequisites
 
 Content Storage Prerequisites
 =============================

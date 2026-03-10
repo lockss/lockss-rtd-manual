@@ -1,0 +1,1 @@
+:term:`Pywb` (https://github.com/webrecorder/pywb), pronounced "pie-W-B", is an open source :term:`Web replay engine`, available as an optional component of the :term:`LOCKSS stack`.

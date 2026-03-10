@@ -13,9 +13,9 @@ Stack Components
 
 This section presents the various components of :term:`LOCKSS <LOCKSS system>`, their function, and why you might run them as part of your :term:`LOCKSS stack`. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
 
-----------------------------
-Mandatory Service Components
-----------------------------
+--------------------------
+Mandatory Stack Components
+--------------------------
 
 .. index:: pair: LOCKSS Repository Service; LOCKSS stack
 
@@ -107,27 +107,33 @@ The LOCKSS stack can also run a number of :term:`Web replay engines <Web replay 
 ServeContent
 ============
 
-:term:`ServeContent` is the Web replay engine built into the LOCKSS system. In addition to typical link rewriting, the behavior of ServeContent can also be extended by LOCKSS plugins.
+.. include:: /glossary/servecontent.rst
 
-Currently, ServeContent is embedded in the :ref:`LOCKSS Poller Service`. It is an **optional** feature that can be switched on or off. By default, it runs on port 24680 of your running LOCKSS stack [#fn-ports]_.
+Currently, ServeContent is embedded in the :ref:`LOCKSS Poller Service` rather than deployed as a separate :term:`container` in the :term:`LOCKSS stack`.
+
+By default, it runs a Web application on port 24640 [#fn-ports]_.
 
 .. index:: pair: Pywb; LOCKSS stack
 
 Pywb
 ====
 
-`Pywb <https://github.com/webrecorder/pywb>`_ (pronounced "pie-W-B") is a sophisticated, open source Web replay engine by Webrecorder. This **optional** component can be run as part of the LOCKSS stack and replay content from the :ref:`LOCKSS Repository Service`. By default, it runs on port 24681 of your running LOCKSS stack [#fn-ports]_.
+.. include:: /glossary/pywb.rst
+
+By default, it runs a Web application on port 24641 [#fn-ports]_.
 
 .. index:: pair: OpenWayback; LOCKSS stack
 
 OpenWayback
 ===========
 
-`OpenWayback <https://github.com/iipc/openwayback>`_ is an open source Web replay engine by the International Internet Preservation Cnsortium (IIPC). This **optional** component can be run as part of the LOCKSS stack and replay content from the :ref:`LOCKSS Repository Service`. By default, it runs on port 8080 of your running LOCKSS stack [#fn-ports]_.
+.. include:: /glossary/openwayback.rst
 
----------------------
-Deprecated Components
----------------------
+By default, it runs a Web application on port 8080 [#fn-ports]_.
+
+---------------------------
+Deprecated Stack Components
+---------------------------
 
 As of LOCKSS 2.0-beta2, the :term:`LOCKSS stack` no longer requires a Solr database (embedded or external). Additionally, the LOCKSS Metadata Extraction Service has been merged into the :ref:`LOCKSS Metadata Service`.
 
