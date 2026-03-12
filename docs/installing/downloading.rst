@@ -36,9 +36,7 @@ The **default** :ref:`LOCKSS Installer Directory` is :file:`{$HOME}/lockss-insta
 
 You can specify a :ref:`custom-lockss-installer-directory` when :ref:`Running the LOCKSS Downloader` by using its ``--download-dir`` option.
 
-.. index::
-   single: LOCKSS Installer; installation
-   single: LOCKSS Downloader; invocation
+.. index:: LOCKSS Installer; installation, LOCKSS Downloader; invocation
 
 -----------------------------
 Running the LOCKSS Downloader
@@ -48,9 +46,9 @@ Running the LOCKSS Downloader
 
    Commands in this section are run as the ``lockss`` user.
 
-To download the LOCKSS Installer, you will use :term:`Curl` or :term:`Wget` [#fn-fetcher]_ to invoke the :term:`LOCKSS Downloader`, whose default action is to download the LOCKSS Installer.
+To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wget` [#fn-fetcher]_ to invoke the :term:`LOCKSS Downloader`, whose default action is to download the LOCKSS Installer.
 
-Run this Curl or Wget command [#fn-fetcher]_ as the ``lockss`` user:
+Run this Curl or Wget command as the ``lockss`` user:
 
 .. tab-set::
 

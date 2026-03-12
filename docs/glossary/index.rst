@@ -10,16 +10,20 @@ Glossary
       .. index::
          see: AU; archival unit
 
-      In the :term:`LOCKSS system`, an archival unit, or *AU*, is an arbitrary collection of content preserved meaningfully together, such as a volume's worth of an academic journal, an e-book and all its related assets, a given collection of digitized materials, and similar.
+      In the :term:`LOCKSS system`, an archival unit, or :abbr:`AU (archival unit)`, is an arbitrary collection of content preserved meaningfully together, such as a volume's worth of an academic journal, an e-book and all its related assets, a given collection of digitized materials, and similar.
 
-      Many LOCKSS functions operate at the AU level, such as :term:`LCAP` polling/voting, Web crawls, metadata extraction, and more. Each AU handled by the system is referenced by its :term:`archival unit identifier` or AUID. The shape and definition of an AU is determined by the :term:`LOCKSS plugin` that processes it.
+      Many LOCKSS functions operate at the AU level, such as :term:`LCAP` polling/voting, Web crawls, metadata extraction, and more. Each AU handled by the system is referenced by its :term:`archival unit identifier` or AUID.
+
+      The shape and definition of an AU is determined by the :term:`LOCKSS plugin` that processes it.
 
    archival unit identifier
    AUID
       .. index::
          see: AUID; archival unit identifier
 
-      The unique identifier of a given :term:`archival unit` handled by the :term:`LOCKSS system`. The definition, and therefore AUID, of an AU is determined by the :term:`LOCKSS plugin` that processes it.
+      The unique string identifier of a given :term:`archival unit` handled by the :term:`LOCKSS system` is called an archival unit identifier, or :abbr:`AUID (archival unit identifier)`.
+
+      The definition, and therefore AUID, of an AU is determined by the :term:`LOCKSS plugin` that processes it.
 
    container
       A software container, or simply a container, is a lightweight, narrow-purpose bundle of software code, its dependencies, and its environment, forming a virtual unit of software that can be run on a variety of host environments by a :term:`container orchestration system`.
@@ -41,8 +45,11 @@ Glossary
    content storage area
       A content storage area is an individual directory of :term:`content storage`, as content storage can consist of one or multiple areas.
 
+   CoreDNS
+      `CoreDNS <https://coredns.io/>`_ is an open source DNS server, used by :term:`K3s`.
+
    Curl
-      `Curl <https://curl.se/>`_, also styled **cURL**, is an open source software package for downloading and uploading files.
+      `Curl <https://curl.se/>`_, also styled *cURL*, is an open source software package for downloading and uploading files.
 
    Docker
       `Docker <https://docs.docker.com/>`_ is a software development platform for :term:`containers <container>`.
@@ -109,20 +116,22 @@ Glossary
 
    LOCKSS Content Audit Protocol
    LCAP
-      .. index:: see: LCAP; LOCKSS Content Audit Protocol
+      .. index::
+         see: LCAP; LOCKSS Content Audit Protocol
+         see: Library Content Audit Protocol; LOCKSS Content Audit Protocol
 
       .. include:: lcap.rst
 
-      LCAP is named after `El Capitán <https://en.wikipedia.org/wiki/El_Capitan>`_. Before being called *LOCKSS Content Audit Protocol*, LCAP was called *Library Content Audit Protocol*.
+      LCAP is named after `El Capitán <https://en.wikipedia.org/wiki/El_Capitan>`_. Before being called LOCKSS Content Audit Protocol, LCAP was called *Library Content Audit Protocol*.
 
    LOCKSS
       LOCKSS can refer to:
 
-      *  The LOCKSS software. LOCKSS is an open source distributed digital preservation system. See :term:`LOCKSS system`.
+      *  :term:`LOCKSS system`: LOCKSS is an open source distributed digital preservation system.
 
-      *  The LOCKSS program. LOCKSS is a program of Stanford University Libraries that develops the LOCKSS software and provides digital preservation services. See :term:`LOCKSS program`.
+      *  :term:`LOCKSS program`: LOCKSS is a program of Stanford University Libraries that develops the :term:`LOCKSS <LOCKSS system>` software and provides digital preservation services.
 
-      *  The LOCKSS methodology. LOCKSS, short for "Lots Of Copies Keep Stuff Safe", is a digital preservation methodology.
+      *  The acronym *Lots Of Copies Keep Stuff Safe*: "Lots of Copies KEep Stuff Safe" is a digital preservation methodology embodied by the :term:`LOCKSS <LOCKSS system>` software.
 
    LOCKSS Configuration Service
       .. index:: see: Configuration Service; LOCKSS Configuration Service
@@ -223,7 +232,7 @@ Glossary
       .. include:: servecontent.rst
 
    stack
-      A *container stack*, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
+      A container stack, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
 
       In particular, the suite of containers providing the functionality of the LOCKSS system as a whole is referred to as the :term:`LOCKSS stack`.
 
@@ -248,7 +257,8 @@ Glossary
       Ufw is developed by `Canonical <https://canonical.com/>`_.
 
    Web replay engine
-   Web playback engine
+      .. index:: see: Web playback engine; Web replay engine
+
       A Web replay engine, or Web playback engine, is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view the same URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
 
       :term:`LOCKSS <LOCKSS system>` offers up to three Web replay engines: :term:`ServeContent`, :term:`Pywb`, and :term:`OpenWayback`.

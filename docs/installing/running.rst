@@ -1,3 +1,5 @@
+.. _running install-lockss:
+
 =================================
 Running :program:`install-lockss`
 =================================
@@ -167,7 +169,7 @@ and :program:`install-lockss` will successfully proceed to :numref:`Checking K3s
       :icon: x-circle-fill
       :animate: fade-in-slide-down
 
-      If the ``lockss`` user or group does not exist on the host system, you will see one of these error messages:
+      If the ``lockss`` user (or group) does not exist on the host system, you will see one of these error messages:
 
       .. code-block:: text
 
@@ -505,7 +507,7 @@ Otherwise [#fn-force-dns]_, you will receive a message including ``CoreDNS does 
 
 :guilabel:`IP address(es) of DNS resolvers, separated by ';'`
 
-Enter a semicolon-separated list of DNS server IP addresses that are *not* loopback addresses. A suggested value will be offered to you in square brackets, consisting of non-loopback IP addresses collected from your machine's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value [#fn-yes2]_.
+Enter a semicolon-separated list of DNS server IP addresses **that are not loopback addresses**. A suggested value will be offered to you in square brackets, consisting of non-loopback IP addresses collected from your host system's DNS configuration; you can simply hit :kbd:`Enter` to accept the suggested value [#fn-yes2]_.
 
 .. index:: install-lockss; error condition
 

@@ -63,17 +63,17 @@ Most versions of Linux distributions in the :ref:`Compatible Operating Systems` 
       :name: prerequisites-iptables-lkm
       :animate: fade-in-slide-down
 
-      The ``ip_tables`` loadable kernel module is **required**, even if the programs :program:`iptables` or :program:`nftables` are not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
+      .. note::
+
+         Note the difference between the ``ip_tables`` (the loadable kernel module) and :term:`iptables` (the program).
+
+      The ``ip_tables`` loadable kernel module is **required**, even if :term:`iptables` or :term:`nftables` are not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
 
       .. code-block:: shell
 
          modinfo ip_tables
 
       at the host's command line.
-
-      .. note::
-
-         Note that in this context, the correct name is ``ip_tables`` (the loadable kernel module), not ``iptables`` (the program).
 
       *  If technical information about the module is output [#fn-iptables-lkm-example]_, the host satisfies the ``ip_tables`` loadable kernel module requirement.
 
@@ -96,7 +96,7 @@ System Software Prerequisites
       :name: prerequisites-fetcher
       :animate: fade-in-slide-down
 
-      At least one of Curl or Wget is **required**. You can check by typing ``curl --version`` or ``wget --version`` at the host's command line.
+      At least one of :term:`Curl` or :term:`Wget` is **required**. You can check by typing ``curl --version`` or ``wget --version`` at the host's command line.
 
       *  If either outputs a valid version message, the host satisfies the fetcher requirement.
 
@@ -118,7 +118,7 @@ System Software Prerequisites
 CPU Prerequisites
 -----------------
 
-The LOCKSS system runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which :doc:`components` you choose to run.
+LOCKSS |LATEST_MINOR| runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which :doc:`components` you choose to run.
 
 .. index:: system prerequisites; memory
 
@@ -144,7 +144,7 @@ The LOCKSS system makes use of three kinds of **storage**:
       *  Software and related assets
       *  :numref:`System Storage Prerequisites` (:ref:`System Storage Prerequisites`)
    *  *  :term:`Operating storage`
-      *  Internal stack data (other than preserved content)
+      *  Internal :term:`stack <LOCKSS stack>` data (other than preserved content)
       *  :numref:`Operating Storage Prerequisites` (:ref:`Operating Storage Prerequisites`)
    *  *  :term:`Content storage`
       *  Preserved content
@@ -168,13 +168,9 @@ The LOCKSS stack makes use of system storage in three ways:
    *  *  :term:`K3s data directory`
       *  Downloaded containers, :term:`K3s` configuration
       *  :numref:`Installing K3s` (:ref:`Installing K3s`)
-         
-         Default: :file:`/var/lib/rancher/k3s`
    *  *  :ref:`LOCKSS Installer Directory`
       *  LOCKSS Installer software, LOCKSS stack configuration
       *  :numref:`Running the LOCKSS Downloader` (:ref:`Running the LOCKSS Downloader`)
-         
-         Default: :ref:`Default LOCKSS Installer Directory`
    *  *  Miscellaneous system storage
       *  System software that may be installed as part of :doc:`/installing/index`
       *  n/a
@@ -202,8 +198,6 @@ The most significant portion of :term:`system storage` used by the LOCKSS stack 
       :animate: fade-in-slide-down
 
       FIXME
-
-.. index:: operating storage; prerequisites
 
 .. index:: system prerequisites; operating storage, operating storage; prerequisites
 
@@ -259,9 +253,9 @@ Content Storage Prerequisites
 
 .. include:: /glossary/content-storage.rst
 
-Content storage can be backed by NFS or other non-local filesystems (although locally-attached storage is more performant).
+Content storage can be backed by NFS or other non-local filesystems, although locally-attached storage is more performant.
 
-The list of :term:`content storage areas <content storage area>` is configurable in :ref:`Content Storage Areas` (:numref:`Content Storage Areas`).
+The list of :term:`content storage areas <content storage area>` is configurable in :numref:`Content Storage Areas` (:ref:`Content Storage Areas`).
 
 FIXME
 
