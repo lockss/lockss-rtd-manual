@@ -216,13 +216,13 @@ Operating storage consists of three storage areas:
       *  Configuration step
    *  *  :term:`State data storage area`
       *  Database data, state files
-      *  :numref:`State Data Storage Area` (:ref:`State Data Storage Area`)
+      *  :numref:`State Data Storage Area Settings` (:ref:`State Data Storage Area Settings`)
    *  *  :term:`Log storage area`
       *  Log files
-      *  :numref:`Log Storage Area` (:ref:`Log Storage Area`)
+      *  :numref:`Log Storage Area Settings` (:ref:`Log Storage Area Settings`)
    *  *  :term:`Temporary storage area`
       *  Temporary files and other working data
-      *  :numref:`Temporary Storage Area` (:ref:`Temporary Storage Area`)
+      *  :numref:`Temporary Storage Area Settings` (:ref:`Temporary Storage Area Settings`)
 
 **Operating storage prerequisites** are as follows:
 
