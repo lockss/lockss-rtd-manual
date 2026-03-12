@@ -396,31 +396,31 @@ Crawler Service Settings
 
 1. Prompt: :guilabel:`Use LOCKSS Crawler Service?`
 
-   Enter :kbd:`Y` if you want the crawler service to be run, otherwise :kbd:`N`. (The only situation where a crawler service is not needed is LOCKSS networks that are exclusively using direct deposit to store content, most LOCKSS networks need the crawler service.)
+   Enter :kbd:`Y` for "yes" if you want the :ref:`LOCKSS Crawler Service` to be run as part of your :term:`LOCKSS stack`, otherwise enter :kbd:`N` for "no". (The only situation where a crawler service is not needed is LOCKSS networks that are exclusively using direct deposit to store content; most LOCKSS networks need the crawler service.)
 
-2. If you answer :kbd:`Y`: to the previous question, you will see these additional questions:
+2. If you answer :kbd:`Y` to the previous question, you will see these additional questions:
 
    a. Prompt: :guilabel:`Enable classic LOCKSS crawler?`
 
-      Enter :kbd:`Y` if you want to run the classic LOCKSS crawler, otherwise :kbd:`N`. (Most LOCKSS networks using the crawler service use the classic LOCKSS crawler.)
+      Enter :kbd:`Y` for "yes" if you want to run the classic LOCKSS crawler, otherwise enter :kbd:`N` for "no". (Most LOCKSS networks using the crawler service use the classic LOCKSS crawler.)
 
    b. Prompt: :guilabel:`Enable Wget crawler?`
 
-      Enter :kbd:`Y` if you want to enable the usage of the external Wget crawler, otherwise :kbd:`N`.
+      Enter :kbd:`Y` for "yes" if you want to enable the usage of the external :term:`Wget` crawler, otherwise enter :kbd:`N` for "no".
 
 Metadata Service Settings
 =========================
 
 Prompt: :guilabel:`Use LOCKSS Metadata Service?`
 
-Enter :kbd:`Y` if you want the metadata service to be run, otherwise :kbd:`N`.
+Enter :kbd:`Y` for "yes" if you want the :ref:`LOCKSS Metadata Service` to be run as part of your :term:`LOCKSS stack`, otherwise enter :kbd:`N` for "no".
 
 SOAP Compatibility Service Settings
 ===================================
 
 Prompt: :guilabel:`Use LOCKSS SOAP Compatibility Service?`
 
-Enter :kbd:`Y` if you want the SOAP compatibility service to be run, otherwise :kbd:`N`. (This is only needed if you have external tools using the LOCKSS' legacy SOAP Web Services.)
+Enter :kbd:`Y` for "yes" if you want the :ref:`LOCKSS SOAP Compatibility Service` to be run as part of your :term:`LOCKSS stack`, otherwise enter :kbd:`N` for "no". (This is only needed if you have external tools using the LOCKSS' legacy SOAP Web Services.)
 
 .. index:: configure-lockss; Web replay
 
@@ -433,20 +433,20 @@ Pywb Settings
 
 Prompt: :guilabel:`Use LOCKSS Pywb Service?`
 
-Enter :kbd:`Y` to run an embedded Pywb engine for Web replay; otherwise, enter :kbd:`N`.
+Enter :kbd:`Y` for "yes" to run :ref:`Pywb` as part of your :term:`LOCKSS stack`; otherwise, enter :kbd:`N` for "no".
 
 OpenWayback Settings
 ====================
 
 1. Prompt: :guilabel:`Use LOCKSS OpenWayback Service?`
 
-   Enter :kbd:`Y` to use an embedded OpenWayback engine for Web replay; otherwise, enter :kbd:`N`.
+   Enter :kbd:`Y` for "yes" to run :ref:`OpenWayback` as part of your :term:`LOCKSS stack`; otherwise, enter :kbd:`N` for "no".
 
-2. If you answered :kbd:`Y`, you will be asked an additional configuration question:
+2. If you answered :kbd:`Y` to run OpenWayback, you will be asked an additional configuration question:
 
    :guilabel:`Okay to turn off authentication for read-only requests for LOCKSS Repository Service?`
 
-   OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` to accept this, otherwise you will see the warning:
+   OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` for "yes" to accept this, otherwise you will see the warning:
 
    :guilabel:`Not enabling OpenWayback Service`
 
