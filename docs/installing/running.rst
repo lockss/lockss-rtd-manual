@@ -1,4 +1,4 @@
-.. _running install-lockss:
+.. _running-install-lockss:
 
 =================================
 Running :program:`install-lockss`
@@ -20,6 +20,8 @@ Running :program:`install-lockss`
 .. include:: /glossary/install-lockss.rst
 
 This section describes how to run :term:`install-lockss`.
+
+.. _invoking-install-lockss:
 
 .. index:: install-lockss; invocation
 
@@ -124,6 +126,23 @@ To start the installation process, follow these steps as ``root``:
       :animate: fade-in-slide-down
 
       If you invoke :term:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+
+.. index:: install-lockss; error condition
+
+.. admonition:: Error conditions and what to do about them
+
+   .. dropdown:: :program:`install-lockss` not run as ``root``
+      :name: error-root
+      :icon: x-circle-fill
+      :animate: fade-in-slide-down
+
+      If :program:`install-lockss` is not run as ``root``, you will see the following error message:
+
+      .. code-block:: text
+
+         [ERROR] This script must be run as root
+
+      and :program:`install-lockss` will fail. Try again as ``root``.
 
 .. index:: install-lockss; system prerequisites
 
@@ -319,7 +338,7 @@ Otherwise, you will receive the following prompt:
 
 :guilabel:`Switch iptables to legacy mode via Alternatives?`
 
-Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_. (You may be prompted for your :program:`sudo` password.)
+Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_.
 
 .. warning::
 
@@ -385,7 +404,7 @@ Otherwise, you will receive the following prompt:
 
 :guilabel:`Add 10.42.0.0/16 and 10.43.0.0/16 to firewalld's trusted zone?`
 
-Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_. (You may be prompted for your :program:`sudo` password.)
+Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_.
 
 .. warning::
 
@@ -447,7 +466,7 @@ Otherwise, you will receive the following prompt:
 
 :guilabel:`Allow traffic from 10.42.0.0/16 and 10.43.0.0/16 via ufw?`
 
-Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_. (You may be prompted for your :program:`sudo` password.)
+Enter :kbd:`Y` to accept the proposed :program:`ufw` configuration, or enter :kbd:`N` to bypass, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_.
 
 .. warning::
 
@@ -547,25 +566,25 @@ This phase consists of these steps:
 
 1. In this step, :program:`install-lockss` will determine if K3s |K3S_PATCH| (the intended version of K3s for LOCKSS |LATEST_PATCH|) needs to be installed. There are five scenarios:
 
-   *  **K3s is not present.** If K3s is not present, :program:`install-lockss` will display ``K3s is not present``, and *will install* K3s |K3S_PATCH| in the next step.
+   *  **K3s is not present on the host system.** If K3s is not present on the host system, :program:`install-lockss` will display ``K3s is not present``, and *will install* K3s |K3S_PATCH| in the next step.
 
-   *  **An older version of K3s is present.** If an older version of K3s than |K3S_PATCH| is present, :program:`install-lockss` will display :samp:`Detected K3s version {<detected_version>} is older than expected version {<intended_version>}`, and you will receive the following prompt:
+   *  **An older version of K3s is present on the host system.** If an older version of K3s than |K3S_PATCH| is present on the host system, :program:`install-lockss` will display :samp:`Detected K3s version {<detected_version>} is older than expected version {<intended_version>}`, and you will receive the following prompt:
 
       :guilabel:`Upgrade K3s from <detected_version> to <intended_version>?`
 
       Enter :kbd:`Y` and :program:`install-lockss` *will install* K3s |K3S_PATCH| in the next step, or enter :kbd:`N` and :program:`install-lockss` *will not install* K3s |K3S_PATCH| in the next step, or hit :kbd:`Enter` to accept the default in square brackets [#fn-yes]_.
 
-   *  **The intended version of K3s is already present.** If K3s |K3S_PATCH| is already present, :program:`install-lockss` will display :samp:`K3s version {<intended_version>} is already installed; skipping`, and *will not install* K3s |K3S_PATCH| in the next step.
+   *  **The intended version of K3s is already present on the host system.** If K3s |K3S_PATCH| is already present on the host system, :program:`install-lockss` will display :samp:`K3s version {<intended_version>} is already installed; skipping`, and *will not install* K3s |K3S_PATCH| in the next step.
 
-   *  **A newer version of K3s is present.** If a newer version of K3s than |K3S_PATCH| is present, :program:`install-lockss` will display :samp:`Detected K3s version {<detected_version>} is more recent than expected version {<intended_version>}`, and *will not install* K3s |K3S_PATCH| in the next step.
+   *  **A newer version of K3s is present on the host system.** If a newer version of K3s than |K3S_PATCH| is present on the host system, :program:`install-lockss` will display :samp:`Detected K3s version {<detected_version>} is more recent than expected version {<intended_version>}`, and *will not install* K3s |K3S_PATCH| in the next step.
 
-   *  **K3s is present but the detected and intended version numbers cannot be compared automatically.** If K3s is present but the detected version cannot be compared automatically to the intended version |K3S_PATCH|, :program:`install-lockss` will display :samp:`[Warning] Detected K3s version {<detected_version>}, expected version {<intended_version>}, comparison failure, skipping`, and *will not install* K3s in the next step.
+   *  **K3s is present on the host system, but the detected and intended version numbers cannot be compared automatically.** If K3s is present on the host system, but the detected version cannot be compared automatically to the intended version |K3S_PATCH|, :program:`install-lockss` will display :samp:`[Warning] Detected K3s version {<detected_version>}, expected version {<intended_version>}, comparison failure, skipping`, and *will not install* K3s in the next step.
 
 2. In this step, :program:`install-lockss` will act on its determination from the previous step:
 
-   *  If :program:`install-lockss` determined in the previous step that it *will not install* K3s |K3S_PATCH|, you will see the confirmation ``Not installing K3s``, and nothing will happen in this step.
+   *  If :program:`install-lockss` determined in the previous step that it *will not install* K3s |K3S_PATCH|, you will see the confirmation ``Not installing K3s``; nothing will happen in this step, and :program:`install-lockss` will proceed to the next step.
 
-   *  If :program:`install-lockss` determined in the previous step that it *will install* K3s |K3S_PATCH|, you will see the confirmation :samp:`Installing K3s version {<intended_version>}`, and this step will proceed as follows:
+   *  If :program:`install-lockss` determined in the previous step that it *will install* K3s |K3S_PATCH|, you will see the confirmation :samp:`Installing K3s version {<intended_version>}`, and :program:`install-lockss` will proceed as follows:
 
       a. First, :program:`install-lockss` will ask you to specify the :term:`K3s data directory` with this prompt:
 
@@ -659,7 +678,7 @@ This phase consists of these steps:
                    You could try using --skip-broken to work around the problem
                    You could try running: rpm -Va --nofiles --nodigest
 
-3. Finally, whether or not K3s was installed in the previous step, :program:`install-lockss` will store Kubernetes configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg` (relative to the :ref:`LOCKSS Installer Directory`).
+3. Finally, whether or not K3s was installed in the previous step, :program:`install-lockss` will store :term:`Kubernetes` configuration data as the ``lockss`` user in the file :file:`config/k8s.cfg` (relative to the :ref:`LOCKSS Installer Directory`).
 
    .. index:: install-lockss; error condition
 

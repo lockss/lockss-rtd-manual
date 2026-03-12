@@ -37,7 +37,7 @@ You will need to gather information to answer configuration questions asked by :
 
    .. caution::
 
-      Each of these paths needs to be writeable by the ``lockss`` user. If this is not the case, set them up as ``root`` before running :program:`configure-lockss`.
+      Each of these paths needs to be writable by the ``lockss`` user. If this is not the case, set them up as ``root`` before running :program:`configure-lockss`.
 
 *  Username and password for the Web user interfaces.
 
@@ -85,7 +85,7 @@ Kubernetes Settings
 
 Prompt: :guilabel:`Command to use to execute kubectl commands`
 
-Enter the command to invoke :program:`kubectl` in your environment. If you are using the :term:`K3s` Kubernetes environment that ships with the LOCKSS system, the proposed value is already correct.
+Enter the command to invoke :program:`kubectl` in your environment. If you are using :term:`K3s`, the :term:`Kubernetes` environment that ships with :term:`LOCKSS <LOCKSS system>`, the proposed value is already correct and you can simply hit :kbd:`Enter` to accept the suggested value in square brackets.
 
 .. FIXME the script can exit here if the K8s (sic) config file can't be written to
 
@@ -116,21 +116,21 @@ Initial UI Subnet
 
 Prompt: :guilabel:`Initial subnet(s) for admin UI access, separated by ';'`
 
-Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the Web user interfaces (UI) of the system. The access list can be modified later via the UI.
+Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the :term:`LOCKSS <LOCKSS system>` Web user interfaces (UIs). The access list can be modified later via the :ref:`LOCKSS Configuration Service` UI.
 
 LCAP Port
 =========
 
 Prompt: :guilabel:`LCAP protocol port`
 
-Enter the port on the that will be used to receive LCAP (LOCKSS audit and repair) traffic. Historically, most LOCKSS nodes use :samp:`9729`.
+Enter the port on the that will be used to receive :term:`LCAP` traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
 Network Address Translation
 ===========================
 
 1. Prompt: :guilabel:`Is this machine behind NAT?`
 
-   If the host is behind network address translation (NAT), enter :kbd:`Y`; otherwise, enter :kbd:`N`.
+   If the host is behind network address translation (NAT), enter :kbd:`Y` for "yes"; otherwise enter :kbd:`N` for "no".
 
 2. If you answered :kbd:`Y` because the host is behind NAT, you will be asked an additional configuration question:
 
@@ -149,14 +149,14 @@ Mail Relay
 
 Prompt: :guilabel:`Mail relay for this machine`
 
-Enter the hostname of the host's outgoing mail server, for example :samp:`smtp.myuniversity.edu`, or :samp:`localhost` if the host is running a mail daemon.
+Enter the hostname of the host's outgoing mail server, for example :samp:`smtp.myuniversity.edu`, or :samp:`localhost` if the host system is running a local mail daemon.
 
 Mail Relay Credentials
 ======================
 
 1. Prompt: :guilabel:`Does the mail relay <mailhost> need a username and password?`
 
-   If the outgoing mail server requires password authentication, enter :kbd:`Y`; otherwise, enter :kbd:`N`.
+   If the outgoing mail server requires password authentication, enter :kbd:`Y` for "yes"; otherwise, enter :kbd:`N` for "no".
 
 2. If you answered :kbd:`Y` because the outgoing mail server requires password authentication, you will be asked additional configuration questions:
 
@@ -196,7 +196,7 @@ Configuration URL
 
    a. Prompt: :guilabel:`Verify configuration server authenticity?`
 
-      Enter :kbd:`Y` if you would like to check the authenticity of the configuration server using a custom keystore; otherwise enter :kbd:`N`.
+      Enter :kbd:`Y` for "yes" if you would like to check the authenticity of the configuration server using a custom keystore; otherwise enter :kbd:`N` for "no".
 
    b. If you answered :kbd:`Y` because you would like to check the authenticity of the configuration server using a custom keystore, you will be asked an additional configuration question:
 
@@ -226,7 +226,7 @@ Web User Interface Settings
 
 1. Prompt: :guilabel:`User name for web UI administration`
 
-   Enter a username for the primary administrative user in the LOCKSS stack's Web user interfaces.
+   Enter a username for the primary administrative user in :term:`LOCKSS <LOCKSS stack>` Web user interfaces.
 
 2. Prompt: :guilabel:`Password for web UI administration user <uiuser>`
 
@@ -235,7 +235,6 @@ Web User Interface Settings
 3. Prompt: :guilabel:`Password for web UI administration user <uiuser> (again)`
 
    Re-enter the password for the primary administrative user. If the two passwords do not match, the password will be asked again.
-
 
 Container Subnet
 ================
@@ -248,7 +247,7 @@ Container Subnet
 
    :samp:`Container subnet was {<former_subnet>}, we think it should now be {<new_subnet>}. Do you want to change it?`
 
-   in which case you should enter :kbd:`Y` (recommended) or :kbd:`N`.
+   in which case you should enter :kbd:`Y` for "yes" (recommended), or :kbd:`N` for "no".
 
 2. Prompt: :guilabel:`LOCKSS subnet for inter-service access control`
 
@@ -256,20 +255,20 @@ Container Subnet
 
 .. index:: configure-lockss; storage areas
 
--------------
-Storage Areas
--------------
+---------------------
+Storage Area Settings
+---------------------
 
 The :term:`LOCKSS stack` needs several kinds of :term:`content storage` and :term:`operating storage`, as described in the :ref:`Storage Prerequisites` section. (See also important information about performance requirements for these storage areas in that section.)
 
-Depending on your host system's layout, these storage areas may or may not be the same mount points or paths. Each path must be writeable by the ``lockss`` user.
+Depending on your host system's layout, these storage areas may or may not be the same mount points or paths. Each path must be writable by the ``lockss`` user.
 
-Subdirectories will be created in each storage area to fit the needs of each :doc:`stack component </introduction/components>`; for example :file:`lockss-stack-cfg-data` is the LOCKSS configuration service's state data directory in the :term:`state data storage area`, and :file:`lockss-stack-repo-logs` is the LOCKSS repository service's log directory in the :term:`log storage area`.
+Subdirectories will be created in each storage area to fit the needs of each :doc:`stack component </introduction/components>`; for example :file:`lockss-stack-cfg-data` is the :ref:`LOCKSS Configuration Service`'s state data directory in the :term:`state data storage area`, and :file:`lockss-stack-repo-logs` is the :ref:`LOCKSS Repository Service`'s log directory in the :term:`log storage area`.
 
 .. index:: content storage area; configuration
 
-Content Storage Areas
-=====================
+Content Storage Area Settings
+=============================
 
 1. Prompt: :guilabel:`Paths of the content storage areas, separated by ';'`
 
@@ -283,8 +282,8 @@ Content Storage Areas
 
 .. index:: state data storage area; configuration
 
-State Data Storage Area
-=======================
+State Data Storage Area Settings
+================================
 
 Prompt: :guilabel:`Path of the state data storage area`
 
@@ -292,8 +291,8 @@ Enter the desired path for the :term:`state data storage area`, which by default
 
 .. index:: log storage area; configuration
 
-Log Storage Area
-================
+Log Storage Area Settings
+=========================
 
 Prompt: :guilabel:`Path of the log storage area`
 
@@ -301,8 +300,8 @@ Enter the desired path for the :term:`log storage area`, which by default is the
 
 .. index:: temporary storage area; configuration
 
-Temporary Storage Area
-======================
+Temporary Storage Area Settings
+===============================
 
 Prompt: :guilabel:`Path of the temporary storage area`
 
@@ -314,7 +313,7 @@ Enter the desired path for the :term:`temporary storage area`, which by default 
 Database Settings
 -----------------
 
-For the PostgreSQL database, you have two options:
+For the :ref:`PostgreSQL` database, you have two options:
 
 *  You can choose to use the :term:`LOCKSS stack`'s **embedded PostgreSQL database**, meaning a PostgreSQL database :term:`container` will be run and managed as part of the LOCKSS stack. This is the recommended option.
 
@@ -324,9 +323,9 @@ You will receive the following prompt:
 
 :guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
 
-*  To use the **embedded PostgreSQL database**, enter :kbd:`Y`, then follow the steps in the :ref:`embedded-postgresql-settings` section below.
+*  To use the **embedded PostgreSQL database**, enter :kbd:`Y` for "yes", then follow the steps in the :ref:`embedded-postgresql-settings` section below.
 
-*  To use an **external PostgreSQL database**, enter :kbd:`N`, then follow the steps in the :ref:`external-postgresql-settings` section below.
+*  To use an **external PostgreSQL database**, enter :kbd:`N` for "no", then follow the steps in the :ref:`external-postgresql-settings` section below.
 
 .. tab-set::
 
@@ -340,7 +339,7 @@ You will receive the following prompt:
 
          Enter the password for the embedded PostgreSQL database.
 
-         .. note::
+         .. caution::
 
             This prompt is used to record the PostgreSQL database password in the LOCKSS stack's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. See :doc:`/appendix/postgresql` for details.
 
@@ -362,15 +361,15 @@ You will receive the following prompt:
 
          Enter the port where the external PostgreSQL database can be reached, for example :samp:`5432`.
 
-      3. Prompt: :guilabel:`Schema for PostgreSQL service`
+      3. Prompt: :guilabel:`Schema for PostgreSQL database`
 
          Enter the schema name to be used by the LOCKSS system. The schema name used in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different schema name to you.
 
-      4. Prompt: :guilabel:`Database name prefix for PostgreSQL service`
+      4. Prompt: :guilabel:`Database name prefix for PostgreSQL database`
 
          Enter the prefix to use for any LOCKSS-related database names in the schema. The database name prefix in the embedded PostgreSQL databse is :samp:`Lockss` (note the uppercase/lowercase), but your database administrator may assign a different database name prefix.
 
-      5. Prompt: :guilabel:`Login name for PostgreSQL service`
+      5. Prompt: :guilabel:`Login name for PostgreSQL database`
 
          Enter the username for the external PostgreSQL database. The username in the embedded PostgreSQL database is :samp:`LOCKSS`, but your database administrator may assign a different username to you.
 
@@ -388,12 +387,12 @@ You will receive the following prompt:
 
 .. index:: configure-lockss; stack components
 
--------------------------
-Stack Component Selection
--------------------------
+------------------------
+Stack Component Settings
+------------------------
 
-Crawler Service
-===============
+Crawler Service Settings
+========================
 
 1. Prompt: :guilabel:`Use LOCKSS Crawler Service?`
 
@@ -409,15 +408,15 @@ Crawler Service
 
       Enter :kbd:`Y` if you want to enable the usage of the external Wget crawler, otherwise :kbd:`N`.
 
-Metadata Service
-======================
+Metadata Service Settings
+=========================
 
 Prompt: :guilabel:`Use LOCKSS Metadata Service?`
 
 Enter :kbd:`Y` if you want the metadata service to be run, otherwise :kbd:`N`.
 
-SOAP Compatibility Service
-==========================
+SOAP Compatibility Service Settings
+===================================
 
 Prompt: :guilabel:`Use LOCKSS SOAP Compatibility Service?`
 
@@ -429,15 +428,15 @@ Enter :kbd:`Y` if you want the SOAP compatibility service to be run, otherwise :
 Web Replay Settings
 -------------------
 
-Pywb
-====
+Pywb Settings
+=============
 
 Prompt: :guilabel:`Use LOCKSS Pywb Service?`
 
 Enter :kbd:`Y` to run an embedded Pywb engine for Web replay; otherwise, enter :kbd:`N`.
 
-OpenWayback
-===========
+OpenWayback Settings
+====================
 
 1. Prompt: :guilabel:`Use LOCKSS OpenWayback Service?`
 
@@ -453,25 +452,43 @@ OpenWayback
 
    and OpenWayback will not be run.
 
+.. _final-steps-of-configure-lockss:
+
 .. index:: configure-lockss; confirmation
 
------------
-Final Steps
------------
+------------------------------------------
+Final Steps of :program:`configure-lockss`
+------------------------------------------
 
 1. Prompt: :guilabel:`OK to store this configuration?`
 
-   Enter :kbd:`Y` if the configuration values are to your liking; otherwise, enter :kbd:`N` to make edits.
+   Enter :kbd:`Y` for "yes" if the configuration values are to your liking; otherwise, enter :kbd:`N` for "no" to make edits.
 
-2. If you answer :kbd:`Y`, :program:`configure-lockss` will perform the final configuration steps. You may be asked to confirm before directories are created for the first time:
+2. If you answer :kbd:`Y` to accept the configuration values, :program:`configure-lockss` will perform the final configuration steps. You may be asked to confirm before directories are created for the first time:
 
-   :guilabel:`<directory> does not exist; shall I create it?`
+   :guilabel:`<directory> does not exist; do you want to create it?`
 
    or before directory permissions are changed:
 
-   :guilabel:`<directory> is not writable; shall I chown it?`
+   :guilabel:`<directory> is not writable; do you want to make it writable?`
 
    In each case, enter :kbd:`Y` for "yes" and :kbd:`N` for "no".
+
+   .. index:: configure-lockss; error condition
+
+   .. admonition:: Error conditions and what to do about them
+
+      During the process of creating directories or changing directory permissions, you may see the following types of error messages if an error occurs:
+
+      :samp:`{<directory>} not writable by user {<user>}. Please make it so (check parent dir execute bits). LOCKSS will not run properly without it.`
+
+      :samp:`Please create {<directory>} and make it writable by user {<user>}; LOCKSS will not run properly without it.`
+
+      :samp:`{<directory>} still not writable by user {<user>}. Please make it so (check parent dir execute bits). LOCKSS will not run properly without it.`
+
+      :samp:`Please ensure that {<directory>} is writable by user {<user>}; LOCKSS will not run properly without it.`
+
+      Take the necessary action and try again.
 
 ----
 
