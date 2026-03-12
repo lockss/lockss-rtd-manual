@@ -377,7 +377,7 @@ You will receive the following prompt:
 
          Enter the password for the username in the external PostgreSQL database.
 
-         .. note::
+         .. caution::
 
             This prompt is used to record the PostgreSQL database password in the LOCKSS stack's configuration. If you change the value of the PostgreSQL database password here without actually changing the PostgreSQL database password, the LOCKSS system components will no longer be able to connect to the PostgreSQL database. Contact your PostgreSQL database administrator for details.
 
