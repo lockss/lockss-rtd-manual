@@ -2,11 +2,11 @@
 LOCKSS System Manual
 ====================
 
-----------------------
-Version |LATEST_MINOR|
-----------------------
-
 .. only:: html
+
+   ----------------------
+   Version |LATEST_MINOR|
+   ----------------------
 
    .. include:: front-page.rst
 
