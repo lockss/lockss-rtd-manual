@@ -33,7 +33,6 @@ LOCKSS System Manual
    glossary/index
    genindex
 
-
 .. only:: html
 
    .. toctree::
@@ -44,4 +43,3 @@ LOCKSS System Manual
       LOCKSS Documentation Portal <https://docs.lockss.org/>
       LOCKSS Community Wiki <https://github.com/lockss/community/wiki>
       LOCKSS Community Discussions <https://github.com/lockss/community/discussions>
-
