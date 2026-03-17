@@ -26,8 +26,13 @@ LOCKSS System Manual
    troubleshooting/index
    sysadmin/index
    appendix/index
+
+.. toctree::
+   :hidden:
+
    glossary/index
    genindex
+
 
 .. only:: html
 
