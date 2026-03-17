@@ -11,7 +11,7 @@ LOCKSS Primer
          :depth: 1
          :backlinks: none
 
-This section offers a high-level introduction to :term:`LOCKSS <LOCKSS system>`, particularly LOCKSS 2.x.
+This section offers a high-level introduction to |LOCKSS|, particularly LOCKSS 2.x.
 
 ---------------
 What Is LOCKSS?

@@ -157,6 +157,7 @@ pygments_style = 'default'
 
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
+    'LOCKSS': ':term:`LOCKSS <LOCKSS system>`',
     'LATEST_MINOR': '2.0-beta2 NOT YET RELEASED',
     'LATEST_PATCH': '2.0.90-beta2 NOT YET RELEASED',
     'PREVIOUS_MINOR': '2.0-beta1',

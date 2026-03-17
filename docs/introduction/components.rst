@@ -11,7 +11,7 @@ Stack Components
          :depth: 2
          :backlinks: none
 
-This section presents the various components of :term:`LOCKSS <LOCKSS system>`, their function, and why you might run them as part of your :term:`LOCKSS stack`. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
+This section presents the various components of |LOCKSS|, their function, and why you might run them as part of your :term:`LOCKSS stack`. When :doc:`/configuring`, the configuration tool will allow you to select which components you wish to run.
 
 --------------------------
 Mandatory Stack Components
@@ -49,7 +49,7 @@ By default, it runs :term:`LCAP` on port 9729, a REST API on port 24603, and a W
 PostgreSQL
 ==========
 
-:term:`LOCKSS <LOCKSS system>` requires a :term:`PostgreSQL` database to store underlying data, including configuration data, :term:`artifact` indexing data, extracted metadata, and more.
+|LOCKSS| requires a :term:`PostgreSQL` database to store underlying data, including configuration data, :term:`artifact` indexing data, extracted metadata, and more.
 
 By default, it uses an *embedded PostgreSQL database* [#fn-embedded-postgresql]_ by running a PostgreSQL :term:`container` as part of the :term:`LOCKSS stack`, on port 24620 [#fn-ports]_.
 
@@ -66,11 +66,11 @@ LOCKSS Crawler Service
 
 .. include:: /glossary/lockss-crawler-service.rst
 
-Out of the box, the LOCKSS Crawler Service ships with the :term:`Classic LOCKSS Crawler`, a mature, highly extensible Web crawler built into :term:`LOCKSS <LOCKSS system>`.
+Out of the box, the LOCKSS Crawler Service ships with the :term:`Classic LOCKSS Crawler`, a mature, highly extensible Web crawler built into |LOCKSS|.
 
 It also includes an API framework for registering external crawlers, and comes with one such external crawler, based on :term:`Wget`.
 
-:term:`LOCKSS plugins <LOCKSS plugin>` are used to control and customize Web harvesting behavior. You may run the LOCKSS Crawler Service as part of your LOCKSS stack if your application of :term:`LOCKSS <LOCKSS system>` involves Web crawling activities.
+:term:`LOCKSS plugins <LOCKSS plugin>` are used to control and customize Web harvesting behavior. You may run the LOCKSS Crawler Service as part of your LOCKSS stack if your application of |LOCKSS| involves Web crawling activities.
 
 By default, the LOCKSS Crawler Service runs a REST API on port 24614 and a Web user interface on port 24604 [#fn-ports]_.
 
@@ -81,7 +81,7 @@ LOCKSS Metadata Service
 
 .. include:: /glossary/lockss-metadata-service.rst
 
-:term:`LOCKSS plugins <LOCKSS plugin>` describe how to extract metadata or other meaning from preserved content, especially content harvested from the Web by the :term:`LOCKSS Crawler Service`. You may run the LOCKSS Metadata Service as part of your LOCKSS stack if your application of :term:`LOCKSS <LOCKSS system>` involves metadata extraction and retrieval activities.
+:term:`LOCKSS plugins <LOCKSS plugin>` describe how to extract metadata or other meaning from preserved content, especially content harvested from the Web by the :term:`LOCKSS Crawler Service`. You may run the LOCKSS Metadata Service as part of your LOCKSS stack if your application of |LOCKSS| involves metadata extraction and retrieval activities.
 
 By default, the LOCKSS Metadata Service runs a REST API on port 24615 and a Web user interface on port 24605 [#fn-ports]_.
 
@@ -92,7 +92,7 @@ LOCKSS SOAP Compatibility Service
 
 .. include:: /glossary/lockss-soap-compatibility-service.rst
 
-You may run it as part of your LOCKSS stack if your application of :term:`LOCKSS <LOCKSS system>` involves legacy use of the LOCKSS 1.x SOAP APIs, such as scripting.
+You may run it as part of your LOCKSS stack if your application of |LOCKSS| involves legacy use of the LOCKSS 1.x SOAP APIs, such as scripting.
 
 By default, it runs a SOAP API on port 24616 [#fn-ports]_.
 

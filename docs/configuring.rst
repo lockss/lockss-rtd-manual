@@ -85,7 +85,7 @@ Kubernetes Settings
 
 Prompt: :guilabel:`Command to use to execute kubectl commands`
 
-Enter the command to invoke :program:`kubectl` in your environment. If you are using :term:`K3s`, the :term:`Kubernetes` environment that ships with :term:`LOCKSS <LOCKSS system>`, the proposed value is already correct and you can simply hit :kbd:`Enter` to accept the suggested value in square brackets.
+Enter the command to invoke :program:`kubectl` in your environment. If you are using :term:`K3s`, the :term:`Kubernetes` environment that ships with |LOCKSS|, the proposed value is already correct and you can simply hit :kbd:`Enter` to accept the suggested value in square brackets.
 
 .. FIXME the script can exit here if the K8s (sic) config file can't be written to
 
@@ -116,7 +116,7 @@ Initial UI Subnet
 
 Prompt: :guilabel:`Initial subnet(s) for admin UI access, separated by ';'`
 
-Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the :term:`LOCKSS <LOCKSS system>` Web user interfaces (UIs). The access list can be modified later via the :ref:`LOCKSS Configuration Service` UI.
+Enter a semicolon-separated list of subnets in CIDR or mask notation that should initially have access to the |LOCKSS| Web user interfaces (UIs). The access list can be modified later via the :ref:`LOCKSS Configuration Service` UI.
 
 LCAP Port
 =========
@@ -276,9 +276,9 @@ Content Storage Area Settings
 
 2. If the answer to the question is different than that from a previous configuration run, you will see the warning:
 
-   ``If you have removed or reordered content storage directories, you must run scripts/reindex-artifacts``
+   ``Content storage areas have changed. Artifact reindexing may be needed; see manual.``
 
-   If you have done anything other add new content storage areas to the end of the previously-entered list, you must run ``scripts/reindex-artifacts`` after completion of :program:`configure-lockss`, before starting the system.
+   This message indicates that changing the configured content storage areas may trigger the need for :term:`artifacts <artifact>` to be :index:`reindexed interally <artifact reindexing>`. This process happens in the background while the :term:`stack <LOCKSS stack>` runs but may take an extended period of time.
 
 .. index:: state data storage area; configuration
 
@@ -351,7 +351,7 @@ You will receive the following prompt:
       :sync: external-postgresql
       :name: external-postgresql-settings
 
-      Follow these steps if you entered :kbd:`N` to use the **external PostgreSQL database**:
+      Follow these steps if you entered :kbd:`N` to use an **external PostgreSQL database**:
 
       1. Prompt: :guilabel:`Fully qualified hostname (FQDN) of PostgreSQL host`
 
@@ -488,7 +488,11 @@ Final Steps of :program:`configure-lockss`
 
       :samp:`Please ensure that {<directory>} is writable by user {<user>}; LOCKSS will not run properly without it.`
 
-      Take the necessary action and try again.
+      The script will end with this warning:
+
+      ``Storage directories have not been set up correctly. Either fix the ownership/permission problems then run scripts/configure-lockss -r, or re-run scripts/configure-lockss and specify different directories.``
+
+      You can either fix any ownership and permission issues encountered and run ``scripts/configure-lockss --replay`` (or ``scripts/configure-lockss -r`` for short), or alternatively you can re-run ``scripts/configure-lockss`` but specify different directories.
 
 ----
 

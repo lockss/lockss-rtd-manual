@@ -7,10 +7,7 @@ Glossary
 
    archival unit
    AU
-      .. index::
-         see: AU; archival unit
-
-      In the :term:`LOCKSS system`, an archival unit, or :abbr:`AU (archival unit)`, is an arbitrary collection of content preserved meaningfully together, such as a volume's worth of an academic journal, an e-book and all its related assets, a given collection of digitized materials, and similar.
+      In the :term:`LOCKSS system`, an archival unit, or :index:`AU <see: AU; archival unit>`, is an arbitrary collection of content preserved meaningfully together, such as a volume's worth of an academic journal, an e-book and all its related assets, a given collection of digitized materials, and similar.
 
       Many LOCKSS functions operate at the AU level, such as :term:`LCAP` polling/voting, Web crawls, metadata extraction, and more. Each AU handled by the system is referenced by its :term:`archival unit identifier` or AUID.
 
@@ -18,15 +15,12 @@ Glossary
 
    archival unit identifier
    AUID
-      .. index::
-         see: AUID; archival unit identifier
-
-      The unique string identifier of a given :term:`archival unit` handled by the :term:`LOCKSS system` is called an archival unit identifier, or :abbr:`AUID (archival unit identifier)`.
+      The unique string identifier of a given :term:`archival unit` handled by the :term:`LOCKSS system` is called an archival unit identifier, or :index:`AUID <see: AUID; archival unit identifier>`.
 
       The definition, and therefore AUID, of an AU is determined by the :term:`LOCKSS plugin` that processes it.
 
    container
-      A software container, or simply a container, is a lightweight, narrow-purpose bundle of software code, its dependencies, and its environment, forming a virtual unit of software that can be run on a variety of host environments by a :term:`container orchestration system`.
+      A :index:`software container <see: software container; container>`, or simply a container, is a lightweight, narrow-purpose bundle of software code, its dependencies, and its environment, forming a virtual unit of software that can be run on a variety of host environments by a :term:`container orchestration system`.
 
       The LOCKSS system uses :term:`Docker` containers.
 
@@ -94,7 +88,7 @@ Glossary
       Iptables is developed by the `Netfilter <https://www.netfilter.org/>`_ project.
 
    K3s
-      `K3s <https://k3s.io/>`_ is a lightweight, open source :term:`Kubernetes` distribution.
+      `K3s <https://k3s.io/>`_, pronounced *K-three-S*, is a lightweight, open source :term:`Kubernetes` distribution.
 
       Important prerequisites for running LOCKSS apply to the :term:`K3s data directory`.
 
@@ -116,22 +110,18 @@ Glossary
 
    LOCKSS Content Audit Protocol
    LCAP
-      .. index::
-         see: LCAP; LOCKSS Content Audit Protocol
-         see: Library Content Audit Protocol; LOCKSS Content Audit Protocol
-
       .. include:: lcap.rst
 
-      LCAP is named after `El Capitán <https://en.wikipedia.org/wiki/El_Capitan>`_. Before being called LOCKSS Content Audit Protocol, LCAP was called *Library Content Audit Protocol*.
+      LCAP is named after `El Capitán <https://en.wikipedia.org/wiki/El_Capitan>`_. Before being called LOCKSS Content Audit Protocol, LCAP was called :index:`Library Content Audit Protocol <see: Library Content Audit Protocol; LOCKSS Content Audit Protocol>`.
 
    LOCKSS
       LOCKSS can refer to:
 
       *  :term:`LOCKSS system`: LOCKSS is an open source distributed digital preservation system.
 
-      *  :term:`LOCKSS program`: LOCKSS is a program of Stanford University Libraries that develops the :term:`LOCKSS <LOCKSS system>` software and provides digital preservation services.
+      *  :term:`LOCKSS program`: LOCKSS is a program of Stanford University Libraries that develops the |LOCKSS| software and provides digital preservation services.
 
-      *  The acronym *Lots Of Copies Keep Stuff Safe*: "Lots of Copies KEep Stuff Safe" is a digital preservation methodology embodied by the :term:`LOCKSS <LOCKSS system>` software.
+      *  The acronym *Lots Of Copies Keep Stuff Safe*: "Lots of Copies Keep Stuff Safe" is a digital preservation methodology embodied by the |LOCKSS| software.
 
    LOCKSS Configuration Service
       .. index:: see: Configuration Service; LOCKSS Configuration Service
@@ -163,9 +153,7 @@ Glossary
       A LOCKSS network is a peer-to-peer network of nodes running the :term:`LOCKSS  system`'s :term:`LCAP` audit and repair protocol to preserve data together.
 
    LOCKSS plugin
-      .. index:: see: plugin; LOCKSS plugin
-
-      A LOCKSS plugin is a bundle of descriptors, rules and code that adapts the general :term:`LOCKSS <LOCKSS system>` software to a particular digital preservation target.
+      A :index:`LOCKSS plugin <see: plugin; LOCKSS plugin>` is a bundle of descriptors, rules and code that adapts the general |LOCKSS| software to a particular digital preservation target.
 
       LOCKSS plugins offer numerous features that affect audit and repair (content canonicalization, poll result weighting...), Web crawling (crawl initiation, crawl rules, crawl rate limiting, HTTP response handling, URL normalization, custom link extraction...), metadata extraction, Web replay (link rewriting, HTML ``<meta>`` tag rewriting...), and more.
 
@@ -221,7 +209,7 @@ Glossary
    PostgreSQL
       `PostgreSQL <https://www.postgresql.org/>`_ is an open source relational database management system.
 
-      :term:`LOCKSS <LOCKSS system>` requires a PostgreSQL database. By default, it uses an embedded PostgreSQL database by running a PostgreSQL :term:`container` as part of the :term:`LOCKSS stack`, or it can be configured to use an external PostgreSQL database maintained outside the LOCKSS stack.
+      |LOCKSS| requires a PostgreSQL database. By default, it uses an embedded PostgreSQL database by running a PostgreSQL :term:`container` as part of the :term:`LOCKSS stack`, or it can be configured to use an external PostgreSQL database maintained outside the LOCKSS stack.
 
    Pywb
       .. include:: pywb.rst
@@ -232,7 +220,7 @@ Glossary
       .. include:: servecontent.rst
 
    stack
-      A container stack, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
+      A :index:`container stack <see: container stack; stack>`, or simply a stack [#fn-stack]_, is a cohesive software application made up of a suite of :term:`containers <container>` managed by a :term:`container orchestration system`.
 
       In particular, the suite of containers providing the functionality of the LOCKSS system as a whole is referred to as the :term:`LOCKSS stack`.
 
@@ -257,14 +245,13 @@ Glossary
       Ufw is developed by `Canonical <https://canonical.com/>`_.
 
    Web replay engine
-      .. index:: see: Web playback engine; Web replay engine
 
-      A Web replay engine, or Web playback engine, is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view the same URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
+      A Web replay engine, or :index:`Web playback engine <see: Web playback engine; Web replay engine>`, is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view the same URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
 
-      :term:`LOCKSS <LOCKSS system>` offers up to three Web replay engines: :term:`ServeContent`, :term:`Pywb`, and :term:`OpenWayback`.
+      |LOCKSS| offers up to three Web replay engines: :term:`ServeContent`, :term:`Pywb`, and :term:`OpenWayback`.
 
    Wget
-      `Wget <https://www.gnu.org/software/wget/>`_, or Wget for short, is an open source software package for downloading and uploading files.
+      `Wget <https://www.gnu.org/software/wget/>`_, pronounced *W-get*, is an open source software package for downloading and uploading files.
 
       Wget is developed by the `GNU <https://www.gnu.org/>`_ project.
 

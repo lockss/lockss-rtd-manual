@@ -41,7 +41,7 @@ To start the installation process, follow these steps as ``root``:
 
       scripts/install-lockss
 
-:term:`install-lockss` will run through successive **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`Completion of the LOCKSS Installation Process` (:ref:`Completion of the LOCKSS Installation Process`).
+:term:`install-lockss` will run through successive **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
 
 .. tip::
 
@@ -717,7 +717,7 @@ No user interaction is expected. If all tests pass, you will see the message:
 
    [success] Tested the K3s node
 
-and :program:`install-lockss` will successfully proceed to :numref:`Completion of the LOCKSS Installation Process` (:ref:`Completion of the LOCKSS Installation Process`).
+and :program:`install-lockss` will successfully proceed to :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
 
 Otherwise, you will see an error message corresponding to the test that did not pass, and :program:`install-lockss` will fail.
 
@@ -811,9 +811,11 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
       FIXME
 
----------------------------------------------
-Completion of the LOCKSS Installation Process
----------------------------------------------
+.. _final-steps-of-install-lockss:
+
+----------------------------------------
+Final Steps of :program:`install-lockss`
+----------------------------------------
 
 If all phases completed successfully, you will see the message:
 
