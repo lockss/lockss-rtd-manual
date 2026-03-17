@@ -109,6 +109,10 @@ Unspecified ports in the 24600-24649 range should be considered reserved, althou
       *  :octicon:`stack` Internal
       *  :bdg-warning-line:`reserved for future use` (HDFS)
       *  
+   *  *  *24629*
+      *  :octicon:`stack` Internal
+      *  :bdg-danger-line:`reserved for internal use` (JMX)
+      *  
    *  *  **24630**
       *  :octicon:`tools` Content access
       *  Content proxy
