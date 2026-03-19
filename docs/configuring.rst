@@ -438,19 +438,9 @@ Enter :kbd:`Y` for "yes" to run :ref:`Pywb` as part of your :term:`LOCKSS stack`
 OpenWayback Settings
 ====================
 
-1. Prompt: :guilabel:`Use LOCKSS OpenWayback Service?`
+Prompt: :guilabel:`Use LOCKSS OpenWayback Service?`
 
-   Enter :kbd:`Y` for "yes" to run :ref:`OpenWayback` as part of your :term:`LOCKSS stack`; otherwise, enter :kbd:`N` for "no".
-
-2. If you answered :kbd:`Y` to run OpenWayback, you will be asked an additional configuration question:
-
-   :guilabel:`Okay to turn off authentication for read-only requests for LOCKSS Repository Service?`
-
-   OpenWayback currently does not supply user credentials when reading content from the LOCKSS repository, so the repository must be configured to respond to unauthenticated read requests. Enter :kbd:`Y` for "yes" to accept this, otherwise you will see the warning:
-
-   :guilabel:`Not enabling OpenWayback Service`
-
-   and OpenWayback will not be run.
+Enter :kbd:`Y` for "yes" to run :ref:`OpenWayback` as part of your :term:`LOCKSS stack`; otherwise, enter :kbd:`N` for "no".
 
 .. _final-steps-of-configure-lockss:
 
