@@ -287,7 +287,7 @@ State Data Storage Area Settings
 
 Prompt: :guilabel:`Path of the state data storage area`
 
-Enter the desired path for the :term:`state data storage area`, which by default is the same as the *first* of the :ref:`Content Storage Areas`.
+Enter the desired path for the :term:`state data storage area`, which by default is the same as the *first* :term:`content storage area` (see :ref:`Content Storage Area Settings`).
 
 .. index:: log storage area; configuration
 
@@ -296,7 +296,7 @@ Log Storage Area Settings
 
 Prompt: :guilabel:`Path of the log storage area`
 
-Enter the desired path for the :term:`log storage area`, which by default is the same as the :ref:`State Data Storage Area`.
+Enter the desired path for the :term:`log storage area`, which by default is the same as the :term:`state data storage area` (see :ref:`State Data Storage Area Settings`).
 
 .. index:: temporary storage area; configuration
 
@@ -305,7 +305,7 @@ Temporary Storage Area Settings
 
 Prompt: :guilabel:`Path of the temporary storage area`
 
-Enter the desired path for the :term:`temporary storage area`, which by default is the same as the :ref:`State Data Storage Area`.
+Enter the desired path for the :term:`temporary storage area`, which by default is the same as the :term:`state data storage area` (see :ref:`State Data Storage Area Settings`).
 
 .. index:: configure-lockss; database
 
