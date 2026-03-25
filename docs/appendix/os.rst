@@ -15,7 +15,7 @@ Operating Systems
 
 This section outlines the Linux operating systems compatible with LOCKSS |LATEST_MINOR|.
 
-As outlined in the :doc:`/introduction/prerequisites`, LOCKSS |LATEST_MINOR| requires a 64-bit Linux host [#fn-prerequisites]_ compatible with `K3s <https://k3s.io/>`_, a lightweight open source Kubernetes distribution. The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fn-k3s-os]_ (which are documented in this manual and integrated into the LOCKSS Installer).
+As outlined in the :doc:`/introduction/prerequisites`, LOCKSS |LATEST_MINOR| requires a 64-bit Linux host [#fn-prerequisites]_ compatible with :term:`K3s`, a lightweight open source :term:`Kubernetes` distribution. The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fn-k3s-os]_ (which are documented in this manual and integrated into the :term:`LOCKSS Installer`).
 
 ----------------------------
 Compatible Operating Systems
@@ -1270,8 +1270,8 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
 
 .. [#fn-kernel54]
 
-   To meet the :ref:`Host` prerequisites with this operating system, you may need to install a Linux kernel version 5.4. See :doc:`/sysadmin/kernel54`.
+   To meet the :ref:`Host Prerequisites` with this operating system, you may need to install a Linux kernel version 5.4. See :doc:`/sysadmin/kernel54`.
 
 .. [#fn-kernel-iptables]
 
-   To meet the :ref:`Host` prerequisites for this operating system, you may need to install the ``ip_tables`` loadable kernel module. See :doc:`/sysadmin/kernel-iptables`.
+   To meet the :ref:`Host Prerequisites` with this operating system, you may need to install the ``ip_tables`` loadable kernel module. See :doc:`/sysadmin/kernel-iptables`.
