@@ -1258,7 +1258,7 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
 
 .. [#fn-prerequisites]
 
-   See :ref:`Host` and :ref:`CPU` in the :doc:`/introduction/prerequisites`.
+   See :ref:`Host Prerequisites` and :ref:`CPU Prerequisites` in the :doc:`/introduction/prerequisites`.
 
 .. [#fn-k3s-os]
 
