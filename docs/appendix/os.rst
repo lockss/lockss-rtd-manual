@@ -2,7 +2,7 @@
 Operating Systems
 =================
 
-.. only:: html and not singlehtml
+:Section last updated: 2026-03-30
 
    .. sidebar::
 
@@ -53,6 +53,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+      *  *  AlmaLinux OS
+         *  9.7
+         *  2027-05-31
+         *  2032-05-31
+         *  
       *  *  AlmaLinux OS
          *  9.6
          *  2027-05-31
@@ -195,6 +200,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
          *  Security Support
          *  Notes
       *  *  Debian
+         *  13.4
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
          *  13.3
          *  2028-08-09
          *  2030-06-30
@@ -287,62 +297,62 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  Debian
          *  11.11
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.10
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.9
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.8
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.7
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.6
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.5
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.4
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.3
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.2
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.1
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.0
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
 
 .. dropdown:: Fedora Linux :bdg-success-line:`new since LOCKSS 1.x`
@@ -366,8 +376,8 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
          *  
       *  *  Fedora Linux
          *  42
-         *  2026-05-13
-         *  2026-05-13
+         *  :octicon:`alert` 2026-05-13
+         *  :octicon:`alert` 2026-05-13
          *  
 
 .. dropdown:: Linux Mint :bdg-success-line:`new since LOCKSS 1.x`
@@ -449,11 +459,6 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
          *  2027-10-31
          *  2027-10-31
          *  
-      *  *  OpenSUSE Leap
-         *  15.6
-         *  2026-04-04
-         *  2026-04-04
-         *  
 
 .. dropdown:: Oracle Linux
    :name: os-oracle-linux
@@ -481,6 +486,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
          *  Yes
          *  Yes
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+      *  *  Oracle Linux
+         *  9.7
+         *  2032-06-30
+         *  2035-06-30
+         *  
       *  *  Oracle Linux
          *  9.6
          *  2032-06-30
@@ -816,6 +826,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
          *  Security Support
          *  Notes
       *  *  SLES
+         *  16.0
+         *  2027-11-30
+         *  2030-11-30
+         *  
+      *  *  SLES
          *  15.7
          *  2031-07-31
          *  2034-07-31
@@ -833,7 +848,7 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  SLES
          *  15.4
          *  :octicon:`alert-fill` 2023-12-31
-         *  2026-12-31
+         *  :octicon:`alert` 2026-12-31
          *  
 
 .. dropdown:: Ubuntu :bdg-success-line:`new since LOCKSS 1.x`
