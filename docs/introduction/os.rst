@@ -2,7 +2,7 @@
 Operating System
 ================
 
-:Section last updated: 2025-12-19
+:Section last updated: 2026-03-30
 
 The LOCKSS system requires a **64-bit Linux** host (physical or virtual) compatible with `K3s <https://k3s.io/>`_, a lightweight open source Kubernetes distribution by `SUSE <https://www.suse.com/>`_ (formerly by Rancher). The K3s documentation states that "K3s is expected to work on most modern Linux systems", and that "Some OSs have additional setup requirements" [#fn-k3s-os]_ (which are documented in this manual and integrated into the LOCKSS Installer). Compatibility information for various operating systems can be found in this section.
 
@@ -36,12 +36,17 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  10.1
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
       *  *  AlmaLinux OS
          *  10.0
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
+      *  *  AlmaLinux OS
+         *  9.7
+         *  2027-05-31
+         *  2032-05-31
+         *  
       *  *  AlmaLinux OS
          *  9.6
          *  2027-05-31
@@ -81,42 +86,42 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  8.10
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  AlmaLinux OS
          *  8.9
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  AlmaLinux OS
          *  8.8
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  AlmaLinux OS
          *  8.7
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  AlmaLinux OS
          *  8.6
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  AlmaLinux OS
          *  8.5
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  AlmaLinux OS
          *  8.4
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  AlmaLinux OS
          *  8.3
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
 
 .. dropdown:: Arch Linux :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-arch-linux
@@ -184,6 +189,16 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Debian
+         *  13.4
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
+         *  13.3
+         *  2028-08-09
+         *  2030-06-30
+         *  
+      *  *  Debian
          *  13.2
          *  2028-08-09
          *  2030-06-30
@@ -197,6 +212,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  13.0
          *  2028-08-09
          *  2030-06-30
+         *  
+      *  *  Debian
+         *  12.13
+         *  2026-06-10
+         *  2028-06-30
          *  
       *  *  Debian
          *  12.12
@@ -266,62 +286,62 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
       *  *  Debian
          *  11.11
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.10
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.9
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.8
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.7
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.6
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.5
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.4
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.3
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.2
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.1
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
       *  *  Debian
          *  11.0
          *  :octicon:`alert-fill` 2024-08-14
-         *  2026-08-31
+         *  :octicon:`alert` 2026-08-31
          *  
 
 .. dropdown:: Fedora Linux :bdg-success-line:`new since LOCKSS 1.x`
@@ -345,8 +365,8 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  
       *  *  Fedora Linux
          *  42
-         *  2026-05-13
-         *  2026-05-13
+         *  :octicon:`alert` 2026-05-13
+         *  :octicon:`alert` 2026-05-13
          *  
 
 .. dropdown:: Linux Mint :bdg-success-line:`new since LOCKSS 1.x`
@@ -363,6 +383,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Active Support
          *  Security Support
          *  Notes
+      *  *  Linux Mint
+         *  22.3
+         *  Yes
+         *  2029-04-30
+         *  
       *  *  Linux Mint
          *  22.2
          *  Yes
@@ -423,11 +448,6 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  2027-10-31
          *  2027-10-31
          *  
-      *  *  OpenSUSE Leap
-         *  15.6
-         *  2026-04-04
-         *  2026-04-04
-         *  
 
 .. dropdown:: Oracle Linux
    :name: os-oracle-linux
@@ -446,10 +466,20 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Security Support
          *  Notes
       *  *  Oracle Linux
+         *  10.1
+         *  Yes
+         *  Yes
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
+      *  *  Oracle Linux
          *  10.0
          *  Yes
          *  Yes
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
+      *  *  Oracle Linux
+         *  9.7
+         *  2032-06-30
+         *  2035-06-30
+         *  
       *  *  Oracle Linux
          *  9.6
          *  2032-06-30
@@ -489,57 +519,57 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  8.10
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.9
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.8
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.7
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.6
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.5
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.4
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.3
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.2
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.1
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Oracle Linux
          *  8.0
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
 
 .. dropdown:: Red Hat Enterprise Linux (RHEL)
    :name: os-rhel
@@ -561,12 +591,12 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  10.1
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
       *  *  RHEL
          *  10.0
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
       *  *  RHEL
          *  9.7
          *  2027-05-31
@@ -611,57 +641,57 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  8.10
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.9
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.8
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.7
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.6
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.5
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.4
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.3
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.2
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.1
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  RHEL
          *  8.0
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
 
 .. dropdown:: Rocky Linux
    :name: os-rocky-linux
@@ -683,12 +713,12 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  10.1
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
       *  *  Rocky Linux
          *  10.0
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`warning: ip_tables` [#fn-kernel-iptables]_
       *  *  Rocky Linux
          *  9.7
          *  2027-05-31
@@ -733,42 +763,42 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  8.10
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.9
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.8
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.7
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.6
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.5
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.4
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
       *  *  Rocky Linux
          *  8.3
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-warning:`warning: kernel` [#fn-kernel54]_
 
 .. dropdown:: SUSE Linux Enterprise Server (SLES) :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-sles
@@ -784,6 +814,11 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
          *  Active Support
          *  Security Support
          *  Notes
+      *  *  SLES
+         *  16.0
+         *  2027-11-30
+         *  2030-11-30
+         *  
       *  *  SLES
          *  15.7
          *  2031-07-31
@@ -802,7 +837,7 @@ LOCKSS 2.x is compatible with the following operating systems. Note that the LOC
       *  *  SLES
          *  15.4
          *  :octicon:`alert-fill` 2023-12-31
-         *  2026-12-31
+         *  :octicon:`alert` 2026-12-31
          *  
 
 .. dropdown:: Ubuntu :bdg-success-line:`new since LOCKSS 1.x`
@@ -1235,8 +1270,12 @@ The following operating systems are unsuitable for use with LOCKSS 2.x because t
 
 .. [#fn-kernel54]
 
-   To meet the :ref:`Host` prerequisites with this operating system, you may need to install a Linux kernel version 5.4. See :doc:`/sysadmin/kernel54`.
+   :bdg-warning-line:`warning: kernel`
+
+   Some versions of some operating systems in the RHEL 8 family may not meet the "Linux kernel 5.4 or later is required" prerequisite from the :ref:`Linux Kernel Requirements` section out of the box. **Before installing**, see :ref:`Linux Kernel Requirements` and :doc:`/sysadmin/kernel54`.
 
 .. [#fn-kernel-iptables]
 
-   To meet the :ref:`Host` prerequisites for this operating system, you may need to install the ``ip_tables`` loadable kernel module. See :doc:`/sysadmin/kernel-iptables`.
+   :bdg-warning-line:`warning: ip_tables`
+
+   Some versions of some operating systems in the RHEL 10 family may not meet the "``ip_tables`` loadable kernel module is required" prerequisite from the :ref:`Linux Kernel Requirements` section out of the box. **Before installing**, see :ref:`Linux Kernel Requirements` and :doc:`/sysadmin/kernel-iptables`.
