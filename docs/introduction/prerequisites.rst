@@ -10,10 +10,10 @@ System Prerequisites
 
       .. contents:: Section Table of Contents
          :local:
-         :depth: 1
+         :depth: 2
          :backlinks: none
 
-This section describes the Linux, CPU, memory, and storage prerequisites for LOCKSS |LATEST_MINOR|, which vary depending on the scope of your application.
+|LOCKSS| |LATEST_MINOR| requires a **Linux** host (either a physical machine or a virtual machine), with **at least some locally-attached storage**. This section discusses the host (CPU, memory, Linux, etc.) and storage prerequisites for |LOCKSS| |LATEST_MINOR|, which vary depending on the scope of your application.
 
 .. index:: system prerequisites; host
 
@@ -21,14 +21,28 @@ This section describes the Linux, CPU, memory, and storage prerequisites for LOC
 Host Prerequisites
 ------------------
 
-LOCKSS |LATEST_MINOR| requires a **Linux** host (either a physical machine or a virtual machine), with at least some locally-attached storage.
+.. index:: system prerequisites; CPU
+
+CPU Prerequisites
+=================
+
+LOCKSS |LATEST_MINOR| runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which :doc:`components` you choose to run.
+
+.. index:: system prerequisites; memory
+
+Memory Prerequisites
+====================
+
+Likewise, the memory requirements also depend on which :doc:`components` you choose to run. We recommend **32 GB** of memory for typical applications, or more for hosts involved in computing-heavy applications like the Global LOCKSS Network (GLN) or CLOCKSS.
 
 .. index:: system prerequisites; operating system
 
 Operating System Prerequisites
 ==============================
 
-More specifically, LOCKSS |LATEST_MINOR| requires a Linux distribution that is compatible with :term:`K3s`, the :term:`Kubernetes` distribution the :term:`LOCKSS stack` runs on. This prerequisite is met by many versions of AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu listed in the  :ref:`Compatible Operating Systems` appendix.
+LOCKSS requires a Linux distribution that is compatible with :term:`K3s`, the :term:`Kubernetes` distribution the :term:`LOCKSS stack` runs on. More specifically, LOCKSS |LATEST_MINOR| uses K3s |K3S_MINOR|.
+
+This prerequisite is met by operating systems listed in the :ref:`Compatible Operating Systems` appendix (with some adjustments for some versions), including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
 
 .. index:: system prerequisites; Linux kernel
 
@@ -111,22 +125,6 @@ System Software Prerequisites
       *  If both output a valid version message, the host satisfies the archiver requirement.
 
       *  If either outputs an error message, the host does not satisfy the archiver requirement. See :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip`.
-
-.. index:: system prerequisites; CPU
-
------------------
-CPU Prerequisites
------------------
-
-LOCKSS |LATEST_MINOR| runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which :doc:`components` you choose to run.
-
-.. index:: system prerequisites; memory
-
---------------------
-Memory Prerequisites
---------------------
-
-Likewise, the **memory** requirements also depend on which :doc:`components` you choose to run. We recommend **32 GB** of memory for typical applications, or more for machines involved in sizeable applications like the Global LOCKSS Network (GLN) or CLOCKSS.
 
 ---------------------
 Storage Prerequisites
