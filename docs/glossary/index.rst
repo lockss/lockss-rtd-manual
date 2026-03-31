@@ -11,13 +11,13 @@ Glossary
 
       Many LOCKSS functions operate at the AU level, such as :term:`LCAP` polling/voting, Web crawls, metadata extraction, and more. Each AU handled by the system is referenced by its :term:`archival unit identifier` or AUID.
 
-      The shape and definition of an AU is determined by the :term:`LOCKSS plugin` that processes it.
+      The shape and definition of an AU is determined by the :term:`LOCKSS plugin` that handles it.
 
    archival unit identifier
    AUID
       The unique string identifier of a given :term:`archival unit` handled by the :term:`LOCKSS system` is called an archival unit identifier, or :index:`AUID <see: AUID; archival unit identifier>`.
 
-      The definition, and therefore AUID, of an AU is determined by the :term:`LOCKSS plugin` that processes it.
+      The definition, and therefore AUID, of an AU is determined by the :term:`LOCKSS plugin` that handles it.
 
    container
       A :index:`software container <see: software container; container>`, or simply a container, is a lightweight, narrow-purpose bundle of software code, its dependencies, and its environment, forming a virtual unit of software that can be run on a variety of host environments by a :term:`container orchestration system`.
@@ -58,10 +58,10 @@ Glossary
       Docker Hub is operated by `Docker <https://www.docker.com/>`_.
 
    firewall
-      A firewall is a computer security system that monitors and controls network traffic.
+      A firewall is a computer security system that monitors, controls, and restricts network traffic.
 
    firewalld
-      `Firewalld <https://firewalld.org/>`_ is an open source :term:`firewall` management tool for Linux.
+      `Firewalld <https://firewalld.org/>`_, pronounced *firewall-D*, is an open source :term:`firewall` management tool for Linux.
 
       Firewalld interacts with the Linux kernel's :term:`netfilter` framework via :term:`nftables`.
 
@@ -81,18 +81,22 @@ Glossary
       .. include:: install-lockss.rst
 
    iptables
-      `iptables <https://netfilter.org/projects/iptables>`_ is an open source software package that implements :term:`firewall` rules using the Linux kernel's :term:`netfilter` framework.
+      `iptables <https://netfilter.org/projects/iptables>`_, pronounced *I-P-tables*, is an open source software package that implements :term:`firewall` rules using the Linux kernel's :term:`netfilter` framework.
 
       Although still widely in use, iptables has been succeeded by :term:`nftables`.
 
       Iptables is developed by the `Netfilter <https://www.netfilter.org/>`_ project.
 
    K3s
-      `K3s <https://k3s.io/>`_, pronounced *K-three-S*, is a lightweight, open source :term:`Kubernetes` distribution.
+      `K3s <https://k3s.io/>`_, pronounced *K-three-S*, is a lightweight, open source :term:`Kubernetes` distribution, on which the :term:`LOCKSS system` runs.
 
       Important prerequisites for running LOCKSS apply to the :term:`K3s data directory`.
 
       K3s is developed by `Rancher <https://www.rancher.com/>`_, a subsidiary of `SUSE <https://www.suse.com/>`_.
+
+   K3s Configuration Checker
+   k3s check-config
+      The K3s Configuration Checker (also known as :program:`k3s check-config`) is a script that assesses the health of :term:`K3s` after it is installed by the :term:`K3s Installer`. This script is provided by `Rancher <https://www.rancher.com/>`_ as part of K3s.
 
    K3s data directory
       :term:`K3s` downloads :term:`containers <container>` and stores configuration and other data into a directory known as the K3s data directory.
@@ -101,10 +105,13 @@ Glossary
 
       Important prerequisites for running LOCKSS apply to the :term:`K3s data directory`, as outlined in :numref:`System Storage Prerequisites` (:ref:`System Storage Prerequisites`): :ref:`prerequisites-k3s-nfs`, :ref:`prerequisites-k3s-xfs`.
 
+   K3s Installer
+      The K3s Installer is a script that installs and configures :term:`K3s` onto a Linux host. This script, provided by `Rancher <https://www.rancher.com/>`_ as part of K3s, is invoked by the :term:`LOCKSS Installer` as part of :term:`install-lockss`.
+
    Kubernetes
       `Kubernetes <https://kubernetes.io/>`_, pronounced *coo-burn-NET-ease*, also styled *K8s*, is an open source :term:`container orchestration system`.
 
-      The LOCKSS system uses the :term:`K3s` Kubernetes distribution.
+      The :term:`LOCKSS system` uses the :term:`K3s` Kubernetes distribution.
 
       Kubernetes development is governed by the `Cloud Native Computing Foundation <https://www.cncf.io/>`_, a project of the `Linux Foundation <https://www.linuxfoundation.org/>`_.
 
@@ -119,7 +126,7 @@ Glossary
 
       *  :term:`LOCKSS system`: LOCKSS is an open source distributed digital preservation system.
 
-      *  :term:`LOCKSS program`: LOCKSS is a program of Stanford University Libraries that develops the |LOCKSS| software and provides digital preservation services.
+      *  :term:`LOCKSS Program`: LOCKSS is a program of Stanford University Libraries that develops the |LOCKSS| software and provides digital preservation services.
 
       *  The acronym *Lots Of Copies Keep Stuff Safe*: "Lots of Copies Keep Stuff Safe" is a digital preservation methodology embodied by the |LOCKSS| software.
 
@@ -162,8 +169,8 @@ Glossary
 
       .. include:: lockss-poller-service.rst
 
-   LOCKSS program
-      LOCKSS is a program of `Stanford University Libraries <https://library.stanford.edu/>`_, that develops the :term:`LOCKSS system` and provides digital preservation services.
+   LOCKSS Program
+      LOCKSS is a program of `Stanford University Libraries <https://library.stanford.edu/>`_, that develops the :term:`LOCKSS system`, and provides digital preservation services.
 
    LOCKSS Repository Service
       .. index::
@@ -173,6 +180,9 @@ Glossary
       .. include:: lockss-repository-service.rst
 
    LOCKSS SOAP Compatibility Service
+      .. index::
+         see: SOAP Service; LOCKSS SOAP Compatibility Service
+
       .. include:: lockss-soap-compatibility-service.rst
 
    LOCKSS stack
@@ -188,7 +198,7 @@ Glossary
       ``netfilter`` is a Linux kernel module that provides a packet filtering framework, relied on by many :term:`firewall` software applications.
 
    nftables
-      `nftables <https://netfilter.org/projects/nftables>`_ is an open source software package that implements :term:`firewall` rules using the Linux kernel's :term:`netfilter` packet filtering system.
+      `nftables <https://netfilter.org/projects/nftables>`_,pronounced *N-F-tables*, is an open source software package that implements :term:`firewall` rules using the Linux kernel's :term:`netfilter` packet filtering system.
 
       Nftables is the successor for :term:`iptables`, although the latter is still widely in use.
 
@@ -246,7 +256,7 @@ Glossary
 
    Web replay engine
 
-      A Web replay engine, or :index:`Web playback engine <see: Web playback engine; Web replay engine>`, is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view the same URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
+      A Web replay engine, or :index:`Web playback engine <see: Web playback engine; Web replay engine>`, is a software application that allows a user to interact with a Web archive in a Web browser, typically with the ability to view a URL as it was at different points in time. The most famous example of a Web replay engine is that of the `Internet Archive Wayback Machine <https://web.archive.org/>`_.
 
       |LOCKSS| offers up to three Web replay engines: :term:`ServeContent`, :term:`Pywb`, and :term:`OpenWayback`.
 

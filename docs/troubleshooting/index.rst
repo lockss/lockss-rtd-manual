@@ -1,10 +1,10 @@
-=================================
-Troubleshooting the LOCKSS System
-=================================
+======================
+Troubleshooting LOCKSS
+======================
 
-This chapter contains sections of additional information about troubleshooting the LOCKSS system.
+This chapter contains sections of additional information about troubleshooting |LOCKSS|.
 
-Sections include guidance for troubleshooting networking-related components like :program:`iptables`, :program:`firewalld`, and :program:`ufw`, and K3s-related components like CoreDNS, the K3s Installer, the K3s Configuration Checker.
+Sections include guidance for troubleshooting networking-related components like :term:`iptables`, :term:`firewalld`, and :term:`ufw`, and :term:`K3s`-related components like :term:`CoreDNS`, the K3s Installer, the K3s Configuration Checker.
 
 .. only:: html and not singlehtml
 
