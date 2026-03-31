@@ -26,14 +26,14 @@ Host Prerequisites
 CPU Prerequisites
 =================
 
-LOCKSS |LATEST_MINOR| runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on which :doc:`components` you choose to run.
+LOCKSS |LATEST_MINOR| runs on a **64-bit CPU** with at least **4 CPU cores**, preferably 8, depending on how many :doc:`components` you choose to run.
 
 .. index:: system prerequisites; memory
 
 Memory Prerequisites
 ====================
 
-Likewise, the memory requirements also depend on which :doc:`components` you choose to run. We recommend **32 GB** of memory for typical applications, or more for hosts involved in computing-heavy applications like the Global LOCKSS Network (GLN) or CLOCKSS.
+Likewise, the memory requirements also depend on which :doc:`components` you choose to run. We recommend **32 GB of memory** for typical applications, or more for hosts involved in computing-heavy applications like the Global LOCKSS Network (GLN) or CLOCKSS.
 
 .. index:: system prerequisites; operating system
 
@@ -191,11 +191,11 @@ The most significant portion of :term:`system storage` used by the LOCKSS stack 
 
       This is expected to be an issue only for installations of LOCKSS 1.x using XFS filesystems old enough to have ``ftype=0``, looking to install LOCKSS |LATEST_MINOR| as part of a :doc:`same-host migration <lockss-portal:migration/index>`. Alternatives in this case include a :doc:`new-host migration <lockss-portal:migration/index>`, or a potential workaround; see :doc:`/troubleshooting/xfs`.
 
-3. .. dropdown:: System storage size requirements
-      :name: prerequisites-system-storage-size
+3. .. dropdown:: K3s data directory size requirements
+      :name: prerequisites-k3s-size
       :animate: fade-in-slide-down
 
-      FIXME
+      The :term:`K3s data directory` can grow large and requires **at least 50 GB of space**.
 
 .. index:: system prerequisites; operating storage, operating storage; prerequisites
 
@@ -228,19 +228,25 @@ Operating storage consists of three storage areas:
       :name: prerequisites-operating-storage-local
       :animate: fade-in-slide-down
 
-      For operating storage, **local storage is strongly recommended**, in other words NFS or other non-local filesystems are strongly discouraged, as remote filesystems for operating storage can negatively impact the performance of the LOCKSS stack.
+      For all operating storage, **local storage is strongly recommended**, in other words NFS or other non-local filesystems are strongly discouraged, as remote filesystems for operating storage can negatively impact the performance of the LOCKSS stack.
 
-2. .. dropdown:: Temporary storage area filesystem requirements
+2. .. dropdown:: State data storage area size requirements
+      :name: prerequisites-state-data-storage-size
+      :animate: fade-in-slide-down
+
+      State data storage usage is dominated by the :ref:`PostgreSQL` database, which can grow to very different sizes depending on the scope of your application, for example how many individual :term:`artifacts <artifact>` (data objects) are preserved in the :ref:`LOCKSS Repository Service` and to what extent the :ref:`LOCKSS Metadata Service` is used. We propose the following guidelines:
+
+      *  Small state data profile: A modest application with thousands of :term:`archival units <archival unit>`, with reasonable file sizes (for example, less than 2 GB) and number of files per AU. For this profile, we recommend **at least 50 GB of state data storage**.
+
+      *  Medium state data profile: An application that is expected to exceed one of the parameters for a small state data profile, perhaps involving tens of thousands of AUs, some large files in the tens of gigabytes, or AUs with tens of thousands of files. For this profile, we recommend  **at least 150 GB of state data storage**.
+
+      *  Large state data profile: An intensive application with extensive metadata extraction, perhaps like the Global LOCKSS Network (GLN) or CLOCKSS. For this profile, we recommend  **at least 500 GB of state data storage**.
+
+3. .. dropdown:: Temporary storage area size requirements
       :name: prerequisites-temporary-storage-size
       :animate: fade-in-slide-down
 
-      Depending on the characteristics of the preservation activities undertaken by the system, in some circumstances content processing may require a substantial amount of temporary space, up to tens of gigabytes. A RAM-based ``tmpfs`` volume or a directory in a space-constrained partition are **not suitable for the temporary storage area**.
-
-3. .. dropdown:: Operating storage size requirements
-      :name: prerequisites-operating-storage-size
-      :animate: fade-in-slide-down
-
-      FIXME
+      Depending on the characteristics of the preservation activities undertaken by the system, content processing may require a substantial amount of temporary space. As a guideline, we recommend either **50 GB of temporary storage**, or **about three times as much temporary storage as the largest individual file expected to be preserved**, whichever is larger.
 
 .. index:: content storage; prerequisites
 
@@ -253,9 +259,29 @@ Content Storage Prerequisites
 
 Content storage can be backed by NFS or other non-local filesystems, although locally-attached storage is more performant.
 
-The list of :term:`content storage areas <content storage area>` is configurable in :numref:`Content Storage Areas` (:ref:`Content Storage Areas`).
+In total, the content storage areas need to be **large enough to hold all the content to be preserved in the node**.
 
-FIXME
+The list of :term:`content storage areas <content storage area>` is configurable in :numref:`Content Storage Area Settings` (:ref:`Content Storage Area Settings`).
+
+.. index:: system prerequisites; other considerations
+
+--------------------
+Other Considerations
+--------------------
+
+.. index:: system prerequisites; networking considerations
+
+Networking Considerations
+=========================
+
+Internally, :term:`K3s` uses the private subnets 10.42.0.0/16 and 10.43.0.0/16 (the IP addresses from 10.42.0.0 through 10.43.255.255) to allocate IP addresses to :term:`containers <container>` in the :term:`LOCKSS stack`. The networking infrastructure at some institutions may include host-based :term:`firewall` rules that can inadvertently block K3s' internal communication mechanisms. If your institution does this, you will need to exclude 10.42.0.0/16 and 10.43.0.0/16 (or more succinctly, 10.42.0.0/15) from those rules. What to do will vary depending on your individual situation.
+
+.. index:: system prerequisites; software configuration management
+
+Configuration Management Considerations
+=======================================
+
+Some :term:`firewall` and :term:`iptables` enforcement features of :term:`configuration management systems <configuration management system>` such as `Puppet <https://puppet.com/>`_, `Ansible <https://www.ansible.com/>`_, `Chef <https://www.chef.io/>`_, or `Salt <https://saltproject.io/>`_, are incompatible with :term:`K3s`. For example, Puppet's ``puppetlabs-firewall`` module sometimes causes K3s to be non-functional after a reboot, requiring killing and restarting the K3s systemd service. What to do will vary depending on your individual situation.
 
 ----
 
