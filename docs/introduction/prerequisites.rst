@@ -13,7 +13,7 @@ System Prerequisites
          :depth: 2
          :backlinks: none
 
-|LOCKSS| |LATEST_MINOR| requires a **Linux** host (either a physical machine or a virtual machine), with **at least some locally-attached storage**. This section discusses the host (CPU, memory, Linux, etc.) and storage prerequisites for |LOCKSS| |LATEST_MINOR|, which vary depending on the scope of your application.
+|LOCKSS| requires a **Linux** host (either a physical machine or a virtual machine), with **at least some locally-attached storage**. This section discusses the host (CPU, memory, Linux, etc.) and storage prerequisites for LOCKSS |LATEST_MINOR|, which vary depending on the scope of your application.
 
 .. index:: system prerequisites; host
 
@@ -263,20 +263,20 @@ In total, the content storage areas need to be **large enough to hold all the co
 
 The list of :term:`content storage areas <content storage area>` is configurable in :numref:`Content Storage Area Settings` (:ref:`Content Storage Area Settings`).
 
-.. index:: system prerequisites; other considerations
+.. index:: system prerequisites; miscellaneous prerequisites
 
---------------------
-Other Considerations
---------------------
+---------------------------
+Miscellaneous Prerequisites
+---------------------------
 
 .. index:: system prerequisites; networking considerations
 
 Networking Considerations
 =========================
 
-Internally, :term:`K3s` uses the private subnets 10.42.0.0/16 and 10.43.0.0/16 (the IP addresses from 10.42.0.0 through 10.43.255.255) to allocate IP addresses to :term:`containers <container>` in the :term:`LOCKSS stack`. The networking infrastructure at some institutions may include host-based :term:`firewall` rules that can inadvertently block K3s' internal communication mechanisms. If your institution does this, you will need to exclude 10.42.0.0/16 and 10.43.0.0/16 (or more succinctly, 10.42.0.0/15) from those rules. What to do will vary depending on your individual situation.
+Internally, :term:`K3s` uses the private subnets 10.42.0.0/16 and 10.43.0.0/16 (the IP addresses from 10.42.0.0 through 10.43.255.255) to allocate IP addresses to :term:`containers <container>`. The networking infrastructure at some institutions may include host-based :term:`firewall` rules that can inadvertently block K3s' internal communication mechanisms. If your institution does this, you will need to exclude 10.42.0.0/16 and 10.43.0.0/16 (or more succinctly, 10.42.0.0/15) from these rules. What to do will vary depending on your individual situation.
 
-.. index:: system prerequisites; software configuration management
+.. index:: system prerequisites; configuration management
 
 Configuration Management Considerations
 =======================================
