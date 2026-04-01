@@ -44,4 +44,4 @@ Follow these steps:
 
       useradd -rUms /bin/bash lockss
 
-   This will create a ``lockss`` system user, a ``lockss`` system group, and a home directory in :file:`{$HOME}/lockss` (which is :file:`/home/lockss` on most Linux systems).
+   This will create a ``lockss`` system user, a ``lockss`` system group, and a home directory in (typically) :file:`/home/lockss`.
