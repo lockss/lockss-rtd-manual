@@ -11,12 +11,12 @@ Type ``tar --version`` (or ``gtar --version``) at the host's command line. If an
 .. tab-set::
 
    .. tab-item:: AlmaLinux OS
-      :sync: alma
+      :sync: almalinux-os
 
       .. include:: tar-dnf.rst
 
    .. tab-item:: Arch Linux
-      :sync: arch
+      :sync: arch-linux
 
       .. include:: tar-pacman.rst
 
@@ -31,32 +31,27 @@ Type ``tar --version`` (or ``gtar --version``) at the host's command line. If an
       .. include:: tar-apt.rst
 
    .. tab-item:: Fedora Linux
-      :sync: fedora
+      :sync: fedora-linux
 
       .. include:: tar-dnf.rst
 
    .. tab-item:: Linux Mint
-      :sync: mint
+      :sync: linux-mint
 
       .. include:: tar-apt.rst
 
-   .. tab-item:: OpenSUSE
-      :sync: opensuse
+   .. tab-item:: OpenSUSE Leap
+      :sync: opensuse-leap
 
-      .. tab-set::
+      .. include:: tar-zypper.rst
 
-         .. tab-item:: OpenSUSE Leap
-            :sync: opensuse-leap
+   .. tab-item:: OpenSUSE Tumbleweed
+      :sync: opensuse-tumbleweed
 
-            .. include:: tar-zypper.rst
-
-         .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensuse-tumbleweed
-
-            .. include:: tar-zypper.rst
+      .. include:: tar-zypper.rst
 
    .. tab-item:: Oracle Linux
-      :sync: oracle
+      :sync: oracle-linux
 
       .. include:: tar-dnf.rst
 
@@ -66,7 +61,7 @@ Type ``tar --version`` (or ``gtar --version``) at the host's command line. If an
       .. include:: tar-dnf.rst
 
    .. tab-item:: Rocky Linux
-      :sync: rocky
+      :sync: rocky-linux
 
       .. include:: tar-dnf.rst
 

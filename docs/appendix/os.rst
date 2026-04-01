@@ -2,7 +2,7 @@
 Operating Systems
 =================
 
-:Section last updated: 2026-03-30
+:Section last updated: 2026-04-01
 
    .. sidebar::
 
@@ -10,8 +10,6 @@ Operating Systems
          :local:
          :depth: 1
          :backlinks: none
-
-:Section last updated: 2026-01-29
 
 This section outlines the Linux operating systems compatible with LOCKSS |LATEST_MINOR|.
 
@@ -28,7 +26,7 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
    If you or your IT department do not have a strong preference in terms of Linux distribution, we recommend community-supported RHEL alternatives :ref:`os-almalinux` and :ref:`os-rocky-linux`.
 
 .. dropdown:: AlmaLinux OS
-   :name: os-almalinux
+   :name: os-almalinux-os
    :animate: fade-in-slide-down
 
    LOCKSS |LATEST_MINOR| is compatible with `AlmaLinux OS <https://almalinux.org/>`_.
@@ -39,97 +37,78 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  AlmaLinux OS
-         *  10.1
+      *  *  AlmaLinux OS 10.1
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  AlmaLinux OS
-         *  10.0
+      *  *  AlmaLinux OS 10.0
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  AlmaLinux OS
-         *  9.7
+      *  *  AlmaLinux OS 9.7
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  9.6
+      *  *  AlmaLinux OS 9.6
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  9.5
+      *  *  AlmaLinux OS 9.5
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  9.4
+      *  *  AlmaLinux OS 9.4
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  9.3
+      *  *  AlmaLinux OS 9.3
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  9.2
+      *  *  AlmaLinux OS 9.2
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  9.1
+      *  *  AlmaLinux OS 9.1
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  9.0
+      *  *  AlmaLinux OS 9.0
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  AlmaLinux OS
-         *  8.10
+      *  *  AlmaLinux OS 8.10
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  AlmaLinux OS
-         *  8.9
+      *  *  AlmaLinux OS 8.9
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  AlmaLinux OS
-         *  8.8
+      *  *  AlmaLinux OS 8.8
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  AlmaLinux OS
-         *  8.7
+      *  *  AlmaLinux OS 8.7
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  AlmaLinux OS
-         *  8.6
+      *  *  AlmaLinux OS 8.6
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  AlmaLinux OS
-         *  8.5
+      *  *  AlmaLinux OS 8.5
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  AlmaLinux OS
-         *  8.4
+      *  *  AlmaLinux OS 8.4
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  AlmaLinux OS
-         *  8.3
+      *  *  AlmaLinux OS 8.3
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
@@ -144,12 +123,10 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
       *  *  Arch Linux
-         *  Rolling
          *  Rolling
          *  Rolling
          *  
@@ -170,17 +147,14 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  CentOS Stream
-         *  10
+      *  *  CentOS Stream 10
          *  2030-01-01
          *  2030-01-01
          *  
-      *  *  CentOS Stream
-         *  9
+      *  *  CentOS Stream 9
          *  2027-05-31
          *  2027-05-31
          *  
@@ -195,162 +169,130 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  Debian
-         *  13.4
+      *  *  Debian 13.4
          *  2028-08-09
          *  2030-06-30
          *  
-      *  *  Debian
-         *  13.3
+      *  *  Debian 13.3
          *  2028-08-09
          *  2030-06-30
          *  
-      *  *  Debian
-         *  13.2
+      *  *  Debian 13.2
          *  2028-08-09
          *  2030-06-30
          *  
-      *  *  Debian
-         *  13.1
+      *  *  Debian 13.1
          *  2028-08-09
          *  2030-06-30
          *  
-      *  *  Debian
-         *  13.0
+      *  *  Debian 13.0
          *  2028-08-09
          *  2030-06-30
          *  
-      *  *  Debian
-         *  12.13
+      *  *  Debian 12.13
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.12
+      *  *  Debian 12.12
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.11
+      *  *  Debian 12.11
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.10
+      *  *  Debian 12.10
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.9
+      *  *  Debian 12.9
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.8
+      *  *  Debian 12.8
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.7
+      *  *  Debian 12.7
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.6
+      *  *  Debian 12.6
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.5
+      *  *  Debian 12.5
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.4
+      *  *  Debian 12.4
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.3
+      *  *  Debian 12.3
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.2
+      *  *  Debian 12.2
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.1
+      *  *  Debian 12.1
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  12.0
+      *  *  Debian 12.0
          *  2026-06-10
          *  2028-06-30
          *  
-      *  *  Debian
-         *  11.11
+      *  *  Debian 11.11
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.10
+      *  *  Debian 11.10
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.9
+      *  *  Debian 11.9
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.8
+      *  *  Debian 11.8
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.7
+      *  *  Debian 11.7
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.6
+      *  *  Debian 11.6
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.5
+      *  *  Debian 11.5
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.4
+      *  *  Debian 11.4
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.3
+      *  *  Debian 11.3
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.2
+      *  *  Debian 11.2
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.1
+      *  *  Debian 11.1
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
-      *  *  Debian
-         *  11.0
+      *  *  Debian 11.0
          *  :octicon:`alert-fill` 2024-08-14
          *  :octicon:`alert` 2026-08-31
          *  
@@ -365,17 +307,14 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  Fedora Linux
-         *  43
+      *  *  Fedora Linux 43
          *  2026-12-09
          *  2026-12-09
          *  
-      *  *  Fedora Linux
-         *  42
+      *  *  Fedora Linux 42
          *  :octicon:`alert` 2026-05-13
          *  :octicon:`alert` 2026-05-13
          *  
@@ -390,74 +329,76 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  Linux Mint
-         *  22.3
+      *  *  Linux Mint 22.3
          *  Yes
          *  2029-04-30
          *  
-      *  *  Linux Mint
-         *  22.2
+      *  *  Linux Mint 22.2
          *  Yes
          *  2029-04-30
          *  
-      *  *  Linux Mint
-         *  22.1
+      *  *  Linux Mint 22.1
          *  Yes
          *  2029-04-30
          *  
-      *  *  Linux Mint
-         *  22
+      *  *  Linux Mint 22
          *  Yes
          *  2029-04-30
          *  
-      *  *  Linux Mint
-         *  21.3
+      *  *  Linux Mint 21.3
          *  Yes
          *  2027-04-30
          *  
-      *  *  Linux Mint
-         *  21.2
+      *  *  Linux Mint 21.2
          *  Yes
          *  2027-04-30
          *  
-      *  *  Linux Mint
-         *  21.1
+      *  *  Linux Mint 21.1
          *  Yes
          *  2027-04-30
          *  
-      *  *  Linux Mint
-         *  21
+      *  *  Linux Mint 21
          *  Yes
          *  2027-04-30
          *  
 
-.. dropdown:: OpenSUSE :bdg-success-line:`new since LOCKSS 1.x`
-   :name: os-opensuse
+.. dropdown:: OpenSUSE Leap :bdg-success-line:`new since LOCKSS 1.x`
+   :name: os-opensuse-leap
    :animate: fade-in-slide-down
 
-   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE <https://www.opensuse.org/>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE <https://get.opensuse.org/leap>`_.
 
    .. list-table::
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
+         *  Active Support
+         *  Security Support
+         *  Notes
+      *  *  OpenSUSE Leap 16.0
+         *  2027-10-31
+         *  2027-10-31
+         *  
+
+.. dropdown:: OpenSUSE Tumbleweed :bdg-success-line:`new since LOCKSS 1.x`
+   :name: os-opensuse-tumbleweed
+   :animate: fade-in-slide-down
+
+   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE <https://get.opensuse.org/tumbleweed>`_.
+
+   .. list-table::
+      :header-rows: 1
+
+      *  *  Operating System
          *  Active Support
          *  Security Support
          *  Notes
       *  *  OpenSUSE Tumbleweed
          *  Rolling
          *  Rolling
-         *  Rolling
-         *  
-      *  *  OpenSUSE Leap
-         *  16.0
-         *  2027-10-31
-         *  2027-10-31
          *  
 
 .. dropdown:: Oracle Linux
@@ -472,112 +413,90 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  Oracle Linux
-         *  10.1
+      *  *  Oracle Linux 10.1
          *  Yes
          *  Yes
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  Oracle Linux
-         *  10.0
+      *  *  Oracle Linux 10.0
          *  Yes
          *  Yes
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  Oracle Linux
-         *  9.7
+      *  *  Oracle Linux 9.7
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  9.6
+      *  *  Oracle Linux 9.6
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  9.5
+      *  *  Oracle Linux 9.5
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  9.4
+      *  *  Oracle Linux 9.4
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  9.3
+      *  *  Oracle Linux 9.3
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  9.2
+      *  *  Oracle Linux 9.2
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  9.1
+      *  *  Oracle Linux 9.1
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  9.0
+      *  *  Oracle Linux 9.0
          *  2032-06-30
          *  2035-06-30
          *  
-      *  *  Oracle Linux
-         *  8.10
+      *  *  Oracle Linux 8.10
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.9
+      *  *  Oracle Linux 8.9
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.8
+      *  *  Oracle Linux 8.8
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.7
+      *  *  Oracle Linux 8.7
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.6
+      *  *  Oracle Linux 8.6
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.5
+      *  *  Oracle Linux 8.5
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.4
+      *  *  Oracle Linux 8.4
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.3
+      *  *  Oracle Linux 8.3
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.2
+      *  *  Oracle Linux 8.2
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.1
+      *  *  Oracle Linux 8.1
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Oracle Linux
-         *  8.0
+      *  *  Oracle Linux 8.0
          *  2029-07-31
          *  2032-07-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
@@ -594,112 +513,90 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  RHEL
-         *  10.1
+      *  *  RHEL 10.1
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  RHEL
-         *  10.0
+      *  *  RHEL 10.0
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  RHEL
-         *  9.7
+      *  *  RHEL 9.7
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  9.6
+      *  *  RHEL 9.6
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  9.5
+      *  *  RHEL 9.5
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  9.4
+      *  *  RHEL 9.4
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  9.3
+      *  *  RHEL 9.3
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  9.2
+      *  *  RHEL 9.2
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  9.1
+      *  *  RHEL 9.1
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  9.0
+      *  *  RHEL 9.0
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  RHEL
-         *  8.10
+      *  *  RHEL 8.10
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.9
+      *  *  RHEL 8.9
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.8
+      *  *  RHEL 8.8
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.7
+      *  *  RHEL 8.7
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.6
+      *  *  RHEL 8.6
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.5
+      *  *  RHEL 8.5
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.4
+      *  *  RHEL 8.4
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.3
+      *  *  RHEL 8.3
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.2
+      *  *  RHEL 8.2
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.1
+      *  *  RHEL 8.1
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  RHEL
-         *  8.0
+      *  *  RHEL 8.0
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
@@ -716,97 +613,78 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  Rocky Linux
-         *  10.1
+      *  *  Rocky Linux 10.1
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  Rocky Linux
-         *  10.0
+      *  *  Rocky Linux 10.0
          *  2030-05-31
          *  2035-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
-      *  *  Rocky Linux
-         *  9.7
+      *  *  Rocky Linux 9.7
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  9.6
+      *  *  Rocky Linux 9.6
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  9.5
+      *  *  Rocky Linux 9.5
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  9.4
+      *  *  Rocky Linux 9.4
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  9.3
+      *  *  Rocky Linux 9.3
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  9.2
+      *  *  Rocky Linux 9.2
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  9.1
+      *  *  Rocky Linux 9.1
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  9.0
+      *  *  Rocky Linux 9.0
          *  2027-05-31
          *  2032-05-31
          *  
-      *  *  Rocky Linux
-         *  8.10
+      *  *  Rocky Linux 8.10
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Rocky Linux
-         *  8.9
+      *  *  Rocky Linux 8.9
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Rocky Linux
-         *  8.8
+      *  *  Rocky Linux 8.8
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Rocky Linux
-         *  8.7
+      *  *  Rocky Linux 8.7
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Rocky Linux
-         *  8.6
+      *  *  Rocky Linux 8.6
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Rocky Linux
-         *  8.5
+      *  *  Rocky Linux 8.5
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Rocky Linux
-         *  8.4
+      *  *  Rocky Linux 8.4
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
-      *  *  Rocky Linux
-         *  8.3
+      *  *  Rocky Linux 8.3
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
          *  :bdg-info-line:`footnote` [#fn-kernel54]_
@@ -821,32 +699,26 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  SLES
-         *  16.0
+      *  *  SLES 16.0
          *  2027-11-30
          *  2030-11-30
          *  
-      *  *  SLES
-         *  15.7
+      *  *  SLES 15.7
          *  2031-07-31
          *  2034-07-31
          *  
-      *  *  SLES
-         *  15.6
+      *  *  SLES 15.6
          *  :octicon:`alert-fill` 2025-12-31
          *  2028-06-30
          *  
-      *  *  SLES
-         *  15.5
+      *  *  SLES 15.5
          *  :octicon:`alert-fill` 2024-12-31
          *  2027-12-31
          *  
-      *  *  SLES
-         *  15.4
+      *  *  SLES 15.4
          *  :octicon:`alert-fill` 2023-12-31
          *  :octicon:`alert` 2026-12-31
          *  
@@ -861,22 +733,18 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  Ubuntu
-         *  25.10
+      *  *  Ubuntu 25.10
          *  :octicon:`alert` 2026-07-01
          *  :octicon:`alert` 2026-07-01
          *  
-      *  *  Ubuntu
-         *  24.04 LTS
+      *  *  Ubuntu 24.04 LTS
          *  2029-04-25
          *  2029-04-25
          *  
-      *  *  Ubuntu
-         *  22.04 LTS
+      *  *  Ubuntu 22.04 LTS
          *  :octicon:`alert-fill` 2024-09-30
          *  2027-04-01
          *  
@@ -903,202 +771,162 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  CentOS Linux
-         *  8.5
+      *  *  CentOS Linux 8.5
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  8.4
+      *  *  CentOS Linux 8.4
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  8.3
+      *  *  CentOS Linux 8.3
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  8.2
+      *  *  CentOS Linux 8.2
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  8.1
+      *  *  CentOS Linux 8.1
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  8.0
+      *  *  CentOS Linux 8.0
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`alert-fill` 2021-12-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.9
+      *  *  CentOS Linux 7.9
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.8
+      *  *  CentOS Linux 7.8
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.7
+      *  *  CentOS Linux 7.7
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.6
+      *  *  CentOS Linux 7.6
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.5
+      *  *  CentOS Linux 7.5
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.4
+      *  *  CentOS Linux 7.4
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.3
+      *  *  CentOS Linux 7.3
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.2
+      *  *  CentOS Linux 7.2
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.1
+      *  *  CentOS Linux 7.1
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  7.0
+      *  *  CentOS Linux 7.0
          *  :octicon:`alert-fill` 2020-08-06
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.10
+      *  *  CentOS Linux 6.10
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.9
+      *  *  CentOS Linux 6.9
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.8
+      *  *  CentOS Linux 6.8
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.7
+      *  *  CentOS Linux 6.7
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.6
+      *  *  CentOS Linux 6.6
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.5
+      *  *  CentOS Linux 6.5
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.4
+      *  *  CentOS Linux 6.4
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.3
+      *  *  CentOS Linux 6.3
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.2
+      *  *  CentOS Linux 6.2
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.1
+      *  *  CentOS Linux 6.1
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  6.0
+      *  *  CentOS Linux 6.0
          *  :octicon:`alert-fill` 2017-05-10
          *  :octicon:`alert-fill` 2020-11-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.11
+      *  *  CentOS Linux 5.11
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.10
+      *  *  CentOS Linux 5.10
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.9
+      *  *  CentOS Linux 5.9
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.8
+      *  *  CentOS Linux 5.8
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.7
+      *  *  CentOS Linux 5.7
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.6
+      *  *  CentOS Linux 5.6
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.5
+      *  *  CentOS Linux 5.5
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.4
+      *  *  CentOS Linux 5.4
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.3
+      *  *  CentOS Linux 5.3
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.2
+      *  *  CentOS Linux 5.2
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.1
+      *  *  CentOS Linux 5.1
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  CentOS Linux
-         *  5.0
+      *  *  CentOS Linux 5.0
          *  :octicon:`alert-fill` 2014-01-31
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
@@ -1115,87 +943,70 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  EuroLinux
-         *  9.4
+      *  *  EuroLinux 9.4
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  9.3
+      *  *  EuroLinux 9.3
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  9.2
+      *  *  EuroLinux 9.2
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  9.1
+      *  *  EuroLinux 9.1
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  9.0
+      *  *  EuroLinux 9.0
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.10
+      *  *  EuroLinux 8.10
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.9
+      *  *  EuroLinux 8.9
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.8
+      *  *  EuroLinux 8.8
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.7
+      *  *  EuroLinux 8.7
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.6
+      *  *  EuroLinux 8.6
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.5
+      *  *  EuroLinux 8.5
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.4
+      *  *  EuroLinux 8.4
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.3
+      *  *  EuroLinux 8.3
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.2
+      *  *  EuroLinux 8.2
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.1
+      *  *  EuroLinux 8.1
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  EuroLinux
-         *  8.0
+      *  *  EuroLinux 8.0
          *  :octicon:`alert-fill` 2024-10-23
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
@@ -1212,57 +1023,46 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
       :header-rows: 1
 
       *  *  Operating System
-         *  Version
          *  Active Support
          *  Security Support
          *  Notes
-      *  *  Scientific Linux
-         *  7.9
+      *  *  Scientific Linux 7.9
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.8
+      *  *  Scientific Linux 7.8
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.7
+      *  *  Scientific Linux 7.7
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.6
+      *  *  Scientific Linux 7.6
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.5
+      *  *  Scientific Linux 7.5
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.4
+      *  *  Scientific Linux 7.4
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.3
+      *  *  Scientific Linux 7.3
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.2
+      *  *  Scientific Linux 7.2
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.1
+      *  *  Scientific Linux 7.1
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
-      *  *  Scientific Linux
-         *  7.0
+      *  *  Scientific Linux 7.0
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`alert-fill` 2024-06-30
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
@@ -1285,8 +1085,8 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
 
 .. [#fn-kernel54]
 
-   To meet the :ref:`Host Prerequisites` with this operating system, you may need to install a Linux kernel version 5.4. See :doc:`/sysadmin/kernel54`.
+   To meet the :ref:`Linux Kernel Prerequisites` with this operating system, you may need to install a Linux kernel version 5.4 or greater. See :doc:`/sysadmin/kernel54`.
 
 .. [#fn-kernel-iptables]
 
-   To meet the :ref:`Host Prerequisites` with this operating system, you may need to install the ``ip_tables`` loadable kernel module. See :doc:`/sysadmin/kernel-iptables`.
+   To meet the :ref:`Linux Kernel Prerequisites` with this operating system, you may need to install the ``ip_tables`` loadable kernel module. See :doc:`/sysadmin/kernel-iptables`.

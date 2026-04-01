@@ -19,12 +19,12 @@ If you wish to update software packages manually, select your operating system b
 .. tab-set::
 
    .. tab-item:: AlmaLinux OS
-      :sync: alma
+      :sync: almalinux-os
 
       .. include:: os-updates-dnf.rst
 
    .. tab-item:: Arch Linux
-      :sync: arch
+      :sync: arch-linux
 
       .. include:: os-updates-pacman.rst
 
@@ -39,32 +39,27 @@ If you wish to update software packages manually, select your operating system b
       .. include:: os-updates-apt.rst
 
    .. tab-item:: Fedora Linux
-      :sync: fedora
+      :sync: fedora-linux
 
       .. include:: os-updates-dnf.rst
 
    .. tab-item:: Linux Mint
-      :sync: mint
+      :sync: linux-mint
 
       .. include:: os-updates-apt.rst
 
-   .. tab-item:: OpenSUSE
-      :sync: opensuse
+   .. tab-item:: OpenSUSE Leap
+      :sync: opensuse-leap
 
-      .. tab-set::
+      .. include:: os-updates-zypper.rst
 
-         .. tab-item:: OpenSUSE Leap
-            :sync: opensuse-leap
+   .. tab-item:: OpenSUSE Tumbleweed
+      :sync: opensuse-tumbleweed
 
-            .. include:: os-updates-zypper.rst
-
-         .. tab-item:: OpenSUSE Tumbleweed
-            :sync: opensuse-tumbleweed
-
-            .. include:: os-updates-zypper.rst
+      .. include:: os-updates-zypper.rst
 
    .. tab-item:: Oracle Linux
-      :sync: oracle
+      :sync: oracle-linux
 
       .. include:: os-updates-dnf.rst
 
@@ -74,7 +69,7 @@ If you wish to update software packages manually, select your operating system b
       .. include:: os-updates-dnf.rst
 
    .. tab-item:: Rocky Linux
-      :sync: rocky
+      :sync: rocky-linux
 
       .. include:: os-updates-dnf.rst
 
