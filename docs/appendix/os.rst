@@ -2,7 +2,7 @@
 Operating Systems
 =================
 
-:Section last updated: 2026-04-01
+:Section last updated: 2026-04-02
 
    .. sidebar::
 
@@ -1085,7 +1085,7 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
 
 .. [#fn-kernel54]
 
-   To meet the :ref:`Linux Kernel Prerequisites` with this operating system, you may need to install a Linux kernel version 5.4 or greater. See :doc:`/sysadmin/kernel54`.
+   To meet the :ref:`Linux Kernel Prerequisites` with this operating system, you may need to install a Linux kernel version 5.4 or later. See :doc:`/sysadmin/kernel54`.
 
 .. [#fn-kernel-iptables]
 

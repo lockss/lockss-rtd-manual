@@ -1,34 +1,99 @@
-=============================================================
-Upgrading to Linux Kernel 5.4 or Greater in the RHEL 8 Family
-=============================================================
+======================================
+Upgrading to Linux Kernel 5.4 or Later
+======================================
 
-In the Linux kernel version 5.3 or earlier, the LOCKSS system at startup might block [#fn-block]_ or hang [#fn-hang]_ due to lack of entropy [#fn-entropy]_ in the Linux environment. Mitigation of this problem first appeared in Linux kernel version 5.4 [#fn-mitigation]_. Therefore, Linux kernel 5.4 or later is required to run LOCKSS |LATEST_MINOR|.
+In the Linux kernel version 5.3 or earlier, |LOCKSS| at startup might block [#fn-block]_ or hang [#fn-hang]_ due to lack of entropy [#fn-entropy]_ in the Linux environment. Mitigation of this problem first appeared in Linux kernel version 5.4 [#fn-mitigation]_. Therefore, :ref:`prerequisites-kernel54` to run LOCKSS.
 
-Most versions of the :ref:`Compatible Operating Systems` satisfy this requirement out of the box. This section describes how to upgrade operating systems **in the RHEL 8 family** (:ref:`os-almalinux` 8, :ref:`os-oracle-linux` 8, :ref:`os-rhel` 8, and :ref:`os-rocky-linux` 8) to Linux kernel 5.4 or later, as they may be running Linux kernel 5.3 or earlier out of the box.
+Most versions of the :ref:`Compatible Operating Systems` satisfy this requirement out of the box. This section describes how to upgrade operating systems **in the RHEL 8 family** (:ref:`os-almalinux-os` 8, :ref:`os-oracle-linux` 8, :ref:`os-rhel` 8, and :ref:`os-rocky-linux` 8) to Linux kernel 5.4 or later, as they may be running Linux kernel 5.3 or earlier out of the box.
 
-Type ``uname --kernel-release``, or equivalently ``uname -r``, at the host's command line to see the version of the Linux kernel. If the resulting version is 5.3 or earlier, follow these steps (as ``root``):
+You can check the Linux kernel version by typing:
 
-1. Import the ELRepo [#fn-elrepo]_ GPG keys with these two :program:`rpm` commands [#fn-elrepo-start]_:
+.. code-block:: shell
 
-   .. code-block:: shell
+   uname --kernel-release
 
-      rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+or equivalently:
 
-      rpm --import https://www.elrepo.org/RPM-GPG-KEY-v2-elrepo.org
+.. code-block:: shell
 
-2. Install ELRepo for RHEL 8 with this :program:`yum` command [#fn-elrepo-start]_:
+   uname -r
 
-   .. code-block:: shell
+at the host's console.
 
-      yum install https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
+*  If version 5.4 or later is output, the host satisfies the Linux kernel version requirement.
 
-3. Install the ``kernel-ml`` package from the ``elrepo-kernel`` channel with this :program:`dnf` command [#fn-elrepo-kernel]_:
+*  If version 5.3 or earlier is output, the host does not satify the Linux kernel version requirement.
 
-   .. code-block:: shell
+If an upgrade to Linux kernel version 5.4 or later is required, select your operating system below and follow the instructions:
 
-      dnf  --enablerepo=elrepo-kernel --refresh install kernel-ml
+.. COMMENT OSTABS
 
-4. Reboot the host.
+.. tab-set::
+
+   .. tab-item:: AlmaLinux OS
+      :sync: almalinux-os
+
+      .. include:: kernel54-elrepo.rst
+
+   .. tab-item:: Arch Linux
+      :sync: arch-linux
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: CentOS Stream
+      :sync: centos-stream
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: Debian
+      :sync: debian
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: Fedora Linux
+      :sync: fedora-linux
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: Linux Mint
+      :sync: linux-mint
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: OpenSUSE Leap
+      :sync: opensuse-leap
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: OpenSUSE Tumbleweed
+      :sync: opensuse-tumbleweed
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: Oracle Linux
+      :sync: oracle-linux
+
+      .. include:: kernel54-uek.rst
+
+   .. tab-item:: Red Hat Enterprise Linux
+      :sync: rhel
+
+      .. include:: kernel54-elrepo.rst
+
+   .. tab-item:: Rocky Linux
+      :sync: rocky-linux
+
+      .. include:: kernel54-elrepo.rst
+
+   .. tab-item:: SUSE Linux Enterprise Server
+      :sync: sles
+
+      .. include:: kernel54-none.rst
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. include:: kernel54-none.rst
 
 ----
 
@@ -49,15 +114,3 @@ Type ``uname --kernel-release``, or equivalently ``uname -r``, at the host's com
 .. [#fn-mitigation]
 
    See https://git.kernel.org/pub/scm/linux/kernel/git/crng/random.git/commit/?id=50ee7529ec45
-                                                                                                                                                    
-.. [#fn-elrepo]
-
-   `ELRepo <https://elrepo.org/>`_ is an RPM repository for Enterprise Linux packages, supporting RHEL and operating systems in the RHEL family like AlmaLinux OS, Oracle Linux and Rocky Linux.
-
-.. [#fn-elrepo-start]
-
-   Reference: https://elrepo.org/wiki/doku.php?id=start#get_started
-
-.. [#fn-elrepo-kernel]
-
-   Reference: https://elrepo.org/wiki/doku.php?id=kernel-ml

@@ -55,7 +55,9 @@ Most versions of Linux distributions in the :ref:`Compatible Operating Systems` 
       :name: prerequisites-kernel54
       :animate: fade-in-slide-down
 
-      Linux kernel 5.4 or later is **required**. You can check the Linux kernel version by typing:
+      Linux kernel 5.4 or later is **required**.
+
+      You can check the Linux kernel version by typing:
 
       .. code-block:: shell
 
@@ -67,7 +69,7 @@ Most versions of Linux distributions in the :ref:`Compatible Operating Systems` 
 
          uname -r
 
-      at the host's command line.
+      at the host's console.
 
       *  If version 5.4 or later is output, the host satisfies the Linux kernel version requirement.
 
