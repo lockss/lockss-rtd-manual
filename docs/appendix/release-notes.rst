@@ -40,6 +40,6 @@ LOCKSS 2.0.90-beta2 NOT YET RELEASED consists of a configurable set of the follo
 
 *  `PostgreSQL <https://www.postgresql.org/>`_ version 14.7 (14.7-alpine container)
 
-*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.4.2 (custom 2.4.2-3 container)
+*  `Pywb <https://github.com/webrecorder/pywb>`_ version 2.8.3 (custom 2.8.3-1 container)
 
-*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.1 (unreleased post-2.4.0 build, custom 2.4.1-1 container)
+*  `OpenWayback <https://github.com/iipc/openwayback>`_ version 2.4.1 (unreleased post-2.4.0 build, custom 2.4.1-2 container)
