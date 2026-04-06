@@ -1,25 +1,140 @@
-=========================================================================
-Installing the ``ip_tables`` Loadable Kernel Module in the RHEL 10 Family
-=========================================================================
+===================================================
+Installing the ``ip_tables`` Loadable Kernel Module
+===================================================
 
-:term:`K3s`, the :term:`Kubernetes` distribution used by LOCKSS |LATEST_MINOR|, uses its own embedded :term:`iptables` program, but this in turns requires the ``ip_tables`` loadable kernel module, even if :term:`iptables` or :term:`nftables` is not installed on the host system.
+:term:`K3s`, the :term:`Kubernetes` distribution used by |LOCKSS| uses its own embedded :term:`iptables` program, but this in turn requires the ``ip_tables`` loadable kernel module, even if :term:`iptables` or :term:`nftables` is not installed on the host system. Most versions of the :ref:`Compatible Operating Systems` satisfy this requirement out of the box. This section describes how to install the ``ip_tables`` loadable kernel module on some operating systems.
 
-Most versions of the :ref:`Compatible Operating Systems` satisfy this requirement out of the box, but some operating systems, especially in the RHEL 10 family (:ref:`os-almalinux` 10, :ref:`os-oracle-linux` 10, :ref:`os-rhel` 10, and :ref:`os-rocky-linux` 10), may not. This section describes how to install a software package that will make the ``ip_tables`` loadable kernel module available on an OS in the RHEL 10 family.
+.. include:: kernel-iptables-tip.rst
 
-Type ``modinfo ip_tables`` at the host's command line. If an error message similar to ``modinfo: ERROR: Module ip_tables not found.`` is output, follow these steps as ``root``:
+.. include:: kernel-iptables-test.rst
 
-1. Run this :program:`dnf` command as ``root``:
+If installing the ``ip_tables`` loadable kernel module is required, select your operating system below, and if applicable select the particular version of your operating system, then follow the instructions accordingly:
 
-   .. code-block:: shell
+.. COMMENT OSTABS
 
-      dnf install kernel-modules-extra
+.. tab-set::
 
-2. Run this :program:`modprobe` command as ``root``:
+   .. tab-item:: AlmaLinux OS
+      :sync: almalinux-os
 
-   .. code-block:: shell
+      .. tab-set::
 
-      modprobe ip_tables
+         .. tab-item:: AlmaLinux OS 8
+            :sync: almalinux-os-8
 
-   .. note::
+            .. include:: kernel-iptables-none.rst
 
-      Note that in this context, the correct name is ``ip_tables`` (the loadable kernel module), not ``iptables`` (the program).
+         .. tab-item:: AlmaLinux OS 9
+            :sync: almalinux-os-9
+
+            .. include:: kernel-iptables-none.rst
+
+         .. tab-item:: AlmaLinux OS 10
+            :sync: almalinux-os-10
+
+            .. include:: kernel-iptables-dnf.rst
+
+   .. tab-item:: Arch Linux
+      :sync: arch-linux
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: CentOS Stream
+      :sync: centos-stream
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: Debian
+      :sync: debian
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: Fedora Linux
+      :sync: fedora-linux
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: Linux Mint
+      :sync: linux-mint
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: OpenSUSE Leap
+      :sync: opensuse-leap
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: OpenSUSE Tumbleweed
+      :sync: opensuse-tumbleweed
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: Oracle Linux
+      :sync: oracle-linux
+
+      .. tab-set::
+
+         .. tab-item:: Oracle Linux 8
+            :sync: oracle-linux-8
+
+            .. include:: kernel-iptables-none.rst
+
+         .. tab-item:: Oracle Linux 9
+            :sync: oracle-linux-9
+
+            .. include:: kernel-iptables-none.rst
+
+         .. tab-item:: Oracle Linux 10
+            :sync: oracle-linux-10
+
+            .. include:: kernel-iptables-dnf.rst
+
+   .. tab-item:: Red Hat Enterprise Linux
+      :sync: rhel
+
+      .. tab-set::
+
+         .. tab-item:: Red Hat Enterprise Linux 8
+            :sync: rhel-8
+
+            .. include:: kernel-iptables-none.rst
+
+         .. tab-item:: Red Hat Enterprise Linux 9
+            :sync: rhel-9
+
+            .. include:: kernel-iptables-none.rst
+
+         .. tab-item:: Red Hat Enterprise Linux 10
+            :sync: rhel-10
+
+            .. include:: kernel-iptables-dnf.rst
+
+   .. tab-item:: Rocky Linux
+      :sync: rocky-linux
+
+      .. tab-set::
+
+         .. tab-item:: Rocky Linux 8
+            :sync: rocky-linux-8
+
+            .. include:: kernel-iptables-none.rst
+
+         .. tab-item:: Rocky Linux 9
+            :sync: rocky-linux-9
+
+            .. include:: kernel-iptables-none.rst
+
+         .. tab-item:: Rocky Linux 10
+            :sync: rocky-linux-10
+
+            .. include:: kernel-iptables-dnf.rst
+
+   .. tab-item:: SUSE Linux Enterprise Server
+      :sync: sles
+
+      .. include:: kernel-iptables-none.rst
+
+   .. tab-item:: Ubuntu
+      :sync: ubuntu
+
+      .. include:: kernel-iptables-none.rst

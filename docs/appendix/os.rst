@@ -43,11 +43,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  AlmaLinux OS 10.1
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  AlmaLinux OS 10.0
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  AlmaLinux OS 9.7
          *  2027-05-31
          *  2032-05-31
@@ -83,35 +83,35 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  AlmaLinux OS 8.10
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  AlmaLinux OS 8.9
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  AlmaLinux OS 8.8
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  AlmaLinux OS 8.7
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  AlmaLinux OS 8.6
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  AlmaLinux OS 8.5
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  AlmaLinux OS 8.4
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  AlmaLinux OS 8.3
          *  :octicon:`alert-fill` 2024-05-01
          *  2029-03-01
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
 
 .. dropdown:: Arch Linux :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-arch-linux
@@ -419,11 +419,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  Oracle Linux 10.1
          *  Yes
          *  Yes
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  Oracle Linux 10.0
          *  Yes
          *  Yes
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  Oracle Linux 9.7
          *  2032-06-30
          *  2035-06-30
@@ -459,47 +459,47 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  Oracle Linux 8.10
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.9
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.8
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.7
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.6
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.5
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.4
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.3
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.2
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.1
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Oracle Linux 8.0
          *  2029-07-31
          *  2032-07-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
 
 .. dropdown:: Red Hat Enterprise Linux (RHEL)
    :name: os-rhel
@@ -519,11 +519,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  RHEL 10.1
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  RHEL 10.0
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  RHEL 9.7
          *  2027-05-31
          *  2032-05-31
@@ -559,47 +559,47 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  RHEL 8.10
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.9
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.8
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.7
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.6
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.5
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.4
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.3
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.2
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.1
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  RHEL 8.0
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
 
 .. dropdown:: Rocky Linux
    :name: os-rocky-linux
@@ -619,11 +619,11 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  Rocky Linux 10.1
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  Rocky Linux 10.0
          *  2030-05-31
          *  2035-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel-iptables]_
+         *  :bdg-warning:`ip_tables requirement` [#fn-kernel-iptables]_
       *  *  Rocky Linux 9.7
          *  2027-05-31
          *  2032-05-31
@@ -659,35 +659,35 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
       *  *  Rocky Linux 8.10
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Rocky Linux 8.9
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Rocky Linux 8.8
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Rocky Linux 8.7
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Rocky Linux 8.6
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Rocky Linux 8.5
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Rocky Linux 8.4
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
       *  *  Rocky Linux 8.3
          *  :octicon:`alert-fill` 2024-05-31
          *  2029-05-31
-         *  :bdg-info-line:`footnote` [#fn-kernel54]_
+         *  :bdg-info:`kernel requirement` [#fn-kernel54]_
 
 .. dropdown:: SUSE Linux Enterprise Server (SLES) :bdg-success-line:`new since LOCKSS 1.x`
    :name: os-sles
@@ -755,7 +755,7 @@ Unsuitable Operating Systems
 
 The following operating systems are **not suitable** for use with LOCKSS |LATEST_MINOR| because they are at end of life.
 
-.. dropdown:: CentOS Linux :bdg-danger-line:`end of life`
+.. dropdown:: CentOS Linux :bdg-danger:`end of life`
    :name: os-centos-linux
    :animate: fade-in-slide-down
 
@@ -931,7 +931,7 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
          *  :octicon:`alert-fill` 2017-03-31
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
 
-.. dropdown:: EuroLinux :bdg-danger-line:`end of life`
+.. dropdown:: EuroLinux :bdg-danger:`end of life`
    :name: os-eurolinux
    :animate: fade-in-slide-down
 
@@ -1011,7 +1011,7 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
          *  :octicon:`alert-fill` 2024-11-03
          *  :octicon:`x-circle-fill` :bdg-danger:`end of life`
 
-.. dropdown:: Scientific Linux :bdg-danger-line:`end of life`
+.. dropdown:: Scientific Linux :bdg-danger:`end of life`
    :name: os-scientific-linux
    :animate: fade-in-slide-down
 
@@ -1083,10 +1083,14 @@ The following operating systems are **not suitable** for use with LOCKSS |LATEST
 
    Reference: :doc:`lockss-portal:migration/index`
 
-.. [#fn-kernel54]
-
-   To meet the :ref:`Linux Kernel Prerequisites` with this operating system, you may need to install a Linux kernel version 5.4 or later. See :doc:`/sysadmin/kernel54`.
-
 .. [#fn-kernel-iptables]
 
+   :bdg-warning:`ip_tables requirement`
+
    To meet the :ref:`Linux Kernel Prerequisites` with this operating system, you may need to install the ``ip_tables`` loadable kernel module. See :doc:`/sysadmin/kernel-iptables`.
+
+.. [#fn-kernel54]
+
+   :bdg-info:`kernel requirement`
+
+   To meet the :ref:`Linux Kernel Prerequisites` with this operating system, you may need to install a Linux kernel version 5.4 or later. See :doc:`/sysadmin/kernel54`.

@@ -1,8 +1,4 @@
-.. tip::
-
-   Only version 8 of this operating system is expected to require an upgrade to Linux kernel version 5.4 or later. Versions 9 and 10 of this operating system are expected to ship with newer Linux kernel versions out of the box. Confirm from above that the kernel upgrade is required before proceeding.
-
-If an upgrade to Linux kernel 5.4 or later is required for your version of this operating system, you will need to install a kernel from the `ELRepo Project <https://elrepo.org/>`_. Follow these steps (as ``root``):
+If an upgrade to Linux kernel 5.4 or later is required for this operating system, you will need to install a kernel from the `ELRepo Project <https://elrepo.org/>`_. Follow these steps (as ``root``):
 
 1. Import the ELRepo Project GPG keys with these two :program:`rpm` commands (as ``root``):
 

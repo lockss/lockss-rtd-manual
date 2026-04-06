@@ -57,49 +57,23 @@ Most versions of Linux distributions in the :ref:`Compatible Operating Systems` 
 
       Linux kernel 5.4 or later is **required**.
 
-      You can check the Linux kernel version by typing:
+      .. include:: /sysadmin/kernel54-test.rst
 
-      .. code-block:: shell
+      If the host does not satify the Linux kernel version requirement, see :doc:`/sysadmin/kernel54`.
 
-         uname --kernel-release
-
-      or equivalently:
-
-      .. code-block:: shell
-
-         uname -r
-
-      at the host's console.
-
-      *  If version 5.4 or later is output, the host satisfies the Linux kernel version requirement.
-
-      *  If version 5.3 or earlier is output, the host does not satify the Linux kernel version requirement. See :doc:`/sysadmin/kernel54`.
+      .. include:: /sysadmin/kernel54-tip.rst
 
 2. .. dropdown:: ``ip_tables`` loadable kernel module is **required**
       :name: prerequisites-iptables-lkm
       :animate: fade-in-slide-down
 
-      .. note::
+      The ``ip_tables`` loadable kernel module is **required**, even if :term:`iptables` or :term:`nftables` are not installed on the host.
 
-         Note the difference between the ``ip_tables`` (the loadable kernel module) and :term:`iptables` (the program).
+      .. include:: /sysadmin/kernel-iptables-test.rst
 
-      The ``ip_tables`` loadable kernel module is **required**, even if :term:`iptables` or :term:`nftables` are not installed on the host. You can check if the ``ip_tables`` loadable kernel module is available by typing:
+      If installing the ``ip_tables`` loadable kernel module is required, see :doc:`/sysadmin/kernel-iptables`.
 
-      .. code-block:: shell
-
-         modinfo ip_tables
-
-      at the host's command line.
-
-      *  If technical information about the module is output [#fn-iptables-lkm-example]_, the host satisfies the ``ip_tables`` loadable kernel module requirement.
-
-      *  If an error message similar to the following is output:
-
-         .. code-block:: text
-
-            modinfo: ERROR: Module ip_tables not found.
-
-         the host does not satisfy the ``ip_tables`` loadable kernel module requirement. See :doc:`/sysadmin/kernel-iptables`.
+      .. include:: /sysadmin/kernel-iptables-tip.rst
 
 .. index:: system prerequisites; system software
 
@@ -290,14 +264,3 @@ Some :term:`firewall` and :term:`iptables` enforcement features of :term:`config
 .. admonition:: What's the Minimum for Experimentation?
 
    To review the installation instructions and test the installation of K3s in various operating systems, we routinely install and bring up minimal LOCKSS |LATEST_MINOR|, with no metadata services or Web replay engines, and with empty embedded PostgreSQL database, in Vagrant virtual machines with Virtualbox, using 2 CPU cores and 3 GB of memory. These minimal VMs would not support a production load, but it can be a useful tool to try out the installation instructions or evaluate the system.
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fn-iptables-lkm-example]
-
-   Sample output:
-
-   .. literalinclude:: prerequisites-iptables-example.txt
-      :language: text
