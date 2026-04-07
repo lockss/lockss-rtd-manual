@@ -4,7 +4,7 @@ Downloading the LOCKSS Installer using Git
 
 This section describes how to download the LOCKSS Installer from Git, for development or troubleshooting purposes. **This is not the normal way of using LOCKSS Installer; the normal way to download the LOCKSS Installer is with the LOCKSS Downloader, as described in** :doc:`/installing/index`.
 
-Follow these instructions as the ``lockss`` user [#fnlockss]_:
+Follow these instructions as the ``lockss`` user:
 
 1. You may need to install Git on the host machine. Run this command:
 
@@ -77,12 +77,3 @@ Follow these instructions as the ``lockss`` user [#fnlockss]_:
    .. code-block:: shell
 
       cp lockss-installer-old/config/*.cfg lockss-installer/config/
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnlockss]
-
-   See :doc:`/sysadmin/lockss`
-

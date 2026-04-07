@@ -8,7 +8,7 @@ This section of the appendix documents administrative tasks for the embedded Pos
 Changing the PostgreSQL Database Password
 -----------------------------------------
 
-Changing the password of the embedded PostgreSQL database must done **while the LOCKSS stack is stopped**, requiring an interruption of service. To perform the change, perform the following steps as the ``lockss`` user [#fnlockss]_ in the :ref:`LOCKSS Installer Directory`:
+Changing the password of the embedded PostgreSQL database must done **while the LOCKSS stack is stopped**, requiring an interruption of service. To perform the change, perform the following steps as the ``lockss`` user in the :ref:`LOCKSS Installer Directory`:
 
 1. Ensure the LOCKSS stack is stopped by running:
 
@@ -96,11 +96,3 @@ Changing the password of the embedded PostgreSQL database must done **while the 
       scripts/start-lockss
 
    See :ref:`Starting the LOCKSS system` for details.
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnlockss]
-
-   See :doc:`/sysadmin/lockss`.

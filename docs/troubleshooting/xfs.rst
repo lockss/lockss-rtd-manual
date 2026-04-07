@@ -18,7 +18,7 @@ such as ext4. If this is not possible (e.g., because you are performing an in-pl
 the filesystem backing ``/var/lib/rancher`` is shared with other parts of the system), the workaround is to create a new
 XFS filesystem on another partition or a loopback device backed by a file on an existing filesystem.
 
-Setup of the latter is described below. Commands should be run as the ``root`` user  [#fnroot]_.
+Setup of the latter is described below. Commands should be run as ``root``:
 
 1. (Optional) Verify the existing XFS filesystem has ``ftype=0``:
 
@@ -133,11 +133,3 @@ Setup of the latter is described below. Commands should be run as the ``root`` u
     .. code-block:: shell
 
        rm -rf /var/lib/rancher.backup
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.

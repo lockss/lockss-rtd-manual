@@ -12,7 +12,7 @@ K3s requires user namespaces, a feature generally available and enabled in many 
 
 To resolve this issue in RHEL 7 or CentOS 7 [#fnusernamespaces]_:
 
-1. Edit the file :file:`/etc/default/grub` as ``root`` [#fnroot]_.
+1. Edit the file :file:`/etc/default/grub` as ``root``.
 
    1. Look for the line beginning with ``GRUB_CMDLINE_LINUX=``, for example:
 
@@ -54,7 +54,7 @@ Installing :program:`apparmor_parser`
 
 K3s uses Apparmor in systems where it is enabled. However, some systems, especially OpenSUSE systems (OpenSUSE Leap or OpenSUSE Tumbleweed), have Apparmor enabled but :program:`apparmor_parser` is not installed by default. This can cause the :ref:`Checking K3s Prerequisites` or :ref:`Installing K3s` phases of :program:`install-lockss` or the optional :ref:`Checking the K3s Configuration` phase to fail.
 
-To resolve this issue in OpenSUSE, run these :program:`zypper` commands as ``root`` [#fnroot]_:
+To resolve this issue in OpenSUSE, run these :program:`zypper` commands as ``root``:
 
 .. code-block:: shell
 
@@ -88,7 +88,7 @@ In some Fedora systems, the K3s installer may fail with an error message similar
 
 The specific commands and version numbers may vary from the example above.
 
-To resolve this problem, run the recommended commands as ``root`` [#fnroot]_.
+To resolve this problem, run the recommended commands as ``root``.
 
 --------------------------------------
 k3s-selinux requires container-selinux
@@ -107,7 +107,7 @@ The specific commands and version numbers may vary from the example above.
 
 This can occur in environments where the Oracle Linux 7 Addons Yum repository is not enabled by default, so SUSE's official K3s installer is unable to install the package ``container-selinux`` automatically.
 
-To resolve this problem in Oracle Linux 7, run the following command as ``root`` [#fnroot]_:
+To resolve this problem in Oracle Linux 7, run the following command as ``root``:
 
 .. code-block:: shell
 
@@ -122,7 +122,3 @@ To resolve this problem in Oracle Linux 7, run the following command as ``root``
    References:
 
    *  https://fortuitousengineer.com/installing-kubernetes-k3s-on-centos-rhel-hosts/
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.

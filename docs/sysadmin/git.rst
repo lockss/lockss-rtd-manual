@@ -12,7 +12,7 @@ Follow these instructions to install Git:
 
       git --version
 
-2. If the output is a version number (for example ``git version 2.31.1``), Git is already installed; however if you see an error message (for example ``bash: git: command not found``), follow the instructions corresponding to your operating system below to install Git as ``root`` [#fnroot]_:
+2. If the output is a version number (for example ``git version 2.31.1``), Git is already installed; however if you see an error message (for example ``bash: git: command not found``), follow the instructions corresponding to your operating system below to install Git as ``root``:
 
    .. COMMENT OSTABS
 
@@ -77,11 +77,3 @@ Follow these instructions to install Git:
          :sync: ubuntu
 
          .. include:: git-apt.rst
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.

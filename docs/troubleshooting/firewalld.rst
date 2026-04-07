@@ -28,7 +28,7 @@ The :program:`firewalld` configuration attempted by :program:`install-lockss` is
 Post-Installation Changes to :program:`firewalld`
 -------------------------------------------------
 
-If your system did not initially use :program:`firewalld` at the time K3s was installed, but later does (for example because :program:`firewalld` becomes enabled), run this command (relative to the :ref:`LOCKSS Installer Directory`) as a privileged user who can become ``root`` via :program:`sudo` [#fnprivileged]_:
+If your system did not initially use :program:`firewalld` at the time K3s was installed, but later does (for example because :program:`firewalld` becomes enabled), run this command (relative to the :ref:`LOCKSS Installer Directory`) as ``root``:
 
 .. code-block:: shell
 
@@ -57,7 +57,3 @@ This will run only the :ref:`configuring-firewalld` phase of :program:`install-l
 .. [#fninstaller]
 
    See :ref:`configuring-firewalld`.
-
-.. [#fnprivileged]
-
-   See :doc:`/sysadmin/privileged`.
