@@ -1,24 +1,16 @@
-.. danger::
-
-   **This entire section is not yet updated for LOCKSS 2.0-beta2.** This is just the text from LOCKSS 2.0-beta1. *FIXME*
-
 ================
 Upgrading LOCKSS
 ================
 
-This chapter describes how to upgrade an existing LOCKSS 2.0 system from LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, LOCKSS 2.0-alpha7, and earlier versions of LOCKSS |LATEST_MINOR| (LOCKSS 2.0.81-beta1, LOCKSS 2.0.82-beta1, LOCKSS 2.0.83-beta1), to LOCKSS |LATEST_PATCH|, the latest version of LOCKSS |LATEST_MINOR|.
+This chapter describes how to upgrade **an existing LOCKSS 2.0 installation** from LOCKSS 2.0-beta1 (2.0.81-beta1, 2.0.82-beta1, 2.0.83-beta1, 2.0.84-beta1) to |LOCKSS| |LATEST_MINOR|. Please note:
+
+   *  If you are installing LOCKSS |LATEST_MINOR| **from scratch**, follow the instructions in :doc:`/installing/index` instead.
+
+   *  If you are upgrading **an existing LOCKSS 1.x installation** to LOCKSS |LATEST_MINOR|, follow the instructions in :doc:`lockss-portal:migration/index` instead.
 
 .. tip::
 
-   If you are installing the LOCKSS 2.x system for the first time, please see the installation instructions in the next chapter (:doc:`/installing/index`) instead.
-
-.. note::
-
-   Commands in this chapter are run as the ``lockss`` user [#fnlockss]_.
-
-.. tip::
-
-   Before you begin the upgrade, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
+   Before you begin the upgrade process, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
 .. only:: html and not singlehtml
 
@@ -53,7 +45,7 @@ which should return:
 Update the LOCKSS Installer
 ---------------------------
 
-As the ``lockss`` user [#fnlockss]_, run this Curl or Wget command [#fnfetcher]_:
+As the ``lockss`` user, run this Curl or Wget command [#fnfetcher]_:
 
 .. tab-set::
 
@@ -113,19 +105,13 @@ The ``--replay`` (or equivalently ``-r``) option will re-use all previously-ente
 Start LOCKSS |LATEST_MINOR|
 ---------------------------
 
-You are now ready to start the LOCKSS system. Run this command as the ``lockss`` user [#fnlockss]_:
+You are now ready to start the LOCKSS system. Run this command as the ``lockss`` user:
 
 .. code-block:: shell
 
    scripts/start-lockss
 
 ----
-
-.. rubric:: Footnotes
-
-.. [#fnlockss]
-
-   See :doc:`/sysadmin/lockss`.
 
 .. [#fnfetcher]
 

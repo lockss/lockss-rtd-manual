@@ -63,19 +63,27 @@ Some notes about using :program:`configure-lockss`:
 Invoking :program:`configure-lockss`
 ------------------------------------
 
-To invoke :program:`configure-lockss`, follow these steps as the ``lockss`` user:
+To invoke :program:`configure-lockss`, follow these steps:
 
-1. Navigate to the :ref:`LOCKSS Installer Directory` in a ``root`` shell, symbolically:
+1. Establish a ``lockss`` shell session. Double-check that you are acting as ``lockss`` by typing:
+
+   .. code-block:: shell
+
+      whoami
+
+   and verifying that the output is ``lockss``.
+
+2. Navigate to the :ref:`LOCKSS Installer Directory`, symbolically:
 
    :samp:`cd {<LOCKSS_INSTALLER_DIR>}`
 
-2. Run this command as the ``lockss`` user:
+3. Run this command:
 
    .. code-block:: shell
 
       scripts/configure-lockss
 
-The script will begin with the first series of configuration questions from :numref:`Kubernetes Settings` (:ref:`Kubernetes Settings`).
+The script will begin with the first series of configuration questions from :octicon:`diff-renamed` :numref:`Kubernetes Settings` (:ref:`Kubernetes Settings`).
 
 .. index:: configure-lockss; Kubernetes
 
@@ -154,21 +162,21 @@ Enter the hostname of the host's outgoing mail server, for example :samp:`smtp.m
 Mail Relay Credentials
 ======================
 
-1. Prompt: :guilabel:`Does the mail relay <mailhost> need a username and password?`
+1. Prompt: :samp:`Does the mail relay {<mailhost>} need a username and password?`
 
    If the outgoing mail server requires password authentication, enter :kbd:`Y` for "yes"; otherwise, enter :kbd:`N` for "no".
 
 2. If you answered :kbd:`Y` because the outgoing mail server requires password authentication, you will be asked additional configuration questions:
 
-   a. Prompt: :guilabel:`User for <mailhost>`
+   a. Prompt: :samp:`User for {<mailhost>}`
 
       Enter the username for the mail server.
 
-   b. Prompt: :guilabel:`Password for <mailuser>@<mailhost>`
+   b. Prompt: :samp:`Password for {<mailuser>}@{<mailhost>}`
 
       Enter the password for the username on the mail server.
 
-   c. Prompt: :guilabel:`Password for <mailuser>@<mailhost> (again)`
+   c. Prompt: :samp:`Password for {<mailuser>}@{<mailhost>} (again)`
 
       Re-enter the password for the username on the mail server. If the two passwords do not match, the password will be asked again.
 
@@ -228,11 +236,11 @@ Web User Interface Settings
 
    Enter a username for the primary administrative user in :term:`LOCKSS <LOCKSS stack>` Web user interfaces.
 
-2. Prompt: :guilabel:`Password for web UI administration user <uiuser>`
+2. Prompt: :samp:`Password for web UI administration user {<uiuser>}`
 
    Enter a password for the primary administrative user.
 
-3. Prompt: :guilabel:`Password for web UI administration user <uiuser> (again)`
+3. Prompt: :samp:`Password for web UI administration user {<uiuser>} (again)`
 
    Re-enter the password for the primary administrative user. If the two passwords do not match, the password will be asked again.
 
@@ -450,17 +458,17 @@ Enter :kbd:`Y` for "yes" to run :ref:`OpenWayback` as part of your :term:`LOCKSS
 Final Steps of :program:`configure-lockss`
 ------------------------------------------
 
-1. Prompt: :guilabel:`OK to store this configuration?`
+1. Prompt: :guilabel:`OK to proceed?`
 
    Enter :kbd:`Y` for "yes" if the configuration values are to your liking; otherwise, enter :kbd:`N` for "no" to make edits.
 
 2. If you answer :kbd:`Y` to accept the configuration values, :program:`configure-lockss` will perform the final configuration steps. You may be asked to confirm before directories are created for the first time:
 
-   :guilabel:`<directory> does not exist; do you want to create it?`
+   :samp:`{<directory>} does not exist; do you want to create it?`
 
    or before directory permissions are changed:
 
-   :guilabel:`<directory> is not writable; do you want to make it writable?`
+   :samp:`{<directory>} is not writable; do you want to make it writable?`
 
    In each case, enter :kbd:`Y` for "yes" and :kbd:`N` for "no".
 
