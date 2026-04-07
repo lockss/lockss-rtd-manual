@@ -12,7 +12,7 @@ You will want to update your Linux operating system at different times:
 
 Your system may be set up for automatic updates or your system administrator may have policies regarding which packages can be udpated and when.
 
-If you wish to update software packages manually, select your operating system below and follow the instructions as ``root`` [#fnroot]_:
+If you wish to update software packages manually, select your operating system below and follow the instructions as ``root``:
 
 .. COMMENT OSTABS
 
@@ -82,11 +82,3 @@ If you wish to update software packages manually, select your operating system b
       :sync: ubuntu
 
       .. include:: os-updates-apt.rst
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.

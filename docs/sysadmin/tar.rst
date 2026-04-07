@@ -4,7 +4,7 @@ Installing :program:`tar`
 
 Installing LOCKSS |LATEST_MINOR| requires :program:`tar` (or :program:`gtar`). This utility is installed out of the box in almost all Linux operating systems, but in the event it is not, this section explains how to install it.
 
-Type ``tar --version`` (or ``gtar --version``) at the host's command line. If an error message like ``bash: tar: command not found`` is output, select your operating system below and follow the instructions as ``root`` [#fnroot]_:
+Type ``tar --version`` (or ``gtar --version``) at the host's command line. If an error message like ``bash: tar: command not found`` is output, select your operating system below and follow the instructions as ``root``:
 
 .. COMMENT OSTABS
 
@@ -74,11 +74,3 @@ Type ``tar --version`` (or ``gtar --version``) at the host's command line. If an
       :sync: ubuntu
 
       .. include:: tar-apt.rst
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.

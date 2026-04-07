@@ -4,7 +4,7 @@ Installing :program:`unzip`
 
 Installing LOCKSS |LATEST_MINOR| requires :program:`unzip`. This utility is installed out of the box in almost all Linux operating systems, but in the event it is not, this section explains how to install it.
 
-Type ``unzip --version`` at the host's command line. If an error message like ``bash: unzip: command not found`` is output, select your operating system below and follow the instructions as ``root`` [#fnroot]_:
+Type ``unzip --version`` at the host's command line. If an error message like ``bash: unzip: command not found`` is output, select your operating system below and follow the instructions as ``root``:
 
 .. COMMENT OSTABS
 
@@ -74,11 +74,3 @@ Type ``unzip --version`` at the host's command line. If an error message like ``
       :sync: ubuntu
 
       .. include:: unzip-apt.rst
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.

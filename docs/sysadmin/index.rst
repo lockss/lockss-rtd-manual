@@ -2,9 +2,9 @@
 System Administration Tasks
 ===========================
 
-This chapter covers some common system administration tasks related to running a LOCKSS system.
+This chapter covers some common system administration tasks related to running and maintaining a |LOCKSS| host.
 
-Sections include how to run commands as the ``root`` user, as a privileged user who can become ``root`` via :program:`sudo`, or as the ``lockss`` user; how to update a Linux operating system; and how to install various system utilities like Curl, Wget, Tar, or Gzip.
+Sections include how to meet the :ref:`Linux Kernel Prerequisites` and :ref:`System Software Prerequisites`, how to bring the operating system up to date, and more.
 
 .. only:: html and not singlehtml
 
@@ -13,14 +13,11 @@ Sections include how to run commands as the ``root`` user, as a privileged user 
 .. toctree::
    :maxdepth: 1
 
-   root
-   privileged
-   lockss
-   os-updates
    kernel54
    kernel-iptables
    curl
    wget
    tar
    unzip
+   os-updates
    resetting

@@ -4,7 +4,7 @@ Installing Wget
 
 :doc:`/installing/downloading` and :doc:`/installing/running` require :term:`Curl` or :term:`Wget`. Most typical Linux systems have at least one installed by default. You can check by typing ``curl --version`` and ``wget --version`` at the command line and verifying that at least one of them outputs a valid version message (meaning the corresponding software is installed). This section describes how to install `Wget <https://www.gnu.org/software/wget/>`_ if necessary.
 
-Select your operating system below and follow the instructions as ``root`` [#fnroot]_:
+Select your operating system below and follow the instructions as ``root``:
 
 .. COMMENT OSTABS
 
@@ -74,11 +74,3 @@ Select your operating system below and follow the instructions as ``root`` [#fnr
       :sync: ubuntu
 
       .. include:: wget-apt.rst
-
-----
-
-.. rubric:: Footnotes
-
-.. [#fnroot]
-
-   See :doc:`/sysadmin/root`.
