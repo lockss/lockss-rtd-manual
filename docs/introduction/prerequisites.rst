@@ -42,7 +42,7 @@ Operating System Prerequisites
 
 LOCKSS requires a Linux distribution that is compatible with :term:`K3s`, the :term:`Kubernetes` distribution the :term:`LOCKSS stack` runs on. More specifically, LOCKSS |LATEST_MINOR| uses K3s |K3S_MINOR|.
 
-This prerequisite is met by operating systems listed in the :ref:`Compatible Operating Systems` appendix (with some adjustments for some versions), including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
+This prerequisite is met by operating systems listed in the :ref:`Compatible Operating Systems` appendix (with some adjustments for some versions), including AlmaLinux OS, Arch Linux, CentOS Stream, Debian, Fedora Linux, Linux Mint, OpenSUSE Leap, OpenSUSE Tumbleweed, Oracle Linux, Red Hat Enterprise Linux (RHEL), Rocky Linux, SUSE Linux Enterprise Server (SLES), and Ubuntu.
 
 .. index:: system prerequisites; Linux kernel
 

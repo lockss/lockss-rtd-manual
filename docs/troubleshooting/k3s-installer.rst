@@ -52,7 +52,7 @@ To resolve this issue in RHEL 7 or CentOS 7 [#fnusernamespaces]_:
 Installing :program:`apparmor_parser`
 -------------------------------------
 
-K3s uses Apparmor in systems where it is enabled. However, some systems, especially OpenSUSE systems, have Apparmor enabled but :program:`apparmor_parser` is not installed by default. This can cause the :ref:`Checking K3s Prerequisites` or :ref:`Installing K3s` phases of :program:`install-lockss` or the optional :ref:`Checking the K3s Configuration` phase to fail.
+K3s uses Apparmor in systems where it is enabled. However, some systems, especially OpenSUSE systems (OpenSUSE Leap or OpenSUSE Tumbleweed), have Apparmor enabled but :program:`apparmor_parser` is not installed by default. This can cause the :ref:`Checking K3s Prerequisites` or :ref:`Installing K3s` phases of :program:`install-lockss` or the optional :ref:`Checking the K3s Configuration` phase to fail.
 
 To resolve this issue in OpenSUSE, run these :program:`zypper` commands as ``root`` [#fnroot]_:
 

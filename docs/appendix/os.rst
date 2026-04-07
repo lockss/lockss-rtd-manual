@@ -369,7 +369,7 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
    :name: os-opensuse-leap
    :animate: fade-in-slide-down
 
-   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE <https://get.opensuse.org/leap>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE Leap <https://get.opensuse.org/leap>`_.
 
    .. list-table::
       :header-rows: 1
@@ -387,7 +387,7 @@ LOCKSS |LATEST_MINOR| is **compatible** with the following Linux distributions. 
    :name: os-opensuse-tumbleweed
    :animate: fade-in-slide-down
 
-   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE <https://get.opensuse.org/tumbleweed>`_.
+   LOCKSS |LATEST_MINOR| is compatible with `OpenSUSE Tumbleweed <https://get.opensuse.org/tumbleweed>`_.
 
    .. list-table::
       :header-rows: 1

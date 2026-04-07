@@ -74,7 +74,7 @@ links: aux/iptables should link to iptables-detect.sh
 
 .. COMMENT updated for alpha5
 
-In some Fedora and OpenSUSE systems, you may encounter six related error messages like the following:
+In some Fedora and OpenSUSE (OpenSUSE Leap and OpenSUSE Tumbleweed) systems, you may encounter six related error messages like the following:
 
 .. code-block:: text
 
