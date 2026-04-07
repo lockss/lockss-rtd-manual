@@ -4,10 +4,6 @@
 Running :program:`install-lockss`
 =================================
 
-.. note::
-
-   Commands in this section are run as ``root``.
-
 .. only:: html and not singlehtml
 
    .. sidebar::
@@ -31,118 +27,126 @@ Invoking :program:`install-lockss`
 
 To start the installation process, follow these steps as ``root``:
 
-1. Navigate to the :ref:`LOCKSS Installer Directory` in a ``root`` shell, symbolically:
+1. Double-check that you are operating in the ``root`` session established for the entirety of this chapter [#fn-root-session]_ by typing:
+
+   .. code-block:: shell
+
+      whoami
+
+   and verifying that the output is ``root``.
+
+2. Navigate to the :ref:`LOCKSS Installer Directory`, symbolically:
 
    :samp:`cd {<LOCKSS_INSTALLER_DIR>}`
 
-2. Run this command as ``root``:
+3. Run this command:
 
    .. code-block:: shell
 
       scripts/install-lockss
 
-:term:`install-lockss` will run through successive **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
+   :term:`install-lockss` will run through successive **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
 
-.. tip::
+   .. tip::
 
-   .. index:: install-lockss; skipping phases
+      .. index:: install-lockss; skipping phases
 
-   .. dropdown:: Skipping :program:`install-lockss` phases
-      :name: skipping-install-lockss-phases
-      :icon: light-bulb
-      :animate: fade-in-slide-down
+      .. dropdown:: Skipping :program:`install-lockss` phases
+         :name: skipping-install-lockss-phases
+         :icon: light-bulb
+         :animate: fade-in-slide-down
 
-      You may need to skip some of the phases of :term:`install-lockss`, for example to overcome an incompatibility with the specifics of your host system. If this is necessary, invoke :term:`install-lockss` with one or more of the following options:
+         You may need to skip some of the phases of :term:`install-lockss`, for example to overcome an incompatibility with the specifics of your host system. If this is necessary, invoke :term:`install-lockss` with one or more of the following options:
 
-      .. list-table::
-         :header-rows: 1
+         .. list-table::
+            :header-rows: 1
 
-         *  *  Option
-            *  Phase(s) Skipped
-         *  *  ``--skip-check-system-prerequisites``
-            *  :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`)
-         *  *  ``--skip-check-k3s-prerequisites``
-            *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
-         *  *  ``--skip-configure-iptables``
-            * :numref:`configuring-iptables` (:ref:`configuring-iptables`)
-         *  *  ``--skip-configure-firewalld``
-            *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
-         *  *  ``--skip-configure-ufw``
-            *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
-         *  *  ``--skip-configure-coredns``
-            *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
-         *  *  ``--skip-install-k3s``
-            *  -  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
-               -  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
-               -  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
-               -  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
-               -  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
-               -  :numref:`Installing K3s` (:ref:`Installing K3s`)
-         *  *  ``--skip-test-k3s``
-            *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
+            *  *  Option
+               *  Phase(s) Skipped
+            *  *  ``--skip-check-system-prerequisites``
+               *  :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`)
+            *  *  ``--skip-check-k3s-prerequisites``
+               *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
+            *  *  ``--skip-configure-iptables``
+               * :numref:`configuring-iptables` (:ref:`configuring-iptables`)
+            *  *  ``--skip-configure-firewalld``
+               *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
+            *  *  ``--skip-configure-ufw``
+               *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
+            *  *  ``--skip-configure-coredns``
+               *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
+            *  *  ``--skip-install-k3s``
+               *  -  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
+                  -  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
+                  -  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
+                  -  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
+                  -  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
+                  -  :numref:`Installing K3s` (:ref:`Installing K3s`)
+            *  *  ``--skip-test-k3s``
+               *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
 
-      When a phase is skipped as a result of one of these options, you will see a message similar to this during the corresponding phase:
+         When a phase is skipped as a result of one of these options, you will see a message similar to this during the corresponding phase:
 
-      .. code-block:: text
+         .. code-block:: text
 
-          [success] Skipping (--skip-configure-firewalld)
+             [success] Skipping (--skip-configure-firewalld)
 
-   .. index:: install-lockss; running one phase
+      .. index:: install-lockss; running one phase
 
-   .. dropdown:: Running only one :program:`install-lockss` phase
-      :name: running-only-one-install-lockss-phase
-      :icon: light-bulb
-      :animate: fade-in-slide-down
+      .. dropdown:: Running only one :program:`install-lockss` phase
+         :name: running-only-one-install-lockss-phase
+         :icon: light-bulb
+         :animate: fade-in-slide-down
 
-      Conversely, you may need to run or re-run only one phase of :term:`install-lockss`, for example re-running the :ref:`Testing the K3s Node` phase after it fails and you perform some troubleshooting. If this is necessary, invoke :term:`install-lockss` with exactly one of the following options:
+         Conversely, you may need to run or re-run only one phase of :term:`install-lockss`, for example re-running the :ref:`Testing the K3s Node` phase after it fails and you perform some troubleshooting. If this is necessary, invoke :term:`install-lockss` with exactly one of the following options:
 
-      .. list-table::
-         :header-rows: 1
+         .. list-table::
+            :header-rows: 1
 
-         *  *  Option
-            *  Phase Executed
-         *  *  ``--check-system-prerequisites``  (or ``-S``)
-            *  :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`)
-         *  *  ``--check-k3s-prerequisites`` (or ``-P``)
-            *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
-         *  *  ``--configure-iptables`` (or ``-I``)
-            *  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
-         *  *  ``--configure-firewalld`` (or ``-F``)
-            *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
-         *  *  ``--configure-ufw`` (or ``-U``)
-            *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
-         *  *  ``--configure-coredns`` (or ``-C``)
-            *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
-         *  *  ``--install-k3s`` (or ``-K``)
-            *  :numref:`Installing K3s` (:ref:`Installing K3s`)
-         *  *  ``--test-k3s`` (or ``-T``)
-            *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
+            *  *  Option
+               *  Phase Executed
+            *  *  ``--check-system-prerequisites``  (or ``-S``)
+               *  :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`)
+            *  *  ``--check-k3s-prerequisites`` (or ``-P``)
+               *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
+            *  *  ``--configure-iptables`` (or ``-I``)
+               *  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
+            *  *  ``--configure-firewalld`` (or ``-F``)
+               *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
+            *  *  ``--configure-ufw`` (or ``-U``)
+               *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
+            *  *  ``--configure-coredns`` (or ``-C``)
+               *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
+            *  *  ``--install-k3s`` (or ``-K``)
+               *  :numref:`Installing K3s` (:ref:`Installing K3s`)
+            *  *  ``--test-k3s`` (or ``-T``)
+               *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
 
-   .. index:: install-lockss; running on auto-pilot
+      .. index:: install-lockss; running on auto-pilot
 
-   .. dropdown:: Running :program:`install-lockss` on auto-pilot
-      :name: running-install-lockss-on-auto-pilot
-      :icon: light-bulb
-      :animate: fade-in-slide-down
+      .. dropdown:: Running :program:`install-lockss` on auto-pilot
+         :name: running-install-lockss-on-auto-pilot
+         :icon: light-bulb
+         :animate: fade-in-slide-down
 
-      If you invoke :term:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+         If you invoke :term:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
 
-.. index:: install-lockss; error condition
+   .. index:: install-lockss; error condition
 
-.. admonition:: Error conditions and what to do about them
+   .. admonition:: Error conditions and what to do about them
 
-   .. dropdown:: :program:`install-lockss` not run as ``root``
-      :name: error-root
-      :icon: x-circle-fill
-      :animate: fade-in-slide-down
+      .. dropdown:: :program:`install-lockss` not run as ``root``
+         :name: error-root
+         :icon: x-circle-fill
+         :animate: fade-in-slide-down
 
-      If :program:`install-lockss` is not run as ``root``, you will see the following error message:
+         If :program:`install-lockss` is not run as ``root``, you will see the following error message:
 
-      .. code-block:: text
+         .. code-block:: text
 
-         [ERROR] This script must be run as root
+            [ERROR] This script must be run as root
 
-      and :program:`install-lockss` will fail. Try again as ``root``.
+         and :program:`install-lockss` will fail. Try again as ``root``.
 
 .. index:: install-lockss; system prerequisites
 
@@ -162,7 +166,7 @@ No user interaction is expected; if everything goes well, you will see this mess
 
    [success] System prerequisites checked
 
-and :program:`install-lockss` will successfully proceed to :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`).
 
 .. index:: install-lockss; error condition
 
@@ -218,7 +222,7 @@ No user interaction is expected; if everything goes well, you will see this mess
 
    [success] K3s prerequisites checked
 
-and :program:`install-lockss` will successfully proceed to :numref:`configuring-iptables` (:ref:`configuring-iptables`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`configuring-iptables` (:ref:`configuring-iptables`).
 
 .. index:: install-lockss; error condition
 
@@ -332,7 +336,7 @@ In many situations, no configuration of :program:`iptables` is needed; you will 
 
    [success] Skipping (iptables is not run via Alternatives)
 
-and :program:`install-lockss` will successfully proceed to :numref:`configuring-firewalld` (:ref:`configuring-firewalld`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`configuring-firewalld` (:ref:`configuring-firewalld`).
 
 Otherwise, you will receive the following prompt:
 
@@ -398,7 +402,7 @@ In many situations, no configuration of :program:`firewalld` is needed; you will
 
    [success] Skipping (firewalld is not running)
 
-and :program:`install-lockss` will successfully proceed to :numref:`configuring-ufw` (:ref:`configuring-ufw`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`configuring-ufw` (:ref:`configuring-ufw`).
 
 Otherwise, you will receive the following prompt:
 
@@ -460,7 +464,7 @@ In many situations, no configuration of :program:`ufw` is needed; you will see o
 
    [success] Skipping (ufw is not active)
 
-and :program:`install-lockss` will successfully proceed to :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`).
 
 Otherwise, you will receive the following prompt:
 
@@ -520,7 +524,7 @@ In many situations, no configuration of :program:`firewalld` is needed; you will
 
    [success] Using system resolv.conf files
 
-and :program:`install-lockss` will successfully proceed to :numref:`Installing K3s` (:ref:`Installing K3s`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`Installing K3s` (:ref:`Installing K3s`).
 
 Otherwise [#fn-force-dns]_, you will receive a message including ``CoreDNS does not allow a loopback address to be given to Kubernetes pods as an upstream DNS server``, and the following prompt:
 
@@ -717,7 +721,7 @@ No user interaction is expected. If all tests pass, you will see the message:
 
    [success] Tested the K3s node
 
-and :program:`install-lockss` will successfully proceed to :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
 
 Otherwise, you will see an error message corresponding to the test that did not pass, and :program:`install-lockss` will fail.
 
@@ -904,6 +908,10 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 ----
 
 .. rubric:: Footnotes
+
+.. [#fn-root-session]
+
+   See :numref:`Establishing a root Session` (:ref:`Establishing a root Session`).
 
 .. [#fn-yes]
 

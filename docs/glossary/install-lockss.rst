@@ -1,1 +1,1 @@
-:term:`install-lockss` is a script in the :term:`LOCKSS Installer` that installs the infrastructure necessary to run the :term:`LOCKSS stack` on your host system.
+:term:`install-lockss` is a script in the :term:`LOCKSS Installer` that installs the infrastructure necessary to run the :term:`LOCKSS stack` on your host system, notably :term:`K3s`.
