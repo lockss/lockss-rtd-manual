@@ -1,10 +1,10 @@
-.. _Creating the lockss User and Group
+.. _Creating the lockss User and Group:
 
 ======================================
 Creating the ``lockss`` User and Group
 ======================================
 
-This section describes how to create the ``lockss`` system user (if necessary), under which the :term:`LOCKSS stack` will run.
+This section describes how to create the ``lockss`` system user and group (if necessary), under which the :term:`LOCKSS stack` will run.
 
 .. _Establishing a root Session:
 
@@ -22,7 +22,9 @@ Invoking :program:`adduser`
 
 To create the ``lockss`` user and group, follow these steps:
 
-1. Double-check that you are operating in the ``root`` session established for the entirety of this chapter [#fn-root-session]_ by typing:
+1. .. index:: whoami
+
+   Double-check that you are operating in the ``root`` session established for the entirety of this chapter [#fn-root-session]_ by typing:
 
    .. code-block:: shell
 
@@ -30,13 +32,15 @@ To create the ``lockss`` user and group, follow these steps:
 
    and verifying that the output is ``root``.
 
-2. Check if the ``lockss`` user already exists. Run this :program:`id` command:
+2. .. index:: id
+
+   Check if the ``lockss`` user already exists. Run this :program:`id` command:
 
    .. code-block:: shell
 
       id lockss
 
-   *  If the :program:`id` command outputs information about the ``lockss`` user, such as its user ID (UID) and group ID (GID), for example:
+   *  If the :program:`id` command outputs information about the ``lockss`` user including its user ID (UID) and group ID (GID), for example:
 
       .. code-block:: text
 
@@ -50,9 +54,11 @@ To create the ``lockss`` user and group, follow these steps:
 
          id: ‘lockss’: no such user
 
-      then you will need to create a ``lockss`` user on the host.
+      then the ``lockss`` user does not exist on the host yet, and you will need to it below.
 
-3. If the ``lockss`` user needs to be created, run this :program:`useradd` command:
+3. .. index:: useradd
+
+   If the ``lockss`` user needs to be created on the host, run this :program:`useradd` command:
 
    .. code-block:: shell
 

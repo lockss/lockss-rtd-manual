@@ -17,7 +17,7 @@ Running :program:`install-lockss`
 
 This section describes how to run :term:`install-lockss`.
 
-.. _invoking-install-lockss:
+.. _Invoking install-lockss:
 
 .. index:: install-lockss; invocation
 
@@ -27,7 +27,9 @@ Invoking :program:`install-lockss`
 
 To start the installation process, follow these steps as ``root``:
 
-1. Double-check that you are operating in the ``root`` session established for the entirety of this chapter [#fn-root-session]_ by typing:
+1. .. index:: whoami
+
+   Double-check that you are operating in the ``root`` session established for the entirety of this chapter [#fn-root-session]_ by typing:
 
    .. code-block:: shell
 
