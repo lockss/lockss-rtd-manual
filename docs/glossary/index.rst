@@ -19,6 +19,9 @@ Glossary
 
       The definition, and therefore AUID, of an AU is determined by the :term:`LOCKSS plugin` that handles it.
 
+   configure-lockss
+      .. include:: configure-lockss.rst
+
    container
       A :index:`software container <see: software container; container>`, or simply a container, is a lightweight, narrow-purpose bundle of software code, its dependencies, and its environment, forming a virtual unit of software that can be run on a variety of host environments by a :term:`container orchestration system`.
 

@@ -1,0 +1,1 @@
+:term:`configure-lockss` is a script in the :term:`LOCKSS Installer` that configures the :term:`LOCKSS stack` on your host system.
