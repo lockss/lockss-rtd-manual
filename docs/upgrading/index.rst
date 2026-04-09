@@ -50,15 +50,9 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
    .. important::
 
-      This task, and only this task, is performed as ``root``.
+      This task is performed as ``root``, in the :ref:`LOCKSS Installer Directory` (:samp:`cd {<LOCKSS_INSTALLER_DIR>}`).
 
-   a. In a **separate** console, establish a **second** console session as ``root`` (setting your first console session as ``lockss`` aside for now).
-
-   b. In this second console session, navigate to the :ref:`LOCKSS Installer Directory`, symbolically:
-
-   :samp:`cd {<LOCKSS_INSTALLER_DIR>}`
-
-   c. First, run:
+   a. First, run (as ``root``):
 
       .. code-block:: shell
 
@@ -74,7 +68,7 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
          This runs the :term:`K3s Installer` -- the installation script provided by :term:`K3s` itself. The warning or error messages that may occur while it runs vary. If this step fails, see the suggestions in the equivalent section of the manual for a first-time installation: :numref:`Installing K3s` (:ref:`Installing K3s`).
 
-   d. Then, run:
+   b. Then, run (as ``root``):
 
       .. code-block:: shell
 
@@ -89,8 +83,6 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
       .. tip::
 
          If this step fails, see the suggestions in the equivalent section of the manual for a first-time installation: :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`).
-
-   e. Exit the ``root`` console session.
 
 7. Return to your ongoing ``lockss`` console session. Double-check that you are operating as ``lockss`` by typing:
 
