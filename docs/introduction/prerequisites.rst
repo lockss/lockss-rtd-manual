@@ -88,9 +88,9 @@ System Software Prerequisites
 
       At least one of :term:`Curl` or :term:`Wget` is **required**. You can check by typing ``curl --version`` or ``wget --version`` at the host's command line.
 
-      *  If either outputs a valid version message, the host satisfies the fetcher requirement.
+      *  If either outputs a valid version message, then the host satisfies the fetcher requirement.
 
-      *  If both output an error message, the host does not satisfy the fetcher requirement. See :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget`.
+      *  If both output an error message, then the host does not satisfy the fetcher requirement. See :doc:`/sysadmin/curl` or :doc:`/sysadmin/wget`.
 
 2. .. dropdown:: Tar and Unzip are required
       :name: prerequisites-archiver
@@ -98,9 +98,9 @@ System Software Prerequisites
 
       Both Tar (:program:`tar` or :program:`gtar`) and Unzip (:program:`unzip`) are **required**. You can check by typing ``tar --version`` (or ``gtar --version``) and ``unzip --version`` at the host's command line.
 
-      *  If both output a valid version message, the host satisfies the archiver requirement.
+      *  If both output a valid version message, then the host satisfies the archiver requirement.
 
-      *  If either outputs an error message, the host does not satisfy the archiver requirement. See :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip`.
+      *  If either outputs an error message, then the host does not satisfy the archiver requirement. See :doc:`/sysadmin/tar` or :doc:`/sysadmin/unzip`.
 
 ---------------------
 Storage Prerequisites

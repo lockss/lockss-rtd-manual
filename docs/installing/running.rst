@@ -107,21 +107,21 @@ To start the installation process, follow these steps as ``root``:
 
             *  *  Option
                *  Phase Executed
-            *  *  ``--check-system-prerequisites``  (or ``-S``)
+            *  *  ``--check-system-prerequisites``
                *  :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`)
-            *  *  ``--check-k3s-prerequisites`` (or ``-P``)
+            *  *  ``--check-k3s-prerequisites``
                *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
-            *  *  ``--configure-iptables`` (or ``-I``)
+            *  *  ``--configure-iptables``
                *  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
-            *  *  ``--configure-firewalld`` (or ``-F``)
+            *  *  ``--configure-firewalld``
                *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
-            *  *  ``--configure-ufw`` (or ``-U``)
+            *  *  ``--configure-ufw``
                *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
-            *  *  ``--configure-coredns`` (or ``-C``)
+            *  *  ``--configure-coredns``
                *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
-            *  *  ``--install-k3s`` (or ``-K``)
+            *  *  ``--install-k3s``
                *  :numref:`Installing K3s` (:ref:`Installing K3s`)
-            *  *  ``--test-k3s`` (or ``-T``)
+            *  *  ``--test-k3s``
                *  :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`)
 
       .. index:: install-lockss; running on auto-pilot
@@ -131,7 +131,7 @@ To start the installation process, follow these steps as ``root``:
          :icon: light-bulb
          :animate: fade-in-slide-down
 
-         If you invoke :term:`install-lockss` with the ``--assume-yes`` (or ``-y``) option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+         If you invoke :term:`install-lockss` with the ``--assume-yes`` option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
 
    .. index:: install-lockss; error condition
 
@@ -148,7 +148,7 @@ To start the installation process, follow these steps as ``root``:
 
             [ERROR] This script must be run as root
 
-         and :program:`install-lockss` will fail. Try again as ``root``.
+         and :program:`install-lockss` will fail. See :numref:`Establishing a root Session` (:ref:`Establishing a root Session`). and try again as ``root``.
 
 .. index:: install-lockss; system prerequisites
 
@@ -290,7 +290,7 @@ and :program:`install-lockss` will successfully proceed to :octicon:`diff-rename
 
       .. code-block:: shell
 
-         chcon -t unlabeled_t /usr/local/bin/k3s
+         chcon --type=unlabeled_t /usr/local/bin/k3s
 
       then try again.
 
@@ -773,7 +773,7 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
          [ERROR] Unexpected number of K3s nodes
 
-      If the K3s node is newly installed, it may simply be that there has not yet been enough time for it to come up; you can re-run this phase with ``scripts/install-lockss --test-k3s`` (or ``scripts/install-lockss -K``) to retry.
+      If the K3s node is newly installed, it may simply be that there has not yet been enough time for it to come up; you can re-run this phase with ``scripts/install-lockss --test-k3s`` to retry.
 
       Contact us (:email:`lockss-support@lockss.org`) for troubleshooting if necessary.
 
@@ -929,7 +929,7 @@ That being said, we still recommend running :program:`k3s check-config` and inte
 
 .. [#fn-k3s-data-dir]
 
-   If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={DIR}` option, :samp:`{DIR}` will automatically be used without the prompt.
+   If :program:`install-lockss` was invoked with the :samp:`--k3s-data-dir={<DIR>}` option, :samp:`{<DIR>}` will automatically be used without the prompt.
 
 .. [#fn-k3s-data-dir-nfs]
 

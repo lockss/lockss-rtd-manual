@@ -64,12 +64,6 @@ To create the ``lockss`` user and group, follow these steps:
 
       useradd --system --user-group --create-home --shell=/bin/bash lockss
 
-   or equivalently:
-
-   .. code-block:: shell
-
-      useradd -rUms /bin/bash lockss
-
    This will create a ``lockss`` system user, a ``lockss`` system group, and a home directory in (typically) :file:`/home/lockss`.
 
 ----

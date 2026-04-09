@@ -100,11 +100,11 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
          If you have a reason to install a version of the LOCKSS Installer other than the latest stable release (currently |LATEST_PATCH|), you can do so by making references to the ``lockss-installer`` :term:`Git` repository on :term:`GitHub` [#fn-installer]_:
 
-         *  You can install a version from the tip of a given Git branch :samp:`{BRA}` of the ``lockss-installer`` repository (e.g. ``develop``) by adding :samp:`--git-branch={BRA}` (or :samp:`-b {BRA}`) after ``| runuser -u lockss sh -s -`` in the command above. This might be needed if you are helping the LOCKSS Team test a development, pre-release, or hotfix version of the LOCKSS Installer.
+         *  You can install a version from the tip of a given Git branch :samp:`{<BRA>}` of the ``lockss-installer`` repository by adding :samp:`--git-branch={<BRA>}` after ``| runuser -u lockss sh -s -`` in the command above, for example ``... | runuser -u lockss sh -s - --git-branch=develop``. This might be needed if you are helping the LOCKSS Team test a development, pre-release, or hotfix version of the LOCKSS Installer.
 
-         *  You can install a version labeled by a given Git tag :samp:`{TAG}` of the ``lockss-installer`` repository (e.g. ``version-2.0.91-beta2``) by adding :samp:`--git-tag={TAG}` (or :samp:`-t {TAG}`) after ``| runuser -u lockss sh -s -`` in the command above. This might be needed if you are installing a specific pre-release or past version of the LOCKSS Installer.
+         *  You can install a version labeled by a given Git tag :samp:`{<TAG>}` of the ``lockss-installer`` repository by adding :samp:`--git-tag={<TAG>}` after ``| runuser -u lockss sh -s -`` in the command above, for example ``... | runuser -u lockss sh -s - --git-tag=version-2.0.91-beta2``. This might be needed if you are installing a specific pre-release or past version of the LOCKSS Installer.
 
-         *  You can install a version as of a specific Git commit :samp:`{COM}` of the ``lockss-installer`` repository by adding :samp:`--git-commit={COM}` (or :samp:`-c {COM}`) after ``| runuser -u lockss sh -s -`` in the command above. This might be needed if you are helping the LOCKSS Team test a development version of the LOCKSS Installer from a specific point in time in its Git history.
+         *  You can install a version as of a specific Git commit :samp:`{<COM>}` of the ``lockss-installer`` repository by adding :samp:`--git-commit={<COM>}` after ``| runuser -u lockss sh -s -`` in the command above, for example ``... | runuser -u lockss sh -s - --git-commit=b32c757f995134b609d125a9cb2891ec3cab3fd9``. This might be needed if you are helping the LOCKSS Team test a development version of the LOCKSS Installer from a specific point in time in its Git history.
 
       .. index:: LOCKSS Installer; pre-inspection, GitHub, Curl, Wget, runuser
 
@@ -134,14 +134,14 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
                   .. code-block:: shell
 
-                     curl -Lo lockss-downloader.sh https://lockss.org/downloader
+                     curl --location --output=lockss-downloader.sh https://lockss.org/downloader
 
                .. tab-item:: Wget
                   :sync: wget
 
                   .. code-block:: shell
 
-                     wget -qO lockss-downloader.sh https://lockss.org/downloader
+                     wget --quiet --output-document=lockss-downloader.sh https://lockss.org/downloader
 
             This will download the LOCKSS Downloader script into the current directory as :file:`lockss-downloader.sh`.
 
@@ -155,15 +155,15 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
             to make the LOCKSS Downloader script executable.
 
-         5. Then run this command:
+         5. Then run this command (as ``lockss``):
 
             .. code-block:: shell
 
-               runuser -u lockss ./lockss-downloader.sh
+               ./lockss-downloader.sh
 
             to run the LOCKSS Downloader script (as ``lockss``).
 
-            You can append to ``./lockss-downloader.sh`` the same options that can be appended to ``| runuser -u lockss sh -s -`` elsewhere in this section, for instance :samp:`./lockss-downloader --download-dir={DIR}`. See :ref:`custom-lockss-installer-directory` or :ref:`custom-lockss-installer-version` above.
+            You can append to ``./lockss-downloader.sh`` the same options that can be appended to ``| runuser -u lockss sh -s -`` elsewhere in this section, for instance :samp:`./lockss-downloader --download-dir={<DIR>}`. See :ref:`custom-lockss-installer-directory` or :ref:`custom-lockss-installer-version` above.
 
 ----
 

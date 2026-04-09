@@ -35,14 +35,14 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
          .. code-block:: shell
 
-            curl -sSfL https://lockss.org/downloader | sh -s - -d `pwd`
+            curl -sSfL https://lockss.org/downloader | sh -s - --download-dir=`pwd`
 
       .. tab-item:: Wget
          :sync: wget
 
          .. code-block:: shell
 
-            wget -qO- https://lockss.org/downloader | sh -s - -d `pwd`
+            wget -qO- https://lockss.org/downloader | sh -s - --download-dir=`pwd`
 
 6. .. index:: K3s; upgrade
 
@@ -58,12 +58,6 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
          scripts/install-lockss --install-k3s
 
-      or equivalently:
-
-      .. code-block:: shell
-
-         scripts/install-lockss -K
-
       .. tip::
 
          This runs the :term:`K3s Installer` -- the installation script provided by :term:`K3s` itself. The warning or error messages that may occur while it runs vary. If this step fails, see the suggestions in the equivalent section of the manual for a first-time installation: :numref:`Installing K3s` (:ref:`Installing K3s`).
@@ -73,12 +67,6 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
       .. code-block:: shell
 
          scripts/install-lockss --test-k3s
-
-      or equivalently:
-
-      .. code-block:: shell
-
-         scripts/install-lockss -T
 
       .. tip::
 
