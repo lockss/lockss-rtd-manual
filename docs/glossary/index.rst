@@ -98,8 +98,7 @@ Glossary
       K3s is developed by `Rancher <https://www.rancher.com/>`_, a subsidiary of `SUSE <https://www.suse.com/>`_.
 
    K3s Configuration Checker
-   k3s check-config
-      The K3s Configuration Checker (also known as :program:`k3s check-config`) is a script that assesses the health of :term:`K3s` after it is installed by the :term:`K3s Installer`. This script is provided by `Rancher <https://www.rancher.com/>`_ as part of K3s.
+      The K3s Configuration Checker, also known as :program:`k3s check-config`, is a script that assesses the health of :term:`K3s` after it is installed by the :term:`K3s Installer`. This script is provided by `Rancher <https://www.rancher.com/>`_ as part of K3s.
 
    K3s data directory
       :term:`K3s` downloads :term:`containers <container>` and stores configuration and other data into a directory known as the K3s data directory.

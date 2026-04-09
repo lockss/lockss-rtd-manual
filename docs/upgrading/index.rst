@@ -2,114 +2,129 @@
 Upgrading LOCKSS
 ================
 
-This chapter describes how to upgrade **an existing LOCKSS 2.0 installation** from LOCKSS 2.0-beta1 (2.0.81-beta1, 2.0.82-beta1, 2.0.83-beta1, 2.0.84-beta1) to |LOCKSS| |LATEST_MINOR|. Please note:
+This chapter describes how to upgrade **an existing LOCKSS 2.0 installation** to |LOCKSS| |LATEST_MINOR| from any release of LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, LOCKSS 2.0-alpha7, or LOCKSS 2.0-beta1. Please note:
 
    *  If you are installing LOCKSS |LATEST_MINOR| **from scratch**, follow the instructions in :doc:`/installing/index` instead.
 
    *  If you are upgrading **an existing LOCKSS 1.x installation** to LOCKSS |LATEST_MINOR|, follow the instructions in :doc:`lockss-portal:migration/index` instead.
 
-.. tip::
+To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
-   Before you begin the upgrade process, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
+1. Before you begin the upgrade process, we recommend you first bring your operating system up to date by applying security updates and upgrading installed packages. Ask your system administrator or see :doc:`/sysadmin/os-updates` in the appendix.
 
-.. only:: html and not singlehtml
+2. Establish a ``root`` console session, that you will use through the remainder of this procedure. Double-check that you are operating as ``root`` by typing:
 
-   .. contents:: Chapter Table of Contents
-      :local:
-      :backlinks: none
-      :depth: 1
+   .. code-block:: shell
 
-----------------------
-Stop the LOCKSS System
-----------------------
+      whoami
 
-The first step is to stop the running LOCKSS system. Log in as the ``lockss`` user and run the following command in the :ref:`LOCKSS Installer Directory`:
+   and verifying that the output is ``root``.
 
-.. code-block:: shell
+3. Navigate to the :ref:`LOCKSS Installer Directory`, symbolically:
 
-   scripts/stop-lockss
+   :samp:`cd {<LOCKSS_INSTALLER_DIR>}`
 
-You may verify all LOCKSS components have stopped by running the following command:
+4. Stop the :term:`LOCKSS stack` with this command:
 
-.. code-block:: shell
+   .. code-block:: shell
 
-   k3s kubectl get deployments -n lockss
+      runuser --user=lockss scripts/stop-lockss
 
-which should return:
+   or equivalently:
 
-.. code-block:: text
+   .. code-block:: shell
 
-   No resources found in lockss namespace.
+      runuser -u lockss scripts/stop-lockss
 
----------------------------
-Update the LOCKSS Installer
----------------------------
+5. .. index:: Curl, Wget, runuser
 
-As the ``lockss`` user, run this Curl or Wget command [#fnfetcher]_:
+   Download the latest version of the :term:`LOCKSS Installer` with the following :term:`Curl` or :term:`Wget` command [#fnfetcher]_:
 
-.. tab-set::
+   .. tab-set::
 
-   .. tab-item:: Curl
-      :sync: curl
+      .. tab-item:: Curl
+         :sync: curl
+
+         .. code-block:: shell
+
+            curl -sSfL https://lockss.org/downloader | runuser -u lockss sh -s - -d `pwd`
+
+      .. tab-item:: Wget
+         :sync: wget
+
+         .. code-block:: shell
+
+            wget -qO- https://lockss.org/downloader | runuser -u lockss sh -s - -d `pwd`
+
+6. .. index:: K3s; upgrade
+
+   The next step is to upgrade :term:`K3s` from 1.21 to 1.31. This is accomplished with two commands:
+
+   a. First, run:
 
       .. code-block:: shell
 
-         curl -sSfL https://lockss.org/downloader | sh -s -
+         scripts/install-lockss --install-k3s
 
-   .. tab-item:: Wget
-      :sync: wget
+      or equivalently:
 
       .. code-block:: shell
 
-         wget -qO- https://lockss.org/downloader | sh -s -
+         scripts/install-lockss -K
 
-This will download and invoke the LOCKSS Downloader, which in turn will install the latest version of the LOCKSS Installer into the :ref:`Default LOCKSS Installer Directory` (:file:`{$HOME}/lockss-installer`). If you are using a custom LOCKSS Installer Directory :samp:`{DIR}`, remember to add :samp:`--download-dir={DIR}` to the end of the command; see :ref:`Running the LOCKSS Downloader` for details.
+      .. tip::
 
-----------------------
-Run the Upgrade Script
-----------------------
+         This runs the :term:`K3s Installer` -- the installation script provided by :term:`K3s` itself. The warning or error messages that may occur while it runs vary. If this step fails, see the suggestions in the equivalent section of the manual for a first-time installation: :numref:`Installing K3s` (:ref:`Installing K3s`).
 
-If you are upgrading from a version prior to alpha7, the next step will update PostgreSQL from 9.6.12 to 14.7. In addition, if updating from 2.0-alpha5, the archived content will then be reindexed. Either of these operations, may take some time. As the ``lockss`` user, run the following command in the :ref:`LOCKSS Installer Directory`:
+   b. Then, run:
 
-.. code-block:: shell
+      .. code-block:: shell
 
-   scripts/upgrades/upgrade-to-beta1
+         scripts/install-lockss --test-k3s
 
-.. hint::
+      or equivalently:
 
-   .. COMMENT PREVIOUSVERSION
+      .. code-block:: shell
 
-   .. COMMENT LATESTVERSION
+         scripts/install-lockss -T
 
-   If you have collected a substantial amount of content in the alpha system this may take a prohibitively long time. If you do not need that content, you can delete it and save time; see :doc:`/sysadmin/resetting`.
+      .. tip::
 
----------------------------
-Re-run the Configure Script
----------------------------
+         If this step fails, see the suggestions in the equivalent section of the manual for a first-time installation: :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`).
 
-Re-run the configuration script by running the command below and follow the instructions in :doc:`/configuring` to ensure all existing configuration parameters are still correct and to configure any new parameters:
+7. Next, you will upgrade LOCKSS from a version 2.0-alpha5 or greater to LOCKSS |LATEST_PATCH|. Run this command:
 
-.. code-block:: shell
+   runuser -u lockss scripts/upgrades/upgrade-to-beta2
 
-   scripts/configure-lockss
+8. If :program:`upgrade-to-beta2` succeeds, it will direct you to run :term:`configure-lockss`; run this command:
 
-If you do not need to review the existing configuration values, run this command instead:
+   .. code-block:: shell
 
-.. code-block:: shell
+      runuser --user=lockss scripts/configure-lockss --replay
 
-   scripts/configure-lockss --replay
+   or equivalently:
 
-The ``--replay`` (or equivalently ``-r``) option will re-use all previously-entered configuration values, and only ask questions for new prompts added since the previous release.
+   .. code-block:: shell
 
----------------------------
-Start LOCKSS |LATEST_MINOR|
----------------------------
+      runuser -u lockss scripts/configure-lockss -r
 
-You are now ready to start the LOCKSS system. Run this command as the ``lockss`` user:
+   .. tip::
 
-.. code-block:: shell
+      If any configuration question requires input, see a reference of all of :program:`configure-lockss` in :numref:`Configuring LOCKSS` (:ref:`Configuring LOCKSS`).
 
-   scripts/start-lockss
+9. Finally, start the LOCKSS stack with this command:
+
+   .. code-block:: shell
+
+      runuser --user=lockss scripts/start-lockss
+
+   or equivalently:
+
+   .. code-block:: shell
+
+      runuser -u lockss scripts/start-lockss
+
+10. You can now exit the ``root`` console session established at the beginning of this sequence of instructions.
 
 ----
 

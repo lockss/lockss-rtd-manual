@@ -91,10 +91,6 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
          :samp:`... | runuser -u lockss sh -s - --download-dir={DIR}`
 
-         .. important::
-
-            If you specify a custom LOCKSS Installer Directory in the LOCKSS Downloader when :doc:`index` for the first time, you will need to specify the same custom LOCKSS Installer Directory in the LOCKSS Downloader whenever :doc:`/upgrading/index` in the future.
-
       .. index:: LOCKSS Installer; custom version, Git, GitHub
 
       .. dropdown:: Custom version of the LOCKSS Installer
