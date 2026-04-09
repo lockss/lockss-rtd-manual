@@ -2,11 +2,11 @@
 Upgrading LOCKSS
 ================
 
-This chapter describes how to upgrade **an existing LOCKSS 2.0 installation** to |LOCKSS| |LATEST_MINOR| from any release of LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, LOCKSS 2.0-alpha7, or LOCKSS 2.0-beta1. Please note:
+This chapter describes how to **upgrade an existing LOCKSS 2.0 installation** to |LOCKSS| |LATEST_MINOR| from any release of LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, LOCKSS 2.0-alpha7, or LOCKSS 2.0-beta1. Please note:
 
-   *  If you are installing LOCKSS |LATEST_MINOR| **from scratch**, follow the instructions in :doc:`/installing/index` instead.
+   *  If you are **installing** LOCKSS |LATEST_MINOR| **from scratch**, follow the instructions in :doc:`/installing/index` instead.
 
-   *  If you are upgrading **an existing LOCKSS 1.x installation** to LOCKSS |LATEST_MINOR|, follow the instructions in :doc:`lockss-portal:migration/index` instead.
+   *  If you are **upgrading an existing LOCKSS 1.x installation** to LOCKSS |LATEST_MINOR|, follow the instructions in :doc:`lockss-portal:migration/index` instead.
 
 To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 

@@ -12,19 +12,19 @@
 
             Prerequisites
 
-         .. button-ref:: /upgrading/index
-            :ref-type: doc
-            :color: primary
-            :expand:
-
-            Upgrading
-
          .. button-ref:: /installing/index
             :ref-type: doc
             :color: primary
             :expand:
 
             Installing
+
+         .. button-ref:: /upgrading/index
+            :ref-type: doc
+            :color: primary
+            :expand:
+
+            Upgrading
 
          .. button-ref:: /configuring
             :ref-type: doc

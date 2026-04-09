@@ -4,9 +4,9 @@ Installing LOCKSS
 
 This chapter describes how to install |LOCKSS| |LATEST_PATCH| (the latest version of LOCKSS |LATEST_MINOR|) **from scratch**. Please note:
 
-   *  If you are upgrading **an existing LOCKSS 2.0 installation** to LOCKSS |LATEST_PATCH|, follow the instructions in :doc:`/upgrading/index` instead.
+   *  If you are **upgrading an existing LOCKSS 2.0 installation** to LOCKSS |LATEST_PATCH|, follow the instructions in :doc:`/upgrading/index` instead.
 
-   *  If you are upgrading **an existing LOCKSS 1.x installation** to LOCKSS |LATEST_MINOR|, follow the instructions in :doc:`lockss-portal:migration/index` instead. A portion of those instructions will bring you to this chapter.
+   *  If you are **upgrading an existing LOCKSS 1.x installation** to LOCKSS |LATEST_MINOR|, follow the instructions in :doc:`lockss-portal:migration/index` instead. A portion of those instructions will bring you to this chapter.
 
 .. tip::
 

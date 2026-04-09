@@ -18,8 +18,8 @@ LOCKSS System Manual
    :numbered:
 
    introduction/index
-   upgrading/index
    installing/index
+   upgrading/index
    configuring
    running
    using/index
