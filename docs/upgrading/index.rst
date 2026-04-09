@@ -94,7 +94,9 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
 7. Next, you will upgrade LOCKSS from a version 2.0-alpha5 or greater to LOCKSS |LATEST_PATCH|. Run this command:
 
-   runuser -u lockss scripts/upgrades/upgrade-to-beta2
+   .. code-block:: shell
+
+      runuser -u lockss scripts/upgrades/upgrade-to-beta2
 
 8. If :program:`upgrade-to-beta2` succeeds, it will direct you to run :term:`configure-lockss`; run this command:
 
