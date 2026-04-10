@@ -4,7 +4,9 @@ Network Ports
 
 .. attention::
 
-   Almost all network ports used in the :term:`LOCKSS stack` changed in |LOCKSS| 2.0-beta2 compared to earlier "alpha" and "beta" versions of LOCKSS 2.0, which impacts :term:`firewall` rules, browser bookmarks, scripts, and more. See :ref:`LOCKSS 2.0-beta2 Port Changes`.
+   Almost all network ports used in the :term:`LOCKSS stack` changed in |LOCKSS| 2.0-beta2 compared to earlier "alpha" and "beta" versions of LOCKSS 2.0, which impacts :term:`firewall` rules, browser bookmarks, scripts, and more. For example, the port for the Web user interface of the :ref:`LOCKSS Configuration Service`, often used when first logging in LOCKSS in a browser, has moved from 24621 to 24602. See :ref:`LOCKSS 2.0-beta2 Port Changes`.
+
+ See :ref:`LOCKSS 2.0-beta2 Port Changes`.
 
 This section describes the default network ports used by the :term:`LOCKSS stack`.
 
