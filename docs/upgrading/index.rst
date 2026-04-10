@@ -8,7 +8,7 @@ This chapter describes how to **upgrade an existing LOCKSS 2.0 installation** to
 
    *  If you are **upgrading an existing LOCKSS 1.x installation** to LOCKSS |LATEST_MINOR|, follow the instructions in :doc:`lockss-portal:migration/index` instead.
 
-.. important::
+.. attention::
 
    Almost all network ports used in the :term:`LOCKSS stack` changed in |LOCKSS| 2.0-beta2 compared to earlier "alpha" and "beta" versions of LOCKSS 2.0, which impacts :term:`firewall` rules, browser bookmarks, scripts, and more. See :ref:`LOCKSS 2.0-beta2 Port Changes`.
 

@@ -2,7 +2,7 @@
 Network Ports
 =============
 
-.. important::
+.. attention::
 
    Almost all network ports used in the :term:`LOCKSS stack` changed in |LOCKSS| 2.0-beta2 compared to earlier "alpha" and "beta" versions of LOCKSS 2.0, which impacts :term:`firewall` rules, browser bookmarks, scripts, and more. See :ref:`LOCKSS 2.0-beta2 Port Changes`.
 
@@ -164,9 +164,9 @@ Port by port details are shown below. Unspecified ports below in the 24600-24649
       *  |ACCESS|
       *  Audit proxy
       *  :ref:`LOCKSS Poller Service`
-   *  *  **24632** :bdg-primary:`UDP`
+   *  *  **24632**
       *  |ACCESS|
-      *  ICP server
+      *  :bdg-primary:`UDP` ICP server
       *  :ref:`LOCKSS Poller Service`
    *  *  24633
       *  |ACCESS|
