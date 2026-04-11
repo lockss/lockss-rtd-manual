@@ -6,8 +6,6 @@ Network Ports
 
    Almost all network ports used in the :term:`LOCKSS stack` changed in |LOCKSS| 2.0-beta2 compared to earlier "alpha" and "beta" versions of LOCKSS 2.0, which impacts :term:`firewall` rules, browser bookmarks, scripts, and more. For example, the port for the Web user interface of the :ref:`LOCKSS Configuration Service`, often used when first logging in to LOCKSS in a browser, has moved from 24621 to 24602. See :ref:`LOCKSS 2.0-beta2 Port Changes`.
 
- See :ref:`LOCKSS 2.0-beta2 Port Changes`.
-
 This section describes the default network ports used by the :term:`LOCKSS stack`.
 
 All ports are TCP in the 24600-24649 range [#fn-subset]_ (with a few exceptions [#fn-exceptions]_), clustered in six categories by like purpose, correlated with like clients:
