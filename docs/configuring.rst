@@ -286,7 +286,7 @@ Content Storage Area Settings
 
    ``Content storage areas have changed. Artifact reindexing may be needed; see manual.``
 
-   This message indicates that changing the configured content storage areas may trigger the need for :term:`artifacts <artifact>` to be :index:`reindexed interally <artifact reindexing>`. This process happens in the background while the :term:`stack <LOCKSS stack>` runs but may take an extended period of time.
+   This message indicates that changing the configured content storage areas may trigger the need for :term:`artifacts <artifact>` to be :index:`reindexed internally <artifact reindexing>`. This process happens in the background while the :term:`stack <LOCKSS stack>` runs but may take an extended period of time.
 
 .. index:: state data storage area; configuration
 
