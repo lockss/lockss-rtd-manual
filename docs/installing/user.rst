@@ -54,7 +54,7 @@ To create the ``lockss`` user and group, follow these steps:
 
          id: ‘lockss’: no such user
 
-      then the ``lockss`` user does not exist on the host yet, and you will need to it below.
+      then the ``lockss`` user does not exist on the host yet, and you will need to create it below.
 
 3. .. index:: useradd
 
