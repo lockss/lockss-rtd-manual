@@ -57,7 +57,7 @@ Some notes about using :program:`configure-lockss`:
 
 .. index:: configure-lockss; invocation
 
-.. _invoking-configure-lockss:
+.. _Invoking configure-lockss:
 
 ------------------------------------
 Invoking :program:`configure-lockss`
