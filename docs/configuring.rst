@@ -2,6 +2,12 @@
 Configuring LOCKSS
 ==================
 
+.. |MIGRATIONGUIDE| replace:: :external+lockss-portal:doc:`migration/index`
+
+.. COMMENT FIXME both should be external :ref:
+.. |NEWHOSTMIGRATION| replace:: **new-host migration**
+.. |SAMEHOSTMIGRATION| replace:: **same-host migration**
+
 .. note::
 
    Commands in this section are run as the ``lockss`` user.
@@ -49,11 +55,13 @@ You will need to gather information to answer configuration questions asked by :
 
 Some notes about using :program:`configure-lockss`:
 
-*  When run the first time, some of the questions asked by the script will have a suggested or default value, displayed in square brackets; hit :kbd:`Enter` to accept the suggested value, or type the correct value and hit :kbd:`Enter`.
+*  When run the first time, some of the questions asked by the script will have a suggested or default value, displayed in square brackets; either type the desired value and then hit :kbd:`Enter`, or hit :kbd:`Enter` to accept the value in square brackets.
 
-*  Any subsequent runs will use the previous values as the default value; review and hit :kbd:`Enter` to leave unchanged. Use ``configure-lockss --replay`` (or ``configure-lockss -r`` for short) to prompt only for info not already found in the configuration file.
+*  Any subsequent runs will use the previous values as the suggested value in square brackets; either type a new desired value and then hit :kbd:`Enter`, or hit :kbd:`Enter` to leave the value in square brackets unchanged.
 
-*  Password prompts will not display the previous value but can still be left unchanged with :kbd:`Enter`.
+   *  Use ``configure-lockss --replay`` to prompt only for information not already found in the configuration file.
+
+   *  Password prompts will not display the previous value, but passwords can still be left unchanged with :kbd:`Enter`.
 
 .. index:: configure-lockss; invocation
 
@@ -62,6 +70,16 @@ Some notes about using :program:`configure-lockss`:
 ------------------------------------
 Invoking :program:`configure-lockss`
 ------------------------------------
+
+.. tip::
+
+   *  When run the first time, some of the questions asked by :program:`configure-lockss` will have a suggested or default value, displayed in square brackets; either type the desired value and then hit :kbd:`Enter`, or just hit :kbd:`Enter` to accept the value in square brackets.
+
+   *  Any subsequent runs of :program:`configure-lockss` will use the previously-entered value as the suggested value in square brackets; either type a new desired value and then hit :kbd:`Enter`, or just hit :kbd:`Enter` to leave the value in square brackets unchanged.
+
+      *  Use ``configure-lockss --replay`` to prompt only for information not already found in the configuration file.
+
+      *  Password prompts will not display the previous value, but passwords can still be left unchanged by just hitting :kbd:`Enter`.
 
 To invoke :program:`configure-lockss`, follow these steps:
 
@@ -85,6 +103,10 @@ To invoke :program:`configure-lockss`, follow these steps:
 
 The script will begin with the first series of configuration questions from :octicon:`diff-renamed` :numref:`Kubernetes Settings` (:ref:`Kubernetes Settings`).
 
+.. hint::
+
+   Have you arrived at this spot in this manual because you are following the instructions in the |MIGRATIONGUIDE|? If you are performing a |NEWHOSTMIGRATION|, be mindful that there will be a prompt here, namely :guilabel:`Location of copied LOCKSS 1.x config.dat file`, that does not occur when running :program:`configure-lockss` normally.
+
 .. index:: configure-lockss; Kubernetes
 
 -------------------
@@ -93,7 +115,7 @@ Kubernetes Settings
 
 Prompt: :guilabel:`Command to use to execute kubectl commands`
 
-Enter the command to invoke :program:`kubectl` in your environment. If you are using :term:`K3s`, the :term:`Kubernetes` environment that ships with |LOCKSS|, the proposed value is already correct and you can simply hit :kbd:`Enter` to accept the suggested value in square brackets.
+Enter the fully-qualified command to invoke :program:`kubectl` in your environment. If you are using :term:`K3s`, the :term:`Kubernetes` environment that ships with |LOCKSS|, the proposed value is already correct and you can simply hit :kbd:`Enter` to accept the suggested value in square brackets.
 
 .. FIXME the script can exit here if the K8s (sic) config file can't be written to
 
@@ -132,6 +154,10 @@ LCAP Port
 Prompt: :guilabel:`LCAP protocol port`
 
 Enter the port on the that will be used to receive :term:`LCAP` traffic. Historically, most LOCKSS nodes use :samp:`9729`.
+
+.. hint::
+
+   Have you arrived at this spot in this manual because you are following the instructions in the |MIGRATIONGUIDE|? If you are performing a |SAMEHOSTMIGRATION|, be mindful that there will be an additional prompt here, namely :guilabel:`Temporary LOCKSS 2.x LCAP port`, that does not occur when running :program:`configure-lockss` normally.
 
 Network Address Translation
 ===========================
