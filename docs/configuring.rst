@@ -476,9 +476,9 @@ Prompt: :guilabel:`Use LOCKSS OpenWayback Service?`
 
 Enter :kbd:`Y` for "yes" to run :ref:`OpenWayback` as part of your :term:`LOCKSS stack`; otherwise, enter :kbd:`N` for "no".
 
-.. _final-steps-of-configure-lockss:
-
 .. index:: configure-lockss; confirmation
+
+.. _Final Steps of configure-lockss:
 
 ------------------------------------------
 Final Steps of :program:`configure-lockss`
