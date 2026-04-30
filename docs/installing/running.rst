@@ -1,4 +1,4 @@
-.. _running-install-lockss:
+.. _Running install-lockss:
 
 =================================
 Running :program:`install-lockss`
@@ -17,9 +17,9 @@ Running :program:`install-lockss`
 
 This section describes how to run :term:`install-lockss`.
 
-.. _Invoking install-lockss:
-
 .. index:: install-lockss; invocation
+
+.. _Invoking install-lockss:
 
 ----------------------------------
 Invoking :program:`install-lockss`
@@ -47,7 +47,7 @@ To start the installation process, follow these steps as ``root``:
 
       scripts/install-lockss
 
-   :term:`install-lockss` will run through successive **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
+   :term:`install-lockss` will run through successive **phases**, each of which is described below from :numref:`Checking System Prerequisites` (:ref:`Checking System Prerequisites`) to :numref:`Final Steps of install-lockss` (:ref:`Final Steps of install-lockss`).
 
    .. tip::
 
@@ -70,18 +70,18 @@ To start the installation process, follow these steps as ``root``:
             *  *  ``--skip-check-k3s-prerequisites``
                *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
             *  *  ``--skip-configure-iptables``
-               * :numref:`configuring-iptables` (:ref:`configuring-iptables`)
+               * :numref:`Configuring iptables for K3s` (:ref:`Configuring iptables for K3s`)
             *  *  ``--skip-configure-firewalld``
-               *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
+               *  :numref:`Configuring firewalld for K3s` (:ref:`Configuring firewalld for K3s`)
             *  *  ``--skip-configure-ufw``
-               *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
+               *  :numref:`Configuring ufw for K3s` (:ref:`Configuring ufw for K3s`)
             *  *  ``--skip-configure-coredns``
                *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
             *  *  ``--skip-install-k3s``
                *  -  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
-                  -  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
-                  -  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
-                  -  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
+                  -  :numref:`Configuring iptables for K3s` (:ref:`Configuring iptables for K3s`)
+                  -  :numref:`Configuring firewalld for K3s` (:ref:`Configuring firewalld for K3s`)
+                  -  :numref:`Configuring ufw for K3s` (:ref:`Configuring ufw for K3s`)
                   -  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
                   -  :numref:`Installing K3s` (:ref:`Installing K3s`)
             *  *  ``--skip-test-k3s``
@@ -112,11 +112,11 @@ To start the installation process, follow these steps as ``root``:
             *  *  ``--check-k3s-prerequisites``
                *  :numref:`Checking K3s Prerequisites` (:ref:`Checking K3s Prerequisites`)
             *  *  ``--configure-iptables``
-               *  :numref:`configuring-iptables` (:ref:`configuring-iptables`)
+               *  :numref:`Configuring iptables for K3s` (:ref:`Configuring iptables for K3s`)
             *  *  ``--configure-firewalld``
-               *  :numref:`configuring-firewalld` (:ref:`configuring-firewalld`)
+               *  :numref:`Configuring firewalld for K3s` (:ref:`Configuring firewalld for K3s`)
             *  *  ``--configure-ufw``
-               *  :numref:`configuring-ufw` (:ref:`configuring-ufw`)
+               *  :numref:`Configuring ufw for K3s` (:ref:`Configuring ufw for K3s`)
             *  *  ``--configure-coredns``
                *  :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`)
             *  *  ``--install-k3s``
@@ -131,7 +131,7 @@ To start the installation process, follow these steps as ``root``:
          :icon: light-bulb
          :animate: fade-in-slide-down
 
-         If you invoke :term:`install-lockss` with the ``--assume-yes`` option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`configuring-iptables` (:ref:`configuring-iptables`), :numref:`configuring-firewalld` (:ref:`configuring-firewalld`), :numref:`configuring-ufw` (:ref:`configuring-ufw`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
+         If you invoke :term:`install-lockss` with the ``--assume-yes`` option, it will attempt to run without asking any questions interactively, by assuming that the answer to any yes/no question is "yes" and that the answer to other interactive questions is the suggested default value. **This is only appropriate for advanced users** who understand the implications of the default code paths in :numref:`Configuring iptables for K3s` (:ref:`Configuring iptables for K3s`), :numref:`Configuring firewalld for K3s` (:ref:`Configuring firewalld for K3s`), :numref:`Configuring ufw for K3s` (:ref:`Configuring ufw for K3s`), :numref:`Configuring CoreDNS for K3s` (:ref:`Configuring CoreDNS for K3s`) and :numref:`Installing K3s` (:ref:`Installing K3s`) on the host system, for example after previous experience installing the LOCKSS system.
 
    .. index:: install-lockss; error condition
 
@@ -224,7 +224,7 @@ No user interaction is expected; if everything goes well, you will see this mess
 
    [success] K3s prerequisites checked
 
-and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`configuring-iptables` (:ref:`configuring-iptables`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`Configuring iptables for K3s` (:ref:`Configuring iptables for K3s`).
 
 .. index:: install-lockss; error condition
 
@@ -309,10 +309,10 @@ and :program:`install-lockss` will successfully proceed to :octicon:`diff-rename
 
       If you have reason to believe that this check fails even though the corresponding error condition does not apply, you can re-run :program:`install-lockss` with the ``--skip-check-iptables-lkm`` option to skip it.
 
-.. _configuring-iptables:
-
 .. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
    pair: install-lockss; iptables
+
+.. _Configuring iptables for K3s:
 
 ---------------------------------------
 Configuring :program:`iptables` for K3s
@@ -338,7 +338,7 @@ In many situations, no configuration of :program:`iptables` is needed; you will 
 
    [success] Skipping (iptables is not run via Alternatives)
 
-and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`configuring-firewalld` (:ref:`configuring-firewalld`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`Configuring firewalld for K3s` (:ref:`Configuring firewalld for K3s`).
 
 Otherwise, you will receive the following prompt:
 
@@ -381,10 +381,10 @@ Enter :kbd:`Y` to accept the proposed :program:`iptables` configuration, or ente
 
       and :program:`install-lockss` will fail. See :doc:`/troubleshooting/iptables` for remediation details.
 
-.. _configuring-firewalld:
-
 .. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
    pair: install-lockss; firewalld
+
+.. _Configuring firewalld for K3s:
 
 ----------------------------------------
 Configuring :program:`firewalld` for K3s
@@ -404,7 +404,7 @@ In many situations, no configuration of :program:`firewalld` is needed; you will
 
    [success] Skipping (firewalld is not running)
 
-and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`configuring-ufw` (:ref:`configuring-ufw`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`Configuring ufw for K3s` (:ref:`Configuring ufw for K3s`).
 
 Otherwise, you will receive the following prompt:
 
@@ -443,10 +443,10 @@ Enter :kbd:`Y` to accept the proposed :program:`firewalld` configuration, or ent
 
       and :program:`install-lockss` will fail. See :doc:`/troubleshooting/firewalld` for remediation details.
 
-.. _configuring-ufw:
-
 .. index:: install-lockss; K3s prerequisites, K3s; installation prerequisites
    pair: install-lockss; ufw
+
+.. _Configuring ufw for K3s:
 
 ----------------------------------
 Configuring :program:`ufw` for K3s
@@ -723,7 +723,7 @@ No user interaction is expected. If all tests pass, you will see the message:
 
    [success] Tested the K3s node
 
-and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`final-steps-of-install-lockss` (:ref:`final-steps-of-install-lockss`).
+and :program:`install-lockss` will successfully proceed to :octicon:`diff-renamed` :numref:`Final Steps of install-lockss` (:ref:`Final Steps of install-lockss`).
 
 Otherwise, you will see an error message corresponding to the test that did not pass, and :program:`install-lockss` will fail.
 
@@ -817,7 +817,7 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
       FIXME
 
-.. _final-steps-of-install-lockss:
+.. _Final Steps of install-lockss:
 
 ----------------------------------------
 Final Steps of :program:`install-lockss`
