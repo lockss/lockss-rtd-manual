@@ -103,10 +103,6 @@ To invoke :program:`configure-lockss`, follow these steps:
 
 The script will begin with the first series of configuration questions from :octicon:`diff-renamed` :numref:`Kubernetes Settings` (:ref:`Kubernetes Settings`).
 
-.. hint::
-
-   Have you arrived at this spot in this manual because you are following the instructions in the |MIGRATIONGUIDE|? If you are performing a |NEWHOSTMIGRATION|, be mindful that there will be a prompt here, namely :guilabel:`Location of copied LOCKSS 1.x config.dat file`, that does not occur when running :program:`configure-lockss` normally.
-
 .. index:: configure-lockss; Kubernetes
 
 -------------------
@@ -118,6 +114,10 @@ Prompt: :guilabel:`Command to use to execute kubectl commands`
 Enter the fully-qualified command to invoke :program:`kubectl` in your environment. If you are using :term:`K3s`, the :term:`Kubernetes` environment that ships with |LOCKSS|, the proposed value is already correct and you can simply hit :kbd:`Enter` to accept the suggested value in square brackets.
 
 .. FIXME the script can exit here if the K8s (sic) config file can't be written to
+
+.. hint::
+
+   Have you arrived at this spot in this manual because you are following the instructions in the |MIGRATIONGUIDE|? If you are performing a |NEWHOSTMIGRATION|, be mindful that there will be a prompt here, namely :guilabel:`Location of copied LOCKSS 1.x config.dat file`, that does not occur when running :program:`configure-lockss` normally. See the |MIGRATIONGUIDE| for details.
 
 .. index:: configure-lockss; network
 
@@ -157,7 +157,7 @@ Enter the port on the that will be used to receive :term:`LCAP` traffic. Histori
 
 .. hint::
 
-   Have you arrived at this spot in this manual because you are following the instructions in the |MIGRATIONGUIDE|? If you are performing a |SAMEHOSTMIGRATION|, be mindful that there will be an additional prompt here, namely :guilabel:`Temporary LOCKSS 2.x LCAP port`, that does not occur when running :program:`configure-lockss` normally.
+   Have you arrived at this spot in this manual because you are following the instructions in the |MIGRATIONGUIDE|? If you are performing a |SAMEHOSTMIGRATION|, be mindful that there will be an additional prompt here, namely :guilabel:`Temporary LOCKSS 2.x LCAP port`, that does not occur when running :program:`configure-lockss` normally. See the |MIGRATIONGUIDE| for details.
 
 Network Address Translation
 ===========================
