@@ -357,15 +357,15 @@ You will receive the following prompt:
 
 :guilabel:`Use embedded LOCKSS PostgreSQL DB Service?`
 
-*  To use the **embedded PostgreSQL database**, enter :kbd:`Y` for "yes", then follow the steps in the :ref:`embedded-postgresql-settings` section below.
+*  To use the **embedded PostgreSQL database**, enter :kbd:`Y` for "yes", then follow the steps in the :ref:`Embedded PostgreSQL Database` section below.
 
-*  To use an **external PostgreSQL database**, enter :kbd:`N` for "no", then follow the steps in the :ref:`external-postgresql-settings` section below.
+*  To use an **external PostgreSQL database**, enter :kbd:`N` for "no", then follow the steps in the :ref:`External PostgreSQL Database` section below.
 
 .. tab-set::
 
    .. tab-item:: Embedded PostgreSQL Database
       :sync: embedded-postgresql
-      :name: embedded-postgresql-settings
+      :name: Embedded PostgreSQL Database
 
       Follow these steps if you entered :kbd:`Y` to use the **embedded PostgreSQL database**:
 
@@ -383,7 +383,7 @@ You will receive the following prompt:
 
    .. tab-item:: External PostgreSQL Database
       :sync: external-postgresql
-      :name: external-postgresql-settings
+      :name: External PostgreSQL Database
 
       Follow these steps if you entered :kbd:`N` to use an **external PostgreSQL database**:
 

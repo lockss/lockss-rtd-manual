@@ -147,8 +147,8 @@ As of LOCKSS 2.0-beta2, the :term:`LOCKSS stack` no longer requires a Solr datab
 
 .. [#fn-embedded-postgresql]
 
-   See :ref:`embedded-postgresql-settings`.
+   See :ref:`Embedded PostgreSQL Database`.
 
 .. [#fn-external-postgresql]
 
-   See :ref:`external-postgresql-settings`.
+   See :ref:`External PostgreSQL Database`.
