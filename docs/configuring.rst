@@ -151,7 +151,7 @@ Enter a semicolon-separated list of subnets in CIDR or mask notation that should
 LCAP Port
 =========
 
-Prompt: :guilabel:`LCAP protocol port`
+Prompt: :guilabel:`LCAP port`
 
 Enter the port on the that will be used to receive :term:`LCAP` traffic. Historically, most LOCKSS nodes use :samp:`9729`.
 
