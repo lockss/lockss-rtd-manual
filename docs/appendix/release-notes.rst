@@ -36,7 +36,7 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
 
    *  Repository better detects "full disk" errors and reports them to clients, via a 500 or 507 response.
 
-   *  Added repository error injection framework.
+   *  Added repository error injection framework, to facilitate testing.
 
    *  Conditionally compress content depending on media type, only if not already compressed, for a configurable set of media types.
 
@@ -48,21 +48,51 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
 
    *  Revamped paged iterator logic to not hold database connections open.
 
+   *  ``ArtifactIndex`` and ``WarcArtifactDataStore`` versioning and upgrade support.
+
+   *  Ensure multiple storage areas are filled evenly.
+
 *  **Metadata**
 
    *  The LOCKSS Metadata Extraction Service has been merged into the :ref:`LOCKSS Metadata Service`.
 
 *  **Core**
 
+   *  Make the size of the REST client connection pool configurable.
+
+   *  Allow REST client read/connect timeouts to be changed without restart; default read timeout changed to 1 hour.
+
    *  Apply missing non-default AU config params from TDB at AU config time.
 
+   *  Added ``plugin_allow_start_url_error`` plugin key.
+
+   *  Added ``isKubernetes()`` and ``isRuncluster()`` methods to platform version; disallow blanks in platform version name and handle semantic versions.
+
    *  Many updated dependencies.
+
+   *  Enabled ``AccountManager`` by default.
+
+   *  Added ``QueryUrlNormalizer``.
+
+   *  Allow permission page redirects to take off-host excursion and return to original host/URL.
+
+   *  Handle ``Content-Encoding: ""`` header as null.
+
+   *  Made ports in the Content Server Options servlet read only (as they are in fact not yet configurable through the UI in LOCKSS 2.x).
+
+   *  Removed ``ConfigParamDescr.InvalidFormatException`` in favor of ``AuParamType.InvalidFormatException``.
 
 *  **API changes**
 
    *  Make result pagination more consistent across services and collections.
 
    *  Improve REST error handling and error responses.
+
+   *  Changed configuration service REST endpoint paths: ``normalizeUrl`` to ``normalizeurl``, ``mimeType`` to ``mediatypes``.
+
+   *  Clean up and update API specifications for ``PageInfo``, ``ArtifactPageInfo``, ``AuidPageInfo``, ``AuSize``, ``RepositoryInfo`` (nullable properties, renamed ``resultsPerPage`` to ``itemsInPage``).
+
+   *  Propagated enum changes (``IncludeContentEnum``, ``BulkAuOpEnum``, etc.) from crawler and poller services.
 
 *  **Security**
 
@@ -86,9 +116,39 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
 
    *  AU detail page in the UI now links to Pywb and OpenWayback (if they're configured).
 
+   *  Find the first start URL with content for the default replay URL.
+
+   *  Added `requested_disposition` query parameter (ported from lockss-daemon).
+
+   *  Port `ServeContent` rewrite-for-stem-map logic from lockss-daemon.
+
+   *  Added CDX record endpoint improvements.
+
+   * Don't rewrite ``data:`` URLs.
+
 *  **Bug fixes**
 
    *  Endpoints allowing un-credentialed access now grant correct privileges to credentialed clients.
+
+   *  Ensure proper URL-encoding of query and path args in REST request URLs.
+
+   *  In plugins with alternative permission URLs, a permission fetch failure could mask failure to fetch a required start URL, erroneously allowing a crawl to appear successful even though it had failed.
+
+   *  Ensure all services are notified of relevant config changes via a ``ConfigChanged`` notification.
+
+   * Prevented `ServeContent` and `ViewContent` from sending incorrect (compressed) content length.
+
+   *  Check global excludes when following redirects.
+
+*  **TDB tools**
+
+   *  Add ``titleName`` trait to supplant the title block's name.
+
+   *  Make title sets based on publisher names, not publisher blocks.
+
+   *  Add AU-level DOI and demote title-level DOI.
+
+   *  ``TdbXml`` set of publisher names now reset between multiple segments (e.g. ``--output-dir``).
 
 .. rubric:: Component Versions
 
