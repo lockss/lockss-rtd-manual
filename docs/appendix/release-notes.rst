@@ -24,6 +24,14 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
 
    *  A beta version of officially supported Python clients to interact with the LOCKSS 2.x REST APIs is now available for testing.
 
+*  **LOCKSS 1.x to 2.x migration**
+
+   *  For new-host migrations where crawling from a known IP is important (such as in the GLN), added infrastructure to proxy through the v1 instance during migration, and related logic in ``configure-lockss``.
+
+   *  In new-host or same-host migrations where crawl rates from a given IP address are important, the v1 and v2 crawl rates each can be halved globally during the migration to avoid exceeding maximum crawl rates.
+
+   *  Added a migration banner on most UI screens while migration from LOCKSS 1.x is in progress.
+
 *  **Repository**
 
    *  Support adding a specified artifact version.
@@ -52,9 +60,13 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
 
    *  Ensure multiple storage areas are filled evenly.
 
+   *  By default, potentially huge temp files used during artifact upload are stored in the first :term:`content storage area` instead of the :term:`temporary storage area`.
+
 *  **Metadata**
 
    *  The LOCKSS Metadata Extraction Service has been merged into the :ref:`LOCKSS Metadata Service`.
+
+   *  Rework metadata job queueing and database upgrading to fix bugs and accommodate concurrent access by v1 during migration.
 
 *  **Core**
 
@@ -81,6 +93,8 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
    *  Made ports in the Content Server Options servlet read only (as they are in fact not yet configurable through the UI in LOCKSS 2.x).
 
    *  Removed ``ConfigParamDescr.InvalidFormatException`` in favor of ``AuParamType.InvalidFormatException``.
+
+   *  Fixed temp file leaks.
 
 *  **API changes**
 
@@ -139,6 +153,8 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
    * Prevented `ServeContent` and `ViewContent` from sending incorrect (compressed) content length.
 
    *  Check global excludes when following redirects.
+
+   *  Fixed a metadata indexing enabling/disabling bug.
 
 *  **TDB tools**
 
