@@ -32,6 +32,12 @@ LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.
 
    *  Added a migration banner on most UI screens while migration from LOCKSS 1.x is in progress.
 
+*  **Platform**
+
+   *  Upgraded to :term:`K3s` 1.31.5+k3s1.
+
+   *  Previously, some log files were not rotated; they are now rotated with Logrotate-centric containers, including in 3rd-party containers.
+
 *  **Repository**
 
    *  Support adding a specified artifact version.
