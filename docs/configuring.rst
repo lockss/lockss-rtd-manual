@@ -3,10 +3,8 @@ Configuring LOCKSS
 ==================
 
 .. |MIGRATIONGUIDE| replace:: :external+lockss-portal:doc:`migration/index`
-
-.. COMMENT FIXME both should be external :ref:
-.. |NEWHOSTMIGRATION| replace:: **new-host migration**
-.. |SAMEHOSTMIGRATION| replace:: **same-host migration**
+.. |NEWHOSTMIGRATION| replace:: :external+lockss-portal:ref:`New-Host Migration`
+.. |SAMEHOSTMIGRATION| replace:: :external+lockss-portal:ref:`Same-Host Migration`
 
 .. note::
 
@@ -113,7 +111,7 @@ Prompt: :guilabel:`Command to use to execute kubectl commands`
 
 Enter the fully-qualified command to invoke :program:`kubectl` in your environment. If you are using :term:`K3s`, the :term:`Kubernetes` environment that ships with |LOCKSS|, the proposed value is already correct and you can simply hit :kbd:`Enter` to accept the suggested value in square brackets.
 
-.. FIXME the script can exit here if the K8s (sic) config file can't be written to
+.. COMMENT FIXME the script can exit here if the K8s (sic) config file can't be written to
 
 .. hint::
 

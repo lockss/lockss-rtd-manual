@@ -815,7 +815,7 @@ Otherwise, you will see an error message corresponding to the test that did not 
 
          [ERROR] Unexpected Cluster-IP
 
-      FIXME
+      .. COMMENT FIXME and then what?
 
 .. _Final Steps of install-lockss:
 

@@ -88,7 +88,7 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    'lockss-portal': ('https://docs.lockss.org/en/latest/', None),
+    'lockss-portal': ('https://docs.lockss.org/en/unstable/', None), # FIXME at release time
     'lockss-manual': ('https://docs.lockss.org/projects/manual/en/latest/', None)
 }
 
@@ -157,15 +157,15 @@ pygments_style = 'default'
 
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
-    'LOCKSS': ':term:`LOCKSS <LOCKSS system>`',
-    'LATEST_MINOR': '2.0-beta2 NOT YET RELEASED',
-    'LATEST_PATCH': '2.0.90-beta2 NOT YET RELEASED',
+    'LATEST_MINOR': '2.0-beta2',
+    'LATEST_PATCH': '2.0.91-beta2',
     'PREVIOUS_MINOR': '2.0-beta1',
     'PREVIOUS_PATCH': '2.0.84-beta1',
     'K8S_MINOR': '1.31',
     'K8S_PATCH': '1.31.5',
     'K3S_MINOR': '1.31',
     'K3S_PATCH': '1.31.5+k3s1',
-    'CLASSIC_MINOR': '1.79 NOT YET RELEASED',
-    'CLASSIC_PATCH': '1.79.0 NOT YET RELEASED',
+    'CLASSIC_MINOR': '1.79',
+    'CLASSIC_PATCH': '1.79.14',
+    'LOCKSS': ':term:`LOCKSS <LOCKSS system>`',
 }

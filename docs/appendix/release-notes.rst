@@ -6,13 +6,13 @@ Release Notes
 
 .. _latest:
 
-------------------------------------
-LOCKSS 2.0.91-beta2 NOT YET RELEASED
-------------------------------------
+-------------------
+LOCKSS 2.0.91-beta2
+-------------------
 
-Released: NOT YET RELEASED
+Released: 2026-07-13
 
-LOCKSS 2.0.91-beta2 NOT YET RELEASED is the second beta release of the LOCKSS 2.0 system.
+LOCKSS 2.0.91-beta2 is the second beta release of the LOCKSS 2.0 system.
 
 .. rubric:: Release Notes
 
