@@ -88,8 +88,8 @@ extensions = [
 ]
 
 intersphinx_mapping = {
-    'lockss-portal': ('https://docs.lockss.org/en/unstable/', None), # FIXME at release time
-    'lockss-manual': ('https://docs.lockss.org/projects/manual/en/latest/', None)
+    'lockss-portal': ('https://docs.lockss.org/en/latest/', None),
+    'lockss-manual': ('https://docs.lockss.org/projects/manual/en/latest/', None),
 }
 
 # Add any paths that contain templates here, relative to this directory.
