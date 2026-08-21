@@ -106,6 +106,10 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
       scripts/start-lockss
 
+   .. note::
+
+      LOCKSS 2.0-beta2 now uses PostgreSQL for its artifact index, which needs to be populated upon the first startup by examining all artifacts in storage. This initial inventory may take a long time, proportional to the amount of preserved content.
+
 ----
 
 .. [#fnfetcher]
