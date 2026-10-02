@@ -58,7 +58,7 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
 2. .. index:: Curl, Wget, runuser
 
-   Run this :program:`curl` or :program:`wget` command as the ``lockss`` user:
+   Run this :program:`curl` or :program:`wget` command:
 
    .. tab-set::
 
@@ -76,7 +76,7 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
             wget -qO- https://lockss.org/downloader | runuser -u lockss sh -s -
 
-   This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer Directory`.
+   This will download the LOCKSS Installer into the :ref:`Default LOCKSS Installer Directory` (and do so as if it were the ``lockss`` user).
 
    .. tip::
 
@@ -125,7 +125,7 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
                cd /tmp
 
-         2. Run this :program:`curl` or :program:`wget` command [#fn-fetcher]_ as the ``lockss`` user:
+         2. Run this :program:`curl` or :program:`wget` command [#fn-fetcher]_:
 
             .. tab-set::
 
@@ -155,15 +155,15 @@ To download the :term:`LOCKSS Installer`, you will use :term:`Curl` or :term:`Wg
 
             to make the LOCKSS Downloader script executable.
 
-         5. Then run this command (as ``lockss``):
+         5. Then run this command:
 
             .. code-block:: shell
 
-               ./lockss-downloader.sh
+               runuser -u lockss ./lockss-downloader.sh
 
-            to run the LOCKSS Downloader script (as ``lockss``).
+            to run the LOCKSS Downloader script (as the ``lockss`` user).
 
-            You can append to ``./lockss-downloader.sh`` the same options that can be appended to ``| runuser -u lockss sh -s -`` elsewhere in this section, for instance :samp:`./lockss-downloader --download-dir={<DIR>}`. See :ref:`custom-lockss-installer-directory` or :ref:`custom-lockss-installer-version` above.
+            You can append to ``runuser -u lockss ./lockss-downloader.sh`` the same options that can be appended to ``| runuser -u lockss sh -s -`` elsewhere in this section, for instance :samp:`runuser -u lockss ./lockss-downloader.sh --download-dir={<DIR>}`. See :ref:`custom-lockss-installer-directory` or :ref:`custom-lockss-installer-version` above.
 
 ----
 
