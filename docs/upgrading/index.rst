@@ -2,7 +2,7 @@
 Upgrading LOCKSS
 ================
 
-This chapter describes how to **upgrade an existing LOCKSS 2.0 installation** to |LOCKSS| |LATEST_MINOR| from any release of LOCKSS 2.0-alpha5, LOCKSS 2.0-alpha6, LOCKSS 2.0-alpha7, or LOCKSS 2.0-beta1. Please note:
+This chapter describes how to **upgrade an existing LOCKSS 2.0 installation** to |LOCKSS| |LATEST_PATCH| from LOCKSS 2.0.91-beta2 or any release of LOCKSS 2.0-beta1, LOCKSS 2.0-alpha7, LOCKSS 2.0-alpha6 or LOCKSS 2.0-alpha5. Please note:
 
 *  If you are **installing** LOCKSS |LATEST_MINOR| **from scratch**, follow the instructions in :doc:`/installing/index` instead.
 
@@ -49,6 +49,10 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
             wget -qO- https://lockss.org/downloader | sh -s - --download-dir=`pwd`
 
 6. .. index:: K3s; upgrade
+
+   .. note::
+
+      If you are upgrading specifically from LOCKSS 2.0.91-beta2 to LOCKSS |LATEST_PATCH|, you do not need to perform this step and you can proceed to the next step. (If you are unsure, you may perform this step and nothing untoward will happen.)
 
    The next task is to upgrade :term:`K3s` from 1.21 to 1.31.
 

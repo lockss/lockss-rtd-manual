@@ -61,7 +61,7 @@
 
          .. COMMENT RELEASEDATE
 
-         |LATEST_PATCH| (2025-07-13)
+         |LATEST_PATCH| (2026-11-18)
 
          .. button-ref:: /appendix/release-notes
             :ref-type: doc
@@ -78,7 +78,6 @@
          .. button-ref:: /appendix/security
             :ref-type: doc
             :color: danger
-            :outline:
             :expand:
 
       .. card::

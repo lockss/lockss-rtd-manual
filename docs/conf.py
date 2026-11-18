@@ -158,9 +158,9 @@ pygments_style = 'default'
 # See https://github.com/missinglinkelectronics/sphinxcontrib-globalsubs
 global_substitutions = {
     'LATEST_MINOR': '2.0-beta2',
-    'LATEST_PATCH': '2.0.91-beta2',
+    'LATEST_PATCH': '2.0.92-beta2',
     'PREVIOUS_MINOR': '2.0-beta1',
-    'PREVIOUS_PATCH': '2.0.84-beta1',
+    'PREVIOUS_PATCH': '2.0.91-beta2',
     'K8S_MINOR': '1.31',
     'K8S_PATCH': '1.31.5',
     'K3S_MINOR': '1.31',
