@@ -2,11 +2,19 @@
 Known Issues
 ============
 
-*This section was last updated: 2024-07-24.*
+:Last updated: 2026-11-19
+
+.. _known-issue-wrong-version:
+
+.. rubric:: LOCKSS 2.0.92-beta2 UI displays the wrong version number
+   :heading-level: 2
+
+At the bottom of UI pages, LOCKSS 2.0.92-beta2 incorrectly displays "LOCKSS 2.0.91-beta2". You can see the correct version number by running ``scripts/installer-version`` from the :ref:`LOCKSS Installer Directory`, and this correct version number is echoed near the top of the output of other scripts like ``scripts/start-lockss``.
 
 .. _known-issue-peer-links:
 
 .. rubric:: Peer Links
+   :heading-level: 2
 
 Peer links in poll detail screens may link to the wrong UI port for that peer, depending on whether the peer is really running LOCKSS 1.x or LOCKSS 2.x.
 
@@ -15,6 +23,7 @@ Peer links in poll detail screens may link to the wrong UI port for that peer, d
 .. _known-issue-k3s-cert:
 
 .. rubric:: Expired K3s Certificate
+   :heading-level: 2
 
 LOCKSS-provided scripts like ``scripts/stop-lockss`` or ``scripts/restart-lockss`` that interact with the K3s server may display error messages that include:
 
@@ -36,21 +45,17 @@ This is caused by a bug in the version of K3s that currently ships with the LOCK
 
 Scripts that interact with the K3s server should then again work as expected.
 
-.. _known-issue-security:
-
-.. rubric:: Security
-
-.. _known-issue-k8s-access:
-
-*  In the "alpha" phase of development of LOCKSS 2.0, there are no access controls on Kubernetes' API. It is not accessible from outside the machine, but any local user can access the API, so they can stop the LOCKSS containers, change their contents, read secrets, etc. We plan to enable access controls in the "beta" phase.
-
 .. _known-issue-lcap-ssl:
 
-*  In the Classic LOCKSS system (1.x), the LCAP SSL key could only be read by ``root``, but now it can also be read by ``lockss``.
+.. rubric:: LCAP SSL
+   :heading-level: 2
+
+In LOCKSS 1.x, the LCAP SSL key could only be read by ``root``, but now it can also be read by ``lockss``.
 
 .. _known-issue-dns:
 
 .. rubric:: DNS Resolution
+   :heading-level: 2
 
 K3s' default DNS cache timeout is 30 seconds, which results in enough repetitive upstream queries to trigger alarms at some institutions. One remediation is to change the CoreDNS configuration by editing its configmap.
 
@@ -61,6 +66,7 @@ The LOCKSS Installer offers the script :file:`scripts/coredns-cron-hack`, which 
 .. _known-issue-pid-files:
 
 .. rubric:: Harmless PID File Errors
+   :heading-level: 2
 
 The ``stdout`` log files of the various LOCKSS service containers contain the following error messages at startup:
 

@@ -48,7 +48,13 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
             wget -qO- https://lockss.org/downloader | sh -s - --download-dir=`pwd`
 
-6. .. index:: K3s; upgrade
+6. Check that the LOCKSS Installer is now at version |LATEST_PATCH| by running:
+
+   .. code-block:: shell
+
+      scripts/installer-version
+
+7. .. index:: K3s; upgrade
 
    .. note::
 
@@ -80,7 +86,7 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
          If this step fails, see the suggestions in the equivalent section of the manual for a first-time installation: :numref:`Testing the K3s Node` (:ref:`Testing the K3s Node`).
 
-7. Return to your ongoing ``lockss`` console session. Double-check that you are operating as ``lockss`` by typing:
+8. Return to your ongoing ``lockss`` console session. Double-check that you are operating as ``lockss`` by typing:
 
    .. code-block:: shell
 
@@ -88,13 +94,13 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
    and verifying that the output is ``lockss``.
 
-8. Next, you will upgrade LOCKSS from a version 2.0-alpha5 or greater to LOCKSS |LATEST_PATCH|. Run this command:
+9. Next, you will upgrade LOCKSS from a version 2.0-alpha5 or greater to LOCKSS |LATEST_PATCH|. Run this command:
 
    .. code-block:: shell
 
       scripts/upgrades/upgrade-to-beta2
 
-9. If :program:`upgrade-to-beta2` succeeds, it will direct you to run :term:`configure-lockss`; run this command:
+10. If :program:`upgrade-to-beta2` succeeds, it will direct you to run :term:`configure-lockss`; run this command:
 
    .. code-block:: shell
 
@@ -104,7 +110,7 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
 
       If any configuration question requires input, see a reference of all of :program:`configure-lockss` in :numref:`Configuring LOCKSS` (:ref:`Configuring LOCKSS`).
 
-10. Finally, start the LOCKSS stack with this command:
+11. Finally, start the LOCKSS stack with this command:
 
    .. code-block:: shell
 
@@ -113,6 +119,8 @@ To upgrade to LOCKSS |LATEST_PATCH|, follow these steps:
    .. note::
 
       LOCKSS 2.0-beta2 now uses PostgreSQL for its artifact index, which needs to be populated upon the first startup by examining all artifacts in storage. This initial inventory may take a long time, proportional to the amount of preserved content.
+
+As you use the Web user interface, you may note that LOCKSS 2.0.92-beta2 displays the wrong version number in the footer of pages. This is a :doc:`known issue </troubleshooting/known-issues>`; see :ref:`known-issue-wrong-version`.
 
 ----
 
